@@ -56,7 +56,7 @@ esp_err_t sdcard_init()
     host.slot = VSPI_HOST;
     //host.max_freq_khz = SDMMC_FREQ_HIGHSPEED;
     //sdspi_host_set_card_clk(VSPI_HOST, 40);
-
+#if 0
     spi_bus_config_t buscfg = {
         .miso_io_num = CONFIG_SDCARD_PIN_MISO,
         .mosi_io_num = CONFIG_SDCARD_PIN_MOSI,
@@ -81,9 +81,24 @@ esp_err_t sdcard_init()
     status = esp_vfs_fat_sdspi_mount(
         "/sdcard", &host, &slot_config, &mount_config, &card
     );
+#endif
+    sdspi_slot_config_t slot_config = SDSPI_SLOT_CONFIG_DEFAULT();
+     //slot_config.gpio_cs = CONFIG_SDCARD_PIN_CS;
+     //slot_config.host_id = VSPI_HOST;
+     slot_config.gpio_miso = CONFIG_SDCARD_PIN_MISO;
+     slot_config.gpio_mosi = CONFIG_SDCARD_PIN_MOSI;
+     slot_config.gpio_sck  = CONFIG_SDCARD_PIN_CLK;
+     slot_config.gpio_cs   = CONFIG_SDCARD_PIN_CS;
+     slot_config.dma_channel = VSPI_HOST;
+     // This initializes the slot without card detect (CD) and write protect (WP) signals.
+     // Modify slot_config.gpio_cd and slot_config.gpio_wp if your board has these signals.
+     status = esp_vfs_fat_sdmmc_mount(
+         "/sdcard", &host, &slot_config, &mount_config, &card
+     );
 
     if (status != ESP_OK) {
-        ESP_ERROR_CHECK_WITHOUT_ABORT(status);
+//        ESP_ERROR_CHECK_WITHOUT_ABORT(status);
+        ESP_ERROR_CHECK(status);
         return status;
     }
 
