@@ -49,6 +49,13 @@ SPDX-License-Identifier: MIT-0
 #include <bps.h>
 #include <sdcard.h>
 #include <tjpgd.h>
+#include "freertos/queue.h"
+#include "driver/gpio.h"
+#include "esp_vfs_fat.h"
+#include <sys/dirent.h>
+#include <sys/stat.h>
+#include "fnt9x18B.h"
+#include <ctype.h>
 
 static const char *TAG = "main";
 
@@ -59,6 +66,127 @@ static bitmap_t *bb;
 static EventGroupHandle_t event;
 
 static const uint8_t FRAME_LOADED = (1 << 0);
+
+struct dirent *pDirent;
+DIR *pDir;
+struct stat _stat;
+char cPath[1024];
+
+// maintain list of up to 10 files
+
+static void *list[10];
+int nList = 0;
+int curList = 0; // currently selected list item
+
+// hard coded for now
+#define MIPI_DISPLAY_PIN_BUTTON_A 37
+#define MIPI_DISPLAY_PIN_BUTTON_B 38
+#define MIPI_DISPLAY_PIN_BUTTON_C 39
+#define GPIO_INPUT_IO_0     MIPI_DISPLAY_PIN_BUTTON_A
+#define GPIO_INPUT_IO_1     MIPI_DISPLAY_PIN_BUTTON_B
+#define GPIO_INPUT_IO_2     MIPI_DISPLAY_PIN_BUTTON_C
+#define GPIO_INPUT_PIN_SEL  ((1ULL<<GPIO_INPUT_IO_0) | (1ULL<<GPIO_INPUT_IO_1)| (1ULL<<GPIO_INPUT_IO_2))
+#define ESP_INTR_FLAG_DEFAULT 0
+
+static xQueueHandle gpio_evt_queue = NULL;
+
+TaskHandle_t video_task_handle = NULL;
+TaskHandle_t display_list_handle = NULL;
+bool bIsMJpg = false;
+bool bTerminate = false;
+
+static void display_list();
+static void raw_video_task(char *params);
+static void mjpg_video_task(char *params);
+
+static void IRAM_ATTR gpio_isr_handler(void* arg)
+{
+    uint32_t gpio_num = (uint32_t) arg;
+    xQueueSendFromISR(gpio_evt_queue, &gpio_num, NULL);
+}
+
+static void gpio_task_example(void* arg)
+{
+    uint32_t io_num;
+
+    for(;;) {
+        if(xQueueReceive(gpio_evt_queue, &io_num, portMAX_DELAY)) {
+            printf("GPIO[%d] intr, val: %d\n", io_num, gpio_get_level(io_num));
+            if(io_num == MIPI_DISPLAY_PIN_BUTTON_A && video_task_handle > 0)
+            {
+                bTerminate = true;
+                vTaskDelay(100 / portTICK_RATE_MS);
+                xTaskCreatePinnedToCore(display_list, "List", 2048, NULL, 1, &display_list_handle, 0);
+            }
+            else if(io_num == MIPI_DISPLAY_PIN_BUTTON_A && video_task_handle == NULL)
+            {
+                ESP_LOGI(TAG, "Resume");
+
+                ESP_LOGI(TAG, "select #%d. %s", curList, (char *)list[curList]);
+
+                char* p = (char*)list[curList];
+                for ( ; *p; ++p) *p = tolower(*p);
+                sprintf(cPath,"/sdcard/%s",(char*)list[curList]);
+
+                bTerminate = false;
+                if(memcmp((char*)list[curList] + strlen((char*)list[curList])-3, "raw",3)==0)
+                    xTaskCreatePinnedToCore(raw_video_task, "Video", 8192, cPath, 1, &video_task_handle, 0);
+                else
+                    xTaskCreatePinnedToCore(mjpg_video_task, "Video", 8192, cPath, 1, &video_task_handle, 0);
+
+                if(display_list_handle)
+                {
+                    vTaskDelete(display_list_handle);
+                    display_list_handle = NULL;
+                }
+            }
+            if(io_num == MIPI_DISPLAY_PIN_BUTTON_B && display_list_handle)
+            {
+                if(curList < nList)
+                    curList++;
+                else
+                    curList = 0;
+            }
+            if(io_num == MIPI_DISPLAY_PIN_BUTTON_C && display_list_handle)
+            {
+                if(curList > 0)
+                    curList--;
+                else
+                    curList = nList - 1;
+            }
+        }
+    }
+}
+
+static void setup_Gpio()
+{
+    gpio_config_t io_conf;
+    //interrupt of rising edge
+    io_conf.intr_type = GPIO_INTR_POSEDGE;
+    //bit mask of the pins, use GPIO4/5 here
+    io_conf.pin_bit_mask = GPIO_INPUT_PIN_SEL;
+    //set as input mode
+    io_conf.mode = GPIO_MODE_INPUT;
+    //enable pull-up mode
+    io_conf.pull_up_en = 1;
+    gpio_config(&io_conf);
+
+    //change gpio intrrupt type for one pin
+    //gpio_set_intr_type(GPIO_INPUT_IO_0, GPIO_INTR_ANYEDGE);
+
+    //create a queue to handle gpio event from isr
+    gpio_evt_queue = xQueueCreate(10, sizeof(uint32_t));
+    //start gpio task
+    xTaskCreate(gpio_task_example, "gpio_task_example", 2048, NULL, 10, NULL);
+
+    //install gpio isr service
+    gpio_install_isr_service(ESP_INTR_FLAG_DEFAULT);
+
+    //hook isr handler for specific gpio pin
+    gpio_isr_handler_add(GPIO_INPUT_IO_0, gpio_isr_handler, (void*) GPIO_INPUT_IO_0);
+    gpio_isr_handler_add(GPIO_INPUT_IO_1, gpio_isr_handler, (void*) GPIO_INPUT_IO_1);
+    gpio_isr_handler_add(GPIO_INPUT_IO_2, gpio_isr_handler, (void*) GPIO_INPUT_IO_2);
+}
 
 /*
  * Flush backbuffer to display always when new frame is loaded.
@@ -89,12 +217,16 @@ void flush_task(void *params)
  * data can be read at only about 15 fps. Adding vsync causes
  * fps to drop to 14.
  */
-void raw_video_task(void *params)
+void raw_video_task(char *params)
 {
     FILE *fp;
     ssize_t bytes_read = 0;
+    bIsMJpg = false;
+    ESP_LOGI(TAG, "Loading: %s", params);
 
-    fp = fopen("/sdcard/bbb12.raw", "rb");
+    //fp = fopen("/sdcard/bbb12.raw", "rb");
+    fp = fopen(params, "rb");
+
 
     if (!fp) {
         ESP_LOGE(TAG, "Unable to open file!");
@@ -102,7 +234,7 @@ void raw_video_task(void *params)
         ESP_LOGI(TAG, "Successfully opened file.");
     }
 
-    while (1) {
+    while (!bTerminate) {
         /* https://linux.die.net/man/3/read */
         bytes_read = read(
             fileno(fp),
@@ -121,7 +253,9 @@ void raw_video_task(void *params)
         /* Add some leeway for flush so SD card does catch up. */
         ets_delay_us(5000);
     }
-
+    if(fp)
+        fclose(fp);
+    video_task_handle = NULL;
     vTaskDelete(NULL);
 }
 
@@ -200,22 +334,24 @@ static uint16_t tjpgd_data_writer(JDEC* decoder, void* bitmap, JRECT* rectangle)
  * framerate. However currently the ESP32 is the bottleneck and
  * data can be uncompressed at about 8 fps.
  */
-void mjpg_video_task(void *params)
+void mjpg_video_task(char *params)
 {
     FILE *fp;
     uint8_t work[3100];
     JDEC decoder;
     JRESULT result;
+    bIsMJpg = true;
+    ESP_LOGI(TAG, "Loading: %s", params);
 
-    fp = fopen("/sdcard/bbb08.mjp", "rb");
-
+    //fp = fopen("/sdcard/bbb08.mjp", "rb");
+    fp = fopen(params, "rb");
     if (!fp) {
-        ESP_LOGE(TAG, "Unable to open file!");
+        ESP_LOGE(TAG, "Unable to open file! %s", params);
     } else {
         ESP_LOGI(TAG, "Successfully opened file.");
     }
 
-    while (1) {
+    while (!bTerminate) {
         result = jd_prepare(&decoder, tjpgd_data_reader, work, 3100, fp);
         if (result == JDR_OK) {
             result = jd_decomp(&decoder, tjpgd_data_writer, 0);
@@ -235,7 +371,9 @@ void mjpg_video_task(void *params)
         /* Add some leeway for flush so SD card does catch up. */
         ets_delay_us(5000);
     }
-
+    if(fp)
+        close(fp);
+    video_task_handle = NULL;
     vTaskDelete(NULL);
 }
 
@@ -252,13 +390,16 @@ void infobar_task(void *params)
         swprintf(message, sizeof(message), u"SD %.*f kBPS  ",  1, sd_bps / 1000);
         hagl_put_text(message, 8, 8, color, font6x9);
 
-#ifdef CONFIG_ESP_VIDEO_MJPG
-        swprintf(message, sizeof(message), u"MJPG %.*f FPS  ", 1, sd_fps);
-        hagl_put_text(message, DISPLAY_WIDTH - 90, 8, color, font6x9);
-#else
-        swprintf(message, sizeof(message), u"RAW RGB565 %.*f FPS  ", 1, sd_fps);
-        hagl_put_text(message, DISPLAY_WIDTH - 124, 8, color, font6x9);
-#endif
+        if(bIsMJpg)
+        {
+            swprintf(message, sizeof(message), u"MJPG %.*f FPS  ", 1, sd_fps);
+            hagl_put_text(message, DISPLAY_WIDTH - 90, 8, color, font6x9);
+        }
+        else
+        {
+            swprintf(message, sizeof(message), u"RAW RGB565 %.*f FPS  ", 1, sd_fps);
+            hagl_put_text(message, DISPLAY_WIDTH - 124, 8, color, font6x9);
+        }
         vTaskDelay(1000 / portTICK_RATE_MS);
     }
 #endif
@@ -289,10 +430,37 @@ void photo_task(void *params)
     }
 }
 
+void display_list()
+{
+    char16_t message[64];
+    hagl_fill_rectangle(0, 9, DISPLAY_WIDTH-1, DISPLAY_HEIGHT-1, 0);
+    while(1)
+    {
+        int y = 20;
+        for(int i=0; i < nList; i++)
+        {
+            swprintf(message, sizeof(message), u"%s", (char*)list[i]);
+            if(curList == i)
+                hagl_put_text(message, 5, y, hagl_color(255, 0, 255), fnt9x18B);
+            else
+                hagl_put_text(message, 5, y, hagl_color(0, 255, 0), fnt9x18B);
+            y += 20;
+        }
+        /* Notify flush task that frame has been loaded. */
+        xEventGroupSetBits(event, FRAME_LOADED);
+
+        vTaskDelay(1000 / portTICK_RATE_MS);
+
+    }
+    vTaskDelete(NULL);
+}
+
 void app_main()
 {
     ESP_LOGI(TAG, "SDK version: %s", esp_get_idf_version());
     ESP_LOGI(TAG, "Heap when starting: %d", esp_get_free_heap_size());
+
+    setup_Gpio();
 
     event = xEventGroupCreate();
 
@@ -304,14 +472,48 @@ void app_main()
 
     sdcard_init();
 
+    pDir = opendir("/sdcard");
+    if (pDir == NULL) {
+        printf ("Cannot open directory '/sdcard'\n");
+        return;
+    }
+    while ((pDirent = readdir(pDir)) != NULL) {
+        sprintf(cPath,"/sdcard/%s",pDirent->d_name);
+        stat(cPath,&_stat);
+        if(S_ISDIR(_stat.st_mode)) {
+            printf ("[%s] DIR %ld\n", pDirent->d_name,_stat.st_size);
+        } else {
+            printf ("[%s] FILE %ld\n", pDirent->d_name,_stat.st_size);
+            int len = strlen(pDirent->d_name);
+            if(/*strncmp(pDirent->d_name+len-3, "MJP",3) ==0 ||*/ strncmp(pDirent->d_name+len-3, "RAW",3) ==0)
+            {
+                if(nList < 10)
+                {
+                    list[nList] = (char*)malloc(len +1);
+                    strcpy(list[nList], pDirent->d_name);
+                    char* p = (char*)list[nList];
+                    for ( ; *p; ++p) *p = tolower(*p);
+                    nList++;
+                }
+            }
+        }
+    }
+    closedir (pDir);
+    for(int i=0; i < nList; i++)
+    {
+        printf("%d. %s\n", i, (char*)list[i]);
+    }
+
     ESP_LOGI(TAG, "Heap after init: %d", esp_get_free_heap_size());
 
 #ifdef HAGL_HAL_USE_BUFFERING
     xTaskCreatePinnedToCore(flush_task, "Flush", 8192, NULL, 1, NULL, 0);
 #ifdef CONFIG_ESP_VIDEO_MJPG
-    xTaskCreatePinnedToCore(mjpg_video_task, "Video", 8192, NULL, 1, NULL, 0);
+    xTaskCreatePinnedToCore(mjpg_video_task, "Video", 8192, NULL, 1, &video_task_handle, 0);
 #else
-    xTaskCreatePinnedToCore(raw_video_task, "Video", 8192, NULL, 1, NULL, 0);
+    //char* fn = "/sdcard/bbb12.raw";
+    sprintf(cPath, "/sdcard/%s", (char*)list[curList]);
+    xTaskCreatePinnedToCore(raw_video_task, "Video", 8192, cPath, 1, &video_task_handle, 0);
 #endif /* CONFIG_ESP_VIDEO_MJPG */
     //xTaskCreatePinnedToCore(photo_task, "Photo", 8192, NULL, 2, NULL, 1);
 #endif /* HAGL_HAL_USE_BUFFERING */

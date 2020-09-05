@@ -310,6 +310,7 @@
 			$${IDF_PATH}/components/fatfs/src \
 			$${IDF_PATH}/components/fatfs/test \
 			$${IDF_PATH}/components/fatfs/test_fatfs_host \
+                        $${IDF_PATH}/components/fatfs/vfs \
 			$${IDF_PATH}/components/freertos \
 			$${IDF_PATH}/components/freertos/include/freertos \
 			$${IDF_PATH}/components/freertos/include \
@@ -9165,4 +9166,5 @@
 			$${IDF_PATH}/components/esp32/include/xtensa/xtruntime.h \
 			$${IDF_PATH}/components/asio/asio/asio/include/asio/yield.hpp \
 			$${IDF_PATH}/components/lwip/lwip/src/include/netif/zepif.h \
-			$${IDF_PATH}/components/tinyusb/tinyusb/test/vendor/ceedling/plugins/fake_function_framework/examples/fff_example/src/subfolder/zzz.h 
+                        $${IDF_PATH}/components/tinyusb/tinyusb/test/vendor/ceedling/plugins/fake_function_framework/examples/fff_example/src/subfolder/zzz.h \
+                        $${IDF_PATH}/components/esp_common/include

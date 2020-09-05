@@ -14,6 +14,7 @@
 			components/hagl/src \
 			components/hagl_hal/include \
 			components/hagl_hal/src \
+                        main/include \
 			main 
 
 	SOURCES += \
