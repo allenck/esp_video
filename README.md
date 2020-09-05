@@ -38,6 +38,7 @@ The original video is 24 fps. With SPI interface the SD card reading speed seems
 ```
 $ ffmpeg -i BigBuckBunny_320x180.mp4 -f rawvideo -pix_fmt rgb565be -vcodec  rawvideo -r 12 bbb12.raw
 ```
+The above example assumes that the source video's size is the same as your devices' dimensions,e.g. 320x240. If it isn't, add the parameters '-vf scale=320:-1' which will resize the output video width to 320 and maintain the aspect ratio.
 
 With motion jpeg video ESP32 itself is the bottleneck. With my testing I
 was able to decode at approximately 8 fps. You can create a 8 fps MJPG video with the following.
