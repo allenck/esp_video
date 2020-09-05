@@ -56,6 +56,7 @@ SPDX-License-Identifier: MIT-0
 #include <sys/stat.h>
 #include "fnt9x18B.h"
 #include <ctype.h>
+#include <esp_err.h>
 
 static const char *TAG = "main";
 
@@ -98,6 +99,7 @@ bool bTerminate = false;
 static void display_list();
 static void raw_video_task(char *params);
 static void mjpg_video_task(char *params);
+static void photo_task(char *params);
 
 static void IRAM_ATTR gpio_isr_handler(void* arg)
 {
@@ -124,16 +126,17 @@ static void gpio_task_example(void* arg)
 
                 ESP_LOGI(TAG, "select #%d. %s", curList, (char *)list[curList]);
 
-                char* p = (char*)list[curList];
-                for ( ; *p; ++p) *p = tolower(*p);
+//                char* p = (char*)list[curList];
+//                for ( ; *p; ++p) *p = tolower(*p);
                 sprintf(cPath,"/sdcard/%s",(char*)list[curList]);
 
                 bTerminate = false;
-                if(memcmp((char*)list[curList] + strlen((char*)list[curList])-3, "raw",3)==0)
+                if(memcmp((char*)list[curList] + strlen((char*)list[curList])-3, "RAW",3)==0)
                     xTaskCreatePinnedToCore(raw_video_task, "Video", 8192, cPath, 1, &video_task_handle, 0);
-                else
+                else if(memcmp((char*)list[curList] + strlen((char*)list[curList])-3, "MJP",3)==0)
                     xTaskCreatePinnedToCore(mjpg_video_task, "Video", 8192, cPath, 1, &video_task_handle, 0);
-
+                else
+                    xTaskCreatePinnedToCore(photo_task, "Photo", 8192, cPath, 2, &video_task_handle, 1);
                 if(display_list_handle)
                 {
                     vTaskDelete(display_list_handle);
@@ -406,14 +409,17 @@ void infobar_task(void *params)
     vTaskDelete(NULL);
 }
 
-void photo_task(void *params)
+void photo_task(char *params)
 {
-    while (1) {
-        ESP_LOGI(TAG, "Loading: %s", "/sdcard/001.jpg");
-        hagl_load_image(0, 30, "/sdcard/001.jpg");
+    while (!bTerminate) {
+        ESP_LOGI(TAG, "Loading: %s", params);
+        uint32_t status = hagl_load_image(0, 30, params);
+        ESP_LOGE(TAG, "error %d reading %s", status, params);
         xEventGroupSetBits(event, FRAME_LOADED);
-        vTaskDelay(1000 / portTICK_RATE_MS);
 
+        vTaskDelay(1000 / portTICK_RATE_MS);
+        break;
+#if 0
         ESP_LOGI(TAG, "Loading: %s", "/sdcard/002.jpg");
         hagl_load_image(0, 30, "/sdcard/002.jpg");
         xEventGroupSetBits(event, FRAME_LOADED);
@@ -427,7 +433,10 @@ void photo_task(void *params)
         ESP_LOGI(TAG, "Loading: %s", "/sdcard/004.jpg");
         hagl_load_image(0, 30, "/sdcard/004.jpg");
         vTaskDelay(1000 / portTICK_RATE_MS);
+#endif
     }
+//    video_task_handle = NULL;
+//    vTaskDelete(NULL);
 }
 
 void display_list()
@@ -485,14 +494,15 @@ void app_main()
         } else {
             printf ("[%s] FILE %ld\n", pDirent->d_name,_stat.st_size);
             int len = strlen(pDirent->d_name);
-            if(/*strncmp(pDirent->d_name+len-3, "MJP",3) ==0 ||*/ strncmp(pDirent->d_name+len-3, "RAW",3) ==0)
+            if(strncmp(pDirent->d_name+len-3, "MJP",3) ==0 || strncmp(pDirent->d_name+len-3, "RAW",3) ==0
+                    || strncmp(pDirent->d_name+len-3, "JPG",3) ==0)
             {
                 if(nList < 10)
                 {
                     list[nList] = (char*)malloc(len +1);
                     strcpy(list[nList], pDirent->d_name);
-                    char* p = (char*)list[nList];
-                    for ( ; *p; ++p) *p = tolower(*p);
+//                    char* p = (char*)list[nList];
+//                    for ( ; *p; ++p) *p = tolower(*p);
                     nList++;
                 }
             }
