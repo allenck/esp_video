@@ -60,7 +60,7 @@ $ du -h bbb08.mjp
  80M	bbb08.mjp
 ```
 
-Code expects to find files `bbb12.raw` and `bbb08.mjp` in the sdcard. You can change which file is played via menuconfig `Component config -> Video demo configuration`.
+Clicking on the middle button displays a list of files. The currently selected file is highlighed in magenta. the other two (eft and right) buttons change the selected file by moving the selection up or down. Clicking on the center button while the list is displayed displays that file.
 
 ## Big Buck Bunny
 
