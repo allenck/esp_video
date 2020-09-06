@@ -581,7 +581,7 @@ CONFIG_FREERTOS_DEBUG_OCDAWARE=y
 #
 # Hardware Agnostic Graphics Library (HAGL)
 #
-CONFIG_HAGL_TJPGD_NEEDS_BYTESWAP=y
+CONFIG_HAGL_TJPGD_NEEDS_BYTESWAP
 # end of Hardware Agnostic Graphics Library (HAGL)
 
 #

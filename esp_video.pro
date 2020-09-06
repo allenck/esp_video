@@ -14,8 +14,10 @@
 			components/hagl/src \
 			components/hagl_hal/include \
 			components/hagl_hal/src \
-                        main/include \
-			main 
+			config \
+			esp-idf/mbedtls/mbedtls/include \
+			main \
+			main/include 
 
 	SOURCES += \
 			components/hagl/src/bitmap.c \
@@ -67,6 +69,7 @@
 			components/esp_sdcard/bps.h \
 			components/hagl/include/clip.h \
 			components/hagl/include/config.h \
+			main/include/fnt9x18B.h \
 			components/hagl/include/font5x7.h \
 			components/hagl/include/font5x8.h \
 			components/hagl/include/font6x9.h \
@@ -84,10 +87,12 @@
 			components/hagl/include/rgb565.h \
 			components/hagl/include/rgb888.h \
 			components/esp_sdcard/sdcard.h \
+			config/sdkconfig.h \
 			components/hagl/include/tjpgd.h \
 			components/hagl/include/window.h 
 
 	OTHER_FILES += \
+			CMakeLists.txt \
 			README.md \
 			sdkconfig \
 			sdkconfig.old \
@@ -106,7 +111,9 @@
 			components/hagl_hal/README.md \
 			components/hagl/README.md \
 			components/hagl_hal/README.md \
-			components/hagl/README.md 
+			components/hagl/README.md \
+			config/sdkconfig.cmake \
+			config/sdkconfig.json 
 
 	DEFINES+=	CONFIG_ADC2_DISABLE_DAC=y \
 			CONFIG_ADC_CAL_EFUSE_TP_ENABLE=y \
@@ -182,7 +189,6 @@
 			CONFIG_ESP32_WIFI_DYNAMIC_RX_BUFFER_NUM=32 \
 			CONFIG_ESP32_WIFI_DYNAMIC_TX_BUFFER=y \
 			CONFIG_ESP32_WIFI_DYNAMIC_TX_BUFFER_NUM=32 \
-			CONFIG_ESP32_WIFI_ENABLE_WPA3_SAE=y \
 			CONFIG_ESP32_WIFI_IRAM_OPT=y \
 			CONFIG_ESP32_WIFI_MGMT_SBUF_NUM=32 \
 			CONFIG_ESP32_WIFI_NVS_ENABLED=y \
@@ -241,7 +247,6 @@
 			CONFIG_ETH_PHY_INTERFACE_RMII=y \
 			CONFIG_ETH_RMII_CLK_INPUT=y \
 			CONFIG_ETH_RMII_CLK_IN_GPIO=0 \
-			CONFIG_ETH_SPI_ETHERNET_DM9051=y \
 			CONFIG_ETH_USE_ESP32_EMAC=y \
 			CONFIG_ETH_USE_SPI_ETHERNET=y \
 			CONFIG_FATFS_CODEPAGE=437 \
@@ -285,7 +290,6 @@
 			CONFIG_FREERTOS_TIMER_TASK_STACK_DEPTH=2048 \
 			CONFIG_GARP_TMR_INTERVAL=60 \
 			CONFIG_HAGL_HAL_USE_DOUBLE_BUFFERING=y \
-			CONFIG_HAGL_TJPGD_NEEDS_BYTESWAP=y \
 			CONFIG_HEAP_POISONING_DISABLED=y \
 			CONFIG_HEAP_TRACING_OFF=y \
 			CONFIG_HTTPD_ERR_RESP_NO_DELAY=y \
@@ -485,10 +489,13 @@
 			CONFIG_SPIFFS_USE_MTIME=y \
 			CONFIG_SPI_CLOCK_SPEED_HZ=40000000 \
 			CONFIG_SPI_FLASH_DANGEROUS_WRITE_ABORTS=y \
+			CONFIG_SPI_FLASH_ERASE_YIELD_DURATION_MS=20 \
+			CONFIG_SPI_FLASH_ERASE_YIELD_TICKS=1 \
 			CONFIG_SPI_FLASH_ROM_DRIVER_PATCH=y \
 			CONFIG_SPI_FLASH_SUPPORT_GD_CHIP=y \
 			CONFIG_SPI_FLASH_SUPPORT_ISSI_CHIP=y \
 			CONFIG_SPI_FLASH_WRITING_DANGEROUS_REGIONS_ABORTS=y \
+			CONFIG_SPI_FLASH_YIELD_DURING_ERASE=y \
 			CONFIG_SPI_MASTER_ISR_IN_IRAM=y \
 			CONFIG_SPI_SLAVE_ISR_IN_IRAM=y \
 			CONFIG_STACK_CHECK_NONE=y \

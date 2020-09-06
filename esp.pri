@@ -7,6 +7,7 @@
 			$${IDF_PATH}/components/app_trace/include \
 			$${IDF_PATH}/components/app_trace/sys_view/Config \
 			$${IDF_PATH}/components/app_trace/sys_view/esp32 \
+			$${IDF_PATH}/components/app_trace/sys_view/ext \
 			$${IDF_PATH}/components/app_trace/sys_view/Sample/Config \
 			$${IDF_PATH}/components/app_trace/sys_view/Sample/OS \
 			$${IDF_PATH}/components/app_trace/sys_view/SEGGER \
@@ -102,11 +103,13 @@
 			$${IDF_PATH}/components/asio/asio/asio/src/tests/unit/ssl \
 			$${IDF_PATH}/components/asio/asio/asio/src/tests/unit/ts \
 			$${IDF_PATH}/components/asio/asio/asio/src/tests/unit/windows \
+			$${IDF_PATH}/components/asio/port/include \
 			$${IDF_PATH}/components/aws_iot/aws-iot-device-sdk-embedded-C/external_libs/jsmn \
 			$${IDF_PATH}/components/aws_iot/aws-iot-device-sdk-embedded-C/include \
 			$${IDF_PATH}/components/aws_iot/aws-iot-device-sdk-embedded-C/platform/linux/common \
 			$${IDF_PATH}/components/aws_iot/aws-iot-device-sdk-embedded-C/platform/linux/mbedtls \
 			$${IDF_PATH}/components/aws_iot/aws-iot-device-sdk-embedded-C/platform/linux/pthread \
+			$${IDF_PATH}/components/aws_iot/aws-iot-device-sdk-embedded-C/samples/linux/jobs_sample \
 			$${IDF_PATH}/components/aws_iot/aws-iot-device-sdk-embedded-C/samples/linux/shadow_sample \
 			$${IDF_PATH}/components/aws_iot/aws-iot-device-sdk-embedded-C/samples/linux/shadow_sample_console_echo \
 			$${IDF_PATH}/components/aws_iot/aws-iot-device-sdk-embedded-C/samples/linux/subscribe_publish_library_sample \
@@ -122,8 +125,131 @@
 			$${IDF_PATH}/components/bootloader/subproject/components/micro-ecc/micro-ecc/test \
 			$${IDF_PATH}/components/bootloader/subproject/main \
 			$${IDF_PATH}/components/bootloader_support/include \
+			$${IDF_PATH}/components/bootloader_support/include_bootloader \
 			$${IDF_PATH}/components/bootloader_support/src \
+			$${IDF_PATH}/components/bootloader_support/src/esp32 \
+			$${IDF_PATH}/components/bootloader_support/src/idf \
 			$${IDF_PATH}/components/bootloader_support/test \
+			$${IDF_PATH}/components/bt/common/btc/core \
+			$${IDF_PATH}/components/bt/common/btc/include/btc \
+			$${IDF_PATH}/components/bt/common/btc/include \
+			$${IDF_PATH}/components/bt/common/include \
+			$${IDF_PATH}/components/bt/common/osi \
+			$${IDF_PATH}/components/bt/common/osi/include/osi \
+			$${IDF_PATH}/components/bt/common/osi/include \
+			$${IDF_PATH}/components/bt/controller \
+			$${IDF_PATH}/components/bt/esp_ble_mesh/api/core \
+			$${IDF_PATH}/components/bt/esp_ble_mesh/api/core/include \
+			$${IDF_PATH}/components/bt/esp_ble_mesh/api \
+			$${IDF_PATH}/components/bt/esp_ble_mesh/api/models \
+			$${IDF_PATH}/components/bt/esp_ble_mesh/api/models/include \
+			$${IDF_PATH}/components/bt/esp_ble_mesh/btc \
+			$${IDF_PATH}/components/bt/esp_ble_mesh/btc/include \
+			$${IDF_PATH}/components/bt/esp_ble_mesh/mesh_common/include \
+			$${IDF_PATH}/components/bt/esp_ble_mesh/mesh_common \
+			$${IDF_PATH}/components/bt/esp_ble_mesh/mesh_common/tinycrypt/include/tinycrypt \
+			$${IDF_PATH}/components/bt/esp_ble_mesh/mesh_common/tinycrypt/include \
+			$${IDF_PATH}/components/bt/esp_ble_mesh/mesh_common/tinycrypt/src \
+			$${IDF_PATH}/components/bt/esp_ble_mesh/mesh_core \
+			$${IDF_PATH}/components/bt/esp_ble_mesh/mesh_core/bluedroid_host \
+			$${IDF_PATH}/components/bt/esp_ble_mesh/mesh_core/include \
+			$${IDF_PATH}/components/bt/esp_ble_mesh/mesh_core/nimble_host \
+			$${IDF_PATH}/components/bt/esp_ble_mesh/mesh_core/storage \
+			$${IDF_PATH}/components/bt/esp_ble_mesh/mesh_models/client \
+			$${IDF_PATH}/components/bt/esp_ble_mesh/mesh_models/client/include \
+			$${IDF_PATH}/components/bt/esp_ble_mesh/mesh_models/common/include \
+			$${IDF_PATH}/components/bt/esp_ble_mesh/mesh_models/server \
+			$${IDF_PATH}/components/bt/esp_ble_mesh/mesh_models/server/include \
+			$${IDF_PATH}/components/bt/host/bluedroid/api \
+			$${IDF_PATH}/components/bt/host/bluedroid/api/include/api \
+			$${IDF_PATH}/components/bt/host/bluedroid/api/include \
+			$${IDF_PATH}/components/bt/host/bluedroid/bta/ar \
+			$${IDF_PATH}/components/bt/host/bluedroid/bta/ar/include \
+			$${IDF_PATH}/components/bt/host/bluedroid/bta/av \
+			$${IDF_PATH}/components/bt/host/bluedroid/bta/av/include \
+			$${IDF_PATH}/components/bt/host/bluedroid/bta/dm \
+			$${IDF_PATH}/components/bt/host/bluedroid/bta/dm/include \
+			$${IDF_PATH}/components/bt/host/bluedroid/bta/gatt \
+			$${IDF_PATH}/components/bt/host/bluedroid/bta/gatt/include \
+			$${IDF_PATH}/components/bt/host/bluedroid/bta/hf_ag \
+			$${IDF_PATH}/components/bt/host/bluedroid/bta/hf_client \
+			$${IDF_PATH}/components/bt/host/bluedroid/bta/hf_client/include \
+			$${IDF_PATH}/components/bt/host/bluedroid/bta/hh \
+			$${IDF_PATH}/components/bt/host/bluedroid/bta/hh/include \
+			$${IDF_PATH}/components/bt/host/bluedroid/bta/include/bta \
+			$${IDF_PATH}/components/bt/host/bluedroid/bta/include \
+			$${IDF_PATH}/components/bt/host/bluedroid/bta/jv \
+			$${IDF_PATH}/components/bt/host/bluedroid/bta/jv/include \
+			$${IDF_PATH}/components/bt/host/bluedroid/bta/sdp \
+			$${IDF_PATH}/components/bt/host/bluedroid/bta/sdp/include \
+			$${IDF_PATH}/components/bt/host/bluedroid/bta/sys \
+			$${IDF_PATH}/components/bt/host/bluedroid/bta/sys/include \
+			$${IDF_PATH}/components/bt/host/bluedroid/btc/core \
+			$${IDF_PATH}/components/bt/host/bluedroid/btc/include/btc \
+			$${IDF_PATH}/components/bt/host/bluedroid/btc/include \
+			$${IDF_PATH}/components/bt/host/bluedroid/btc/profile/esp/ble_button \
+			$${IDF_PATH}/components/bt/host/bluedroid/btc/profile/esp/blufi \
+			$${IDF_PATH}/components/bt/host/bluedroid/btc/profile/esp/blufi/include \
+			$${IDF_PATH}/components/bt/host/bluedroid/btc/profile/esp/include \
+			$${IDF_PATH}/components/bt/host/bluedroid/btc/profile/esp/wechat_AirSync \
+			$${IDF_PATH}/components/bt/host/bluedroid/btc/profile/std/a2dp \
+			$${IDF_PATH}/components/bt/host/bluedroid/btc/profile/std/a2dp/include \
+			$${IDF_PATH}/components/bt/host/bluedroid/btc/profile/std/avrc \
+			$${IDF_PATH}/components/bt/host/bluedroid/btc/profile/std/battery \
+			$${IDF_PATH}/components/bt/host/bluedroid/btc/profile/std/battery/include \
+			$${IDF_PATH}/components/bt/host/bluedroid/btc/profile/std/dis \
+			$${IDF_PATH}/components/bt/host/bluedroid/btc/profile/std/dis/include \
+			$${IDF_PATH}/components/bt/host/bluedroid/btc/profile/std/gap \
+			$${IDF_PATH}/components/bt/host/bluedroid/btc/profile/std/gatt \
+			$${IDF_PATH}/components/bt/host/bluedroid/btc/profile/std/hf_client \
+			$${IDF_PATH}/components/bt/host/bluedroid/btc/profile/std/hid/include \
+			$${IDF_PATH}/components/bt/host/bluedroid/btc/profile/std/include \
+			$${IDF_PATH}/components/bt/host/bluedroid/btc/profile/std/smp \
+			$${IDF_PATH}/components/bt/host/bluedroid/btc/profile/std/smp/include \
+			$${IDF_PATH}/components/bt/host/bluedroid/btc/profile/std/spp \
+			$${IDF_PATH}/components/bt/host/bluedroid/common/include/common \
+			$${IDF_PATH}/components/bt/host/bluedroid/common/include \
+			$${IDF_PATH}/components/bt/host/bluedroid/device \
+			$${IDF_PATH}/components/bt/host/bluedroid/device/include/device \
+			$${IDF_PATH}/components/bt/host/bluedroid/device/include \
+			$${IDF_PATH}/components/bt/host/bluedroid/external/sbc/decoder/include \
+			$${IDF_PATH}/components/bt/host/bluedroid/external/sbc/decoder/srce \
+			$${IDF_PATH}/components/bt/host/bluedroid/external/sbc/encoder/include \
+			$${IDF_PATH}/components/bt/host/bluedroid/external/sbc/encoder/srce \
+			$${IDF_PATH}/components/bt/host/bluedroid/external/sbc/plc/include \
+			$${IDF_PATH}/components/bt/host/bluedroid/external/sbc/plc \
+			$${IDF_PATH}/components/bt/host/bluedroid/hci \
+			$${IDF_PATH}/components/bt/host/bluedroid/hci/include/hci \
+			$${IDF_PATH}/components/bt/host/bluedroid/hci/include \
+			$${IDF_PATH}/components/bt/host/bluedroid/main \
+			$${IDF_PATH}/components/bt/host/bluedroid/stack/a2dp \
+			$${IDF_PATH}/components/bt/host/bluedroid/stack/a2dp/include \
+			$${IDF_PATH}/components/bt/host/bluedroid/stack/avct \
+			$${IDF_PATH}/components/bt/host/bluedroid/stack/avct/include \
+			$${IDF_PATH}/components/bt/host/bluedroid/stack/avdt \
+			$${IDF_PATH}/components/bt/host/bluedroid/stack/avdt/include \
+			$${IDF_PATH}/components/bt/host/bluedroid/stack/avrc \
+			$${IDF_PATH}/components/bt/host/bluedroid/stack/avrc/include \
+			$${IDF_PATH}/components/bt/host/bluedroid/stack/btm \
+			$${IDF_PATH}/components/bt/host/bluedroid/stack/btm/include \
+			$${IDF_PATH}/components/bt/host/bluedroid/stack/btu \
+			$${IDF_PATH}/components/bt/host/bluedroid/stack/gap \
+			$${IDF_PATH}/components/bt/host/bluedroid/stack/gap/include \
+			$${IDF_PATH}/components/bt/host/bluedroid/stack/gatt \
+			$${IDF_PATH}/components/bt/host/bluedroid/stack/gatt/include \
+			$${IDF_PATH}/components/bt/host/bluedroid/stack/hcic \
+			$${IDF_PATH}/components/bt/host/bluedroid/stack/include/stack \
+			$${IDF_PATH}/components/bt/host/bluedroid/stack/include \
+			$${IDF_PATH}/components/bt/host/bluedroid/stack/l2cap/include \
+			$${IDF_PATH}/components/bt/host/bluedroid/stack/l2cap \
+			$${IDF_PATH}/components/bt/host/bluedroid/stack/rfcomm/include \
+			$${IDF_PATH}/components/bt/host/bluedroid/stack/rfcomm \
+			$${IDF_PATH}/components/bt/host/bluedroid/stack/sdp/include \
+			$${IDF_PATH}/components/bt/host/bluedroid/stack/sdp \
+			$${IDF_PATH}/components/bt/host/bluedroid/stack/smp \
+			$${IDF_PATH}/components/bt/host/bluedroid/stack/smp/include \
+			$${IDF_PATH}/components/bt/host/nimble/esp-hci/include \
+			$${IDF_PATH}/components/bt/host/nimble/esp-hci/src \
 			$${IDF_PATH}/components/bt/host/nimble/nimble/apps/blecent/src \
 			$${IDF_PATH}/components/bt/host/nimble/nimble/apps/blecsc/src \
 			$${IDF_PATH}/components/bt/host/nimble/nimble/apps/blehci/src \
@@ -247,6 +373,9 @@
 			$${IDF_PATH}/components/bt/host/nimble/nimble/porting/npl/riot/include/syscfg \
 			$${IDF_PATH}/components/bt/host/nimble/nimble/porting/npl/riot/include \
 			$${IDF_PATH}/components/bt/host/nimble/nimble/porting/npl/riot/src \
+			$${IDF_PATH}/components/bt/host/nimble/port/include/console \
+			$${IDF_PATH}/components/bt/host/nimble/port/include \
+			$${IDF_PATH}/components/bt/host/nimble/port/src \
 			$${IDF_PATH}/components/bt/include \
 			$${IDF_PATH}/components/bt/test \
 			$${IDF_PATH}/components/cbor/tinycbor/examples \
@@ -267,9 +396,11 @@
 			$${IDF_PATH}/components/coap/libcoap/ext/tinydtls/platform-specific \
 			$${IDF_PATH}/components/coap/libcoap/ext/tinydtls/sha2 \
 			$${IDF_PATH}/components/coap/libcoap/ext/tinydtls/tests \
+			$${IDF_PATH}/components/coap/libcoap/include/coap2 \
 			$${IDF_PATH}/components/coap/libcoap/include \
 			$${IDF_PATH}/components/coap/libcoap/src \
 			$${IDF_PATH}/components/coap/libcoap/tests \
+			$${IDF_PATH}/components/coap/libcoap/tests/oss-fuzz \
 			$${IDF_PATH}/components/coap/port \
 			$${IDF_PATH}/components/coap/port/include/coap \
 			$${IDF_PATH}/components/coap/port/include \
@@ -282,7 +413,18 @@
 			$${IDF_PATH}/components/driver/include/driver \
 			$${IDF_PATH}/components/driver/include \
 			$${IDF_PATH}/components/driver/test \
+			$${IDF_PATH}/components/driver/test/include/test \
+			$${IDF_PATH}/components/driver/test/include \
+			$${IDF_PATH}/components/driver/test/param_test/include \
+			$${IDF_PATH}/components/driver/test/param_test \
+			$${IDF_PATH}/components/efuse/esp32 \
+			$${IDF_PATH}/components/efuse/esp32/include \
+			$${IDF_PATH}/components/efuse/include \
+			$${IDF_PATH}/components/efuse/src \
+			$${IDF_PATH}/components/efuse/test \
+			$${IDF_PATH}/components/efuse/test/include \
 			$${IDF_PATH}/components/esp-tls \
+			$${IDF_PATH}/components/esp-tls/private_include \
 			$${IDF_PATH}/components/esp32 \
 			$${IDF_PATH}/components/esp32/include/esp32 \
 			$${IDF_PATH}/components/esp32/include \
@@ -290,12 +432,55 @@
 			$${IDF_PATH}/components/esp32/test \
 			$${IDF_PATH}/components/esp_adc_cal \
 			$${IDF_PATH}/components/esp_adc_cal/include \
+			$${IDF_PATH}/components/esp_common/include \
+			$${IDF_PATH}/components/esp_common/include/esp_private \
+			$${IDF_PATH}/components/esp_common/src \
+			$${IDF_PATH}/components/esp_eth/include \
+			$${IDF_PATH}/components/esp_eth/src \
+			$${IDF_PATH}/components/esp_eth/test \
+			$${IDF_PATH}/components/esp_event \
+			$${IDF_PATH}/components/esp_event/include \
+			$${IDF_PATH}/components/esp_event/private_include \
+			$${IDF_PATH}/components/esp_event/test \
+			$${IDF_PATH}/components/esp_gdbstub/esp32 \
+			$${IDF_PATH}/components/esp_gdbstub/include \
+			$${IDF_PATH}/components/esp_gdbstub/private_include \
+			$${IDF_PATH}/components/esp_gdbstub/src \
+			$${IDF_PATH}/components/esp_gdbstub/xtensa \
 			$${IDF_PATH}/components/esp_http_client \
 			$${IDF_PATH}/components/esp_http_client/include \
 			$${IDF_PATH}/components/esp_http_client/lib \
 			$${IDF_PATH}/components/esp_http_client/lib/include \
+			$${IDF_PATH}/components/esp_http_client/test \
+			$${IDF_PATH}/components/esp_http_server/include \
+			$${IDF_PATH}/components/esp_http_server/src \
+			$${IDF_PATH}/components/esp_http_server/src/port/esp32 \
+			$${IDF_PATH}/components/esp_http_server/src/util \
+			$${IDF_PATH}/components/esp_http_server/test \
 			$${IDF_PATH}/components/esp_https_ota/include \
 			$${IDF_PATH}/components/esp_https_ota/src \
+			$${IDF_PATH}/components/esp_https_server/include \
+			$${IDF_PATH}/components/esp_https_server/src \
+			$${IDF_PATH}/components/esp_local_ctrl/include \
+			$${IDF_PATH}/components/esp_local_ctrl/proto-c \
+			$${IDF_PATH}/components/esp_local_ctrl/src \
+			$${IDF_PATH}/components/esp_ringbuf \
+			$${IDF_PATH}/components/esp_ringbuf/include/freertos \
+			$${IDF_PATH}/components/esp_ringbuf/include \
+			$${IDF_PATH}/components/esp_ringbuf/test \
+			$${IDF_PATH}/components/esp_rom \
+			$${IDF_PATH}/components/esp_rom/include/esp32/rom \
+			$${IDF_PATH}/components/esp_rom/include \
+			$${IDF_PATH}/components/esp_websocket_client \
+			$${IDF_PATH}/components/esp_websocket_client/include \
+			$${IDF_PATH}/components/esp_wifi/esp32/include \
+			$${IDF_PATH}/components/esp_wifi/include \
+			$${IDF_PATH}/components/esp_wifi/include/esp_private \
+			$${IDF_PATH}/components/esp_wifi/src \
+			$${IDF_PATH}/components/esp_wifi/test \
+			$${IDF_PATH}/components/espcoredump/include \
+			$${IDF_PATH}/components/espcoredump/include_core_dump \
+			$${IDF_PATH}/components/espcoredump/src \
 			$${IDF_PATH}/components/espcoredump/test \
 			$${IDF_PATH}/components/esptool_py/esptool/flasher_stub \
 			$${IDF_PATH}/components/esptool_py/esptool/flasher_stub/include \
@@ -307,10 +492,28 @@
 			$${IDF_PATH}/components/expat/expat/expat/tests \
 			$${IDF_PATH}/components/expat/expat/expat/xmlwf \
 			$${IDF_PATH}/components/expat/port/include \
+			$${IDF_PATH}/components/expat/test \
+			$${IDF_PATH}/components/fatfs/diskio \
+			$${IDF_PATH}/components/fatfs/port/freertos \
+			$${IDF_PATH}/components/fatfs/port/linux \
 			$${IDF_PATH}/components/fatfs/src \
 			$${IDF_PATH}/components/fatfs/test \
 			$${IDF_PATH}/components/fatfs/test_fatfs_host \
-                        $${IDF_PATH}/components/fatfs/vfs \
+			$${IDF_PATH}/components/fatfs/test_fatfs_host/sdkconfig \
+			$${IDF_PATH}/components/fatfs/vfs \
+			$${IDF_PATH}/components/freemodbus/common \
+			$${IDF_PATH}/components/freemodbus/common/include \
+			$${IDF_PATH}/components/freemodbus/modbus/ascii \
+			$${IDF_PATH}/components/freemodbus/modbus/functions \
+			$${IDF_PATH}/components/freemodbus/modbus/include \
+			$${IDF_PATH}/components/freemodbus/modbus \
+			$${IDF_PATH}/components/freemodbus/modbus/rtu \
+			$${IDF_PATH}/components/freemodbus/modbus/tcp \
+			$${IDF_PATH}/components/freemodbus/port \
+			$${IDF_PATH}/components/freemodbus/serial_master/modbus_controller \
+			$${IDF_PATH}/components/freemodbus/serial_master/port \
+			$${IDF_PATH}/components/freemodbus/serial_slave/modbus_controller \
+			$${IDF_PATH}/components/freemodbus/serial_slave/port \
 			$${IDF_PATH}/components/freertos \
 			$${IDF_PATH}/components/freertos/include/freertos \
 			$${IDF_PATH}/components/freertos/include \
@@ -425,8 +628,13 @@
 			$${IDF_PATH}/components/libsodium/test \
 			$${IDF_PATH}/components/log \
 			$${IDF_PATH}/components/log/include \
+			$${IDF_PATH}/components/lwip/apps/dhcpserver \
 			$${IDF_PATH}/components/lwip/apps/ping \
 			$${IDF_PATH}/components/lwip/apps/sntp \
+			$${IDF_PATH}/components/lwip/include/apps/dhcpserver \
+			$${IDF_PATH}/components/lwip/include/apps \
+			$${IDF_PATH}/components/lwip/include/apps/ping \
+			$${IDF_PATH}/components/lwip/include/apps/sntp \
 			$${IDF_PATH}/components/lwip/include \
 			$${IDF_PATH}/components/lwip/lwip/doc \
 			$${IDF_PATH}/components/lwip/lwip/doc/doxygen \
@@ -475,6 +683,17 @@
 			$${IDF_PATH}/components/lwip/lwip/test/unit/mqtt \
 			$${IDF_PATH}/components/lwip/lwip/test/unit/tcp \
 			$${IDF_PATH}/components/lwip/lwip/test/unit/udp \
+			$${IDF_PATH}/components/lwip/port/esp32/debug \
+			$${IDF_PATH}/components/lwip/port/esp32/freertos \
+			$${IDF_PATH}/components/lwip/port/esp32/include/arch \
+			$${IDF_PATH}/components/lwip/port/esp32/include/arpa \
+			$${IDF_PATH}/components/lwip/port/esp32/include/debug \
+			$${IDF_PATH}/components/lwip/port/esp32/include \
+			$${IDF_PATH}/components/lwip/port/esp32/include/netif \
+			$${IDF_PATH}/components/lwip/port/esp32/include/netinet \
+			$${IDF_PATH}/components/lwip/port/esp32/include/sys \
+			$${IDF_PATH}/components/lwip/port/esp32/netif \
+			$${IDF_PATH}/components/lwip/port/esp32 \
 			$${IDF_PATH}/components/lwip/test_afl_host \
 			$${IDF_PATH}/components/mbedtls/mbedtls/configs \
 			$${IDF_PATH}/components/mbedtls/mbedtls/doxygen/input \
@@ -490,13 +709,17 @@
 			$${IDF_PATH}/components/mbedtls/mbedtls/programs/test \
 			$${IDF_PATH}/components/mbedtls/mbedtls/programs/util \
 			$${IDF_PATH}/components/mbedtls/mbedtls/programs/x509 \
+			$${IDF_PATH}/components/mbedtls/mbedtls/tests/configs \
+			$${IDF_PATH}/components/mbedtls/port/esp32 \
 			$${IDF_PATH}/components/mbedtls/port \
 			$${IDF_PATH}/components/mbedtls/port/include \
+			$${IDF_PATH}/components/mbedtls/port/include/esp32 \
 			$${IDF_PATH}/components/mbedtls/port/include/mbedtls \
 			$${IDF_PATH}/components/mbedtls/test \
 			$${IDF_PATH}/components/mdns \
 			$${IDF_PATH}/components/mdns/include \
 			$${IDF_PATH}/components/mdns/private_include \
+			$${IDF_PATH}/components/mdns/test \
 			$${IDF_PATH}/components/mdns/test_afl_fuzz_host \
 			$${IDF_PATH}/components/micro-ecc/micro-ecc \
 			$${IDF_PATH}/components/micro-ecc/micro-ecc/test \
@@ -510,6 +733,7 @@
 			$${IDF_PATH}/components/newlib/include/sys \
 			$${IDF_PATH}/components/newlib/include/xtensa/config \
 			$${IDF_PATH}/components/newlib/platform_include \
+			$${IDF_PATH}/components/newlib/platform_include/net \
 			$${IDF_PATH}/components/newlib/platform_include/sys \
 			$${IDF_PATH}/components/newlib/test \
 			$${IDF_PATH}/components/nghttp/nghttp2/examples \
@@ -578,6 +802,16 @@
 			$${IDF_PATH}/components/protobuf-c/protobuf-c/t/issue220 \
 			$${IDF_PATH}/components/protobuf-c/protobuf-c/t/issue251 \
 			$${IDF_PATH}/components/protobuf-c/protobuf-c/t/version \
+			$${IDF_PATH}/components/protocomm/include/common \
+			$${IDF_PATH}/components/protocomm/include/security \
+			$${IDF_PATH}/components/protocomm/include/transports \
+			$${IDF_PATH}/components/protocomm/include \
+			$${IDF_PATH}/components/protocomm/proto-c \
+			$${IDF_PATH}/components/protocomm/src/common \
+			$${IDF_PATH}/components/protocomm/src/security \
+			$${IDF_PATH}/components/protocomm/src/simple_ble \
+			$${IDF_PATH}/components/protocomm/src/transports \
+			$${IDF_PATH}/components/protocomm/test \
 			$${IDF_PATH}/components/pthread \
 			$${IDF_PATH}/components/pthread/include \
 			$${IDF_PATH}/components/pthread/test \
@@ -585,15 +819,29 @@
 			$${IDF_PATH}/components/sdmmc/include \
 			$${IDF_PATH}/components/sdmmc/test \
 			$${IDF_PATH}/components/soc/esp32 \
+			$${IDF_PATH}/components/soc/esp32/include/hal \
 			$${IDF_PATH}/components/soc/esp32/include/soc \
 			$${IDF_PATH}/components/soc/esp32/include \
 			$${IDF_PATH}/components/soc/esp32/test \
+			$${IDF_PATH}/components/soc/include/hal \
 			$${IDF_PATH}/components/soc/include/soc \
 			$${IDF_PATH}/components/soc/include \
+			$${IDF_PATH}/components/soc/src/hal \
+			$${IDF_PATH}/components/soc/src \
 			$${IDF_PATH}/components/spi_flash \
 			$${IDF_PATH}/components/spi_flash/include \
+			$${IDF_PATH}/components/spi_flash/private_include \
 			$${IDF_PATH}/components/spi_flash/sim \
+			$${IDF_PATH}/components/spi_flash/sim/sdkconfig \
 			$${IDF_PATH}/components/spi_flash/sim/stubs/app_update \
+			$${IDF_PATH}/components/spi_flash/sim/stubs/bootloader_support/include \
+			$${IDF_PATH}/components/spi_flash/sim/stubs/bootloader_support/src \
+			$${IDF_PATH}/components/spi_flash/sim/stubs/driver/include/driver \
+			$${IDF_PATH}/components/spi_flash/sim/stubs/driver/include \
+			$${IDF_PATH}/components/spi_flash/sim/stubs/esp32 \
+			$${IDF_PATH}/components/spi_flash/sim/stubs/esp32/include \
+			$${IDF_PATH}/components/spi_flash/sim/stubs/esp_timer/include \
+			$${IDF_PATH}/components/spi_flash/sim/stubs/esp_timer/src \
 			$${IDF_PATH}/components/spi_flash/sim/stubs/freertos/include/freertos \
 			$${IDF_PATH}/components/spi_flash/sim/stubs/freertos/include \
 			$${IDF_PATH}/components/spi_flash/sim/stubs/log/include \
@@ -601,6 +849,9 @@
 			$${IDF_PATH}/components/spi_flash/sim/stubs/newlib/include/sys \
 			$${IDF_PATH}/components/spi_flash/sim/stubs/newlib/include \
 			$${IDF_PATH}/components/spi_flash/sim/stubs/newlib \
+			$${IDF_PATH}/components/spi_flash/sim/stubs/sdkconfig \
+			$${IDF_PATH}/components/spi_flash/sim/stubs/sdmmc/include \
+			$${IDF_PATH}/components/spi_flash/sim/stubs/vfs/include \
 			$${IDF_PATH}/components/spi_flash/test \
 			$${IDF_PATH}/components/spiffs \
 			$${IDF_PATH}/components/spiffs/include \
@@ -609,6 +860,11 @@
 			$${IDF_PATH}/components/spiffs/spiffs/src/test \
 			$${IDF_PATH}/components/spiffs/test \
 			$${IDF_PATH}/components/spiffs/test_spiffs_host \
+			$${IDF_PATH}/components/spiffs/test_spiffs_host/sdkconfig \
+			$${IDF_PATH}/components/tcp_transport \
+			$${IDF_PATH}/components/tcp_transport/include \
+			$${IDF_PATH}/components/tcp_transport/private_include \
+			$${IDF_PATH}/components/tcp_transport/test \
 			$${IDF_PATH}/components/tcpip_adapter \
 			$${IDF_PATH}/components/tcpip_adapter/include \
 			$${IDF_PATH}/components/tinyusb/tinyusb/examples/device/cdc_msc_hid/src \
@@ -682,6 +938,9 @@
 			$${IDF_PATH}/components/ulp/include/esp32 \
 			$${IDF_PATH}/components/ulp/include \
 			$${IDF_PATH}/components/ulp/test \
+			$${IDF_PATH}/components/unity \
+			$${IDF_PATH}/components/unity/include/priv \
+			$${IDF_PATH}/components/unity/include \
 			$${IDF_PATH}/components/unity/unity/examples/example_1/src \
 			$${IDF_PATH}/components/unity/unity/examples/example_1/test/test_runners \
 			$${IDF_PATH}/components/unity/unity/examples/example_1/test \
@@ -708,13 +967,35 @@
 			$${IDF_PATH}/components/wear_levelling/private_include \
 			$${IDF_PATH}/components/wear_levelling/test \
 			$${IDF_PATH}/components/wear_levelling/test_wl_host \
+			$${IDF_PATH}/components/wear_levelling/test_wl_host/sdkconfig \
+			$${IDF_PATH}/components/wifi_provisioning/include/wifi_provisioning \
+			$${IDF_PATH}/components/wifi_provisioning/include \
+			$${IDF_PATH}/components/wifi_provisioning/proto-c \
+			$${IDF_PATH}/components/wifi_provisioning/src \
+			$${IDF_PATH}/components/wpa_supplicant/include/esp_supplicant \
+			$${IDF_PATH}/components/wpa_supplicant/include/utils \
 			$${IDF_PATH}/components/wpa_supplicant/include \
 			$${IDF_PATH}/components/wpa_supplicant/port/include \
 			$${IDF_PATH}/components/wpa_supplicant/port \
+			$${IDF_PATH}/components/wpa_supplicant/src/ap \
+			$${IDF_PATH}/components/wpa_supplicant/src/common \
 			$${IDF_PATH}/components/wpa_supplicant/src/crypto \
-			$${IDF_PATH}/components/wpa_supplicant/src/wps 
+			$${IDF_PATH}/components/wpa_supplicant/src/eap_peer \
+			$${IDF_PATH}/components/wpa_supplicant/src/esp_supplicant \
+			$${IDF_PATH}/components/wpa_supplicant/src/rsn_supp \
+			$${IDF_PATH}/components/wpa_supplicant/src/tls \
+			$${IDF_PATH}/components/wpa_supplicant/src/utils \
+			$${IDF_PATH}/components/wpa_supplicant/src/wps \
+			$${IDF_PATH}/components/wpa_supplicant/test \
+			$${IDF_PATH}/components/xtensa \
+			$${IDF_PATH}/components/xtensa/esp32/include/xtensa/config \
+			$${IDF_PATH}/components/xtensa/esp32/include \
+			$${IDF_PATH}/components/xtensa/include \
+			$${IDF_PATH}/components/xtensa/include/esp_private \
+			$${IDF_PATH}/components/xtensa/include/xtensa 
 
 	SOURCES += \
+			$${IDF_PATH}/components/unity/unity/extras/fixture/test/main/AllTests.c \
 			$${IDF_PATH}/components/json/cJSON/tests/unity/extras/fixture/test/main/AllTests.c \
 			$${IDF_PATH}/components/unity/unity/extras/fixture/test/main/AllTests.c \
 			$${IDF_PATH}/components/json/cJSON/tests/unity/extras/fixture/test/main/AllTests.c \
@@ -731,9 +1012,6 @@
 			$${IDF_PATH}/components/wear_levelling/Partition.cpp \
 			$${IDF_PATH}/components/wear_levelling/Partition.cpp \
 			$${IDF_PATH}/components/wear_levelling/Partition.cpp \
-			$${IDF_PATH}/components/json/cJSON/tests/unity/examples/example_3/src/ProductionCode.c \
-			$${IDF_PATH}/components/json/cJSON/tests/unity/examples/example_2/src/ProductionCode.c \
-			$${IDF_PATH}/components/json/cJSON/tests/unity/examples/example_1/src/ProductionCode.c \
 			$${IDF_PATH}/components/unity/unity/examples/example_3/src/ProductionCode.c \
 			$${IDF_PATH}/components/unity/unity/examples/example_2/src/ProductionCode.c \
 			$${IDF_PATH}/components/unity/unity/examples/example_1/src/ProductionCode.c \
@@ -746,6 +1024,15 @@
 			$${IDF_PATH}/components/json/cJSON/tests/unity/examples/example_3/src/ProductionCode.c \
 			$${IDF_PATH}/components/json/cJSON/tests/unity/examples/example_2/src/ProductionCode.c \
 			$${IDF_PATH}/components/json/cJSON/tests/unity/examples/example_1/src/ProductionCode.c \
+			$${IDF_PATH}/components/unity/unity/examples/example_3/src/ProductionCode.c \
+			$${IDF_PATH}/components/unity/unity/examples/example_2/src/ProductionCode.c \
+			$${IDF_PATH}/components/unity/unity/examples/example_1/src/ProductionCode.c \
+			$${IDF_PATH}/components/json/cJSON/tests/unity/examples/example_3/src/ProductionCode.c \
+			$${IDF_PATH}/components/json/cJSON/tests/unity/examples/example_2/src/ProductionCode.c \
+			$${IDF_PATH}/components/json/cJSON/tests/unity/examples/example_1/src/ProductionCode.c \
+			$${IDF_PATH}/components/unity/unity/examples/example_3/src/ProductionCode2.c \
+			$${IDF_PATH}/components/unity/unity/examples/example_2/src/ProductionCode2.c \
+			$${IDF_PATH}/components/unity/unity/examples/example_1/src/ProductionCode2.c \
 			$${IDF_PATH}/components/json/cJSON/tests/unity/examples/example_3/src/ProductionCode2.c \
 			$${IDF_PATH}/components/json/cJSON/tests/unity/examples/example_2/src/ProductionCode2.c \
 			$${IDF_PATH}/components/json/cJSON/tests/unity/examples/example_1/src/ProductionCode2.c \
@@ -783,9 +1070,6 @@
 			$${IDF_PATH}/components/spi_flash/sim/SpiFlash.cpp \
 			$${IDF_PATH}/components/spi_flash/sim/SpiFlash.cpp \
 			$${IDF_PATH}/components/spi_flash/sim/SpiFlash.cpp \
-			$${IDF_PATH}/components/json/cJSON/tests/unity/examples/example_3/test/TestProductionCode.c \
-			$${IDF_PATH}/components/json/cJSON/tests/unity/examples/example_2/test/TestProductionCode.c \
-			$${IDF_PATH}/components/json/cJSON/tests/unity/examples/example_1/test/TestProductionCode.c \
 			$${IDF_PATH}/components/unity/unity/examples/example_3/test/TestProductionCode.c \
 			$${IDF_PATH}/components/unity/unity/examples/example_2/test/TestProductionCode.c \
 			$${IDF_PATH}/components/unity/unity/examples/example_1/test/TestProductionCode.c \
@@ -798,9 +1082,12 @@
 			$${IDF_PATH}/components/json/cJSON/tests/unity/examples/example_3/test/TestProductionCode.c \
 			$${IDF_PATH}/components/json/cJSON/tests/unity/examples/example_2/test/TestProductionCode.c \
 			$${IDF_PATH}/components/json/cJSON/tests/unity/examples/example_1/test/TestProductionCode.c \
-			$${IDF_PATH}/components/json/cJSON/tests/unity/examples/example_3/test/TestProductionCode2.c \
-			$${IDF_PATH}/components/json/cJSON/tests/unity/examples/example_2/test/TestProductionCode2.c \
-			$${IDF_PATH}/components/json/cJSON/tests/unity/examples/example_1/test/TestProductionCode2.c \
+			$${IDF_PATH}/components/unity/unity/examples/example_3/test/TestProductionCode.c \
+			$${IDF_PATH}/components/unity/unity/examples/example_2/test/TestProductionCode.c \
+			$${IDF_PATH}/components/unity/unity/examples/example_1/test/TestProductionCode.c \
+			$${IDF_PATH}/components/json/cJSON/tests/unity/examples/example_3/test/TestProductionCode.c \
+			$${IDF_PATH}/components/json/cJSON/tests/unity/examples/example_2/test/TestProductionCode.c \
+			$${IDF_PATH}/components/json/cJSON/tests/unity/examples/example_1/test/TestProductionCode.c \
 			$${IDF_PATH}/components/unity/unity/examples/example_3/test/TestProductionCode2.c \
 			$${IDF_PATH}/components/unity/unity/examples/example_2/test/TestProductionCode2.c \
 			$${IDF_PATH}/components/unity/unity/examples/example_1/test/TestProductionCode2.c \
@@ -813,8 +1100,12 @@
 			$${IDF_PATH}/components/json/cJSON/tests/unity/examples/example_3/test/TestProductionCode2.c \
 			$${IDF_PATH}/components/json/cJSON/tests/unity/examples/example_2/test/TestProductionCode2.c \
 			$${IDF_PATH}/components/json/cJSON/tests/unity/examples/example_1/test/TestProductionCode2.c \
-			$${IDF_PATH}/components/json/cJSON/tests/unity/examples/example_2/test/test_runners/TestProductionCode2_Runner.c \
-			$${IDF_PATH}/components/json/cJSON/tests/unity/examples/example_1/test/test_runners/TestProductionCode2_Runner.c \
+			$${IDF_PATH}/components/unity/unity/examples/example_3/test/TestProductionCode2.c \
+			$${IDF_PATH}/components/unity/unity/examples/example_2/test/TestProductionCode2.c \
+			$${IDF_PATH}/components/unity/unity/examples/example_1/test/TestProductionCode2.c \
+			$${IDF_PATH}/components/json/cJSON/tests/unity/examples/example_3/test/TestProductionCode2.c \
+			$${IDF_PATH}/components/json/cJSON/tests/unity/examples/example_2/test/TestProductionCode2.c \
+			$${IDF_PATH}/components/json/cJSON/tests/unity/examples/example_1/test/TestProductionCode2.c \
 			$${IDF_PATH}/components/unity/unity/examples/example_2/test/test_runners/TestProductionCode2_Runner.c \
 			$${IDF_PATH}/components/unity/unity/examples/example_1/test/test_runners/TestProductionCode2_Runner.c \
 			$${IDF_PATH}/components/json/cJSON/tests/unity/examples/example_2/test/test_runners/TestProductionCode2_Runner.c \
@@ -823,8 +1114,10 @@
 			$${IDF_PATH}/components/unity/unity/examples/example_1/test/test_runners/TestProductionCode2_Runner.c \
 			$${IDF_PATH}/components/json/cJSON/tests/unity/examples/example_2/test/test_runners/TestProductionCode2_Runner.c \
 			$${IDF_PATH}/components/json/cJSON/tests/unity/examples/example_1/test/test_runners/TestProductionCode2_Runner.c \
-			$${IDF_PATH}/components/json/cJSON/tests/unity/examples/example_2/test/test_runners/TestProductionCode_Runner.c \
-			$${IDF_PATH}/components/json/cJSON/tests/unity/examples/example_1/test/test_runners/TestProductionCode_Runner.c \
+			$${IDF_PATH}/components/unity/unity/examples/example_2/test/test_runners/TestProductionCode2_Runner.c \
+			$${IDF_PATH}/components/unity/unity/examples/example_1/test/test_runners/TestProductionCode2_Runner.c \
+			$${IDF_PATH}/components/json/cJSON/tests/unity/examples/example_2/test/test_runners/TestProductionCode2_Runner.c \
+			$${IDF_PATH}/components/json/cJSON/tests/unity/examples/example_1/test/test_runners/TestProductionCode2_Runner.c \
 			$${IDF_PATH}/components/unity/unity/examples/example_2/test/test_runners/TestProductionCode_Runner.c \
 			$${IDF_PATH}/components/unity/unity/examples/example_1/test/test_runners/TestProductionCode_Runner.c \
 			$${IDF_PATH}/components/json/cJSON/tests/unity/examples/example_2/test/test_runners/TestProductionCode_Runner.c \
@@ -833,11 +1126,16 @@
 			$${IDF_PATH}/components/unity/unity/examples/example_1/test/test_runners/TestProductionCode_Runner.c \
 			$${IDF_PATH}/components/json/cJSON/tests/unity/examples/example_2/test/test_runners/TestProductionCode_Runner.c \
 			$${IDF_PATH}/components/json/cJSON/tests/unity/examples/example_1/test/test_runners/TestProductionCode_Runner.c \
-			$${IDF_PATH}/components/json/cJSON/tests/unity/examples/example_3/helper/UnityHelper.c \
+			$${IDF_PATH}/components/unity/unity/examples/example_2/test/test_runners/TestProductionCode_Runner.c \
+			$${IDF_PATH}/components/unity/unity/examples/example_1/test/test_runners/TestProductionCode_Runner.c \
+			$${IDF_PATH}/components/json/cJSON/tests/unity/examples/example_2/test/test_runners/TestProductionCode_Runner.c \
+			$${IDF_PATH}/components/json/cJSON/tests/unity/examples/example_1/test/test_runners/TestProductionCode_Runner.c \
 			$${IDF_PATH}/components/unity/unity/examples/example_3/helper/UnityHelper.c \
 			$${IDF_PATH}/components/json/cJSON/tests/unity/examples/example_3/helper/UnityHelper.c \
 			$${IDF_PATH}/components/unity/unity/examples/example_3/helper/UnityHelper.c \
 			$${IDF_PATH}/components/json/cJSON/tests/unity/examples/example_3/helper/UnityHelper.c \
+			$${IDF_PATH}/components/unity/unity/examples/example_3/helper/UnityHelper.c \
+			$${IDF_PATH}/components/json/cJSON/tests/unity/examples/example_3/helper/UnityHelper.c \
 			$${IDF_PATH}/components/wear_levelling/WL_Ext_Perf.cpp \
 			$${IDF_PATH}/components/wear_levelling/WL_Ext_Perf.cpp \
 			$${IDF_PATH}/components/wear_levelling/WL_Ext_Perf.cpp \
@@ -850,15 +1148,20 @@
 			$${IDF_PATH}/components/lwip/lwip/doc/ZeroCopyRx.c \
 			$${IDF_PATH}/components/lwip/lwip/doc/ZeroCopyRx.c \
 			$${IDF_PATH}/components/lwip/lwip/doc/ZeroCopyRx.c \
-			$${IDF_PATH}/components/bt/bluedroid/stack/a2dp/a2d_api.c \
-			$${IDF_PATH}/components/bt/bluedroid/stack/a2dp/a2d_api.c \
-			$${IDF_PATH}/components/bt/bluedroid/stack/a2dp/a2d_api.c \
-			$${IDF_PATH}/components/bt/bluedroid/stack/a2dp/a2d_sbc.c \
-			$${IDF_PATH}/components/bt/bluedroid/stack/a2dp/a2d_sbc.c \
-			$${IDF_PATH}/components/bt/bluedroid/stack/a2dp/a2d_sbc.c \
+			$${IDF_PATH}/components/bt/host/bluedroid/stack/a2dp/a2d_api.c \
+			$${IDF_PATH}/components/bt/host/bluedroid/stack/a2dp/a2d_api.c \
+			$${IDF_PATH}/components/bt/host/bluedroid/stack/a2dp/a2d_api.c \
+			$${IDF_PATH}/components/bt/host/bluedroid/stack/a2dp/a2d_sbc.c \
+			$${IDF_PATH}/components/bt/host/bluedroid/stack/a2dp/a2d_sbc.c \
+			$${IDF_PATH}/components/bt/host/bluedroid/stack/a2dp/a2d_sbc.c \
 			$${IDF_PATH}/components/bt/host/nimble/nimble/nimble/host/mesh/src/access.c \
+			$${IDF_PATH}/components/bt/esp_ble_mesh/mesh_core/access.c \
 			$${IDF_PATH}/components/bt/host/nimble/nimble/nimble/host/mesh/src/access.c \
+			$${IDF_PATH}/components/bt/esp_ble_mesh/mesh_core/access.c \
 			$${IDF_PATH}/components/bt/host/nimble/nimble/nimble/host/mesh/src/access.c \
+			$${IDF_PATH}/components/bt/esp_ble_mesh/mesh_core/access.c \
+			$${IDF_PATH}/components/asio/asio/asio/src/examples/cpp14/executors/actor.cpp \
+			$${IDF_PATH}/components/asio/asio/asio/src/examples/cpp11/executors/actor.cpp \
 			$${IDF_PATH}/components/asio/asio/asio/src/examples/cpp14/executors/actor.cpp \
 			$${IDF_PATH}/components/asio/asio/asio/src/examples/cpp11/executors/actor.cpp \
 			$${IDF_PATH}/components/asio/asio/asio/src/examples/cpp14/executors/actor.cpp \
@@ -871,21 +1174,31 @@
 			$${IDF_PATH}/components/coap/libcoap/src/address.c \
 			$${IDF_PATH}/components/asio/asio/asio/src/tests/unit/ip/address.cpp \
 			$${IDF_PATH}/components/asio/asio/asio/src/tests/unit/ip/address.cpp \
+			$${IDF_PATH}/components/asio/asio/asio/src/tests/unit/ip/address.cpp \
+			$${IDF_PATH}/components/asio/asio/asio/src/tests/unit/ip/address_v4.cpp \
 			$${IDF_PATH}/components/asio/asio/asio/src/tests/unit/ip/address_v4.cpp \
 			$${IDF_PATH}/components/asio/asio/asio/src/tests/unit/ip/address_v4.cpp \
 			$${IDF_PATH}/components/asio/asio/asio/src/tests/unit/ip/address_v4_iterator.cpp \
 			$${IDF_PATH}/components/asio/asio/asio/src/tests/unit/ip/address_v4_iterator.cpp \
+			$${IDF_PATH}/components/asio/asio/asio/src/tests/unit/ip/address_v4_iterator.cpp \
+			$${IDF_PATH}/components/asio/asio/asio/src/tests/unit/ip/address_v4_range.cpp \
 			$${IDF_PATH}/components/asio/asio/asio/src/tests/unit/ip/address_v4_range.cpp \
 			$${IDF_PATH}/components/asio/asio/asio/src/tests/unit/ip/address_v4_range.cpp \
 			$${IDF_PATH}/components/asio/asio/asio/src/tests/unit/ip/address_v6.cpp \
 			$${IDF_PATH}/components/asio/asio/asio/src/tests/unit/ip/address_v6.cpp \
+			$${IDF_PATH}/components/asio/asio/asio/src/tests/unit/ip/address_v6.cpp \
+			$${IDF_PATH}/components/asio/asio/asio/src/tests/unit/ip/address_v6_iterator.cpp \
 			$${IDF_PATH}/components/asio/asio/asio/src/tests/unit/ip/address_v6_iterator.cpp \
 			$${IDF_PATH}/components/asio/asio/asio/src/tests/unit/ip/address_v6_iterator.cpp \
 			$${IDF_PATH}/components/asio/asio/asio/src/tests/unit/ip/address_v6_range.cpp \
 			$${IDF_PATH}/components/asio/asio/asio/src/tests/unit/ip/address_v6_range.cpp \
+			$${IDF_PATH}/components/asio/asio/asio/src/tests/unit/ip/address_v6_range.cpp \
 			$${IDF_PATH}/components/bt/host/nimble/nimble/nimble/host/mesh/src/adv.c \
+			$${IDF_PATH}/components/bt/esp_ble_mesh/mesh_core/adv.c \
 			$${IDF_PATH}/components/bt/host/nimble/nimble/nimble/host/mesh/src/adv.c \
+			$${IDF_PATH}/components/bt/esp_ble_mesh/mesh_core/adv.c \
 			$${IDF_PATH}/components/bt/host/nimble/nimble/nimble/host/mesh/src/adv.c \
+			$${IDF_PATH}/components/bt/esp_ble_mesh/mesh_core/adv.c \
 			$${IDF_PATH}/components/libsodium/libsodium/test/default/aead_aes256gcm.c \
 			$${IDF_PATH}/components/libsodium/libsodium/test/default/aead_aes256gcm.c \
 			$${IDF_PATH}/components/libsodium/libsodium/test/default/aead_aes256gcm.c \
@@ -907,6 +1220,9 @@
 			$${IDF_PATH}/components/wpa_supplicant/src/crypto/aes-cbc.c \
 			$${IDF_PATH}/components/wpa_supplicant/src/crypto/aes-cbc.c \
 			$${IDF_PATH}/components/wpa_supplicant/src/crypto/aes-cbc.c \
+			$${IDF_PATH}/components/wpa_supplicant/src/crypto/aes-ccm.c \
+			$${IDF_PATH}/components/wpa_supplicant/src/crypto/aes-ccm.c \
+			$${IDF_PATH}/components/wpa_supplicant/src/crypto/aes-ccm.c \
 			$${IDF_PATH}/components/wpa_supplicant/src/crypto/aes-internal-dec.c \
 			$${IDF_PATH}/components/wpa_supplicant/src/crypto/aes-internal-dec.c \
 			$${IDF_PATH}/components/wpa_supplicant/src/crypto/aes-internal-dec.c \
@@ -916,27 +1232,36 @@
 			$${IDF_PATH}/components/wpa_supplicant/src/crypto/aes-internal.c \
 			$${IDF_PATH}/components/wpa_supplicant/src/crypto/aes-internal.c \
 			$${IDF_PATH}/components/wpa_supplicant/src/crypto/aes-internal.c \
+			$${IDF_PATH}/components/wpa_supplicant/src/crypto/aes-omac1.c \
+			$${IDF_PATH}/components/wpa_supplicant/src/crypto/aes-omac1.c \
+			$${IDF_PATH}/components/wpa_supplicant/src/crypto/aes-omac1.c \
 			$${IDF_PATH}/components/wpa_supplicant/src/crypto/aes-unwrap.c \
 			$${IDF_PATH}/components/wpa_supplicant/src/crypto/aes-unwrap.c \
 			$${IDF_PATH}/components/wpa_supplicant/src/crypto/aes-unwrap.c \
 			$${IDF_PATH}/components/wpa_supplicant/src/crypto/aes-wrap.c \
 			$${IDF_PATH}/components/wpa_supplicant/src/crypto/aes-wrap.c \
 			$${IDF_PATH}/components/wpa_supplicant/src/crypto/aes-wrap.c \
+			$${IDF_PATH}/components/mbedtls/port/esp32/aes.c \
 			$${IDF_PATH}/components/mbedtls/mbedtls/library/aes.c \
-			$${IDF_PATH}/components/esp32/hwcrypto/aes.c \
-			$${IDF_PATH}/components/bt/bluedroid/stack/smp/aes.c \
+			$${IDF_PATH}/components/bt/host/bluedroid/stack/smp/aes.c \
+			$${IDF_PATH}/components/mbedtls/port/esp32/aes.c \
 			$${IDF_PATH}/components/mbedtls/mbedtls/library/aes.c \
-			$${IDF_PATH}/components/esp32/hwcrypto/aes.c \
-			$${IDF_PATH}/components/bt/bluedroid/stack/smp/aes.c \
+			$${IDF_PATH}/components/bt/host/bluedroid/stack/smp/aes.c \
+			$${IDF_PATH}/components/mbedtls/port/esp32/aes.c \
 			$${IDF_PATH}/components/mbedtls/mbedtls/library/aes.c \
-			$${IDF_PATH}/components/esp32/hwcrypto/aes.c \
-			$${IDF_PATH}/components/bt/bluedroid/stack/smp/aes.c \
+			$${IDF_PATH}/components/bt/host/bluedroid/stack/smp/aes.c \
 			$${IDF_PATH}/components/bt/host/nimble/nimble/ext/tinycrypt/src/aes_decrypt.c \
+			$${IDF_PATH}/components/bt/esp_ble_mesh/mesh_common/tinycrypt/src/aes_decrypt.c \
 			$${IDF_PATH}/components/bt/host/nimble/nimble/ext/tinycrypt/src/aes_decrypt.c \
+			$${IDF_PATH}/components/bt/esp_ble_mesh/mesh_common/tinycrypt/src/aes_decrypt.c \
 			$${IDF_PATH}/components/bt/host/nimble/nimble/ext/tinycrypt/src/aes_decrypt.c \
+			$${IDF_PATH}/components/bt/esp_ble_mesh/mesh_common/tinycrypt/src/aes_decrypt.c \
 			$${IDF_PATH}/components/bt/host/nimble/nimble/ext/tinycrypt/src/aes_encrypt.c \
+			$${IDF_PATH}/components/bt/esp_ble_mesh/mesh_common/tinycrypt/src/aes_encrypt.c \
 			$${IDF_PATH}/components/bt/host/nimble/nimble/ext/tinycrypt/src/aes_encrypt.c \
+			$${IDF_PATH}/components/bt/esp_ble_mesh/mesh_common/tinycrypt/src/aes_encrypt.c \
 			$${IDF_PATH}/components/bt/host/nimble/nimble/ext/tinycrypt/src/aes_encrypt.c \
+			$${IDF_PATH}/components/bt/esp_ble_mesh/mesh_common/tinycrypt/src/aes_encrypt.c \
 			$${IDF_PATH}/components/mbedtls/mbedtls/programs/aes/aescrypt2.c \
 			$${IDF_PATH}/components/mbedtls/mbedtls/programs/aes/aescrypt2.c \
 			$${IDF_PATH}/components/mbedtls/mbedtls/programs/aes/aescrypt2.c \
@@ -949,20 +1274,21 @@
 			$${IDF_PATH}/components/libsodium/libsodium/src/libsodium/crypto_stream/aes128ctr/nacl/afternm_aes128ctr.c \
 			$${IDF_PATH}/components/libsodium/libsodium/src/libsodium/crypto_stream/aes128ctr/nacl/afternm_aes128ctr.c \
 			$${IDF_PATH}/components/libsodium/libsodium/src/libsodium/crypto_stream/aes128ctr/nacl/afternm_aes128ctr.c \
-			$${IDF_PATH}/components/bt/bluedroid/osi/alarm.c \
-			$${IDF_PATH}/components/bt/bluedroid/osi/alarm.c \
-			$${IDF_PATH}/components/bt/bluedroid/osi/alarm.c \
-			$${IDF_PATH}/components/json/cJSON/tests/unity/examples/example_2/test/test_runners/all_tests.c \
+			$${IDF_PATH}/components/bt/common/osi/alarm.c \
+			$${IDF_PATH}/components/bt/common/osi/alarm.c \
+			$${IDF_PATH}/components/bt/common/osi/alarm.c \
 			$${IDF_PATH}/components/unity/unity/examples/example_2/test/test_runners/all_tests.c \
 			$${IDF_PATH}/components/json/cJSON/tests/unity/examples/example_2/test/test_runners/all_tests.c \
 			$${IDF_PATH}/components/unity/unity/examples/example_2/test/test_runners/all_tests.c \
 			$${IDF_PATH}/components/json/cJSON/tests/unity/examples/example_2/test/test_runners/all_tests.c \
-			$${IDF_PATH}/components/bt/bluedroid/external/sbc/decoder/srce/alloc.c \
-			$${IDF_PATH}/components/bt/bluedroid/external/sbc/decoder/srce/alloc.c \
-			$${IDF_PATH}/components/bt/bluedroid/external/sbc/decoder/srce/alloc.c \
-			$${IDF_PATH}/components/bt/bluedroid/osi/allocator.c \
-			$${IDF_PATH}/components/bt/bluedroid/osi/allocator.c \
-			$${IDF_PATH}/components/bt/bluedroid/osi/allocator.c \
+			$${IDF_PATH}/components/unity/unity/examples/example_2/test/test_runners/all_tests.c \
+			$${IDF_PATH}/components/json/cJSON/tests/unity/examples/example_2/test/test_runners/all_tests.c \
+			$${IDF_PATH}/components/bt/host/bluedroid/external/sbc/decoder/srce/alloc.c \
+			$${IDF_PATH}/components/bt/host/bluedroid/external/sbc/decoder/srce/alloc.c \
+			$${IDF_PATH}/components/bt/host/bluedroid/external/sbc/decoder/srce/alloc.c \
+			$${IDF_PATH}/components/bt/common/osi/allocator.c \
+			$${IDF_PATH}/components/bt/common/osi/allocator.c \
+			$${IDF_PATH}/components/bt/common/osi/allocator.c \
 			$${IDF_PATH}/components/lwip/lwip/src/core/altcp.c \
 			$${IDF_PATH}/components/lwip/lwip/src/core/altcp.c \
 			$${IDF_PATH}/components/lwip/lwip/src/core/altcp.c \
@@ -981,18 +1307,15 @@
 			$${IDF_PATH}/components/lwip/lwip/src/apps/altcp_tls/altcp_tls_mbedtls_mem.c \
 			$${IDF_PATH}/components/lwip/lwip/src/apps/altcp_tls/altcp_tls_mbedtls_mem.c \
 			$${IDF_PATH}/components/lwip/lwip/src/apps/altcp_tls/altcp_tls_mbedtls_mem.c \
+			$${IDF_PATH}/components/wpa_supplicant/src/ap/ap_config.c \
+			$${IDF_PATH}/components/wpa_supplicant/src/ap/ap_config.c \
+			$${IDF_PATH}/components/wpa_supplicant/src/ap/ap_config.c \
 			$${IDF_PATH}/components/lwip/lwip/src/api/api_lib.c \
-			$${IDF_PATH}/components/lwip/api/api_lib.c \
 			$${IDF_PATH}/components/lwip/lwip/src/api/api_lib.c \
-			$${IDF_PATH}/components/lwip/api/api_lib.c \
 			$${IDF_PATH}/components/lwip/lwip/src/api/api_lib.c \
-			$${IDF_PATH}/components/lwip/api/api_lib.c \
 			$${IDF_PATH}/components/lwip/lwip/src/api/api_msg.c \
-			$${IDF_PATH}/components/lwip/api/api_msg.c \
 			$${IDF_PATH}/components/lwip/lwip/src/api/api_msg.c \
-			$${IDF_PATH}/components/lwip/api/api_msg.c \
 			$${IDF_PATH}/components/lwip/lwip/src/api/api_msg.c \
-			$${IDF_PATH}/components/lwip/api/api_msg.c \
 			$${IDF_PATH}/components/nghttp/nghttp2/third-party/mruby/mrbgems/mruby-bin-debugger/tools/mrdb/apibreak.c \
 			$${IDF_PATH}/components/nghttp/nghttp2/third-party/mruby/mrbgems/mruby-bin-debugger/tools/mrdb/apibreak.c \
 			$${IDF_PATH}/components/nghttp/nghttp2/third-party/mruby/mrbgems/mruby-bin-debugger/tools/mrdb/apibreak.c \
@@ -1012,13 +1335,10 @@
 			$${IDF_PATH}/components/app_trace/app_trace_util.c \
 			$${IDF_PATH}/components/app_trace/app_trace_util.c \
 			$${IDF_PATH}/components/mbedtls/mbedtls/library/arc4.c \
-			$${IDF_PATH}/components/lwip/netif/ppp/polarssl/arc4.c \
 			$${IDF_PATH}/components/lwip/lwip/src/netif/ppp/polarssl/arc4.c \
 			$${IDF_PATH}/components/mbedtls/mbedtls/library/arc4.c \
-			$${IDF_PATH}/components/lwip/netif/ppp/polarssl/arc4.c \
 			$${IDF_PATH}/components/lwip/lwip/src/netif/ppp/polarssl/arc4.c \
 			$${IDF_PATH}/components/mbedtls/mbedtls/library/arc4.c \
-			$${IDF_PATH}/components/lwip/netif/ppp/polarssl/arc4.c \
 			$${IDF_PATH}/components/lwip/lwip/src/netif/ppp/polarssl/arc4.c \
 			$${IDF_PATH}/components/libsodium/libsodium/src/libsodium/crypto_pwhash/argon2/argon2-core.c \
 			$${IDF_PATH}/components/libsodium/libsodium/src/libsodium/crypto_pwhash/argon2/argon2-core.c \
@@ -1049,11 +1369,13 @@
 			$${IDF_PATH}/components/nghttp/nghttp2/third-party/mruby/mrbgems/mruby-array-ext/src/array.c \
 			$${IDF_PATH}/components/asio/asio/asio/src/asio.cpp \
 			$${IDF_PATH}/components/asio/asio/asio/src/asio.cpp \
+			$${IDF_PATH}/components/asio/asio/asio/src/asio.cpp \
 			$${IDF_PATH}/components/asio/asio/asio/src/asio_ssl.cpp \
 			$${IDF_PATH}/components/asio/asio/asio/src/asio_ssl.cpp \
-			$${IDF_PATH}/components/wpa_supplicant/src/wpa2/tls/asn1.c \
-			$${IDF_PATH}/components/wpa_supplicant/src/wpa2/tls/asn1.c \
-			$${IDF_PATH}/components/wpa_supplicant/src/wpa2/tls/asn1.c \
+			$${IDF_PATH}/components/asio/asio/asio/src/asio_ssl.cpp \
+			$${IDF_PATH}/components/wpa_supplicant/src/tls/asn1.c \
+			$${IDF_PATH}/components/wpa_supplicant/src/tls/asn1.c \
+			$${IDF_PATH}/components/wpa_supplicant/src/tls/asn1.c \
 			$${IDF_PATH}/components/mbedtls/mbedtls/library/asn1parse.c \
 			$${IDF_PATH}/components/mbedtls/mbedtls/library/asn1parse.c \
 			$${IDF_PATH}/components/mbedtls/mbedtls/library/asn1parse.c \
@@ -1062,6 +1384,8 @@
 			$${IDF_PATH}/components/mbedtls/mbedtls/library/asn1write.c \
 			$${IDF_PATH}/components/asio/asio/asio/src/tests/unit/associated_allocator.cpp \
 			$${IDF_PATH}/components/asio/asio/asio/src/tests/unit/associated_allocator.cpp \
+			$${IDF_PATH}/components/asio/asio/asio/src/tests/unit/associated_allocator.cpp \
+			$${IDF_PATH}/components/asio/asio/asio/src/tests/unit/associated_executor.cpp \
 			$${IDF_PATH}/components/asio/asio/asio/src/tests/unit/associated_executor.cpp \
 			$${IDF_PATH}/components/asio/asio/asio/src/tests/unit/associated_executor.cpp \
 			$${IDF_PATH}/components/coap/libcoap/src/async.c \
@@ -1069,14 +1393,22 @@
 			$${IDF_PATH}/components/coap/libcoap/src/async.c \
 			$${IDF_PATH}/components/asio/asio/asio/src/examples/cpp14/executors/async_1.cpp \
 			$${IDF_PATH}/components/asio/asio/asio/src/examples/cpp14/executors/async_1.cpp \
+			$${IDF_PATH}/components/asio/asio/asio/src/examples/cpp14/executors/async_1.cpp \
+			$${IDF_PATH}/components/asio/asio/asio/src/examples/cpp14/executors/async_2.cpp \
 			$${IDF_PATH}/components/asio/asio/asio/src/examples/cpp14/executors/async_2.cpp \
 			$${IDF_PATH}/components/asio/asio/asio/src/examples/cpp14/executors/async_2.cpp \
 			$${IDF_PATH}/components/asio/asio/asio/src/examples/cpp03/http/client/async_client.cpp \
 			$${IDF_PATH}/components/asio/asio/asio/src/examples/cpp03/http/client/async_client.cpp \
+			$${IDF_PATH}/components/asio/asio/asio/src/examples/cpp03/http/client/async_client.cpp \
+			$${IDF_PATH}/components/asio/asio/asio/src/tests/unit/async_result.cpp \
 			$${IDF_PATH}/components/asio/asio/asio/src/tests/unit/async_result.cpp \
 			$${IDF_PATH}/components/asio/asio/asio/src/tests/unit/async_result.cpp \
 			$${IDF_PATH}/components/asio/asio/asio/src/examples/cpp03/timeouts/async_tcp_client.cpp \
 			$${IDF_PATH}/components/asio/asio/asio/src/examples/cpp03/timeouts/async_tcp_client.cpp \
+			$${IDF_PATH}/components/asio/asio/asio/src/examples/cpp03/timeouts/async_tcp_client.cpp \
+			$${IDF_PATH}/components/asio/asio/asio/src/examples/cpp14/echo/async_tcp_echo_server.cpp \
+			$${IDF_PATH}/components/asio/asio/asio/src/examples/cpp11/echo/async_tcp_echo_server.cpp \
+			$${IDF_PATH}/components/asio/asio/asio/src/examples/cpp03/echo/async_tcp_echo_server.cpp \
 			$${IDF_PATH}/components/asio/asio/asio/src/examples/cpp14/echo/async_tcp_echo_server.cpp \
 			$${IDF_PATH}/components/asio/asio/asio/src/examples/cpp11/echo/async_tcp_echo_server.cpp \
 			$${IDF_PATH}/components/asio/asio/asio/src/examples/cpp03/echo/async_tcp_echo_server.cpp \
@@ -1089,16 +1421,16 @@
 			$${IDF_PATH}/components/asio/asio/asio/src/examples/cpp14/echo/async_udp_echo_server.cpp \
 			$${IDF_PATH}/components/asio/asio/asio/src/examples/cpp11/echo/async_udp_echo_server.cpp \
 			$${IDF_PATH}/components/asio/asio/asio/src/examples/cpp03/echo/async_udp_echo_server.cpp \
-			$${IDF_PATH}/components/bt/bluedroid/stack/gatt/att_protocol.c \
-			$${IDF_PATH}/components/bt/bluedroid/stack/gatt/att_protocol.c \
-			$${IDF_PATH}/components/bt/bluedroid/stack/gatt/att_protocol.c \
-			$${IDF_PATH}/components/lwip/netif/ppp/auth.c \
+			$${IDF_PATH}/components/asio/asio/asio/src/examples/cpp14/echo/async_udp_echo_server.cpp \
+			$${IDF_PATH}/components/asio/asio/asio/src/examples/cpp11/echo/async_udp_echo_server.cpp \
+			$${IDF_PATH}/components/asio/asio/asio/src/examples/cpp03/echo/async_udp_echo_server.cpp \
+			$${IDF_PATH}/components/bt/host/bluedroid/stack/gatt/att_protocol.c \
+			$${IDF_PATH}/components/bt/host/bluedroid/stack/gatt/att_protocol.c \
+			$${IDF_PATH}/components/bt/host/bluedroid/stack/gatt/att_protocol.c \
 			$${IDF_PATH}/components/lwip/lwip/src/netif/ppp/auth.c \
 			$${IDF_PATH}/components/libsodium/libsodium/test/default/auth.c \
-			$${IDF_PATH}/components/lwip/netif/ppp/auth.c \
 			$${IDF_PATH}/components/lwip/lwip/src/netif/ppp/auth.c \
 			$${IDF_PATH}/components/libsodium/libsodium/test/default/auth.c \
-			$${IDF_PATH}/components/lwip/netif/ppp/auth.c \
 			$${IDF_PATH}/components/lwip/lwip/src/netif/ppp/auth.c \
 			$${IDF_PATH}/components/libsodium/libsodium/test/default/auth.c \
 			$${IDF_PATH}/components/libsodium/libsodium/test/default/auth2.c \
@@ -1126,207 +1458,179 @@
 			$${IDF_PATH}/components/libsodium/libsodium/src/libsodium/crypto_auth/hmacsha512256/auth_hmacsha512256.c \
 			$${IDF_PATH}/components/libsodium/libsodium/src/libsodium/crypto_auth/hmacsha512256/auth_hmacsha512256.c \
 			$${IDF_PATH}/components/lwip/lwip/src/core/ipv4/autoip.c \
-			$${IDF_PATH}/components/lwip/core/ipv4/autoip.c \
 			$${IDF_PATH}/components/lwip/lwip/src/core/ipv4/autoip.c \
-			$${IDF_PATH}/components/lwip/core/ipv4/autoip.c \
 			$${IDF_PATH}/components/lwip/lwip/src/core/ipv4/autoip.c \
-			$${IDF_PATH}/components/lwip/core/ipv4/autoip.c \
-			$${IDF_PATH}/components/bt/bluedroid/stack/avct/avct_api.c \
-			$${IDF_PATH}/components/bt/bluedroid/stack/avct/avct_api.c \
-			$${IDF_PATH}/components/bt/bluedroid/stack/avct/avct_api.c \
-			$${IDF_PATH}/components/bt/bluedroid/stack/avct/avct_ccb.c \
-			$${IDF_PATH}/components/bt/bluedroid/stack/avct/avct_ccb.c \
-			$${IDF_PATH}/components/bt/bluedroid/stack/avct/avct_ccb.c \
-			$${IDF_PATH}/components/bt/bluedroid/stack/avct/avct_l2c.c \
-			$${IDF_PATH}/components/bt/bluedroid/stack/avct/avct_l2c.c \
-			$${IDF_PATH}/components/bt/bluedroid/stack/avct/avct_l2c.c \
-			$${IDF_PATH}/components/bt/bluedroid/stack/avct/avct_lcb.c \
-			$${IDF_PATH}/components/bt/bluedroid/stack/avct/avct_lcb.c \
-			$${IDF_PATH}/components/bt/bluedroid/stack/avct/avct_lcb.c \
-			$${IDF_PATH}/components/bt/bluedroid/stack/avct/avct_lcb_act.c \
-			$${IDF_PATH}/components/bt/bluedroid/stack/avct/avct_lcb_act.c \
-			$${IDF_PATH}/components/bt/bluedroid/stack/avct/avct_lcb_act.c \
-			$${IDF_PATH}/components/bt/bluedroid/stack/avdt/avdt_ad.c \
-			$${IDF_PATH}/components/bt/bluedroid/stack/avdt/avdt_ad.c \
-			$${IDF_PATH}/components/bt/bluedroid/stack/avdt/avdt_ad.c \
-			$${IDF_PATH}/components/bt/bluedroid/stack/avdt/avdt_api.c \
-			$${IDF_PATH}/components/bt/bluedroid/stack/avdt/avdt_api.c \
-			$${IDF_PATH}/components/bt/bluedroid/stack/avdt/avdt_api.c \
-			$${IDF_PATH}/components/bt/bluedroid/stack/avdt/avdt_ccb.c \
-			$${IDF_PATH}/components/bt/bluedroid/stack/avdt/avdt_ccb.c \
-			$${IDF_PATH}/components/bt/bluedroid/stack/avdt/avdt_ccb.c \
-			$${IDF_PATH}/components/bt/bluedroid/stack/avdt/avdt_ccb_act.c \
-			$${IDF_PATH}/components/bt/bluedroid/stack/avdt/avdt_ccb_act.c \
-			$${IDF_PATH}/components/bt/bluedroid/stack/avdt/avdt_ccb_act.c \
-			$${IDF_PATH}/components/bt/bluedroid/stack/avdt/avdt_l2c.c \
-			$${IDF_PATH}/components/bt/bluedroid/stack/avdt/avdt_l2c.c \
-			$${IDF_PATH}/components/bt/bluedroid/stack/avdt/avdt_l2c.c \
-			$${IDF_PATH}/components/bt/bluedroid/stack/avdt/avdt_msg.c \
-			$${IDF_PATH}/components/bt/bluedroid/stack/avdt/avdt_msg.c \
-			$${IDF_PATH}/components/bt/bluedroid/stack/avdt/avdt_msg.c \
-			$${IDF_PATH}/components/bt/bluedroid/stack/avdt/avdt_scb.c \
-			$${IDF_PATH}/components/bt/bluedroid/stack/avdt/avdt_scb.c \
-			$${IDF_PATH}/components/bt/bluedroid/stack/avdt/avdt_scb.c \
-			$${IDF_PATH}/components/bt/bluedroid/stack/avdt/avdt_scb_act.c \
-			$${IDF_PATH}/components/bt/bluedroid/stack/avdt/avdt_scb_act.c \
-			$${IDF_PATH}/components/bt/bluedroid/stack/avdt/avdt_scb_act.c \
-			$${IDF_PATH}/components/bt/bluedroid/stack/avrc/avrc_api.c \
-			$${IDF_PATH}/components/bt/bluedroid/stack/avrc/avrc_api.c \
-			$${IDF_PATH}/components/bt/bluedroid/stack/avrc/avrc_api.c \
-			$${IDF_PATH}/components/bt/bluedroid/stack/avrc/avrc_bld_ct.c \
-			$${IDF_PATH}/components/bt/bluedroid/stack/avrc/avrc_bld_ct.c \
-			$${IDF_PATH}/components/bt/bluedroid/stack/avrc/avrc_bld_ct.c \
-			$${IDF_PATH}/components/bt/bluedroid/stack/avrc/avrc_bld_tg.c \
-			$${IDF_PATH}/components/bt/bluedroid/stack/avrc/avrc_bld_tg.c \
-			$${IDF_PATH}/components/bt/bluedroid/stack/avrc/avrc_bld_tg.c \
-			$${IDF_PATH}/components/bt/bluedroid/stack/avrc/avrc_opt.c \
-			$${IDF_PATH}/components/bt/bluedroid/stack/avrc/avrc_opt.c \
-			$${IDF_PATH}/components/bt/bluedroid/stack/avrc/avrc_opt.c \
-			$${IDF_PATH}/components/bt/bluedroid/stack/avrc/avrc_pars_ct.c \
-			$${IDF_PATH}/components/bt/bluedroid/stack/avrc/avrc_pars_ct.c \
-			$${IDF_PATH}/components/bt/bluedroid/stack/avrc/avrc_pars_ct.c \
-			$${IDF_PATH}/components/bt/bluedroid/stack/avrc/avrc_pars_tg.c \
-			$${IDF_PATH}/components/bt/bluedroid/stack/avrc/avrc_pars_tg.c \
-			$${IDF_PATH}/components/bt/bluedroid/stack/avrc/avrc_pars_tg.c \
-			$${IDF_PATH}/components/bt/bluedroid/stack/avrc/avrc_sdp.c \
-			$${IDF_PATH}/components/bt/bluedroid/stack/avrc/avrc_sdp.c \
-			$${IDF_PATH}/components/bt/bluedroid/stack/avrc/avrc_sdp.c \
-			$${IDF_PATH}/components/bt/bluedroid/stack/avrc/avrc_utils.c \
-			$${IDF_PATH}/components/bt/bluedroid/stack/avrc/avrc_utils.c \
-			$${IDF_PATH}/components/bt/bluedroid/stack/avrc/avrc_utils.c \
-			$${IDF_PATH}/components/aws_iot/aws-iot-device-sdk-embedded-C/src/aws_iot_json_utils.c \
+			$${IDF_PATH}/components/bt/host/bluedroid/stack/avct/avct_api.c \
+			$${IDF_PATH}/components/bt/host/bluedroid/stack/avct/avct_api.c \
+			$${IDF_PATH}/components/bt/host/bluedroid/stack/avct/avct_api.c \
+			$${IDF_PATH}/components/bt/host/bluedroid/stack/avct/avct_ccb.c \
+			$${IDF_PATH}/components/bt/host/bluedroid/stack/avct/avct_ccb.c \
+			$${IDF_PATH}/components/bt/host/bluedroid/stack/avct/avct_ccb.c \
+			$${IDF_PATH}/components/bt/host/bluedroid/stack/avct/avct_l2c.c \
+			$${IDF_PATH}/components/bt/host/bluedroid/stack/avct/avct_l2c.c \
+			$${IDF_PATH}/components/bt/host/bluedroid/stack/avct/avct_l2c.c \
+			$${IDF_PATH}/components/bt/host/bluedroid/stack/avct/avct_lcb.c \
+			$${IDF_PATH}/components/bt/host/bluedroid/stack/avct/avct_lcb.c \
+			$${IDF_PATH}/components/bt/host/bluedroid/stack/avct/avct_lcb.c \
+			$${IDF_PATH}/components/bt/host/bluedroid/stack/avct/avct_lcb_act.c \
+			$${IDF_PATH}/components/bt/host/bluedroid/stack/avct/avct_lcb_act.c \
+			$${IDF_PATH}/components/bt/host/bluedroid/stack/avct/avct_lcb_act.c \
+			$${IDF_PATH}/components/bt/host/bluedroid/stack/avdt/avdt_ad.c \
+			$${IDF_PATH}/components/bt/host/bluedroid/stack/avdt/avdt_ad.c \
+			$${IDF_PATH}/components/bt/host/bluedroid/stack/avdt/avdt_ad.c \
+			$${IDF_PATH}/components/bt/host/bluedroid/stack/avdt/avdt_api.c \
+			$${IDF_PATH}/components/bt/host/bluedroid/stack/avdt/avdt_api.c \
+			$${IDF_PATH}/components/bt/host/bluedroid/stack/avdt/avdt_api.c \
+			$${IDF_PATH}/components/bt/host/bluedroid/stack/avdt/avdt_ccb.c \
+			$${IDF_PATH}/components/bt/host/bluedroid/stack/avdt/avdt_ccb.c \
+			$${IDF_PATH}/components/bt/host/bluedroid/stack/avdt/avdt_ccb.c \
+			$${IDF_PATH}/components/bt/host/bluedroid/stack/avdt/avdt_ccb_act.c \
+			$${IDF_PATH}/components/bt/host/bluedroid/stack/avdt/avdt_ccb_act.c \
+			$${IDF_PATH}/components/bt/host/bluedroid/stack/avdt/avdt_ccb_act.c \
+			$${IDF_PATH}/components/bt/host/bluedroid/stack/avdt/avdt_l2c.c \
+			$${IDF_PATH}/components/bt/host/bluedroid/stack/avdt/avdt_l2c.c \
+			$${IDF_PATH}/components/bt/host/bluedroid/stack/avdt/avdt_l2c.c \
+			$${IDF_PATH}/components/bt/host/bluedroid/stack/avdt/avdt_msg.c \
+			$${IDF_PATH}/components/bt/host/bluedroid/stack/avdt/avdt_msg.c \
+			$${IDF_PATH}/components/bt/host/bluedroid/stack/avdt/avdt_msg.c \
+			$${IDF_PATH}/components/bt/host/bluedroid/stack/avdt/avdt_scb.c \
+			$${IDF_PATH}/components/bt/host/bluedroid/stack/avdt/avdt_scb.c \
+			$${IDF_PATH}/components/bt/host/bluedroid/stack/avdt/avdt_scb.c \
+			$${IDF_PATH}/components/bt/host/bluedroid/stack/avdt/avdt_scb_act.c \
+			$${IDF_PATH}/components/bt/host/bluedroid/stack/avdt/avdt_scb_act.c \
+			$${IDF_PATH}/components/bt/host/bluedroid/stack/avdt/avdt_scb_act.c \
+			$${IDF_PATH}/components/bt/host/bluedroid/stack/avrc/avrc_api.c \
+			$${IDF_PATH}/components/bt/host/bluedroid/stack/avrc/avrc_api.c \
+			$${IDF_PATH}/components/bt/host/bluedroid/stack/avrc/avrc_api.c \
+			$${IDF_PATH}/components/bt/host/bluedroid/stack/avrc/avrc_bld_ct.c \
+			$${IDF_PATH}/components/bt/host/bluedroid/stack/avrc/avrc_bld_ct.c \
+			$${IDF_PATH}/components/bt/host/bluedroid/stack/avrc/avrc_bld_ct.c \
+			$${IDF_PATH}/components/bt/host/bluedroid/stack/avrc/avrc_bld_tg.c \
+			$${IDF_PATH}/components/bt/host/bluedroid/stack/avrc/avrc_bld_tg.c \
+			$${IDF_PATH}/components/bt/host/bluedroid/stack/avrc/avrc_bld_tg.c \
+			$${IDF_PATH}/components/bt/host/bluedroid/stack/avrc/avrc_opt.c \
+			$${IDF_PATH}/components/bt/host/bluedroid/stack/avrc/avrc_opt.c \
+			$${IDF_PATH}/components/bt/host/bluedroid/stack/avrc/avrc_opt.c \
+			$${IDF_PATH}/components/bt/host/bluedroid/stack/avrc/avrc_pars_ct.c \
+			$${IDF_PATH}/components/bt/host/bluedroid/stack/avrc/avrc_pars_ct.c \
+			$${IDF_PATH}/components/bt/host/bluedroid/stack/avrc/avrc_pars_ct.c \
+			$${IDF_PATH}/components/bt/host/bluedroid/stack/avrc/avrc_pars_tg.c \
+			$${IDF_PATH}/components/bt/host/bluedroid/stack/avrc/avrc_pars_tg.c \
+			$${IDF_PATH}/components/bt/host/bluedroid/stack/avrc/avrc_pars_tg.c \
+			$${IDF_PATH}/components/bt/host/bluedroid/stack/avrc/avrc_sdp.c \
+			$${IDF_PATH}/components/bt/host/bluedroid/stack/avrc/avrc_sdp.c \
+			$${IDF_PATH}/components/bt/host/bluedroid/stack/avrc/avrc_sdp.c \
+			$${IDF_PATH}/components/bt/host/bluedroid/stack/avrc/avrc_utils.c \
+			$${IDF_PATH}/components/bt/host/bluedroid/stack/avrc/avrc_utils.c \
+			$${IDF_PATH}/components/bt/host/bluedroid/stack/avrc/avrc_utils.c \
+			$${IDF_PATH}/components/aws_iot/aws-iot-device-sdk-embedded-C/src/aws_iot_jobs_interface.c \
+			$${IDF_PATH}/components/aws_iot/aws-iot-device-sdk-embedded-C/src/aws_iot_jobs_interface.c \
+			$${IDF_PATH}/components/aws_iot/aws-iot-device-sdk-embedded-C/src/aws_iot_jobs_json.c \
+			$${IDF_PATH}/components/aws_iot/aws-iot-device-sdk-embedded-C/src/aws_iot_jobs_json.c \
+			$${IDF_PATH}/components/aws_iot/aws-iot-device-sdk-embedded-C/src/aws_iot_jobs_topics.c \
+			$${IDF_PATH}/components/aws_iot/aws-iot-device-sdk-embedded-C/src/aws_iot_jobs_topics.c \
+			$${IDF_PATH}/components/aws_iot/aws-iot-device-sdk-embedded-C/src/aws_iot_jobs_types.c \
+			$${IDF_PATH}/components/aws_iot/aws-iot-device-sdk-embedded-C/src/aws_iot_jobs_types.c \
 			$${IDF_PATH}/components/aws_iot/aws-iot-device-sdk-embedded-C/src/aws_iot_json_utils.c \
 			$${IDF_PATH}/components/aws_iot/aws-iot-device-sdk-embedded-C/src/aws_iot_json_utils.c \
 			$${IDF_PATH}/components/aws_iot/aws-iot-device-sdk-embedded-C/src/aws_iot_mqtt_client.c \
 			$${IDF_PATH}/components/aws_iot/aws-iot-device-sdk-embedded-C/src/aws_iot_mqtt_client.c \
-			$${IDF_PATH}/components/aws_iot/aws-iot-device-sdk-embedded-C/src/aws_iot_mqtt_client.c \
-			$${IDF_PATH}/components/aws_iot/aws-iot-device-sdk-embedded-C/src/aws_iot_mqtt_client_common_internal.c \
 			$${IDF_PATH}/components/aws_iot/aws-iot-device-sdk-embedded-C/src/aws_iot_mqtt_client_common_internal.c \
 			$${IDF_PATH}/components/aws_iot/aws-iot-device-sdk-embedded-C/src/aws_iot_mqtt_client_common_internal.c \
 			$${IDF_PATH}/components/aws_iot/aws-iot-device-sdk-embedded-C/src/aws_iot_mqtt_client_connect.c \
 			$${IDF_PATH}/components/aws_iot/aws-iot-device-sdk-embedded-C/src/aws_iot_mqtt_client_connect.c \
-			$${IDF_PATH}/components/aws_iot/aws-iot-device-sdk-embedded-C/src/aws_iot_mqtt_client_connect.c \
-			$${IDF_PATH}/components/aws_iot/aws-iot-device-sdk-embedded-C/src/aws_iot_mqtt_client_publish.c \
 			$${IDF_PATH}/components/aws_iot/aws-iot-device-sdk-embedded-C/src/aws_iot_mqtt_client_publish.c \
 			$${IDF_PATH}/components/aws_iot/aws-iot-device-sdk-embedded-C/src/aws_iot_mqtt_client_publish.c \
 			$${IDF_PATH}/components/aws_iot/aws-iot-device-sdk-embedded-C/src/aws_iot_mqtt_client_subscribe.c \
 			$${IDF_PATH}/components/aws_iot/aws-iot-device-sdk-embedded-C/src/aws_iot_mqtt_client_subscribe.c \
-			$${IDF_PATH}/components/aws_iot/aws-iot-device-sdk-embedded-C/src/aws_iot_mqtt_client_subscribe.c \
-			$${IDF_PATH}/components/aws_iot/aws-iot-device-sdk-embedded-C/src/aws_iot_mqtt_client_unsubscribe.c \
 			$${IDF_PATH}/components/aws_iot/aws-iot-device-sdk-embedded-C/src/aws_iot_mqtt_client_unsubscribe.c \
 			$${IDF_PATH}/components/aws_iot/aws-iot-device-sdk-embedded-C/src/aws_iot_mqtt_client_unsubscribe.c \
 			$${IDF_PATH}/components/aws_iot/aws-iot-device-sdk-embedded-C/src/aws_iot_mqtt_client_yield.c \
 			$${IDF_PATH}/components/aws_iot/aws-iot-device-sdk-embedded-C/src/aws_iot_mqtt_client_yield.c \
-			$${IDF_PATH}/components/aws_iot/aws-iot-device-sdk-embedded-C/src/aws_iot_mqtt_client_yield.c \
-			$${IDF_PATH}/components/aws_iot/aws-iot-device-sdk-embedded-C/src/aws_iot_shadow.c \
 			$${IDF_PATH}/components/aws_iot/aws-iot-device-sdk-embedded-C/src/aws_iot_shadow.c \
 			$${IDF_PATH}/components/aws_iot/aws-iot-device-sdk-embedded-C/src/aws_iot_shadow.c \
 			$${IDF_PATH}/components/aws_iot/aws-iot-device-sdk-embedded-C/src/aws_iot_shadow_actions.c \
 			$${IDF_PATH}/components/aws_iot/aws-iot-device-sdk-embedded-C/src/aws_iot_shadow_actions.c \
-			$${IDF_PATH}/components/aws_iot/aws-iot-device-sdk-embedded-C/src/aws_iot_shadow_actions.c \
-			$${IDF_PATH}/components/aws_iot/aws-iot-device-sdk-embedded-C/src/aws_iot_shadow_json.c \
 			$${IDF_PATH}/components/aws_iot/aws-iot-device-sdk-embedded-C/src/aws_iot_shadow_json.c \
 			$${IDF_PATH}/components/aws_iot/aws-iot-device-sdk-embedded-C/src/aws_iot_shadow_json.c \
 			$${IDF_PATH}/components/aws_iot/aws-iot-device-sdk-embedded-C/src/aws_iot_shadow_records.c \
 			$${IDF_PATH}/components/aws_iot/aws-iot-device-sdk-embedded-C/src/aws_iot_shadow_records.c \
-			$${IDF_PATH}/components/aws_iot/aws-iot-device-sdk-embedded-C/src/aws_iot_shadow_records.c \
-			$${IDF_PATH}/components/aws_iot/aws-iot-device-sdk-embedded-C/tests/integration/src/aws_iot_test_auto_reconnect.c \
 			$${IDF_PATH}/components/aws_iot/aws-iot-device-sdk-embedded-C/tests/integration/src/aws_iot_test_auto_reconnect.c \
 			$${IDF_PATH}/components/aws_iot/aws-iot-device-sdk-embedded-C/tests/integration/src/aws_iot_test_auto_reconnect.c \
 			$${IDF_PATH}/components/aws_iot/aws-iot-device-sdk-embedded-C/tests/integration/src/aws_iot_test_basic_connectivity.c \
 			$${IDF_PATH}/components/aws_iot/aws-iot-device-sdk-embedded-C/tests/integration/src/aws_iot_test_basic_connectivity.c \
-			$${IDF_PATH}/components/aws_iot/aws-iot-device-sdk-embedded-C/tests/integration/src/aws_iot_test_basic_connectivity.c \
 			$${IDF_PATH}/components/aws_iot/aws-iot-device-sdk-embedded-C/tests/integration/src/aws_iot_test_integration_runner.c \
 			$${IDF_PATH}/components/aws_iot/aws-iot-device-sdk-embedded-C/tests/integration/src/aws_iot_test_integration_runner.c \
-			$${IDF_PATH}/components/aws_iot/aws-iot-device-sdk-embedded-C/tests/integration/src/aws_iot_test_integration_runner.c \
-			$${IDF_PATH}/components/aws_iot/aws-iot-device-sdk-embedded-C/tests/integration/src/aws_iot_test_multiple_clients.c \
+			$${IDF_PATH}/components/aws_iot/aws-iot-device-sdk-embedded-C/tests/integration/src/aws_iot_test_jobs_api.c \
+			$${IDF_PATH}/components/aws_iot/aws-iot-device-sdk-embedded-C/tests/integration/src/aws_iot_test_jobs_api.c \
 			$${IDF_PATH}/components/aws_iot/aws-iot-device-sdk-embedded-C/tests/integration/src/aws_iot_test_multiple_clients.c \
 			$${IDF_PATH}/components/aws_iot/aws-iot-device-sdk-embedded-C/tests/integration/src/aws_iot_test_multiple_clients.c \
 			$${IDF_PATH}/components/aws_iot/aws-iot-device-sdk-embedded-C/tests/integration/multithreadingTest/aws_iot_test_multithreading_validation.c \
 			$${IDF_PATH}/components/aws_iot/aws-iot-device-sdk-embedded-C/tests/integration/multithreadingTest/aws_iot_test_multithreading_validation.c \
-			$${IDF_PATH}/components/aws_iot/aws-iot-device-sdk-embedded-C/tests/integration/multithreadingTest/aws_iot_test_multithreading_validation.c \
-			$${IDF_PATH}/components/aws_iot/aws-iot-device-sdk-embedded-C/tests/unit/src/aws_iot_tests_unit_common_tests.cpp \
 			$${IDF_PATH}/components/aws_iot/aws-iot-device-sdk-embedded-C/tests/unit/src/aws_iot_tests_unit_common_tests.cpp \
 			$${IDF_PATH}/components/aws_iot/aws-iot-device-sdk-embedded-C/tests/unit/src/aws_iot_tests_unit_common_tests.cpp \
 			$${IDF_PATH}/components/aws_iot/aws-iot-device-sdk-embedded-C/tests/unit/src/aws_iot_tests_unit_common_tests_helper.c \
 			$${IDF_PATH}/components/aws_iot/aws-iot-device-sdk-embedded-C/tests/unit/src/aws_iot_tests_unit_common_tests_helper.c \
-			$${IDF_PATH}/components/aws_iot/aws-iot-device-sdk-embedded-C/tests/unit/src/aws_iot_tests_unit_common_tests_helper.c \
-			$${IDF_PATH}/components/aws_iot/aws-iot-device-sdk-embedded-C/tests/unit/src/aws_iot_tests_unit_connect.cpp \
 			$${IDF_PATH}/components/aws_iot/aws-iot-device-sdk-embedded-C/tests/unit/src/aws_iot_tests_unit_connect.cpp \
 			$${IDF_PATH}/components/aws_iot/aws-iot-device-sdk-embedded-C/tests/unit/src/aws_iot_tests_unit_connect.cpp \
 			$${IDF_PATH}/components/aws_iot/aws-iot-device-sdk-embedded-C/tests/unit/src/aws_iot_tests_unit_connect_helper.c \
 			$${IDF_PATH}/components/aws_iot/aws-iot-device-sdk-embedded-C/tests/unit/src/aws_iot_tests_unit_connect_helper.c \
-			$${IDF_PATH}/components/aws_iot/aws-iot-device-sdk-embedded-C/tests/unit/src/aws_iot_tests_unit_connect_helper.c \
-			$${IDF_PATH}/components/aws_iot/aws-iot-device-sdk-embedded-C/tests/unit/src/aws_iot_tests_unit_disconnect.cpp \
 			$${IDF_PATH}/components/aws_iot/aws-iot-device-sdk-embedded-C/tests/unit/src/aws_iot_tests_unit_disconnect.cpp \
 			$${IDF_PATH}/components/aws_iot/aws-iot-device-sdk-embedded-C/tests/unit/src/aws_iot_tests_unit_disconnect.cpp \
 			$${IDF_PATH}/components/aws_iot/aws-iot-device-sdk-embedded-C/tests/unit/src/aws_iot_tests_unit_disconnect_helper.c \
 			$${IDF_PATH}/components/aws_iot/aws-iot-device-sdk-embedded-C/tests/unit/src/aws_iot_tests_unit_disconnect_helper.c \
-			$${IDF_PATH}/components/aws_iot/aws-iot-device-sdk-embedded-C/tests/unit/src/aws_iot_tests_unit_disconnect_helper.c \
 			$${IDF_PATH}/components/aws_iot/aws-iot-device-sdk-embedded-C/tests/unit/src/aws_iot_tests_unit_helper_functions.c \
 			$${IDF_PATH}/components/aws_iot/aws-iot-device-sdk-embedded-C/tests/unit/src/aws_iot_tests_unit_helper_functions.c \
-			$${IDF_PATH}/components/aws_iot/aws-iot-device-sdk-embedded-C/tests/unit/src/aws_iot_tests_unit_helper_functions.c \
-			$${IDF_PATH}/components/aws_iot/aws-iot-device-sdk-embedded-C/tests/unit/src/aws_iot_tests_unit_json_utils.cpp \
+			$${IDF_PATH}/components/aws_iot/aws-iot-device-sdk-embedded-C/tests/unit/src/aws_iot_tests_unit_jobs.cpp \
+			$${IDF_PATH}/components/aws_iot/aws-iot-device-sdk-embedded-C/tests/unit/src/aws_iot_tests_unit_jobs.cpp \
+			$${IDF_PATH}/components/aws_iot/aws-iot-device-sdk-embedded-C/tests/unit/src/aws_iot_tests_unit_jobs_interface.c \
+			$${IDF_PATH}/components/aws_iot/aws-iot-device-sdk-embedded-C/tests/unit/src/aws_iot_tests_unit_jobs_interface.c \
+			$${IDF_PATH}/components/aws_iot/aws-iot-device-sdk-embedded-C/tests/unit/src/aws_iot_tests_unit_jobs_json.c \
+			$${IDF_PATH}/components/aws_iot/aws-iot-device-sdk-embedded-C/tests/unit/src/aws_iot_tests_unit_jobs_json.c \
+			$${IDF_PATH}/components/aws_iot/aws-iot-device-sdk-embedded-C/tests/unit/src/aws_iot_tests_unit_jobs_topics.c \
+			$${IDF_PATH}/components/aws_iot/aws-iot-device-sdk-embedded-C/tests/unit/src/aws_iot_tests_unit_jobs_topics.c \
+			$${IDF_PATH}/components/aws_iot/aws-iot-device-sdk-embedded-C/tests/unit/src/aws_iot_tests_unit_jobs_types.c \
+			$${IDF_PATH}/components/aws_iot/aws-iot-device-sdk-embedded-C/tests/unit/src/aws_iot_tests_unit_jobs_types.c \
 			$${IDF_PATH}/components/aws_iot/aws-iot-device-sdk-embedded-C/tests/unit/src/aws_iot_tests_unit_json_utils.cpp \
 			$${IDF_PATH}/components/aws_iot/aws-iot-device-sdk-embedded-C/tests/unit/src/aws_iot_tests_unit_json_utils.cpp \
 			$${IDF_PATH}/components/aws_iot/aws-iot-device-sdk-embedded-C/tests/unit/src/aws_iot_tests_unit_json_utils_helper.c \
 			$${IDF_PATH}/components/aws_iot/aws-iot-device-sdk-embedded-C/tests/unit/src/aws_iot_tests_unit_json_utils_helper.c \
-			$${IDF_PATH}/components/aws_iot/aws-iot-device-sdk-embedded-C/tests/unit/src/aws_iot_tests_unit_json_utils_helper.c \
-			$${IDF_PATH}/components/aws_iot/aws-iot-device-sdk-embedded-C/tests/unit/tls_mock/aws_iot_tests_unit_mock_tls.c \
 			$${IDF_PATH}/components/aws_iot/aws-iot-device-sdk-embedded-C/tests/unit/tls_mock/aws_iot_tests_unit_mock_tls.c \
 			$${IDF_PATH}/components/aws_iot/aws-iot-device-sdk-embedded-C/tests/unit/tls_mock/aws_iot_tests_unit_mock_tls.c \
 			$${IDF_PATH}/components/aws_iot/aws-iot-device-sdk-embedded-C/tests/unit/tls_mock/aws_iot_tests_unit_mock_tls_params.c \
 			$${IDF_PATH}/components/aws_iot/aws-iot-device-sdk-embedded-C/tests/unit/tls_mock/aws_iot_tests_unit_mock_tls_params.c \
-			$${IDF_PATH}/components/aws_iot/aws-iot-device-sdk-embedded-C/tests/unit/tls_mock/aws_iot_tests_unit_mock_tls_params.c \
-			$${IDF_PATH}/components/aws_iot/aws-iot-device-sdk-embedded-C/tests/unit/src/aws_iot_tests_unit_publish.cpp \
 			$${IDF_PATH}/components/aws_iot/aws-iot-device-sdk-embedded-C/tests/unit/src/aws_iot_tests_unit_publish.cpp \
 			$${IDF_PATH}/components/aws_iot/aws-iot-device-sdk-embedded-C/tests/unit/src/aws_iot_tests_unit_publish.cpp \
 			$${IDF_PATH}/components/aws_iot/aws-iot-device-sdk-embedded-C/tests/unit/src/aws_iot_tests_unit_publish_helper.c \
 			$${IDF_PATH}/components/aws_iot/aws-iot-device-sdk-embedded-C/tests/unit/src/aws_iot_tests_unit_publish_helper.c \
-			$${IDF_PATH}/components/aws_iot/aws-iot-device-sdk-embedded-C/tests/unit/src/aws_iot_tests_unit_publish_helper.c \
-			$${IDF_PATH}/components/aws_iot/aws-iot-device-sdk-embedded-C/tests/unit/src/aws_iot_tests_unit_runner.cpp \
 			$${IDF_PATH}/components/aws_iot/aws-iot-device-sdk-embedded-C/tests/unit/src/aws_iot_tests_unit_runner.cpp \
 			$${IDF_PATH}/components/aws_iot/aws-iot-device-sdk-embedded-C/tests/unit/src/aws_iot_tests_unit_runner.cpp \
 			$${IDF_PATH}/components/aws_iot/aws-iot-device-sdk-embedded-C/tests/unit/src/aws_iot_tests_unit_shadow_action.cpp \
 			$${IDF_PATH}/components/aws_iot/aws-iot-device-sdk-embedded-C/tests/unit/src/aws_iot_tests_unit_shadow_action.cpp \
-			$${IDF_PATH}/components/aws_iot/aws-iot-device-sdk-embedded-C/tests/unit/src/aws_iot_tests_unit_shadow_action.cpp \
-			$${IDF_PATH}/components/aws_iot/aws-iot-device-sdk-embedded-C/tests/unit/src/aws_iot_tests_unit_shadow_action_helper.c \
 			$${IDF_PATH}/components/aws_iot/aws-iot-device-sdk-embedded-C/tests/unit/src/aws_iot_tests_unit_shadow_action_helper.c \
 			$${IDF_PATH}/components/aws_iot/aws-iot-device-sdk-embedded-C/tests/unit/src/aws_iot_tests_unit_shadow_action_helper.c \
 			$${IDF_PATH}/components/aws_iot/aws-iot-device-sdk-embedded-C/tests/unit/src/aws_iot_tests_unit_shadow_delta.cpp \
 			$${IDF_PATH}/components/aws_iot/aws-iot-device-sdk-embedded-C/tests/unit/src/aws_iot_tests_unit_shadow_delta.cpp \
-			$${IDF_PATH}/components/aws_iot/aws-iot-device-sdk-embedded-C/tests/unit/src/aws_iot_tests_unit_shadow_delta.cpp \
-			$${IDF_PATH}/components/aws_iot/aws-iot-device-sdk-embedded-C/tests/unit/src/aws_iot_tests_unit_shadow_delta_helper.c \
 			$${IDF_PATH}/components/aws_iot/aws-iot-device-sdk-embedded-C/tests/unit/src/aws_iot_tests_unit_shadow_delta_helper.c \
 			$${IDF_PATH}/components/aws_iot/aws-iot-device-sdk-embedded-C/tests/unit/src/aws_iot_tests_unit_shadow_delta_helper.c \
 			$${IDF_PATH}/components/aws_iot/aws-iot-device-sdk-embedded-C/tests/unit/src/aws_iot_tests_unit_shadow_json_builder.cpp \
 			$${IDF_PATH}/components/aws_iot/aws-iot-device-sdk-embedded-C/tests/unit/src/aws_iot_tests_unit_shadow_json_builder.cpp \
-			$${IDF_PATH}/components/aws_iot/aws-iot-device-sdk-embedded-C/tests/unit/src/aws_iot_tests_unit_shadow_json_builder.cpp \
-			$${IDF_PATH}/components/aws_iot/aws-iot-device-sdk-embedded-C/tests/unit/src/aws_iot_tests_unit_shadow_json_builder_helper.c \
 			$${IDF_PATH}/components/aws_iot/aws-iot-device-sdk-embedded-C/tests/unit/src/aws_iot_tests_unit_shadow_json_builder_helper.c \
 			$${IDF_PATH}/components/aws_iot/aws-iot-device-sdk-embedded-C/tests/unit/src/aws_iot_tests_unit_shadow_json_builder_helper.c \
 			$${IDF_PATH}/components/aws_iot/aws-iot-device-sdk-embedded-C/tests/unit/src/aws_iot_tests_unit_shadow_null_fields.cpp \
 			$${IDF_PATH}/components/aws_iot/aws-iot-device-sdk-embedded-C/tests/unit/src/aws_iot_tests_unit_shadow_null_fields.cpp \
-			$${IDF_PATH}/components/aws_iot/aws-iot-device-sdk-embedded-C/tests/unit/src/aws_iot_tests_unit_shadow_null_fields.cpp \
-			$${IDF_PATH}/components/aws_iot/aws-iot-device-sdk-embedded-C/tests/unit/src/aws_iot_tests_unit_shadow_null_fields_helper.c \
 			$${IDF_PATH}/components/aws_iot/aws-iot-device-sdk-embedded-C/tests/unit/src/aws_iot_tests_unit_shadow_null_fields_helper.c \
 			$${IDF_PATH}/components/aws_iot/aws-iot-device-sdk-embedded-C/tests/unit/src/aws_iot_tests_unit_shadow_null_fields_helper.c \
 			$${IDF_PATH}/components/aws_iot/aws-iot-device-sdk-embedded-C/tests/unit/src/aws_iot_tests_unit_subscribe.cpp \
 			$${IDF_PATH}/components/aws_iot/aws-iot-device-sdk-embedded-C/tests/unit/src/aws_iot_tests_unit_subscribe.cpp \
-			$${IDF_PATH}/components/aws_iot/aws-iot-device-sdk-embedded-C/tests/unit/src/aws_iot_tests_unit_subscribe.cpp \
-			$${IDF_PATH}/components/aws_iot/aws-iot-device-sdk-embedded-C/tests/unit/src/aws_iot_tests_unit_subscribe_helper.c \
 			$${IDF_PATH}/components/aws_iot/aws-iot-device-sdk-embedded-C/tests/unit/src/aws_iot_tests_unit_subscribe_helper.c \
 			$${IDF_PATH}/components/aws_iot/aws-iot-device-sdk-embedded-C/tests/unit/src/aws_iot_tests_unit_subscribe_helper.c \
 			$${IDF_PATH}/components/aws_iot/aws-iot-device-sdk-embedded-C/tests/unit/src/aws_iot_tests_unit_unsubscribe.cpp \
 			$${IDF_PATH}/components/aws_iot/aws-iot-device-sdk-embedded-C/tests/unit/src/aws_iot_tests_unit_unsubscribe.cpp \
-			$${IDF_PATH}/components/aws_iot/aws-iot-device-sdk-embedded-C/tests/unit/src/aws_iot_tests_unit_unsubscribe.cpp \
-			$${IDF_PATH}/components/aws_iot/aws-iot-device-sdk-embedded-C/tests/unit/src/aws_iot_tests_unit_unsubscribe_helper.c \
 			$${IDF_PATH}/components/aws_iot/aws-iot-device-sdk-embedded-C/tests/unit/src/aws_iot_tests_unit_unsubscribe_helper.c \
 			$${IDF_PATH}/components/aws_iot/aws-iot-device-sdk-embedded-C/tests/unit/src/aws_iot_tests_unit_unsubscribe_helper.c \
 			$${IDF_PATH}/components/aws_iot/aws-iot-device-sdk-embedded-C/tests/unit/src/aws_iot_tests_unit_yield.cpp \
 			$${IDF_PATH}/components/aws_iot/aws-iot-device-sdk-embedded-C/tests/unit/src/aws_iot_tests_unit_yield.cpp \
-			$${IDF_PATH}/components/aws_iot/aws-iot-device-sdk-embedded-C/tests/unit/src/aws_iot_tests_unit_yield.cpp \
-			$${IDF_PATH}/components/aws_iot/aws-iot-device-sdk-embedded-C/tests/unit/src/aws_iot_tests_unit_yield_helper.c \
 			$${IDF_PATH}/components/aws_iot/aws-iot-device-sdk-embedded-C/tests/unit/src/aws_iot_tests_unit_yield_helper.c \
 			$${IDF_PATH}/components/aws_iot/aws-iot-device-sdk-embedded-C/tests/unit/src/aws_iot_tests_unit_yield_helper.c \
 			$${IDF_PATH}/components/nghttp/nghttp2/third-party/mruby/src/backtrace.c \
@@ -1336,22 +1640,29 @@
 			$${IDF_PATH}/components/asio/asio/asio/src/examples/cpp11/executors/bank_account_1.cpp \
 			$${IDF_PATH}/components/asio/asio/asio/src/examples/cpp14/executors/bank_account_1.cpp \
 			$${IDF_PATH}/components/asio/asio/asio/src/examples/cpp11/executors/bank_account_1.cpp \
+			$${IDF_PATH}/components/asio/asio/asio/src/examples/cpp14/executors/bank_account_1.cpp \
+			$${IDF_PATH}/components/asio/asio/asio/src/examples/cpp11/executors/bank_account_1.cpp \
+			$${IDF_PATH}/components/asio/asio/asio/src/examples/cpp14/executors/bank_account_2.cpp \
+			$${IDF_PATH}/components/asio/asio/asio/src/examples/cpp11/executors/bank_account_2.cpp \
 			$${IDF_PATH}/components/asio/asio/asio/src/examples/cpp14/executors/bank_account_2.cpp \
 			$${IDF_PATH}/components/asio/asio/asio/src/examples/cpp11/executors/bank_account_2.cpp \
 			$${IDF_PATH}/components/asio/asio/asio/src/examples/cpp14/executors/bank_account_2.cpp \
 			$${IDF_PATH}/components/asio/asio/asio/src/examples/cpp11/executors/bank_account_2.cpp \
 			$${IDF_PATH}/components/tinyusb/tinyusb/test/vendor/ceedling/plugins/fake_function_framework/examples/fff_example/src/bar.c \
 			$${IDF_PATH}/components/tinyusb/tinyusb/test/vendor/ceedling/plugins/fake_function_framework/examples/fff_example/src/bar.c \
-			$${IDF_PATH}/components/wpa_supplicant/src/wpa2/utils/base64.c \
+			$${IDF_PATH}/components/wpa_supplicant/src/utils/base64.c \
 			$${IDF_PATH}/components/mbedtls/mbedtls/library/base64.c \
-			$${IDF_PATH}/components/wpa_supplicant/src/wpa2/utils/base64.c \
+			$${IDF_PATH}/components/wpa_supplicant/src/utils/base64.c \
 			$${IDF_PATH}/components/mbedtls/mbedtls/library/base64.c \
-			$${IDF_PATH}/components/wpa_supplicant/src/wpa2/utils/base64.c \
+			$${IDF_PATH}/components/wpa_supplicant/src/utils/base64.c \
 			$${IDF_PATH}/components/mbedtls/mbedtls/library/base64.c \
+			$${IDF_PATH}/components/asio/asio/asio/src/tests/unit/basic_datagram_socket.cpp \
 			$${IDF_PATH}/components/asio/asio/asio/src/tests/unit/basic_datagram_socket.cpp \
 			$${IDF_PATH}/components/asio/asio/asio/src/tests/unit/basic_datagram_socket.cpp \
 			$${IDF_PATH}/components/asio/asio/asio/src/tests/unit/basic_deadline_timer.cpp \
 			$${IDF_PATH}/components/asio/asio/asio/src/tests/unit/basic_deadline_timer.cpp \
+			$${IDF_PATH}/components/asio/asio/asio/src/tests/unit/basic_deadline_timer.cpp \
+			$${IDF_PATH}/components/asio/asio/asio/src/tests/unit/posix/basic_descriptor.cpp \
 			$${IDF_PATH}/components/asio/asio/asio/src/tests/unit/posix/basic_descriptor.cpp \
 			$${IDF_PATH}/components/asio/asio/asio/src/tests/unit/posix/basic_descriptor.cpp \
 			$${IDF_PATH}/components/asio/asio/asio/src/tests/unit/local/basic_endpoint.cpp \
@@ -1360,49 +1671,72 @@
 			$${IDF_PATH}/components/asio/asio/asio/src/tests/unit/local/basic_endpoint.cpp \
 			$${IDF_PATH}/components/asio/asio/asio/src/tests/unit/ip/basic_endpoint.cpp \
 			$${IDF_PATH}/components/asio/asio/asio/src/tests/unit/generic/basic_endpoint.cpp \
+			$${IDF_PATH}/components/asio/asio/asio/src/tests/unit/local/basic_endpoint.cpp \
+			$${IDF_PATH}/components/asio/asio/asio/src/tests/unit/ip/basic_endpoint.cpp \
+			$${IDF_PATH}/components/asio/asio/asio/src/tests/unit/generic/basic_endpoint.cpp \
+			$${IDF_PATH}/components/asio/asio/asio/src/tests/unit/windows/basic_handle.cpp \
 			$${IDF_PATH}/components/asio/asio/asio/src/tests/unit/windows/basic_handle.cpp \
 			$${IDF_PATH}/components/asio/asio/asio/src/tests/unit/windows/basic_handle.cpp \
 			$${IDF_PATH}/components/asio/asio/asio/src/tests/unit/windows/basic_object_handle.cpp \
 			$${IDF_PATH}/components/asio/asio/asio/src/tests/unit/windows/basic_object_handle.cpp \
+			$${IDF_PATH}/components/asio/asio/asio/src/tests/unit/windows/basic_object_handle.cpp \
+			$${IDF_PATH}/components/asio/asio/asio/src/tests/unit/windows/basic_random_access_handle.cpp \
 			$${IDF_PATH}/components/asio/asio/asio/src/tests/unit/windows/basic_random_access_handle.cpp \
 			$${IDF_PATH}/components/asio/asio/asio/src/tests/unit/windows/basic_random_access_handle.cpp \
 			$${IDF_PATH}/components/asio/asio/asio/src/tests/unit/basic_raw_socket.cpp \
 			$${IDF_PATH}/components/asio/asio/asio/src/tests/unit/basic_raw_socket.cpp \
+			$${IDF_PATH}/components/asio/asio/asio/src/tests/unit/basic_raw_socket.cpp \
+			$${IDF_PATH}/components/asio/asio/asio/src/tests/unit/ip/basic_resolver.cpp \
 			$${IDF_PATH}/components/asio/asio/asio/src/tests/unit/ip/basic_resolver.cpp \
 			$${IDF_PATH}/components/asio/asio/asio/src/tests/unit/ip/basic_resolver.cpp \
 			$${IDF_PATH}/components/asio/asio/asio/src/tests/unit/ip/basic_resolver_entry.cpp \
 			$${IDF_PATH}/components/asio/asio/asio/src/tests/unit/ip/basic_resolver_entry.cpp \
+			$${IDF_PATH}/components/asio/asio/asio/src/tests/unit/ip/basic_resolver_entry.cpp \
+			$${IDF_PATH}/components/asio/asio/asio/src/tests/unit/ip/basic_resolver_iterator.cpp \
 			$${IDF_PATH}/components/asio/asio/asio/src/tests/unit/ip/basic_resolver_iterator.cpp \
 			$${IDF_PATH}/components/asio/asio/asio/src/tests/unit/ip/basic_resolver_iterator.cpp \
 			$${IDF_PATH}/components/asio/asio/asio/src/tests/unit/ip/basic_resolver_query.cpp \
 			$${IDF_PATH}/components/asio/asio/asio/src/tests/unit/ip/basic_resolver_query.cpp \
+			$${IDF_PATH}/components/asio/asio/asio/src/tests/unit/ip/basic_resolver_query.cpp \
+			$${IDF_PATH}/components/asio/asio/asio/src/tests/unit/basic_seq_packet_socket.cpp \
 			$${IDF_PATH}/components/asio/asio/asio/src/tests/unit/basic_seq_packet_socket.cpp \
 			$${IDF_PATH}/components/asio/asio/asio/src/tests/unit/basic_seq_packet_socket.cpp \
 			$${IDF_PATH}/components/asio/asio/asio/src/tests/unit/basic_serial_port.cpp \
 			$${IDF_PATH}/components/asio/asio/asio/src/tests/unit/basic_serial_port.cpp \
+			$${IDF_PATH}/components/asio/asio/asio/src/tests/unit/basic_serial_port.cpp \
+			$${IDF_PATH}/components/asio/asio/asio/src/tests/unit/basic_signal_set.cpp \
 			$${IDF_PATH}/components/asio/asio/asio/src/tests/unit/basic_signal_set.cpp \
 			$${IDF_PATH}/components/asio/asio/asio/src/tests/unit/basic_signal_set.cpp \
 			$${IDF_PATH}/components/asio/asio/asio/src/tests/unit/basic_socket_acceptor.cpp \
 			$${IDF_PATH}/components/asio/asio/asio/src/tests/unit/basic_socket_acceptor.cpp \
+			$${IDF_PATH}/components/asio/asio/asio/src/tests/unit/basic_socket_acceptor.cpp \
+			$${IDF_PATH}/components/asio/asio/asio/src/tests/unit/posix/basic_stream_descriptor.cpp \
 			$${IDF_PATH}/components/asio/asio/asio/src/tests/unit/posix/basic_stream_descriptor.cpp \
 			$${IDF_PATH}/components/asio/asio/asio/src/tests/unit/posix/basic_stream_descriptor.cpp \
 			$${IDF_PATH}/components/asio/asio/asio/src/tests/unit/windows/basic_stream_handle.cpp \
 			$${IDF_PATH}/components/asio/asio/asio/src/tests/unit/windows/basic_stream_handle.cpp \
+			$${IDF_PATH}/components/asio/asio/asio/src/tests/unit/windows/basic_stream_handle.cpp \
+			$${IDF_PATH}/components/asio/asio/asio/src/tests/unit/basic_stream_socket.cpp \
 			$${IDF_PATH}/components/asio/asio/asio/src/tests/unit/basic_stream_socket.cpp \
 			$${IDF_PATH}/components/asio/asio/asio/src/tests/unit/basic_stream_socket.cpp \
 			$${IDF_PATH}/components/asio/asio/asio/src/tests/unit/basic_streambuf.cpp \
 			$${IDF_PATH}/components/asio/asio/asio/src/tests/unit/basic_streambuf.cpp \
+			$${IDF_PATH}/components/asio/asio/asio/src/tests/unit/basic_streambuf.cpp \
 			$${IDF_PATH}/components/asio/asio/asio/src/tests/unit/basic_waitable_timer.cpp \
 			$${IDF_PATH}/components/asio/asio/asio/src/tests/unit/basic_waitable_timer.cpp \
-			$${IDF_PATH}/components/bt/bluedroid/btc/profile/std/battery/battery_prf.c \
-			$${IDF_PATH}/components/bt/bluedroid/btc/profile/std/battery/battery_prf.c \
-			$${IDF_PATH}/components/bt/bluedroid/btc/profile/std/battery/battery_prf.c \
-			$${IDF_PATH}/components/bt/bluedroid/device/bdaddr.c \
-			$${IDF_PATH}/components/bt/bluedroid/device/bdaddr.c \
-			$${IDF_PATH}/components/bt/bluedroid/device/bdaddr.c \
+			$${IDF_PATH}/components/asio/asio/asio/src/tests/unit/basic_waitable_timer.cpp \
+			$${IDF_PATH}/components/bt/host/bluedroid/btc/profile/std/battery/battery_prf.c \
+			$${IDF_PATH}/components/bt/host/bluedroid/btc/profile/std/battery/battery_prf.c \
+			$${IDF_PATH}/components/bt/host/bluedroid/btc/profile/std/battery/battery_prf.c \
+			$${IDF_PATH}/components/bt/host/bluedroid/device/bdaddr.c \
+			$${IDF_PATH}/components/bt/host/bluedroid/device/bdaddr.c \
+			$${IDF_PATH}/components/bt/host/bluedroid/device/bdaddr.c \
 			$${IDF_PATH}/components/bt/host/nimble/nimble/nimble/host/mesh/src/beacon.c \
+			$${IDF_PATH}/components/bt/esp_ble_mesh/mesh_core/beacon.c \
 			$${IDF_PATH}/components/bt/host/nimble/nimble/nimble/host/mesh/src/beacon.c \
+			$${IDF_PATH}/components/bt/esp_ble_mesh/mesh_core/beacon.c \
 			$${IDF_PATH}/components/bt/host/nimble/nimble/nimble/host/mesh/src/beacon.c \
+			$${IDF_PATH}/components/bt/esp_ble_mesh/mesh_core/beacon.c \
 			$${IDF_PATH}/components/libsodium/libsodium/src/libsodium/crypto_stream/aes128ctr/nacl/beforenm_aes128ctr.c \
 			$${IDF_PATH}/components/libsodium/libsodium/src/libsodium/crypto_stream/aes128ctr/nacl/beforenm_aes128ctr.c \
 			$${IDF_PATH}/components/libsodium/libsodium/src/libsodium/crypto_stream/aes128ctr/nacl/beforenm_aes128ctr.c \
@@ -1415,26 +1749,27 @@
 			$${IDF_PATH}/components/expat/expat/expat/tests/benchmark/benchmark.c \
 			$${IDF_PATH}/components/mbedtls/mbedtls/programs/test/benchmark.c \
 			$${IDF_PATH}/components/expat/expat/expat/tests/benchmark/benchmark.c \
-			$${IDF_PATH}/components/wpa_supplicant/src/wpa2/tls/bignum.c \
+			$${IDF_PATH}/components/wpa_supplicant/src/tls/bignum.c \
 			$${IDF_PATH}/components/wpa_supplicant/src/crypto/bignum.c \
 			$${IDF_PATH}/components/mbedtls/mbedtls/library/bignum.c \
-			$${IDF_PATH}/components/wpa_supplicant/src/wpa2/tls/bignum.c \
+			$${IDF_PATH}/components/wpa_supplicant/src/tls/bignum.c \
 			$${IDF_PATH}/components/wpa_supplicant/src/crypto/bignum.c \
 			$${IDF_PATH}/components/mbedtls/mbedtls/library/bignum.c \
-			$${IDF_PATH}/components/wpa_supplicant/src/wpa2/tls/bignum.c \
+			$${IDF_PATH}/components/wpa_supplicant/src/tls/bignum.c \
 			$${IDF_PATH}/components/wpa_supplicant/src/crypto/bignum.c \
 			$${IDF_PATH}/components/mbedtls/mbedtls/library/bignum.c \
 			$${IDF_PATH}/components/asio/asio/asio/src/tests/unit/bind_executor.cpp \
 			$${IDF_PATH}/components/asio/asio/asio/src/tests/unit/bind_executor.cpp \
-			$${IDF_PATH}/components/bt/bluedroid/external/sbc/decoder/srce/bitalloc-sbc.c \
-			$${IDF_PATH}/components/bt/bluedroid/external/sbc/decoder/srce/bitalloc-sbc.c \
-			$${IDF_PATH}/components/bt/bluedroid/external/sbc/decoder/srce/bitalloc-sbc.c \
-			$${IDF_PATH}/components/bt/bluedroid/external/sbc/decoder/srce/bitalloc.c \
-			$${IDF_PATH}/components/bt/bluedroid/external/sbc/decoder/srce/bitalloc.c \
-			$${IDF_PATH}/components/bt/bluedroid/external/sbc/decoder/srce/bitalloc.c \
-			$${IDF_PATH}/components/bt/bluedroid/external/sbc/decoder/srce/bitstream-decode.c \
-			$${IDF_PATH}/components/bt/bluedroid/external/sbc/decoder/srce/bitstream-decode.c \
-			$${IDF_PATH}/components/bt/bluedroid/external/sbc/decoder/srce/bitstream-decode.c \
+			$${IDF_PATH}/components/asio/asio/asio/src/tests/unit/bind_executor.cpp \
+			$${IDF_PATH}/components/bt/host/bluedroid/external/sbc/decoder/srce/bitalloc-sbc.c \
+			$${IDF_PATH}/components/bt/host/bluedroid/external/sbc/decoder/srce/bitalloc-sbc.c \
+			$${IDF_PATH}/components/bt/host/bluedroid/external/sbc/decoder/srce/bitalloc-sbc.c \
+			$${IDF_PATH}/components/bt/host/bluedroid/external/sbc/decoder/srce/bitalloc.c \
+			$${IDF_PATH}/components/bt/host/bluedroid/external/sbc/decoder/srce/bitalloc.c \
+			$${IDF_PATH}/components/bt/host/bluedroid/external/sbc/decoder/srce/bitalloc.c \
+			$${IDF_PATH}/components/bt/host/bluedroid/external/sbc/decoder/srce/bitstream-decode.c \
+			$${IDF_PATH}/components/bt/host/bluedroid/external/sbc/decoder/srce/bitstream-decode.c \
+			$${IDF_PATH}/components/bt/host/bluedroid/external/sbc/decoder/srce/bitstream-decode.c \
 			$${IDF_PATH}/components/libsodium/libsodium/src/libsodium/crypto_generichash/blake2b/ref/blake2b-compress-avx2.c \
 			$${IDF_PATH}/components/libsodium/libsodium/src/libsodium/crypto_generichash/blake2b/ref/blake2b-compress-avx2.c \
 			$${IDF_PATH}/components/libsodium/libsodium/src/libsodium/crypto_generichash/blake2b/ref/blake2b-compress-avx2.c \
@@ -1824,6 +2159,10 @@
 			$${IDF_PATH}/components/coap/libcoap/src/block.c \
 			$${IDF_PATH}/components/asio/asio/asio/src/examples/cpp03/timeouts/blocking_tcp_client.cpp \
 			$${IDF_PATH}/components/asio/asio/asio/src/examples/cpp03/timeouts/blocking_tcp_client.cpp \
+			$${IDF_PATH}/components/asio/asio/asio/src/examples/cpp03/timeouts/blocking_tcp_client.cpp \
+			$${IDF_PATH}/components/asio/asio/asio/src/examples/cpp14/echo/blocking_tcp_echo_client.cpp \
+			$${IDF_PATH}/components/asio/asio/asio/src/examples/cpp11/echo/blocking_tcp_echo_client.cpp \
+			$${IDF_PATH}/components/asio/asio/asio/src/examples/cpp03/echo/blocking_tcp_echo_client.cpp \
 			$${IDF_PATH}/components/asio/asio/asio/src/examples/cpp14/echo/blocking_tcp_echo_client.cpp \
 			$${IDF_PATH}/components/asio/asio/asio/src/examples/cpp11/echo/blocking_tcp_echo_client.cpp \
 			$${IDF_PATH}/components/asio/asio/asio/src/examples/cpp03/echo/blocking_tcp_echo_client.cpp \
@@ -1836,10 +2175,18 @@
 			$${IDF_PATH}/components/asio/asio/asio/src/examples/cpp14/echo/blocking_tcp_echo_server.cpp \
 			$${IDF_PATH}/components/asio/asio/asio/src/examples/cpp11/echo/blocking_tcp_echo_server.cpp \
 			$${IDF_PATH}/components/asio/asio/asio/src/examples/cpp03/echo/blocking_tcp_echo_server.cpp \
+			$${IDF_PATH}/components/asio/asio/asio/src/examples/cpp14/echo/blocking_tcp_echo_server.cpp \
+			$${IDF_PATH}/components/asio/asio/asio/src/examples/cpp11/echo/blocking_tcp_echo_server.cpp \
+			$${IDF_PATH}/components/asio/asio/asio/src/examples/cpp03/echo/blocking_tcp_echo_server.cpp \
+			$${IDF_PATH}/components/asio/asio/asio/src/examples/cpp03/timeouts/blocking_token_tcp_client.cpp \
 			$${IDF_PATH}/components/asio/asio/asio/src/examples/cpp03/timeouts/blocking_token_tcp_client.cpp \
 			$${IDF_PATH}/components/asio/asio/asio/src/examples/cpp03/timeouts/blocking_token_tcp_client.cpp \
 			$${IDF_PATH}/components/asio/asio/asio/src/examples/cpp03/timeouts/blocking_udp_client.cpp \
 			$${IDF_PATH}/components/asio/asio/asio/src/examples/cpp03/timeouts/blocking_udp_client.cpp \
+			$${IDF_PATH}/components/asio/asio/asio/src/examples/cpp03/timeouts/blocking_udp_client.cpp \
+			$${IDF_PATH}/components/asio/asio/asio/src/examples/cpp14/echo/blocking_udp_echo_client.cpp \
+			$${IDF_PATH}/components/asio/asio/asio/src/examples/cpp11/echo/blocking_udp_echo_client.cpp \
+			$${IDF_PATH}/components/asio/asio/asio/src/examples/cpp03/echo/blocking_udp_echo_client.cpp \
 			$${IDF_PATH}/components/asio/asio/asio/src/examples/cpp14/echo/blocking_udp_echo_client.cpp \
 			$${IDF_PATH}/components/asio/asio/asio/src/examples/cpp11/echo/blocking_udp_echo_client.cpp \
 			$${IDF_PATH}/components/asio/asio/asio/src/examples/cpp03/echo/blocking_udp_echo_client.cpp \
@@ -1852,15 +2199,18 @@
 			$${IDF_PATH}/components/asio/asio/asio/src/examples/cpp14/echo/blocking_udp_echo_server.cpp \
 			$${IDF_PATH}/components/asio/asio/asio/src/examples/cpp11/echo/blocking_udp_echo_server.cpp \
 			$${IDF_PATH}/components/asio/asio/asio/src/examples/cpp03/echo/blocking_udp_echo_server.cpp \
+			$${IDF_PATH}/components/asio/asio/asio/src/examples/cpp14/echo/blocking_udp_echo_server.cpp \
+			$${IDF_PATH}/components/asio/asio/asio/src/examples/cpp11/echo/blocking_udp_echo_server.cpp \
+			$${IDF_PATH}/components/asio/asio/asio/src/examples/cpp03/echo/blocking_udp_echo_server.cpp \
 			$${IDF_PATH}/components/mbedtls/mbedtls/library/blowfish.c \
 			$${IDF_PATH}/components/mbedtls/mbedtls/library/blowfish.c \
 			$${IDF_PATH}/components/mbedtls/mbedtls/library/blowfish.c \
-			$${IDF_PATH}/components/bt/bluedroid/btc/profile/esp/blufi/blufi_prf.c \
-			$${IDF_PATH}/components/bt/bluedroid/btc/profile/esp/blufi/blufi_prf.c \
-			$${IDF_PATH}/components/bt/bluedroid/btc/profile/esp/blufi/blufi_prf.c \
-			$${IDF_PATH}/components/bt/bluedroid/btc/profile/esp/blufi/blufi_protocol.c \
-			$${IDF_PATH}/components/bt/bluedroid/btc/profile/esp/blufi/blufi_protocol.c \
-			$${IDF_PATH}/components/bt/bluedroid/btc/profile/esp/blufi/blufi_protocol.c \
+			$${IDF_PATH}/components/bt/host/bluedroid/btc/profile/esp/blufi/blufi_prf.c \
+			$${IDF_PATH}/components/bt/host/bluedroid/btc/profile/esp/blufi/blufi_prf.c \
+			$${IDF_PATH}/components/bt/host/bluedroid/btc/profile/esp/blufi/blufi_prf.c \
+			$${IDF_PATH}/components/bt/host/bluedroid/btc/profile/esp/blufi/blufi_protocol.c \
+			$${IDF_PATH}/components/bt/host/bluedroid/btc/profile/esp/blufi/blufi_protocol.c \
+			$${IDF_PATH}/components/bt/host/bluedroid/btc/profile/esp/blufi/blufi_protocol.c \
 			$${IDF_PATH}/components/tinyusb/tinyusb/hw/bsp/ea4088qs/board_ea4088qs.c \
 			$${IDF_PATH}/components/tinyusb/tinyusb/hw/bsp/ea4088qs/board_ea4088qs.c \
 			$${IDF_PATH}/components/tinyusb/tinyusb/hw/bsp/ea4357/board_ea4357.c \
@@ -1890,8 +2240,11 @@
 			$${IDF_PATH}/components/bootloader_support/src/bootloader_clock.c \
 			$${IDF_PATH}/components/bootloader_support/src/bootloader_clock.c \
 			$${IDF_PATH}/components/bootloader_support/src/bootloader_clock.c \
+			$${IDF_PATH}/components/spi_flash/sim/stubs/bootloader_support/src/bootloader_common.c \
 			$${IDF_PATH}/components/bootloader_support/src/bootloader_common.c \
+			$${IDF_PATH}/components/spi_flash/sim/stubs/bootloader_support/src/bootloader_common.c \
 			$${IDF_PATH}/components/bootloader_support/src/bootloader_common.c \
+			$${IDF_PATH}/components/spi_flash/sim/stubs/bootloader_support/src/bootloader_common.c \
 			$${IDF_PATH}/components/bootloader_support/src/bootloader_common.c \
 			$${IDF_PATH}/components/bootloader_support/src/bootloader_flash.c \
 			$${IDF_PATH}/components/bootloader_support/src/bootloader_flash.c \
@@ -1905,9 +2258,12 @@
 			$${IDF_PATH}/components/bootloader_support/src/bootloader_random.c \
 			$${IDF_PATH}/components/bootloader_support/src/bootloader_random.c \
 			$${IDF_PATH}/components/bootloader_support/src/bootloader_random.c \
-			$${IDF_PATH}/components/bootloader_support/src/bootloader_sha.c \
-			$${IDF_PATH}/components/bootloader_support/src/bootloader_sha.c \
-			$${IDF_PATH}/components/bootloader_support/src/bootloader_sha.c \
+			$${IDF_PATH}/components/bootloader_support/src/idf/bootloader_sha.c \
+			$${IDF_PATH}/components/bootloader_support/src/esp32/bootloader_sha.c \
+			$${IDF_PATH}/components/bootloader_support/src/idf/bootloader_sha.c \
+			$${IDF_PATH}/components/bootloader_support/src/esp32/bootloader_sha.c \
+			$${IDF_PATH}/components/bootloader_support/src/idf/bootloader_sha.c \
+			$${IDF_PATH}/components/bootloader_support/src/esp32/bootloader_sha.c \
 			$${IDF_PATH}/components/bootloader/subproject/main/bootloader_start.c \
 			$${IDF_PATH}/components/bootloader/subproject/main/bootloader_start.c \
 			$${IDF_PATH}/components/bootloader/subproject/main/bootloader_start.c \
@@ -1953,348 +2309,384 @@
 			$${IDF_PATH}/components/esp32/brownout.c \
 			$${IDF_PATH}/components/esp32/brownout.c \
 			$${IDF_PATH}/components/esp32/brownout.c \
-			$${IDF_PATH}/components/bt/bt.c \
-			$${IDF_PATH}/components/bt/bt.c \
-			$${IDF_PATH}/components/bt/bt.c \
-			$${IDF_PATH}/components/bt/bluedroid/bta/ar/bta_ar.c \
-			$${IDF_PATH}/components/bt/bluedroid/bta/ar/bta_ar.c \
-			$${IDF_PATH}/components/bt/bluedroid/bta/ar/bta_ar.c \
-			$${IDF_PATH}/components/bt/bluedroid/bta/av/bta_av_aact.c \
-			$${IDF_PATH}/components/bt/bluedroid/bta/av/bta_av_aact.c \
-			$${IDF_PATH}/components/bt/bluedroid/bta/av/bta_av_aact.c \
-			$${IDF_PATH}/components/bt/bluedroid/bta/av/bta_av_act.c \
-			$${IDF_PATH}/components/bt/bluedroid/bta/av/bta_av_act.c \
-			$${IDF_PATH}/components/bt/bluedroid/bta/av/bta_av_act.c \
-			$${IDF_PATH}/components/bt/bluedroid/bta/av/bta_av_api.c \
-			$${IDF_PATH}/components/bt/bluedroid/bta/av/bta_av_api.c \
-			$${IDF_PATH}/components/bt/bluedroid/bta/av/bta_av_api.c \
-			$${IDF_PATH}/components/bt/bluedroid/bta/av/bta_av_cfg.c \
-			$${IDF_PATH}/components/bt/bluedroid/bta/av/bta_av_cfg.c \
-			$${IDF_PATH}/components/bt/bluedroid/bta/av/bta_av_cfg.c \
-			$${IDF_PATH}/components/bt/bluedroid/bta/av/bta_av_ci.c \
-			$${IDF_PATH}/components/bt/bluedroid/bta/av/bta_av_ci.c \
-			$${IDF_PATH}/components/bt/bluedroid/bta/av/bta_av_ci.c \
-			$${IDF_PATH}/components/bt/bluedroid/btc/profile/std/a2dp/bta_av_co.c \
-			$${IDF_PATH}/components/bt/bluedroid/btc/profile/std/a2dp/bta_av_co.c \
-			$${IDF_PATH}/components/bt/bluedroid/btc/profile/std/a2dp/bta_av_co.c \
-			$${IDF_PATH}/components/bt/bluedroid/bta/av/bta_av_main.c \
-			$${IDF_PATH}/components/bt/bluedroid/bta/av/bta_av_main.c \
-			$${IDF_PATH}/components/bt/bluedroid/bta/av/bta_av_main.c \
-			$${IDF_PATH}/components/bt/bluedroid/bta/av/bta_av_sbc.c \
-			$${IDF_PATH}/components/bt/bluedroid/bta/av/bta_av_sbc.c \
-			$${IDF_PATH}/components/bt/bluedroid/bta/av/bta_av_sbc.c \
-			$${IDF_PATH}/components/bt/bluedroid/bta/av/bta_av_ssm.c \
-			$${IDF_PATH}/components/bt/bluedroid/bta/av/bta_av_ssm.c \
-			$${IDF_PATH}/components/bt/bluedroid/bta/av/bta_av_ssm.c \
-			$${IDF_PATH}/components/bt/bluedroid/bta/dm/bta_dm_act.c \
-			$${IDF_PATH}/components/bt/bluedroid/bta/dm/bta_dm_act.c \
-			$${IDF_PATH}/components/bt/bluedroid/bta/dm/bta_dm_act.c \
-			$${IDF_PATH}/components/bt/bluedroid/bta/dm/bta_dm_api.c \
-			$${IDF_PATH}/components/bt/bluedroid/bta/dm/bta_dm_api.c \
-			$${IDF_PATH}/components/bt/bluedroid/bta/dm/bta_dm_api.c \
-			$${IDF_PATH}/components/bt/bluedroid/bta/dm/bta_dm_cfg.c \
-			$${IDF_PATH}/components/bt/bluedroid/bta/dm/bta_dm_cfg.c \
-			$${IDF_PATH}/components/bt/bluedroid/bta/dm/bta_dm_cfg.c \
-			$${IDF_PATH}/components/bt/bluedroid/bta/dm/bta_dm_ci.c \
-			$${IDF_PATH}/components/bt/bluedroid/bta/dm/bta_dm_ci.c \
-			$${IDF_PATH}/components/bt/bluedroid/bta/dm/bta_dm_ci.c \
-			$${IDF_PATH}/components/bt/bluedroid/bta/dm/bta_dm_co.c \
-			$${IDF_PATH}/components/bt/bluedroid/bta/dm/bta_dm_co.c \
-			$${IDF_PATH}/components/bt/bluedroid/bta/dm/bta_dm_co.c \
-			$${IDF_PATH}/components/bt/bluedroid/bta/dm/bta_dm_main.c \
-			$${IDF_PATH}/components/bt/bluedroid/bta/dm/bta_dm_main.c \
-			$${IDF_PATH}/components/bt/bluedroid/bta/dm/bta_dm_main.c \
-			$${IDF_PATH}/components/bt/bluedroid/bta/dm/bta_dm_pm.c \
-			$${IDF_PATH}/components/bt/bluedroid/bta/dm/bta_dm_pm.c \
-			$${IDF_PATH}/components/bt/bluedroid/bta/dm/bta_dm_pm.c \
-			$${IDF_PATH}/components/bt/bluedroid/bta/dm/bta_dm_sco.c \
-			$${IDF_PATH}/components/bt/bluedroid/bta/dm/bta_dm_sco.c \
-			$${IDF_PATH}/components/bt/bluedroid/bta/dm/bta_dm_sco.c \
-			$${IDF_PATH}/components/bt/bluedroid/bta/gatt/bta_gatt_common.c \
-			$${IDF_PATH}/components/bt/bluedroid/bta/gatt/bta_gatt_common.c \
-			$${IDF_PATH}/components/bt/bluedroid/bta/gatt/bta_gatt_common.c \
-			$${IDF_PATH}/components/bt/bluedroid/bta/gatt/bta_gattc_act.c \
-			$${IDF_PATH}/components/bt/bluedroid/bta/gatt/bta_gattc_act.c \
-			$${IDF_PATH}/components/bt/bluedroid/bta/gatt/bta_gattc_act.c \
-			$${IDF_PATH}/components/bt/bluedroid/bta/gatt/bta_gattc_api.c \
-			$${IDF_PATH}/components/bt/bluedroid/bta/gatt/bta_gattc_api.c \
-			$${IDF_PATH}/components/bt/bluedroid/bta/gatt/bta_gattc_api.c \
-			$${IDF_PATH}/components/bt/bluedroid/bta/gatt/bta_gattc_cache.c \
-			$${IDF_PATH}/components/bt/bluedroid/bta/gatt/bta_gattc_cache.c \
-			$${IDF_PATH}/components/bt/bluedroid/bta/gatt/bta_gattc_cache.c \
-			$${IDF_PATH}/components/bt/bluedroid/bta/gatt/bta_gattc_ci.c \
-			$${IDF_PATH}/components/bt/bluedroid/bta/gatt/bta_gattc_ci.c \
-			$${IDF_PATH}/components/bt/bluedroid/bta/gatt/bta_gattc_ci.c \
-			$${IDF_PATH}/components/bt/bluedroid/bta/gatt/bta_gattc_co.c \
-			$${IDF_PATH}/components/bt/bluedroid/bta/gatt/bta_gattc_co.c \
-			$${IDF_PATH}/components/bt/bluedroid/bta/gatt/bta_gattc_co.c \
-			$${IDF_PATH}/components/bt/bluedroid/bta/gatt/bta_gattc_main.c \
-			$${IDF_PATH}/components/bt/bluedroid/bta/gatt/bta_gattc_main.c \
-			$${IDF_PATH}/components/bt/bluedroid/bta/gatt/bta_gattc_main.c \
-			$${IDF_PATH}/components/bt/bluedroid/bta/gatt/bta_gattc_utils.c \
-			$${IDF_PATH}/components/bt/bluedroid/bta/gatt/bta_gattc_utils.c \
-			$${IDF_PATH}/components/bt/bluedroid/bta/gatt/bta_gattc_utils.c \
-			$${IDF_PATH}/components/bt/bluedroid/bta/gatt/bta_gatts_act.c \
-			$${IDF_PATH}/components/bt/bluedroid/bta/gatt/bta_gatts_act.c \
-			$${IDF_PATH}/components/bt/bluedroid/bta/gatt/bta_gatts_act.c \
-			$${IDF_PATH}/components/bt/bluedroid/bta/gatt/bta_gatts_api.c \
-			$${IDF_PATH}/components/bt/bluedroid/bta/gatt/bta_gatts_api.c \
-			$${IDF_PATH}/components/bt/bluedroid/bta/gatt/bta_gatts_api.c \
-			$${IDF_PATH}/components/bt/bluedroid/bta/gatt/bta_gatts_co.c \
-			$${IDF_PATH}/components/bt/bluedroid/bta/gatt/bta_gatts_co.c \
-			$${IDF_PATH}/components/bt/bluedroid/bta/gatt/bta_gatts_co.c \
-			$${IDF_PATH}/components/bt/bluedroid/bta/gatt/bta_gatts_main.c \
-			$${IDF_PATH}/components/bt/bluedroid/bta/gatt/bta_gatts_main.c \
-			$${IDF_PATH}/components/bt/bluedroid/bta/gatt/bta_gatts_main.c \
-			$${IDF_PATH}/components/bt/bluedroid/bta/gatt/bta_gatts_utils.c \
-			$${IDF_PATH}/components/bt/bluedroid/bta/gatt/bta_gatts_utils.c \
-			$${IDF_PATH}/components/bt/bluedroid/bta/gatt/bta_gatts_utils.c \
-			$${IDF_PATH}/components/bt/bluedroid/bta/hf_client/bta_hf_client_act.c \
-			$${IDF_PATH}/components/bt/bluedroid/bta/hf_client/bta_hf_client_act.c \
-			$${IDF_PATH}/components/bt/bluedroid/bta/hf_client/bta_hf_client_act.c \
-			$${IDF_PATH}/components/bt/bluedroid/bta/hf_client/bta_hf_client_api.c \
-			$${IDF_PATH}/components/bt/bluedroid/bta/hf_client/bta_hf_client_api.c \
-			$${IDF_PATH}/components/bt/bluedroid/bta/hf_client/bta_hf_client_api.c \
-			$${IDF_PATH}/components/bt/bluedroid/bta/hf_client/bta_hf_client_at.c \
-			$${IDF_PATH}/components/bt/bluedroid/bta/hf_client/bta_hf_client_at.c \
-			$${IDF_PATH}/components/bt/bluedroid/bta/hf_client/bta_hf_client_at.c \
-			$${IDF_PATH}/components/bt/bluedroid/bta/hf_client/bta_hf_client_cmd.c \
-			$${IDF_PATH}/components/bt/bluedroid/bta/hf_client/bta_hf_client_cmd.c \
-			$${IDF_PATH}/components/bt/bluedroid/bta/hf_client/bta_hf_client_cmd.c \
-			$${IDF_PATH}/components/bt/bluedroid/btc/profile/std/hf_client/bta_hf_client_co.c \
-			$${IDF_PATH}/components/bt/bluedroid/btc/profile/std/hf_client/bta_hf_client_co.c \
-			$${IDF_PATH}/components/bt/bluedroid/btc/profile/std/hf_client/bta_hf_client_co.c \
-			$${IDF_PATH}/components/bt/bluedroid/bta/hf_client/bta_hf_client_main.c \
-			$${IDF_PATH}/components/bt/bluedroid/bta/hf_client/bta_hf_client_main.c \
-			$${IDF_PATH}/components/bt/bluedroid/bta/hf_client/bta_hf_client_main.c \
-			$${IDF_PATH}/components/bt/bluedroid/bta/hf_client/bta_hf_client_rfc.c \
-			$${IDF_PATH}/components/bt/bluedroid/bta/hf_client/bta_hf_client_rfc.c \
-			$${IDF_PATH}/components/bt/bluedroid/bta/hf_client/bta_hf_client_rfc.c \
-			$${IDF_PATH}/components/bt/bluedroid/bta/hf_client/bta_hf_client_sco.c \
-			$${IDF_PATH}/components/bt/bluedroid/bta/hf_client/bta_hf_client_sco.c \
-			$${IDF_PATH}/components/bt/bluedroid/bta/hf_client/bta_hf_client_sco.c \
-			$${IDF_PATH}/components/bt/bluedroid/bta/hf_client/bta_hf_client_sdp.c \
-			$${IDF_PATH}/components/bt/bluedroid/bta/hf_client/bta_hf_client_sdp.c \
-			$${IDF_PATH}/components/bt/bluedroid/bta/hf_client/bta_hf_client_sdp.c \
-			$${IDF_PATH}/components/bt/bluedroid/bta/hh/bta_hh_act.c \
-			$${IDF_PATH}/components/bt/bluedroid/bta/hh/bta_hh_act.c \
-			$${IDF_PATH}/components/bt/bluedroid/bta/hh/bta_hh_act.c \
-			$${IDF_PATH}/components/bt/bluedroid/bta/hh/bta_hh_api.c \
-			$${IDF_PATH}/components/bt/bluedroid/bta/hh/bta_hh_api.c \
-			$${IDF_PATH}/components/bt/bluedroid/bta/hh/bta_hh_api.c \
-			$${IDF_PATH}/components/bt/bluedroid/bta/hh/bta_hh_cfg.c \
-			$${IDF_PATH}/components/bt/bluedroid/bta/hh/bta_hh_cfg.c \
-			$${IDF_PATH}/components/bt/bluedroid/bta/hh/bta_hh_cfg.c \
-			$${IDF_PATH}/components/bt/bluedroid/bta/hh/bta_hh_le.c \
-			$${IDF_PATH}/components/bt/bluedroid/bta/hh/bta_hh_le.c \
-			$${IDF_PATH}/components/bt/bluedroid/bta/hh/bta_hh_le.c \
-			$${IDF_PATH}/components/bt/bluedroid/bta/hh/bta_hh_main.c \
-			$${IDF_PATH}/components/bt/bluedroid/bta/hh/bta_hh_main.c \
-			$${IDF_PATH}/components/bt/bluedroid/bta/hh/bta_hh_main.c \
-			$${IDF_PATH}/components/bt/bluedroid/bta/hh/bta_hh_utils.c \
-			$${IDF_PATH}/components/bt/bluedroid/bta/hh/bta_hh_utils.c \
-			$${IDF_PATH}/components/bt/bluedroid/bta/hh/bta_hh_utils.c \
-			$${IDF_PATH}/components/bt/bluedroid/bta/jv/bta_jv_act.c \
-			$${IDF_PATH}/components/bt/bluedroid/bta/jv/bta_jv_act.c \
-			$${IDF_PATH}/components/bt/bluedroid/bta/jv/bta_jv_act.c \
-			$${IDF_PATH}/components/bt/bluedroid/bta/jv/bta_jv_api.c \
-			$${IDF_PATH}/components/bt/bluedroid/bta/jv/bta_jv_api.c \
-			$${IDF_PATH}/components/bt/bluedroid/bta/jv/bta_jv_api.c \
-			$${IDF_PATH}/components/bt/bluedroid/bta/jv/bta_jv_cfg.c \
-			$${IDF_PATH}/components/bt/bluedroid/bta/jv/bta_jv_cfg.c \
-			$${IDF_PATH}/components/bt/bluedroid/bta/jv/bta_jv_cfg.c \
-			$${IDF_PATH}/components/bt/bluedroid/bta/jv/bta_jv_main.c \
-			$${IDF_PATH}/components/bt/bluedroid/bta/jv/bta_jv_main.c \
-			$${IDF_PATH}/components/bt/bluedroid/bta/jv/bta_jv_main.c \
-			$${IDF_PATH}/components/bt/bluedroid/bta/sdp/bta_sdp.c \
-			$${IDF_PATH}/components/bt/bluedroid/bta/sdp/bta_sdp.c \
-			$${IDF_PATH}/components/bt/bluedroid/bta/sdp/bta_sdp.c \
-			$${IDF_PATH}/components/bt/bluedroid/bta/sdp/bta_sdp_act.c \
-			$${IDF_PATH}/components/bt/bluedroid/bta/sdp/bta_sdp_act.c \
-			$${IDF_PATH}/components/bt/bluedroid/bta/sdp/bta_sdp_act.c \
-			$${IDF_PATH}/components/bt/bluedroid/bta/sdp/bta_sdp_api.c \
-			$${IDF_PATH}/components/bt/bluedroid/bta/sdp/bta_sdp_api.c \
-			$${IDF_PATH}/components/bt/bluedroid/bta/sdp/bta_sdp_api.c \
-			$${IDF_PATH}/components/bt/bluedroid/bta/sdp/bta_sdp_cfg.c \
-			$${IDF_PATH}/components/bt/bluedroid/bta/sdp/bta_sdp_cfg.c \
-			$${IDF_PATH}/components/bt/bluedroid/bta/sdp/bta_sdp_cfg.c \
-			$${IDF_PATH}/components/bt/bluedroid/bta/sys/bta_sys_conn.c \
-			$${IDF_PATH}/components/bt/bluedroid/bta/sys/bta_sys_conn.c \
-			$${IDF_PATH}/components/bt/bluedroid/bta/sys/bta_sys_conn.c \
-			$${IDF_PATH}/components/bt/bluedroid/bta/sys/bta_sys_main.c \
-			$${IDF_PATH}/components/bt/bluedroid/bta/sys/bta_sys_main.c \
-			$${IDF_PATH}/components/bt/bluedroid/bta/sys/bta_sys_main.c \
-			$${IDF_PATH}/components/bt/bluedroid/btc/profile/std/a2dp/btc_a2dp.c \
-			$${IDF_PATH}/components/bt/bluedroid/btc/profile/std/a2dp/btc_a2dp.c \
-			$${IDF_PATH}/components/bt/bluedroid/btc/profile/std/a2dp/btc_a2dp.c \
-			$${IDF_PATH}/components/bt/bluedroid/btc/profile/std/a2dp/btc_a2dp_control.c \
-			$${IDF_PATH}/components/bt/bluedroid/btc/profile/std/a2dp/btc_a2dp_control.c \
-			$${IDF_PATH}/components/bt/bluedroid/btc/profile/std/a2dp/btc_a2dp_control.c \
-			$${IDF_PATH}/components/bt/bluedroid/btc/profile/std/a2dp/btc_a2dp_sink.c \
-			$${IDF_PATH}/components/bt/bluedroid/btc/profile/std/a2dp/btc_a2dp_sink.c \
-			$${IDF_PATH}/components/bt/bluedroid/btc/profile/std/a2dp/btc_a2dp_sink.c \
-			$${IDF_PATH}/components/bt/bluedroid/btc/profile/std/a2dp/btc_a2dp_source.c \
-			$${IDF_PATH}/components/bt/bluedroid/btc/profile/std/a2dp/btc_a2dp_source.c \
-			$${IDF_PATH}/components/bt/bluedroid/btc/profile/std/a2dp/btc_a2dp_source.c \
-			$${IDF_PATH}/components/bt/bluedroid/btc/core/btc_alarm.c \
-			$${IDF_PATH}/components/bt/bluedroid/btc/core/btc_alarm.c \
-			$${IDF_PATH}/components/bt/bluedroid/btc/core/btc_alarm.c \
-			$${IDF_PATH}/components/bt/bluedroid/btc/profile/std/a2dp/btc_av.c \
-			$${IDF_PATH}/components/bt/bluedroid/btc/profile/std/a2dp/btc_av.c \
-			$${IDF_PATH}/components/bt/bluedroid/btc/profile/std/a2dp/btc_av.c \
-			$${IDF_PATH}/components/bt/bluedroid/btc/profile/std/avrc/btc_avrc.c \
-			$${IDF_PATH}/components/bt/bluedroid/btc/profile/std/avrc/btc_avrc.c \
-			$${IDF_PATH}/components/bt/bluedroid/btc/profile/std/avrc/btc_avrc.c \
-			$${IDF_PATH}/components/bt/bluedroid/btc/core/btc_ble_storage.c \
-			$${IDF_PATH}/components/bt/bluedroid/btc/core/btc_ble_storage.c \
-			$${IDF_PATH}/components/bt/bluedroid/btc/core/btc_ble_storage.c \
-			$${IDF_PATH}/components/bt/bluedroid/btc/core/btc_config.c \
-			$${IDF_PATH}/components/bt/bluedroid/btc/core/btc_config.c \
-			$${IDF_PATH}/components/bt/bluedroid/btc/core/btc_config.c \
-			$${IDF_PATH}/components/bt/bluedroid/btc/core/btc_dev.c \
-			$${IDF_PATH}/components/bt/bluedroid/btc/core/btc_dev.c \
-			$${IDF_PATH}/components/bt/bluedroid/btc/core/btc_dev.c \
-			$${IDF_PATH}/components/bt/bluedroid/btc/core/btc_dm.c \
-			$${IDF_PATH}/components/bt/bluedroid/btc/core/btc_dm.c \
-			$${IDF_PATH}/components/bt/bluedroid/btc/core/btc_dm.c \
-			$${IDF_PATH}/components/bt/bluedroid/btc/profile/std/gap/btc_gap_ble.c \
-			$${IDF_PATH}/components/bt/bluedroid/btc/profile/std/gap/btc_gap_ble.c \
-			$${IDF_PATH}/components/bt/bluedroid/btc/profile/std/gap/btc_gap_ble.c \
-			$${IDF_PATH}/components/bt/bluedroid/btc/profile/std/gap/btc_gap_bt.c \
-			$${IDF_PATH}/components/bt/bluedroid/btc/profile/std/gap/btc_gap_bt.c \
-			$${IDF_PATH}/components/bt/bluedroid/btc/profile/std/gap/btc_gap_bt.c \
-			$${IDF_PATH}/components/bt/bluedroid/btc/profile/std/gatt/btc_gatt_common.c \
-			$${IDF_PATH}/components/bt/bluedroid/btc/profile/std/gatt/btc_gatt_common.c \
-			$${IDF_PATH}/components/bt/bluedroid/btc/profile/std/gatt/btc_gatt_common.c \
-			$${IDF_PATH}/components/bt/bluedroid/btc/profile/std/gatt/btc_gatt_util.c \
-			$${IDF_PATH}/components/bt/bluedroid/btc/profile/std/gatt/btc_gatt_util.c \
-			$${IDF_PATH}/components/bt/bluedroid/btc/profile/std/gatt/btc_gatt_util.c \
-			$${IDF_PATH}/components/bt/bluedroid/btc/profile/std/gatt/btc_gattc.c \
-			$${IDF_PATH}/components/bt/bluedroid/btc/profile/std/gatt/btc_gattc.c \
-			$${IDF_PATH}/components/bt/bluedroid/btc/profile/std/gatt/btc_gattc.c \
-			$${IDF_PATH}/components/bt/bluedroid/btc/profile/std/gatt/btc_gatts.c \
-			$${IDF_PATH}/components/bt/bluedroid/btc/profile/std/gatt/btc_gatts.c \
-			$${IDF_PATH}/components/bt/bluedroid/btc/profile/std/gatt/btc_gatts.c \
-			$${IDF_PATH}/components/bt/bluedroid/btc/profile/std/hf_client/btc_hf_client.c \
-			$${IDF_PATH}/components/bt/bluedroid/btc/profile/std/hf_client/btc_hf_client.c \
-			$${IDF_PATH}/components/bt/bluedroid/btc/profile/std/hf_client/btc_hf_client.c \
-			$${IDF_PATH}/components/bt/bluedroid/btc/core/btc_main.c \
-			$${IDF_PATH}/components/bt/bluedroid/btc/core/btc_main.c \
-			$${IDF_PATH}/components/bt/bluedroid/btc/core/btc_main.c \
-			$${IDF_PATH}/components/bt/bluedroid/btc/core/btc_manage.c \
-			$${IDF_PATH}/components/bt/bluedroid/btc/core/btc_manage.c \
-			$${IDF_PATH}/components/bt/bluedroid/btc/core/btc_manage.c \
-			$${IDF_PATH}/components/bt/bluedroid/btc/core/btc_profile_queue.c \
-			$${IDF_PATH}/components/bt/bluedroid/btc/core/btc_profile_queue.c \
-			$${IDF_PATH}/components/bt/bluedroid/btc/core/btc_profile_queue.c \
-			$${IDF_PATH}/components/bt/bluedroid/btc/core/btc_sec.c \
-			$${IDF_PATH}/components/bt/bluedroid/btc/core/btc_sec.c \
-			$${IDF_PATH}/components/bt/bluedroid/btc/core/btc_sec.c \
-			$${IDF_PATH}/components/bt/bluedroid/btc/core/btc_sm.c \
-			$${IDF_PATH}/components/bt/bluedroid/btc/core/btc_sm.c \
-			$${IDF_PATH}/components/bt/bluedroid/btc/core/btc_sm.c \
-			$${IDF_PATH}/components/bt/bluedroid/btc/profile/std/spp/btc_spp.c \
-			$${IDF_PATH}/components/bt/bluedroid/btc/profile/std/spp/btc_spp.c \
-			$${IDF_PATH}/components/bt/bluedroid/btc/profile/std/spp/btc_spp.c \
-			$${IDF_PATH}/components/bt/bluedroid/btc/core/btc_storage.c \
-			$${IDF_PATH}/components/bt/bluedroid/btc/core/btc_storage.c \
-			$${IDF_PATH}/components/bt/bluedroid/btc/core/btc_storage.c \
-			$${IDF_PATH}/components/bt/bluedroid/btc/core/btc_task.c \
-			$${IDF_PATH}/components/bt/bluedroid/btc/core/btc_task.c \
-			$${IDF_PATH}/components/bt/bluedroid/btc/core/btc_task.c \
-			$${IDF_PATH}/components/bt/bluedroid/btc/core/btc_util.c \
-			$${IDF_PATH}/components/bt/bluedroid/btc/core/btc_util.c \
-			$${IDF_PATH}/components/bt/bluedroid/btc/core/btc_util.c \
-			$${IDF_PATH}/components/bt/bluedroid/main/bte_init.c \
-			$${IDF_PATH}/components/bt/bluedroid/main/bte_init.c \
-			$${IDF_PATH}/components/bt/bluedroid/main/bte_init.c \
-			$${IDF_PATH}/components/bt/bluedroid/main/bte_main.c \
-			$${IDF_PATH}/components/bt/bluedroid/main/bte_main.c \
-			$${IDF_PATH}/components/bt/bluedroid/main/bte_main.c \
-			$${IDF_PATH}/components/bt/bluedroid/stack/btm/btm_acl.c \
-			$${IDF_PATH}/components/bt/bluedroid/stack/btm/btm_acl.c \
-			$${IDF_PATH}/components/bt/bluedroid/stack/btm/btm_acl.c \
-			$${IDF_PATH}/components/bt/bluedroid/stack/btm/btm_ble.c \
-			$${IDF_PATH}/components/bt/bluedroid/stack/btm/btm_ble.c \
-			$${IDF_PATH}/components/bt/bluedroid/stack/btm/btm_ble.c \
-			$${IDF_PATH}/components/bt/bluedroid/stack/btm/btm_ble_addr.c \
-			$${IDF_PATH}/components/bt/bluedroid/stack/btm/btm_ble_addr.c \
-			$${IDF_PATH}/components/bt/bluedroid/stack/btm/btm_ble_addr.c \
-			$${IDF_PATH}/components/bt/bluedroid/stack/btm/btm_ble_adv_filter.c \
-			$${IDF_PATH}/components/bt/bluedroid/stack/btm/btm_ble_adv_filter.c \
-			$${IDF_PATH}/components/bt/bluedroid/stack/btm/btm_ble_adv_filter.c \
-			$${IDF_PATH}/components/bt/bluedroid/stack/btm/btm_ble_batchscan.c \
-			$${IDF_PATH}/components/bt/bluedroid/stack/btm/btm_ble_batchscan.c \
-			$${IDF_PATH}/components/bt/bluedroid/stack/btm/btm_ble_batchscan.c \
-			$${IDF_PATH}/components/bt/bluedroid/stack/btm/btm_ble_bgconn.c \
-			$${IDF_PATH}/components/bt/bluedroid/stack/btm/btm_ble_bgconn.c \
-			$${IDF_PATH}/components/bt/bluedroid/stack/btm/btm_ble_bgconn.c \
-			$${IDF_PATH}/components/bt/bluedroid/stack/btm/btm_ble_cont_energy.c \
-			$${IDF_PATH}/components/bt/bluedroid/stack/btm/btm_ble_cont_energy.c \
-			$${IDF_PATH}/components/bt/bluedroid/stack/btm/btm_ble_cont_energy.c \
-			$${IDF_PATH}/components/bt/bluedroid/stack/btm/btm_ble_gap.c \
-			$${IDF_PATH}/components/bt/bluedroid/stack/btm/btm_ble_gap.c \
-			$${IDF_PATH}/components/bt/bluedroid/stack/btm/btm_ble_gap.c \
-			$${IDF_PATH}/components/bt/bluedroid/stack/btm/btm_ble_multi_adv.c \
-			$${IDF_PATH}/components/bt/bluedroid/stack/btm/btm_ble_multi_adv.c \
-			$${IDF_PATH}/components/bt/bluedroid/stack/btm/btm_ble_multi_adv.c \
-			$${IDF_PATH}/components/bt/bluedroid/stack/btm/btm_ble_privacy.c \
-			$${IDF_PATH}/components/bt/bluedroid/stack/btm/btm_ble_privacy.c \
-			$${IDF_PATH}/components/bt/bluedroid/stack/btm/btm_ble_privacy.c \
-			$${IDF_PATH}/components/bt/bluedroid/stack/btm/btm_dev.c \
-			$${IDF_PATH}/components/bt/bluedroid/stack/btm/btm_dev.c \
-			$${IDF_PATH}/components/bt/bluedroid/stack/btm/btm_dev.c \
-			$${IDF_PATH}/components/bt/bluedroid/stack/btm/btm_devctl.c \
-			$${IDF_PATH}/components/bt/bluedroid/stack/btm/btm_devctl.c \
-			$${IDF_PATH}/components/bt/bluedroid/stack/btm/btm_devctl.c \
-			$${IDF_PATH}/components/bt/bluedroid/stack/btm/btm_inq.c \
-			$${IDF_PATH}/components/bt/bluedroid/stack/btm/btm_inq.c \
-			$${IDF_PATH}/components/bt/bluedroid/stack/btm/btm_inq.c \
-			$${IDF_PATH}/components/bt/bluedroid/stack/btm/btm_main.c \
-			$${IDF_PATH}/components/bt/bluedroid/stack/btm/btm_main.c \
-			$${IDF_PATH}/components/bt/bluedroid/stack/btm/btm_main.c \
-			$${IDF_PATH}/components/bt/bluedroid/stack/btm/btm_pm.c \
-			$${IDF_PATH}/components/bt/bluedroid/stack/btm/btm_pm.c \
-			$${IDF_PATH}/components/bt/bluedroid/stack/btm/btm_pm.c \
-			$${IDF_PATH}/components/bt/bluedroid/stack/btm/btm_sco.c \
-			$${IDF_PATH}/components/bt/bluedroid/stack/btm/btm_sco.c \
-			$${IDF_PATH}/components/bt/bluedroid/stack/btm/btm_sco.c \
-			$${IDF_PATH}/components/bt/bluedroid/stack/btm/btm_sec.c \
-			$${IDF_PATH}/components/bt/bluedroid/stack/btm/btm_sec.c \
-			$${IDF_PATH}/components/bt/bluedroid/stack/btm/btm_sec.c \
+			$${IDF_PATH}/components/bt/controller/bt.c \
+			$${IDF_PATH}/components/bt/controller/bt.c \
+			$${IDF_PATH}/components/bt/controller/bt.c \
+			$${IDF_PATH}/components/bt/host/bluedroid/bta/hf_ag/bta_ag_api.c \
+			$${IDF_PATH}/components/bt/host/bluedroid/bta/hf_ag/bta_ag_api.c \
+			$${IDF_PATH}/components/bt/host/bluedroid/bta/hf_ag/bta_ag_api.c \
+			$${IDF_PATH}/components/bt/host/bluedroid/bta/hf_ag/bta_ag_cmd.c \
+			$${IDF_PATH}/components/bt/host/bluedroid/bta/hf_ag/bta_ag_cmd.c \
+			$${IDF_PATH}/components/bt/host/bluedroid/bta/hf_ag/bta_ag_cmd.c \
+			$${IDF_PATH}/components/bt/host/bluedroid/bta/ar/bta_ar.c \
+			$${IDF_PATH}/components/bt/host/bluedroid/bta/ar/bta_ar.c \
+			$${IDF_PATH}/components/bt/host/bluedroid/bta/ar/bta_ar.c \
+			$${IDF_PATH}/components/bt/host/bluedroid/bta/av/bta_av_aact.c \
+			$${IDF_PATH}/components/bt/host/bluedroid/bta/av/bta_av_aact.c \
+			$${IDF_PATH}/components/bt/host/bluedroid/bta/av/bta_av_aact.c \
+			$${IDF_PATH}/components/bt/host/bluedroid/bta/av/bta_av_act.c \
+			$${IDF_PATH}/components/bt/host/bluedroid/bta/av/bta_av_act.c \
+			$${IDF_PATH}/components/bt/host/bluedroid/bta/av/bta_av_act.c \
+			$${IDF_PATH}/components/bt/host/bluedroid/bta/av/bta_av_api.c \
+			$${IDF_PATH}/components/bt/host/bluedroid/bta/av/bta_av_api.c \
+			$${IDF_PATH}/components/bt/host/bluedroid/bta/av/bta_av_api.c \
+			$${IDF_PATH}/components/bt/host/bluedroid/bta/av/bta_av_cfg.c \
+			$${IDF_PATH}/components/bt/host/bluedroid/bta/av/bta_av_cfg.c \
+			$${IDF_PATH}/components/bt/host/bluedroid/bta/av/bta_av_cfg.c \
+			$${IDF_PATH}/components/bt/host/bluedroid/bta/av/bta_av_ci.c \
+			$${IDF_PATH}/components/bt/host/bluedroid/bta/av/bta_av_ci.c \
+			$${IDF_PATH}/components/bt/host/bluedroid/bta/av/bta_av_ci.c \
+			$${IDF_PATH}/components/bt/host/bluedroid/btc/profile/std/a2dp/bta_av_co.c \
+			$${IDF_PATH}/components/bt/host/bluedroid/btc/profile/std/a2dp/bta_av_co.c \
+			$${IDF_PATH}/components/bt/host/bluedroid/btc/profile/std/a2dp/bta_av_co.c \
+			$${IDF_PATH}/components/bt/host/bluedroid/bta/av/bta_av_main.c \
+			$${IDF_PATH}/components/bt/host/bluedroid/bta/av/bta_av_main.c \
+			$${IDF_PATH}/components/bt/host/bluedroid/bta/av/bta_av_main.c \
+			$${IDF_PATH}/components/bt/host/bluedroid/bta/av/bta_av_sbc.c \
+			$${IDF_PATH}/components/bt/host/bluedroid/bta/av/bta_av_sbc.c \
+			$${IDF_PATH}/components/bt/host/bluedroid/bta/av/bta_av_sbc.c \
+			$${IDF_PATH}/components/bt/host/bluedroid/bta/av/bta_av_ssm.c \
+			$${IDF_PATH}/components/bt/host/bluedroid/bta/av/bta_av_ssm.c \
+			$${IDF_PATH}/components/bt/host/bluedroid/bta/av/bta_av_ssm.c \
+			$${IDF_PATH}/components/bt/host/bluedroid/btc/profile/std/avrc/bta_avrc_co.c \
+			$${IDF_PATH}/components/bt/host/bluedroid/btc/profile/std/avrc/bta_avrc_co.c \
+			$${IDF_PATH}/components/bt/host/bluedroid/btc/profile/std/avrc/bta_avrc_co.c \
+			$${IDF_PATH}/components/bt/host/bluedroid/bta/dm/bta_dm_act.c \
+			$${IDF_PATH}/components/bt/host/bluedroid/bta/dm/bta_dm_act.c \
+			$${IDF_PATH}/components/bt/host/bluedroid/bta/dm/bta_dm_act.c \
+			$${IDF_PATH}/components/bt/host/bluedroid/bta/dm/bta_dm_api.c \
+			$${IDF_PATH}/components/bt/host/bluedroid/bta/dm/bta_dm_api.c \
+			$${IDF_PATH}/components/bt/host/bluedroid/bta/dm/bta_dm_api.c \
+			$${IDF_PATH}/components/bt/host/bluedroid/bta/dm/bta_dm_cfg.c \
+			$${IDF_PATH}/components/bt/host/bluedroid/bta/dm/bta_dm_cfg.c \
+			$${IDF_PATH}/components/bt/host/bluedroid/bta/dm/bta_dm_cfg.c \
+			$${IDF_PATH}/components/bt/host/bluedroid/bta/dm/bta_dm_ci.c \
+			$${IDF_PATH}/components/bt/host/bluedroid/bta/dm/bta_dm_ci.c \
+			$${IDF_PATH}/components/bt/host/bluedroid/bta/dm/bta_dm_ci.c \
+			$${IDF_PATH}/components/bt/host/bluedroid/bta/dm/bta_dm_co.c \
+			$${IDF_PATH}/components/bt/host/bluedroid/bta/dm/bta_dm_co.c \
+			$${IDF_PATH}/components/bt/host/bluedroid/bta/dm/bta_dm_co.c \
+			$${IDF_PATH}/components/bt/host/bluedroid/bta/dm/bta_dm_main.c \
+			$${IDF_PATH}/components/bt/host/bluedroid/bta/dm/bta_dm_main.c \
+			$${IDF_PATH}/components/bt/host/bluedroid/bta/dm/bta_dm_main.c \
+			$${IDF_PATH}/components/bt/host/bluedroid/bta/dm/bta_dm_pm.c \
+			$${IDF_PATH}/components/bt/host/bluedroid/bta/dm/bta_dm_pm.c \
+			$${IDF_PATH}/components/bt/host/bluedroid/bta/dm/bta_dm_pm.c \
+			$${IDF_PATH}/components/bt/host/bluedroid/bta/dm/bta_dm_sco.c \
+			$${IDF_PATH}/components/bt/host/bluedroid/bta/dm/bta_dm_sco.c \
+			$${IDF_PATH}/components/bt/host/bluedroid/bta/dm/bta_dm_sco.c \
+			$${IDF_PATH}/components/bt/host/bluedroid/btc/profile/std/gap/bta_gap_bt_co.c \
+			$${IDF_PATH}/components/bt/host/bluedroid/btc/profile/std/gap/bta_gap_bt_co.c \
+			$${IDF_PATH}/components/bt/host/bluedroid/btc/profile/std/gap/bta_gap_bt_co.c \
+			$${IDF_PATH}/components/bt/host/bluedroid/bta/gatt/bta_gatt_common.c \
+			$${IDF_PATH}/components/bt/host/bluedroid/bta/gatt/bta_gatt_common.c \
+			$${IDF_PATH}/components/bt/host/bluedroid/bta/gatt/bta_gatt_common.c \
+			$${IDF_PATH}/components/bt/host/bluedroid/bta/gatt/bta_gattc_act.c \
+			$${IDF_PATH}/components/bt/host/bluedroid/bta/gatt/bta_gattc_act.c \
+			$${IDF_PATH}/components/bt/host/bluedroid/bta/gatt/bta_gattc_act.c \
+			$${IDF_PATH}/components/bt/host/bluedroid/bta/gatt/bta_gattc_api.c \
+			$${IDF_PATH}/components/bt/host/bluedroid/bta/gatt/bta_gattc_api.c \
+			$${IDF_PATH}/components/bt/host/bluedroid/bta/gatt/bta_gattc_api.c \
+			$${IDF_PATH}/components/bt/host/bluedroid/bta/gatt/bta_gattc_cache.c \
+			$${IDF_PATH}/components/bt/host/bluedroid/bta/gatt/bta_gattc_cache.c \
+			$${IDF_PATH}/components/bt/host/bluedroid/bta/gatt/bta_gattc_cache.c \
+			$${IDF_PATH}/components/bt/host/bluedroid/bta/gatt/bta_gattc_ci.c \
+			$${IDF_PATH}/components/bt/host/bluedroid/bta/gatt/bta_gattc_ci.c \
+			$${IDF_PATH}/components/bt/host/bluedroid/bta/gatt/bta_gattc_ci.c \
+			$${IDF_PATH}/components/bt/host/bluedroid/bta/gatt/bta_gattc_co.c \
+			$${IDF_PATH}/components/bt/host/bluedroid/bta/gatt/bta_gattc_co.c \
+			$${IDF_PATH}/components/bt/host/bluedroid/bta/gatt/bta_gattc_co.c \
+			$${IDF_PATH}/components/bt/host/bluedroid/bta/gatt/bta_gattc_main.c \
+			$${IDF_PATH}/components/bt/host/bluedroid/bta/gatt/bta_gattc_main.c \
+			$${IDF_PATH}/components/bt/host/bluedroid/bta/gatt/bta_gattc_main.c \
+			$${IDF_PATH}/components/bt/host/bluedroid/bta/gatt/bta_gattc_utils.c \
+			$${IDF_PATH}/components/bt/host/bluedroid/bta/gatt/bta_gattc_utils.c \
+			$${IDF_PATH}/components/bt/host/bluedroid/bta/gatt/bta_gattc_utils.c \
+			$${IDF_PATH}/components/bt/host/bluedroid/bta/gatt/bta_gatts_act.c \
+			$${IDF_PATH}/components/bt/host/bluedroid/bta/gatt/bta_gatts_act.c \
+			$${IDF_PATH}/components/bt/host/bluedroid/bta/gatt/bta_gatts_act.c \
+			$${IDF_PATH}/components/bt/host/bluedroid/bta/gatt/bta_gatts_api.c \
+			$${IDF_PATH}/components/bt/host/bluedroid/bta/gatt/bta_gatts_api.c \
+			$${IDF_PATH}/components/bt/host/bluedroid/bta/gatt/bta_gatts_api.c \
+			$${IDF_PATH}/components/bt/host/bluedroid/bta/gatt/bta_gatts_co.c \
+			$${IDF_PATH}/components/bt/host/bluedroid/bta/gatt/bta_gatts_co.c \
+			$${IDF_PATH}/components/bt/host/bluedroid/bta/gatt/bta_gatts_co.c \
+			$${IDF_PATH}/components/bt/host/bluedroid/bta/gatt/bta_gatts_main.c \
+			$${IDF_PATH}/components/bt/host/bluedroid/bta/gatt/bta_gatts_main.c \
+			$${IDF_PATH}/components/bt/host/bluedroid/bta/gatt/bta_gatts_main.c \
+			$${IDF_PATH}/components/bt/host/bluedroid/bta/gatt/bta_gatts_utils.c \
+			$${IDF_PATH}/components/bt/host/bluedroid/bta/gatt/bta_gatts_utils.c \
+			$${IDF_PATH}/components/bt/host/bluedroid/bta/gatt/bta_gatts_utils.c \
+			$${IDF_PATH}/components/bt/host/bluedroid/bta/hf_client/bta_hf_client_act.c \
+			$${IDF_PATH}/components/bt/host/bluedroid/bta/hf_client/bta_hf_client_act.c \
+			$${IDF_PATH}/components/bt/host/bluedroid/bta/hf_client/bta_hf_client_act.c \
+			$${IDF_PATH}/components/bt/host/bluedroid/bta/hf_client/bta_hf_client_api.c \
+			$${IDF_PATH}/components/bt/host/bluedroid/bta/hf_client/bta_hf_client_api.c \
+			$${IDF_PATH}/components/bt/host/bluedroid/bta/hf_client/bta_hf_client_api.c \
+			$${IDF_PATH}/components/bt/host/bluedroid/bta/hf_client/bta_hf_client_at.c \
+			$${IDF_PATH}/components/bt/host/bluedroid/bta/hf_client/bta_hf_client_at.c \
+			$${IDF_PATH}/components/bt/host/bluedroid/bta/hf_client/bta_hf_client_at.c \
+			$${IDF_PATH}/components/bt/host/bluedroid/bta/hf_client/bta_hf_client_cmd.c \
+			$${IDF_PATH}/components/bt/host/bluedroid/bta/hf_client/bta_hf_client_cmd.c \
+			$${IDF_PATH}/components/bt/host/bluedroid/bta/hf_client/bta_hf_client_cmd.c \
+			$${IDF_PATH}/components/bt/host/bluedroid/btc/profile/std/hf_client/bta_hf_client_co.c \
+			$${IDF_PATH}/components/bt/host/bluedroid/btc/profile/std/hf_client/bta_hf_client_co.c \
+			$${IDF_PATH}/components/bt/host/bluedroid/btc/profile/std/hf_client/bta_hf_client_co.c \
+			$${IDF_PATH}/components/bt/host/bluedroid/bta/hf_client/bta_hf_client_main.c \
+			$${IDF_PATH}/components/bt/host/bluedroid/bta/hf_client/bta_hf_client_main.c \
+			$${IDF_PATH}/components/bt/host/bluedroid/bta/hf_client/bta_hf_client_main.c \
+			$${IDF_PATH}/components/bt/host/bluedroid/bta/hf_client/bta_hf_client_rfc.c \
+			$${IDF_PATH}/components/bt/host/bluedroid/bta/hf_client/bta_hf_client_rfc.c \
+			$${IDF_PATH}/components/bt/host/bluedroid/bta/hf_client/bta_hf_client_rfc.c \
+			$${IDF_PATH}/components/bt/host/bluedroid/bta/hf_client/bta_hf_client_sco.c \
+			$${IDF_PATH}/components/bt/host/bluedroid/bta/hf_client/bta_hf_client_sco.c \
+			$${IDF_PATH}/components/bt/host/bluedroid/bta/hf_client/bta_hf_client_sco.c \
+			$${IDF_PATH}/components/bt/host/bluedroid/bta/hf_client/bta_hf_client_sdp.c \
+			$${IDF_PATH}/components/bt/host/bluedroid/bta/hf_client/bta_hf_client_sdp.c \
+			$${IDF_PATH}/components/bt/host/bluedroid/bta/hf_client/bta_hf_client_sdp.c \
+			$${IDF_PATH}/components/bt/host/bluedroid/bta/hh/bta_hh_act.c \
+			$${IDF_PATH}/components/bt/host/bluedroid/bta/hh/bta_hh_act.c \
+			$${IDF_PATH}/components/bt/host/bluedroid/bta/hh/bta_hh_act.c \
+			$${IDF_PATH}/components/bt/host/bluedroid/bta/hh/bta_hh_api.c \
+			$${IDF_PATH}/components/bt/host/bluedroid/bta/hh/bta_hh_api.c \
+			$${IDF_PATH}/components/bt/host/bluedroid/bta/hh/bta_hh_api.c \
+			$${IDF_PATH}/components/bt/host/bluedroid/bta/hh/bta_hh_cfg.c \
+			$${IDF_PATH}/components/bt/host/bluedroid/bta/hh/bta_hh_cfg.c \
+			$${IDF_PATH}/components/bt/host/bluedroid/bta/hh/bta_hh_cfg.c \
+			$${IDF_PATH}/components/bt/host/bluedroid/bta/hh/bta_hh_le.c \
+			$${IDF_PATH}/components/bt/host/bluedroid/bta/hh/bta_hh_le.c \
+			$${IDF_PATH}/components/bt/host/bluedroid/bta/hh/bta_hh_le.c \
+			$${IDF_PATH}/components/bt/host/bluedroid/bta/hh/bta_hh_main.c \
+			$${IDF_PATH}/components/bt/host/bluedroid/bta/hh/bta_hh_main.c \
+			$${IDF_PATH}/components/bt/host/bluedroid/bta/hh/bta_hh_main.c \
+			$${IDF_PATH}/components/bt/host/bluedroid/bta/hh/bta_hh_utils.c \
+			$${IDF_PATH}/components/bt/host/bluedroid/bta/hh/bta_hh_utils.c \
+			$${IDF_PATH}/components/bt/host/bluedroid/bta/hh/bta_hh_utils.c \
+			$${IDF_PATH}/components/bt/host/bluedroid/bta/jv/bta_jv_act.c \
+			$${IDF_PATH}/components/bt/host/bluedroid/bta/jv/bta_jv_act.c \
+			$${IDF_PATH}/components/bt/host/bluedroid/bta/jv/bta_jv_act.c \
+			$${IDF_PATH}/components/bt/host/bluedroid/bta/jv/bta_jv_api.c \
+			$${IDF_PATH}/components/bt/host/bluedroid/bta/jv/bta_jv_api.c \
+			$${IDF_PATH}/components/bt/host/bluedroid/bta/jv/bta_jv_api.c \
+			$${IDF_PATH}/components/bt/host/bluedroid/bta/jv/bta_jv_cfg.c \
+			$${IDF_PATH}/components/bt/host/bluedroid/bta/jv/bta_jv_cfg.c \
+			$${IDF_PATH}/components/bt/host/bluedroid/bta/jv/bta_jv_cfg.c \
+			$${IDF_PATH}/components/bt/host/bluedroid/bta/jv/bta_jv_main.c \
+			$${IDF_PATH}/components/bt/host/bluedroid/bta/jv/bta_jv_main.c \
+			$${IDF_PATH}/components/bt/host/bluedroid/bta/jv/bta_jv_main.c \
+			$${IDF_PATH}/components/bt/host/bluedroid/bta/sdp/bta_sdp.c \
+			$${IDF_PATH}/components/bt/host/bluedroid/bta/sdp/bta_sdp.c \
+			$${IDF_PATH}/components/bt/host/bluedroid/bta/sdp/bta_sdp.c \
+			$${IDF_PATH}/components/bt/host/bluedroid/bta/sdp/bta_sdp_act.c \
+			$${IDF_PATH}/components/bt/host/bluedroid/bta/sdp/bta_sdp_act.c \
+			$${IDF_PATH}/components/bt/host/bluedroid/bta/sdp/bta_sdp_act.c \
+			$${IDF_PATH}/components/bt/host/bluedroid/bta/sdp/bta_sdp_api.c \
+			$${IDF_PATH}/components/bt/host/bluedroid/bta/sdp/bta_sdp_api.c \
+			$${IDF_PATH}/components/bt/host/bluedroid/bta/sdp/bta_sdp_api.c \
+			$${IDF_PATH}/components/bt/host/bluedroid/bta/sdp/bta_sdp_cfg.c \
+			$${IDF_PATH}/components/bt/host/bluedroid/bta/sdp/bta_sdp_cfg.c \
+			$${IDF_PATH}/components/bt/host/bluedroid/bta/sdp/bta_sdp_cfg.c \
+			$${IDF_PATH}/components/bt/host/bluedroid/bta/sys/bta_sys_conn.c \
+			$${IDF_PATH}/components/bt/host/bluedroid/bta/sys/bta_sys_conn.c \
+			$${IDF_PATH}/components/bt/host/bluedroid/bta/sys/bta_sys_conn.c \
+			$${IDF_PATH}/components/bt/host/bluedroid/bta/sys/bta_sys_main.c \
+			$${IDF_PATH}/components/bt/host/bluedroid/bta/sys/bta_sys_main.c \
+			$${IDF_PATH}/components/bt/host/bluedroid/bta/sys/bta_sys_main.c \
+			$${IDF_PATH}/components/bt/host/bluedroid/btc/profile/std/a2dp/btc_a2dp.c \
+			$${IDF_PATH}/components/bt/host/bluedroid/btc/profile/std/a2dp/btc_a2dp.c \
+			$${IDF_PATH}/components/bt/host/bluedroid/btc/profile/std/a2dp/btc_a2dp.c \
+			$${IDF_PATH}/components/bt/host/bluedroid/btc/profile/std/a2dp/btc_a2dp_control.c \
+			$${IDF_PATH}/components/bt/host/bluedroid/btc/profile/std/a2dp/btc_a2dp_control.c \
+			$${IDF_PATH}/components/bt/host/bluedroid/btc/profile/std/a2dp/btc_a2dp_control.c \
+			$${IDF_PATH}/components/bt/host/bluedroid/btc/profile/std/a2dp/btc_a2dp_sink.c \
+			$${IDF_PATH}/components/bt/host/bluedroid/btc/profile/std/a2dp/btc_a2dp_sink.c \
+			$${IDF_PATH}/components/bt/host/bluedroid/btc/profile/std/a2dp/btc_a2dp_sink.c \
+			$${IDF_PATH}/components/bt/host/bluedroid/btc/profile/std/a2dp/btc_a2dp_source.c \
+			$${IDF_PATH}/components/bt/host/bluedroid/btc/profile/std/a2dp/btc_a2dp_source.c \
+			$${IDF_PATH}/components/bt/host/bluedroid/btc/profile/std/a2dp/btc_a2dp_source.c \
+			$${IDF_PATH}/components/bt/common/btc/core/btc_alarm.c \
+			$${IDF_PATH}/components/bt/common/btc/core/btc_alarm.c \
+			$${IDF_PATH}/components/bt/common/btc/core/btc_alarm.c \
+			$${IDF_PATH}/components/bt/host/bluedroid/btc/profile/std/a2dp/btc_av.c \
+			$${IDF_PATH}/components/bt/host/bluedroid/btc/profile/std/a2dp/btc_av.c \
+			$${IDF_PATH}/components/bt/host/bluedroid/btc/profile/std/a2dp/btc_av.c \
+			$${IDF_PATH}/components/bt/host/bluedroid/btc/profile/std/avrc/btc_avrc.c \
+			$${IDF_PATH}/components/bt/host/bluedroid/btc/profile/std/avrc/btc_avrc.c \
+			$${IDF_PATH}/components/bt/host/bluedroid/btc/profile/std/avrc/btc_avrc.c \
+			$${IDF_PATH}/components/bt/esp_ble_mesh/btc/btc_ble_mesh_config_model.c \
+			$${IDF_PATH}/components/bt/esp_ble_mesh/btc/btc_ble_mesh_config_model.c \
+			$${IDF_PATH}/components/bt/esp_ble_mesh/btc/btc_ble_mesh_config_model.c \
+			$${IDF_PATH}/components/bt/esp_ble_mesh/btc/btc_ble_mesh_generic_model.c \
+			$${IDF_PATH}/components/bt/esp_ble_mesh/btc/btc_ble_mesh_generic_model.c \
+			$${IDF_PATH}/components/bt/esp_ble_mesh/btc/btc_ble_mesh_generic_model.c \
+			$${IDF_PATH}/components/bt/esp_ble_mesh/btc/btc_ble_mesh_health_model.c \
+			$${IDF_PATH}/components/bt/esp_ble_mesh/btc/btc_ble_mesh_health_model.c \
+			$${IDF_PATH}/components/bt/esp_ble_mesh/btc/btc_ble_mesh_health_model.c \
+			$${IDF_PATH}/components/bt/esp_ble_mesh/btc/btc_ble_mesh_lighting_model.c \
+			$${IDF_PATH}/components/bt/esp_ble_mesh/btc/btc_ble_mesh_lighting_model.c \
+			$${IDF_PATH}/components/bt/esp_ble_mesh/btc/btc_ble_mesh_lighting_model.c \
+			$${IDF_PATH}/components/bt/esp_ble_mesh/btc/btc_ble_mesh_prov.c \
+			$${IDF_PATH}/components/bt/esp_ble_mesh/btc/btc_ble_mesh_prov.c \
+			$${IDF_PATH}/components/bt/esp_ble_mesh/btc/btc_ble_mesh_prov.c \
+			$${IDF_PATH}/components/bt/esp_ble_mesh/btc/btc_ble_mesh_sensor_model.c \
+			$${IDF_PATH}/components/bt/esp_ble_mesh/btc/btc_ble_mesh_sensor_model.c \
+			$${IDF_PATH}/components/bt/esp_ble_mesh/btc/btc_ble_mesh_sensor_model.c \
+			$${IDF_PATH}/components/bt/esp_ble_mesh/btc/btc_ble_mesh_time_scene_model.c \
+			$${IDF_PATH}/components/bt/esp_ble_mesh/btc/btc_ble_mesh_time_scene_model.c \
+			$${IDF_PATH}/components/bt/esp_ble_mesh/btc/btc_ble_mesh_time_scene_model.c \
+			$${IDF_PATH}/components/bt/host/bluedroid/btc/core/btc_ble_storage.c \
+			$${IDF_PATH}/components/bt/host/bluedroid/btc/core/btc_ble_storage.c \
+			$${IDF_PATH}/components/bt/host/bluedroid/btc/core/btc_ble_storage.c \
+			$${IDF_PATH}/components/bt/host/bluedroid/btc/core/btc_config.c \
+			$${IDF_PATH}/components/bt/host/bluedroid/btc/core/btc_config.c \
+			$${IDF_PATH}/components/bt/host/bluedroid/btc/core/btc_config.c \
+			$${IDF_PATH}/components/bt/host/bluedroid/btc/core/btc_dev.c \
+			$${IDF_PATH}/components/bt/host/bluedroid/btc/core/btc_dev.c \
+			$${IDF_PATH}/components/bt/host/bluedroid/btc/core/btc_dev.c \
+			$${IDF_PATH}/components/bt/host/bluedroid/btc/core/btc_dm.c \
+			$${IDF_PATH}/components/bt/host/bluedroid/btc/core/btc_dm.c \
+			$${IDF_PATH}/components/bt/host/bluedroid/btc/core/btc_dm.c \
+			$${IDF_PATH}/components/bt/host/bluedroid/btc/profile/std/gap/btc_gap_ble.c \
+			$${IDF_PATH}/components/bt/host/bluedroid/btc/profile/std/gap/btc_gap_ble.c \
+			$${IDF_PATH}/components/bt/host/bluedroid/btc/profile/std/gap/btc_gap_ble.c \
+			$${IDF_PATH}/components/bt/host/bluedroid/btc/profile/std/gap/btc_gap_bt.c \
+			$${IDF_PATH}/components/bt/host/bluedroid/btc/profile/std/gap/btc_gap_bt.c \
+			$${IDF_PATH}/components/bt/host/bluedroid/btc/profile/std/gap/btc_gap_bt.c \
+			$${IDF_PATH}/components/bt/host/bluedroid/btc/profile/std/gatt/btc_gatt_common.c \
+			$${IDF_PATH}/components/bt/host/bluedroid/btc/profile/std/gatt/btc_gatt_common.c \
+			$${IDF_PATH}/components/bt/host/bluedroid/btc/profile/std/gatt/btc_gatt_common.c \
+			$${IDF_PATH}/components/bt/host/bluedroid/btc/profile/std/gatt/btc_gatt_util.c \
+			$${IDF_PATH}/components/bt/host/bluedroid/btc/profile/std/gatt/btc_gatt_util.c \
+			$${IDF_PATH}/components/bt/host/bluedroid/btc/profile/std/gatt/btc_gatt_util.c \
+			$${IDF_PATH}/components/bt/host/bluedroid/btc/profile/std/gatt/btc_gattc.c \
+			$${IDF_PATH}/components/bt/host/bluedroid/btc/profile/std/gatt/btc_gattc.c \
+			$${IDF_PATH}/components/bt/host/bluedroid/btc/profile/std/gatt/btc_gattc.c \
+			$${IDF_PATH}/components/bt/host/bluedroid/btc/profile/std/gatt/btc_gatts.c \
+			$${IDF_PATH}/components/bt/host/bluedroid/btc/profile/std/gatt/btc_gatts.c \
+			$${IDF_PATH}/components/bt/host/bluedroid/btc/profile/std/gatt/btc_gatts.c \
+			$${IDF_PATH}/components/bt/host/bluedroid/btc/profile/std/hf_client/btc_hf_client.c \
+			$${IDF_PATH}/components/bt/host/bluedroid/btc/profile/std/hf_client/btc_hf_client.c \
+			$${IDF_PATH}/components/bt/host/bluedroid/btc/profile/std/hf_client/btc_hf_client.c \
+			$${IDF_PATH}/components/bt/host/bluedroid/btc/core/btc_main.c \
+			$${IDF_PATH}/components/bt/host/bluedroid/btc/core/btc_main.c \
+			$${IDF_PATH}/components/bt/host/bluedroid/btc/core/btc_main.c \
+			$${IDF_PATH}/components/bt/common/btc/core/btc_manage.c \
+			$${IDF_PATH}/components/bt/common/btc/core/btc_manage.c \
+			$${IDF_PATH}/components/bt/common/btc/core/btc_manage.c \
+			$${IDF_PATH}/components/bt/host/bluedroid/btc/core/btc_profile_queue.c \
+			$${IDF_PATH}/components/bt/host/bluedroid/btc/core/btc_profile_queue.c \
+			$${IDF_PATH}/components/bt/host/bluedroid/btc/core/btc_profile_queue.c \
+			$${IDF_PATH}/components/bt/host/bluedroid/btc/core/btc_sec.c \
+			$${IDF_PATH}/components/bt/host/bluedroid/btc/core/btc_sec.c \
+			$${IDF_PATH}/components/bt/host/bluedroid/btc/core/btc_sec.c \
+			$${IDF_PATH}/components/bt/host/bluedroid/btc/core/btc_sm.c \
+			$${IDF_PATH}/components/bt/host/bluedroid/btc/core/btc_sm.c \
+			$${IDF_PATH}/components/bt/host/bluedroid/btc/core/btc_sm.c \
+			$${IDF_PATH}/components/bt/host/bluedroid/btc/profile/std/spp/btc_spp.c \
+			$${IDF_PATH}/components/bt/host/bluedroid/btc/profile/std/spp/btc_spp.c \
+			$${IDF_PATH}/components/bt/host/bluedroid/btc/profile/std/spp/btc_spp.c \
+			$${IDF_PATH}/components/bt/host/bluedroid/btc/core/btc_storage.c \
+			$${IDF_PATH}/components/bt/host/bluedroid/btc/core/btc_storage.c \
+			$${IDF_PATH}/components/bt/host/bluedroid/btc/core/btc_storage.c \
+			$${IDF_PATH}/components/bt/common/btc/core/btc_task.c \
+			$${IDF_PATH}/components/bt/common/btc/core/btc_task.c \
+			$${IDF_PATH}/components/bt/common/btc/core/btc_task.c \
+			$${IDF_PATH}/components/bt/host/bluedroid/btc/core/btc_util.c \
+			$${IDF_PATH}/components/bt/host/bluedroid/btc/core/btc_util.c \
+			$${IDF_PATH}/components/bt/host/bluedroid/btc/core/btc_util.c \
+			$${IDF_PATH}/components/bt/host/bluedroid/main/bte_init.c \
+			$${IDF_PATH}/components/bt/host/bluedroid/main/bte_init.c \
+			$${IDF_PATH}/components/bt/host/bluedroid/main/bte_init.c \
+			$${IDF_PATH}/components/bt/host/bluedroid/main/bte_main.c \
+			$${IDF_PATH}/components/bt/host/bluedroid/main/bte_main.c \
+			$${IDF_PATH}/components/bt/host/bluedroid/main/bte_main.c \
+			$${IDF_PATH}/components/bt/host/bluedroid/stack/btm/btm_acl.c \
+			$${IDF_PATH}/components/bt/host/bluedroid/stack/btm/btm_acl.c \
+			$${IDF_PATH}/components/bt/host/bluedroid/stack/btm/btm_acl.c \
+			$${IDF_PATH}/components/bt/host/bluedroid/stack/btm/btm_ble.c \
+			$${IDF_PATH}/components/bt/host/bluedroid/stack/btm/btm_ble.c \
+			$${IDF_PATH}/components/bt/host/bluedroid/stack/btm/btm_ble.c \
+			$${IDF_PATH}/components/bt/host/bluedroid/stack/btm/btm_ble_addr.c \
+			$${IDF_PATH}/components/bt/host/bluedroid/stack/btm/btm_ble_addr.c \
+			$${IDF_PATH}/components/bt/host/bluedroid/stack/btm/btm_ble_addr.c \
+			$${IDF_PATH}/components/bt/host/bluedroid/stack/btm/btm_ble_adv_filter.c \
+			$${IDF_PATH}/components/bt/host/bluedroid/stack/btm/btm_ble_adv_filter.c \
+			$${IDF_PATH}/components/bt/host/bluedroid/stack/btm/btm_ble_adv_filter.c \
+			$${IDF_PATH}/components/bt/host/bluedroid/stack/btm/btm_ble_batchscan.c \
+			$${IDF_PATH}/components/bt/host/bluedroid/stack/btm/btm_ble_batchscan.c \
+			$${IDF_PATH}/components/bt/host/bluedroid/stack/btm/btm_ble_batchscan.c \
+			$${IDF_PATH}/components/bt/host/bluedroid/stack/btm/btm_ble_bgconn.c \
+			$${IDF_PATH}/components/bt/host/bluedroid/stack/btm/btm_ble_bgconn.c \
+			$${IDF_PATH}/components/bt/host/bluedroid/stack/btm/btm_ble_bgconn.c \
+			$${IDF_PATH}/components/bt/host/bluedroid/stack/btm/btm_ble_cont_energy.c \
+			$${IDF_PATH}/components/bt/host/bluedroid/stack/btm/btm_ble_cont_energy.c \
+			$${IDF_PATH}/components/bt/host/bluedroid/stack/btm/btm_ble_cont_energy.c \
+			$${IDF_PATH}/components/bt/host/bluedroid/stack/btm/btm_ble_gap.c \
+			$${IDF_PATH}/components/bt/host/bluedroid/stack/btm/btm_ble_gap.c \
+			$${IDF_PATH}/components/bt/host/bluedroid/stack/btm/btm_ble_gap.c \
+			$${IDF_PATH}/components/bt/host/bluedroid/stack/btm/btm_ble_multi_adv.c \
+			$${IDF_PATH}/components/bt/host/bluedroid/stack/btm/btm_ble_multi_adv.c \
+			$${IDF_PATH}/components/bt/host/bluedroid/stack/btm/btm_ble_multi_adv.c \
+			$${IDF_PATH}/components/bt/host/bluedroid/stack/btm/btm_ble_privacy.c \
+			$${IDF_PATH}/components/bt/host/bluedroid/stack/btm/btm_ble_privacy.c \
+			$${IDF_PATH}/components/bt/host/bluedroid/stack/btm/btm_ble_privacy.c \
+			$${IDF_PATH}/components/bt/host/bluedroid/stack/btm/btm_dev.c \
+			$${IDF_PATH}/components/bt/host/bluedroid/stack/btm/btm_dev.c \
+			$${IDF_PATH}/components/bt/host/bluedroid/stack/btm/btm_dev.c \
+			$${IDF_PATH}/components/bt/host/bluedroid/stack/btm/btm_devctl.c \
+			$${IDF_PATH}/components/bt/host/bluedroid/stack/btm/btm_devctl.c \
+			$${IDF_PATH}/components/bt/host/bluedroid/stack/btm/btm_devctl.c \
+			$${IDF_PATH}/components/bt/host/bluedroid/stack/btm/btm_inq.c \
+			$${IDF_PATH}/components/bt/host/bluedroid/stack/btm/btm_inq.c \
+			$${IDF_PATH}/components/bt/host/bluedroid/stack/btm/btm_inq.c \
+			$${IDF_PATH}/components/bt/host/bluedroid/stack/btm/btm_main.c \
+			$${IDF_PATH}/components/bt/host/bluedroid/stack/btm/btm_main.c \
+			$${IDF_PATH}/components/bt/host/bluedroid/stack/btm/btm_main.c \
+			$${IDF_PATH}/components/bt/host/bluedroid/stack/btm/btm_pm.c \
+			$${IDF_PATH}/components/bt/host/bluedroid/stack/btm/btm_pm.c \
+			$${IDF_PATH}/components/bt/host/bluedroid/stack/btm/btm_pm.c \
+			$${IDF_PATH}/components/bt/host/bluedroid/stack/btm/btm_sco.c \
+			$${IDF_PATH}/components/bt/host/bluedroid/stack/btm/btm_sco.c \
+			$${IDF_PATH}/components/bt/host/bluedroid/stack/btm/btm_sco.c \
+			$${IDF_PATH}/components/bt/host/bluedroid/stack/btm/btm_sec.c \
+			$${IDF_PATH}/components/bt/host/bluedroid/stack/btm/btm_sec.c \
+			$${IDF_PATH}/components/bt/host/bluedroid/stack/btm/btm_sec.c \
 			$${IDF_PATH}/components/bt/host/nimble/nimble/apps/bttester/src/bttester.c \
 			$${IDF_PATH}/components/bt/host/nimble/nimble/apps/bttester/src/bttester.c \
 			$${IDF_PATH}/components/bt/host/nimble/nimble/apps/bttester/src/bttester.c \
-			$${IDF_PATH}/components/bt/bluedroid/stack/btu/btu_hcif.c \
-			$${IDF_PATH}/components/bt/bluedroid/stack/btu/btu_hcif.c \
-			$${IDF_PATH}/components/bt/bluedroid/stack/btu/btu_hcif.c \
-			$${IDF_PATH}/components/bt/bluedroid/stack/btu/btu_init.c \
-			$${IDF_PATH}/components/bt/bluedroid/stack/btu/btu_init.c \
-			$${IDF_PATH}/components/bt/bluedroid/stack/btu/btu_init.c \
-			$${IDF_PATH}/components/bt/bluedroid/stack/btu/btu_task.c \
-			$${IDF_PATH}/components/bt/bluedroid/stack/btu/btu_task.c \
-			$${IDF_PATH}/components/bt/bluedroid/stack/btu/btu_task.c \
-			$${IDF_PATH}/components/bt/bluedroid/osi/buffer.c \
-			$${IDF_PATH}/components/bt/bluedroid/osi/buffer.c \
-			$${IDF_PATH}/components/bt/bluedroid/osi/buffer.c \
+			$${IDF_PATH}/components/bt/host/bluedroid/stack/btu/btu_hcif.c \
+			$${IDF_PATH}/components/bt/host/bluedroid/stack/btu/btu_hcif.c \
+			$${IDF_PATH}/components/bt/host/bluedroid/stack/btu/btu_hcif.c \
+			$${IDF_PATH}/components/bt/host/bluedroid/stack/btu/btu_init.c \
+			$${IDF_PATH}/components/bt/host/bluedroid/stack/btu/btu_init.c \
+			$${IDF_PATH}/components/bt/host/bluedroid/stack/btu/btu_init.c \
+			$${IDF_PATH}/components/bt/host/bluedroid/stack/btu/btu_task.c \
+			$${IDF_PATH}/components/bt/host/bluedroid/stack/btu/btu_task.c \
+			$${IDF_PATH}/components/bt/host/bluedroid/stack/btu/btu_task.c \
+			$${IDF_PATH}/components/bt/common/osi/buffer.c \
+			$${IDF_PATH}/components/bt/common/osi/buffer.c \
+			$${IDF_PATH}/components/bt/common/osi/buffer.c \
 			$${IDF_PATH}/components/asio/asio/asio/src/tests/unit/ts/buffer.cpp \
 			$${IDF_PATH}/components/asio/asio/asio/src/tests/unit/buffer.cpp \
 			$${IDF_PATH}/components/asio/asio/asio/src/tests/unit/ts/buffer.cpp \
 			$${IDF_PATH}/components/asio/asio/asio/src/tests/unit/buffer.cpp \
-			$${IDF_PATH}/components/bt/bluedroid/hci/buffer_allocator.c \
-			$${IDF_PATH}/components/bt/bluedroid/hci/buffer_allocator.c \
-			$${IDF_PATH}/components/bt/bluedroid/hci/buffer_allocator.c \
+			$${IDF_PATH}/components/asio/asio/asio/src/tests/unit/ts/buffer.cpp \
+			$${IDF_PATH}/components/asio/asio/asio/src/tests/unit/buffer.cpp \
+			$${IDF_PATH}/components/asio/asio/asio/src/tests/unit/buffered_read_stream.cpp \
 			$${IDF_PATH}/components/asio/asio/asio/src/tests/unit/buffered_read_stream.cpp \
 			$${IDF_PATH}/components/asio/asio/asio/src/tests/unit/buffered_read_stream.cpp \
 			$${IDF_PATH}/components/asio/asio/asio/src/tests/unit/buffered_stream.cpp \
 			$${IDF_PATH}/components/asio/asio/asio/src/tests/unit/buffered_stream.cpp \
+			$${IDF_PATH}/components/asio/asio/asio/src/tests/unit/buffered_stream.cpp \
+			$${IDF_PATH}/components/asio/asio/asio/src/tests/unit/buffered_write_stream.cpp \
 			$${IDF_PATH}/components/asio/asio/asio/src/tests/unit/buffered_write_stream.cpp \
 			$${IDF_PATH}/components/asio/asio/asio/src/tests/unit/buffered_write_stream.cpp \
 			$${IDF_PATH}/components/asio/asio/asio/src/tests/unit/buffers_iterator.cpp \
 			$${IDF_PATH}/components/asio/asio/asio/src/tests/unit/buffers_iterator.cpp \
-			$${IDF_PATH}/components/bt/bluedroid/btc/profile/esp/ble_button/button_pro.c \
-			$${IDF_PATH}/components/bt/bluedroid/btc/profile/esp/ble_button/button_pro.c \
-			$${IDF_PATH}/components/bt/bluedroid/btc/profile/esp/ble_button/button_pro.c \
+			$${IDF_PATH}/components/asio/asio/asio/src/tests/unit/buffers_iterator.cpp \
+			$${IDF_PATH}/components/bt/host/bluedroid/btc/profile/esp/ble_button/button_pro.c \
+			$${IDF_PATH}/components/bt/host/bluedroid/btc/profile/esp/ble_button/button_pro.c \
+			$${IDF_PATH}/components/bt/host/bluedroid/btc/profile/esp/ble_button/button_pro.c \
 			$${IDF_PATH}/components/json/cJSON/cJSON.c \
 			$${IDF_PATH}/components/json/cJSON/cJSON.c \
 			$${IDF_PATH}/components/json/cJSON/cJSON.c \
@@ -2304,12 +2696,18 @@
 			$${IDF_PATH}/components/esp32/cache_err_int.c \
 			$${IDF_PATH}/components/esp32/cache_err_int.c \
 			$${IDF_PATH}/components/esp32/cache_err_int.c \
+			$${IDF_PATH}/components/esp32/cache_sram_mmu.c \
+			$${IDF_PATH}/components/esp32/cache_sram_mmu.c \
+			$${IDF_PATH}/components/esp32/cache_sram_mmu.c \
 			$${IDF_PATH}/components/spi_flash/cache_utils.c \
 			$${IDF_PATH}/components/spi_flash/cache_utils.c \
 			$${IDF_PATH}/components/spi_flash/cache_utils.c \
 			$${IDF_PATH}/components/mbedtls/mbedtls/library/camellia.c \
 			$${IDF_PATH}/components/mbedtls/mbedtls/library/camellia.c \
 			$${IDF_PATH}/components/mbedtls/mbedtls/library/camellia.c \
+			$${IDF_PATH}/components/driver/can.c \
+			$${IDF_PATH}/components/driver/can.c \
+			$${IDF_PATH}/components/driver/can.c \
 			$${IDF_PATH}/components/coap/libcoap/ext/tinydtls/tests/cbc_aes128-test.c \
 			$${IDF_PATH}/components/coap/libcoap/ext/tinydtls/tests/cbc_aes128-test.c \
 			$${IDF_PATH}/components/coap/libcoap/ext/tinydtls/tests/cbc_aes128-test.c \
@@ -2317,8 +2715,11 @@
 			$${IDF_PATH}/components/coap/libcoap/ext/tinydtls/tests/cbc_aes128-testdata.c \
 			$${IDF_PATH}/components/coap/libcoap/ext/tinydtls/tests/cbc_aes128-testdata.c \
 			$${IDF_PATH}/components/bt/host/nimble/nimble/ext/tinycrypt/src/cbc_mode.c \
+			$${IDF_PATH}/components/bt/esp_ble_mesh/mesh_common/tinycrypt/src/cbc_mode.c \
 			$${IDF_PATH}/components/bt/host/nimble/nimble/ext/tinycrypt/src/cbc_mode.c \
+			$${IDF_PATH}/components/bt/esp_ble_mesh/mesh_common/tinycrypt/src/cbc_mode.c \
 			$${IDF_PATH}/components/bt/host/nimble/nimble/ext/tinycrypt/src/cbc_mode.c \
+			$${IDF_PATH}/components/bt/esp_ble_mesh/mesh_common/tinycrypt/src/cbc_mode.c \
 			$${IDF_PATH}/components/cbor/tinycbor/tools/cbordump/cbordump.c \
 			$${IDF_PATH}/components/cbor/tinycbor/tools/cbordump/cbordump.c \
 			$${IDF_PATH}/components/cbor/tinycbor/src/cborencoder.c \
@@ -2352,13 +2753,16 @@
 			$${IDF_PATH}/components/mbedtls/mbedtls/library/ccm.c \
 			$${IDF_PATH}/components/coap/libcoap/ext/tinydtls/ccm.c \
 			$${IDF_PATH}/components/bt/host/nimble/nimble/ext/tinycrypt/src/ccm_mode.c \
+			$${IDF_PATH}/components/bt/esp_ble_mesh/mesh_common/tinycrypt/src/ccm_mode.c \
 			$${IDF_PATH}/components/bt/host/nimble/nimble/ext/tinycrypt/src/ccm_mode.c \
+			$${IDF_PATH}/components/bt/esp_ble_mesh/mesh_common/tinycrypt/src/ccm_mode.c \
 			$${IDF_PATH}/components/bt/host/nimble/nimble/ext/tinycrypt/src/ccm_mode.c \
-			$${IDF_PATH}/components/lwip/netif/ppp/ccp.c \
+			$${IDF_PATH}/components/bt/esp_ble_mesh/mesh_common/tinycrypt/src/ccm_mode.c \
+			$${IDF_PATH}/components/wpa_supplicant/src/crypto/ccmp.c \
+			$${IDF_PATH}/components/wpa_supplicant/src/crypto/ccmp.c \
+			$${IDF_PATH}/components/wpa_supplicant/src/crypto/ccmp.c \
 			$${IDF_PATH}/components/lwip/lwip/src/netif/ppp/ccp.c \
-			$${IDF_PATH}/components/lwip/netif/ppp/ccp.c \
 			$${IDF_PATH}/components/lwip/lwip/src/netif/ppp/ccp.c \
-			$${IDF_PATH}/components/lwip/netif/ppp/ccp.c \
 			$${IDF_PATH}/components/lwip/lwip/src/netif/ppp/ccp.c \
 			$${IDF_PATH}/components/tinyusb/tinyusb/lib/fatfs/ccsbcs.c \
 			$${IDF_PATH}/components/tinyusb/tinyusb/lib/fatfs/ccsbcs.c \
@@ -2383,11 +2787,17 @@
 			$${IDF_PATH}/components/mbedtls/mbedtls/library/certs.c \
 			$${IDF_PATH}/components/mbedtls/mbedtls/library/certs.c \
 			$${IDF_PATH}/components/bt/host/nimble/nimble/nimble/host/mesh/src/cfg_cli.c \
+			$${IDF_PATH}/components/bt/esp_ble_mesh/mesh_core/cfg_cli.c \
 			$${IDF_PATH}/components/bt/host/nimble/nimble/nimble/host/mesh/src/cfg_cli.c \
+			$${IDF_PATH}/components/bt/esp_ble_mesh/mesh_core/cfg_cli.c \
 			$${IDF_PATH}/components/bt/host/nimble/nimble/nimble/host/mesh/src/cfg_cli.c \
+			$${IDF_PATH}/components/bt/esp_ble_mesh/mesh_core/cfg_cli.c \
 			$${IDF_PATH}/components/bt/host/nimble/nimble/nimble/host/mesh/src/cfg_srv.c \
+			$${IDF_PATH}/components/bt/esp_ble_mesh/mesh_core/cfg_srv.c \
 			$${IDF_PATH}/components/bt/host/nimble/nimble/nimble/host/mesh/src/cfg_srv.c \
+			$${IDF_PATH}/components/bt/esp_ble_mesh/mesh_core/cfg_srv.c \
 			$${IDF_PATH}/components/bt/host/nimble/nimble/nimble/host/mesh/src/cfg_srv.c \
+			$${IDF_PATH}/components/bt/esp_ble_mesh/mesh_core/cfg_srv.c \
 			$${IDF_PATH}/components/mbedtls/mbedtls/library/chacha20.c \
 			$${IDF_PATH}/components/libsodium/libsodium/test/default/chacha20.c \
 			$${IDF_PATH}/components/mbedtls/mbedtls/library/chacha20.c \
@@ -2406,37 +2816,30 @@
 			$${IDF_PATH}/components/mbedtls/mbedtls/library/chachapoly.c \
 			$${IDF_PATH}/components/mbedtls/mbedtls/library/chachapoly.c \
 			$${IDF_PATH}/components/mbedtls/mbedtls/library/chachapoly.c \
-			$${IDF_PATH}/components/lwip/netif/ppp/chap-md5.c \
 			$${IDF_PATH}/components/lwip/lwip/src/netif/ppp/chap-md5.c \
-			$${IDF_PATH}/components/lwip/netif/ppp/chap-md5.c \
 			$${IDF_PATH}/components/lwip/lwip/src/netif/ppp/chap-md5.c \
-			$${IDF_PATH}/components/lwip/netif/ppp/chap-md5.c \
 			$${IDF_PATH}/components/lwip/lwip/src/netif/ppp/chap-md5.c \
-			$${IDF_PATH}/components/lwip/netif/ppp/chap-new.c \
 			$${IDF_PATH}/components/lwip/lwip/src/netif/ppp/chap-new.c \
-			$${IDF_PATH}/components/lwip/netif/ppp/chap-new.c \
 			$${IDF_PATH}/components/lwip/lwip/src/netif/ppp/chap-new.c \
-			$${IDF_PATH}/components/lwip/netif/ppp/chap-new.c \
 			$${IDF_PATH}/components/lwip/lwip/src/netif/ppp/chap-new.c \
-			$${IDF_PATH}/components/wpa_supplicant/src/wpa2/eap_peer/chap.c \
-			$${IDF_PATH}/components/wpa_supplicant/src/wpa2/eap_peer/chap.c \
-			$${IDF_PATH}/components/wpa_supplicant/src/wpa2/eap_peer/chap.c \
-			$${IDF_PATH}/components/lwip/netif/ppp/chap_ms.c \
+			$${IDF_PATH}/components/wpa_supplicant/src/eap_peer/chap.c \
+			$${IDF_PATH}/components/wpa_supplicant/src/eap_peer/chap.c \
+			$${IDF_PATH}/components/wpa_supplicant/src/eap_peer/chap.c \
 			$${IDF_PATH}/components/lwip/lwip/src/netif/ppp/chap_ms.c \
-			$${IDF_PATH}/components/lwip/netif/ppp/chap_ms.c \
 			$${IDF_PATH}/components/lwip/lwip/src/netif/ppp/chap_ms.c \
-			$${IDF_PATH}/components/lwip/netif/ppp/chap_ms.c \
 			$${IDF_PATH}/components/lwip/lwip/src/netif/ppp/chap_ms.c \
-			$${IDF_PATH}/components/expat/port/chardata.c \
 			$${IDF_PATH}/components/expat/expat/expat/tests/chardata.c \
-			$${IDF_PATH}/components/expat/port/chardata.c \
 			$${IDF_PATH}/components/expat/expat/expat/tests/chardata.c \
-			$${IDF_PATH}/components/expat/port/chardata.c \
 			$${IDF_PATH}/components/expat/expat/expat/tests/chardata.c \
 			$${IDF_PATH}/components/asio/asio/asio/src/examples/cpp11/chat/chat_client.cpp \
 			$${IDF_PATH}/components/asio/asio/asio/src/examples/cpp03/chat/chat_client.cpp \
 			$${IDF_PATH}/components/asio/asio/asio/src/examples/cpp11/chat/chat_client.cpp \
 			$${IDF_PATH}/components/asio/asio/asio/src/examples/cpp03/chat/chat_client.cpp \
+			$${IDF_PATH}/components/asio/asio/asio/src/examples/cpp11/chat/chat_client.cpp \
+			$${IDF_PATH}/components/asio/asio/asio/src/examples/cpp03/chat/chat_client.cpp \
+			$${IDF_PATH}/components/asio/asio/asio/src/examples/cpp17/coroutines_ts/chat_server.cpp \
+			$${IDF_PATH}/components/asio/asio/asio/src/examples/cpp11/chat/chat_server.cpp \
+			$${IDF_PATH}/components/asio/asio/asio/src/examples/cpp03/chat/chat_server.cpp \
 			$${IDF_PATH}/components/asio/asio/asio/src/examples/cpp17/coroutines_ts/chat_server.cpp \
 			$${IDF_PATH}/components/asio/asio/asio/src/examples/cpp11/chat/chat_server.cpp \
 			$${IDF_PATH}/components/asio/asio/asio/src/examples/cpp03/chat/chat_server.cpp \
@@ -2473,6 +2876,15 @@
 			$${IDF_PATH}/components/asio/asio/asio/src/examples/cpp03/ssl/client.cpp \
 			$${IDF_PATH}/components/asio/asio/asio/src/examples/cpp03/serialization/client.cpp \
 			$${IDF_PATH}/components/asio/asio/asio/src/examples/cpp03/porthopper/client.cpp \
+			$${IDF_PATH}/components/asio/asio/asio/src/tests/performance/client.cpp \
+			$${IDF_PATH}/components/asio/asio/asio/src/examples/cpp03/tutorial/daytime4/client.cpp \
+			$${IDF_PATH}/components/asio/asio/asio/src/examples/cpp03/tutorial/daytime1/client.cpp \
+			$${IDF_PATH}/components/asio/asio/asio/src/examples/cpp03/ssl/client.cpp \
+			$${IDF_PATH}/components/asio/asio/asio/src/examples/cpp03/serialization/client.cpp \
+			$${IDF_PATH}/components/asio/asio/asio/src/examples/cpp03/porthopper/client.cpp \
+			$${IDF_PATH}/components/bt/esp_ble_mesh/mesh_models/client/client_common.c \
+			$${IDF_PATH}/components/bt/esp_ble_mesh/mesh_models/client/client_common.c \
+			$${IDF_PATH}/components/bt/esp_ble_mesh/mesh_models/client/client_common.c \
 			$${IDF_PATH}/components/esp32/clk.c \
 			$${IDF_PATH}/components/esp32/clk.c \
 			$${IDF_PATH}/components/esp32/clk.c \
@@ -2480,8 +2892,11 @@
 			$${IDF_PATH}/components/mbedtls/mbedtls/library/cmac.c \
 			$${IDF_PATH}/components/mbedtls/mbedtls/library/cmac.c \
 			$${IDF_PATH}/components/bt/host/nimble/nimble/ext/tinycrypt/src/cmac_mode.c \
+			$${IDF_PATH}/components/bt/esp_ble_mesh/mesh_common/tinycrypt/src/cmac_mode.c \
 			$${IDF_PATH}/components/bt/host/nimble/nimble/ext/tinycrypt/src/cmac_mode.c \
+			$${IDF_PATH}/components/bt/esp_ble_mesh/mesh_common/tinycrypt/src/cmac_mode.c \
 			$${IDF_PATH}/components/bt/host/nimble/nimble/ext/tinycrypt/src/cmac_mode.c \
+			$${IDF_PATH}/components/bt/esp_ble_mesh/mesh_common/tinycrypt/src/cmac_mode.c \
 			$${IDF_PATH}/components/bt/host/nimble/nimble/apps/btshell/src/cmd.c \
 			$${IDF_PATH}/components/bt/host/nimble/nimble/apps/btshell/src/cmd.c \
 			$${IDF_PATH}/components/bt/host/nimble/nimble/apps/btshell/src/cmd.c \
@@ -2514,21 +2929,45 @@
 			$${IDF_PATH}/components/coap/libcoap/examples/coap-server.c \
 			$${IDF_PATH}/components/coap/libcoap/examples/coap-server.c \
 			$${IDF_PATH}/components/coap/libcoap/examples/coap-server.c \
+			$${IDF_PATH}/components/coap/libcoap/src/coap_debug.c \
+			$${IDF_PATH}/components/coap/libcoap/src/coap_debug.c \
+			$${IDF_PATH}/components/coap/libcoap/src/coap_debug.c \
+			$${IDF_PATH}/components/coap/libcoap/src/coap_event.c \
+			$${IDF_PATH}/components/coap/libcoap/src/coap_event.c \
+			$${IDF_PATH}/components/coap/libcoap/src/coap_event.c \
+			$${IDF_PATH}/components/coap/libcoap/src/coap_gnutls.c \
+			$${IDF_PATH}/components/coap/libcoap/src/coap_gnutls.c \
+			$${IDF_PATH}/components/coap/libcoap/src/coap_gnutls.c \
+			$${IDF_PATH}/components/coap/libcoap/src/coap_hashkey.c \
+			$${IDF_PATH}/components/coap/libcoap/src/coap_hashkey.c \
+			$${IDF_PATH}/components/coap/libcoap/src/coap_hashkey.c \
+			$${IDF_PATH}/components/coap/port/coap_io.c \
 			$${IDF_PATH}/components/coap/libcoap/src/coap_io.c \
+			$${IDF_PATH}/components/coap/port/coap_io.c \
 			$${IDF_PATH}/components/coap/libcoap/src/coap_io.c \
+			$${IDF_PATH}/components/coap/port/coap_io.c \
 			$${IDF_PATH}/components/coap/libcoap/src/coap_io.c \
 			$${IDF_PATH}/components/coap/libcoap/src/coap_io_lwip.c \
 			$${IDF_PATH}/components/coap/libcoap/src/coap_io_lwip.c \
 			$${IDF_PATH}/components/coap/libcoap/src/coap_io_lwip.c \
-			$${IDF_PATH}/components/coap/port/coap_io_socket.c \
-			$${IDF_PATH}/components/coap/port/coap_io_socket.c \
-			$${IDF_PATH}/components/coap/port/coap_io_socket.c \
 			$${IDF_PATH}/components/coap/libcoap/examples/coap_list.c \
 			$${IDF_PATH}/components/coap/libcoap/examples/coap_list.c \
 			$${IDF_PATH}/components/coap/libcoap/examples/coap_list.c \
+			$${IDF_PATH}/components/coap/libcoap/src/coap_notls.c \
+			$${IDF_PATH}/components/coap/libcoap/src/coap_notls.c \
+			$${IDF_PATH}/components/coap/libcoap/src/coap_notls.c \
+			$${IDF_PATH}/components/coap/libcoap/src/coap_openssl.c \
+			$${IDF_PATH}/components/coap/libcoap/src/coap_openssl.c \
+			$${IDF_PATH}/components/coap/libcoap/src/coap_openssl.c \
+			$${IDF_PATH}/components/coap/libcoap/src/coap_session.c \
+			$${IDF_PATH}/components/coap/libcoap/src/coap_session.c \
+			$${IDF_PATH}/components/coap/libcoap/src/coap_session.c \
 			$${IDF_PATH}/components/coap/libcoap/src/coap_time.c \
 			$${IDF_PATH}/components/coap/libcoap/src/coap_time.c \
 			$${IDF_PATH}/components/coap/libcoap/src/coap_time.c \
+			$${IDF_PATH}/components/coap/libcoap/src/coap_tinydtls.c \
+			$${IDF_PATH}/components/coap/libcoap/src/coap_tinydtls.c \
+			$${IDF_PATH}/components/coap/libcoap/src/coap_tinydtls.c \
 			$${IDF_PATH}/components/nghttp/nghttp2/third-party/mruby/src/codedump.c \
 			$${IDF_PATH}/components/nghttp/nghttp2/third-party/mruby/src/codedump.c \
 			$${IDF_PATH}/components/nghttp/nghttp2/third-party/mruby/src/codedump.c \
@@ -2538,12 +2977,15 @@
 			$${IDF_PATH}/components/expat/expat/expat/xmlwf/codepage.c \
 			$${IDF_PATH}/components/expat/expat/expat/xmlwf/codepage.c \
 			$${IDF_PATH}/components/expat/expat/expat/xmlwf/codepage.c \
-			$${IDF_PATH}/components/esp32/coexist.c \
-			$${IDF_PATH}/components/esp32/coexist.c \
-			$${IDF_PATH}/components/esp32/coexist.c \
+			$${IDF_PATH}/components/esp_wifi/src/coexist.c \
+			$${IDF_PATH}/components/esp_wifi/src/coexist.c \
+			$${IDF_PATH}/components/esp_wifi/src/coexist.c \
 			$${IDF_PATH}/components/console/commands.c \
 			$${IDF_PATH}/components/console/commands.c \
 			$${IDF_PATH}/components/console/commands.c \
+			$${IDF_PATH}/components/wpa_supplicant/src/utils/common.c \
+			$${IDF_PATH}/components/wpa_supplicant/src/utils/common.c \
+			$${IDF_PATH}/components/wpa_supplicant/src/utils/common.c \
 			$${IDF_PATH}/components/nghttp/nghttp2/src/comp_helper.c \
 			$${IDF_PATH}/components/nghttp/nghttp2/src/comp_helper.c \
 			$${IDF_PATH}/components/nghttp/nghttp2/src/comp_helper.c \
@@ -2555,11 +2997,16 @@
 			$${IDF_PATH}/components/json/cJSON/tests/compare_tests.c \
 			$${IDF_PATH}/components/asio/asio/asio/src/tests/unit/completion_condition.cpp \
 			$${IDF_PATH}/components/asio/asio/asio/src/tests/unit/completion_condition.cpp \
-			$${IDF_PATH}/components/bt/bluedroid/osi/config.c \
-			$${IDF_PATH}/components/bt/bluedroid/osi/config.c \
-			$${IDF_PATH}/components/bt/bluedroid/osi/config.c \
+			$${IDF_PATH}/components/asio/asio/asio/src/tests/unit/completion_condition.cpp \
+			$${IDF_PATH}/components/bt/common/osi/config.c \
+			$${IDF_PATH}/components/bt/common/osi/config.c \
+			$${IDF_PATH}/components/bt/common/osi/config.c \
 			$${IDF_PATH}/components/asio/asio/asio/src/tests/unit/connect.cpp \
 			$${IDF_PATH}/components/asio/asio/asio/src/tests/unit/connect.cpp \
+			$${IDF_PATH}/components/asio/asio/asio/src/tests/unit/connect.cpp \
+			$${IDF_PATH}/components/asio/asio/asio/src/tests/unit/local/connect_pair.cpp \
+			$${IDF_PATH}/components/asio/asio/asio/src/examples/cpp11/local/connect_pair.cpp \
+			$${IDF_PATH}/components/asio/asio/asio/src/examples/cpp03/local/connect_pair.cpp \
 			$${IDF_PATH}/components/asio/asio/asio/src/tests/unit/local/connect_pair.cpp \
 			$${IDF_PATH}/components/asio/asio/asio/src/examples/cpp11/local/connect_pair.cpp \
 			$${IDF_PATH}/components/asio/asio/asio/src/examples/cpp03/local/connect_pair.cpp \
@@ -2574,20 +3021,31 @@
 			$${IDF_PATH}/components/asio/asio/asio/src/examples/cpp03/http/server3/connection.cpp \
 			$${IDF_PATH}/components/asio/asio/asio/src/examples/cpp03/http/server2/connection.cpp \
 			$${IDF_PATH}/components/asio/asio/asio/src/examples/cpp03/http/server/connection.cpp \
+			$${IDF_PATH}/components/asio/asio/asio/src/examples/cpp11/http/server/connection.cpp \
+			$${IDF_PATH}/components/asio/asio/asio/src/examples/cpp03/http/server3/connection.cpp \
+			$${IDF_PATH}/components/asio/asio/asio/src/examples/cpp03/http/server2/connection.cpp \
+			$${IDF_PATH}/components/asio/asio/asio/src/examples/cpp03/http/server/connection.cpp \
 			$${IDF_PATH}/components/asio/asio/asio/src/examples/cpp11/http/server/connection_manager.cpp \
 			$${IDF_PATH}/components/asio/asio/asio/src/examples/cpp03/http/server/connection_manager.cpp \
 			$${IDF_PATH}/components/asio/asio/asio/src/examples/cpp11/http/server/connection_manager.cpp \
 			$${IDF_PATH}/components/asio/asio/asio/src/examples/cpp03/http/server/connection_manager.cpp \
+			$${IDF_PATH}/components/asio/asio/asio/src/examples/cpp11/http/server/connection_manager.cpp \
+			$${IDF_PATH}/components/asio/asio/asio/src/examples/cpp03/http/server/connection_manager.cpp \
+			$${IDF_PATH}/components/protocomm/proto-c/constants.pb-c.c \
+			$${IDF_PATH}/components/protocomm/proto-c/constants.pb-c.c \
+			$${IDF_PATH}/components/protocomm/proto-c/constants.pb-c.c \
 			$${IDF_PATH}/components/libsodium/libsodium/src/libsodium/crypto_stream/aes128ctr/nacl/consts_aes128ctr.c \
 			$${IDF_PATH}/components/libsodium/libsodium/src/libsodium/crypto_stream/aes128ctr/nacl/consts_aes128ctr.c \
 			$${IDF_PATH}/components/libsodium/libsodium/src/libsodium/crypto_stream/aes128ctr/nacl/consts_aes128ctr.c \
 			$${IDF_PATH}/components/asio/asio/asio/src/tests/unit/ssl/context.cpp \
 			$${IDF_PATH}/components/asio/asio/asio/src/tests/unit/ssl/context.cpp \
+			$${IDF_PATH}/components/asio/asio/asio/src/tests/unit/ssl/context.cpp \
 			$${IDF_PATH}/components/asio/asio/asio/src/tests/unit/ssl/context_base.cpp \
 			$${IDF_PATH}/components/asio/asio/asio/src/tests/unit/ssl/context_base.cpp \
-			$${IDF_PATH}/components/bt/bluedroid/device/controller.c \
-			$${IDF_PATH}/components/bt/bluedroid/device/controller.c \
-			$${IDF_PATH}/components/bt/bluedroid/device/controller.c \
+			$${IDF_PATH}/components/asio/asio/asio/src/tests/unit/ssl/context_base.cpp \
+			$${IDF_PATH}/components/bt/host/bluedroid/device/controller.c \
+			$${IDF_PATH}/components/bt/host/bluedroid/device/controller.c \
+			$${IDF_PATH}/components/bt/host/bluedroid/device/controller.c \
 			$${IDF_PATH}/components/libsodium/libsodium/src/libsodium/sodium/core.c \
 			$${IDF_PATH}/components/libsodium/libsodium/src/libsodium/sodium/core.c \
 			$${IDF_PATH}/components/libsodium/libsodium/src/libsodium/sodium/core.c \
@@ -2609,9 +3067,18 @@
 			$${IDF_PATH}/components/libsodium/libsodium/test/default/core6.c \
 			$${IDF_PATH}/components/libsodium/libsodium/test/default/core6.c \
 			$${IDF_PATH}/components/libsodium/libsodium/test/default/core6.c \
-			$${IDF_PATH}/components/esp32/core_dump.c \
-			$${IDF_PATH}/components/esp32/core_dump.c \
-			$${IDF_PATH}/components/esp32/core_dump.c \
+			$${IDF_PATH}/components/espcoredump/src/core_dump_common.c \
+			$${IDF_PATH}/components/espcoredump/src/core_dump_common.c \
+			$${IDF_PATH}/components/espcoredump/src/core_dump_common.c \
+			$${IDF_PATH}/components/espcoredump/src/core_dump_flash.c \
+			$${IDF_PATH}/components/espcoredump/src/core_dump_flash.c \
+			$${IDF_PATH}/components/espcoredump/src/core_dump_flash.c \
+			$${IDF_PATH}/components/espcoredump/src/core_dump_port.c \
+			$${IDF_PATH}/components/espcoredump/src/core_dump_port.c \
+			$${IDF_PATH}/components/espcoredump/src/core_dump_port.c \
+			$${IDF_PATH}/components/espcoredump/src/core_dump_uart.c \
+			$${IDF_PATH}/components/espcoredump/src/core_dump_uart.c \
+			$${IDF_PATH}/components/espcoredump/src/core_dump_uart.c \
 			$${IDF_PATH}/components/libsodium/libsodium/src/libsodium/crypto_core/hchacha20/core_hchacha20.c \
 			$${IDF_PATH}/components/libsodium/libsodium/src/libsodium/crypto_core/hchacha20/core_hchacha20.c \
 			$${IDF_PATH}/components/libsodium/libsodium/src/libsodium/crypto_core/hchacha20/core_hchacha20.c \
@@ -2624,6 +3091,7 @@
 			$${IDF_PATH}/components/libsodium/libsodium/src/libsodium/crypto_core/salsa/ref/core_salsa_ref.c \
 			$${IDF_PATH}/components/libsodium/libsodium/src/libsodium/crypto_core/salsa/ref/core_salsa_ref.c \
 			$${IDF_PATH}/components/libsodium/libsodium/src/libsodium/crypto_core/salsa/ref/core_salsa_ref.c \
+			$${IDF_PATH}/components/asio/asio/asio/src/tests/unit/coroutine.cpp \
 			$${IDF_PATH}/components/asio/asio/asio/src/tests/unit/coroutine.cpp \
 			$${IDF_PATH}/components/asio/asio/asio/src/tests/unit/coroutine.cpp \
 			$${IDF_PATH}/components/mbedtls/mbedtls/programs/test/cpp_dummy_build.cpp \
@@ -2650,11 +3118,11 @@
 			$${IDF_PATH}/components/nghttp/nghttp2/third-party/mruby/src/crc.c \
 			$${IDF_PATH}/components/nghttp/nghttp2/third-party/mruby/src/crc.c \
 			$${IDF_PATH}/components/nghttp/nghttp2/third-party/mruby/src/crc.c \
-			$${IDF_PATH}/components/wear_levelling/test_wl_host/stubs/esp32/crc.cpp \
+			$${IDF_PATH}/components/spi_flash/sim/stubs/esp32/crc.cpp \
 			$${IDF_PATH}/components/nvs_flash/test_nvs_host/crc.cpp \
-			$${IDF_PATH}/components/wear_levelling/test_wl_host/stubs/esp32/crc.cpp \
+			$${IDF_PATH}/components/spi_flash/sim/stubs/esp32/crc.cpp \
 			$${IDF_PATH}/components/nvs_flash/test_nvs_host/crc.cpp \
-			$${IDF_PATH}/components/wear_levelling/test_wl_host/stubs/esp32/crc.cpp \
+			$${IDF_PATH}/components/spi_flash/sim/stubs/esp32/crc.cpp \
 			$${IDF_PATH}/components/nvs_flash/test_nvs_host/crc.cpp \
 			$${IDF_PATH}/components/wear_levelling/crc32.cpp \
 			$${IDF_PATH}/components/wear_levelling/crc32.cpp \
@@ -2675,10 +3143,13 @@
 			$${IDF_PATH}/components/mbedtls/mbedtls/programs/aes/crypt_and_hash.c \
 			$${IDF_PATH}/components/coap/libcoap/ext/tinydtls/crypto.c \
 			$${IDF_PATH}/components/bt/host/nimble/nimble/nimble/host/mesh/src/crypto.c \
+			$${IDF_PATH}/components/bt/esp_ble_mesh/mesh_core/crypto.c \
 			$${IDF_PATH}/components/coap/libcoap/ext/tinydtls/crypto.c \
 			$${IDF_PATH}/components/bt/host/nimble/nimble/nimble/host/mesh/src/crypto.c \
+			$${IDF_PATH}/components/bt/esp_ble_mesh/mesh_core/crypto.c \
 			$${IDF_PATH}/components/coap/libcoap/ext/tinydtls/crypto.c \
 			$${IDF_PATH}/components/bt/host/nimble/nimble/nimble/host/mesh/src/crypto.c \
+			$${IDF_PATH}/components/bt/esp_ble_mesh/mesh_core/crypto.c \
 			$${IDF_PATH}/components/libsodium/libsodium/src/libsodium/crypto_auth/crypto_auth.c \
 			$${IDF_PATH}/components/libsodium/libsodium/src/libsodium/crypto_auth/crypto_auth.c \
 			$${IDF_PATH}/components/libsodium/libsodium/src/libsodium/crypto_auth/crypto_auth.c \
@@ -2721,9 +3192,15 @@
 			$${IDF_PATH}/components/libsodium/libsodium/src/libsodium/crypto_kx/crypto_kx.c \
 			$${IDF_PATH}/components/libsodium/libsodium/src/libsodium/crypto_kx/crypto_kx.c \
 			$${IDF_PATH}/components/libsodium/libsodium/src/libsodium/crypto_kx/crypto_kx.c \
+			$${IDF_PATH}/components/wpa_supplicant/src/crypto/crypto_mbedtls.c \
+			$${IDF_PATH}/components/wpa_supplicant/src/crypto/crypto_mbedtls.c \
+			$${IDF_PATH}/components/wpa_supplicant/src/crypto/crypto_mbedtls.c \
 			$${IDF_PATH}/components/libsodium/libsodium/src/libsodium/crypto_onetimeauth/crypto_onetimeauth.c \
 			$${IDF_PATH}/components/libsodium/libsodium/src/libsodium/crypto_onetimeauth/crypto_onetimeauth.c \
 			$${IDF_PATH}/components/libsodium/libsodium/src/libsodium/crypto_onetimeauth/crypto_onetimeauth.c \
+			$${IDF_PATH}/components/wpa_supplicant/src/crypto/crypto_ops.c \
+			$${IDF_PATH}/components/wpa_supplicant/src/crypto/crypto_ops.c \
+			$${IDF_PATH}/components/wpa_supplicant/src/crypto/crypto_ops.c \
 			$${IDF_PATH}/components/libsodium/libsodium/src/libsodium/crypto_pwhash/crypto_pwhash.c \
 			$${IDF_PATH}/components/libsodium/libsodium/src/libsodium/crypto_pwhash/crypto_pwhash.c \
 			$${IDF_PATH}/components/libsodium/libsodium/src/libsodium/crypto_pwhash/crypto_pwhash.c \
@@ -2755,11 +3232,20 @@
 			$${IDF_PATH}/components/mbedtls/mbedtls/library/ctr_drbg.c \
 			$${IDF_PATH}/components/mbedtls/mbedtls/library/ctr_drbg.c \
 			$${IDF_PATH}/components/bt/host/nimble/nimble/ext/tinycrypt/src/ctr_mode.c \
+			$${IDF_PATH}/components/bt/esp_ble_mesh/mesh_common/tinycrypt/src/ctr_mode.c \
 			$${IDF_PATH}/components/bt/host/nimble/nimble/ext/tinycrypt/src/ctr_mode.c \
+			$${IDF_PATH}/components/bt/esp_ble_mesh/mesh_common/tinycrypt/src/ctr_mode.c \
 			$${IDF_PATH}/components/bt/host/nimble/nimble/ext/tinycrypt/src/ctr_mode.c \
+			$${IDF_PATH}/components/bt/esp_ble_mesh/mesh_common/tinycrypt/src/ctr_mode.c \
 			$${IDF_PATH}/components/bt/host/nimble/nimble/ext/tinycrypt/src/ctr_prng.c \
+			$${IDF_PATH}/components/bt/esp_ble_mesh/mesh_common/tinycrypt/src/ctr_prng.c \
 			$${IDF_PATH}/components/bt/host/nimble/nimble/ext/tinycrypt/src/ctr_prng.c \
+			$${IDF_PATH}/components/bt/esp_ble_mesh/mesh_common/tinycrypt/src/ctr_prng.c \
 			$${IDF_PATH}/components/bt/host/nimble/nimble/ext/tinycrypt/src/ctr_prng.c \
+			$${IDF_PATH}/components/bt/esp_ble_mesh/mesh_common/tinycrypt/src/ctr_prng.c \
+			$${IDF_PATH}/components/esp_http_server/src/util/ctrl_sock.c \
+			$${IDF_PATH}/components/esp_http_server/src/util/ctrl_sock.c \
+			$${IDF_PATH}/components/esp_http_server/src/util/ctrl_sock.c \
 			$${IDF_PATH}/components/libsodium/libsodium/src/libsodium/crypto_scalarmult/curve25519/donna_c64/curve25519_donna_c64.c \
 			$${IDF_PATH}/components/libsodium/libsodium/src/libsodium/crypto_scalarmult/curve25519/donna_c64/curve25519_donna_c64.c \
 			$${IDF_PATH}/components/libsodium/libsodium/src/libsodium/crypto_scalarmult/curve25519/donna_c64/curve25519_donna_c64.c \
@@ -2783,10 +3269,15 @@
 			$${IDF_PATH}/components/asio/asio/asio/src/examples/cpp03/fork/daemon.cpp \
 			$${IDF_PATH}/components/asio/asio/asio/src/examples/cpp11/fork/daemon.cpp \
 			$${IDF_PATH}/components/asio/asio/asio/src/examples/cpp03/fork/daemon.cpp \
+			$${IDF_PATH}/components/asio/asio/asio/src/examples/cpp11/fork/daemon.cpp \
+			$${IDF_PATH}/components/asio/asio/asio/src/examples/cpp03/fork/daemon.cpp \
 			$${IDF_PATH}/components/asio/asio/asio/src/tests/unit/local/datagram_protocol.cpp \
 			$${IDF_PATH}/components/asio/asio/asio/src/tests/unit/generic/datagram_protocol.cpp \
 			$${IDF_PATH}/components/asio/asio/asio/src/tests/unit/local/datagram_protocol.cpp \
 			$${IDF_PATH}/components/asio/asio/asio/src/tests/unit/generic/datagram_protocol.cpp \
+			$${IDF_PATH}/components/asio/asio/asio/src/tests/unit/local/datagram_protocol.cpp \
+			$${IDF_PATH}/components/asio/asio/asio/src/tests/unit/generic/datagram_protocol.cpp \
+			$${IDF_PATH}/components/asio/asio/asio/src/tests/unit/datagram_socket_service.cpp \
 			$${IDF_PATH}/components/asio/asio/asio/src/tests/unit/datagram_socket_service.cpp \
 			$${IDF_PATH}/components/asio/asio/asio/src/tests/unit/datagram_socket_service.cpp \
 			$${IDF_PATH}/components/asio/asio/asio/src/examples/cpp11/futures/daytime_client.cpp \
@@ -2795,11 +3286,15 @@
 			$${IDF_PATH}/components/asio/asio/asio/src/examples/cpp11/futures/daytime_client.cpp \
 			$${IDF_PATH}/components/asio/asio/asio/src/examples/cpp03/services/daytime_client.cpp \
 			$${IDF_PATH}/components/asio/asio/asio/src/examples/cpp03/iostreams/daytime_client.cpp \
+			$${IDF_PATH}/components/asio/asio/asio/src/examples/cpp11/futures/daytime_client.cpp \
+			$${IDF_PATH}/components/asio/asio/asio/src/examples/cpp03/services/daytime_client.cpp \
+			$${IDF_PATH}/components/asio/asio/asio/src/examples/cpp03/iostreams/daytime_client.cpp \
 			$${IDF_PATH}/components/asio/asio/asio/src/examples/cpp03/iostreams/daytime_server.cpp \
 			$${IDF_PATH}/components/asio/asio/asio/src/examples/cpp03/iostreams/daytime_server.cpp \
-			$${IDF_PATH}/components/esp32/dbg_stubs.c \
-			$${IDF_PATH}/components/esp32/dbg_stubs.c \
-			$${IDF_PATH}/components/esp32/dbg_stubs.c \
+			$${IDF_PATH}/components/asio/asio/asio/src/examples/cpp03/iostreams/daytime_server.cpp \
+			$${IDF_PATH}/components/esp_common/src/dbg_stubs.c \
+			$${IDF_PATH}/components/esp_common/src/dbg_stubs.c \
+			$${IDF_PATH}/components/esp_common/src/dbg_stubs.c \
 			$${IDF_PATH}/components/tinyusb/tinyusb/src/portable/nxp/lpc11_13_15/dcd_lpc11_13_15.c \
 			$${IDF_PATH}/components/tinyusb/tinyusb/src/portable/nxp/lpc11_13_15/dcd_lpc11_13_15.c \
 			$${IDF_PATH}/components/tinyusb/tinyusb/src/portable/nxp/lpc17_40/dcd_lpc17_40.c \
@@ -2818,65 +3313,67 @@
 			$${IDF_PATH}/components/tinyusb/tinyusb/src/portable/st/stm32f4/dcd_stm32f4.c \
 			$${IDF_PATH}/components/asio/asio/asio/src/tests/unit/deadline_timer.cpp \
 			$${IDF_PATH}/components/asio/asio/asio/src/tests/unit/deadline_timer.cpp \
+			$${IDF_PATH}/components/asio/asio/asio/src/tests/unit/deadline_timer.cpp \
 			$${IDF_PATH}/components/asio/asio/asio/src/tests/unit/deadline_timer_service.cpp \
 			$${IDF_PATH}/components/asio/asio/asio/src/tests/unit/deadline_timer_service.cpp \
+			$${IDF_PATH}/components/asio/asio/asio/src/tests/unit/deadline_timer_service.cpp \
 			$${IDF_PATH}/components/nghttp/nghttp2/third-party/mruby/src/debug.c \
 			$${IDF_PATH}/components/mbedtls/mbedtls/library/debug.c \
-			$${IDF_PATH}/components/coap/libcoap/src/debug.c \
 			$${IDF_PATH}/components/nghttp/nghttp2/third-party/mruby/src/debug.c \
 			$${IDF_PATH}/components/mbedtls/mbedtls/library/debug.c \
-			$${IDF_PATH}/components/coap/libcoap/src/debug.c \
 			$${IDF_PATH}/components/nghttp/nghttp2/third-party/mruby/src/debug.c \
 			$${IDF_PATH}/components/mbedtls/mbedtls/library/debug.c \
-			$${IDF_PATH}/components/coap/libcoap/src/debug.c \
-			$${IDF_PATH}/components/bt/bluedroid/external/sbc/decoder/srce/decoder-oina.c \
-			$${IDF_PATH}/components/bt/bluedroid/external/sbc/decoder/srce/decoder-oina.c \
-			$${IDF_PATH}/components/bt/bluedroid/external/sbc/decoder/srce/decoder-oina.c \
-			$${IDF_PATH}/components/bt/bluedroid/external/sbc/decoder/srce/decoder-private.c \
-			$${IDF_PATH}/components/bt/bluedroid/external/sbc/decoder/srce/decoder-private.c \
-			$${IDF_PATH}/components/bt/bluedroid/external/sbc/decoder/srce/decoder-private.c \
-			$${IDF_PATH}/components/bt/bluedroid/external/sbc/decoder/srce/decoder-sbc.c \
-			$${IDF_PATH}/components/bt/bluedroid/external/sbc/decoder/srce/decoder-sbc.c \
-			$${IDF_PATH}/components/bt/bluedroid/external/sbc/decoder/srce/decoder-sbc.c \
+			$${IDF_PATH}/components/xtensa/debug_helpers.c \
+			$${IDF_PATH}/components/xtensa/debug_helpers.c \
+			$${IDF_PATH}/components/xtensa/debug_helpers.c \
+			$${IDF_PATH}/components/bt/host/bluedroid/external/sbc/decoder/srce/decoder-oina.c \
+			$${IDF_PATH}/components/bt/host/bluedroid/external/sbc/decoder/srce/decoder-oina.c \
+			$${IDF_PATH}/components/bt/host/bluedroid/external/sbc/decoder/srce/decoder-oina.c \
+			$${IDF_PATH}/components/bt/host/bluedroid/external/sbc/decoder/srce/decoder-private.c \
+			$${IDF_PATH}/components/bt/host/bluedroid/external/sbc/decoder/srce/decoder-private.c \
+			$${IDF_PATH}/components/bt/host/bluedroid/external/sbc/decoder/srce/decoder-private.c \
+			$${IDF_PATH}/components/bt/host/bluedroid/external/sbc/decoder/srce/decoder-sbc.c \
+			$${IDF_PATH}/components/bt/host/bluedroid/external/sbc/decoder/srce/decoder-sbc.c \
+			$${IDF_PATH}/components/bt/host/bluedroid/external/sbc/decoder/srce/decoder-sbc.c \
 			$${IDF_PATH}/components/lwip/lwip/src/core/def.c \
-			$${IDF_PATH}/components/lwip/core/def.c \
 			$${IDF_PATH}/components/lwip/lwip/src/core/def.c \
-			$${IDF_PATH}/components/lwip/core/def.c \
 			$${IDF_PATH}/components/lwip/lwip/src/core/def.c \
-			$${IDF_PATH}/components/lwip/core/def.c \
+			$${IDF_PATH}/components/esp_event/default_event_loop.c \
+			$${IDF_PATH}/components/esp_event/default_event_loop.c \
+			$${IDF_PATH}/components/esp_event/default_event_loop.c \
 			$${IDF_PATH}/components/asio/asio/asio/src/tests/unit/defer.cpp \
 			$${IDF_PATH}/components/asio/asio/asio/src/tests/unit/defer.cpp \
+			$${IDF_PATH}/components/asio/asio/asio/src/tests/unit/defer.cpp \
 			$${IDF_PATH}/components/nghttp/nghttp2/examples/deflate.c \
 			$${IDF_PATH}/components/nghttp/nghttp2/examples/deflate.c \
 			$${IDF_PATH}/components/nghttp/nghttp2/examples/deflate.c \
-			$${IDF_PATH}/components/lwip/netif/ppp/demand.c \
 			$${IDF_PATH}/components/lwip/lwip/src/netif/ppp/demand.c \
-			$${IDF_PATH}/components/lwip/netif/ppp/demand.c \
 			$${IDF_PATH}/components/lwip/lwip/src/netif/ppp/demand.c \
-			$${IDF_PATH}/components/lwip/netif/ppp/demand.c \
 			$${IDF_PATH}/components/lwip/lwip/src/netif/ppp/demand.c \
-			$${IDF_PATH}/components/bt/bluedroid/external/sbc/decoder/srce/dequant.c \
-			$${IDF_PATH}/components/bt/bluedroid/external/sbc/decoder/srce/dequant.c \
-			$${IDF_PATH}/components/bt/bluedroid/external/sbc/decoder/srce/dequant.c \
+			$${IDF_PATH}/components/bt/host/bluedroid/external/sbc/decoder/srce/dequant.c \
+			$${IDF_PATH}/components/bt/host/bluedroid/external/sbc/decoder/srce/dequant.c \
+			$${IDF_PATH}/components/bt/host/bluedroid/external/sbc/decoder/srce/dequant.c \
 			$${IDF_PATH}/components/wpa_supplicant/src/crypto/des-internal.c \
 			$${IDF_PATH}/components/wpa_supplicant/src/crypto/des-internal.c \
 			$${IDF_PATH}/components/wpa_supplicant/src/crypto/des-internal.c \
 			$${IDF_PATH}/components/mbedtls/mbedtls/library/des.c \
-			$${IDF_PATH}/components/lwip/netif/ppp/polarssl/des.c \
 			$${IDF_PATH}/components/lwip/lwip/src/netif/ppp/polarssl/des.c \
 			$${IDF_PATH}/components/mbedtls/mbedtls/library/des.c \
-			$${IDF_PATH}/components/lwip/netif/ppp/polarssl/des.c \
 			$${IDF_PATH}/components/lwip/lwip/src/netif/ppp/polarssl/des.c \
 			$${IDF_PATH}/components/mbedtls/mbedtls/library/des.c \
-			$${IDF_PATH}/components/lwip/netif/ppp/polarssl/des.c \
 			$${IDF_PATH}/components/lwip/lwip/src/netif/ppp/polarssl/des.c \
+			$${IDF_PATH}/components/asio/asio/asio/src/tests/unit/posix/descriptor.cpp \
 			$${IDF_PATH}/components/asio/asio/asio/src/tests/unit/posix/descriptor.cpp \
 			$${IDF_PATH}/components/asio/asio/asio/src/tests/unit/posix/descriptor.cpp \
 			$${IDF_PATH}/components/asio/asio/asio/src/tests/unit/posix/descriptor_base.cpp \
 			$${IDF_PATH}/components/asio/asio/asio/src/tests/unit/posix/descriptor_base.cpp \
+			$${IDF_PATH}/components/asio/asio/asio/src/tests/unit/posix/descriptor_base.cpp \
 			$${IDF_PATH}/components/bt/host/nimble/nimble/apps/blemesh_models_example_2/src/device_composition.c \
 			$${IDF_PATH}/components/bt/host/nimble/nimble/apps/blemesh_models_example_2/src/device_composition.c \
 			$${IDF_PATH}/components/bt/host/nimble/nimble/apps/blemesh_models_example_2/src/device_composition.c \
+			$${IDF_PATH}/components/bt/esp_ble_mesh/mesh_models/server/device_property.c \
+			$${IDF_PATH}/components/bt/esp_ble_mesh/mesh_models/server/device_property.c \
+			$${IDF_PATH}/components/bt/esp_ble_mesh/mesh_models/server/device_property.c \
 			$${IDF_PATH}/components/mbedtls/mbedtls/programs/pkey/dh_client.c \
 			$${IDF_PATH}/components/mbedtls/mbedtls/programs/pkey/dh_client.c \
 			$${IDF_PATH}/components/mbedtls/mbedtls/programs/pkey/dh_client.c \
@@ -2893,50 +3390,49 @@
 			$${IDF_PATH}/components/mbedtls/mbedtls/programs/pkey/dh_server.c \
 			$${IDF_PATH}/components/mbedtls/mbedtls/programs/pkey/dh_server.c \
 			$${IDF_PATH}/components/lwip/lwip/src/core/ipv4/dhcp.c \
-			$${IDF_PATH}/components/lwip/core/ipv4/dhcp.c \
 			$${IDF_PATH}/components/lwip/lwip/src/core/ipv4/dhcp.c \
-			$${IDF_PATH}/components/lwip/core/ipv4/dhcp.c \
 			$${IDF_PATH}/components/lwip/lwip/src/core/ipv4/dhcp.c \
-			$${IDF_PATH}/components/lwip/core/ipv4/dhcp.c \
 			$${IDF_PATH}/components/lwip/lwip/src/core/ipv6/dhcp6.c \
-			$${IDF_PATH}/components/lwip/core/ipv6/dhcp6.c \
 			$${IDF_PATH}/components/lwip/lwip/src/core/ipv6/dhcp6.c \
-			$${IDF_PATH}/components/lwip/core/ipv6/dhcp6.c \
 			$${IDF_PATH}/components/lwip/lwip/src/core/ipv6/dhcp6.c \
-			$${IDF_PATH}/components/lwip/core/ipv6/dhcp6.c \
-			$${IDF_PATH}/components/lwip/apps/dhcpserver.c \
-			$${IDF_PATH}/components/lwip/apps/dhcpserver.c \
-			$${IDF_PATH}/components/lwip/apps/dhcpserver.c \
+			$${IDF_PATH}/components/lwip/port/esp32/netif/dhcp_state.c \
+			$${IDF_PATH}/components/lwip/port/esp32/netif/dhcp_state.c \
+			$${IDF_PATH}/components/lwip/port/esp32/netif/dhcp_state.c \
+			$${IDF_PATH}/components/lwip/apps/dhcpserver/dhcpserver.c \
+			$${IDF_PATH}/components/lwip/apps/dhcpserver/dhcpserver.c \
+			$${IDF_PATH}/components/lwip/apps/dhcpserver/dhcpserver.c \
 			$${IDF_PATH}/components/mbedtls/mbedtls/library/dhm.c \
 			$${IDF_PATH}/components/mbedtls/mbedtls/library/dhm.c \
 			$${IDF_PATH}/components/mbedtls/mbedtls/library/dhm.c \
-			$${IDF_PATH}/components/bt/bluedroid/btc/profile/std/dis/dis_profile.c \
-			$${IDF_PATH}/components/bt/bluedroid/btc/profile/std/dis/dis_profile.c \
-			$${IDF_PATH}/components/bt/bluedroid/btc/profile/std/dis/dis_profile.c \
+			$${IDF_PATH}/components/bt/host/bluedroid/btc/profile/std/dis/dis_profile.c \
+			$${IDF_PATH}/components/bt/host/bluedroid/btc/profile/std/dis/dis_profile.c \
+			$${IDF_PATH}/components/bt/host/bluedroid/btc/profile/std/dis/dis_profile.c \
 			$${IDF_PATH}/components/fatfs/src/diskio.c \
+			$${IDF_PATH}/components/fatfs/diskio/diskio.c \
 			$${IDF_PATH}/components/tinyusb/tinyusb/lib/fatfs/diskio.c \
 			$${IDF_PATH}/components/fatfs/src/diskio.c \
+			$${IDF_PATH}/components/fatfs/diskio/diskio.c \
 			$${IDF_PATH}/components/tinyusb/tinyusb/lib/fatfs/diskio.c \
 			$${IDF_PATH}/components/fatfs/src/diskio.c \
-			$${IDF_PATH}/components/fatfs/src/diskio_rawflash.c \
-			$${IDF_PATH}/components/fatfs/src/diskio_rawflash.c \
-			$${IDF_PATH}/components/fatfs/src/diskio_rawflash.c \
-			$${IDF_PATH}/components/fatfs/src/diskio_sdmmc.c \
-			$${IDF_PATH}/components/fatfs/src/diskio_sdmmc.c \
-			$${IDF_PATH}/components/fatfs/src/diskio_sdmmc.c \
-			$${IDF_PATH}/components/fatfs/src/diskio_wl.c \
-			$${IDF_PATH}/components/fatfs/src/diskio_wl.c \
-			$${IDF_PATH}/components/fatfs/src/diskio_wl.c \
+			$${IDF_PATH}/components/fatfs/diskio/diskio.c \
+			$${IDF_PATH}/components/fatfs/diskio/diskio_rawflash.c \
+			$${IDF_PATH}/components/fatfs/diskio/diskio_rawflash.c \
+			$${IDF_PATH}/components/fatfs/diskio/diskio_rawflash.c \
+			$${IDF_PATH}/components/fatfs/diskio/diskio_sdmmc.c \
+			$${IDF_PATH}/components/fatfs/diskio/diskio_sdmmc.c \
+			$${IDF_PATH}/components/fatfs/diskio/diskio_sdmmc.c \
+			$${IDF_PATH}/components/fatfs/diskio/diskio_wl.c \
+			$${IDF_PATH}/components/fatfs/diskio/diskio_wl.c \
+			$${IDF_PATH}/components/fatfs/diskio/diskio_wl.c \
+			$${IDF_PATH}/components/asio/asio/asio/src/tests/unit/dispatch.cpp \
 			$${IDF_PATH}/components/asio/asio/asio/src/tests/unit/dispatch.cpp \
 			$${IDF_PATH}/components/asio/asio/asio/src/tests/unit/dispatch.cpp \
 			$${IDF_PATH}/components/tinyusb/tinyusb/test/vendor/ceedling/plugins/fake_function_framework/examples/fff_example/src/display.c \
 			$${IDF_PATH}/components/tinyusb/tinyusb/test/vendor/ceedling/plugins/fake_function_framework/examples/fff_example/src/display.c \
 			$${IDF_PATH}/components/lwip/lwip/src/core/dns.c \
-			$${IDF_PATH}/components/lwip/core/dns.c \
 			$${IDF_PATH}/components/lwip/lwip/src/core/dns.c \
-			$${IDF_PATH}/components/lwip/core/dns.c \
 			$${IDF_PATH}/components/lwip/lwip/src/core/dns.c \
-			$${IDF_PATH}/components/lwip/core/dns.c \
+			$${IDF_PATH}/components/asio/asio/asio/src/examples/cpp17/coroutines_ts/double_buffered_echo_server.cpp \
 			$${IDF_PATH}/components/asio/asio/asio/src/examples/cpp17/coroutines_ts/double_buffered_echo_server.cpp \
 			$${IDF_PATH}/components/asio/asio/asio/src/examples/cpp17/coroutines_ts/double_buffered_echo_server.cpp \
 			$${IDF_PATH}/components/esp32/dport_access.c \
@@ -2972,54 +3468,60 @@
 			$${IDF_PATH}/components/nghttp/nghttp2/third-party/mruby/src/dump.c \
 			$${IDF_PATH}/components/nghttp/nghttp2/third-party/mruby/src/dump.c \
 			$${IDF_PATH}/components/nghttp/nghttp2/third-party/mruby/src/dump.c \
-			$${IDF_PATH}/components/wpa_supplicant/src/wpa2/eap_peer/eap.c \
-			$${IDF_PATH}/components/lwip/netif/ppp/eap.c \
+			$${IDF_PATH}/components/wpa_supplicant/src/eap_peer/eap.c \
 			$${IDF_PATH}/components/lwip/lwip/src/netif/ppp/eap.c \
-			$${IDF_PATH}/components/wpa_supplicant/src/wpa2/eap_peer/eap.c \
-			$${IDF_PATH}/components/lwip/netif/ppp/eap.c \
+			$${IDF_PATH}/components/wpa_supplicant/src/eap_peer/eap.c \
 			$${IDF_PATH}/components/lwip/lwip/src/netif/ppp/eap.c \
-			$${IDF_PATH}/components/wpa_supplicant/src/wpa2/eap_peer/eap.c \
-			$${IDF_PATH}/components/lwip/netif/ppp/eap.c \
+			$${IDF_PATH}/components/wpa_supplicant/src/eap_peer/eap.c \
 			$${IDF_PATH}/components/lwip/lwip/src/netif/ppp/eap.c \
-			$${IDF_PATH}/components/wpa_supplicant/src/wps/eap_common.c \
-			$${IDF_PATH}/components/wpa_supplicant/src/wpa2/eap_peer/eap_common.c \
-			$${IDF_PATH}/components/wpa_supplicant/src/wps/eap_common.c \
-			$${IDF_PATH}/components/wpa_supplicant/src/wpa2/eap_peer/eap_common.c \
-			$${IDF_PATH}/components/wpa_supplicant/src/wps/eap_common.c \
-			$${IDF_PATH}/components/wpa_supplicant/src/wpa2/eap_peer/eap_common.c \
-			$${IDF_PATH}/components/wpa_supplicant/src/wpa2/eap_peer/eap_mschapv2.c \
-			$${IDF_PATH}/components/wpa_supplicant/src/wpa2/eap_peer/eap_mschapv2.c \
-			$${IDF_PATH}/components/wpa_supplicant/src/wpa2/eap_peer/eap_mschapv2.c \
-			$${IDF_PATH}/components/wpa_supplicant/src/wpa2/eap_peer/eap_peap.c \
-			$${IDF_PATH}/components/wpa_supplicant/src/wpa2/eap_peer/eap_peap.c \
-			$${IDF_PATH}/components/wpa_supplicant/src/wpa2/eap_peer/eap_peap.c \
-			$${IDF_PATH}/components/wpa_supplicant/src/wpa2/eap_peer/eap_peap_common.c \
-			$${IDF_PATH}/components/wpa_supplicant/src/wpa2/eap_peer/eap_peap_common.c \
-			$${IDF_PATH}/components/wpa_supplicant/src/wpa2/eap_peer/eap_peap_common.c \
-			$${IDF_PATH}/components/wpa_supplicant/src/wpa2/eap_peer/eap_tls.c \
-			$${IDF_PATH}/components/wpa_supplicant/src/wpa2/eap_peer/eap_tls.c \
-			$${IDF_PATH}/components/wpa_supplicant/src/wpa2/eap_peer/eap_tls.c \
-			$${IDF_PATH}/components/wpa_supplicant/src/wpa2/eap_peer/eap_tls_common.c \
-			$${IDF_PATH}/components/wpa_supplicant/src/wpa2/eap_peer/eap_tls_common.c \
-			$${IDF_PATH}/components/wpa_supplicant/src/wpa2/eap_peer/eap_tls_common.c \
-			$${IDF_PATH}/components/wpa_supplicant/src/wpa2/eap_peer/eap_ttls.c \
-			$${IDF_PATH}/components/wpa_supplicant/src/wpa2/eap_peer/eap_ttls.c \
-			$${IDF_PATH}/components/wpa_supplicant/src/wpa2/eap_peer/eap_ttls.c \
+			$${IDF_PATH}/components/wpa_supplicant/src/eap_peer/eap_common.c \
+			$${IDF_PATH}/components/wpa_supplicant/src/eap_peer/eap_common.c \
+			$${IDF_PATH}/components/wpa_supplicant/src/eap_peer/eap_common.c \
+			$${IDF_PATH}/components/wpa_supplicant/src/eap_peer/eap_mschapv2.c \
+			$${IDF_PATH}/components/wpa_supplicant/src/eap_peer/eap_mschapv2.c \
+			$${IDF_PATH}/components/wpa_supplicant/src/eap_peer/eap_mschapv2.c \
+			$${IDF_PATH}/components/wpa_supplicant/src/eap_peer/eap_peap.c \
+			$${IDF_PATH}/components/wpa_supplicant/src/eap_peer/eap_peap.c \
+			$${IDF_PATH}/components/wpa_supplicant/src/eap_peer/eap_peap.c \
+			$${IDF_PATH}/components/wpa_supplicant/src/eap_peer/eap_peap_common.c \
+			$${IDF_PATH}/components/wpa_supplicant/src/eap_peer/eap_peap_common.c \
+			$${IDF_PATH}/components/wpa_supplicant/src/eap_peer/eap_peap_common.c \
+			$${IDF_PATH}/components/wpa_supplicant/src/eap_peer/eap_tls.c \
+			$${IDF_PATH}/components/wpa_supplicant/src/eap_peer/eap_tls.c \
+			$${IDF_PATH}/components/wpa_supplicant/src/eap_peer/eap_tls.c \
+			$${IDF_PATH}/components/wpa_supplicant/src/eap_peer/eap_tls_common.c \
+			$${IDF_PATH}/components/wpa_supplicant/src/eap_peer/eap_tls_common.c \
+			$${IDF_PATH}/components/wpa_supplicant/src/eap_peer/eap_tls_common.c \
+			$${IDF_PATH}/components/wpa_supplicant/src/eap_peer/eap_ttls.c \
+			$${IDF_PATH}/components/wpa_supplicant/src/eap_peer/eap_ttls.c \
+			$${IDF_PATH}/components/wpa_supplicant/src/eap_peer/eap_ttls.c \
 			$${IDF_PATH}/components/coap/libcoap/ext/tinydtls/ecc/ecc.c \
 			$${IDF_PATH}/components/bt/host/nimble/nimble/ext/tinycrypt/src/ecc.c \
+			$${IDF_PATH}/components/bt/esp_ble_mesh/mesh_common/tinycrypt/src/ecc.c \
 			$${IDF_PATH}/components/coap/libcoap/ext/tinydtls/ecc/ecc.c \
 			$${IDF_PATH}/components/bt/host/nimble/nimble/ext/tinycrypt/src/ecc.c \
+			$${IDF_PATH}/components/bt/esp_ble_mesh/mesh_common/tinycrypt/src/ecc.c \
 			$${IDF_PATH}/components/coap/libcoap/ext/tinydtls/ecc/ecc.c \
 			$${IDF_PATH}/components/bt/host/nimble/nimble/ext/tinycrypt/src/ecc.c \
+			$${IDF_PATH}/components/bt/esp_ble_mesh/mesh_common/tinycrypt/src/ecc.c \
 			$${IDF_PATH}/components/bt/host/nimble/nimble/ext/tinycrypt/src/ecc_dh.c \
+			$${IDF_PATH}/components/bt/esp_ble_mesh/mesh_common/tinycrypt/src/ecc_dh.c \
 			$${IDF_PATH}/components/bt/host/nimble/nimble/ext/tinycrypt/src/ecc_dh.c \
+			$${IDF_PATH}/components/bt/esp_ble_mesh/mesh_common/tinycrypt/src/ecc_dh.c \
 			$${IDF_PATH}/components/bt/host/nimble/nimble/ext/tinycrypt/src/ecc_dh.c \
+			$${IDF_PATH}/components/bt/esp_ble_mesh/mesh_common/tinycrypt/src/ecc_dh.c \
 			$${IDF_PATH}/components/bt/host/nimble/nimble/ext/tinycrypt/src/ecc_dsa.c \
+			$${IDF_PATH}/components/bt/esp_ble_mesh/mesh_common/tinycrypt/src/ecc_dsa.c \
 			$${IDF_PATH}/components/bt/host/nimble/nimble/ext/tinycrypt/src/ecc_dsa.c \
+			$${IDF_PATH}/components/bt/esp_ble_mesh/mesh_common/tinycrypt/src/ecc_dsa.c \
 			$${IDF_PATH}/components/bt/host/nimble/nimble/ext/tinycrypt/src/ecc_dsa.c \
+			$${IDF_PATH}/components/bt/esp_ble_mesh/mesh_common/tinycrypt/src/ecc_dsa.c \
 			$${IDF_PATH}/components/bt/host/nimble/nimble/ext/tinycrypt/src/ecc_platform_specific.c \
+			$${IDF_PATH}/components/bt/esp_ble_mesh/mesh_common/tinycrypt/src/ecc_platform_specific.c \
 			$${IDF_PATH}/components/bt/host/nimble/nimble/ext/tinycrypt/src/ecc_platform_specific.c \
+			$${IDF_PATH}/components/bt/esp_ble_mesh/mesh_common/tinycrypt/src/ecc_platform_specific.c \
 			$${IDF_PATH}/components/bt/host/nimble/nimble/ext/tinycrypt/src/ecc_platform_specific.c \
+			$${IDF_PATH}/components/bt/esp_ble_mesh/mesh_common/tinycrypt/src/ecc_platform_specific.c \
 			$${IDF_PATH}/components/mbedtls/mbedtls/library/ecdh.c \
 			$${IDF_PATH}/components/mbedtls/mbedtls/library/ecdh.c \
 			$${IDF_PATH}/components/mbedtls/mbedtls/library/ecdh.c \
@@ -3038,17 +3540,17 @@
 			$${IDF_PATH}/components/asio/asio/asio/src/examples/cpp17/coroutines_ts/echo_server.cpp \
 			$${IDF_PATH}/components/asio/asio/asio/src/examples/cpp11/spawn/echo_server.cpp \
 			$${IDF_PATH}/components/asio/asio/asio/src/examples/cpp03/spawn/echo_server.cpp \
+			$${IDF_PATH}/components/asio/asio/asio/src/examples/cpp17/coroutines_ts/echo_server.cpp \
+			$${IDF_PATH}/components/asio/asio/asio/src/examples/cpp11/spawn/echo_server.cpp \
+			$${IDF_PATH}/components/asio/asio/asio/src/examples/cpp03/spawn/echo_server.cpp \
 			$${IDF_PATH}/components/mbedtls/mbedtls/library/ecjpake.c \
 			$${IDF_PATH}/components/mbedtls/mbedtls/library/ecjpake.c \
 			$${IDF_PATH}/components/mbedtls/mbedtls/library/ecjpake.c \
 			$${IDF_PATH}/components/mbedtls/mbedtls/library/ecp.c \
-			$${IDF_PATH}/components/lwip/netif/ppp/ecp.c \
 			$${IDF_PATH}/components/lwip/lwip/src/netif/ppp/ecp.c \
 			$${IDF_PATH}/components/mbedtls/mbedtls/library/ecp.c \
-			$${IDF_PATH}/components/lwip/netif/ppp/ecp.c \
 			$${IDF_PATH}/components/lwip/lwip/src/netif/ppp/ecp.c \
 			$${IDF_PATH}/components/mbedtls/mbedtls/library/ecp.c \
-			$${IDF_PATH}/components/lwip/netif/ppp/ecp.c \
 			$${IDF_PATH}/components/lwip/lwip/src/netif/ppp/ecp.c \
 			$${IDF_PATH}/components/mbedtls/mbedtls/library/ecp_curves.c \
 			$${IDF_PATH}/components/mbedtls/mbedtls/library/ecp_curves.c \
@@ -3056,20 +3558,14 @@
 			$${IDF_PATH}/components/libsodium/libsodium/test/default/ed25519_convert.c \
 			$${IDF_PATH}/components/libsodium/libsodium/test/default/ed25519_convert.c \
 			$${IDF_PATH}/components/libsodium/libsodium/test/default/ed25519_convert.c \
-			$${IDF_PATH}/components/bootloader_support/src/efuse.c \
-			$${IDF_PATH}/components/bootloader_support/src/efuse.c \
-			$${IDF_PATH}/components/bootloader_support/src/efuse.c \
 			$${IDF_PATH}/components/tinyusb/tinyusb/src/host/ehci/ehci.c \
 			$${IDF_PATH}/components/tinyusb/tinyusb/src/host/ehci/ehci.c \
 			$${IDF_PATH}/components/expat/expat/expat/examples/elements.c \
 			$${IDF_PATH}/components/expat/expat/expat/examples/elements.c \
 			$${IDF_PATH}/components/expat/expat/expat/examples/elements.c \
-			$${IDF_PATH}/components/ethernet/emac_dev.c \
-			$${IDF_PATH}/components/ethernet/emac_dev.c \
-			$${IDF_PATH}/components/ethernet/emac_dev.c \
-			$${IDF_PATH}/components/ethernet/emac_main.c \
-			$${IDF_PATH}/components/ethernet/emac_main.c \
-			$${IDF_PATH}/components/ethernet/emac_main.c \
+			$${IDF_PATH}/components/soc/esp32/emac_hal.c \
+			$${IDF_PATH}/components/soc/esp32/emac_hal.c \
+			$${IDF_PATH}/components/soc/esp32/emac_hal.c \
 			$${IDF_PATH}/components/coap/libcoap/src/encode.c \
 			$${IDF_PATH}/components/coap/libcoap/src/encode.c \
 			$${IDF_PATH}/components/coap/libcoap/src/encode.c \
@@ -3079,24 +3575,18 @@
 			$${IDF_PATH}/components/mbedtls/mbedtls/library/entropy.c \
 			$${IDF_PATH}/components/mbedtls/mbedtls/library/entropy.c \
 			$${IDF_PATH}/components/mbedtls/mbedtls/library/entropy.c \
-			$${IDF_PATH}/components/mbedtls/mbedtls/yotta/data/entropy_hardware_poll.c \
-			$${IDF_PATH}/components/mbedtls/mbedtls/yotta/data/entropy_hardware_poll.c \
-			$${IDF_PATH}/components/mbedtls/mbedtls/yotta/data/entropy_hardware_poll.c \
 			$${IDF_PATH}/components/mbedtls/mbedtls/library/entropy_poll.c \
 			$${IDF_PATH}/components/mbedtls/mbedtls/library/entropy_poll.c \
 			$${IDF_PATH}/components/mbedtls/mbedtls/library/entropy_poll.c \
 			$${IDF_PATH}/components/nghttp/nghttp2/third-party/mruby/src/enum.c \
 			$${IDF_PATH}/components/nghttp/nghttp2/third-party/mruby/src/enum.c \
 			$${IDF_PATH}/components/nghttp/nghttp2/third-party/mruby/src/enum.c \
-			$${IDF_PATH}/components/xtensa-debug-module/eri.c \
-			$${IDF_PATH}/components/xtensa-debug-module/eri.c \
-			$${IDF_PATH}/components/xtensa-debug-module/eri.c \
+			$${IDF_PATH}/components/xtensa/eri.c \
+			$${IDF_PATH}/components/xtensa/eri.c \
+			$${IDF_PATH}/components/xtensa/eri.c \
 			$${IDF_PATH}/components/lwip/lwip/src/api/err.c \
-			$${IDF_PATH}/components/lwip/api/err.c \
 			$${IDF_PATH}/components/lwip/lwip/src/api/err.c \
-			$${IDF_PATH}/components/lwip/api/err.c \
 			$${IDF_PATH}/components/lwip/lwip/src/api/err.c \
-			$${IDF_PATH}/components/lwip/api/err.c \
 			$${IDF_PATH}/components/nghttp/nghttp2/third-party/mruby/src/error.c \
 			$${IDF_PATH}/components/mbedtls/mbedtls/library/error.c \
 			$${IDF_PATH}/components/nghttp/nghttp2/third-party/mruby/src/error.c \
@@ -3107,63 +3597,167 @@
 			$${IDF_PATH}/components/asio/asio/asio/src/tests/unit/error.cpp \
 			$${IDF_PATH}/components/asio/asio/asio/src/tests/unit/ssl/error.cpp \
 			$${IDF_PATH}/components/asio/asio/asio/src/tests/unit/error.cpp \
+			$${IDF_PATH}/components/asio/asio/asio/src/tests/unit/ssl/error.cpp \
+			$${IDF_PATH}/components/asio/asio/asio/src/tests/unit/error.cpp \
 			$${IDF_PATH}/components/mdns/test_afl_fuzz_host/esp32_mock.c \
 			$${IDF_PATH}/components/mdns/test_afl_fuzz_host/esp32_mock.c \
 			$${IDF_PATH}/components/mdns/test_afl_fuzz_host/esp32_mock.c \
-			$${IDF_PATH}/components/bt/bluedroid/api/esp_a2dp_api.c \
-			$${IDF_PATH}/components/bt/bluedroid/api/esp_a2dp_api.c \
-			$${IDF_PATH}/components/bt/bluedroid/api/esp_a2dp_api.c \
+			$${IDF_PATH}/components/bt/host/bluedroid/api/esp_a2dp_api.c \
+			$${IDF_PATH}/components/bt/host/bluedroid/api/esp_a2dp_api.c \
+			$${IDF_PATH}/components/bt/host/bluedroid/api/esp_a2dp_api.c \
+			$${IDF_PATH}/components/esp32/esp_adapter.c \
+			$${IDF_PATH}/components/esp32/esp_adapter.c \
+			$${IDF_PATH}/components/esp32/esp_adapter.c \
 			$${IDF_PATH}/components/esp_adc_cal/esp_adc_cal.c \
 			$${IDF_PATH}/components/esp_adc_cal/esp_adc_cal.c \
 			$${IDF_PATH}/components/esp_adc_cal/esp_adc_cal.c \
-			$${IDF_PATH}/components/bt/bluedroid/btc/profile/std/smp/esp_app_sec.c \
-			$${IDF_PATH}/components/bt/bluedroid/btc/profile/std/smp/esp_app_sec.c \
-			$${IDF_PATH}/components/bt/bluedroid/btc/profile/std/smp/esp_app_sec.c \
-			$${IDF_PATH}/components/bt/bluedroid/api/esp_avrc_api.c \
-			$${IDF_PATH}/components/bt/bluedroid/api/esp_avrc_api.c \
-			$${IDF_PATH}/components/bt/bluedroid/api/esp_avrc_api.c \
+			$${IDF_PATH}/components/app_update/esp_app_desc.c \
+			$${IDF_PATH}/components/app_update/esp_app_desc.c \
+			$${IDF_PATH}/components/app_update/esp_app_desc.c \
+			$${IDF_PATH}/components/bt/host/bluedroid/btc/profile/std/smp/esp_app_sec.c \
+			$${IDF_PATH}/components/bt/host/bluedroid/btc/profile/std/smp/esp_app_sec.c \
+			$${IDF_PATH}/components/bt/host/bluedroid/btc/profile/std/smp/esp_app_sec.c \
+			$${IDF_PATH}/components/bt/host/bluedroid/api/esp_avrc_api.c \
+			$${IDF_PATH}/components/bt/host/bluedroid/api/esp_avrc_api.c \
+			$${IDF_PATH}/components/bt/host/bluedroid/api/esp_avrc_api.c \
 			$${IDF_PATH}/components/mbedtls/port/esp_bignum.c \
 			$${IDF_PATH}/components/mbedtls/port/esp_bignum.c \
 			$${IDF_PATH}/components/mbedtls/port/esp_bignum.c \
-			$${IDF_PATH}/components/bt/bluedroid/api/esp_blufi_api.c \
-			$${IDF_PATH}/components/bt/bluedroid/api/esp_blufi_api.c \
-			$${IDF_PATH}/components/bt/bluedroid/api/esp_blufi_api.c \
-			$${IDF_PATH}/components/bt/bluedroid/api/esp_bt_device.c \
-			$${IDF_PATH}/components/bt/bluedroid/api/esp_bt_device.c \
-			$${IDF_PATH}/components/bt/bluedroid/api/esp_bt_device.c \
-			$${IDF_PATH}/components/bt/bluedroid/api/esp_bt_main.c \
-			$${IDF_PATH}/components/bt/bluedroid/api/esp_bt_main.c \
-			$${IDF_PATH}/components/bt/bluedroid/api/esp_bt_main.c \
-			$${IDF_PATH}/components/esp32/esp_err_to_name.c \
-			$${IDF_PATH}/components/esp32/esp_err_to_name.c \
-			$${IDF_PATH}/components/esp32/esp_err_to_name.c \
+			$${IDF_PATH}/components/bt/esp_ble_mesh/api/core/esp_ble_mesh_ble_api.c \
+			$${IDF_PATH}/components/bt/esp_ble_mesh/api/core/esp_ble_mesh_ble_api.c \
+			$${IDF_PATH}/components/bt/esp_ble_mesh/api/core/esp_ble_mesh_ble_api.c \
+			$${IDF_PATH}/components/bt/esp_ble_mesh/api/core/esp_ble_mesh_common_api.c \
+			$${IDF_PATH}/components/bt/esp_ble_mesh/api/core/esp_ble_mesh_common_api.c \
+			$${IDF_PATH}/components/bt/esp_ble_mesh/api/core/esp_ble_mesh_common_api.c \
+			$${IDF_PATH}/components/bt/esp_ble_mesh/api/models/esp_ble_mesh_config_model_api.c \
+			$${IDF_PATH}/components/bt/esp_ble_mesh/api/models/esp_ble_mesh_config_model_api.c \
+			$${IDF_PATH}/components/bt/esp_ble_mesh/api/models/esp_ble_mesh_config_model_api.c \
+			$${IDF_PATH}/components/bt/esp_ble_mesh/api/models/esp_ble_mesh_generic_model_api.c \
+			$${IDF_PATH}/components/bt/esp_ble_mesh/api/models/esp_ble_mesh_generic_model_api.c \
+			$${IDF_PATH}/components/bt/esp_ble_mesh/api/models/esp_ble_mesh_generic_model_api.c \
+			$${IDF_PATH}/components/bt/esp_ble_mesh/api/models/esp_ble_mesh_health_model_api.c \
+			$${IDF_PATH}/components/bt/esp_ble_mesh/api/models/esp_ble_mesh_health_model_api.c \
+			$${IDF_PATH}/components/bt/esp_ble_mesh/api/models/esp_ble_mesh_health_model_api.c \
+			$${IDF_PATH}/components/bt/esp_ble_mesh/api/models/esp_ble_mesh_lighting_model_api.c \
+			$${IDF_PATH}/components/bt/esp_ble_mesh/api/models/esp_ble_mesh_lighting_model_api.c \
+			$${IDF_PATH}/components/bt/esp_ble_mesh/api/models/esp_ble_mesh_lighting_model_api.c \
+			$${IDF_PATH}/components/bt/esp_ble_mesh/api/core/esp_ble_mesh_local_data_operation_api.c \
+			$${IDF_PATH}/components/bt/esp_ble_mesh/api/core/esp_ble_mesh_local_data_operation_api.c \
+			$${IDF_PATH}/components/bt/esp_ble_mesh/api/core/esp_ble_mesh_local_data_operation_api.c \
+			$${IDF_PATH}/components/bt/esp_ble_mesh/api/core/esp_ble_mesh_low_power_api.c \
+			$${IDF_PATH}/components/bt/esp_ble_mesh/api/core/esp_ble_mesh_low_power_api.c \
+			$${IDF_PATH}/components/bt/esp_ble_mesh/api/core/esp_ble_mesh_low_power_api.c \
+			$${IDF_PATH}/components/bt/esp_ble_mesh/api/core/esp_ble_mesh_networking_api.c \
+			$${IDF_PATH}/components/bt/esp_ble_mesh/api/core/esp_ble_mesh_networking_api.c \
+			$${IDF_PATH}/components/bt/esp_ble_mesh/api/core/esp_ble_mesh_networking_api.c \
+			$${IDF_PATH}/components/bt/esp_ble_mesh/api/core/esp_ble_mesh_provisioning_api.c \
+			$${IDF_PATH}/components/bt/esp_ble_mesh/api/core/esp_ble_mesh_provisioning_api.c \
+			$${IDF_PATH}/components/bt/esp_ble_mesh/api/core/esp_ble_mesh_provisioning_api.c \
+			$${IDF_PATH}/components/bt/esp_ble_mesh/api/core/esp_ble_mesh_proxy_api.c \
+			$${IDF_PATH}/components/bt/esp_ble_mesh/api/core/esp_ble_mesh_proxy_api.c \
+			$${IDF_PATH}/components/bt/esp_ble_mesh/api/core/esp_ble_mesh_proxy_api.c \
+			$${IDF_PATH}/components/bt/esp_ble_mesh/api/models/esp_ble_mesh_sensor_model_api.c \
+			$${IDF_PATH}/components/bt/esp_ble_mesh/api/models/esp_ble_mesh_sensor_model_api.c \
+			$${IDF_PATH}/components/bt/esp_ble_mesh/api/models/esp_ble_mesh_sensor_model_api.c \
+			$${IDF_PATH}/components/bt/esp_ble_mesh/api/models/esp_ble_mesh_time_scene_model_api.c \
+			$${IDF_PATH}/components/bt/esp_ble_mesh/api/models/esp_ble_mesh_time_scene_model_api.c \
+			$${IDF_PATH}/components/bt/esp_ble_mesh/api/models/esp_ble_mesh_time_scene_model_api.c \
+			$${IDF_PATH}/components/bt/host/bluedroid/api/esp_blufi_api.c \
+			$${IDF_PATH}/components/bt/host/bluedroid/api/esp_blufi_api.c \
+			$${IDF_PATH}/components/bt/host/bluedroid/api/esp_blufi_api.c \
+			$${IDF_PATH}/components/bt/host/bluedroid/api/esp_bt_device.c \
+			$${IDF_PATH}/components/bt/host/bluedroid/api/esp_bt_device.c \
+			$${IDF_PATH}/components/bt/host/bluedroid/api/esp_bt_device.c \
+			$${IDF_PATH}/components/bt/host/bluedroid/api/esp_bt_main.c \
+			$${IDF_PATH}/components/bt/host/bluedroid/api/esp_bt_main.c \
+			$${IDF_PATH}/components/bt/host/bluedroid/api/esp_bt_main.c \
+			$${IDF_PATH}/components/efuse/src/esp_efuse_api.c \
+			$${IDF_PATH}/components/efuse/src/esp_efuse_api.c \
+			$${IDF_PATH}/components/efuse/src/esp_efuse_api.c \
+			$${IDF_PATH}/components/efuse/src/esp_efuse_fields.c \
+			$${IDF_PATH}/components/efuse/src/esp_efuse_fields.c \
+			$${IDF_PATH}/components/efuse/src/esp_efuse_fields.c \
+			$${IDF_PATH}/components/efuse/esp32/esp_efuse_table.c \
+			$${IDF_PATH}/components/efuse/esp32/esp_efuse_table.c \
+			$${IDF_PATH}/components/efuse/esp32/esp_efuse_table.c \
+			$${IDF_PATH}/components/efuse/test/esp_efuse_test_table.c \
+			$${IDF_PATH}/components/efuse/test/esp_efuse_test_table.c \
+			$${IDF_PATH}/components/efuse/test/esp_efuse_test_table.c \
+			$${IDF_PATH}/components/efuse/src/esp_efuse_utility.c \
+			$${IDF_PATH}/components/efuse/src/esp_efuse_utility.c \
+			$${IDF_PATH}/components/efuse/src/esp_efuse_utility.c \
+			$${IDF_PATH}/components/esp_common/src/esp_err_to_name.c \
+			$${IDF_PATH}/components/esp_common/src/esp_err_to_name.c \
+			$${IDF_PATH}/components/esp_common/src/esp_err_to_name.c \
 			$${IDF_PATH}/components/wear_levelling/test_wl_host/esp_error_check_stub.cpp \
 			$${IDF_PATH}/components/nvs_flash/test_nvs_host/esp_error_check_stub.cpp \
 			$${IDF_PATH}/components/wear_levelling/test_wl_host/esp_error_check_stub.cpp \
 			$${IDF_PATH}/components/nvs_flash/test_nvs_host/esp_error_check_stub.cpp \
 			$${IDF_PATH}/components/wear_levelling/test_wl_host/esp_error_check_stub.cpp \
 			$${IDF_PATH}/components/nvs_flash/test_nvs_host/esp_error_check_stub.cpp \
-			$${IDF_PATH}/components/bt/bluedroid/api/esp_gap_ble_api.c \
-			$${IDF_PATH}/components/bt/bluedroid/api/esp_gap_ble_api.c \
-			$${IDF_PATH}/components/bt/bluedroid/api/esp_gap_ble_api.c \
-			$${IDF_PATH}/components/bt/bluedroid/api/esp_gap_bt_api.c \
-			$${IDF_PATH}/components/bt/bluedroid/api/esp_gap_bt_api.c \
-			$${IDF_PATH}/components/bt/bluedroid/api/esp_gap_bt_api.c \
-			$${IDF_PATH}/components/bt/bluedroid/api/esp_gatt_common_api.c \
-			$${IDF_PATH}/components/bt/bluedroid/api/esp_gatt_common_api.c \
-			$${IDF_PATH}/components/bt/bluedroid/api/esp_gatt_common_api.c \
-			$${IDF_PATH}/components/bt/bluedroid/api/esp_gattc_api.c \
-			$${IDF_PATH}/components/bt/bluedroid/api/esp_gattc_api.c \
-			$${IDF_PATH}/components/bt/bluedroid/api/esp_gattc_api.c \
-			$${IDF_PATH}/components/bt/bluedroid/api/esp_gatts_api.c \
-			$${IDF_PATH}/components/bt/bluedroid/api/esp_gatts_api.c \
-			$${IDF_PATH}/components/bt/bluedroid/api/esp_gatts_api.c \
+			$${IDF_PATH}/components/esp_eth/src/esp_eth.c \
+			$${IDF_PATH}/components/esp_eth/src/esp_eth.c \
+			$${IDF_PATH}/components/esp_eth/src/esp_eth.c \
+			$${IDF_PATH}/components/esp_eth/src/esp_eth_mac_dm9051.c \
+			$${IDF_PATH}/components/esp_eth/src/esp_eth_mac_dm9051.c \
+			$${IDF_PATH}/components/esp_eth/src/esp_eth_mac_dm9051.c \
+			$${IDF_PATH}/components/esp_eth/src/esp_eth_mac_esp32.c \
+			$${IDF_PATH}/components/esp_eth/src/esp_eth_mac_esp32.c \
+			$${IDF_PATH}/components/esp_eth/src/esp_eth_mac_esp32.c \
+			$${IDF_PATH}/components/esp_eth/src/esp_eth_phy_dm9051.c \
+			$${IDF_PATH}/components/esp_eth/src/esp_eth_phy_dm9051.c \
+			$${IDF_PATH}/components/esp_eth/src/esp_eth_phy_dm9051.c \
+			$${IDF_PATH}/components/esp_eth/src/esp_eth_phy_dp83848.c \
+			$${IDF_PATH}/components/esp_eth/src/esp_eth_phy_dp83848.c \
+			$${IDF_PATH}/components/esp_eth/src/esp_eth_phy_dp83848.c \
+			$${IDF_PATH}/components/esp_eth/src/esp_eth_phy_ip101.c \
+			$${IDF_PATH}/components/esp_eth/src/esp_eth_phy_ip101.c \
+			$${IDF_PATH}/components/esp_eth/src/esp_eth_phy_ip101.c \
+			$${IDF_PATH}/components/esp_eth/src/esp_eth_phy_lan8720.c \
+			$${IDF_PATH}/components/esp_eth/src/esp_eth_phy_lan8720.c \
+			$${IDF_PATH}/components/esp_eth/src/esp_eth_phy_lan8720.c \
+			$${IDF_PATH}/components/esp_eth/src/esp_eth_phy_rtl8201.c \
+			$${IDF_PATH}/components/esp_eth/src/esp_eth_phy_rtl8201.c \
+			$${IDF_PATH}/components/esp_eth/src/esp_eth_phy_rtl8201.c \
+			$${IDF_PATH}/components/esp_event/esp_event.c \
+			$${IDF_PATH}/components/esp_event/esp_event.c \
+			$${IDF_PATH}/components/esp_event/esp_event.c \
+			$${IDF_PATH}/components/esp_event/esp_event_private.c \
+			$${IDF_PATH}/components/esp_event/esp_event_private.c \
+			$${IDF_PATH}/components/esp_event/esp_event_private.c \
+			$${IDF_PATH}/components/spi_flash/esp_flash_api.c \
+			$${IDF_PATH}/components/spi_flash/esp_flash_api.c \
+			$${IDF_PATH}/components/spi_flash/esp_flash_api.c \
+			$${IDF_PATH}/components/spi_flash/esp_flash_spi_init.c \
+			$${IDF_PATH}/components/spi_flash/esp_flash_spi_init.c \
+			$${IDF_PATH}/components/spi_flash/esp_flash_spi_init.c \
+			$${IDF_PATH}/components/bt/host/bluedroid/api/esp_gap_ble_api.c \
+			$${IDF_PATH}/components/bt/host/bluedroid/api/esp_gap_ble_api.c \
+			$${IDF_PATH}/components/bt/host/bluedroid/api/esp_gap_ble_api.c \
+			$${IDF_PATH}/components/bt/host/bluedroid/api/esp_gap_bt_api.c \
+			$${IDF_PATH}/components/bt/host/bluedroid/api/esp_gap_bt_api.c \
+			$${IDF_PATH}/components/bt/host/bluedroid/api/esp_gap_bt_api.c \
+			$${IDF_PATH}/components/bt/host/bluedroid/api/esp_gatt_common_api.c \
+			$${IDF_PATH}/components/bt/host/bluedroid/api/esp_gatt_common_api.c \
+			$${IDF_PATH}/components/bt/host/bluedroid/api/esp_gatt_common_api.c \
+			$${IDF_PATH}/components/bt/host/bluedroid/api/esp_gattc_api.c \
+			$${IDF_PATH}/components/bt/host/bluedroid/api/esp_gattc_api.c \
+			$${IDF_PATH}/components/bt/host/bluedroid/api/esp_gattc_api.c \
+			$${IDF_PATH}/components/bt/host/bluedroid/api/esp_gatts_api.c \
+			$${IDF_PATH}/components/bt/host/bluedroid/api/esp_gatts_api.c \
+			$${IDF_PATH}/components/bt/host/bluedroid/api/esp_gatts_api.c \
 			$${IDF_PATH}/components/mbedtls/port/esp_hardware.c \
 			$${IDF_PATH}/components/mbedtls/port/esp_hardware.c \
 			$${IDF_PATH}/components/mbedtls/port/esp_hardware.c \
-			$${IDF_PATH}/components/bt/bluedroid/api/esp_hf_client_api.c \
-			$${IDF_PATH}/components/bt/bluedroid/api/esp_hf_client_api.c \
-			$${IDF_PATH}/components/bt/bluedroid/api/esp_hf_client_api.c \
+			$${IDF_PATH}/components/bt/host/bluedroid/api/esp_hf_client_api.c \
+			$${IDF_PATH}/components/bt/host/bluedroid/api/esp_hf_client_api.c \
+			$${IDF_PATH}/components/bt/host/bluedroid/api/esp_hf_client_api.c \
+			$${IDF_PATH}/components/esp32/esp_himem.c \
+			$${IDF_PATH}/components/esp32/esp_himem.c \
+			$${IDF_PATH}/components/esp32/esp_himem.c \
+			$${IDF_PATH}/components/wpa_supplicant/src/esp_supplicant/esp_hostap.c \
+			$${IDF_PATH}/components/wpa_supplicant/src/esp_supplicant/esp_hostap.c \
+			$${IDF_PATH}/components/wpa_supplicant/src/esp_supplicant/esp_hostap.c \
 			$${IDF_PATH}/components/esp_http_client/esp_http_client.c \
 			$${IDF_PATH}/components/esp_http_client/esp_http_client.c \
 			$${IDF_PATH}/components/esp_http_client/esp_http_client.c \
@@ -3173,6 +3767,36 @@
 			$${IDF_PATH}/components/bootloader_support/src/esp_image_format.c \
 			$${IDF_PATH}/components/bootloader_support/src/esp_image_format.c \
 			$${IDF_PATH}/components/bootloader_support/src/esp_image_format.c \
+			$${IDF_PATH}/components/esp_local_ctrl/src/esp_local_ctrl.c \
+			$${IDF_PATH}/components/esp_local_ctrl/src/esp_local_ctrl.c \
+			$${IDF_PATH}/components/esp_local_ctrl/src/esp_local_ctrl.c \
+			$${IDF_PATH}/components/esp_local_ctrl/proto-c/esp_local_ctrl.pb-c.c \
+			$${IDF_PATH}/components/esp_local_ctrl/proto-c/esp_local_ctrl.pb-c.c \
+			$${IDF_PATH}/components/esp_local_ctrl/proto-c/esp_local_ctrl.pb-c.c \
+			$${IDF_PATH}/components/esp_local_ctrl/src/esp_local_ctrl_handler.c \
+			$${IDF_PATH}/components/esp_local_ctrl/src/esp_local_ctrl_handler.c \
+			$${IDF_PATH}/components/esp_local_ctrl/src/esp_local_ctrl_handler.c \
+			$${IDF_PATH}/components/esp_local_ctrl/src/esp_local_ctrl_transport_ble.c \
+			$${IDF_PATH}/components/esp_local_ctrl/src/esp_local_ctrl_transport_ble.c \
+			$${IDF_PATH}/components/esp_local_ctrl/src/esp_local_ctrl_transport_ble.c \
+			$${IDF_PATH}/components/esp_local_ctrl/src/esp_local_ctrl_transport_httpd.c \
+			$${IDF_PATH}/components/esp_local_ctrl/src/esp_local_ctrl_transport_httpd.c \
+			$${IDF_PATH}/components/esp_local_ctrl/src/esp_local_ctrl_transport_httpd.c \
+			$${IDF_PATH}/components/mbedtls/port/esp_mem.c \
+			$${IDF_PATH}/components/mbedtls/port/esp_mem.c \
+			$${IDF_PATH}/components/mbedtls/port/esp_mem.c \
+			$${IDF_PATH}/components/freemodbus/common/esp_modbus_master.c \
+			$${IDF_PATH}/components/freemodbus/common/esp_modbus_master.c \
+			$${IDF_PATH}/components/freemodbus/common/esp_modbus_master.c \
+			$${IDF_PATH}/components/freemodbus/common/esp_modbus_slave.c \
+			$${IDF_PATH}/components/freemodbus/common/esp_modbus_slave.c \
+			$${IDF_PATH}/components/freemodbus/common/esp_modbus_slave.c \
+			$${IDF_PATH}/components/bt/host/nimble/esp-hci/src/esp_nimble_hci.c \
+			$${IDF_PATH}/components/bt/host/nimble/esp-hci/src/esp_nimble_hci.c \
+			$${IDF_PATH}/components/bt/host/nimble/esp-hci/src/esp_nimble_hci.c \
+			$${IDF_PATH}/components/bt/host/nimble/port/src/esp_nimble_mem.c \
+			$${IDF_PATH}/components/bt/host/nimble/port/src/esp_nimble_mem.c \
+			$${IDF_PATH}/components/bt/host/nimble/port/src/esp_nimble_mem.c \
 			$${IDF_PATH}/components/spi_flash/sim/stubs/app_update/esp_ota_eps.c \
 			$${IDF_PATH}/components/spi_flash/sim/stubs/app_update/esp_ota_eps.c \
 			$${IDF_PATH}/components/spi_flash/sim/stubs/app_update/esp_ota_eps.c \
@@ -3182,6 +3806,15 @@
 			$${IDF_PATH}/components/lwip/apps/ping/esp_ping.c \
 			$${IDF_PATH}/components/lwip/apps/ping/esp_ping.c \
 			$${IDF_PATH}/components/lwip/apps/ping/esp_ping.c \
+			$${IDF_PATH}/components/spi_flash/sim/stubs/esp32/esp_random.c \
+			$${IDF_PATH}/components/spi_flash/sim/stubs/esp32/esp_random.c \
+			$${IDF_PATH}/components/spi_flash/sim/stubs/esp32/esp_random.c \
+			$${IDF_PATH}/components/esp_rom/esp_rom.c \
+			$${IDF_PATH}/components/esp_rom/esp_rom.c \
+			$${IDF_PATH}/components/esp_rom/esp_rom.c \
+			$${IDF_PATH}/components/mbedtls/port/esp_sha.c \
+			$${IDF_PATH}/components/mbedtls/port/esp_sha.c \
+			$${IDF_PATH}/components/mbedtls/port/esp_sha.c \
 			$${IDF_PATH}/components/mbedtls/port/esp_sha1.c \
 			$${IDF_PATH}/components/mbedtls/port/esp_sha1.c \
 			$${IDF_PATH}/components/mbedtls/port/esp_sha1.c \
@@ -3194,73 +3827,82 @@
 			$${IDF_PATH}/components/spiffs/esp_spiffs.c \
 			$${IDF_PATH}/components/spiffs/esp_spiffs.c \
 			$${IDF_PATH}/components/spiffs/esp_spiffs.c \
-			$${IDF_PATH}/components/bt/bluedroid/api/esp_spp_api.c \
-			$${IDF_PATH}/components/bt/bluedroid/api/esp_spp_api.c \
-			$${IDF_PATH}/components/bt/bluedroid/api/esp_spp_api.c \
-			$${IDF_PATH}/components/esp32/esp_timer.c \
-			$${IDF_PATH}/components/esp32/esp_timer.c \
-			$${IDF_PATH}/components/esp32/esp_timer.c \
+			$${IDF_PATH}/components/bt/host/bluedroid/api/esp_spp_api.c \
+			$${IDF_PATH}/components/bt/host/bluedroid/api/esp_spp_api.c \
+			$${IDF_PATH}/components/bt/host/bluedroid/api/esp_spp_api.c \
+			$${IDF_PATH}/components/spi_flash/sim/stubs/esp_timer/src/esp_timer.c \
+			$${IDF_PATH}/components/esp_common/src/esp_timer.c \
+			$${IDF_PATH}/components/spi_flash/sim/stubs/esp_timer/src/esp_timer.c \
+			$${IDF_PATH}/components/esp_common/src/esp_timer.c \
+			$${IDF_PATH}/components/spi_flash/sim/stubs/esp_timer/src/esp_timer.c \
+			$${IDF_PATH}/components/esp_common/src/esp_timer.c \
 			$${IDF_PATH}/components/esp32/esp_timer_esp32.c \
 			$${IDF_PATH}/components/esp32/esp_timer_esp32.c \
 			$${IDF_PATH}/components/esp32/esp_timer_esp32.c \
 			$${IDF_PATH}/components/esp-tls/esp_tls.c \
 			$${IDF_PATH}/components/esp-tls/esp_tls.c \
 			$${IDF_PATH}/components/esp-tls/esp_tls.c \
+			$${IDF_PATH}/components/esp_websocket_client/esp_websocket_client.c \
+			$${IDF_PATH}/components/esp_websocket_client/esp_websocket_client.c \
+			$${IDF_PATH}/components/esp_websocket_client/esp_websocket_client.c \
+			$${IDF_PATH}/components/wpa_supplicant/src/esp_supplicant/esp_wpa2.c \
+			$${IDF_PATH}/components/wpa_supplicant/src/esp_supplicant/esp_wpa2.c \
+			$${IDF_PATH}/components/wpa_supplicant/src/esp_supplicant/esp_wpa2.c \
+			$${IDF_PATH}/components/wpa_supplicant/src/esp_supplicant/esp_wpa3.c \
+			$${IDF_PATH}/components/wpa_supplicant/src/esp_supplicant/esp_wpa3.c \
+			$${IDF_PATH}/components/wpa_supplicant/src/esp_supplicant/esp_wpa3.c \
+			$${IDF_PATH}/components/wpa_supplicant/src/esp_supplicant/esp_wpa_main.c \
+			$${IDF_PATH}/components/wpa_supplicant/src/esp_supplicant/esp_wpa_main.c \
+			$${IDF_PATH}/components/wpa_supplicant/src/esp_supplicant/esp_wpa_main.c \
+			$${IDF_PATH}/components/wpa_supplicant/src/esp_supplicant/esp_wpas_glue.c \
+			$${IDF_PATH}/components/wpa_supplicant/src/esp_supplicant/esp_wpas_glue.c \
+			$${IDF_PATH}/components/wpa_supplicant/src/esp_supplicant/esp_wpas_glue.c \
+			$${IDF_PATH}/components/wpa_supplicant/src/esp_supplicant/esp_wps.c \
+			$${IDF_PATH}/components/wpa_supplicant/src/esp_supplicant/esp_wps.c \
+			$${IDF_PATH}/components/wpa_supplicant/src/esp_supplicant/esp_wps.c \
 			$${IDF_PATH}/components/nghttp/nghttp2/third-party/mruby/src/etc.c \
 			$${IDF_PATH}/components/nghttp/nghttp2/third-party/mruby/src/etc.c \
 			$${IDF_PATH}/components/nghttp/nghttp2/third-party/mruby/src/etc.c \
-			$${IDF_PATH}/components/lwip/netif/etharp.c \
 			$${IDF_PATH}/components/lwip/lwip/src/core/ipv4/etharp.c \
-			$${IDF_PATH}/components/lwip/netif/etharp.c \
 			$${IDF_PATH}/components/lwip/lwip/src/core/ipv4/etharp.c \
-			$${IDF_PATH}/components/lwip/netif/etharp.c \
 			$${IDF_PATH}/components/lwip/lwip/src/core/ipv4/etharp.c \
-			$${IDF_PATH}/components/lwip/netif/ethernet.c \
 			$${IDF_PATH}/components/lwip/lwip/src/netif/ethernet.c \
-			$${IDF_PATH}/components/lwip/netif/ethernet.c \
 			$${IDF_PATH}/components/lwip/lwip/src/netif/ethernet.c \
-			$${IDF_PATH}/components/lwip/netif/ethernet.c \
 			$${IDF_PATH}/components/lwip/lwip/src/netif/ethernet.c \
-			$${IDF_PATH}/components/lwip/port/netif/ethernetif.c \
-			$${IDF_PATH}/components/lwip/netif/ethernetif.c \
-			$${IDF_PATH}/components/lwip/port/netif/ethernetif.c \
-			$${IDF_PATH}/components/lwip/netif/ethernetif.c \
-			$${IDF_PATH}/components/lwip/port/netif/ethernetif.c \
-			$${IDF_PATH}/components/lwip/netif/ethernetif.c \
+			$${IDF_PATH}/components/lwip/port/esp32/netif/ethernetif.c \
+			$${IDF_PATH}/components/lwip/port/esp32/netif/ethernetif.c \
+			$${IDF_PATH}/components/lwip/port/esp32/netif/ethernetif.c \
 			$${IDF_PATH}/components/lwip/lwip/src/core/ipv6/ethip6.c \
-			$${IDF_PATH}/components/lwip/core/ipv6/ethip6.c \
 			$${IDF_PATH}/components/lwip/lwip/src/core/ipv6/ethip6.c \
-			$${IDF_PATH}/components/lwip/core/ipv6/ethip6.c \
 			$${IDF_PATH}/components/lwip/lwip/src/core/ipv6/ethip6.c \
-			$${IDF_PATH}/components/lwip/core/ipv6/ethip6.c \
-			$${IDF_PATH}/components/esp32/ets_timer_legacy.c \
-			$${IDF_PATH}/components/esp32/ets_timer_legacy.c \
-			$${IDF_PATH}/components/esp32/ets_timer_legacy.c \
+			$${IDF_PATH}/components/esp_common/src/ets_timer_legacy.c \
+			$${IDF_PATH}/components/esp_common/src/ets_timer_legacy.c \
+			$${IDF_PATH}/components/esp_common/src/ets_timer_legacy.c \
 			$${IDF_PATH}/components/coap/libcoap/examples/etsi_iot_01.c \
 			$${IDF_PATH}/components/coap/libcoap/examples/etsi_iot_01.c \
 			$${IDF_PATH}/components/coap/libcoap/examples/etsi_iot_01.c \
-			$${IDF_PATH}/components/lwip/netif/ppp/eui64.c \
 			$${IDF_PATH}/components/lwip/lwip/src/netif/ppp/eui64.c \
-			$${IDF_PATH}/components/lwip/netif/ppp/eui64.c \
 			$${IDF_PATH}/components/lwip/lwip/src/netif/ppp/eui64.c \
-			$${IDF_PATH}/components/lwip/netif/ppp/eui64.c \
 			$${IDF_PATH}/components/lwip/lwip/src/netif/ppp/eui64.c \
 			$${IDF_PATH}/components/nghttp/nghttp2/third-party/mruby/mrbgems/mruby-eval/src/eval.c \
 			$${IDF_PATH}/components/nghttp/nghttp2/third-party/mruby/mrbgems/mruby-eval/src/eval.c \
 			$${IDF_PATH}/components/nghttp/nghttp2/third-party/mruby/mrbgems/mruby-eval/src/eval.c \
-			$${IDF_PATH}/components/esp32/event_default_handlers.c \
-			$${IDF_PATH}/components/esp32/event_default_handlers.c \
-			$${IDF_PATH}/components/esp32/event_default_handlers.c \
 			$${IDF_PATH}/components/freertos/event_groups.c \
 			$${IDF_PATH}/components/tinyusb/tinyusb/lib/FreeRTOS/Source/event_groups.c \
 			$${IDF_PATH}/components/freertos/event_groups.c \
 			$${IDF_PATH}/components/tinyusb/tinyusb/lib/FreeRTOS/Source/event_groups.c \
 			$${IDF_PATH}/components/freertos/event_groups.c \
-			$${IDF_PATH}/components/esp32/event_loop.c \
-			$${IDF_PATH}/components/esp32/event_loop.c \
-			$${IDF_PATH}/components/esp32/event_loop.c \
+			$${IDF_PATH}/components/tcpip_adapter/event_handlers.c \
+			$${IDF_PATH}/components/tcpip_adapter/event_handlers.c \
+			$${IDF_PATH}/components/tcpip_adapter/event_handlers.c \
+			$${IDF_PATH}/components/esp_event/event_loop_legacy.c \
+			$${IDF_PATH}/components/esp_event/event_loop_legacy.c \
+			$${IDF_PATH}/components/esp_event/event_loop_legacy.c \
 			$${IDF_PATH}/components/tinyusb/tinyusb/test/vendor/ceedling/plugins/fake_function_framework/examples/fff_example/src/event_processor.c \
 			$${IDF_PATH}/components/tinyusb/tinyusb/test/vendor/ceedling/plugins/fake_function_framework/examples/fff_example/src/event_processor.c \
+			$${IDF_PATH}/components/esp_event/event_send.c \
+			$${IDF_PATH}/components/esp_event/event_send.c \
+			$${IDF_PATH}/components/esp_event/event_send.c \
 			$${IDF_PATH}/components/nghttp/nghttp2/third-party/mruby/examples/mrbgems/c_extension_example/test/example.c \
 			$${IDF_PATH}/components/nghttp/nghttp2/third-party/mruby/examples/mrbgems/c_extension_example/src/example.c \
 			$${IDF_PATH}/components/nghttp/nghttp2/third-party/mruby/examples/mrbgems/c_and_ruby_extension_example/src/example.c \
@@ -3278,51 +3920,28 @@
 			$${IDF_PATH}/components/nghttp/nghttp2/third-party/mruby/mrbgems/mruby-error/src/exception.c \
 			$${IDF_PATH}/components/asio/asio/asio/src/tests/unit/execution_context.cpp \
 			$${IDF_PATH}/components/asio/asio/asio/src/tests/unit/execution_context.cpp \
+			$${IDF_PATH}/components/asio/asio/asio/src/tests/unit/execution_context.cpp \
+			$${IDF_PATH}/components/asio/asio/asio/src/tests/unit/ts/executor.cpp \
+			$${IDF_PATH}/components/asio/asio/asio/src/tests/unit/executor.cpp \
 			$${IDF_PATH}/components/asio/asio/asio/src/tests/unit/ts/executor.cpp \
 			$${IDF_PATH}/components/asio/asio/asio/src/tests/unit/executor.cpp \
 			$${IDF_PATH}/components/asio/asio/asio/src/tests/unit/ts/executor.cpp \
 			$${IDF_PATH}/components/asio/asio/asio/src/tests/unit/executor.cpp \
 			$${IDF_PATH}/components/asio/asio/asio/src/tests/unit/executor_work_guard.cpp \
 			$${IDF_PATH}/components/asio/asio/asio/src/tests/unit/executor_work_guard.cpp \
-			$${IDF_PATH}/components/expat/port/expat_element.c \
-			$${IDF_PATH}/components/expat/port/expat_element.c \
-			$${IDF_PATH}/components/expat/port/expat_element.c \
-			$${IDF_PATH}/components/wpa_supplicant/src/wpa2/utils/ext_password.c \
-			$${IDF_PATH}/components/wpa_supplicant/src/wpa2/utils/ext_password.c \
-			$${IDF_PATH}/components/wpa_supplicant/src/wpa2/utils/ext_password.c \
+			$${IDF_PATH}/components/asio/asio/asio/src/tests/unit/executor_work_guard.cpp \
+			$${IDF_PATH}/components/wpa_supplicant/src/utils/ext_password.c \
+			$${IDF_PATH}/components/wpa_supplicant/src/utils/ext_password.c \
+			$${IDF_PATH}/components/wpa_supplicant/src/utils/ext_password.c \
 			$${IDF_PATH}/components/nghttp/nghttp2/tests/failmalloc.c \
 			$${IDF_PATH}/components/nghttp/nghttp2/tests/failmalloc.c \
 			$${IDF_PATH}/components/nghttp/nghttp2/tests/failmalloc.c \
 			$${IDF_PATH}/components/nghttp/nghttp2/tests/failmalloc_test.c \
 			$${IDF_PATH}/components/nghttp/nghttp2/tests/failmalloc_test.c \
 			$${IDF_PATH}/components/nghttp/nghttp2/tests/failmalloc_test.c \
-			$${IDF_PATH}/components/wpa_supplicant/src/fast_crypto/fast_aes-cbc.c \
-			$${IDF_PATH}/components/wpa_supplicant/src/fast_crypto/fast_aes-cbc.c \
-			$${IDF_PATH}/components/wpa_supplicant/src/fast_crypto/fast_aes-cbc.c \
-			$${IDF_PATH}/components/wpa_supplicant/src/fast_crypto/fast_aes-unwrap.c \
-			$${IDF_PATH}/components/wpa_supplicant/src/fast_crypto/fast_aes-unwrap.c \
-			$${IDF_PATH}/components/wpa_supplicant/src/fast_crypto/fast_aes-unwrap.c \
-			$${IDF_PATH}/components/wpa_supplicant/src/fast_crypto/fast_aes-wrap.c \
-			$${IDF_PATH}/components/wpa_supplicant/src/fast_crypto/fast_aes-wrap.c \
-			$${IDF_PATH}/components/wpa_supplicant/src/fast_crypto/fast_aes-wrap.c \
-			$${IDF_PATH}/components/wpa_supplicant/src/fast_crypto/fast_crypto_internal-cipher.c \
-			$${IDF_PATH}/components/wpa_supplicant/src/fast_crypto/fast_crypto_internal-cipher.c \
-			$${IDF_PATH}/components/wpa_supplicant/src/fast_crypto/fast_crypto_internal-cipher.c \
-			$${IDF_PATH}/components/wpa_supplicant/src/fast_crypto/fast_crypto_internal-modexp.c \
-			$${IDF_PATH}/components/wpa_supplicant/src/fast_crypto/fast_crypto_internal-modexp.c \
-			$${IDF_PATH}/components/wpa_supplicant/src/fast_crypto/fast_crypto_internal-modexp.c \
-			$${IDF_PATH}/components/wpa_supplicant/src/fast_crypto/fast_crypto_internal.c \
-			$${IDF_PATH}/components/wpa_supplicant/src/fast_crypto/fast_crypto_internal.c \
-			$${IDF_PATH}/components/wpa_supplicant/src/fast_crypto/fast_crypto_internal.c \
-			$${IDF_PATH}/components/esp32/fast_crypto_ops.c \
-			$${IDF_PATH}/components/esp32/fast_crypto_ops.c \
-			$${IDF_PATH}/components/esp32/fast_crypto_ops.c \
-			$${IDF_PATH}/components/wpa_supplicant/src/fast_crypto/fast_sha256-internal.c \
-			$${IDF_PATH}/components/wpa_supplicant/src/fast_crypto/fast_sha256-internal.c \
-			$${IDF_PATH}/components/wpa_supplicant/src/fast_crypto/fast_sha256-internal.c \
-			$${IDF_PATH}/components/wpa_supplicant/src/fast_crypto/fast_sha256.c \
-			$${IDF_PATH}/components/wpa_supplicant/src/fast_crypto/fast_sha256.c \
-			$${IDF_PATH}/components/wpa_supplicant/src/fast_crypto/fast_sha256.c \
+			$${IDF_PATH}/components/bt/esp_ble_mesh/mesh_core/fast_prov.c \
+			$${IDF_PATH}/components/bt/esp_ble_mesh/mesh_core/fast_prov.c \
+			$${IDF_PATH}/components/bt/esp_ble_mesh/mesh_core/fast_prov.c \
 			$${IDF_PATH}/components/libsodium/libsodium/src/libsodium/crypto_scalarmult/curve25519/sandy2x/fe51_invert.c \
 			$${IDF_PATH}/components/libsodium/libsodium/src/libsodium/crypto_scalarmult/curve25519/sandy2x/fe51_invert.c \
 			$${IDF_PATH}/components/libsodium/libsodium/src/libsodium/crypto_scalarmult/curve25519/sandy2x/fe51_invert.c \
@@ -3335,8 +3954,14 @@
 			$${IDF_PATH}/components/tinyusb/tinyusb/lib/fatfs/ff.c \
 			$${IDF_PATH}/components/fatfs/src/ff.c \
 			$${IDF_PATH}/components/fatfs/src/ffsystem.c \
+			$${IDF_PATH}/components/fatfs/port/linux/ffsystem.c \
+			$${IDF_PATH}/components/fatfs/port/freertos/ffsystem.c \
 			$${IDF_PATH}/components/fatfs/src/ffsystem.c \
+			$${IDF_PATH}/components/fatfs/port/linux/ffsystem.c \
+			$${IDF_PATH}/components/fatfs/port/freertos/ffsystem.c \
 			$${IDF_PATH}/components/fatfs/src/ffsystem.c \
+			$${IDF_PATH}/components/fatfs/port/linux/ffsystem.c \
+			$${IDF_PATH}/components/fatfs/port/freertos/ffsystem.c \
 			$${IDF_PATH}/components/fatfs/src/ffunicode.c \
 			$${IDF_PATH}/components/fatfs/src/ffunicode.c \
 			$${IDF_PATH}/components/fatfs/src/ffunicode.c \
@@ -3345,12 +3970,16 @@
 			$${IDF_PATH}/components/nghttp/nghttp2/third-party/mruby/mrbgems/mruby-fiber/src/fiber.c \
 			$${IDF_PATH}/components/asio/asio/asio/src/examples/cpp03/http/server4/file_handler.cpp \
 			$${IDF_PATH}/components/asio/asio/asio/src/examples/cpp03/http/server4/file_handler.cpp \
-			$${IDF_PATH}/components/bt/bluedroid/osi/fixed_queue.c \
-			$${IDF_PATH}/components/bt/bluedroid/osi/fixed_queue.c \
-			$${IDF_PATH}/components/bt/bluedroid/osi/fixed_queue.c \
+			$${IDF_PATH}/components/asio/asio/asio/src/examples/cpp03/http/server4/file_handler.cpp \
+			$${IDF_PATH}/components/bt/common/osi/fixed_queue.c \
+			$${IDF_PATH}/components/bt/common/osi/fixed_queue.c \
+			$${IDF_PATH}/components/bt/common/osi/fixed_queue.c \
 			$${IDF_PATH}/components/bootloader_support/src/flash_encrypt.c \
+			$${IDF_PATH}/components/bootloader_support/src/esp32/flash_encrypt.c \
 			$${IDF_PATH}/components/bootloader_support/src/flash_encrypt.c \
+			$${IDF_PATH}/components/bootloader_support/src/esp32/flash_encrypt.c \
 			$${IDF_PATH}/components/bootloader_support/src/flash_encrypt.c \
+			$${IDF_PATH}/components/bootloader_support/src/esp32/flash_encrypt.c \
 			$${IDF_PATH}/components/spi_flash/flash_mmap.c \
 			$${IDF_PATH}/components/spi_flash/flash_mmap.c \
 			$${IDF_PATH}/components/spi_flash/flash_mmap.c \
@@ -3378,77 +4007,79 @@
 			$${IDF_PATH}/components/asio/asio/asio/src/examples/cpp11/executors/fork_join.cpp \
 			$${IDF_PATH}/components/asio/asio/asio/src/examples/cpp14/executors/fork_join.cpp \
 			$${IDF_PATH}/components/asio/asio/asio/src/examples/cpp11/executors/fork_join.cpp \
-			$${IDF_PATH}/components/bt/bluedroid/external/sbc/decoder/srce/framing-sbc.c \
-			$${IDF_PATH}/components/bt/bluedroid/external/sbc/decoder/srce/framing-sbc.c \
-			$${IDF_PATH}/components/bt/bluedroid/external/sbc/decoder/srce/framing-sbc.c \
-			$${IDF_PATH}/components/bt/bluedroid/external/sbc/decoder/srce/framing.c \
-			$${IDF_PATH}/components/bt/bluedroid/external/sbc/decoder/srce/framing.c \
-			$${IDF_PATH}/components/bt/bluedroid/external/sbc/decoder/srce/framing.c \
+			$${IDF_PATH}/components/asio/asio/asio/src/examples/cpp14/executors/fork_join.cpp \
+			$${IDF_PATH}/components/asio/asio/asio/src/examples/cpp11/executors/fork_join.cpp \
+			$${IDF_PATH}/components/bt/host/bluedroid/external/sbc/decoder/srce/framing-sbc.c \
+			$${IDF_PATH}/components/bt/host/bluedroid/external/sbc/decoder/srce/framing-sbc.c \
+			$${IDF_PATH}/components/bt/host/bluedroid/external/sbc/decoder/srce/framing-sbc.c \
+			$${IDF_PATH}/components/bt/host/bluedroid/external/sbc/decoder/srce/framing.c \
+			$${IDF_PATH}/components/bt/host/bluedroid/external/sbc/decoder/srce/framing.c \
+			$${IDF_PATH}/components/bt/host/bluedroid/external/sbc/decoder/srce/framing.c \
 			$${IDF_PATH}/components/tinyusb/tinyusb/examples/device/cdc_msc_hid_freertos/src/freertos_hook.c \
 			$${IDF_PATH}/components/tinyusb/tinyusb/examples/device/cdc_msc_hid_freertos/src/freertos_hook.c \
-			$${IDF_PATH}/components/esp32/freertos_hooks.c \
-			$${IDF_PATH}/components/esp32/freertos_hooks.c \
-			$${IDF_PATH}/components/esp32/freertos_hooks.c \
+			$${IDF_PATH}/components/esp_common/src/freertos_hooks.c \
+			$${IDF_PATH}/components/esp_common/src/freertos_hooks.c \
+			$${IDF_PATH}/components/esp_common/src/freertos_hooks.c \
 			$${IDF_PATH}/components/bt/host/nimble/nimble/nimble/host/mesh/src/friend.c \
+			$${IDF_PATH}/components/bt/esp_ble_mesh/mesh_core/friend.c \
 			$${IDF_PATH}/components/bt/host/nimble/nimble/nimble/host/mesh/src/friend.c \
+			$${IDF_PATH}/components/bt/esp_ble_mesh/mesh_core/friend.c \
 			$${IDF_PATH}/components/bt/host/nimble/nimble/nimble/host/mesh/src/friend.c \
+			$${IDF_PATH}/components/bt/esp_ble_mesh/mesh_core/friend.c \
 			$${IDF_PATH}/components/lwip/lwip/src/apps/http/fs.c \
 			$${IDF_PATH}/components/lwip/lwip/src/apps/http/fs.c \
 			$${IDF_PATH}/components/lwip/lwip/src/apps/http/fs.c \
 			$${IDF_PATH}/components/lwip/lwip/src/apps/http/fsdata.c \
 			$${IDF_PATH}/components/lwip/lwip/src/apps/http/fsdata.c \
 			$${IDF_PATH}/components/lwip/lwip/src/apps/http/fsdata.c \
-			$${IDF_PATH}/components/lwip/netif/ppp/fsm.c \
 			$${IDF_PATH}/components/lwip/lwip/src/netif/ppp/fsm.c \
-			$${IDF_PATH}/components/lwip/netif/ppp/fsm.c \
 			$${IDF_PATH}/components/lwip/lwip/src/netif/ppp/fsm.c \
-			$${IDF_PATH}/components/lwip/netif/ppp/fsm.c \
 			$${IDF_PATH}/components/lwip/lwip/src/netif/ppp/fsm.c \
-			$${IDF_PATH}/components/bt/bluedroid/osi/future.c \
-			$${IDF_PATH}/components/bt/bluedroid/osi/future.c \
-			$${IDF_PATH}/components/bt/bluedroid/osi/future.c \
+			$${IDF_PATH}/components/bt/common/osi/future.c \
+			$${IDF_PATH}/components/bt/common/osi/future.c \
+			$${IDF_PATH}/components/bt/common/osi/future.c \
 			$${IDF_PATH}/components/lwip/lwip/test/fuzz/fuzz.c \
 			$${IDF_PATH}/components/lwip/lwip/test/fuzz/fuzz.c \
 			$${IDF_PATH}/components/lwip/lwip/test/fuzz/fuzz.c \
 			$${IDF_PATH}/components/bt/host/nimble/nimble/apps/bttester/src/gap.c \
 			$${IDF_PATH}/components/bt/host/nimble/nimble/apps/bttester/src/gap.c \
 			$${IDF_PATH}/components/bt/host/nimble/nimble/apps/bttester/src/gap.c \
-			$${IDF_PATH}/components/bt/bluedroid/stack/gap/gap_api.c \
-			$${IDF_PATH}/components/bt/bluedroid/stack/gap/gap_api.c \
-			$${IDF_PATH}/components/bt/bluedroid/stack/gap/gap_api.c \
-			$${IDF_PATH}/components/bt/bluedroid/stack/gap/gap_ble.c \
-			$${IDF_PATH}/components/bt/bluedroid/stack/gap/gap_ble.c \
-			$${IDF_PATH}/components/bt/bluedroid/stack/gap/gap_ble.c \
-			$${IDF_PATH}/components/bt/bluedroid/stack/gap/gap_conn.c \
-			$${IDF_PATH}/components/bt/bluedroid/stack/gap/gap_conn.c \
-			$${IDF_PATH}/components/bt/bluedroid/stack/gap/gap_conn.c \
-			$${IDF_PATH}/components/bt/bluedroid/stack/gap/gap_utils.c \
-			$${IDF_PATH}/components/bt/bluedroid/stack/gap/gap_utils.c \
-			$${IDF_PATH}/components/bt/bluedroid/stack/gap/gap_utils.c \
+			$${IDF_PATH}/components/bt/host/bluedroid/stack/gap/gap_api.c \
+			$${IDF_PATH}/components/bt/host/bluedroid/stack/gap/gap_api.c \
+			$${IDF_PATH}/components/bt/host/bluedroid/stack/gap/gap_api.c \
+			$${IDF_PATH}/components/bt/host/bluedroid/stack/gap/gap_ble.c \
+			$${IDF_PATH}/components/bt/host/bluedroid/stack/gap/gap_ble.c \
+			$${IDF_PATH}/components/bt/host/bluedroid/stack/gap/gap_ble.c \
+			$${IDF_PATH}/components/bt/host/bluedroid/stack/gap/gap_conn.c \
+			$${IDF_PATH}/components/bt/host/bluedroid/stack/gap/gap_conn.c \
+			$${IDF_PATH}/components/bt/host/bluedroid/stack/gap/gap_conn.c \
+			$${IDF_PATH}/components/bt/host/bluedroid/stack/gap/gap_utils.c \
+			$${IDF_PATH}/components/bt/host/bluedroid/stack/gap/gap_utils.c \
+			$${IDF_PATH}/components/bt/host/bluedroid/stack/gap/gap_utils.c \
 			$${IDF_PATH}/components/bt/host/nimble/nimble/apps/bttester/src/gatt.c \
 			$${IDF_PATH}/components/bt/host/nimble/nimble/apps/bttester/src/gatt.c \
 			$${IDF_PATH}/components/bt/host/nimble/nimble/apps/bttester/src/gatt.c \
-			$${IDF_PATH}/components/bt/bluedroid/stack/gatt/gatt_api.c \
-			$${IDF_PATH}/components/bt/bluedroid/stack/gatt/gatt_api.c \
-			$${IDF_PATH}/components/bt/bluedroid/stack/gatt/gatt_api.c \
-			$${IDF_PATH}/components/bt/bluedroid/stack/gatt/gatt_attr.c \
-			$${IDF_PATH}/components/bt/bluedroid/stack/gatt/gatt_attr.c \
-			$${IDF_PATH}/components/bt/bluedroid/stack/gatt/gatt_attr.c \
-			$${IDF_PATH}/components/bt/bluedroid/stack/gatt/gatt_auth.c \
-			$${IDF_PATH}/components/bt/bluedroid/stack/gatt/gatt_auth.c \
-			$${IDF_PATH}/components/bt/bluedroid/stack/gatt/gatt_auth.c \
-			$${IDF_PATH}/components/bt/bluedroid/stack/gatt/gatt_cl.c \
-			$${IDF_PATH}/components/bt/bluedroid/stack/gatt/gatt_cl.c \
-			$${IDF_PATH}/components/bt/bluedroid/stack/gatt/gatt_cl.c \
-			$${IDF_PATH}/components/bt/bluedroid/stack/gatt/gatt_db.c \
-			$${IDF_PATH}/components/bt/bluedroid/stack/gatt/gatt_db.c \
-			$${IDF_PATH}/components/bt/bluedroid/stack/gatt/gatt_db.c \
-			$${IDF_PATH}/components/bt/bluedroid/stack/gatt/gatt_main.c \
-			$${IDF_PATH}/components/bt/bluedroid/stack/gatt/gatt_main.c \
-			$${IDF_PATH}/components/bt/bluedroid/stack/gatt/gatt_main.c \
-			$${IDF_PATH}/components/bt/bluedroid/stack/gatt/gatt_sr.c \
-			$${IDF_PATH}/components/bt/bluedroid/stack/gatt/gatt_sr.c \
-			$${IDF_PATH}/components/bt/bluedroid/stack/gatt/gatt_sr.c \
+			$${IDF_PATH}/components/bt/host/bluedroid/stack/gatt/gatt_api.c \
+			$${IDF_PATH}/components/bt/host/bluedroid/stack/gatt/gatt_api.c \
+			$${IDF_PATH}/components/bt/host/bluedroid/stack/gatt/gatt_api.c \
+			$${IDF_PATH}/components/bt/host/bluedroid/stack/gatt/gatt_attr.c \
+			$${IDF_PATH}/components/bt/host/bluedroid/stack/gatt/gatt_attr.c \
+			$${IDF_PATH}/components/bt/host/bluedroid/stack/gatt/gatt_attr.c \
+			$${IDF_PATH}/components/bt/host/bluedroid/stack/gatt/gatt_auth.c \
+			$${IDF_PATH}/components/bt/host/bluedroid/stack/gatt/gatt_auth.c \
+			$${IDF_PATH}/components/bt/host/bluedroid/stack/gatt/gatt_auth.c \
+			$${IDF_PATH}/components/bt/host/bluedroid/stack/gatt/gatt_cl.c \
+			$${IDF_PATH}/components/bt/host/bluedroid/stack/gatt/gatt_cl.c \
+			$${IDF_PATH}/components/bt/host/bluedroid/stack/gatt/gatt_cl.c \
+			$${IDF_PATH}/components/bt/host/bluedroid/stack/gatt/gatt_db.c \
+			$${IDF_PATH}/components/bt/host/bluedroid/stack/gatt/gatt_db.c \
+			$${IDF_PATH}/components/bt/host/bluedroid/stack/gatt/gatt_db.c \
+			$${IDF_PATH}/components/bt/host/bluedroid/stack/gatt/gatt_main.c \
+			$${IDF_PATH}/components/bt/host/bluedroid/stack/gatt/gatt_main.c \
+			$${IDF_PATH}/components/bt/host/bluedroid/stack/gatt/gatt_main.c \
+			$${IDF_PATH}/components/bt/host/bluedroid/stack/gatt/gatt_sr.c \
+			$${IDF_PATH}/components/bt/host/bluedroid/stack/gatt/gatt_sr.c \
+			$${IDF_PATH}/components/bt/host/bluedroid/stack/gatt/gatt_sr.c \
 			$${IDF_PATH}/components/bt/host/nimble/nimble/apps/btshell/src/gatt_svr.c \
 			$${IDF_PATH}/components/bt/host/nimble/nimble/apps/bleprph/src/gatt_svr.c \
 			$${IDF_PATH}/components/bt/host/nimble/nimble/apps/blehr/src/gatt_svr.c \
@@ -3461,9 +4092,9 @@
 			$${IDF_PATH}/components/bt/host/nimble/nimble/apps/bleprph/src/gatt_svr.c \
 			$${IDF_PATH}/components/bt/host/nimble/nimble/apps/blehr/src/gatt_svr.c \
 			$${IDF_PATH}/components/bt/host/nimble/nimble/apps/blecsc/src/gatt_svr.c \
-			$${IDF_PATH}/components/bt/bluedroid/stack/gatt/gatt_utils.c \
-			$${IDF_PATH}/components/bt/bluedroid/stack/gatt/gatt_utils.c \
-			$${IDF_PATH}/components/bt/bluedroid/stack/gatt/gatt_utils.c \
+			$${IDF_PATH}/components/bt/host/bluedroid/stack/gatt/gatt_utils.c \
+			$${IDF_PATH}/components/bt/host/bluedroid/stack/gatt/gatt_utils.c \
+			$${IDF_PATH}/components/bt/host/bluedroid/stack/gatt/gatt_utils.c \
 			$${IDF_PATH}/components/nghttp/nghttp2/third-party/mruby/src/gc.c \
 			$${IDF_PATH}/components/nghttp/nghttp2/third-party/mruby/src/gc.c \
 			$${IDF_PATH}/components/nghttp/nghttp2/third-party/mruby/src/gc.c \
@@ -3473,9 +4104,15 @@
 			$${IDF_PATH}/components/app_trace/gcov/gcov_rtio.c \
 			$${IDF_PATH}/components/app_trace/gcov/gcov_rtio.c \
 			$${IDF_PATH}/components/app_trace/gcov/gcov_rtio.c \
-			$${IDF_PATH}/components/esp32/gdbstub.c \
-			$${IDF_PATH}/components/esp32/gdbstub.c \
-			$${IDF_PATH}/components/esp32/gdbstub.c \
+			$${IDF_PATH}/components/esp_gdbstub/src/gdbstub.c \
+			$${IDF_PATH}/components/esp_gdbstub/src/gdbstub.c \
+			$${IDF_PATH}/components/esp_gdbstub/src/gdbstub.c \
+			$${IDF_PATH}/components/esp_gdbstub/esp32/gdbstub_esp32.c \
+			$${IDF_PATH}/components/esp_gdbstub/esp32/gdbstub_esp32.c \
+			$${IDF_PATH}/components/esp_gdbstub/esp32/gdbstub_esp32.c \
+			$${IDF_PATH}/components/esp_gdbstub/xtensa/gdbstub_xtensa.c \
+			$${IDF_PATH}/components/esp_gdbstub/xtensa/gdbstub_xtensa.c \
+			$${IDF_PATH}/components/esp_gdbstub/xtensa/gdbstub_xtensa.c \
 			$${IDF_PATH}/components/mbedtls/mbedtls/programs/random/gen_entropy.c \
 			$${IDF_PATH}/components/mbedtls/mbedtls/programs/random/gen_entropy.c \
 			$${IDF_PATH}/components/mbedtls/mbedtls/programs/random/gen_entropy.c \
@@ -3488,6 +4125,12 @@
 			$${IDF_PATH}/components/mbedtls/mbedtls/programs/random/gen_random_havege.c \
 			$${IDF_PATH}/components/mbedtls/mbedtls/programs/random/gen_random_havege.c \
 			$${IDF_PATH}/components/mbedtls/mbedtls/programs/random/gen_random_havege.c \
+			$${IDF_PATH}/components/bt/esp_ble_mesh/mesh_models/client/generic_client.c \
+			$${IDF_PATH}/components/bt/esp_ble_mesh/mesh_models/client/generic_client.c \
+			$${IDF_PATH}/components/bt/esp_ble_mesh/mesh_models/client/generic_client.c \
+			$${IDF_PATH}/components/bt/esp_ble_mesh/mesh_models/server/generic_server.c \
+			$${IDF_PATH}/components/bt/esp_ble_mesh/mesh_models/server/generic_server.c \
+			$${IDF_PATH}/components/bt/esp_ble_mesh/mesh_models/server/generic_server.c \
 			$${IDF_PATH}/components/mbedtls/mbedtls/programs/hash/generic_sum.c \
 			$${IDF_PATH}/components/mbedtls/mbedtls/programs/hash/generic_sum.c \
 			$${IDF_PATH}/components/mbedtls/mbedtls/programs/hash/generic_sum.c \
@@ -3509,6 +4152,9 @@
 			$${IDF_PATH}/components/expat/expat/expat/gennmtab/gennmtab.c \
 			$${IDF_PATH}/components/expat/expat/expat/gennmtab/gennmtab.c \
 			$${IDF_PATH}/components/expat/expat/expat/gennmtab/gennmtab.c \
+			$${IDF_PATH}/components/coap/libcoap/examples/getopt.c \
+			$${IDF_PATH}/components/coap/libcoap/examples/getopt.c \
+			$${IDF_PATH}/components/coap/libcoap/examples/getopt.c \
 			$${IDF_PATH}/components/bt/host/nimble/nimble/nimble/host/mesh/src/glue.c \
 			$${IDF_PATH}/components/bt/host/nimble/nimble/apps/bttester/src/glue.c \
 			$${IDF_PATH}/components/bt/host/nimble/nimble/nimble/host/mesh/src/glue.c \
@@ -3530,6 +4176,9 @@
 			$${IDF_PATH}/components/bt/host/nimble/nimble/porting/nimble/src/hal_timer.c \
 			$${IDF_PATH}/components/bt/host/nimble/nimble/porting/nimble/src/hal_timer.c \
 			$${IDF_PATH}/components/bt/host/nimble/nimble/porting/nimble/src/hal_timer.c \
+			$${IDF_PATH}/components/wifi_provisioning/src/handlers.c \
+			$${IDF_PATH}/components/wifi_provisioning/src/handlers.c \
+			$${IDF_PATH}/components/wifi_provisioning/src/handlers.c \
 			$${IDF_PATH}/components/nghttp/nghttp2/third-party/mruby/mrbgems/mruby-hash-ext/src/hash-ext.c \
 			$${IDF_PATH}/components/nghttp/nghttp2/third-party/mruby/mrbgems/mruby-hash-ext/src/hash-ext.c \
 			$${IDF_PATH}/components/nghttp/nghttp2/third-party/mruby/mrbgems/mruby-hash-ext/src/hash-ext.c \
@@ -3542,12 +4191,12 @@
 			$${IDF_PATH}/components/libsodium/libsodium/test/default/hash3.c \
 			$${IDF_PATH}/components/libsodium/libsodium/test/default/hash3.c \
 			$${IDF_PATH}/components/libsodium/libsodium/test/default/hash3.c \
-			$${IDF_PATH}/components/bt/bluedroid/osi/hash_functions.c \
-			$${IDF_PATH}/components/bt/bluedroid/osi/hash_functions.c \
-			$${IDF_PATH}/components/bt/bluedroid/osi/hash_functions.c \
-			$${IDF_PATH}/components/bt/bluedroid/osi/hash_map.c \
-			$${IDF_PATH}/components/bt/bluedroid/osi/hash_map.c \
-			$${IDF_PATH}/components/bt/bluedroid/osi/hash_map.c \
+			$${IDF_PATH}/components/bt/common/osi/hash_functions.c \
+			$${IDF_PATH}/components/bt/common/osi/hash_functions.c \
+			$${IDF_PATH}/components/bt/common/osi/hash_functions.c \
+			$${IDF_PATH}/components/bt/common/osi/hash_map.c \
+			$${IDF_PATH}/components/bt/common/osi/hash_map.c \
+			$${IDF_PATH}/components/bt/common/osi/hash_map.c \
 			$${IDF_PATH}/components/libsodium/libsodium/src/libsodium/crypto_hash/sha256/hash_sha256.c \
 			$${IDF_PATH}/components/libsodium/libsodium/src/libsodium/crypto_hash/sha256/hash_sha256.c \
 			$${IDF_PATH}/components/libsodium/libsodium/src/libsodium/crypto_hash/sha256/hash_sha256.c \
@@ -3560,44 +4209,50 @@
 			$${IDF_PATH}/components/libsodium/libsodium/src/libsodium/crypto_hash/sha512/cp/hash_sha512_cp.c \
 			$${IDF_PATH}/components/libsodium/libsodium/src/libsodium/crypto_hash/sha512/cp/hash_sha512_cp.c \
 			$${IDF_PATH}/components/libsodium/libsodium/src/libsodium/crypto_hash/sha512/cp/hash_sha512_cp.c \
-			$${IDF_PATH}/components/coap/libcoap/src/hashkey.c \
-			$${IDF_PATH}/components/coap/libcoap/src/hashkey.c \
-			$${IDF_PATH}/components/coap/libcoap/src/hashkey.c \
 			$${IDF_PATH}/components/mbedtls/mbedtls/library/havege.c \
 			$${IDF_PATH}/components/mbedtls/mbedtls/library/havege.c \
 			$${IDF_PATH}/components/mbedtls/mbedtls/library/havege.c \
 			$${IDF_PATH}/components/tinyusb/tinyusb/src/portable/nxp/lpc18_43/hcd_lpc18_43.c \
 			$${IDF_PATH}/components/tinyusb/tinyusb/src/portable/nxp/lpc18_43/hcd_lpc18_43.c \
-			$${IDF_PATH}/components/bt/bluedroid/hci/hci_audio.c \
-			$${IDF_PATH}/components/bt/bluedroid/hci/hci_audio.c \
-			$${IDF_PATH}/components/bt/bluedroid/hci/hci_audio.c \
+			$${IDF_PATH}/components/bt/host/bluedroid/hci/hci_audio.c \
+			$${IDF_PATH}/components/bt/host/bluedroid/hci/hci_audio.c \
+			$${IDF_PATH}/components/bt/host/bluedroid/hci/hci_audio.c \
 			$${IDF_PATH}/components/bt/host/nimble/nimble/porting/npl/dummy/src/hci_dummy.c \
 			$${IDF_PATH}/components/bt/host/nimble/nimble/porting/npl/dummy/src/hci_dummy.c \
 			$${IDF_PATH}/components/bt/host/nimble/nimble/porting/npl/dummy/src/hci_dummy.c \
-			$${IDF_PATH}/components/bt/bluedroid/hci/hci_hal_h4.c \
-			$${IDF_PATH}/components/bt/bluedroid/hci/hci_hal_h4.c \
-			$${IDF_PATH}/components/bt/bluedroid/hci/hci_hal_h4.c \
-			$${IDF_PATH}/components/bt/bluedroid/hci/hci_layer.c \
-			$${IDF_PATH}/components/bt/bluedroid/hci/hci_layer.c \
-			$${IDF_PATH}/components/bt/bluedroid/hci/hci_layer.c \
-			$${IDF_PATH}/components/bt/bluedroid/hci/hci_packet_factory.c \
-			$${IDF_PATH}/components/bt/bluedroid/hci/hci_packet_factory.c \
-			$${IDF_PATH}/components/bt/bluedroid/hci/hci_packet_factory.c \
-			$${IDF_PATH}/components/bt/bluedroid/hci/hci_packet_parser.c \
-			$${IDF_PATH}/components/bt/bluedroid/hci/hci_packet_parser.c \
-			$${IDF_PATH}/components/bt/bluedroid/hci/hci_packet_parser.c \
-			$${IDF_PATH}/components/bt/bluedroid/stack/hcic/hciblecmds.c \
-			$${IDF_PATH}/components/bt/bluedroid/stack/hcic/hciblecmds.c \
-			$${IDF_PATH}/components/bt/bluedroid/stack/hcic/hciblecmds.c \
-			$${IDF_PATH}/components/bt/bluedroid/stack/hcic/hcicmds.c \
-			$${IDF_PATH}/components/bt/bluedroid/stack/hcic/hcicmds.c \
-			$${IDF_PATH}/components/bt/bluedroid/stack/hcic/hcicmds.c \
+			$${IDF_PATH}/components/bt/host/bluedroid/hci/hci_hal_h4.c \
+			$${IDF_PATH}/components/bt/host/bluedroid/hci/hci_hal_h4.c \
+			$${IDF_PATH}/components/bt/host/bluedroid/hci/hci_hal_h4.c \
+			$${IDF_PATH}/components/bt/host/bluedroid/hci/hci_layer.c \
+			$${IDF_PATH}/components/bt/host/bluedroid/hci/hci_layer.c \
+			$${IDF_PATH}/components/bt/host/bluedroid/hci/hci_layer.c \
+			$${IDF_PATH}/components/bt/host/bluedroid/hci/hci_packet_factory.c \
+			$${IDF_PATH}/components/bt/host/bluedroid/hci/hci_packet_factory.c \
+			$${IDF_PATH}/components/bt/host/bluedroid/hci/hci_packet_factory.c \
+			$${IDF_PATH}/components/bt/host/bluedroid/hci/hci_packet_parser.c \
+			$${IDF_PATH}/components/bt/host/bluedroid/hci/hci_packet_parser.c \
+			$${IDF_PATH}/components/bt/host/bluedroid/hci/hci_packet_parser.c \
+			$${IDF_PATH}/components/bt/host/bluedroid/stack/hcic/hciblecmds.c \
+			$${IDF_PATH}/components/bt/host/bluedroid/stack/hcic/hciblecmds.c \
+			$${IDF_PATH}/components/bt/host/bluedroid/stack/hcic/hciblecmds.c \
+			$${IDF_PATH}/components/bt/host/bluedroid/stack/hcic/hcicmds.c \
+			$${IDF_PATH}/components/bt/host/bluedroid/stack/hcic/hcicmds.c \
+			$${IDF_PATH}/components/bt/host/bluedroid/stack/hcic/hcicmds.c \
 			$${IDF_PATH}/components/bt/host/nimble/nimble/nimble/host/mesh/src/health_cli.c \
+			$${IDF_PATH}/components/bt/esp_ble_mesh/mesh_core/health_cli.c \
 			$${IDF_PATH}/components/bt/host/nimble/nimble/nimble/host/mesh/src/health_cli.c \
+			$${IDF_PATH}/components/bt/esp_ble_mesh/mesh_core/health_cli.c \
 			$${IDF_PATH}/components/bt/host/nimble/nimble/nimble/host/mesh/src/health_cli.c \
+			$${IDF_PATH}/components/bt/esp_ble_mesh/mesh_core/health_cli.c \
 			$${IDF_PATH}/components/bt/host/nimble/nimble/nimble/host/mesh/src/health_srv.c \
+			$${IDF_PATH}/components/bt/esp_ble_mesh/mesh_core/health_srv.c \
 			$${IDF_PATH}/components/bt/host/nimble/nimble/nimble/host/mesh/src/health_srv.c \
+			$${IDF_PATH}/components/bt/esp_ble_mesh/mesh_core/health_srv.c \
 			$${IDF_PATH}/components/bt/host/nimble/nimble/nimble/host/mesh/src/health_srv.c \
+			$${IDF_PATH}/components/bt/esp_ble_mesh/mesh_core/health_srv.c \
+			$${IDF_PATH}/components/newlib/heap.c \
+			$${IDF_PATH}/components/newlib/heap.c \
+			$${IDF_PATH}/components/newlib/heap.c \
 			$${IDF_PATH}/components/tinyusb/tinyusb/lib/FreeRTOS/Source/portable/MemMang/heap_4.c \
 			$${IDF_PATH}/components/tinyusb/tinyusb/lib/FreeRTOS/Source/portable/MemMang/heap_4.c \
 			$${IDF_PATH}/components/heap/heap_caps.c \
@@ -3609,9 +4264,15 @@
 			$${IDF_PATH}/components/heap/heap_task_info.c \
 			$${IDF_PATH}/components/heap/heap_task_info.c \
 			$${IDF_PATH}/components/heap/heap_task_info.c \
-			$${IDF_PATH}/components/heap/heap_trace.c \
-			$${IDF_PATH}/components/heap/heap_trace.c \
-			$${IDF_PATH}/components/heap/heap_trace.c \
+			$${IDF_PATH}/components/app_trace/sys_view/ext/heap_trace_module.c \
+			$${IDF_PATH}/components/app_trace/sys_view/ext/heap_trace_module.c \
+			$${IDF_PATH}/components/app_trace/sys_view/ext/heap_trace_module.c \
+			$${IDF_PATH}/components/heap/heap_trace_standalone.c \
+			$${IDF_PATH}/components/heap/heap_trace_standalone.c \
+			$${IDF_PATH}/components/heap/heap_trace_standalone.c \
+			$${IDF_PATH}/components/app_trace/heap_trace_tohost.c \
+			$${IDF_PATH}/components/app_trace/heap_trace_tohost.c \
+			$${IDF_PATH}/components/app_trace/heap_trace_tohost.c \
 			$${IDF_PATH}/components/mbedtls/mbedtls/programs/hash/hello.c \
 			$${IDF_PATH}/components/mbedtls/mbedtls/programs/hash/hello.c \
 			$${IDF_PATH}/components/mbedtls/mbedtls/programs/hash/hello.c \
@@ -3619,9 +4280,7 @@
 			$${IDF_PATH}/components/tinyusb/tinyusb/src/class/hid/hid_device.c \
 			$${IDF_PATH}/components/tinyusb/tinyusb/src/class/hid/hid_host.c \
 			$${IDF_PATH}/components/tinyusb/tinyusb/src/class/hid/hid_host.c \
-			$${IDF_PATH}/components/bt/bluedroid/btc/profile/std/hid_le/hid_le_prf.c \
-			$${IDF_PATH}/components/bt/bluedroid/btc/profile/std/hid_le/hid_le_prf.c \
-			$${IDF_PATH}/components/bt/bluedroid/btc/profile/std/hid_le/hid_le_prf.c \
+			$${IDF_PATH}/components/asio/asio/asio/src/tests/unit/high_resolution_timer.cpp \
 			$${IDF_PATH}/components/asio/asio/asio/src/tests/unit/high_resolution_timer.cpp \
 			$${IDF_PATH}/components/asio/asio/asio/src/tests/unit/high_resolution_timer.cpp \
 			$${IDF_PATH}/components/mbedtls/mbedtls/library/hkdf.c \
@@ -3629,19 +4288,26 @@
 			$${IDF_PATH}/components/mbedtls/mbedtls/library/hkdf.c \
 			$${IDF_PATH}/components/coap/libcoap/ext/tinydtls/hmac.c \
 			$${IDF_PATH}/components/bt/host/nimble/nimble/ext/tinycrypt/src/hmac.c \
+			$${IDF_PATH}/components/bt/esp_ble_mesh/mesh_common/tinycrypt/src/hmac.c \
 			$${IDF_PATH}/components/coap/libcoap/ext/tinydtls/hmac.c \
 			$${IDF_PATH}/components/bt/host/nimble/nimble/ext/tinycrypt/src/hmac.c \
+			$${IDF_PATH}/components/bt/esp_ble_mesh/mesh_common/tinycrypt/src/hmac.c \
 			$${IDF_PATH}/components/coap/libcoap/ext/tinydtls/hmac.c \
 			$${IDF_PATH}/components/bt/host/nimble/nimble/ext/tinycrypt/src/hmac.c \
+			$${IDF_PATH}/components/bt/esp_ble_mesh/mesh_common/tinycrypt/src/hmac.c \
 			$${IDF_PATH}/components/mbedtls/mbedtls/library/hmac_drbg.c \
 			$${IDF_PATH}/components/mbedtls/mbedtls/library/hmac_drbg.c \
 			$${IDF_PATH}/components/mbedtls/mbedtls/library/hmac_drbg.c \
 			$${IDF_PATH}/components/bt/host/nimble/nimble/ext/tinycrypt/src/hmac_prng.c \
+			$${IDF_PATH}/components/bt/esp_ble_mesh/mesh_common/tinycrypt/src/hmac_prng.c \
 			$${IDF_PATH}/components/bt/host/nimble/nimble/ext/tinycrypt/src/hmac_prng.c \
+			$${IDF_PATH}/components/bt/esp_ble_mesh/mesh_common/tinycrypt/src/hmac_prng.c \
 			$${IDF_PATH}/components/bt/host/nimble/nimble/ext/tinycrypt/src/hmac_prng.c \
+			$${IDF_PATH}/components/bt/esp_ble_mesh/mesh_common/tinycrypt/src/hmac_prng.c \
 			$${IDF_PATH}/components/app_trace/host_file_io.c \
 			$${IDF_PATH}/components/app_trace/host_file_io.c \
 			$${IDF_PATH}/components/app_trace/host_file_io.c \
+			$${IDF_PATH}/components/asio/asio/asio/src/tests/unit/ip/host_name.cpp \
 			$${IDF_PATH}/components/asio/asio/asio/src/tests/unit/ip/host_name.cpp \
 			$${IDF_PATH}/components/asio/asio/asio/src/tests/unit/ip/host_name.cpp \
 			$${IDF_PATH}/components/esp_http_client/lib/http_auth.c \
@@ -3656,6 +4322,9 @@
 			$${IDF_PATH}/components/asio/asio/asio/src/examples/cpp14/iostreams/http_client.cpp \
 			$${IDF_PATH}/components/asio/asio/asio/src/examples/cpp11/iostreams/http_client.cpp \
 			$${IDF_PATH}/components/asio/asio/asio/src/examples/cpp03/iostreams/http_client.cpp \
+			$${IDF_PATH}/components/asio/asio/asio/src/examples/cpp14/iostreams/http_client.cpp \
+			$${IDF_PATH}/components/asio/asio/asio/src/examples/cpp11/iostreams/http_client.cpp \
+			$${IDF_PATH}/components/asio/asio/asio/src/examples/cpp03/iostreams/http_client.cpp \
 			$${IDF_PATH}/components/esp_http_client/lib/http_header.c \
 			$${IDF_PATH}/components/esp_http_client/lib/http_header.c \
 			$${IDF_PATH}/components/esp_http_client/lib/http_header.c \
@@ -3671,6 +4340,24 @@
 			$${IDF_PATH}/components/lwip/lwip/src/apps/http/httpd.c \
 			$${IDF_PATH}/components/lwip/lwip/src/apps/http/httpd.c \
 			$${IDF_PATH}/components/lwip/lwip/src/apps/http/httpd.c \
+			$${IDF_PATH}/components/esp_http_server/src/httpd_main.c \
+			$${IDF_PATH}/components/esp_http_server/src/httpd_main.c \
+			$${IDF_PATH}/components/esp_http_server/src/httpd_main.c \
+			$${IDF_PATH}/components/esp_http_server/src/httpd_parse.c \
+			$${IDF_PATH}/components/esp_http_server/src/httpd_parse.c \
+			$${IDF_PATH}/components/esp_http_server/src/httpd_parse.c \
+			$${IDF_PATH}/components/esp_http_server/src/httpd_sess.c \
+			$${IDF_PATH}/components/esp_http_server/src/httpd_sess.c \
+			$${IDF_PATH}/components/esp_http_server/src/httpd_sess.c \
+			$${IDF_PATH}/components/esp_http_server/src/httpd_txrx.c \
+			$${IDF_PATH}/components/esp_http_server/src/httpd_txrx.c \
+			$${IDF_PATH}/components/esp_http_server/src/httpd_txrx.c \
+			$${IDF_PATH}/components/esp_http_server/src/httpd_uri.c \
+			$${IDF_PATH}/components/esp_http_server/src/httpd_uri.c \
+			$${IDF_PATH}/components/esp_http_server/src/httpd_uri.c \
+			$${IDF_PATH}/components/esp_https_server/src/https_server.c \
+			$${IDF_PATH}/components/esp_https_server/src/https_server.c \
+			$${IDF_PATH}/components/esp_https_server/src/https_server.c \
 			$${IDF_PATH}/components/tinyusb/tinyusb/src/host/hub.c \
 			$${IDF_PATH}/components/tinyusb/tinyusb/src/host/hub.c \
 			$${IDF_PATH}/components/esp32/hw_random.c \
@@ -3683,49 +4370,35 @@
 			$${IDF_PATH}/components/driver/i2s.c \
 			$${IDF_PATH}/components/driver/i2s.c \
 			$${IDF_PATH}/components/lwip/lwip/src/core/ipv4/icmp.c \
-			$${IDF_PATH}/components/lwip/core/ipv4/icmp.c \
 			$${IDF_PATH}/components/lwip/lwip/src/core/ipv4/icmp.c \
-			$${IDF_PATH}/components/lwip/core/ipv4/icmp.c \
 			$${IDF_PATH}/components/lwip/lwip/src/core/ipv4/icmp.c \
-			$${IDF_PATH}/components/lwip/core/ipv4/icmp.c \
+			$${IDF_PATH}/components/asio/asio/asio/src/tests/unit/ip/icmp.cpp \
 			$${IDF_PATH}/components/asio/asio/asio/src/tests/unit/ip/icmp.cpp \
 			$${IDF_PATH}/components/asio/asio/asio/src/tests/unit/ip/icmp.cpp \
 			$${IDF_PATH}/components/lwip/lwip/src/core/ipv6/icmp6.c \
-			$${IDF_PATH}/components/lwip/core/ipv6/icmp6.c \
 			$${IDF_PATH}/components/lwip/lwip/src/core/ipv6/icmp6.c \
-			$${IDF_PATH}/components/lwip/core/ipv6/icmp6.c \
 			$${IDF_PATH}/components/lwip/lwip/src/core/ipv6/icmp6.c \
-			$${IDF_PATH}/components/lwip/core/ipv6/icmp6.c \
+			$${IDF_PATH}/components/wpa_supplicant/src/ap/ieee802_1x.c \
+			$${IDF_PATH}/components/wpa_supplicant/src/ap/ieee802_1x.c \
+			$${IDF_PATH}/components/wpa_supplicant/src/ap/ieee802_1x.c \
 			$${IDF_PATH}/components/lwip/lwip/src/api/if_api.c \
 			$${IDF_PATH}/components/lwip/lwip/src/api/if_api.c \
 			$${IDF_PATH}/components/lwip/lwip/src/api/if_api.c \
 			$${IDF_PATH}/components/lwip/lwip/src/core/ipv4/igmp.c \
-			$${IDF_PATH}/components/lwip/core/ipv4/igmp.c \
 			$${IDF_PATH}/components/lwip/lwip/src/core/ipv4/igmp.c \
-			$${IDF_PATH}/components/lwip/core/ipv4/igmp.c \
 			$${IDF_PATH}/components/lwip/lwip/src/core/ipv4/igmp.c \
-			$${IDF_PATH}/components/lwip/core/ipv4/igmp.c \
 			$${IDF_PATH}/components/lwip/lwip/src/core/ipv6/inet6.c \
-			$${IDF_PATH}/components/lwip/core/ipv6/inet6.c \
 			$${IDF_PATH}/components/lwip/lwip/src/core/ipv6/inet6.c \
-			$${IDF_PATH}/components/lwip/core/ipv6/inet6.c \
 			$${IDF_PATH}/components/lwip/lwip/src/core/ipv6/inet6.c \
-			$${IDF_PATH}/components/lwip/core/ipv6/inet6.c \
 			$${IDF_PATH}/components/lwip/lwip/src/core/inet_chksum.c \
-			$${IDF_PATH}/components/lwip/core/inet_chksum.c \
 			$${IDF_PATH}/components/lwip/lwip/src/core/inet_chksum.c \
-			$${IDF_PATH}/components/lwip/core/inet_chksum.c \
 			$${IDF_PATH}/components/lwip/lwip/src/core/inet_chksum.c \
-			$${IDF_PATH}/components/lwip/core/inet_chksum.c \
 			$${IDF_PATH}/components/nghttp/nghttp2/third-party/mruby/src/init.c \
 			$${IDF_PATH}/components/lwip/lwip/src/core/init.c \
-			$${IDF_PATH}/components/lwip/core/init.c \
 			$${IDF_PATH}/components/nghttp/nghttp2/third-party/mruby/src/init.c \
 			$${IDF_PATH}/components/lwip/lwip/src/core/init.c \
-			$${IDF_PATH}/components/lwip/core/init.c \
 			$${IDF_PATH}/components/nghttp/nghttp2/third-party/mruby/src/init.c \
 			$${IDF_PATH}/components/lwip/lwip/src/core/init.c \
-			$${IDF_PATH}/components/lwip/core/init.c \
 			$${IDF_PATH}/components/nghttp/nghttp2/third-party/mruby/mrblib/init_mrblib.c \
 			$${IDF_PATH}/components/nghttp/nghttp2/third-party/mruby/mrblib/init_mrblib.c \
 			$${IDF_PATH}/components/nghttp/nghttp2/third-party/mruby/mrblib/init_mrblib.c \
@@ -3740,9 +4413,10 @@
 			$${IDF_PATH}/components/esp32/int_wdt.c \
 			$${IDF_PATH}/components/asio/asio/asio/src/tests/unit/ts/internet.cpp \
 			$${IDF_PATH}/components/asio/asio/asio/src/tests/unit/ts/internet.cpp \
-			$${IDF_PATH}/components/bt/bluedroid/device/interop.c \
-			$${IDF_PATH}/components/bt/bluedroid/device/interop.c \
-			$${IDF_PATH}/components/bt/bluedroid/device/interop.c \
+			$${IDF_PATH}/components/asio/asio/asio/src/tests/unit/ts/internet.cpp \
+			$${IDF_PATH}/components/bt/host/bluedroid/device/interop.c \
+			$${IDF_PATH}/components/bt/host/bluedroid/device/interop.c \
+			$${IDF_PATH}/components/bt/host/bluedroid/device/interop.c \
 			$${IDF_PATH}/components/esp32/intr_alloc.c \
 			$${IDF_PATH}/components/esp32/intr_alloc.c \
 			$${IDF_PATH}/components/esp32/intr_alloc.c \
@@ -3750,30 +4424,26 @@
 			$${IDF_PATH}/components/asio/asio/asio/src/tests/unit/io_context.cpp \
 			$${IDF_PATH}/components/asio/asio/asio/src/tests/unit/ts/io_context.cpp \
 			$${IDF_PATH}/components/asio/asio/asio/src/tests/unit/io_context.cpp \
+			$${IDF_PATH}/components/asio/asio/asio/src/tests/unit/ts/io_context.cpp \
+			$${IDF_PATH}/components/asio/asio/asio/src/tests/unit/io_context.cpp \
+			$${IDF_PATH}/components/asio/asio/asio/src/examples/cpp03/http/server2/io_context_pool.cpp \
 			$${IDF_PATH}/components/asio/asio/asio/src/examples/cpp03/http/server2/io_context_pool.cpp \
 			$${IDF_PATH}/components/asio/asio/asio/src/examples/cpp03/http/server2/io_context_pool.cpp \
 			$${IDF_PATH}/components/asio/asio/asio/src/examples/cpp11/local/iostream_client.cpp \
 			$${IDF_PATH}/components/asio/asio/asio/src/examples/cpp03/local/iostream_client.cpp \
 			$${IDF_PATH}/components/asio/asio/asio/src/examples/cpp11/local/iostream_client.cpp \
 			$${IDF_PATH}/components/asio/asio/asio/src/examples/cpp03/local/iostream_client.cpp \
+			$${IDF_PATH}/components/asio/asio/asio/src/examples/cpp11/local/iostream_client.cpp \
+			$${IDF_PATH}/components/asio/asio/asio/src/examples/cpp03/local/iostream_client.cpp \
 			$${IDF_PATH}/components/lwip/lwip/src/core/ip.c \
-			$${IDF_PATH}/components/lwip/core/ip.c \
 			$${IDF_PATH}/components/lwip/lwip/src/core/ip.c \
-			$${IDF_PATH}/components/lwip/core/ip.c \
 			$${IDF_PATH}/components/lwip/lwip/src/core/ip.c \
-			$${IDF_PATH}/components/lwip/core/ip.c \
 			$${IDF_PATH}/components/lwip/lwip/src/core/ipv4/ip4.c \
-			$${IDF_PATH}/components/lwip/core/ipv4/ip4.c \
 			$${IDF_PATH}/components/lwip/lwip/src/core/ipv4/ip4.c \
-			$${IDF_PATH}/components/lwip/core/ipv4/ip4.c \
 			$${IDF_PATH}/components/lwip/lwip/src/core/ipv4/ip4.c \
-			$${IDF_PATH}/components/lwip/core/ipv4/ip4.c \
 			$${IDF_PATH}/components/lwip/lwip/src/core/ipv4/ip4_addr.c \
-			$${IDF_PATH}/components/lwip/core/ipv4/ip4_addr.c \
 			$${IDF_PATH}/components/lwip/lwip/src/core/ipv4/ip4_addr.c \
-			$${IDF_PATH}/components/lwip/core/ipv4/ip4_addr.c \
 			$${IDF_PATH}/components/lwip/lwip/src/core/ipv4/ip4_addr.c \
-			$${IDF_PATH}/components/lwip/core/ipv4/ip4_addr.c \
 			$${IDF_PATH}/components/lwip/lwip/src/core/ipv4/ip4_frag.c \
 			$${IDF_PATH}/components/lwip/lwip/src/core/ipv4/ip4_frag.c \
 			$${IDF_PATH}/components/lwip/lwip/src/core/ipv4/ip4_frag.c \
@@ -3781,51 +4451,38 @@
 			$${IDF_PATH}/components/lwip/lwip/src/core/ipv4/ip4_napt.c \
 			$${IDF_PATH}/components/lwip/lwip/src/core/ipv4/ip4_napt.c \
 			$${IDF_PATH}/components/lwip/lwip/src/core/ipv6/ip6.c \
-			$${IDF_PATH}/components/lwip/core/ipv6/ip6.c \
 			$${IDF_PATH}/components/lwip/lwip/src/core/ipv6/ip6.c \
-			$${IDF_PATH}/components/lwip/core/ipv6/ip6.c \
 			$${IDF_PATH}/components/lwip/lwip/src/core/ipv6/ip6.c \
-			$${IDF_PATH}/components/lwip/core/ipv6/ip6.c \
 			$${IDF_PATH}/components/lwip/lwip/src/core/ipv6/ip6_addr.c \
-			$${IDF_PATH}/components/lwip/core/ipv6/ip6_addr.c \
 			$${IDF_PATH}/components/lwip/lwip/src/core/ipv6/ip6_addr.c \
-			$${IDF_PATH}/components/lwip/core/ipv6/ip6_addr.c \
 			$${IDF_PATH}/components/lwip/lwip/src/core/ipv6/ip6_addr.c \
-			$${IDF_PATH}/components/lwip/core/ipv6/ip6_addr.c \
 			$${IDF_PATH}/components/lwip/lwip/src/core/ipv6/ip6_frag.c \
-			$${IDF_PATH}/components/lwip/core/ipv6/ip6_frag.c \
 			$${IDF_PATH}/components/lwip/lwip/src/core/ipv6/ip6_frag.c \
-			$${IDF_PATH}/components/lwip/core/ipv6/ip6_frag.c \
 			$${IDF_PATH}/components/lwip/lwip/src/core/ipv6/ip6_frag.c \
-			$${IDF_PATH}/components/lwip/core/ipv6/ip6_frag.c \
-			$${IDF_PATH}/components/lwip/core/ipv4/ip_frag.c \
-			$${IDF_PATH}/components/lwip/core/ipv4/ip_frag.c \
-			$${IDF_PATH}/components/lwip/core/ipv4/ip_frag.c \
-			$${IDF_PATH}/components/esp32/ipc.c \
-			$${IDF_PATH}/components/esp32/ipc.c \
-			$${IDF_PATH}/components/esp32/ipc.c \
-			$${IDF_PATH}/components/lwip/netif/ppp/ipcp.c \
+			$${IDF_PATH}/components/esp_common/src/ipc.c \
+			$${IDF_PATH}/components/esp_common/src/ipc.c \
+			$${IDF_PATH}/components/esp_common/src/ipc.c \
 			$${IDF_PATH}/components/lwip/lwip/src/netif/ppp/ipcp.c \
-			$${IDF_PATH}/components/lwip/netif/ppp/ipcp.c \
 			$${IDF_PATH}/components/lwip/lwip/src/netif/ppp/ipcp.c \
-			$${IDF_PATH}/components/lwip/netif/ppp/ipcp.c \
 			$${IDF_PATH}/components/lwip/lwip/src/netif/ppp/ipcp.c \
-			$${IDF_PATH}/components/lwip/netif/ppp/ipv6cp.c \
 			$${IDF_PATH}/components/lwip/lwip/src/netif/ppp/ipv6cp.c \
-			$${IDF_PATH}/components/lwip/netif/ppp/ipv6cp.c \
 			$${IDF_PATH}/components/lwip/lwip/src/netif/ppp/ipv6cp.c \
-			$${IDF_PATH}/components/lwip/netif/ppp/ipv6cp.c \
 			$${IDF_PATH}/components/lwip/lwip/src/netif/ppp/ipv6cp.c \
+			$${IDF_PATH}/components/asio/asio/asio/src/tests/unit/is_read_buffered.cpp \
 			$${IDF_PATH}/components/asio/asio/asio/src/tests/unit/is_read_buffered.cpp \
 			$${IDF_PATH}/components/asio/asio/asio/src/tests/unit/is_read_buffered.cpp \
 			$${IDF_PATH}/components/asio/asio/asio/src/tests/unit/is_write_buffered.cpp \
 			$${IDF_PATH}/components/asio/asio/asio/src/tests/unit/is_write_buffered.cpp \
+			$${IDF_PATH}/components/asio/asio/asio/src/tests/unit/is_write_buffered.cpp \
+			$${IDF_PATH}/components/protobuf-c/protobuf-c/t/issue220/issue220.c \
 			$${IDF_PATH}/components/protobuf-c/protobuf-c/t/issue220/issue220.c \
 			$${IDF_PATH}/components/protobuf-c/protobuf-c/t/issue220/issue220.c \
 			$${IDF_PATH}/components/protobuf-c/protobuf-c/t/issue251/issue251.c \
 			$${IDF_PATH}/components/protobuf-c/protobuf-c/t/issue251/issue251.c \
+			$${IDF_PATH}/components/protobuf-c/protobuf-c/t/issue251/issue251.c \
+			$${IDF_PATH}/components/aws_iot/aws-iot-device-sdk-embedded-C/samples/linux/jobs_sample/jobs_sample.c \
+			$${IDF_PATH}/components/aws_iot/aws-iot-device-sdk-embedded-C/samples/linux/jobs_sample/jobs_sample.c \
 			$${IDF_PATH}/components/jsmn/src/jsmn.c \
-			$${IDF_PATH}/components/aws_iot/aws-iot-device-sdk-embedded-C/external_libs/jsmn/jsmn.c \
 			$${IDF_PATH}/components/jsmn/src/jsmn.c \
 			$${IDF_PATH}/components/aws_iot/aws-iot-device-sdk-embedded-C/external_libs/jsmn/jsmn.c \
 			$${IDF_PATH}/components/jsmn/src/jsmn.c \
@@ -3867,48 +4524,45 @@
 			$${IDF_PATH}/components/libsodium/libsodium/test/default/kx.c \
 			$${IDF_PATH}/components/libsodium/libsodium/test/default/kx.c \
 			$${IDF_PATH}/components/libsodium/libsodium/test/default/kx.c \
-			$${IDF_PATH}/components/bt/bluedroid/stack/l2cap/l2c_api.c \
-			$${IDF_PATH}/components/bt/bluedroid/stack/l2cap/l2c_api.c \
-			$${IDF_PATH}/components/bt/bluedroid/stack/l2cap/l2c_api.c \
-			$${IDF_PATH}/components/bt/bluedroid/stack/l2cap/l2c_ble.c \
-			$${IDF_PATH}/components/bt/bluedroid/stack/l2cap/l2c_ble.c \
-			$${IDF_PATH}/components/bt/bluedroid/stack/l2cap/l2c_ble.c \
-			$${IDF_PATH}/components/bt/bluedroid/stack/l2cap/l2c_csm.c \
-			$${IDF_PATH}/components/bt/bluedroid/stack/l2cap/l2c_csm.c \
-			$${IDF_PATH}/components/bt/bluedroid/stack/l2cap/l2c_csm.c \
-			$${IDF_PATH}/components/bt/bluedroid/stack/l2cap/l2c_fcr.c \
-			$${IDF_PATH}/components/bt/bluedroid/stack/l2cap/l2c_fcr.c \
-			$${IDF_PATH}/components/bt/bluedroid/stack/l2cap/l2c_fcr.c \
-			$${IDF_PATH}/components/bt/bluedroid/stack/l2cap/l2c_link.c \
-			$${IDF_PATH}/components/bt/bluedroid/stack/l2cap/l2c_link.c \
-			$${IDF_PATH}/components/bt/bluedroid/stack/l2cap/l2c_link.c \
-			$${IDF_PATH}/components/bt/bluedroid/stack/l2cap/l2c_main.c \
-			$${IDF_PATH}/components/bt/bluedroid/stack/l2cap/l2c_main.c \
-			$${IDF_PATH}/components/bt/bluedroid/stack/l2cap/l2c_main.c \
-			$${IDF_PATH}/components/bt/bluedroid/stack/l2cap/l2c_ucd.c \
-			$${IDF_PATH}/components/bt/bluedroid/stack/l2cap/l2c_ucd.c \
-			$${IDF_PATH}/components/bt/bluedroid/stack/l2cap/l2c_ucd.c \
-			$${IDF_PATH}/components/bt/bluedroid/stack/l2cap/l2c_utils.c \
-			$${IDF_PATH}/components/bt/bluedroid/stack/l2cap/l2c_utils.c \
-			$${IDF_PATH}/components/bt/bluedroid/stack/l2cap/l2c_utils.c \
+			$${IDF_PATH}/components/bt/host/bluedroid/stack/l2cap/l2c_api.c \
+			$${IDF_PATH}/components/bt/host/bluedroid/stack/l2cap/l2c_api.c \
+			$${IDF_PATH}/components/bt/host/bluedroid/stack/l2cap/l2c_api.c \
+			$${IDF_PATH}/components/bt/host/bluedroid/stack/l2cap/l2c_ble.c \
+			$${IDF_PATH}/components/bt/host/bluedroid/stack/l2cap/l2c_ble.c \
+			$${IDF_PATH}/components/bt/host/bluedroid/stack/l2cap/l2c_ble.c \
+			$${IDF_PATH}/components/bt/host/bluedroid/stack/l2cap/l2c_csm.c \
+			$${IDF_PATH}/components/bt/host/bluedroid/stack/l2cap/l2c_csm.c \
+			$${IDF_PATH}/components/bt/host/bluedroid/stack/l2cap/l2c_csm.c \
+			$${IDF_PATH}/components/bt/host/bluedroid/stack/l2cap/l2c_fcr.c \
+			$${IDF_PATH}/components/bt/host/bluedroid/stack/l2cap/l2c_fcr.c \
+			$${IDF_PATH}/components/bt/host/bluedroid/stack/l2cap/l2c_fcr.c \
+			$${IDF_PATH}/components/bt/host/bluedroid/stack/l2cap/l2c_link.c \
+			$${IDF_PATH}/components/bt/host/bluedroid/stack/l2cap/l2c_link.c \
+			$${IDF_PATH}/components/bt/host/bluedroid/stack/l2cap/l2c_link.c \
+			$${IDF_PATH}/components/bt/host/bluedroid/stack/l2cap/l2c_main.c \
+			$${IDF_PATH}/components/bt/host/bluedroid/stack/l2cap/l2c_main.c \
+			$${IDF_PATH}/components/bt/host/bluedroid/stack/l2cap/l2c_main.c \
+			$${IDF_PATH}/components/bt/host/bluedroid/stack/l2cap/l2c_ucd.c \
+			$${IDF_PATH}/components/bt/host/bluedroid/stack/l2cap/l2c_ucd.c \
+			$${IDF_PATH}/components/bt/host/bluedroid/stack/l2cap/l2c_ucd.c \
+			$${IDF_PATH}/components/bt/host/bluedroid/stack/l2cap/l2c_utils.c \
+			$${IDF_PATH}/components/bt/host/bluedroid/stack/l2cap/l2c_utils.c \
+			$${IDF_PATH}/components/bt/host/bluedroid/stack/l2cap/l2c_utils.c \
 			$${IDF_PATH}/components/bt/host/nimble/nimble/apps/bttester/src/l2cap.c \
 			$${IDF_PATH}/components/bt/host/nimble/nimble/apps/bttester/src/l2cap.c \
 			$${IDF_PATH}/components/bt/host/nimble/nimble/apps/bttester/src/l2cap.c \
-			$${IDF_PATH}/components/bt/bluedroid/stack/l2cap/l2cap_client.c \
-			$${IDF_PATH}/components/bt/bluedroid/stack/l2cap/l2cap_client.c \
-			$${IDF_PATH}/components/bt/bluedroid/stack/l2cap/l2cap_client.c \
-			$${IDF_PATH}/components/lwip/netif/ppp/lcp.c \
+			$${IDF_PATH}/components/bt/host/bluedroid/stack/l2cap/l2cap_client.c \
+			$${IDF_PATH}/components/bt/host/bluedroid/stack/l2cap/l2cap_client.c \
+			$${IDF_PATH}/components/bt/host/bluedroid/stack/l2cap/l2cap_client.c \
 			$${IDF_PATH}/components/lwip/lwip/src/netif/ppp/lcp.c \
-			$${IDF_PATH}/components/lwip/netif/ppp/lcp.c \
 			$${IDF_PATH}/components/lwip/lwip/src/netif/ppp/lcp.c \
-			$${IDF_PATH}/components/lwip/netif/ppp/lcp.c \
 			$${IDF_PATH}/components/lwip/lwip/src/netif/ppp/lcp.c \
 			$${IDF_PATH}/components/driver/ledc.c \
 			$${IDF_PATH}/components/driver/ledc.c \
 			$${IDF_PATH}/components/driver/ledc.c \
-			$${IDF_PATH}/components/esp32/lib_printf.c \
-			$${IDF_PATH}/components/esp32/lib_printf.c \
-			$${IDF_PATH}/components/esp32/lib_printf.c \
+			$${IDF_PATH}/components/esp_wifi/src/lib_printf.c \
+			$${IDF_PATH}/components/esp_wifi/src/lib_printf.c \
+			$${IDF_PATH}/components/esp_wifi/src/lib_printf.c \
 			$${IDF_PATH}/components/nghttp/nghttp2/examples/libevent-client.c \
 			$${IDF_PATH}/components/nghttp/nghttp2/examples/libevent-client.c \
 			$${IDF_PATH}/components/nghttp/nghttp2/examples/libevent-client.c \
@@ -3921,54 +4575,52 @@
 			$${IDF_PATH}/components/bt/host/nimble/nimble/apps/blemesh_light/src/light_model.c \
 			$${IDF_PATH}/components/bt/host/nimble/nimble/nimble/host/mesh/src/light_model.c \
 			$${IDF_PATH}/components/bt/host/nimble/nimble/apps/blemesh_light/src/light_model.c \
+			$${IDF_PATH}/components/bt/esp_ble_mesh/mesh_models/client/lighting_client.c \
+			$${IDF_PATH}/components/bt/esp_ble_mesh/mesh_models/client/lighting_client.c \
+			$${IDF_PATH}/components/bt/esp_ble_mesh/mesh_models/client/lighting_client.c \
+			$${IDF_PATH}/components/bt/esp_ble_mesh/mesh_models/server/lighting_server.c \
+			$${IDF_PATH}/components/bt/esp_ble_mesh/mesh_models/server/lighting_server.c \
+			$${IDF_PATH}/components/bt/esp_ble_mesh/mesh_models/server/lighting_server.c \
 			$${IDF_PATH}/components/console/linenoise/linenoise.c \
 			$${IDF_PATH}/components/console/linenoise/linenoise.c \
 			$${IDF_PATH}/components/console/linenoise/linenoise.c \
 			$${IDF_PATH}/components/freertos/list.c \
-			$${IDF_PATH}/components/bt/bluedroid/osi/list.c \
+			$${IDF_PATH}/components/bt/common/osi/list.c \
 			$${IDF_PATH}/components/tinyusb/tinyusb/lib/FreeRTOS/Source/list.c \
 			$${IDF_PATH}/components/freertos/list.c \
-			$${IDF_PATH}/components/bt/bluedroid/osi/list.c \
+			$${IDF_PATH}/components/bt/common/osi/list.c \
 			$${IDF_PATH}/components/tinyusb/tinyusb/lib/FreeRTOS/Source/list.c \
 			$${IDF_PATH}/components/freertos/list.c \
-			$${IDF_PATH}/components/bt/bluedroid/osi/list.c \
+			$${IDF_PATH}/components/bt/common/osi/list.c \
+			$${IDF_PATH}/components/soc/src/lldesc.c \
+			$${IDF_PATH}/components/soc/src/lldesc.c \
+			$${IDF_PATH}/components/soc/src/lldesc.c \
 			$${IDF_PATH}/components/nghttp/nghttp2/third-party/mruby/src/load.c \
 			$${IDF_PATH}/components/nghttp/nghttp2/third-party/mruby/src/load.c \
 			$${IDF_PATH}/components/nghttp/nghttp2/third-party/mruby/src/load.c \
-			$${IDF_PATH}/components/wear_levelling/test_wl_host/stubs/newlib/lock.c \
-			$${IDF_PATH}/components/spiffs/test_spiffs_host/stubs/newlib/lock.c \
+			$${IDF_PATH}/components/bt/esp_ble_mesh/mesh_core/local_operation.c \
+			$${IDF_PATH}/components/bt/esp_ble_mesh/mesh_core/local_operation.c \
+			$${IDF_PATH}/components/bt/esp_ble_mesh/mesh_core/local_operation.c \
 			$${IDF_PATH}/components/spi_flash/sim/stubs/newlib/lock.c \
-			$${IDF_PATH}/components/wear_levelling/test_wl_host/stubs/newlib/lock.c \
-			$${IDF_PATH}/components/spiffs/test_spiffs_host/stubs/newlib/lock.c \
 			$${IDF_PATH}/components/spi_flash/sim/stubs/newlib/lock.c \
-			$${IDF_PATH}/components/wear_levelling/test_wl_host/stubs/newlib/lock.c \
-			$${IDF_PATH}/components/spiffs/test_spiffs_host/stubs/newlib/lock.c \
 			$${IDF_PATH}/components/spi_flash/sim/stubs/newlib/lock.c \
 			$${IDF_PATH}/components/newlib/locks.c \
 			$${IDF_PATH}/components/newlib/locks.c \
 			$${IDF_PATH}/components/newlib/locks.c \
-			$${IDF_PATH}/components/wear_levelling/test_wl_host/stubs/log/log.c \
-			$${IDF_PATH}/components/spiffs/test_spiffs_host/stubs/log/log.c \
 			$${IDF_PATH}/components/spi_flash/sim/stubs/log/log.c \
 			$${IDF_PATH}/components/log/log.c \
-			$${IDF_PATH}/components/fatfs/test_fatfs_host/stubs/log/log.c \
-			$${IDF_PATH}/components/wear_levelling/test_wl_host/stubs/log/log.c \
-			$${IDF_PATH}/components/spiffs/test_spiffs_host/stubs/log/log.c \
 			$${IDF_PATH}/components/spi_flash/sim/stubs/log/log.c \
 			$${IDF_PATH}/components/log/log.c \
-			$${IDF_PATH}/components/fatfs/test_fatfs_host/stubs/log/log.c \
-			$${IDF_PATH}/components/wear_levelling/test_wl_host/stubs/log/log.c \
-			$${IDF_PATH}/components/spiffs/test_spiffs_host/stubs/log/log.c \
 			$${IDF_PATH}/components/spi_flash/sim/stubs/log/log.c \
 			$${IDF_PATH}/components/log/log.c \
-			$${IDF_PATH}/components/fatfs/test_fatfs_host/stubs/log/log.c \
 			$${IDF_PATH}/components/asio/asio/asio/src/examples/cpp03/services/logger_service.cpp \
 			$${IDF_PATH}/components/asio/asio/asio/src/examples/cpp03/services/logger_service.cpp \
-			$${IDF_PATH}/components/lwip/netif/lowpan6.c \
+			$${IDF_PATH}/components/asio/asio/asio/src/examples/cpp03/services/logger_service.cpp \
+			$${IDF_PATH}/components/app_trace/sys_view/ext/logging.c \
+			$${IDF_PATH}/components/app_trace/sys_view/ext/logging.c \
+			$${IDF_PATH}/components/app_trace/sys_view/ext/logging.c \
 			$${IDF_PATH}/components/lwip/lwip/src/netif/lowpan6.c \
-			$${IDF_PATH}/components/lwip/netif/lowpan6.c \
 			$${IDF_PATH}/components/lwip/lwip/src/netif/lowpan6.c \
-			$${IDF_PATH}/components/lwip/netif/lowpan6.c \
 			$${IDF_PATH}/components/lwip/lwip/src/netif/lowpan6.c \
 			$${IDF_PATH}/components/lwip/lwip/src/netif/lowpan6_ble.c \
 			$${IDF_PATH}/components/lwip/lwip/src/netif/lowpan6_ble.c \
@@ -3977,22 +4629,22 @@
 			$${IDF_PATH}/components/lwip/lwip/src/netif/lowpan6_common.c \
 			$${IDF_PATH}/components/lwip/lwip/src/netif/lowpan6_common.c \
 			$${IDF_PATH}/components/bt/host/nimble/nimble/nimble/host/mesh/src/lpn.c \
+			$${IDF_PATH}/components/bt/esp_ble_mesh/mesh_core/lpn.c \
 			$${IDF_PATH}/components/bt/host/nimble/nimble/nimble/host/mesh/src/lpn.c \
+			$${IDF_PATH}/components/bt/esp_ble_mesh/mesh_core/lpn.c \
 			$${IDF_PATH}/components/bt/host/nimble/nimble/nimble/host/mesh/src/lpn.c \
-			$${IDF_PATH}/components/lwip/port/debug/lwip_debug.c \
-			$${IDF_PATH}/components/lwip/port/debug/lwip_debug.c \
-			$${IDF_PATH}/components/lwip/port/debug/lwip_debug.c \
+			$${IDF_PATH}/components/bt/esp_ble_mesh/mesh_core/lpn.c \
+			$${IDF_PATH}/components/lwip/port/esp32/debug/lwip_debug.c \
+			$${IDF_PATH}/components/lwip/port/esp32/debug/lwip_debug.c \
+			$${IDF_PATH}/components/lwip/port/esp32/debug/lwip_debug.c \
 			$${IDF_PATH}/components/lwip/lwip/test/unit/lwip_unittests.c \
 			$${IDF_PATH}/components/lwip/lwip/test/unit/lwip_unittests.c \
 			$${IDF_PATH}/components/lwip/lwip/test/unit/lwip_unittests.c \
 			$${IDF_PATH}/components/lwip/lwip/src/apps/lwiperf/lwiperf.c \
 			$${IDF_PATH}/components/lwip/lwip/src/apps/lwiperf/lwiperf.c \
 			$${IDF_PATH}/components/lwip/lwip/src/apps/lwiperf/lwiperf.c \
-			$${IDF_PATH}/components/lwip/netif/ppp/magic.c \
 			$${IDF_PATH}/components/lwip/lwip/src/netif/ppp/magic.c \
-			$${IDF_PATH}/components/lwip/netif/ppp/magic.c \
 			$${IDF_PATH}/components/lwip/lwip/src/netif/ppp/magic.c \
-			$${IDF_PATH}/components/lwip/netif/ppp/magic.c \
 			$${IDF_PATH}/components/lwip/lwip/src/netif/ppp/magic.c \
 			$${IDF_PATH}/components/spiffs/spiffs/src/test/main.c \
 			$${IDF_PATH}/components/nghttp/nghttp2/tests/main.c \
@@ -4013,6 +4665,7 @@
 			$${IDF_PATH}/components/bt/host/nimble/nimble/apps/blehci/src/main.c \
 			$${IDF_PATH}/components/bt/host/nimble/nimble/apps/blecsc/src/main.c \
 			$${IDF_PATH}/components/bt/host/nimble/nimble/apps/blecent/src/main.c \
+			$${IDF_PATH}/components/bt/esp_ble_mesh/mesh_core/main.c \
 			$${IDF_PATH}/components/tinyusb/tinyusb/examples/obsolete/host/src/main.c \
 			$${IDF_PATH}/components/tinyusb/tinyusb/examples/host/cdc_msc_hid/src/main.c \
 			$${IDF_PATH}/components/tinyusb/tinyusb/examples/device/msc_dual_lun/src/main.c \
@@ -4039,6 +4692,7 @@
 			$${IDF_PATH}/components/bt/host/nimble/nimble/apps/blehci/src/main.c \
 			$${IDF_PATH}/components/bt/host/nimble/nimble/apps/blecsc/src/main.c \
 			$${IDF_PATH}/components/bt/host/nimble/nimble/apps/blecent/src/main.c \
+			$${IDF_PATH}/components/bt/esp_ble_mesh/mesh_core/main.c \
 			$${IDF_PATH}/components/tinyusb/tinyusb/examples/obsolete/host/src/main.c \
 			$${IDF_PATH}/components/tinyusb/tinyusb/examples/host/cdc_msc_hid/src/main.c \
 			$${IDF_PATH}/components/tinyusb/tinyusb/examples/device/msc_dual_lun/src/main.c \
@@ -4065,22 +4719,10 @@
 			$${IDF_PATH}/components/bt/host/nimble/nimble/apps/blehci/src/main.c \
 			$${IDF_PATH}/components/bt/host/nimble/nimble/apps/blecsc/src/main.c \
 			$${IDF_PATH}/components/bt/host/nimble/nimble/apps/blecent/src/main.c \
+			$${IDF_PATH}/components/bt/esp_ble_mesh/mesh_core/main.c \
 			$${IDF_PATH}/components/wear_levelling/test_wl_host/main.cpp \
 			$${IDF_PATH}/components/spiffs/test_spiffs_host/main.cpp \
 			$${IDF_PATH}/components/nvs_flash/test_nvs_host/main.cpp \
-			$${IDF_PATH}/components/mbedtls/mbedtls/yotta/data/example-selftest/main.cpp \
-			$${IDF_PATH}/components/mbedtls/mbedtls/yotta/data/example-hashing/main.cpp \
-			$${IDF_PATH}/components/mbedtls/mbedtls/yotta/data/example-benchmark/main.cpp \
-			$${IDF_PATH}/components/mbedtls/mbedtls/yotta/data/example-authcrypt/main.cpp \
-			$${IDF_PATH}/components/heap/test_multi_heap_host/main.cpp \
-			$${IDF_PATH}/components/fatfs/test_fatfs_host/main.cpp \
-			$${IDF_PATH}/components/wear_levelling/test_wl_host/main.cpp \
-			$${IDF_PATH}/components/spiffs/test_spiffs_host/main.cpp \
-			$${IDF_PATH}/components/nvs_flash/test_nvs_host/main.cpp \
-			$${IDF_PATH}/components/mbedtls/mbedtls/yotta/data/example-selftest/main.cpp \
-			$${IDF_PATH}/components/mbedtls/mbedtls/yotta/data/example-hashing/main.cpp \
-			$${IDF_PATH}/components/mbedtls/mbedtls/yotta/data/example-benchmark/main.cpp \
-			$${IDF_PATH}/components/mbedtls/mbedtls/yotta/data/example-authcrypt/main.cpp \
 			$${IDF_PATH}/components/heap/test_multi_heap_host/main.cpp \
 			$${IDF_PATH}/components/fatfs/test_fatfs_host/main.cpp \
 			$${IDF_PATH}/components/asio/asio/asio/src/examples/cpp11/http/server/main.cpp \
@@ -4091,10 +4733,16 @@
 			$${IDF_PATH}/components/wear_levelling/test_wl_host/main.cpp \
 			$${IDF_PATH}/components/spiffs/test_spiffs_host/main.cpp \
 			$${IDF_PATH}/components/nvs_flash/test_nvs_host/main.cpp \
-			$${IDF_PATH}/components/mbedtls/mbedtls/yotta/data/example-selftest/main.cpp \
-			$${IDF_PATH}/components/mbedtls/mbedtls/yotta/data/example-hashing/main.cpp \
-			$${IDF_PATH}/components/mbedtls/mbedtls/yotta/data/example-benchmark/main.cpp \
-			$${IDF_PATH}/components/mbedtls/mbedtls/yotta/data/example-authcrypt/main.cpp \
+			$${IDF_PATH}/components/heap/test_multi_heap_host/main.cpp \
+			$${IDF_PATH}/components/fatfs/test_fatfs_host/main.cpp \
+			$${IDF_PATH}/components/asio/asio/asio/src/examples/cpp11/http/server/main.cpp \
+			$${IDF_PATH}/components/asio/asio/asio/src/examples/cpp03/http/server4/main.cpp \
+			$${IDF_PATH}/components/asio/asio/asio/src/examples/cpp03/http/server3/main.cpp \
+			$${IDF_PATH}/components/asio/asio/asio/src/examples/cpp03/http/server2/main.cpp \
+			$${IDF_PATH}/components/asio/asio/asio/src/examples/cpp03/http/server/main.cpp \
+			$${IDF_PATH}/components/wear_levelling/test_wl_host/main.cpp \
+			$${IDF_PATH}/components/spiffs/test_spiffs_host/main.cpp \
+			$${IDF_PATH}/components/nvs_flash/test_nvs_host/main.cpp \
 			$${IDF_PATH}/components/heap/test_multi_heap_host/main.cpp \
 			$${IDF_PATH}/components/fatfs/test_fatfs_host/main.cpp \
 			$${IDF_PATH}/components/asio/asio/asio/src/examples/cpp11/http/server/main.cpp \
@@ -4108,12 +4756,75 @@
 			$${IDF_PATH}/components/nghttp/nghttp2/tests/malloc_wrapper.c \
 			$${IDF_PATH}/components/nghttp/nghttp2/tests/malloc_wrapper.c \
 			$${IDF_PATH}/components/nghttp/nghttp2/tests/malloc_wrapper.c \
+			$${IDF_PATH}/components/wifi_provisioning/src/manager.c \
+			$${IDF_PATH}/components/wifi_provisioning/src/manager.c \
+			$${IDF_PATH}/components/wifi_provisioning/src/manager.c \
 			$${IDF_PATH}/components/nghttp/nghttp2/third-party/mruby/mrbgems/mruby-math/src/math.c \
 			$${IDF_PATH}/components/nghttp/nghttp2/third-party/mruby/mrbgems/mruby-math/src/math.c \
 			$${IDF_PATH}/components/nghttp/nghttp2/third-party/mruby/mrbgems/mruby-math/src/math.c \
+			$${IDF_PATH}/components/freemodbus/modbus/mb.c \
+			$${IDF_PATH}/components/freemodbus/modbus/mb.c \
+			$${IDF_PATH}/components/freemodbus/modbus/mb.c \
+			$${IDF_PATH}/components/freemodbus/modbus/mb_m.c \
+			$${IDF_PATH}/components/freemodbus/modbus/mb_m.c \
+			$${IDF_PATH}/components/freemodbus/modbus/mb_m.c \
+			$${IDF_PATH}/components/freemodbus/modbus/ascii/mbascii.c \
+			$${IDF_PATH}/components/freemodbus/modbus/ascii/mbascii.c \
+			$${IDF_PATH}/components/freemodbus/modbus/ascii/mbascii.c \
+			$${IDF_PATH}/components/freemodbus/serial_master/modbus_controller/mbc_serial_master.c \
+			$${IDF_PATH}/components/freemodbus/serial_master/modbus_controller/mbc_serial_master.c \
+			$${IDF_PATH}/components/freemodbus/serial_master/modbus_controller/mbc_serial_master.c \
+			$${IDF_PATH}/components/freemodbus/serial_slave/modbus_controller/mbc_serial_slave.c \
+			$${IDF_PATH}/components/freemodbus/serial_slave/modbus_controller/mbc_serial_slave.c \
+			$${IDF_PATH}/components/freemodbus/serial_slave/modbus_controller/mbc_serial_slave.c \
+			$${IDF_PATH}/components/freemodbus/modbus/rtu/mbcrc.c \
+			$${IDF_PATH}/components/freemodbus/modbus/rtu/mbcrc.c \
+			$${IDF_PATH}/components/freemodbus/modbus/rtu/mbcrc.c \
 			$${IDF_PATH}/components/mbedtls/port/mbedtls_debug.c \
 			$${IDF_PATH}/components/mbedtls/port/mbedtls_debug.c \
 			$${IDF_PATH}/components/mbedtls/port/mbedtls_debug.c \
+			$${IDF_PATH}/components/freemodbus/modbus/functions/mbfunccoils.c \
+			$${IDF_PATH}/components/freemodbus/modbus/functions/mbfunccoils.c \
+			$${IDF_PATH}/components/freemodbus/modbus/functions/mbfunccoils.c \
+			$${IDF_PATH}/components/freemodbus/modbus/functions/mbfunccoils_m.c \
+			$${IDF_PATH}/components/freemodbus/modbus/functions/mbfunccoils_m.c \
+			$${IDF_PATH}/components/freemodbus/modbus/functions/mbfunccoils_m.c \
+			$${IDF_PATH}/components/freemodbus/modbus/functions/mbfuncdiag.c \
+			$${IDF_PATH}/components/freemodbus/modbus/functions/mbfuncdiag.c \
+			$${IDF_PATH}/components/freemodbus/modbus/functions/mbfuncdiag.c \
+			$${IDF_PATH}/components/freemodbus/modbus/functions/mbfuncdisc.c \
+			$${IDF_PATH}/components/freemodbus/modbus/functions/mbfuncdisc.c \
+			$${IDF_PATH}/components/freemodbus/modbus/functions/mbfuncdisc.c \
+			$${IDF_PATH}/components/freemodbus/modbus/functions/mbfuncdisc_m.c \
+			$${IDF_PATH}/components/freemodbus/modbus/functions/mbfuncdisc_m.c \
+			$${IDF_PATH}/components/freemodbus/modbus/functions/mbfuncdisc_m.c \
+			$${IDF_PATH}/components/freemodbus/modbus/functions/mbfuncholding.c \
+			$${IDF_PATH}/components/freemodbus/modbus/functions/mbfuncholding.c \
+			$${IDF_PATH}/components/freemodbus/modbus/functions/mbfuncholding.c \
+			$${IDF_PATH}/components/freemodbus/modbus/functions/mbfuncholding_m.c \
+			$${IDF_PATH}/components/freemodbus/modbus/functions/mbfuncholding_m.c \
+			$${IDF_PATH}/components/freemodbus/modbus/functions/mbfuncholding_m.c \
+			$${IDF_PATH}/components/freemodbus/modbus/functions/mbfuncinput.c \
+			$${IDF_PATH}/components/freemodbus/modbus/functions/mbfuncinput.c \
+			$${IDF_PATH}/components/freemodbus/modbus/functions/mbfuncinput.c \
+			$${IDF_PATH}/components/freemodbus/modbus/functions/mbfuncinput_m.c \
+			$${IDF_PATH}/components/freemodbus/modbus/functions/mbfuncinput_m.c \
+			$${IDF_PATH}/components/freemodbus/modbus/functions/mbfuncinput_m.c \
+			$${IDF_PATH}/components/freemodbus/modbus/functions/mbfuncother.c \
+			$${IDF_PATH}/components/freemodbus/modbus/functions/mbfuncother.c \
+			$${IDF_PATH}/components/freemodbus/modbus/functions/mbfuncother.c \
+			$${IDF_PATH}/components/freemodbus/modbus/rtu/mbrtu.c \
+			$${IDF_PATH}/components/freemodbus/modbus/rtu/mbrtu.c \
+			$${IDF_PATH}/components/freemodbus/modbus/rtu/mbrtu.c \
+			$${IDF_PATH}/components/freemodbus/modbus/rtu/mbrtu_m.c \
+			$${IDF_PATH}/components/freemodbus/modbus/rtu/mbrtu_m.c \
+			$${IDF_PATH}/components/freemodbus/modbus/rtu/mbrtu_m.c \
+			$${IDF_PATH}/components/freemodbus/modbus/tcp/mbtcp.c \
+			$${IDF_PATH}/components/freemodbus/modbus/tcp/mbtcp.c \
+			$${IDF_PATH}/components/freemodbus/modbus/tcp/mbtcp.c \
+			$${IDF_PATH}/components/freemodbus/modbus/functions/mbutils.c \
+			$${IDF_PATH}/components/freemodbus/modbus/functions/mbutils.c \
+			$${IDF_PATH}/components/freemodbus/modbus/functions/mbutils.c \
 			$${IDF_PATH}/components/driver/mcpwm.c \
 			$${IDF_PATH}/components/driver/mcpwm.c \
 			$${IDF_PATH}/components/driver/mcpwm.c \
@@ -4127,28 +4838,22 @@
 			$${IDF_PATH}/components/wpa_supplicant/src/crypto/md4-internal.c \
 			$${IDF_PATH}/components/wpa_supplicant/src/crypto/md4-internal.c \
 			$${IDF_PATH}/components/mbedtls/mbedtls/library/md4.c \
-			$${IDF_PATH}/components/lwip/netif/ppp/polarssl/md4.c \
 			$${IDF_PATH}/components/lwip/lwip/src/netif/ppp/polarssl/md4.c \
 			$${IDF_PATH}/components/mbedtls/mbedtls/library/md4.c \
-			$${IDF_PATH}/components/lwip/netif/ppp/polarssl/md4.c \
 			$${IDF_PATH}/components/lwip/lwip/src/netif/ppp/polarssl/md4.c \
 			$${IDF_PATH}/components/mbedtls/mbedtls/library/md4.c \
-			$${IDF_PATH}/components/lwip/netif/ppp/polarssl/md4.c \
 			$${IDF_PATH}/components/lwip/lwip/src/netif/ppp/polarssl/md4.c \
 			$${IDF_PATH}/components/wpa_supplicant/src/crypto/md5-internal.c \
 			$${IDF_PATH}/components/wpa_supplicant/src/crypto/md5-internal.c \
 			$${IDF_PATH}/components/wpa_supplicant/src/crypto/md5-internal.c \
 			$${IDF_PATH}/components/wpa_supplicant/src/crypto/md5.c \
 			$${IDF_PATH}/components/mbedtls/mbedtls/library/md5.c \
-			$${IDF_PATH}/components/lwip/netif/ppp/polarssl/md5.c \
 			$${IDF_PATH}/components/lwip/lwip/src/netif/ppp/polarssl/md5.c \
 			$${IDF_PATH}/components/wpa_supplicant/src/crypto/md5.c \
 			$${IDF_PATH}/components/mbedtls/mbedtls/library/md5.c \
-			$${IDF_PATH}/components/lwip/netif/ppp/polarssl/md5.c \
 			$${IDF_PATH}/components/lwip/lwip/src/netif/ppp/polarssl/md5.c \
 			$${IDF_PATH}/components/wpa_supplicant/src/crypto/md5.c \
 			$${IDF_PATH}/components/mbedtls/mbedtls/library/md5.c \
-			$${IDF_PATH}/components/lwip/netif/ppp/polarssl/md5.c \
 			$${IDF_PATH}/components/lwip/lwip/src/netif/ppp/polarssl/md5.c \
 			$${IDF_PATH}/components/mbedtls/mbedtls/library/md_wrap.c \
 			$${IDF_PATH}/components/mbedtls/mbedtls/library/md_wrap.c \
@@ -4166,15 +4871,12 @@
 			$${IDF_PATH}/components/mdns/mdns_networking.c \
 			$${IDF_PATH}/components/mdns/mdns_networking.c \
 			$${IDF_PATH}/components/lwip/lwip/src/core/mem.c \
-			$${IDF_PATH}/components/lwip/core/mem.c \
 			$${IDF_PATH}/components/coap/libcoap/src/mem.c \
 			$${IDF_PATH}/components/bt/host/nimble/nimble/porting/nimble/src/mem.c \
 			$${IDF_PATH}/components/lwip/lwip/src/core/mem.c \
-			$${IDF_PATH}/components/lwip/core/mem.c \
 			$${IDF_PATH}/components/coap/libcoap/src/mem.c \
 			$${IDF_PATH}/components/bt/host/nimble/nimble/porting/nimble/src/mem.c \
 			$${IDF_PATH}/components/lwip/lwip/src/core/mem.c \
-			$${IDF_PATH}/components/lwip/core/mem.c \
 			$${IDF_PATH}/components/coap/libcoap/src/mem.c \
 			$${IDF_PATH}/components/bt/host/nimble/nimble/porting/nimble/src/mem.c \
 			$${IDF_PATH}/components/expat/expat/expat/tests/memcheck.c \
@@ -4183,18 +4885,51 @@
 			$${IDF_PATH}/components/mbedtls/mbedtls/library/memory_buffer_alloc.c \
 			$${IDF_PATH}/components/mbedtls/mbedtls/library/memory_buffer_alloc.c \
 			$${IDF_PATH}/components/mbedtls/mbedtls/library/memory_buffer_alloc.c \
+			$${IDF_PATH}/components/soc/src/memory_layout_utils.c \
+			$${IDF_PATH}/components/soc/src/memory_layout_utils.c \
+			$${IDF_PATH}/components/soc/src/memory_layout_utils.c \
 			$${IDF_PATH}/components/lwip/lwip/src/core/memp.c \
-			$${IDF_PATH}/components/lwip/core/memp.c \
 			$${IDF_PATH}/components/lwip/lwip/src/core/memp.c \
-			$${IDF_PATH}/components/lwip/core/memp.c \
 			$${IDF_PATH}/components/lwip/lwip/src/core/memp.c \
-			$${IDF_PATH}/components/lwip/core/memp.c \
+			$${IDF_PATH}/components/spi_flash/memspi_host_driver.c \
+			$${IDF_PATH}/components/spi_flash/memspi_host_driver.c \
+			$${IDF_PATH}/components/spi_flash/memspi_host_driver.c \
 			$${IDF_PATH}/components/bt/host/nimble/nimble/nimble/host/mesh/src/mesh.c \
 			$${IDF_PATH}/components/bt/host/nimble/nimble/apps/bttester/src/mesh.c \
 			$${IDF_PATH}/components/bt/host/nimble/nimble/nimble/host/mesh/src/mesh.c \
 			$${IDF_PATH}/components/bt/host/nimble/nimble/apps/bttester/src/mesh.c \
 			$${IDF_PATH}/components/bt/host/nimble/nimble/nimble/host/mesh/src/mesh.c \
 			$${IDF_PATH}/components/bt/host/nimble/nimble/apps/bttester/src/mesh.c \
+			$${IDF_PATH}/components/bt/esp_ble_mesh/mesh_common/mesh_atomic.c \
+			$${IDF_PATH}/components/bt/esp_ble_mesh/mesh_common/mesh_atomic.c \
+			$${IDF_PATH}/components/bt/esp_ble_mesh/mesh_common/mesh_atomic.c \
+			$${IDF_PATH}/components/bt/esp_ble_mesh/mesh_core/nimble_host/mesh_bearer_adapt.c \
+			$${IDF_PATH}/components/bt/esp_ble_mesh/mesh_core/bluedroid_host/mesh_bearer_adapt.c \
+			$${IDF_PATH}/components/bt/esp_ble_mesh/mesh_core/nimble_host/mesh_bearer_adapt.c \
+			$${IDF_PATH}/components/bt/esp_ble_mesh/mesh_core/bluedroid_host/mesh_bearer_adapt.c \
+			$${IDF_PATH}/components/bt/esp_ble_mesh/mesh_core/nimble_host/mesh_bearer_adapt.c \
+			$${IDF_PATH}/components/bt/esp_ble_mesh/mesh_core/bluedroid_host/mesh_bearer_adapt.c \
+			$${IDF_PATH}/components/bt/esp_ble_mesh/mesh_common/mesh_buf.c \
+			$${IDF_PATH}/components/bt/esp_ble_mesh/mesh_common/mesh_buf.c \
+			$${IDF_PATH}/components/bt/esp_ble_mesh/mesh_common/mesh_buf.c \
+			$${IDF_PATH}/components/bt/esp_ble_mesh/mesh_common/mesh_common.c \
+			$${IDF_PATH}/components/bt/esp_ble_mesh/mesh_common/mesh_common.c \
+			$${IDF_PATH}/components/bt/esp_ble_mesh/mesh_common/mesh_common.c \
+			$${IDF_PATH}/components/esp_wifi/src/mesh_event.c \
+			$${IDF_PATH}/components/esp_wifi/src/mesh_event.c \
+			$${IDF_PATH}/components/esp_wifi/src/mesh_event.c \
+			$${IDF_PATH}/components/bt/esp_ble_mesh/mesh_common/mesh_kernel.c \
+			$${IDF_PATH}/components/bt/esp_ble_mesh/mesh_common/mesh_kernel.c \
+			$${IDF_PATH}/components/bt/esp_ble_mesh/mesh_common/mesh_kernel.c \
+			$${IDF_PATH}/components/bt/esp_ble_mesh/mesh_common/mesh_mutex.c \
+			$${IDF_PATH}/components/bt/esp_ble_mesh/mesh_common/mesh_mutex.c \
+			$${IDF_PATH}/components/bt/esp_ble_mesh/mesh_common/mesh_mutex.c \
+			$${IDF_PATH}/components/bt/esp_ble_mesh/mesh_common/mesh_timer.c \
+			$${IDF_PATH}/components/bt/esp_ble_mesh/mesh_common/mesh_timer.c \
+			$${IDF_PATH}/components/bt/esp_ble_mesh/mesh_common/mesh_timer.c \
+			$${IDF_PATH}/components/bt/esp_ble_mesh/mesh_common/mesh_util.c \
+			$${IDF_PATH}/components/bt/esp_ble_mesh/mesh_common/mesh_util.c \
+			$${IDF_PATH}/components/bt/esp_ble_mesh/mesh_common/mesh_util.c \
 			$${IDF_PATH}/components/tinyusb/tinyusb/src/class/midi/midi_device.c \
 			$${IDF_PATH}/components/tinyusb/tinyusb/src/class/midi/midi_device.c \
 			$${IDF_PATH}/components/asio/asio/asio/src/examples/cpp11/http/server/mime_types.cpp \
@@ -4207,14 +4942,16 @@
 			$${IDF_PATH}/components/asio/asio/asio/src/examples/cpp03/http/server3/mime_types.cpp \
 			$${IDF_PATH}/components/asio/asio/asio/src/examples/cpp03/http/server2/mime_types.cpp \
 			$${IDF_PATH}/components/asio/asio/asio/src/examples/cpp03/http/server/mime_types.cpp \
+			$${IDF_PATH}/components/asio/asio/asio/src/examples/cpp11/http/server/mime_types.cpp \
+			$${IDF_PATH}/components/asio/asio/asio/src/examples/cpp03/http/server4/mime_types.cpp \
+			$${IDF_PATH}/components/asio/asio/asio/src/examples/cpp03/http/server3/mime_types.cpp \
+			$${IDF_PATH}/components/asio/asio/asio/src/examples/cpp03/http/server2/mime_types.cpp \
+			$${IDF_PATH}/components/asio/asio/asio/src/examples/cpp03/http/server/mime_types.cpp \
 			$${IDF_PATH}/components/mbedtls/mbedtls/programs/ssl/mini_client.c \
 			$${IDF_PATH}/components/mbedtls/mbedtls/programs/ssl/mini_client.c \
 			$${IDF_PATH}/components/mbedtls/mbedtls/programs/ssl/mini_client.c \
-			$${IDF_PATH}/components/expat/port/minicheck.c \
 			$${IDF_PATH}/components/expat/expat/expat/tests/minicheck.c \
-			$${IDF_PATH}/components/expat/port/minicheck.c \
 			$${IDF_PATH}/components/expat/expat/expat/tests/minicheck.c \
-			$${IDF_PATH}/components/expat/port/minicheck.c \
 			$${IDF_PATH}/components/expat/expat/expat/tests/minicheck.c \
 			$${IDF_PATH}/components/json/cJSON/tests/minify_tests.c \
 			$${IDF_PATH}/components/json/cJSON/tests/minify_tests.c \
@@ -4241,11 +4978,8 @@
 			$${IDF_PATH}/components/json/cJSON/tests/misc_utils_tests.c \
 			$${IDF_PATH}/components/json/cJSON/tests/misc_utils_tests.c \
 			$${IDF_PATH}/components/lwip/lwip/src/core/ipv6/mld6.c \
-			$${IDF_PATH}/components/lwip/core/ipv6/mld6.c \
 			$${IDF_PATH}/components/lwip/lwip/src/core/ipv6/mld6.c \
-			$${IDF_PATH}/components/lwip/core/ipv6/mld6.c \
 			$${IDF_PATH}/components/lwip/lwip/src/core/ipv6/mld6.c \
-			$${IDF_PATH}/components/lwip/core/ipv6/mld6.c \
 			$${IDF_PATH}/components/bt/host/nimble/nimble/nimble/host/mesh/src/model_cli.c \
 			$${IDF_PATH}/components/bt/host/nimble/nimble/nimble/host/mesh/src/model_cli.c \
 			$${IDF_PATH}/components/bt/host/nimble/nimble/nimble/host/mesh/src/model_cli.c \
@@ -4257,11 +4991,8 @@
 			$${IDF_PATH}/components/mbedtls/mbedtls/programs/pkey/mpi_demo.c \
 			$${IDF_PATH}/components/mbedtls/mbedtls/programs/pkey/mpi_demo.c \
 			$${IDF_PATH}/components/mbedtls/mbedtls/programs/pkey/mpi_demo.c \
-			$${IDF_PATH}/components/lwip/netif/ppp/mppe.c \
 			$${IDF_PATH}/components/lwip/lwip/src/netif/ppp/mppe.c \
-			$${IDF_PATH}/components/lwip/netif/ppp/mppe.c \
 			$${IDF_PATH}/components/lwip/lwip/src/netif/ppp/mppe.c \
-			$${IDF_PATH}/components/lwip/netif/ppp/mppe.c \
 			$${IDF_PATH}/components/lwip/lwip/src/netif/ppp/mppe.c \
 			$${IDF_PATH}/components/tinyusb/tinyusb/lib/FreeRTOS/Source/portable/Common/mpu_wrappers.c \
 			$${IDF_PATH}/components/tinyusb/tinyusb/lib/FreeRTOS/Source/portable/Common/mpu_wrappers.c \
@@ -4270,8 +5001,11 @@
 			$${IDF_PATH}/components/lwip/lwip/src/apps/mqtt/mqtt.c \
 			$${IDF_PATH}/components/mqtt/esp-mqtt/mqtt_client.c \
 			$${IDF_PATH}/components/mqtt/esp-mqtt/mqtt_client.c \
+			$${IDF_PATH}/components/mqtt/esp-mqtt/mqtt_client.c \
 			$${IDF_PATH}/components/mqtt/esp-mqtt/lib/mqtt_msg.c \
 			$${IDF_PATH}/components/mqtt/esp-mqtt/lib/mqtt_msg.c \
+			$${IDF_PATH}/components/mqtt/esp-mqtt/lib/mqtt_msg.c \
+			$${IDF_PATH}/components/mqtt/esp-mqtt/lib/mqtt_outbox.c \
 			$${IDF_PATH}/components/mqtt/esp-mqtt/lib/mqtt_outbox.c \
 			$${IDF_PATH}/components/mqtt/esp-mqtt/lib/mqtt_outbox.c \
 			$${IDF_PATH}/components/nghttp/nghttp2/third-party/mruby/mrbgems/mruby-bin-mrbc/tools/mrbc/mrbc.c \
@@ -4311,9 +5045,9 @@
 			$${IDF_PATH}/components/tinyusb/tinyusb/src/class/msc/msc_host.c \
 			$${IDF_PATH}/components/tinyusb/tinyusb/examples/obsolete/host/src/msc_host_app.c \
 			$${IDF_PATH}/components/tinyusb/tinyusb/examples/obsolete/host/src/msc_host_app.c \
-			$${IDF_PATH}/components/wpa_supplicant/src/wpa2/eap_peer/mschapv2.c \
-			$${IDF_PATH}/components/wpa_supplicant/src/wpa2/eap_peer/mschapv2.c \
-			$${IDF_PATH}/components/wpa_supplicant/src/wpa2/eap_peer/mschapv2.c \
+			$${IDF_PATH}/components/wpa_supplicant/src/eap_peer/mschapv2.c \
+			$${IDF_PATH}/components/wpa_supplicant/src/eap_peer/mschapv2.c \
+			$${IDF_PATH}/components/wpa_supplicant/src/eap_peer/mschapv2.c \
 			$${IDF_PATH}/components/nghttp/nghttp2/third-party/mruby/mrbgems/mruby-random/src/mt19937ar.c \
 			$${IDF_PATH}/components/nghttp/nghttp2/third-party/mruby/mrbgems/mruby-random/src/mt19937ar.c \
 			$${IDF_PATH}/components/nghttp/nghttp2/third-party/mruby/mrbgems/mruby-random/src/mt19937ar.c \
@@ -4325,29 +5059,28 @@
 			$${IDF_PATH}/components/heap/multi_heap_poisoning.c \
 			$${IDF_PATH}/components/asio/asio/asio/src/tests/unit/ip/multicast.cpp \
 			$${IDF_PATH}/components/asio/asio/asio/src/tests/unit/ip/multicast.cpp \
-			$${IDF_PATH}/components/lwip/netif/ppp/multilink.c \
+			$${IDF_PATH}/components/asio/asio/asio/src/tests/unit/ip/multicast.cpp \
 			$${IDF_PATH}/components/lwip/lwip/src/netif/ppp/multilink.c \
-			$${IDF_PATH}/components/lwip/netif/ppp/multilink.c \
 			$${IDF_PATH}/components/lwip/lwip/src/netif/ppp/multilink.c \
-			$${IDF_PATH}/components/lwip/netif/ppp/multilink.c \
 			$${IDF_PATH}/components/lwip/lwip/src/netif/ppp/multilink.c \
-			$${IDF_PATH}/components/bt/bluedroid/osi/mutex.c \
-			$${IDF_PATH}/components/bt/bluedroid/osi/mutex.c \
-			$${IDF_PATH}/components/bt/bluedroid/osi/mutex.c \
+			$${IDF_PATH}/components/bt/common/osi/mutex.c \
+			$${IDF_PATH}/components/bt/common/osi/mutex.c \
+			$${IDF_PATH}/components/bt/common/osi/mutex.c \
 			$${IDF_PATH}/components/lwip/lwip/src/core/ipv6/nd6.c \
-			$${IDF_PATH}/components/lwip/core/ipv6/nd6.c \
 			$${IDF_PATH}/components/lwip/lwip/src/core/ipv6/nd6.c \
-			$${IDF_PATH}/components/lwip/core/ipv6/nd6.c \
 			$${IDF_PATH}/components/lwip/lwip/src/core/ipv6/nd6.c \
-			$${IDF_PATH}/components/lwip/core/ipv6/nd6.c \
 			$${IDF_PATH}/components/coap/libcoap/src/net.c \
 			$${IDF_PATH}/components/bt/host/nimble/nimble/nimble/host/mesh/src/net.c \
+			$${IDF_PATH}/components/bt/esp_ble_mesh/mesh_core/net.c \
 			$${IDF_PATH}/components/coap/libcoap/src/net.c \
 			$${IDF_PATH}/components/bt/host/nimble/nimble/nimble/host/mesh/src/net.c \
+			$${IDF_PATH}/components/bt/esp_ble_mesh/mesh_core/net.c \
 			$${IDF_PATH}/components/coap/libcoap/src/net.c \
 			$${IDF_PATH}/components/bt/host/nimble/nimble/nimble/host/mesh/src/net.c \
+			$${IDF_PATH}/components/bt/esp_ble_mesh/mesh_core/net.c \
 			$${IDF_PATH}/components/asio/asio/asio/src/tests/unit/ts/net.cpp \
 			$${IDF_PATH}/components/asio/asio/asio/src/tests/unit/ts/net.cpp \
+			$${IDF_PATH}/components/asio/asio/asio/src/tests/unit/ts/net.cpp \
 			$${IDF_PATH}/components/mbedtls/port/net_sockets.c \
 			$${IDF_PATH}/components/mbedtls/mbedtls/library/net_sockets.c \
 			$${IDF_PATH}/components/mbedtls/port/net_sockets.c \
@@ -4358,48 +5091,38 @@
 			$${IDF_PATH}/components/lwip/lwip/src/apps/netbiosns/netbiosns.c \
 			$${IDF_PATH}/components/lwip/lwip/src/apps/netbiosns/netbiosns.c \
 			$${IDF_PATH}/components/lwip/lwip/src/api/netbuf.c \
-			$${IDF_PATH}/components/lwip/api/netbuf.c \
 			$${IDF_PATH}/components/lwip/lwip/src/api/netbuf.c \
-			$${IDF_PATH}/components/lwip/api/netbuf.c \
 			$${IDF_PATH}/components/lwip/lwip/src/api/netbuf.c \
-			$${IDF_PATH}/components/lwip/api/netbuf.c \
 			$${IDF_PATH}/components/lwip/lwip/src/api/netdb.c \
-			$${IDF_PATH}/components/lwip/api/netdb.c \
 			$${IDF_PATH}/components/lwip/lwip/src/api/netdb.c \
-			$${IDF_PATH}/components/lwip/api/netdb.c \
 			$${IDF_PATH}/components/lwip/lwip/src/api/netdb.c \
-			$${IDF_PATH}/components/lwip/api/netdb.c \
+			$${IDF_PATH}/components/asio/asio/asio/src/tests/unit/ts/netfwd.cpp \
 			$${IDF_PATH}/components/asio/asio/asio/src/tests/unit/ts/netfwd.cpp \
 			$${IDF_PATH}/components/asio/asio/asio/src/tests/unit/ts/netfwd.cpp \
 			$${IDF_PATH}/components/lwip/lwip/src/core/netif.c \
-			$${IDF_PATH}/components/lwip/core/netif.c \
 			$${IDF_PATH}/components/lwip/lwip/src/core/netif.c \
-			$${IDF_PATH}/components/lwip/core/netif.c \
 			$${IDF_PATH}/components/lwip/lwip/src/core/netif.c \
-			$${IDF_PATH}/components/lwip/core/netif.c \
 			$${IDF_PATH}/components/lwip/lwip/src/api/netifapi.c \
-			$${IDF_PATH}/components/lwip/api/netifapi.c \
 			$${IDF_PATH}/components/lwip/lwip/src/api/netifapi.c \
-			$${IDF_PATH}/components/lwip/api/netifapi.c \
 			$${IDF_PATH}/components/lwip/lwip/src/api/netifapi.c \
-			$${IDF_PATH}/components/lwip/api/netifapi.c \
 			$${IDF_PATH}/components/coap/libcoap/ext/tinydtls/tests/netq-test.c \
 			$${IDF_PATH}/components/coap/libcoap/ext/tinydtls/tests/netq-test.c \
 			$${IDF_PATH}/components/coap/libcoap/ext/tinydtls/tests/netq-test.c \
 			$${IDF_PATH}/components/coap/libcoap/ext/tinydtls/netq.c \
 			$${IDF_PATH}/components/coap/libcoap/ext/tinydtls/netq.c \
 			$${IDF_PATH}/components/coap/libcoap/ext/tinydtls/netq.c \
-			$${IDF_PATH}/components/aws_iot/port/network_mbedtls_wrapper.c \
+			$${IDF_PATH}/components/lwip/port/esp32/netif/nettestif.c \
+			$${IDF_PATH}/components/lwip/port/esp32/netif/nettestif.c \
+			$${IDF_PATH}/components/lwip/port/esp32/netif/nettestif.c \
 			$${IDF_PATH}/components/aws_iot/aws-iot-device-sdk-embedded-C/platform/linux/mbedtls/network_mbedtls_wrapper.c \
-			$${IDF_PATH}/components/aws_iot/port/network_mbedtls_wrapper.c \
-			$${IDF_PATH}/components/aws_iot/aws-iot-device-sdk-embedded-C/platform/linux/mbedtls/network_mbedtls_wrapper.c \
-			$${IDF_PATH}/components/aws_iot/port/network_mbedtls_wrapper.c \
 			$${IDF_PATH}/components/aws_iot/aws-iot-device-sdk-embedded-C/platform/linux/mbedtls/network_mbedtls_wrapper.c \
 			$${IDF_PATH}/components/lwip/test_afl_host/network_mock.c \
 			$${IDF_PATH}/components/lwip/test_afl_host/network_mock.c \
 			$${IDF_PATH}/components/lwip/test_afl_host/network_mock.c \
 			$${IDF_PATH}/components/asio/asio/asio/src/tests/unit/ip/network_v4.cpp \
 			$${IDF_PATH}/components/asio/asio/asio/src/tests/unit/ip/network_v4.cpp \
+			$${IDF_PATH}/components/asio/asio/asio/src/tests/unit/ip/network_v4.cpp \
+			$${IDF_PATH}/components/asio/asio/asio/src/tests/unit/ip/network_v6.cpp \
 			$${IDF_PATH}/components/asio/asio/asio/src/tests/unit/ip/network_v6.cpp \
 			$${IDF_PATH}/components/asio/asio/asio/src/tests/unit/ip/network_v6.cpp \
 			$${IDF_PATH}/components/nghttp/nghttp2/third-party/neverbleed/neverbleed.c \
@@ -4572,6 +5295,8 @@
 			$${IDF_PATH}/components/nghttp/nghttp2/third-party/mruby/mrbgems/mruby-object-ext/src/object.c \
 			$${IDF_PATH}/components/asio/asio/asio/src/tests/unit/windows/object_handle.cpp \
 			$${IDF_PATH}/components/asio/asio/asio/src/tests/unit/windows/object_handle.cpp \
+			$${IDF_PATH}/components/asio/asio/asio/src/tests/unit/windows/object_handle.cpp \
+			$${IDF_PATH}/components/asio/asio/asio/src/tests/unit/windows/object_handle_service.cpp \
 			$${IDF_PATH}/components/asio/asio/asio/src/tests/unit/windows/object_handle_service.cpp \
 			$${IDF_PATH}/components/asio/asio/asio/src/tests/unit/windows/object_handle_service.cpp \
 			$${IDF_PATH}/components/libsodium/libsodium/src/libsodium/crypto_sign/ed25519/ref10/obsolete.c \
@@ -4579,9 +5304,9 @@
 			$${IDF_PATH}/components/libsodium/libsodium/src/libsodium/crypto_sign/ed25519/ref10/obsolete.c \
 			$${IDF_PATH}/components/tinyusb/tinyusb/src/host/ohci/ohci.c \
 			$${IDF_PATH}/components/tinyusb/tinyusb/src/host/ohci/ohci.c \
-			$${IDF_PATH}/components/bt/bluedroid/external/sbc/decoder/srce/oi_codec_version.c \
-			$${IDF_PATH}/components/bt/bluedroid/external/sbc/decoder/srce/oi_codec_version.c \
-			$${IDF_PATH}/components/bt/bluedroid/external/sbc/decoder/srce/oi_codec_version.c \
+			$${IDF_PATH}/components/bt/host/bluedroid/external/sbc/decoder/srce/oi_codec_version.c \
+			$${IDF_PATH}/components/bt/host/bluedroid/external/sbc/decoder/srce/oi_codec_version.c \
+			$${IDF_PATH}/components/bt/host/bluedroid/external/sbc/decoder/srce/oi_codec_version.c \
 			$${IDF_PATH}/components/mbedtls/mbedtls/library/oid.c \
 			$${IDF_PATH}/components/mbedtls/mbedtls/library/oid.c \
 			$${IDF_PATH}/components/mbedtls/mbedtls/library/oid.c \
@@ -4644,30 +5369,36 @@
 			$${IDF_PATH}/components/wpa_supplicant/port/os_xtensa.c \
 			$${IDF_PATH}/components/wpa_supplicant/port/os_xtensa.c \
 			$${IDF_PATH}/components/wpa_supplicant/port/os_xtensa.c \
-			$${IDF_PATH}/components/bt/bluedroid/osi/osi.c \
-			$${IDF_PATH}/components/bt/bluedroid/osi/osi.c \
-			$${IDF_PATH}/components/bt/bluedroid/osi/osi.c \
+			$${IDF_PATH}/components/bt/common/osi/osi.c \
+			$${IDF_PATH}/components/bt/common/osi/osi.c \
+			$${IDF_PATH}/components/bt/common/osi/osi.c \
 			$${IDF_PATH}/components/expat/expat/expat/examples/outline.c \
 			$${IDF_PATH}/components/expat/expat/expat/examples/outline.c \
 			$${IDF_PATH}/components/expat/expat/expat/examples/outline.c \
 			$${IDF_PATH}/components/asio/asio/asio/src/tests/unit/windows/overlapped_handle.cpp \
 			$${IDF_PATH}/components/asio/asio/asio/src/tests/unit/windows/overlapped_handle.cpp \
+			$${IDF_PATH}/components/asio/asio/asio/src/tests/unit/windows/overlapped_handle.cpp \
 			$${IDF_PATH}/components/asio/asio/asio/src/tests/unit/windows/overlapped_ptr.cpp \
 			$${IDF_PATH}/components/asio/asio/asio/src/tests/unit/windows/overlapped_ptr.cpp \
-			$${IDF_PATH}/components/bt/bluedroid/stack/smp/p_256_curvepara.c \
-			$${IDF_PATH}/components/bt/bluedroid/stack/smp/p_256_curvepara.c \
-			$${IDF_PATH}/components/bt/bluedroid/stack/smp/p_256_curvepara.c \
-			$${IDF_PATH}/components/bt/bluedroid/stack/smp/p_256_ecc_pp.c \
-			$${IDF_PATH}/components/bt/bluedroid/stack/smp/p_256_ecc_pp.c \
-			$${IDF_PATH}/components/bt/bluedroid/stack/smp/p_256_ecc_pp.c \
-			$${IDF_PATH}/components/bt/bluedroid/stack/smp/p_256_multprecision.c \
-			$${IDF_PATH}/components/bt/bluedroid/stack/smp/p_256_multprecision.c \
-			$${IDF_PATH}/components/bt/bluedroid/stack/smp/p_256_multprecision.c \
+			$${IDF_PATH}/components/asio/asio/asio/src/tests/unit/windows/overlapped_ptr.cpp \
+			$${IDF_PATH}/components/bt/host/bluedroid/stack/smp/p_256_curvepara.c \
+			$${IDF_PATH}/components/bt/host/bluedroid/stack/smp/p_256_curvepara.c \
+			$${IDF_PATH}/components/bt/host/bluedroid/stack/smp/p_256_curvepara.c \
+			$${IDF_PATH}/components/bt/host/bluedroid/stack/smp/p_256_ecc_pp.c \
+			$${IDF_PATH}/components/bt/host/bluedroid/stack/smp/p_256_ecc_pp.c \
+			$${IDF_PATH}/components/bt/host/bluedroid/stack/smp/p_256_ecc_pp.c \
+			$${IDF_PATH}/components/bt/host/bluedroid/stack/smp/p_256_multprecision.c \
+			$${IDF_PATH}/components/bt/host/bluedroid/stack/smp/p_256_multprecision.c \
+			$${IDF_PATH}/components/bt/host/bluedroid/stack/smp/p_256_multprecision.c \
 			$${IDF_PATH}/components/asio/asio/asio/src/tests/unit/packaged_task.cpp \
 			$${IDF_PATH}/components/asio/asio/asio/src/tests/unit/packaged_task.cpp \
-			$${IDF_PATH}/components/bt/bluedroid/hci/packet_fragmenter.c \
-			$${IDF_PATH}/components/bt/bluedroid/hci/packet_fragmenter.c \
-			$${IDF_PATH}/components/bt/bluedroid/hci/packet_fragmenter.c \
+			$${IDF_PATH}/components/asio/asio/asio/src/tests/unit/packaged_task.cpp \
+			$${IDF_PATH}/components/esp_gdbstub/src/packet.c \
+			$${IDF_PATH}/components/esp_gdbstub/src/packet.c \
+			$${IDF_PATH}/components/esp_gdbstub/src/packet.c \
+			$${IDF_PATH}/components/bt/host/bluedroid/hci/packet_fragmenter.c \
+			$${IDF_PATH}/components/bt/host/bluedroid/hci/packet_fragmenter.c \
+			$${IDF_PATH}/components/bt/host/bluedroid/hci/packet_fragmenter.c \
 			$${IDF_PATH}/components/mbedtls/mbedtls/library/padlock.c \
 			$${IDF_PATH}/components/mbedtls/mbedtls/library/padlock.c \
 			$${IDF_PATH}/components/mbedtls/mbedtls/library/padlock.c \
@@ -4678,6 +5409,11 @@
 			$${IDF_PATH}/components/asio/asio/asio/src/examples/cpp03/spawn/parallel_grep.cpp \
 			$${IDF_PATH}/components/asio/asio/asio/src/examples/cpp11/spawn/parallel_grep.cpp \
 			$${IDF_PATH}/components/asio/asio/asio/src/examples/cpp03/spawn/parallel_grep.cpp \
+			$${IDF_PATH}/components/asio/asio/asio/src/examples/cpp11/spawn/parallel_grep.cpp \
+			$${IDF_PATH}/components/asio/asio/asio/src/examples/cpp03/spawn/parallel_grep.cpp \
+			$${IDF_PATH}/components/driver/test/param_test/param_test.c \
+			$${IDF_PATH}/components/driver/test/param_test/param_test.c \
+			$${IDF_PATH}/components/driver/test/param_test/param_test.c \
 			$${IDF_PATH}/components/bt/host/nimble/nimble/apps/btshell/src/parse.c \
 			$${IDF_PATH}/components/bt/host/nimble/nimble/apps/btshell/src/parse.c \
 			$${IDF_PATH}/components/bt/host/nimble/nimble/apps/btshell/src/parse.c \
@@ -4715,11 +5451,8 @@
 			$${IDF_PATH}/components/libsodium/libsodium/src/libsodium/crypto_pwhash/scryptsalsa208sha256/pbkdf2-sha256.c \
 			$${IDF_PATH}/components/libsodium/libsodium/src/libsodium/crypto_pwhash/scryptsalsa208sha256/pbkdf2-sha256.c \
 			$${IDF_PATH}/components/lwip/lwip/src/core/pbuf.c \
-			$${IDF_PATH}/components/lwip/core/pbuf.c \
 			$${IDF_PATH}/components/lwip/lwip/src/core/pbuf.c \
-			$${IDF_PATH}/components/lwip/core/pbuf.c \
 			$${IDF_PATH}/components/lwip/lwip/src/core/pbuf.c \
-			$${IDF_PATH}/components/lwip/core/pbuf.c \
 			$${IDF_PATH}/components/tinyusb/tinyusb/hw/bsp/ea4357/pca9532.c \
 			$${IDF_PATH}/components/tinyusb/tinyusb/hw/bsp/ea4357/pca9532.c \
 			$${IDF_PATH}/components/coap/libcoap/ext/tinydtls/tests/pcap.c \
@@ -4731,6 +5464,9 @@
 			$${IDF_PATH}/components/coap/libcoap/src/pdu.c \
 			$${IDF_PATH}/components/coap/libcoap/src/pdu.c \
 			$${IDF_PATH}/components/coap/libcoap/src/pdu.c \
+			$${IDF_PATH}/components/coap/libcoap/tests/oss-fuzz/pdu_parse_target.c \
+			$${IDF_PATH}/components/coap/libcoap/tests/oss-fuzz/pdu_parse_target.c \
+			$${IDF_PATH}/components/coap/libcoap/tests/oss-fuzz/pdu_parse_target.c \
 			$${IDF_PATH}/components/coap/libcoap/ext/tinydtls/peer.c \
 			$${IDF_PATH}/components/bt/host/nimble/nimble/apps/blecent/src/peer.c \
 			$${IDF_PATH}/components/coap/libcoap/ext/tinydtls/peer.c \
@@ -4749,23 +5485,17 @@
 			$${IDF_PATH}/components/bt/host/nimble/nimble/apps/bleprph/src/phy.c \
 			$${IDF_PATH}/components/bt/host/nimble/nimble/apps/bleprph/src/phy.c \
 			$${IDF_PATH}/components/bt/host/nimble/nimble/apps/bleprph/src/phy.c \
-			$${IDF_PATH}/components/ethernet/eth_phy/phy_common.c \
-			$${IDF_PATH}/components/ethernet/eth_phy/phy_common.c \
-			$${IDF_PATH}/components/ethernet/eth_phy/phy_common.c \
-			$${IDF_PATH}/components/esp32/phy_init.c \
-			$${IDF_PATH}/components/esp32/phy_init.c \
-			$${IDF_PATH}/components/esp32/phy_init.c \
-			$${IDF_PATH}/components/ethernet/eth_phy/phy_lan8720.c \
-			$${IDF_PATH}/components/ethernet/eth_phy/phy_lan8720.c \
-			$${IDF_PATH}/components/ethernet/eth_phy/phy_lan8720.c \
-			$${IDF_PATH}/components/ethernet/eth_phy/phy_tlk110.c \
-			$${IDF_PATH}/components/ethernet/eth_phy/phy_tlk110.c \
-			$${IDF_PATH}/components/ethernet/eth_phy/phy_tlk110.c \
+			$${IDF_PATH}/components/esp_wifi/src/phy_init.c \
+			$${IDF_PATH}/components/esp_wifi/src/phy_init.c \
+			$${IDF_PATH}/components/esp_wifi/src/phy_init.c \
 			$${IDF_PATH}/components/lwip/apps/ping/ping.c \
 			$${IDF_PATH}/components/lwip/apps/ping/ping.c \
 			$${IDF_PATH}/components/lwip/apps/ping/ping.c \
 			$${IDF_PATH}/components/asio/asio/asio/src/examples/cpp03/icmp/ping.cpp \
 			$${IDF_PATH}/components/asio/asio/asio/src/examples/cpp03/icmp/ping.cpp \
+			$${IDF_PATH}/components/asio/asio/asio/src/examples/cpp03/icmp/ping.cpp \
+			$${IDF_PATH}/components/asio/asio/asio/src/examples/cpp14/executors/pipeline.cpp \
+			$${IDF_PATH}/components/asio/asio/asio/src/examples/cpp11/executors/pipeline.cpp \
 			$${IDF_PATH}/components/asio/asio/asio/src/examples/cpp14/executors/pipeline.cpp \
 			$${IDF_PATH}/components/asio/asio/asio/src/examples/cpp11/executors/pipeline.cpp \
 			$${IDF_PATH}/components/asio/asio/asio/src/examples/cpp14/executors/pipeline.cpp \
@@ -4788,24 +5518,24 @@
 			$${IDF_PATH}/components/mbedtls/mbedtls/library/pk_wrap.c \
 			$${IDF_PATH}/components/mbedtls/mbedtls/library/pk_wrap.c \
 			$${IDF_PATH}/components/mbedtls/mbedtls/library/pk_wrap.c \
-			$${IDF_PATH}/components/wpa_supplicant/src/wpa2/tls/pkcs1.c \
-			$${IDF_PATH}/components/wpa_supplicant/src/wpa2/tls/pkcs1.c \
-			$${IDF_PATH}/components/wpa_supplicant/src/wpa2/tls/pkcs1.c \
+			$${IDF_PATH}/components/wpa_supplicant/src/tls/pkcs1.c \
+			$${IDF_PATH}/components/wpa_supplicant/src/tls/pkcs1.c \
+			$${IDF_PATH}/components/wpa_supplicant/src/tls/pkcs1.c \
 			$${IDF_PATH}/components/mbedtls/mbedtls/library/pkcs11.c \
 			$${IDF_PATH}/components/mbedtls/mbedtls/library/pkcs11.c \
 			$${IDF_PATH}/components/mbedtls/mbedtls/library/pkcs11.c \
 			$${IDF_PATH}/components/mbedtls/mbedtls/library/pkcs12.c \
 			$${IDF_PATH}/components/mbedtls/mbedtls/library/pkcs12.c \
 			$${IDF_PATH}/components/mbedtls/mbedtls/library/pkcs12.c \
-			$${IDF_PATH}/components/wpa_supplicant/src/wpa2/tls/pkcs5.c \
+			$${IDF_PATH}/components/wpa_supplicant/src/tls/pkcs5.c \
 			$${IDF_PATH}/components/mbedtls/mbedtls/library/pkcs5.c \
-			$${IDF_PATH}/components/wpa_supplicant/src/wpa2/tls/pkcs5.c \
+			$${IDF_PATH}/components/wpa_supplicant/src/tls/pkcs5.c \
 			$${IDF_PATH}/components/mbedtls/mbedtls/library/pkcs5.c \
-			$${IDF_PATH}/components/wpa_supplicant/src/wpa2/tls/pkcs5.c \
+			$${IDF_PATH}/components/wpa_supplicant/src/tls/pkcs5.c \
 			$${IDF_PATH}/components/mbedtls/mbedtls/library/pkcs5.c \
-			$${IDF_PATH}/components/wpa_supplicant/src/wpa2/tls/pkcs8.c \
-			$${IDF_PATH}/components/wpa_supplicant/src/wpa2/tls/pkcs8.c \
-			$${IDF_PATH}/components/wpa_supplicant/src/wpa2/tls/pkcs8.c \
+			$${IDF_PATH}/components/wpa_supplicant/src/tls/pkcs8.c \
+			$${IDF_PATH}/components/wpa_supplicant/src/tls/pkcs8.c \
+			$${IDF_PATH}/components/wpa_supplicant/src/tls/pkcs8.c \
 			$${IDF_PATH}/components/mbedtls/mbedtls/library/pkparse.c \
 			$${IDF_PATH}/components/mbedtls/mbedtls/library/pkparse.c \
 			$${IDF_PATH}/components/mbedtls/mbedtls/library/pkparse.c \
@@ -4814,23 +5544,31 @@
 			$${IDF_PATH}/components/mbedtls/mbedtls/library/pkwrite.c \
 			$${IDF_PATH}/components/asio/asio/asio/src/tests/unit/placeholders.cpp \
 			$${IDF_PATH}/components/asio/asio/asio/src/tests/unit/placeholders.cpp \
+			$${IDF_PATH}/components/asio/asio/asio/src/tests/unit/placeholders.cpp \
 			$${IDF_PATH}/components/mbedtls/mbedtls/library/platform.c \
 			$${IDF_PATH}/components/mbedtls/mbedtls/library/platform.c \
 			$${IDF_PATH}/components/mbedtls/mbedtls/library/platform.c \
 			$${IDF_PATH}/components/mqtt/esp-mqtt/lib/platform_esp32_idf.c \
 			$${IDF_PATH}/components/mqtt/esp-mqtt/lib/platform_esp32_idf.c \
+			$${IDF_PATH}/components/mqtt/esp-mqtt/lib/platform_esp32_idf.c \
 			$${IDF_PATH}/components/mbedtls/mbedtls/library/platform_util.c \
 			$${IDF_PATH}/components/mbedtls/mbedtls/library/platform_util.c \
 			$${IDF_PATH}/components/mbedtls/mbedtls/library/platform_util.c \
 			$${IDF_PATH}/components/esp32/pm_esp32.c \
 			$${IDF_PATH}/components/esp32/pm_esp32.c \
 			$${IDF_PATH}/components/esp32/pm_esp32.c \
-			$${IDF_PATH}/components/esp32/pm_locks.c \
-			$${IDF_PATH}/components/esp32/pm_locks.c \
-			$${IDF_PATH}/components/esp32/pm_locks.c \
+			$${IDF_PATH}/components/esp_common/src/pm_locks.c \
+			$${IDF_PATH}/components/esp_common/src/pm_locks.c \
+			$${IDF_PATH}/components/esp_common/src/pm_locks.c \
 			$${IDF_PATH}/components/esp32/pm_trace.c \
 			$${IDF_PATH}/components/esp32/pm_trace.c \
 			$${IDF_PATH}/components/esp32/pm_trace.c \
+			$${IDF_PATH}/components/wpa_supplicant/src/rsn_supp/pmksa_cache.c \
+			$${IDF_PATH}/components/wpa_supplicant/src/rsn_supp/pmksa_cache.c \
+			$${IDF_PATH}/components/wpa_supplicant/src/rsn_supp/pmksa_cache.c \
+			$${IDF_PATH}/components/newlib/poll.c \
+			$${IDF_PATH}/components/newlib/poll.c \
+			$${IDF_PATH}/components/newlib/poll.c \
 			$${IDF_PATH}/components/mbedtls/mbedtls/library/poly1305.c \
 			$${IDF_PATH}/components/mbedtls/mbedtls/library/poly1305.c \
 			$${IDF_PATH}/components/mbedtls/mbedtls/library/poly1305.c \
@@ -4844,63 +5582,77 @@
 			$${IDF_PATH}/components/nghttp/nghttp2/third-party/mruby/src/pool.c \
 			$${IDF_PATH}/components/nghttp/nghttp2/third-party/mruby/src/pool.c \
 			$${IDF_PATH}/components/freertos/port.c \
+			$${IDF_PATH}/components/freemodbus/port/port.c \
 			$${IDF_PATH}/components/tinyusb/tinyusb/lib/FreeRTOS/Source/portable/GCC/ARM_CM4F/port.c \
 			$${IDF_PATH}/components/tinyusb/tinyusb/lib/FreeRTOS/Source/portable/GCC/ARM_CM3/port.c \
 			$${IDF_PATH}/components/tinyusb/tinyusb/lib/FreeRTOS/Source/portable/GCC/ARM_CM0/port.c \
 			$${IDF_PATH}/components/freertos/port.c \
+			$${IDF_PATH}/components/freemodbus/port/port.c \
 			$${IDF_PATH}/components/tinyusb/tinyusb/lib/FreeRTOS/Source/portable/GCC/ARM_CM4F/port.c \
 			$${IDF_PATH}/components/tinyusb/tinyusb/lib/FreeRTOS/Source/portable/GCC/ARM_CM3/port.c \
 			$${IDF_PATH}/components/tinyusb/tinyusb/lib/FreeRTOS/Source/portable/GCC/ARM_CM0/port.c \
 			$${IDF_PATH}/components/freertos/port.c \
-			$${IDF_PATH}/components/bt/bluedroid/stack/rfcomm/port_api.c \
-			$${IDF_PATH}/components/bt/bluedroid/stack/rfcomm/port_api.c \
-			$${IDF_PATH}/components/bt/bluedroid/stack/rfcomm/port_api.c \
-			$${IDF_PATH}/components/bt/bluedroid/stack/rfcomm/port_rfc.c \
-			$${IDF_PATH}/components/bt/bluedroid/stack/rfcomm/port_rfc.c \
-			$${IDF_PATH}/components/bt/bluedroid/stack/rfcomm/port_rfc.c \
-			$${IDF_PATH}/components/bt/bluedroid/stack/rfcomm/port_utils.c \
-			$${IDF_PATH}/components/bt/bluedroid/stack/rfcomm/port_utils.c \
-			$${IDF_PATH}/components/bt/bluedroid/stack/rfcomm/port_utils.c \
+			$${IDF_PATH}/components/freemodbus/port/port.c \
+			$${IDF_PATH}/components/bt/host/bluedroid/stack/rfcomm/port_api.c \
+			$${IDF_PATH}/components/bt/host/bluedroid/stack/rfcomm/port_api.c \
+			$${IDF_PATH}/components/bt/host/bluedroid/stack/rfcomm/port_api.c \
+			$${IDF_PATH}/components/bt/host/bluedroid/stack/rfcomm/port_rfc.c \
+			$${IDF_PATH}/components/bt/host/bluedroid/stack/rfcomm/port_rfc.c \
+			$${IDF_PATH}/components/bt/host/bluedroid/stack/rfcomm/port_rfc.c \
+			$${IDF_PATH}/components/bt/host/bluedroid/stack/rfcomm/port_utils.c \
+			$${IDF_PATH}/components/bt/host/bluedroid/stack/rfcomm/port_utils.c \
+			$${IDF_PATH}/components/bt/host/bluedroid/stack/rfcomm/port_utils.c \
+			$${IDF_PATH}/components/freemodbus/port/portevent.c \
+			$${IDF_PATH}/components/freemodbus/port/portevent.c \
+			$${IDF_PATH}/components/freemodbus/port/portevent.c \
+			$${IDF_PATH}/components/freemodbus/port/portevent_m.c \
+			$${IDF_PATH}/components/freemodbus/port/portevent_m.c \
+			$${IDF_PATH}/components/freemodbus/port/portevent_m.c \
+			$${IDF_PATH}/components/freemodbus/port/portother.c \
+			$${IDF_PATH}/components/freemodbus/port/portother.c \
+			$${IDF_PATH}/components/freemodbus/port/portother.c \
+			$${IDF_PATH}/components/freemodbus/port/portother_m.c \
+			$${IDF_PATH}/components/freemodbus/port/portother_m.c \
+			$${IDF_PATH}/components/freemodbus/port/portother_m.c \
+			$${IDF_PATH}/components/freemodbus/port/portserial.c \
+			$${IDF_PATH}/components/freemodbus/port/portserial.c \
+			$${IDF_PATH}/components/freemodbus/port/portserial.c \
+			$${IDF_PATH}/components/freemodbus/port/portserial_m.c \
+			$${IDF_PATH}/components/freemodbus/port/portserial_m.c \
+			$${IDF_PATH}/components/freemodbus/port/portserial_m.c \
+			$${IDF_PATH}/components/freemodbus/port/porttimer.c \
+			$${IDF_PATH}/components/freemodbus/port/porttimer.c \
+			$${IDF_PATH}/components/freemodbus/port/porttimer.c \
+			$${IDF_PATH}/components/freemodbus/port/porttimer_m.c \
+			$${IDF_PATH}/components/freemodbus/port/porttimer_m.c \
+			$${IDF_PATH}/components/freemodbus/port/porttimer_m.c \
+			$${IDF_PATH}/components/asio/asio/asio/src/examples/cpp03/chat/posix_chat_client.cpp \
 			$${IDF_PATH}/components/asio/asio/asio/src/examples/cpp03/chat/posix_chat_client.cpp \
 			$${IDF_PATH}/components/asio/asio/asio/src/examples/cpp03/chat/posix_chat_client.cpp \
 			$${IDF_PATH}/components/asio/asio/asio/src/tests/unit/post.cpp \
 			$${IDF_PATH}/components/asio/asio/asio/src/tests/unit/post.cpp \
-			$${IDF_PATH}/components/lwip/netif/ppp/ppp.c \
+			$${IDF_PATH}/components/asio/asio/asio/src/tests/unit/post.cpp \
 			$${IDF_PATH}/components/lwip/lwip/src/netif/ppp/ppp.c \
-			$${IDF_PATH}/components/lwip/netif/ppp/ppp.c \
 			$${IDF_PATH}/components/lwip/lwip/src/netif/ppp/ppp.c \
-			$${IDF_PATH}/components/lwip/netif/ppp/ppp.c \
 			$${IDF_PATH}/components/lwip/lwip/src/netif/ppp/ppp.c \
 			$${IDF_PATH}/components/lwip/lwip/src/netif/ppp/pppapi.c \
-			$${IDF_PATH}/components/lwip/api/pppapi.c \
 			$${IDF_PATH}/components/lwip/lwip/src/netif/ppp/pppapi.c \
-			$${IDF_PATH}/components/lwip/api/pppapi.c \
 			$${IDF_PATH}/components/lwip/lwip/src/netif/ppp/pppapi.c \
-			$${IDF_PATH}/components/lwip/api/pppapi.c \
-			$${IDF_PATH}/components/lwip/netif/ppp/pppcrypt.c \
 			$${IDF_PATH}/components/lwip/lwip/src/netif/ppp/pppcrypt.c \
-			$${IDF_PATH}/components/lwip/netif/ppp/pppcrypt.c \
 			$${IDF_PATH}/components/lwip/lwip/src/netif/ppp/pppcrypt.c \
-			$${IDF_PATH}/components/lwip/netif/ppp/pppcrypt.c \
 			$${IDF_PATH}/components/lwip/lwip/src/netif/ppp/pppcrypt.c \
-			$${IDF_PATH}/components/lwip/netif/ppp/pppoe.c \
 			$${IDF_PATH}/components/lwip/lwip/src/netif/ppp/pppoe.c \
-			$${IDF_PATH}/components/lwip/netif/ppp/pppoe.c \
 			$${IDF_PATH}/components/lwip/lwip/src/netif/ppp/pppoe.c \
-			$${IDF_PATH}/components/lwip/netif/ppp/pppoe.c \
 			$${IDF_PATH}/components/lwip/lwip/src/netif/ppp/pppoe.c \
-			$${IDF_PATH}/components/lwip/netif/ppp/pppol2tp.c \
 			$${IDF_PATH}/components/lwip/lwip/src/netif/ppp/pppol2tp.c \
-			$${IDF_PATH}/components/lwip/netif/ppp/pppol2tp.c \
 			$${IDF_PATH}/components/lwip/lwip/src/netif/ppp/pppol2tp.c \
-			$${IDF_PATH}/components/lwip/netif/ppp/pppol2tp.c \
 			$${IDF_PATH}/components/lwip/lwip/src/netif/ppp/pppol2tp.c \
-			$${IDF_PATH}/components/lwip/netif/ppp/pppos.c \
 			$${IDF_PATH}/components/lwip/lwip/src/netif/ppp/pppos.c \
-			$${IDF_PATH}/components/lwip/netif/ppp/pppos.c \
 			$${IDF_PATH}/components/lwip/lwip/src/netif/ppp/pppos.c \
-			$${IDF_PATH}/components/lwip/netif/ppp/pppos.c \
 			$${IDF_PATH}/components/lwip/lwip/src/netif/ppp/pppos.c \
+			$${IDF_PATH}/components/newlib/pread.c \
+			$${IDF_PATH}/components/newlib/pread.c \
+			$${IDF_PATH}/components/newlib/pread.c \
 			$${IDF_PATH}/components/coap/libcoap/ext/tinydtls/tests/prf-test.c \
 			$${IDF_PATH}/components/coap/libcoap/ext/tinydtls/tests/prf-test.c \
 			$${IDF_PATH}/components/coap/libcoap/ext/tinydtls/tests/prf-test.c \
@@ -4931,6 +5683,10 @@
 			$${IDF_PATH}/components/asio/asio/asio/src/examples/cpp03/invocation/prioritised_handlers.cpp \
 			$${IDF_PATH}/components/asio/asio/asio/src/examples/cpp11/invocation/prioritised_handlers.cpp \
 			$${IDF_PATH}/components/asio/asio/asio/src/examples/cpp03/invocation/prioritised_handlers.cpp \
+			$${IDF_PATH}/components/asio/asio/asio/src/examples/cpp11/invocation/prioritised_handlers.cpp \
+			$${IDF_PATH}/components/asio/asio/asio/src/examples/cpp03/invocation/prioritised_handlers.cpp \
+			$${IDF_PATH}/components/asio/asio/asio/src/examples/cpp14/executors/priority_scheduler.cpp \
+			$${IDF_PATH}/components/asio/asio/asio/src/examples/cpp11/executors/priority_scheduler.cpp \
 			$${IDF_PATH}/components/asio/asio/asio/src/examples/cpp14/executors/priority_scheduler.cpp \
 			$${IDF_PATH}/components/asio/asio/asio/src/examples/cpp11/executors/priority_scheduler.cpp \
 			$${IDF_PATH}/components/asio/asio/asio/src/examples/cpp14/executors/priority_scheduler.cpp \
@@ -4948,17 +5704,53 @@
 			$${IDF_PATH}/components/asio/asio/asio/src/examples/cpp03/fork/process_per_connection.cpp \
 			$${IDF_PATH}/components/asio/asio/asio/src/examples/cpp11/fork/process_per_connection.cpp \
 			$${IDF_PATH}/components/asio/asio/asio/src/examples/cpp03/fork/process_per_connection.cpp \
+			$${IDF_PATH}/components/asio/asio/asio/src/examples/cpp11/fork/process_per_connection.cpp \
+			$${IDF_PATH}/components/asio/asio/asio/src/examples/cpp03/fork/process_per_connection.cpp \
 			$${IDF_PATH}/components/protobuf-c/protobuf-c/protobuf-c/protobuf-c.c \
 			$${IDF_PATH}/components/protobuf-c/protobuf-c/protobuf-c/protobuf-c.c \
+			$${IDF_PATH}/components/protobuf-c/protobuf-c/protobuf-c/protobuf-c.c \
+			$${IDF_PATH}/components/protocomm/src/common/protocomm.c \
+			$${IDF_PATH}/components/protocomm/src/common/protocomm.c \
+			$${IDF_PATH}/components/protocomm/src/common/protocomm.c \
+			$${IDF_PATH}/components/protocomm/src/transports/protocomm_ble.c \
+			$${IDF_PATH}/components/protocomm/src/transports/protocomm_ble.c \
+			$${IDF_PATH}/components/protocomm/src/transports/protocomm_ble.c \
+			$${IDF_PATH}/components/protocomm/src/transports/protocomm_console.c \
+			$${IDF_PATH}/components/protocomm/src/transports/protocomm_console.c \
+			$${IDF_PATH}/components/protocomm/src/transports/protocomm_console.c \
+			$${IDF_PATH}/components/protocomm/src/transports/protocomm_httpd.c \
+			$${IDF_PATH}/components/protocomm/src/transports/protocomm_httpd.c \
+			$${IDF_PATH}/components/protocomm/src/transports/protocomm_httpd.c \
+			$${IDF_PATH}/components/protocomm/src/transports/protocomm_nimble.c \
+			$${IDF_PATH}/components/protocomm/src/transports/protocomm_nimble.c \
+			$${IDF_PATH}/components/protocomm/src/transports/protocomm_nimble.c \
 			$${IDF_PATH}/components/bt/host/nimble/nimble/nimble/host/mesh/src/prov.c \
+			$${IDF_PATH}/components/bt/esp_ble_mesh/mesh_core/prov.c \
 			$${IDF_PATH}/components/bt/host/nimble/nimble/nimble/host/mesh/src/prov.c \
+			$${IDF_PATH}/components/bt/esp_ble_mesh/mesh_core/prov.c \
 			$${IDF_PATH}/components/bt/host/nimble/nimble/nimble/host/mesh/src/prov.c \
+			$${IDF_PATH}/components/bt/esp_ble_mesh/mesh_core/prov.c \
+			$${IDF_PATH}/components/bt/esp_ble_mesh/mesh_core/provisioner_main.c \
+			$${IDF_PATH}/components/bt/esp_ble_mesh/mesh_core/provisioner_main.c \
+			$${IDF_PATH}/components/bt/esp_ble_mesh/mesh_core/provisioner_main.c \
+			$${IDF_PATH}/components/bt/esp_ble_mesh/mesh_core/provisioner_prov.c \
+			$${IDF_PATH}/components/bt/esp_ble_mesh/mesh_core/provisioner_prov.c \
+			$${IDF_PATH}/components/bt/esp_ble_mesh/mesh_core/provisioner_prov.c \
 			$${IDF_PATH}/components/bt/host/nimble/nimble/nimble/host/mesh/src/proxy.c \
 			$${IDF_PATH}/components/bt/host/nimble/nimble/nimble/host/mesh/src/proxy.c \
 			$${IDF_PATH}/components/bt/host/nimble/nimble/nimble/host/mesh/src/proxy.c \
+			$${IDF_PATH}/components/bt/esp_ble_mesh/mesh_core/proxy_client.c \
+			$${IDF_PATH}/components/bt/esp_ble_mesh/mesh_core/proxy_client.c \
+			$${IDF_PATH}/components/bt/esp_ble_mesh/mesh_core/proxy_client.c \
+			$${IDF_PATH}/components/bt/esp_ble_mesh/mesh_core/proxy_server.c \
+			$${IDF_PATH}/components/bt/esp_ble_mesh/mesh_core/proxy_server.c \
+			$${IDF_PATH}/components/bt/esp_ble_mesh/mesh_core/proxy_server.c \
 			$${IDF_PATH}/components/pthread/pthread.c \
+			$${IDF_PATH}/components/newlib/pthread.c \
 			$${IDF_PATH}/components/pthread/pthread.c \
+			$${IDF_PATH}/components/newlib/pthread.c \
 			$${IDF_PATH}/components/pthread/pthread.c \
+			$${IDF_PATH}/components/newlib/pthread.c \
 			$${IDF_PATH}/components/pthread/pthread_cond_var.c \
 			$${IDF_PATH}/components/pthread/pthread_cond_var.c \
 			$${IDF_PATH}/components/pthread/pthread_cond_var.c \
@@ -4989,16 +5781,30 @@
 			$${IDF_PATH}/components/libsodium/libsodium/src/libsodium/crypto_pwhash/scryptsalsa208sha256/sse/pwhash_scryptsalsa208sha256_sse.c \
 			$${IDF_PATH}/components/libsodium/libsodium/src/libsodium/crypto_pwhash/scryptsalsa208sha256/sse/pwhash_scryptsalsa208sha256_sse.c \
 			$${IDF_PATH}/components/libsodium/libsodium/src/libsodium/crypto_pwhash/scryptsalsa208sha256/sse/pwhash_scryptsalsa208sha256_sse.c \
+			$${IDF_PATH}/components/newlib/pwrite.c \
+			$${IDF_PATH}/components/newlib/pwrite.c \
+			$${IDF_PATH}/components/newlib/pwrite.c \
+			$${IDF_PATH}/components/mbedtls/mbedtls/programs/test/query_compile_time_config.c \
+			$${IDF_PATH}/components/mbedtls/mbedtls/programs/test/query_compile_time_config.c \
+			$${IDF_PATH}/components/mbedtls/mbedtls/programs/test/query_compile_time_config.c \
+			$${IDF_PATH}/components/mbedtls/mbedtls/programs/ssl/query_config.c \
+			$${IDF_PATH}/components/mbedtls/mbedtls/programs/ssl/query_config.c \
+			$${IDF_PATH}/components/mbedtls/mbedtls/programs/ssl/query_config.c \
 			$${IDF_PATH}/components/freertos/queue.c \
 			$${IDF_PATH}/components/tinyusb/tinyusb/lib/FreeRTOS/Source/queue.c \
 			$${IDF_PATH}/components/freertos/queue.c \
 			$${IDF_PATH}/components/tinyusb/tinyusb/lib/FreeRTOS/Source/queue.c \
 			$${IDF_PATH}/components/freertos/queue.c \
 			$${IDF_PATH}/components/nghttp/nghttp2/third-party/mruby/mrbgems/mruby-random/src/random.c \
+			$${IDF_PATH}/components/newlib/random.c \
 			$${IDF_PATH}/components/nghttp/nghttp2/third-party/mruby/mrbgems/mruby-random/src/random.c \
+			$${IDF_PATH}/components/newlib/random.c \
 			$${IDF_PATH}/components/nghttp/nghttp2/third-party/mruby/mrbgems/mruby-random/src/random.c \
+			$${IDF_PATH}/components/newlib/random.c \
 			$${IDF_PATH}/components/asio/asio/asio/src/tests/unit/windows/random_access_handle.cpp \
 			$${IDF_PATH}/components/asio/asio/asio/src/tests/unit/windows/random_access_handle.cpp \
+			$${IDF_PATH}/components/asio/asio/asio/src/tests/unit/windows/random_access_handle.cpp \
+			$${IDF_PATH}/components/asio/asio/asio/src/tests/unit/windows/random_access_handle_service.cpp \
 			$${IDF_PATH}/components/asio/asio/asio/src/tests/unit/windows/random_access_handle_service.cpp \
 			$${IDF_PATH}/components/asio/asio/asio/src/tests/unit/windows/random_access_handle_service.cpp \
 			$${IDF_PATH}/components/libsodium/libsodium/test/default/randombytes.c \
@@ -5027,14 +5833,14 @@
 			$${IDF_PATH}/components/nghttp/nghttp2/third-party/mruby/mrbgems/mruby-range-ext/src/range.c \
 			$${IDF_PATH}/components/asio/asio/asio/src/examples/cpp17/coroutines_ts/range_based_for.cpp \
 			$${IDF_PATH}/components/asio/asio/asio/src/examples/cpp17/coroutines_ts/range_based_for.cpp \
+			$${IDF_PATH}/components/asio/asio/asio/src/examples/cpp17/coroutines_ts/range_based_for.cpp \
 			$${IDF_PATH}/components/lwip/lwip/src/core/raw.c \
-			$${IDF_PATH}/components/lwip/core/raw.c \
 			$${IDF_PATH}/components/lwip/lwip/src/core/raw.c \
-			$${IDF_PATH}/components/lwip/core/raw.c \
 			$${IDF_PATH}/components/lwip/lwip/src/core/raw.c \
-			$${IDF_PATH}/components/lwip/core/raw.c \
 			$${IDF_PATH}/components/asio/asio/asio/src/tests/unit/generic/raw_protocol.cpp \
 			$${IDF_PATH}/components/asio/asio/asio/src/tests/unit/generic/raw_protocol.cpp \
+			$${IDF_PATH}/components/asio/asio/asio/src/tests/unit/generic/raw_protocol.cpp \
+			$${IDF_PATH}/components/asio/asio/asio/src/tests/unit/raw_socket_service.cpp \
 			$${IDF_PATH}/components/asio/asio/asio/src/tests/unit/raw_socket_service.cpp \
 			$${IDF_PATH}/components/asio/asio/asio/src/tests/unit/raw_socket_service.cpp \
 			$${IDF_PATH}/components/wpa_supplicant/src/crypto/rc4.c \
@@ -5042,8 +5848,11 @@
 			$${IDF_PATH}/components/wpa_supplicant/src/crypto/rc4.c \
 			$${IDF_PATH}/components/asio/asio/asio/src/tests/unit/read.cpp \
 			$${IDF_PATH}/components/asio/asio/asio/src/tests/unit/read.cpp \
+			$${IDF_PATH}/components/asio/asio/asio/src/tests/unit/read.cpp \
 			$${IDF_PATH}/components/asio/asio/asio/src/tests/unit/read_at.cpp \
 			$${IDF_PATH}/components/asio/asio/asio/src/tests/unit/read_at.cpp \
+			$${IDF_PATH}/components/asio/asio/asio/src/tests/unit/read_at.cpp \
+			$${IDF_PATH}/components/asio/asio/asio/src/tests/unit/read_until.cpp \
 			$${IDF_PATH}/components/asio/asio/asio/src/tests/unit/read_until.cpp \
 			$${IDF_PATH}/components/asio/asio/asio/src/tests/unit/read_until.cpp \
 			$${IDF_PATH}/components/expat/expat/expat/xmlwf/readfilemap.c \
@@ -5056,15 +5865,25 @@
 			$${IDF_PATH}/components/asio/asio/asio/src/examples/cpp03/multicast/receiver.cpp \
 			$${IDF_PATH}/components/asio/asio/asio/src/examples/cpp11/multicast/receiver.cpp \
 			$${IDF_PATH}/components/asio/asio/asio/src/examples/cpp03/multicast/receiver.cpp \
+			$${IDF_PATH}/components/asio/asio/asio/src/examples/cpp11/multicast/receiver.cpp \
+			$${IDF_PATH}/components/asio/asio/asio/src/examples/cpp03/multicast/receiver.cpp \
 			$${IDF_PATH}/components/newlib/reent_init.c \
 			$${IDF_PATH}/components/newlib/reent_init.c \
 			$${IDF_PATH}/components/newlib/reent_init.c \
+			$${IDF_PATH}/components/asio/asio/asio/src/examples/cpp17/coroutines_ts/refactored_echo_server.cpp \
 			$${IDF_PATH}/components/asio/asio/asio/src/examples/cpp17/coroutines_ts/refactored_echo_server.cpp \
 			$${IDF_PATH}/components/asio/asio/asio/src/examples/cpp17/coroutines_ts/refactored_echo_server.cpp \
 			$${IDF_PATH}/components/asio/asio/asio/src/examples/cpp11/buffers/reference_counted.cpp \
 			$${IDF_PATH}/components/asio/asio/asio/src/examples/cpp03/buffers/reference_counted.cpp \
 			$${IDF_PATH}/components/asio/asio/asio/src/examples/cpp11/buffers/reference_counted.cpp \
 			$${IDF_PATH}/components/asio/asio/asio/src/examples/cpp03/buffers/reference_counted.cpp \
+			$${IDF_PATH}/components/asio/asio/asio/src/examples/cpp11/buffers/reference_counted.cpp \
+			$${IDF_PATH}/components/asio/asio/asio/src/examples/cpp03/buffers/reference_counted.cpp \
+			$${IDF_PATH}/components/asio/asio/asio/src/examples/cpp11/http/server/reply.cpp \
+			$${IDF_PATH}/components/asio/asio/asio/src/examples/cpp03/http/server4/reply.cpp \
+			$${IDF_PATH}/components/asio/asio/asio/src/examples/cpp03/http/server3/reply.cpp \
+			$${IDF_PATH}/components/asio/asio/asio/src/examples/cpp03/http/server2/reply.cpp \
+			$${IDF_PATH}/components/asio/asio/asio/src/examples/cpp03/http/server/reply.cpp \
 			$${IDF_PATH}/components/asio/asio/asio/src/examples/cpp11/http/server/reply.cpp \
 			$${IDF_PATH}/components/asio/asio/asio/src/examples/cpp03/http/server4/reply.cpp \
 			$${IDF_PATH}/components/asio/asio/asio/src/examples/cpp03/http/server3/reply.cpp \
@@ -5086,6 +5905,10 @@
 			$${IDF_PATH}/components/asio/asio/asio/src/examples/cpp03/http/server3/request_handler.cpp \
 			$${IDF_PATH}/components/asio/asio/asio/src/examples/cpp03/http/server2/request_handler.cpp \
 			$${IDF_PATH}/components/asio/asio/asio/src/examples/cpp03/http/server/request_handler.cpp \
+			$${IDF_PATH}/components/asio/asio/asio/src/examples/cpp11/http/server/request_handler.cpp \
+			$${IDF_PATH}/components/asio/asio/asio/src/examples/cpp03/http/server3/request_handler.cpp \
+			$${IDF_PATH}/components/asio/asio/asio/src/examples/cpp03/http/server2/request_handler.cpp \
+			$${IDF_PATH}/components/asio/asio/asio/src/examples/cpp03/http/server/request_handler.cpp \
 			$${IDF_PATH}/components/asio/asio/asio/src/examples/cpp11/http/server/request_parser.cpp \
 			$${IDF_PATH}/components/asio/asio/asio/src/examples/cpp03/http/server4/request_parser.cpp \
 			$${IDF_PATH}/components/asio/asio/asio/src/examples/cpp03/http/server3/request_parser.cpp \
@@ -5096,42 +5919,50 @@
 			$${IDF_PATH}/components/asio/asio/asio/src/examples/cpp03/http/server3/request_parser.cpp \
 			$${IDF_PATH}/components/asio/asio/asio/src/examples/cpp03/http/server2/request_parser.cpp \
 			$${IDF_PATH}/components/asio/asio/asio/src/examples/cpp03/http/server/request_parser.cpp \
+			$${IDF_PATH}/components/asio/asio/asio/src/examples/cpp11/http/server/request_parser.cpp \
+			$${IDF_PATH}/components/asio/asio/asio/src/examples/cpp03/http/server4/request_parser.cpp \
+			$${IDF_PATH}/components/asio/asio/asio/src/examples/cpp03/http/server3/request_parser.cpp \
+			$${IDF_PATH}/components/asio/asio/asio/src/examples/cpp03/http/server2/request_parser.cpp \
+			$${IDF_PATH}/components/asio/asio/asio/src/examples/cpp03/http/server/request_parser.cpp \
+			$${IDF_PATH}/components/esp32/reset_reason.c \
+			$${IDF_PATH}/components/esp32/reset_reason.c \
+			$${IDF_PATH}/components/esp32/reset_reason.c \
+			$${IDF_PATH}/components/asio/asio/asio/src/tests/unit/ip/resolver_query_base.cpp \
 			$${IDF_PATH}/components/asio/asio/asio/src/tests/unit/ip/resolver_query_base.cpp \
 			$${IDF_PATH}/components/asio/asio/asio/src/tests/unit/ip/resolver_query_base.cpp \
 			$${IDF_PATH}/components/asio/asio/asio/src/tests/unit/ip/resolver_service.cpp \
 			$${IDF_PATH}/components/asio/asio/asio/src/tests/unit/ip/resolver_service.cpp \
+			$${IDF_PATH}/components/asio/asio/asio/src/tests/unit/ip/resolver_service.cpp \
 			$${IDF_PATH}/components/coap/libcoap/src/resource.c \
 			$${IDF_PATH}/components/coap/libcoap/src/resource.c \
 			$${IDF_PATH}/components/coap/libcoap/src/resource.c \
-			$${IDF_PATH}/components/esp32/restore.c \
-			$${IDF_PATH}/components/esp32/restore.c \
-			$${IDF_PATH}/components/esp32/restore.c \
 			$${IDF_PATH}/components/asio/asio/asio/src/tests/unit/ssl/rfc2818_verification.cpp \
 			$${IDF_PATH}/components/asio/asio/asio/src/tests/unit/ssl/rfc2818_verification.cpp \
-			$${IDF_PATH}/components/bt/bluedroid/stack/rfcomm/rfc_l2cap_if.c \
-			$${IDF_PATH}/components/bt/bluedroid/stack/rfcomm/rfc_l2cap_if.c \
-			$${IDF_PATH}/components/bt/bluedroid/stack/rfcomm/rfc_l2cap_if.c \
-			$${IDF_PATH}/components/bt/bluedroid/stack/rfcomm/rfc_mx_fsm.c \
-			$${IDF_PATH}/components/bt/bluedroid/stack/rfcomm/rfc_mx_fsm.c \
-			$${IDF_PATH}/components/bt/bluedroid/stack/rfcomm/rfc_mx_fsm.c \
-			$${IDF_PATH}/components/bt/bluedroid/stack/rfcomm/rfc_port_fsm.c \
-			$${IDF_PATH}/components/bt/bluedroid/stack/rfcomm/rfc_port_fsm.c \
-			$${IDF_PATH}/components/bt/bluedroid/stack/rfcomm/rfc_port_fsm.c \
-			$${IDF_PATH}/components/bt/bluedroid/stack/rfcomm/rfc_port_if.c \
-			$${IDF_PATH}/components/bt/bluedroid/stack/rfcomm/rfc_port_if.c \
-			$${IDF_PATH}/components/bt/bluedroid/stack/rfcomm/rfc_port_if.c \
-			$${IDF_PATH}/components/bt/bluedroid/stack/rfcomm/rfc_ts_frames.c \
-			$${IDF_PATH}/components/bt/bluedroid/stack/rfcomm/rfc_ts_frames.c \
-			$${IDF_PATH}/components/bt/bluedroid/stack/rfcomm/rfc_ts_frames.c \
-			$${IDF_PATH}/components/bt/bluedroid/stack/rfcomm/rfc_utils.c \
-			$${IDF_PATH}/components/bt/bluedroid/stack/rfcomm/rfc_utils.c \
-			$${IDF_PATH}/components/bt/bluedroid/stack/rfcomm/rfc_utils.c \
+			$${IDF_PATH}/components/asio/asio/asio/src/tests/unit/ssl/rfc2818_verification.cpp \
+			$${IDF_PATH}/components/bt/host/bluedroid/stack/rfcomm/rfc_l2cap_if.c \
+			$${IDF_PATH}/components/bt/host/bluedroid/stack/rfcomm/rfc_l2cap_if.c \
+			$${IDF_PATH}/components/bt/host/bluedroid/stack/rfcomm/rfc_l2cap_if.c \
+			$${IDF_PATH}/components/bt/host/bluedroid/stack/rfcomm/rfc_mx_fsm.c \
+			$${IDF_PATH}/components/bt/host/bluedroid/stack/rfcomm/rfc_mx_fsm.c \
+			$${IDF_PATH}/components/bt/host/bluedroid/stack/rfcomm/rfc_mx_fsm.c \
+			$${IDF_PATH}/components/bt/host/bluedroid/stack/rfcomm/rfc_port_fsm.c \
+			$${IDF_PATH}/components/bt/host/bluedroid/stack/rfcomm/rfc_port_fsm.c \
+			$${IDF_PATH}/components/bt/host/bluedroid/stack/rfcomm/rfc_port_fsm.c \
+			$${IDF_PATH}/components/bt/host/bluedroid/stack/rfcomm/rfc_port_if.c \
+			$${IDF_PATH}/components/bt/host/bluedroid/stack/rfcomm/rfc_port_if.c \
+			$${IDF_PATH}/components/bt/host/bluedroid/stack/rfcomm/rfc_port_if.c \
+			$${IDF_PATH}/components/bt/host/bluedroid/stack/rfcomm/rfc_ts_frames.c \
+			$${IDF_PATH}/components/bt/host/bluedroid/stack/rfcomm/rfc_ts_frames.c \
+			$${IDF_PATH}/components/bt/host/bluedroid/stack/rfcomm/rfc_ts_frames.c \
+			$${IDF_PATH}/components/bt/host/bluedroid/stack/rfcomm/rfc_utils.c \
+			$${IDF_PATH}/components/bt/host/bluedroid/stack/rfcomm/rfc_utils.c \
+			$${IDF_PATH}/components/bt/host/bluedroid/stack/rfcomm/rfc_utils.c \
 			$${IDF_PATH}/components/coap/libcoap/ext/tinydtls/aes/rijndael.c \
 			$${IDF_PATH}/components/coap/libcoap/ext/tinydtls/aes/rijndael.c \
 			$${IDF_PATH}/components/coap/libcoap/ext/tinydtls/aes/rijndael.c \
-			$${IDF_PATH}/components/freertos/ringbuf.c \
-			$${IDF_PATH}/components/freertos/ringbuf.c \
-			$${IDF_PATH}/components/freertos/ringbuf.c \
+			$${IDF_PATH}/components/esp_ringbuf/ringbuf.c \
+			$${IDF_PATH}/components/esp_ringbuf/ringbuf.c \
+			$${IDF_PATH}/components/esp_ringbuf/ringbuf.c \
 			$${IDF_PATH}/components/mbedtls/mbedtls/library/ripemd160.c \
 			$${IDF_PATH}/components/mbedtls/mbedtls/library/ripemd160.c \
 			$${IDF_PATH}/components/mbedtls/mbedtls/library/ripemd160.c \
@@ -5140,11 +5971,11 @@
 			$${IDF_PATH}/components/driver/rmt.c \
 			$${IDF_PATH}/components/tinyusb/tinyusb/examples/obsolete/host/src/rndis_host_app.c \
 			$${IDF_PATH}/components/tinyusb/tinyusb/examples/obsolete/host/src/rndis_host_app.c \
-			$${IDF_PATH}/components/wpa_supplicant/src/wpa2/tls/rsa.c \
+			$${IDF_PATH}/components/wpa_supplicant/src/tls/rsa.c \
 			$${IDF_PATH}/components/mbedtls/mbedtls/library/rsa.c \
-			$${IDF_PATH}/components/wpa_supplicant/src/wpa2/tls/rsa.c \
+			$${IDF_PATH}/components/wpa_supplicant/src/tls/rsa.c \
 			$${IDF_PATH}/components/mbedtls/mbedtls/library/rsa.c \
-			$${IDF_PATH}/components/wpa_supplicant/src/wpa2/tls/rsa.c \
+			$${IDF_PATH}/components/wpa_supplicant/src/tls/rsa.c \
 			$${IDF_PATH}/components/mbedtls/mbedtls/library/rsa.c \
 			$${IDF_PATH}/components/mbedtls/mbedtls/programs/pkey/rsa_decrypt.c \
 			$${IDF_PATH}/components/mbedtls/mbedtls/programs/pkey/rsa_decrypt.c \
@@ -5173,6 +6004,9 @@
 			$${IDF_PATH}/components/soc/esp32/rtc_clk.c \
 			$${IDF_PATH}/components/soc/esp32/rtc_clk.c \
 			$${IDF_PATH}/components/soc/esp32/rtc_clk.c \
+			$${IDF_PATH}/components/soc/esp32/rtc_clk_init.c \
+			$${IDF_PATH}/components/soc/esp32/rtc_clk_init.c \
+			$${IDF_PATH}/components/soc/esp32/rtc_clk_init.c \
 			$${IDF_PATH}/components/soc/esp32/rtc_init.c \
 			$${IDF_PATH}/components/soc/esp32/rtc_init.c \
 			$${IDF_PATH}/components/soc/esp32/rtc_init.c \
@@ -5191,6 +6025,9 @@
 			$${IDF_PATH}/components/soc/esp32/rtc_time.c \
 			$${IDF_PATH}/components/soc/esp32/rtc_time.c \
 			$${IDF_PATH}/components/soc/esp32/rtc_time.c \
+			$${IDF_PATH}/components/soc/esp32/rtc_wdt.c \
+			$${IDF_PATH}/components/soc/esp32/rtc_wdt.c \
+			$${IDF_PATH}/components/soc/esp32/rtc_wdt.c \
 			$${IDF_PATH}/components/bt/host/nimble/nimble/apps/bttester/src/rtt_pipe.c \
 			$${IDF_PATH}/components/bt/host/nimble/nimble/apps/bttester/src/rtt_pipe.c \
 			$${IDF_PATH}/components/bt/host/nimble/nimble/apps/bttester/src/rtt_pipe.c \
@@ -5203,6 +6040,9 @@
 			$${IDF_PATH}/components/libsodium/libsodium/src/libsodium/sodium/runtime.c \
 			$${IDF_PATH}/components/libsodium/libsodium/src/libsodium/sodium/runtime.c \
 			$${IDF_PATH}/components/libsodium/libsodium/src/libsodium/sodium/runtime.c \
+			$${IDF_PATH}/components/wpa_supplicant/src/common/sae.c \
+			$${IDF_PATH}/components/wpa_supplicant/src/common/sae.c \
+			$${IDF_PATH}/components/wpa_supplicant/src/common/sae.c \
 			$${IDF_PATH}/components/libsodium/libsodium/src/libsodium/crypto_stream/salsa20/ref/salsa20_ref.c \
 			$${IDF_PATH}/components/libsodium/libsodium/src/libsodium/crypto_stream/salsa20/ref/salsa20_ref.c \
 			$${IDF_PATH}/components/libsodium/libsodium/src/libsodium/crypto_stream/salsa20/ref/salsa20_ref.c \
@@ -5215,30 +6055,33 @@
 			$${IDF_PATH}/components/libsodium/libsodium/src/libsodium/crypto_stream/salsa20/xmm6int/salsa20_xmm6int-sse2.c \
 			$${IDF_PATH}/components/libsodium/libsodium/src/libsodium/crypto_stream/salsa20/xmm6int/salsa20_xmm6int-sse2.c \
 			$${IDF_PATH}/components/libsodium/libsodium/src/libsodium/crypto_stream/salsa20/xmm6int/salsa20_xmm6int-sse2.c \
-			$${IDF_PATH}/components/bt/bluedroid/external/sbc/encoder/srce/sbc_analysis.c \
-			$${IDF_PATH}/components/bt/bluedroid/external/sbc/encoder/srce/sbc_analysis.c \
-			$${IDF_PATH}/components/bt/bluedroid/external/sbc/encoder/srce/sbc_analysis.c \
-			$${IDF_PATH}/components/bt/bluedroid/external/sbc/encoder/srce/sbc_dct.c \
-			$${IDF_PATH}/components/bt/bluedroid/external/sbc/encoder/srce/sbc_dct.c \
-			$${IDF_PATH}/components/bt/bluedroid/external/sbc/encoder/srce/sbc_dct.c \
-			$${IDF_PATH}/components/bt/bluedroid/external/sbc/encoder/srce/sbc_dct_coeffs.c \
-			$${IDF_PATH}/components/bt/bluedroid/external/sbc/encoder/srce/sbc_dct_coeffs.c \
-			$${IDF_PATH}/components/bt/bluedroid/external/sbc/encoder/srce/sbc_dct_coeffs.c \
-			$${IDF_PATH}/components/bt/bluedroid/external/sbc/encoder/srce/sbc_enc_bit_alloc_mono.c \
-			$${IDF_PATH}/components/bt/bluedroid/external/sbc/encoder/srce/sbc_enc_bit_alloc_mono.c \
-			$${IDF_PATH}/components/bt/bluedroid/external/sbc/encoder/srce/sbc_enc_bit_alloc_mono.c \
-			$${IDF_PATH}/components/bt/bluedroid/external/sbc/encoder/srce/sbc_enc_bit_alloc_ste.c \
-			$${IDF_PATH}/components/bt/bluedroid/external/sbc/encoder/srce/sbc_enc_bit_alloc_ste.c \
-			$${IDF_PATH}/components/bt/bluedroid/external/sbc/encoder/srce/sbc_enc_bit_alloc_ste.c \
-			$${IDF_PATH}/components/bt/bluedroid/external/sbc/encoder/srce/sbc_enc_coeffs.c \
-			$${IDF_PATH}/components/bt/bluedroid/external/sbc/encoder/srce/sbc_enc_coeffs.c \
-			$${IDF_PATH}/components/bt/bluedroid/external/sbc/encoder/srce/sbc_enc_coeffs.c \
-			$${IDF_PATH}/components/bt/bluedroid/external/sbc/encoder/srce/sbc_encoder.c \
-			$${IDF_PATH}/components/bt/bluedroid/external/sbc/encoder/srce/sbc_encoder.c \
-			$${IDF_PATH}/components/bt/bluedroid/external/sbc/encoder/srce/sbc_encoder.c \
-			$${IDF_PATH}/components/bt/bluedroid/external/sbc/encoder/srce/sbc_packing.c \
-			$${IDF_PATH}/components/bt/bluedroid/external/sbc/encoder/srce/sbc_packing.c \
-			$${IDF_PATH}/components/bt/bluedroid/external/sbc/encoder/srce/sbc_packing.c \
+			$${IDF_PATH}/components/bt/host/bluedroid/external/sbc/encoder/srce/sbc_analysis.c \
+			$${IDF_PATH}/components/bt/host/bluedroid/external/sbc/encoder/srce/sbc_analysis.c \
+			$${IDF_PATH}/components/bt/host/bluedroid/external/sbc/encoder/srce/sbc_analysis.c \
+			$${IDF_PATH}/components/bt/host/bluedroid/external/sbc/encoder/srce/sbc_dct.c \
+			$${IDF_PATH}/components/bt/host/bluedroid/external/sbc/encoder/srce/sbc_dct.c \
+			$${IDF_PATH}/components/bt/host/bluedroid/external/sbc/encoder/srce/sbc_dct.c \
+			$${IDF_PATH}/components/bt/host/bluedroid/external/sbc/encoder/srce/sbc_dct_coeffs.c \
+			$${IDF_PATH}/components/bt/host/bluedroid/external/sbc/encoder/srce/sbc_dct_coeffs.c \
+			$${IDF_PATH}/components/bt/host/bluedroid/external/sbc/encoder/srce/sbc_dct_coeffs.c \
+			$${IDF_PATH}/components/bt/host/bluedroid/external/sbc/encoder/srce/sbc_enc_bit_alloc_mono.c \
+			$${IDF_PATH}/components/bt/host/bluedroid/external/sbc/encoder/srce/sbc_enc_bit_alloc_mono.c \
+			$${IDF_PATH}/components/bt/host/bluedroid/external/sbc/encoder/srce/sbc_enc_bit_alloc_mono.c \
+			$${IDF_PATH}/components/bt/host/bluedroid/external/sbc/encoder/srce/sbc_enc_bit_alloc_ste.c \
+			$${IDF_PATH}/components/bt/host/bluedroid/external/sbc/encoder/srce/sbc_enc_bit_alloc_ste.c \
+			$${IDF_PATH}/components/bt/host/bluedroid/external/sbc/encoder/srce/sbc_enc_bit_alloc_ste.c \
+			$${IDF_PATH}/components/bt/host/bluedroid/external/sbc/encoder/srce/sbc_enc_coeffs.c \
+			$${IDF_PATH}/components/bt/host/bluedroid/external/sbc/encoder/srce/sbc_enc_coeffs.c \
+			$${IDF_PATH}/components/bt/host/bluedroid/external/sbc/encoder/srce/sbc_enc_coeffs.c \
+			$${IDF_PATH}/components/bt/host/bluedroid/external/sbc/encoder/srce/sbc_encoder.c \
+			$${IDF_PATH}/components/bt/host/bluedroid/external/sbc/encoder/srce/sbc_encoder.c \
+			$${IDF_PATH}/components/bt/host/bluedroid/external/sbc/encoder/srce/sbc_encoder.c \
+			$${IDF_PATH}/components/bt/host/bluedroid/external/sbc/encoder/srce/sbc_packing.c \
+			$${IDF_PATH}/components/bt/host/bluedroid/external/sbc/encoder/srce/sbc_packing.c \
+			$${IDF_PATH}/components/bt/host/bluedroid/external/sbc/encoder/srce/sbc_packing.c \
+			$${IDF_PATH}/components/bt/host/bluedroid/external/sbc/plc/sbc_plc.c \
+			$${IDF_PATH}/components/bt/host/bluedroid/external/sbc/plc/sbc_plc.c \
+			$${IDF_PATH}/components/bt/host/bluedroid/external/sbc/plc/sbc_plc.c \
 			$${IDF_PATH}/components/libsodium/libsodium/test/default/scalarmult.c \
 			$${IDF_PATH}/components/libsodium/libsodium/test/default/scalarmult.c \
 			$${IDF_PATH}/components/libsodium/libsodium/test/default/scalarmult.c \
@@ -5257,39 +6100,69 @@
 			$${IDF_PATH}/components/libsodium/libsodium/src/libsodium/crypto_scalarmult/curve25519/scalarmult_curve25519.c \
 			$${IDF_PATH}/components/libsodium/libsodium/src/libsodium/crypto_scalarmult/curve25519/scalarmult_curve25519.c \
 			$${IDF_PATH}/components/libsodium/libsodium/src/libsodium/crypto_scalarmult/curve25519/scalarmult_curve25519.c \
+			$${IDF_PATH}/components/wifi_provisioning/src/scheme_ble.c \
+			$${IDF_PATH}/components/wifi_provisioning/src/scheme_ble.c \
+			$${IDF_PATH}/components/wifi_provisioning/src/scheme_ble.c \
+			$${IDF_PATH}/components/wifi_provisioning/src/scheme_console.c \
+			$${IDF_PATH}/components/wifi_provisioning/src/scheme_console.c \
+			$${IDF_PATH}/components/wifi_provisioning/src/scheme_console.c \
+			$${IDF_PATH}/components/wifi_provisioning/src/scheme_softap.c \
+			$${IDF_PATH}/components/wifi_provisioning/src/scheme_softap.c \
+			$${IDF_PATH}/components/wifi_provisioning/src/scheme_softap.c \
 			$${IDF_PATH}/components/libsodium/libsodium/src/libsodium/crypto_pwhash/scryptsalsa208sha256/scrypt_platform.c \
 			$${IDF_PATH}/components/libsodium/libsodium/src/libsodium/crypto_pwhash/scryptsalsa208sha256/scrypt_platform.c \
 			$${IDF_PATH}/components/libsodium/libsodium/src/libsodium/crypto_pwhash/scryptsalsa208sha256/scrypt_platform.c \
 			$${IDF_PATH}/components/driver/sdio_slave.c \
 			$${IDF_PATH}/components/driver/sdio_slave.c \
 			$${IDF_PATH}/components/driver/sdio_slave.c \
+			$${IDF_PATH}/components/soc/esp32/sdio_slave_periph.c \
+			$${IDF_PATH}/components/soc/esp32/sdio_slave_periph.c \
+			$${IDF_PATH}/components/soc/esp32/sdio_slave_periph.c \
 			$${IDF_PATH}/components/sdmmc/sdmmc_cmd.c \
 			$${IDF_PATH}/components/sdmmc/sdmmc_cmd.c \
 			$${IDF_PATH}/components/sdmmc/sdmmc_cmd.c \
+			$${IDF_PATH}/components/sdmmc/sdmmc_common.c \
+			$${IDF_PATH}/components/sdmmc/sdmmc_common.c \
+			$${IDF_PATH}/components/sdmmc/sdmmc_common.c \
 			$${IDF_PATH}/components/driver/sdmmc_host.c \
 			$${IDF_PATH}/components/driver/sdmmc_host.c \
 			$${IDF_PATH}/components/driver/sdmmc_host.c \
+			$${IDF_PATH}/components/sdmmc/sdmmc_init.c \
+			$${IDF_PATH}/components/sdmmc/sdmmc_init.c \
+			$${IDF_PATH}/components/sdmmc/sdmmc_init.c \
+			$${IDF_PATH}/components/sdmmc/sdmmc_io.c \
+			$${IDF_PATH}/components/sdmmc/sdmmc_io.c \
+			$${IDF_PATH}/components/sdmmc/sdmmc_io.c \
+			$${IDF_PATH}/components/sdmmc/sdmmc_mmc.c \
+			$${IDF_PATH}/components/sdmmc/sdmmc_mmc.c \
+			$${IDF_PATH}/components/sdmmc/sdmmc_mmc.c \
+			$${IDF_PATH}/components/soc/esp32/sdmmc_periph.c \
+			$${IDF_PATH}/components/soc/esp32/sdmmc_periph.c \
+			$${IDF_PATH}/components/soc/esp32/sdmmc_periph.c \
+			$${IDF_PATH}/components/sdmmc/sdmmc_sd.c \
+			$${IDF_PATH}/components/sdmmc/sdmmc_sd.c \
+			$${IDF_PATH}/components/sdmmc/sdmmc_sd.c \
 			$${IDF_PATH}/components/driver/sdmmc_transaction.c \
 			$${IDF_PATH}/components/driver/sdmmc_transaction.c \
 			$${IDF_PATH}/components/driver/sdmmc_transaction.c \
-			$${IDF_PATH}/components/bt/bluedroid/stack/sdp/sdp_api.c \
-			$${IDF_PATH}/components/bt/bluedroid/stack/sdp/sdp_api.c \
-			$${IDF_PATH}/components/bt/bluedroid/stack/sdp/sdp_api.c \
-			$${IDF_PATH}/components/bt/bluedroid/stack/sdp/sdp_db.c \
-			$${IDF_PATH}/components/bt/bluedroid/stack/sdp/sdp_db.c \
-			$${IDF_PATH}/components/bt/bluedroid/stack/sdp/sdp_db.c \
-			$${IDF_PATH}/components/bt/bluedroid/stack/sdp/sdp_discovery.c \
-			$${IDF_PATH}/components/bt/bluedroid/stack/sdp/sdp_discovery.c \
-			$${IDF_PATH}/components/bt/bluedroid/stack/sdp/sdp_discovery.c \
-			$${IDF_PATH}/components/bt/bluedroid/stack/sdp/sdp_main.c \
-			$${IDF_PATH}/components/bt/bluedroid/stack/sdp/sdp_main.c \
-			$${IDF_PATH}/components/bt/bluedroid/stack/sdp/sdp_main.c \
-			$${IDF_PATH}/components/bt/bluedroid/stack/sdp/sdp_server.c \
-			$${IDF_PATH}/components/bt/bluedroid/stack/sdp/sdp_server.c \
-			$${IDF_PATH}/components/bt/bluedroid/stack/sdp/sdp_server.c \
-			$${IDF_PATH}/components/bt/bluedroid/stack/sdp/sdp_utils.c \
-			$${IDF_PATH}/components/bt/bluedroid/stack/sdp/sdp_utils.c \
-			$${IDF_PATH}/components/bt/bluedroid/stack/sdp/sdp_utils.c \
+			$${IDF_PATH}/components/bt/host/bluedroid/stack/sdp/sdp_api.c \
+			$${IDF_PATH}/components/bt/host/bluedroid/stack/sdp/sdp_api.c \
+			$${IDF_PATH}/components/bt/host/bluedroid/stack/sdp/sdp_api.c \
+			$${IDF_PATH}/components/bt/host/bluedroid/stack/sdp/sdp_db.c \
+			$${IDF_PATH}/components/bt/host/bluedroid/stack/sdp/sdp_db.c \
+			$${IDF_PATH}/components/bt/host/bluedroid/stack/sdp/sdp_db.c \
+			$${IDF_PATH}/components/bt/host/bluedroid/stack/sdp/sdp_discovery.c \
+			$${IDF_PATH}/components/bt/host/bluedroid/stack/sdp/sdp_discovery.c \
+			$${IDF_PATH}/components/bt/host/bluedroid/stack/sdp/sdp_discovery.c \
+			$${IDF_PATH}/components/bt/host/bluedroid/stack/sdp/sdp_main.c \
+			$${IDF_PATH}/components/bt/host/bluedroid/stack/sdp/sdp_main.c \
+			$${IDF_PATH}/components/bt/host/bluedroid/stack/sdp/sdp_main.c \
+			$${IDF_PATH}/components/bt/host/bluedroid/stack/sdp/sdp_server.c \
+			$${IDF_PATH}/components/bt/host/bluedroid/stack/sdp/sdp_server.c \
+			$${IDF_PATH}/components/bt/host/bluedroid/stack/sdp/sdp_server.c \
+			$${IDF_PATH}/components/bt/host/bluedroid/stack/sdp/sdp_utils.c \
+			$${IDF_PATH}/components/bt/host/bluedroid/stack/sdp/sdp_utils.c \
+			$${IDF_PATH}/components/bt/host/bluedroid/stack/sdp/sdp_utils.c \
 			$${IDF_PATH}/components/driver/sdspi_crc.c \
 			$${IDF_PATH}/components/driver/sdspi_crc.c \
 			$${IDF_PATH}/components/driver/sdspi_crc.c \
@@ -5299,6 +6172,12 @@
 			$${IDF_PATH}/components/driver/sdspi_transaction.c \
 			$${IDF_PATH}/components/driver/sdspi_transaction.c \
 			$${IDF_PATH}/components/driver/sdspi_transaction.c \
+			$${IDF_PATH}/components/protocomm/proto-c/sec0.pb-c.c \
+			$${IDF_PATH}/components/protocomm/proto-c/sec0.pb-c.c \
+			$${IDF_PATH}/components/protocomm/proto-c/sec0.pb-c.c \
+			$${IDF_PATH}/components/protocomm/proto-c/sec1.pb-c.c \
+			$${IDF_PATH}/components/protocomm/proto-c/sec1.pb-c.c \
+			$${IDF_PATH}/components/protocomm/proto-c/sec1.pb-c.c \
 			$${IDF_PATH}/components/libsodium/libsodium/test/default/secretbox.c \
 			$${IDF_PATH}/components/libsodium/libsodium/test/default/secretbox.c \
 			$${IDF_PATH}/components/libsodium/libsodium/test/default/secretbox.c \
@@ -5323,33 +6202,55 @@
 			$${IDF_PATH}/components/libsodium/libsodium/src/libsodium/crypto_secretbox/xsalsa20poly1305/secretbox_xsalsa20poly1305.c \
 			$${IDF_PATH}/components/libsodium/libsodium/src/libsodium/crypto_secretbox/xsalsa20poly1305/secretbox_xsalsa20poly1305.c \
 			$${IDF_PATH}/components/libsodium/libsodium/src/libsodium/crypto_secretbox/xsalsa20poly1305/secretbox_xsalsa20poly1305.c \
-			$${IDF_PATH}/components/bootloader_support/src/secure_boot.c \
-			$${IDF_PATH}/components/bootloader_support/src/secure_boot.c \
-			$${IDF_PATH}/components/bootloader_support/src/secure_boot.c \
-			$${IDF_PATH}/components/bootloader_support/src/secure_boot_signatures.c \
-			$${IDF_PATH}/components/bootloader_support/src/secure_boot_signatures.c \
-			$${IDF_PATH}/components/bootloader_support/src/secure_boot_signatures.c \
+			$${IDF_PATH}/components/bootloader_support/src/esp32/secure_boot.c \
+			$${IDF_PATH}/components/bootloader_support/src/esp32/secure_boot.c \
+			$${IDF_PATH}/components/bootloader_support/src/esp32/secure_boot.c \
+			$${IDF_PATH}/components/bootloader_support/src/idf/secure_boot_signatures.c \
+			$${IDF_PATH}/components/bootloader_support/src/esp32/secure_boot_signatures.c \
+			$${IDF_PATH}/components/bootloader_support/src/idf/secure_boot_signatures.c \
+			$${IDF_PATH}/components/bootloader_support/src/esp32/secure_boot_signatures.c \
+			$${IDF_PATH}/components/bootloader_support/src/idf/secure_boot_signatures.c \
+			$${IDF_PATH}/components/bootloader_support/src/esp32/secure_boot_signatures.c \
+			$${IDF_PATH}/components/protocomm/src/security/security0.c \
+			$${IDF_PATH}/components/protocomm/src/security/security0.c \
+			$${IDF_PATH}/components/protocomm/src/security/security0.c \
+			$${IDF_PATH}/components/protocomm/src/security/security1.c \
+			$${IDF_PATH}/components/protocomm/src/security/security1.c \
+			$${IDF_PATH}/components/protocomm/src/security/security1.c \
 			$${IDF_PATH}/components/newlib/select.c \
 			$${IDF_PATH}/components/newlib/select.c \
 			$${IDF_PATH}/components/newlib/select.c \
 			$${IDF_PATH}/components/mbedtls/mbedtls/programs/test/selftest.c \
 			$${IDF_PATH}/components/mbedtls/mbedtls/programs/test/selftest.c \
 			$${IDF_PATH}/components/mbedtls/mbedtls/programs/test/selftest.c \
-			$${IDF_PATH}/components/bt/bluedroid/osi/semaphore.c \
-			$${IDF_PATH}/components/bt/bluedroid/osi/semaphore.c \
-			$${IDF_PATH}/components/bt/bluedroid/osi/semaphore.c \
+			$${IDF_PATH}/components/bt/common/osi/semaphore.c \
+			$${IDF_PATH}/components/bt/common/osi/semaphore.c \
+			$${IDF_PATH}/components/bt/common/osi/semaphore.c \
 			$${IDF_PATH}/components/asio/asio/asio/src/examples/cpp11/multicast/sender.cpp \
 			$${IDF_PATH}/components/asio/asio/asio/src/examples/cpp03/multicast/sender.cpp \
 			$${IDF_PATH}/components/asio/asio/asio/src/examples/cpp11/multicast/sender.cpp \
 			$${IDF_PATH}/components/asio/asio/asio/src/examples/cpp03/multicast/sender.cpp \
+			$${IDF_PATH}/components/asio/asio/asio/src/examples/cpp11/multicast/sender.cpp \
+			$${IDF_PATH}/components/asio/asio/asio/src/examples/cpp03/multicast/sender.cpp \
+			$${IDF_PATH}/components/bt/esp_ble_mesh/mesh_models/client/sensor_client.c \
+			$${IDF_PATH}/components/bt/esp_ble_mesh/mesh_models/client/sensor_client.c \
+			$${IDF_PATH}/components/bt/esp_ble_mesh/mesh_models/client/sensor_client.c \
+			$${IDF_PATH}/components/bt/esp_ble_mesh/mesh_models/server/sensor_server.c \
+			$${IDF_PATH}/components/bt/esp_ble_mesh/mesh_models/server/sensor_server.c \
+			$${IDF_PATH}/components/bt/esp_ble_mesh/mesh_models/server/sensor_server.c \
+			$${IDF_PATH}/components/asio/asio/asio/src/tests/unit/generic/seq_packet_protocol.cpp \
 			$${IDF_PATH}/components/asio/asio/asio/src/tests/unit/generic/seq_packet_protocol.cpp \
 			$${IDF_PATH}/components/asio/asio/asio/src/tests/unit/generic/seq_packet_protocol.cpp \
 			$${IDF_PATH}/components/asio/asio/asio/src/tests/unit/seq_packet_socket_service.cpp \
 			$${IDF_PATH}/components/asio/asio/asio/src/tests/unit/seq_packet_socket_service.cpp \
+			$${IDF_PATH}/components/asio/asio/asio/src/tests/unit/seq_packet_socket_service.cpp \
+			$${IDF_PATH}/components/asio/asio/asio/src/tests/unit/serial_port.cpp \
 			$${IDF_PATH}/components/asio/asio/asio/src/tests/unit/serial_port.cpp \
 			$${IDF_PATH}/components/asio/asio/asio/src/tests/unit/serial_port.cpp \
 			$${IDF_PATH}/components/asio/asio/asio/src/tests/unit/serial_port_base.cpp \
 			$${IDF_PATH}/components/asio/asio/asio/src/tests/unit/serial_port_base.cpp \
+			$${IDF_PATH}/components/asio/asio/asio/src/tests/unit/serial_port_base.cpp \
+			$${IDF_PATH}/components/asio/asio/asio/src/tests/unit/serial_port_service.cpp \
 			$${IDF_PATH}/components/asio/asio/asio/src/tests/unit/serial_port_service.cpp \
 			$${IDF_PATH}/components/asio/asio/asio/src/tests/unit/serial_port_service.cpp \
 			$${IDF_PATH}/components/coap/libcoap/examples/lwip/server-coap.c \
@@ -5395,15 +6296,44 @@
 			$${IDF_PATH}/components/asio/asio/asio/src/examples/cpp03/http/server2/server.cpp \
 			$${IDF_PATH}/components/asio/asio/asio/src/examples/cpp03/http/server/server.cpp \
 			$${IDF_PATH}/components/asio/asio/asio/src/examples/cpp03/allocation/server.cpp \
+			$${IDF_PATH}/components/asio/asio/asio/src/tests/performance/server.cpp \
+			$${IDF_PATH}/components/asio/asio/asio/src/examples/cpp11/http/server/server.cpp \
+			$${IDF_PATH}/components/asio/asio/asio/src/examples/cpp11/allocation/server.cpp \
+			$${IDF_PATH}/components/asio/asio/asio/src/examples/cpp03/tutorial/daytime7/server.cpp \
+			$${IDF_PATH}/components/asio/asio/asio/src/examples/cpp03/tutorial/daytime6/server.cpp \
+			$${IDF_PATH}/components/asio/asio/asio/src/examples/cpp03/tutorial/daytime5/server.cpp \
+			$${IDF_PATH}/components/asio/asio/asio/src/examples/cpp03/tutorial/daytime3/server.cpp \
+			$${IDF_PATH}/components/asio/asio/asio/src/examples/cpp03/tutorial/daytime2/server.cpp \
+			$${IDF_PATH}/components/asio/asio/asio/src/examples/cpp03/timeouts/server.cpp \
+			$${IDF_PATH}/components/asio/asio/asio/src/examples/cpp03/ssl/server.cpp \
+			$${IDF_PATH}/components/asio/asio/asio/src/examples/cpp03/serialization/server.cpp \
+			$${IDF_PATH}/components/asio/asio/asio/src/examples/cpp03/porthopper/server.cpp \
+			$${IDF_PATH}/components/asio/asio/asio/src/examples/cpp03/http/server4/server.cpp \
+			$${IDF_PATH}/components/asio/asio/asio/src/examples/cpp03/http/server3/server.cpp \
+			$${IDF_PATH}/components/asio/asio/asio/src/examples/cpp03/http/server2/server.cpp \
+			$${IDF_PATH}/components/asio/asio/asio/src/examples/cpp03/http/server/server.cpp \
+			$${IDF_PATH}/components/asio/asio/asio/src/examples/cpp03/allocation/server.cpp \
+			$${IDF_PATH}/components/bt/esp_ble_mesh/mesh_models/server/server_common.c \
+			$${IDF_PATH}/components/bt/esp_ble_mesh/mesh_models/server/server_common.c \
+			$${IDF_PATH}/components/bt/esp_ble_mesh/mesh_models/server/server_common.c \
 			$${IDF_PATH}/components/coap/libcoap/ext/tinydtls/session.c \
 			$${IDF_PATH}/components/coap/libcoap/ext/tinydtls/session.c \
 			$${IDF_PATH}/components/coap/libcoap/ext/tinydtls/session.c \
+			$${IDF_PATH}/components/protocomm/proto-c/session.pb-c.c \
+			$${IDF_PATH}/components/protocomm/proto-c/session.pb-c.c \
+			$${IDF_PATH}/components/protocomm/proto-c/session.pb-c.c \
 			$${IDF_PATH}/components/bt/host/nimble/nimble/nimble/host/mesh/src/settings.c \
+			$${IDF_PATH}/components/bt/esp_ble_mesh/mesh_core/settings.c \
 			$${IDF_PATH}/components/bt/host/nimble/nimble/nimble/host/mesh/src/settings.c \
+			$${IDF_PATH}/components/bt/esp_ble_mesh/mesh_core/settings.c \
 			$${IDF_PATH}/components/bt/host/nimble/nimble/nimble/host/mesh/src/settings.c \
-			$${IDF_PATH}/components/esp32/hwcrypto/sha.c \
-			$${IDF_PATH}/components/esp32/hwcrypto/sha.c \
-			$${IDF_PATH}/components/esp32/hwcrypto/sha.c \
+			$${IDF_PATH}/components/bt/esp_ble_mesh/mesh_core/settings.c \
+			$${IDF_PATH}/components/bt/esp_ble_mesh/mesh_core/storage/settings_nvs.c \
+			$${IDF_PATH}/components/bt/esp_ble_mesh/mesh_core/storage/settings_nvs.c \
+			$${IDF_PATH}/components/bt/esp_ble_mesh/mesh_core/storage/settings_nvs.c \
+			$${IDF_PATH}/components/mbedtls/port/esp32/sha.c \
+			$${IDF_PATH}/components/mbedtls/port/esp32/sha.c \
+			$${IDF_PATH}/components/mbedtls/port/esp32/sha.c \
 			$${IDF_PATH}/components/wpa_supplicant/src/crypto/sha1-internal.c \
 			$${IDF_PATH}/components/wpa_supplicant/src/crypto/sha1-internal.c \
 			$${IDF_PATH}/components/wpa_supplicant/src/crypto/sha1-internal.c \
@@ -5412,15 +6342,12 @@
 			$${IDF_PATH}/components/wpa_supplicant/src/crypto/sha1-pbkdf2.c \
 			$${IDF_PATH}/components/wpa_supplicant/src/crypto/sha1.c \
 			$${IDF_PATH}/components/mbedtls/mbedtls/library/sha1.c \
-			$${IDF_PATH}/components/lwip/netif/ppp/polarssl/sha1.c \
 			$${IDF_PATH}/components/lwip/lwip/src/netif/ppp/polarssl/sha1.c \
 			$${IDF_PATH}/components/wpa_supplicant/src/crypto/sha1.c \
 			$${IDF_PATH}/components/mbedtls/mbedtls/library/sha1.c \
-			$${IDF_PATH}/components/lwip/netif/ppp/polarssl/sha1.c \
 			$${IDF_PATH}/components/lwip/lwip/src/netif/ppp/polarssl/sha1.c \
 			$${IDF_PATH}/components/wpa_supplicant/src/crypto/sha1.c \
 			$${IDF_PATH}/components/mbedtls/mbedtls/library/sha1.c \
-			$${IDF_PATH}/components/lwip/netif/ppp/polarssl/sha1.c \
 			$${IDF_PATH}/components/lwip/lwip/src/netif/ppp/polarssl/sha1.c \
 			$${IDF_PATH}/components/coap/libcoap/ext/tinydtls/sha2/sha2.c \
 			$${IDF_PATH}/components/coap/libcoap/ext/tinydtls/sha2/sha2.c \
@@ -5428,15 +6355,21 @@
 			$${IDF_PATH}/components/wpa_supplicant/src/crypto/sha256-internal.c \
 			$${IDF_PATH}/components/wpa_supplicant/src/crypto/sha256-internal.c \
 			$${IDF_PATH}/components/wpa_supplicant/src/crypto/sha256-internal.c \
+			$${IDF_PATH}/components/wpa_supplicant/src/crypto/sha256-tlsprf.c \
+			$${IDF_PATH}/components/wpa_supplicant/src/crypto/sha256-tlsprf.c \
+			$${IDF_PATH}/components/wpa_supplicant/src/crypto/sha256-tlsprf.c \
 			$${IDF_PATH}/components/wpa_supplicant/src/crypto/sha256.c \
 			$${IDF_PATH}/components/mbedtls/mbedtls/library/sha256.c \
 			$${IDF_PATH}/components/bt/host/nimble/nimble/ext/tinycrypt/src/sha256.c \
+			$${IDF_PATH}/components/bt/esp_ble_mesh/mesh_common/tinycrypt/src/sha256.c \
 			$${IDF_PATH}/components/wpa_supplicant/src/crypto/sha256.c \
 			$${IDF_PATH}/components/mbedtls/mbedtls/library/sha256.c \
 			$${IDF_PATH}/components/bt/host/nimble/nimble/ext/tinycrypt/src/sha256.c \
+			$${IDF_PATH}/components/bt/esp_ble_mesh/mesh_common/tinycrypt/src/sha256.c \
 			$${IDF_PATH}/components/wpa_supplicant/src/crypto/sha256.c \
 			$${IDF_PATH}/components/mbedtls/mbedtls/library/sha256.c \
 			$${IDF_PATH}/components/bt/host/nimble/nimble/ext/tinycrypt/src/sha256.c \
+			$${IDF_PATH}/components/bt/esp_ble_mesh/mesh_common/tinycrypt/src/sha256.c \
 			$${IDF_PATH}/components/coap/libcoap/ext/tinydtls/sha2/sha2prog.c \
 			$${IDF_PATH}/components/coap/libcoap/ext/tinydtls/sha2/sha2prog.c \
 			$${IDF_PATH}/components/coap/libcoap/ext/tinydtls/sha2/sha2prog.c \
@@ -5448,8 +6381,6 @@
 			$${IDF_PATH}/components/mbedtls/mbedtls/library/sha512.c \
 			$${IDF_PATH}/components/aws_iot/aws-iot-device-sdk-embedded-C/samples/linux/shadow_sample_console_echo/shadow_console_echo.c \
 			$${IDF_PATH}/components/aws_iot/aws-iot-device-sdk-embedded-C/samples/linux/shadow_sample_console_echo/shadow_console_echo.c \
-			$${IDF_PATH}/components/aws_iot/aws-iot-device-sdk-embedded-C/samples/linux/shadow_sample_console_echo/shadow_console_echo.c \
-			$${IDF_PATH}/components/aws_iot/aws-iot-device-sdk-embedded-C/samples/linux/shadow_sample/shadow_sample.c \
 			$${IDF_PATH}/components/aws_iot/aws-iot-device-sdk-embedded-C/samples/linux/shadow_sample/shadow_sample.c \
 			$${IDF_PATH}/components/aws_iot/aws-iot-device-sdk-embedded-C/samples/linux/shadow_sample/shadow_sample.c \
 			$${IDF_PATH}/components/bt/host/nimble/nimble/nimble/host/mesh/src/shell.c \
@@ -5484,8 +6415,13 @@
 			$${IDF_PATH}/components/libsodium/libsodium/src/libsodium/crypto_sign/ed25519/sign_ed25519.c \
 			$${IDF_PATH}/components/asio/asio/asio/src/tests/unit/signal_set.cpp \
 			$${IDF_PATH}/components/asio/asio/asio/src/tests/unit/signal_set.cpp \
+			$${IDF_PATH}/components/asio/asio/asio/src/tests/unit/signal_set.cpp \
 			$${IDF_PATH}/components/asio/asio/asio/src/tests/unit/signal_set_service.cpp \
 			$${IDF_PATH}/components/asio/asio/asio/src/tests/unit/signal_set_service.cpp \
+			$${IDF_PATH}/components/asio/asio/asio/src/tests/unit/signal_set_service.cpp \
+			$${IDF_PATH}/components/protocomm/src/simple_ble/simple_ble.c \
+			$${IDF_PATH}/components/protocomm/src/simple_ble/simple_ble.c \
+			$${IDF_PATH}/components/protocomm/src/simple_ble/simple_ble.c \
 			$${IDF_PATH}/components/cbor/tinycbor/examples/simplereader.c \
 			$${IDF_PATH}/components/cbor/tinycbor/examples/simplereader.c \
 			$${IDF_PATH}/components/libsodium/libsodium/test/default/siphashx24.c \
@@ -5497,39 +6433,39 @@
 			$${IDF_PATH}/components/esptool_py/esptool/flasher_stub/slip.c \
 			$${IDF_PATH}/components/esptool_py/esptool/flasher_stub/slip.c \
 			$${IDF_PATH}/components/esptool_py/esptool/flasher_stub/slip.c \
-			$${IDF_PATH}/components/lwip/netif/slipif.c \
 			$${IDF_PATH}/components/lwip/lwip/src/netif/slipif.c \
-			$${IDF_PATH}/components/lwip/netif/slipif.c \
 			$${IDF_PATH}/components/lwip/lwip/src/netif/slipif.c \
-			$${IDF_PATH}/components/lwip/netif/slipif.c \
 			$${IDF_PATH}/components/lwip/lwip/src/netif/slipif.c \
-			$${IDF_PATH}/components/smartconfig_ack/smartconfig_ack.c \
-			$${IDF_PATH}/components/smartconfig_ack/smartconfig_ack.c \
-			$${IDF_PATH}/components/smartconfig_ack/smartconfig_ack.c \
-			$${IDF_PATH}/components/bt/bluedroid/stack/smp/smp_act.c \
-			$${IDF_PATH}/components/bt/bluedroid/stack/smp/smp_act.c \
-			$${IDF_PATH}/components/bt/bluedroid/stack/smp/smp_act.c \
-			$${IDF_PATH}/components/bt/bluedroid/stack/smp/smp_api.c \
-			$${IDF_PATH}/components/bt/bluedroid/stack/smp/smp_api.c \
-			$${IDF_PATH}/components/bt/bluedroid/stack/smp/smp_api.c \
-			$${IDF_PATH}/components/bt/bluedroid/stack/smp/smp_br_main.c \
-			$${IDF_PATH}/components/bt/bluedroid/stack/smp/smp_br_main.c \
-			$${IDF_PATH}/components/bt/bluedroid/stack/smp/smp_br_main.c \
-			$${IDF_PATH}/components/bt/bluedroid/stack/smp/smp_cmac.c \
-			$${IDF_PATH}/components/bt/bluedroid/stack/smp/smp_cmac.c \
-			$${IDF_PATH}/components/bt/bluedroid/stack/smp/smp_cmac.c \
-			$${IDF_PATH}/components/bt/bluedroid/stack/smp/smp_keys.c \
-			$${IDF_PATH}/components/bt/bluedroid/stack/smp/smp_keys.c \
-			$${IDF_PATH}/components/bt/bluedroid/stack/smp/smp_keys.c \
-			$${IDF_PATH}/components/bt/bluedroid/stack/smp/smp_l2c.c \
-			$${IDF_PATH}/components/bt/bluedroid/stack/smp/smp_l2c.c \
-			$${IDF_PATH}/components/bt/bluedroid/stack/smp/smp_l2c.c \
-			$${IDF_PATH}/components/bt/bluedroid/stack/smp/smp_main.c \
-			$${IDF_PATH}/components/bt/bluedroid/stack/smp/smp_main.c \
-			$${IDF_PATH}/components/bt/bluedroid/stack/smp/smp_main.c \
-			$${IDF_PATH}/components/bt/bluedroid/stack/smp/smp_utils.c \
-			$${IDF_PATH}/components/bt/bluedroid/stack/smp/smp_utils.c \
-			$${IDF_PATH}/components/bt/bluedroid/stack/smp/smp_utils.c \
+			$${IDF_PATH}/components/esp_wifi/src/smartconfig.c \
+			$${IDF_PATH}/components/esp_wifi/src/smartconfig.c \
+			$${IDF_PATH}/components/esp_wifi/src/smartconfig.c \
+			$${IDF_PATH}/components/esp_wifi/src/smartconfig_ack.c \
+			$${IDF_PATH}/components/esp_wifi/src/smartconfig_ack.c \
+			$${IDF_PATH}/components/esp_wifi/src/smartconfig_ack.c \
+			$${IDF_PATH}/components/bt/host/bluedroid/stack/smp/smp_act.c \
+			$${IDF_PATH}/components/bt/host/bluedroid/stack/smp/smp_act.c \
+			$${IDF_PATH}/components/bt/host/bluedroid/stack/smp/smp_act.c \
+			$${IDF_PATH}/components/bt/host/bluedroid/stack/smp/smp_api.c \
+			$${IDF_PATH}/components/bt/host/bluedroid/stack/smp/smp_api.c \
+			$${IDF_PATH}/components/bt/host/bluedroid/stack/smp/smp_api.c \
+			$${IDF_PATH}/components/bt/host/bluedroid/stack/smp/smp_br_main.c \
+			$${IDF_PATH}/components/bt/host/bluedroid/stack/smp/smp_br_main.c \
+			$${IDF_PATH}/components/bt/host/bluedroid/stack/smp/smp_br_main.c \
+			$${IDF_PATH}/components/bt/host/bluedroid/stack/smp/smp_cmac.c \
+			$${IDF_PATH}/components/bt/host/bluedroid/stack/smp/smp_cmac.c \
+			$${IDF_PATH}/components/bt/host/bluedroid/stack/smp/smp_cmac.c \
+			$${IDF_PATH}/components/bt/host/bluedroid/stack/smp/smp_keys.c \
+			$${IDF_PATH}/components/bt/host/bluedroid/stack/smp/smp_keys.c \
+			$${IDF_PATH}/components/bt/host/bluedroid/stack/smp/smp_keys.c \
+			$${IDF_PATH}/components/bt/host/bluedroid/stack/smp/smp_l2c.c \
+			$${IDF_PATH}/components/bt/host/bluedroid/stack/smp/smp_l2c.c \
+			$${IDF_PATH}/components/bt/host/bluedroid/stack/smp/smp_l2c.c \
+			$${IDF_PATH}/components/bt/host/bluedroid/stack/smp/smp_main.c \
+			$${IDF_PATH}/components/bt/host/bluedroid/stack/smp/smp_main.c \
+			$${IDF_PATH}/components/bt/host/bluedroid/stack/smp/smp_main.c \
+			$${IDF_PATH}/components/bt/host/bluedroid/stack/smp/smp_utils.c \
+			$${IDF_PATH}/components/bt/host/bluedroid/stack/smp/smp_utils.c \
+			$${IDF_PATH}/components/bt/host/bluedroid/stack/smp/smp_utils.c \
 			$${IDF_PATH}/components/lwip/lwip/src/apps/smtp/smtp.c \
 			$${IDF_PATH}/components/lwip/lwip/src/apps/smtp/smtp.c \
 			$${IDF_PATH}/components/lwip/lwip/src/apps/smtp/smtp.c \
@@ -5605,21 +6541,24 @@
 			$${IDF_PATH}/components/lwip/apps/sntp/sntp.c \
 			$${IDF_PATH}/components/lwip/lwip/src/apps/sntp/sntp.c \
 			$${IDF_PATH}/components/lwip/apps/sntp/sntp.c \
+			$${IDF_PATH}/components/soc/src/soc_include_legacy_warn.c \
+			$${IDF_PATH}/components/soc/src/soc_include_legacy_warn.c \
+			$${IDF_PATH}/components/soc/src/soc_include_legacy_warn.c \
 			$${IDF_PATH}/components/soc/esp32/soc_memory_layout.c \
 			$${IDF_PATH}/components/soc/esp32/soc_memory_layout.c \
 			$${IDF_PATH}/components/soc/esp32/soc_memory_layout.c \
 			$${IDF_PATH}/components/asio/asio/asio/src/tests/unit/ts/socket.cpp \
 			$${IDF_PATH}/components/asio/asio/asio/src/tests/unit/ts/socket.cpp \
+			$${IDF_PATH}/components/asio/asio/asio/src/tests/unit/ts/socket.cpp \
+			$${IDF_PATH}/components/asio/asio/asio/src/tests/unit/socket_acceptor_service.cpp \
 			$${IDF_PATH}/components/asio/asio/asio/src/tests/unit/socket_acceptor_service.cpp \
 			$${IDF_PATH}/components/asio/asio/asio/src/tests/unit/socket_acceptor_service.cpp \
 			$${IDF_PATH}/components/asio/asio/asio/src/tests/unit/socket_base.cpp \
 			$${IDF_PATH}/components/asio/asio/asio/src/tests/unit/socket_base.cpp \
+			$${IDF_PATH}/components/asio/asio/asio/src/tests/unit/socket_base.cpp \
 			$${IDF_PATH}/components/lwip/lwip/src/api/sockets.c \
-			$${IDF_PATH}/components/lwip/api/sockets.c \
 			$${IDF_PATH}/components/lwip/lwip/src/api/sockets.c \
-			$${IDF_PATH}/components/lwip/api/sockets.c \
 			$${IDF_PATH}/components/lwip/lwip/src/api/sockets.c \
-			$${IDF_PATH}/components/lwip/api/sockets.c \
 			$${IDF_PATH}/components/lwip/lwip/test/sockets/sockets_stresstest.c \
 			$${IDF_PATH}/components/lwip/lwip/test/sockets/sockets_stresstest.c \
 			$${IDF_PATH}/components/lwip/lwip/test/sockets/sockets_stresstest.c \
@@ -5641,12 +6580,42 @@
 			$${IDF_PATH}/components/driver/spi_common.c \
 			$${IDF_PATH}/components/driver/spi_common.c \
 			$${IDF_PATH}/components/driver/spi_common.c \
+			$${IDF_PATH}/components/spi_flash/spi_flash_chip_drivers.c \
+			$${IDF_PATH}/components/spi_flash/spi_flash_chip_drivers.c \
+			$${IDF_PATH}/components/spi_flash/spi_flash_chip_drivers.c \
+			$${IDF_PATH}/components/spi_flash/spi_flash_chip_gd.c \
+			$${IDF_PATH}/components/spi_flash/spi_flash_chip_gd.c \
+			$${IDF_PATH}/components/spi_flash/spi_flash_chip_gd.c \
+			$${IDF_PATH}/components/spi_flash/spi_flash_chip_generic.c \
+			$${IDF_PATH}/components/spi_flash/spi_flash_chip_generic.c \
+			$${IDF_PATH}/components/spi_flash/spi_flash_chip_generic.c \
+			$${IDF_PATH}/components/spi_flash/spi_flash_chip_issi.c \
+			$${IDF_PATH}/components/spi_flash/spi_flash_chip_issi.c \
+			$${IDF_PATH}/components/spi_flash/spi_flash_chip_issi.c \
 			$${IDF_PATH}/components/nvs_flash/test_nvs_host/spi_flash_emulation.cpp \
 			$${IDF_PATH}/components/nvs_flash/test_nvs_host/spi_flash_emulation.cpp \
 			$${IDF_PATH}/components/nvs_flash/test_nvs_host/spi_flash_emulation.cpp \
+			$${IDF_PATH}/components/soc/src/hal/spi_flash_hal.c \
+			$${IDF_PATH}/components/soc/src/hal/spi_flash_hal.c \
+			$${IDF_PATH}/components/soc/src/hal/spi_flash_hal.c \
+			$${IDF_PATH}/components/soc/src/hal/spi_flash_hal_iram.c \
+			$${IDF_PATH}/components/soc/src/hal/spi_flash_hal_iram.c \
+			$${IDF_PATH}/components/soc/src/hal/spi_flash_hal_iram.c \
+			$${IDF_PATH}/components/spi_flash/spi_flash_os_func_app.c \
+			$${IDF_PATH}/components/spi_flash/spi_flash_os_func_app.c \
+			$${IDF_PATH}/components/spi_flash/spi_flash_os_func_app.c \
+			$${IDF_PATH}/components/spi_flash/spi_flash_os_func_noos.c \
+			$${IDF_PATH}/components/spi_flash/spi_flash_os_func_noos.c \
+			$${IDF_PATH}/components/spi_flash/spi_flash_os_func_noos.c \
 			$${IDF_PATH}/components/spi_flash/spi_flash_rom_patch.c \
 			$${IDF_PATH}/components/spi_flash/spi_flash_rom_patch.c \
 			$${IDF_PATH}/components/spi_flash/spi_flash_rom_patch.c \
+			$${IDF_PATH}/components/soc/src/hal/spi_hal.c \
+			$${IDF_PATH}/components/soc/src/hal/spi_hal.c \
+			$${IDF_PATH}/components/soc/src/hal/spi_hal.c \
+			$${IDF_PATH}/components/soc/src/hal/spi_hal_iram.c \
+			$${IDF_PATH}/components/soc/src/hal/spi_hal_iram.c \
+			$${IDF_PATH}/components/soc/src/hal/spi_hal_iram.c \
 			$${IDF_PATH}/components/driver/spi_master.c \
 			$${IDF_PATH}/components/driver/spi_master.c \
 			$${IDF_PATH}/components/driver/spi_master.c \
@@ -5656,6 +6625,12 @@
 			$${IDF_PATH}/components/driver/spi_slave.c \
 			$${IDF_PATH}/components/driver/spi_slave.c \
 			$${IDF_PATH}/components/driver/spi_slave.c \
+			$${IDF_PATH}/components/soc/src/hal/spi_slave_hal.c \
+			$${IDF_PATH}/components/soc/src/hal/spi_slave_hal.c \
+			$${IDF_PATH}/components/soc/src/hal/spi_slave_hal.c \
+			$${IDF_PATH}/components/soc/src/hal/spi_slave_hal_iram.c \
+			$${IDF_PATH}/components/soc/src/hal/spi_slave_hal_iram.c \
+			$${IDF_PATH}/components/soc/src/hal/spi_slave_hal_iram.c \
 			$${IDF_PATH}/components/spiffs/spiffs_api.c \
 			$${IDF_PATH}/components/spiffs/spiffs_api.c \
 			$${IDF_PATH}/components/spiffs/spiffs_api.c \
@@ -5688,15 +6663,13 @@
 			$${IDF_PATH}/components/nghttp/nghttp2/third-party/mruby/mrbgems/mruby-sprintf/src/sprintf.c \
 			$${IDF_PATH}/components/asio/asio/asio/include/asio/impl/src.cpp \
 			$${IDF_PATH}/components/asio/asio/asio/include/asio/impl/src.cpp \
+			$${IDF_PATH}/components/asio/asio/asio/include/asio/impl/src.cpp \
 			$${IDF_PATH}/components/mbedtls/mbedtls/library/ssl_cache.c \
 			$${IDF_PATH}/components/mbedtls/mbedtls/library/ssl_cache.c \
 			$${IDF_PATH}/components/mbedtls/mbedtls/library/ssl_cache.c \
 			$${IDF_PATH}/components/openssl/library/ssl_cert.c \
 			$${IDF_PATH}/components/openssl/library/ssl_cert.c \
 			$${IDF_PATH}/components/openssl/library/ssl_cert.c \
-			$${IDF_PATH}/components/mbedtls/mbedtls/programs/test/ssl_cert_test.c \
-			$${IDF_PATH}/components/mbedtls/mbedtls/programs/test/ssl_cert_test.c \
-			$${IDF_PATH}/components/mbedtls/mbedtls/programs/test/ssl_cert_test.c \
 			$${IDF_PATH}/components/mbedtls/mbedtls/library/ssl_ciphersuites.c \
 			$${IDF_PATH}/components/mbedtls/mbedtls/library/ssl_ciphersuites.c \
 			$${IDF_PATH}/components/mbedtls/mbedtls/library/ssl_ciphersuites.c \
@@ -5757,21 +6730,25 @@
 			$${IDF_PATH}/components/openssl/library/ssl_x509.c \
 			$${IDF_PATH}/components/openssl/library/ssl_x509.c \
 			$${IDF_PATH}/components/openssl/library/ssl_x509.c \
-			$${IDF_PATH}/components/esp32/stack_check.c \
-			$${IDF_PATH}/components/esp32/stack_check.c \
-			$${IDF_PATH}/components/esp32/stack_check.c \
+			$${IDF_PATH}/components/esp_common/src/stack_check.c \
+			$${IDF_PATH}/components/esp_common/src/stack_check.c \
+			$${IDF_PATH}/components/esp_common/src/stack_check.c \
 			$${IDF_PATH}/components/nghttp/nghttp2/third-party/mruby/src/state.c \
 			$${IDF_PATH}/components/nghttp/nghttp2/third-party/mruby/src/state.c \
 			$${IDF_PATH}/components/nghttp/nghttp2/third-party/mruby/src/state.c \
 			$${IDF_PATH}/components/bt/host/nimble/nimble/apps/blemesh_models_example_2/src/state_binding.c \
+			$${IDF_PATH}/components/bt/esp_ble_mesh/mesh_models/server/state_binding.c \
 			$${IDF_PATH}/components/bt/host/nimble/nimble/apps/blemesh_models_example_2/src/state_binding.c \
+			$${IDF_PATH}/components/bt/esp_ble_mesh/mesh_models/server/state_binding.c \
 			$${IDF_PATH}/components/bt/host/nimble/nimble/apps/blemesh_models_example_2/src/state_binding.c \
+			$${IDF_PATH}/components/bt/esp_ble_mesh/mesh_models/server/state_binding.c \
+			$${IDF_PATH}/components/bt/esp_ble_mesh/mesh_models/server/state_transition.c \
+			$${IDF_PATH}/components/bt/esp_ble_mesh/mesh_models/server/state_transition.c \
+			$${IDF_PATH}/components/bt/esp_ble_mesh/mesh_models/server/state_transition.c \
 			$${IDF_PATH}/components/lwip/lwip/src/core/stats.c \
-			$${IDF_PATH}/components/lwip/core/stats.c \
 			$${IDF_PATH}/components/lwip/lwip/src/core/stats.c \
-			$${IDF_PATH}/components/lwip/core/stats.c \
 			$${IDF_PATH}/components/lwip/lwip/src/core/stats.c \
-			$${IDF_PATH}/components/lwip/core/stats.c \
+			$${IDF_PATH}/components/asio/asio/asio/src/tests/unit/steady_timer.cpp \
 			$${IDF_PATH}/components/asio/asio/asio/src/tests/unit/steady_timer.cpp \
 			$${IDF_PATH}/components/asio/asio/asio/src/tests/unit/steady_timer.cpp \
 			$${IDF_PATH}/components/bt/host/nimble/nimble/apps/blemesh_models_example_2/src/storage.c \
@@ -5782,9 +6759,11 @@
 			$${IDF_PATH}/components/coap/libcoap/src/str.c \
 			$${IDF_PATH}/components/asio/asio/asio/src/tests/unit/strand.cpp \
 			$${IDF_PATH}/components/asio/asio/asio/src/tests/unit/strand.cpp \
+			$${IDF_PATH}/components/asio/asio/asio/src/tests/unit/strand.cpp \
 			$${IDF_PATH}/components/libsodium/libsodium/test/default/stream.c \
 			$${IDF_PATH}/components/libsodium/libsodium/test/default/stream.c \
 			$${IDF_PATH}/components/libsodium/libsodium/test/default/stream.c \
+			$${IDF_PATH}/components/asio/asio/asio/src/tests/unit/ssl/stream.cpp \
 			$${IDF_PATH}/components/asio/asio/asio/src/tests/unit/ssl/stream.cpp \
 			$${IDF_PATH}/components/asio/asio/asio/src/tests/unit/ssl/stream.cpp \
 			$${IDF_PATH}/components/libsodium/libsodium/test/default/stream2.c \
@@ -5804,6 +6783,7 @@
 			$${IDF_PATH}/components/libsodium/libsodium/src/libsodium/crypto_stream/aes128ctr/nacl/stream_aes128ctr_nacl.c \
 			$${IDF_PATH}/components/asio/asio/asio/src/tests/unit/ssl/stream_base.cpp \
 			$${IDF_PATH}/components/asio/asio/asio/src/tests/unit/ssl/stream_base.cpp \
+			$${IDF_PATH}/components/asio/asio/asio/src/tests/unit/ssl/stream_base.cpp \
 			$${IDF_PATH}/components/tinyusb/tinyusb/lib/FreeRTOS/Source/stream_buffer.c \
 			$${IDF_PATH}/components/tinyusb/tinyusb/lib/FreeRTOS/Source/stream_buffer.c \
 			$${IDF_PATH}/components/libsodium/libsodium/src/libsodium/crypto_stream/chacha20/stream_chacha20.c \
@@ -5813,14 +6793,22 @@
 			$${IDF_PATH}/components/asio/asio/asio/src/examples/cpp03/local/stream_client.cpp \
 			$${IDF_PATH}/components/asio/asio/asio/src/examples/cpp11/local/stream_client.cpp \
 			$${IDF_PATH}/components/asio/asio/asio/src/examples/cpp03/local/stream_client.cpp \
+			$${IDF_PATH}/components/asio/asio/asio/src/examples/cpp11/local/stream_client.cpp \
+			$${IDF_PATH}/components/asio/asio/asio/src/examples/cpp03/local/stream_client.cpp \
+			$${IDF_PATH}/components/asio/asio/asio/src/tests/unit/posix/stream_descriptor.cpp \
 			$${IDF_PATH}/components/asio/asio/asio/src/tests/unit/posix/stream_descriptor.cpp \
 			$${IDF_PATH}/components/asio/asio/asio/src/tests/unit/posix/stream_descriptor.cpp \
 			$${IDF_PATH}/components/asio/asio/asio/src/tests/unit/posix/stream_descriptor_service.cpp \
 			$${IDF_PATH}/components/asio/asio/asio/src/tests/unit/posix/stream_descriptor_service.cpp \
+			$${IDF_PATH}/components/asio/asio/asio/src/tests/unit/posix/stream_descriptor_service.cpp \
+			$${IDF_PATH}/components/asio/asio/asio/src/tests/unit/windows/stream_handle.cpp \
 			$${IDF_PATH}/components/asio/asio/asio/src/tests/unit/windows/stream_handle.cpp \
 			$${IDF_PATH}/components/asio/asio/asio/src/tests/unit/windows/stream_handle.cpp \
 			$${IDF_PATH}/components/asio/asio/asio/src/tests/unit/windows/stream_handle_service.cpp \
 			$${IDF_PATH}/components/asio/asio/asio/src/tests/unit/windows/stream_handle_service.cpp \
+			$${IDF_PATH}/components/asio/asio/asio/src/tests/unit/windows/stream_handle_service.cpp \
+			$${IDF_PATH}/components/asio/asio/asio/src/tests/unit/local/stream_protocol.cpp \
+			$${IDF_PATH}/components/asio/asio/asio/src/tests/unit/generic/stream_protocol.cpp \
 			$${IDF_PATH}/components/asio/asio/asio/src/tests/unit/local/stream_protocol.cpp \
 			$${IDF_PATH}/components/asio/asio/asio/src/tests/unit/generic/stream_protocol.cpp \
 			$${IDF_PATH}/components/asio/asio/asio/src/tests/unit/local/stream_protocol.cpp \
@@ -5844,6 +6832,9 @@
 			$${IDF_PATH}/components/asio/asio/asio/src/examples/cpp03/local/stream_server.cpp \
 			$${IDF_PATH}/components/asio/asio/asio/src/examples/cpp11/local/stream_server.cpp \
 			$${IDF_PATH}/components/asio/asio/asio/src/examples/cpp03/local/stream_server.cpp \
+			$${IDF_PATH}/components/asio/asio/asio/src/examples/cpp11/local/stream_server.cpp \
+			$${IDF_PATH}/components/asio/asio/asio/src/examples/cpp03/local/stream_server.cpp \
+			$${IDF_PATH}/components/asio/asio/asio/src/tests/unit/stream_socket_service.cpp \
 			$${IDF_PATH}/components/asio/asio/asio/src/tests/unit/stream_socket_service.cpp \
 			$${IDF_PATH}/components/asio/asio/asio/src/tests/unit/stream_socket_service.cpp \
 			$${IDF_PATH}/components/libsodium/libsodium/src/libsodium/crypto_stream/xchacha20/stream_xchacha20.c \
@@ -5854,6 +6845,7 @@
 			$${IDF_PATH}/components/libsodium/libsodium/src/libsodium/crypto_stream/xsalsa20/stream_xsalsa20.c \
 			$${IDF_PATH}/components/asio/asio/asio/src/tests/unit/streambuf.cpp \
 			$${IDF_PATH}/components/asio/asio/asio/src/tests/unit/streambuf.cpp \
+			$${IDF_PATH}/components/asio/asio/asio/src/tests/unit/streambuf.cpp \
 			$${IDF_PATH}/components/mbedtls/mbedtls/programs/util/strerror.c \
 			$${IDF_PATH}/components/mbedtls/mbedtls/programs/util/strerror.c \
 			$${IDF_PATH}/components/mbedtls/mbedtls/programs/util/strerror.c \
@@ -5881,13 +6873,8 @@
 			$${IDF_PATH}/components/coap/libcoap/src/subscribe.c \
 			$${IDF_PATH}/components/coap/libcoap/src/subscribe.c \
 			$${IDF_PATH}/components/coap/libcoap/src/subscribe.c \
-			$${IDF_PATH}/components/aws_iot/aws-iot-device-sdk-embedded-C/samples/linux/subscribe_publish_cpp_sample/subscribe_publish_cpp_sample.cpp \
-			$${IDF_PATH}/components/aws_iot/aws-iot-device-sdk-embedded-C/samples/linux/subscribe_publish_cpp_sample/subscribe_publish_cpp_sample.cpp \
-			$${IDF_PATH}/components/aws_iot/aws-iot-device-sdk-embedded-C/samples/linux/subscribe_publish_cpp_sample/subscribe_publish_cpp_sample.cpp \
 			$${IDF_PATH}/components/aws_iot/aws-iot-device-sdk-embedded-C/samples/linux/subscribe_publish_library_sample/subscribe_publish_library_sample.c \
 			$${IDF_PATH}/components/aws_iot/aws-iot-device-sdk-embedded-C/samples/linux/subscribe_publish_library_sample/subscribe_publish_library_sample.c \
-			$${IDF_PATH}/components/aws_iot/aws-iot-device-sdk-embedded-C/samples/linux/subscribe_publish_library_sample/subscribe_publish_library_sample.c \
-			$${IDF_PATH}/components/aws_iot/aws-iot-device-sdk-embedded-C/samples/linux/subscribe_publish_sample/subscribe_publish_sample.c \
 			$${IDF_PATH}/components/aws_iot/aws-iot-device-sdk-embedded-C/samples/linux/subscribe_publish_sample/subscribe_publish_sample.c \
 			$${IDF_PATH}/components/aws_iot/aws-iot-device-sdk-embedded-C/samples/linux/subscribe_publish_sample/subscribe_publish_sample.c \
 			$${IDF_PATH}/components/nghttp/nghttp2/third-party/mruby/src/symbol.c \
@@ -5900,26 +6887,25 @@
 			$${IDF_PATH}/components/asio/asio/asio/src/examples/cpp03/http/client/sync_client.cpp \
 			$${IDF_PATH}/components/asio/asio/asio/src/examples/cpp03/socks4/sync_client.cpp \
 			$${IDF_PATH}/components/asio/asio/asio/src/examples/cpp03/http/client/sync_client.cpp \
-			$${IDF_PATH}/components/bt/bluedroid/external/sbc/decoder/srce/synthesis-8-generated.c \
-			$${IDF_PATH}/components/bt/bluedroid/external/sbc/decoder/srce/synthesis-8-generated.c \
-			$${IDF_PATH}/components/bt/bluedroid/external/sbc/decoder/srce/synthesis-8-generated.c \
-			$${IDF_PATH}/components/bt/bluedroid/external/sbc/decoder/srce/synthesis-dct8.c \
-			$${IDF_PATH}/components/bt/bluedroid/external/sbc/decoder/srce/synthesis-dct8.c \
-			$${IDF_PATH}/components/bt/bluedroid/external/sbc/decoder/srce/synthesis-dct8.c \
-			$${IDF_PATH}/components/bt/bluedroid/external/sbc/decoder/srce/synthesis-sbc.c \
-			$${IDF_PATH}/components/bt/bluedroid/external/sbc/decoder/srce/synthesis-sbc.c \
-			$${IDF_PATH}/components/bt/bluedroid/external/sbc/decoder/srce/synthesis-sbc.c \
+			$${IDF_PATH}/components/asio/asio/asio/src/examples/cpp03/socks4/sync_client.cpp \
+			$${IDF_PATH}/components/asio/asio/asio/src/examples/cpp03/http/client/sync_client.cpp \
+			$${IDF_PATH}/components/bt/host/bluedroid/external/sbc/decoder/srce/synthesis-8-generated.c \
+			$${IDF_PATH}/components/bt/host/bluedroid/external/sbc/decoder/srce/synthesis-8-generated.c \
+			$${IDF_PATH}/components/bt/host/bluedroid/external/sbc/decoder/srce/synthesis-8-generated.c \
+			$${IDF_PATH}/components/bt/host/bluedroid/external/sbc/decoder/srce/synthesis-dct8.c \
+			$${IDF_PATH}/components/bt/host/bluedroid/external/sbc/decoder/srce/synthesis-dct8.c \
+			$${IDF_PATH}/components/bt/host/bluedroid/external/sbc/decoder/srce/synthesis-dct8.c \
+			$${IDF_PATH}/components/bt/host/bluedroid/external/sbc/decoder/srce/synthesis-sbc.c \
+			$${IDF_PATH}/components/bt/host/bluedroid/external/sbc/decoder/srce/synthesis-sbc.c \
+			$${IDF_PATH}/components/bt/host/bluedroid/external/sbc/decoder/srce/synthesis-sbc.c \
 			$${IDF_PATH}/components/lwip/lwip/src/core/sys.c \
-			$${IDF_PATH}/components/lwip/core/sys.c \
 			$${IDF_PATH}/components/lwip/lwip/src/core/sys.c \
-			$${IDF_PATH}/components/lwip/core/sys.c \
 			$${IDF_PATH}/components/lwip/lwip/src/core/sys.c \
-			$${IDF_PATH}/components/lwip/core/sys.c \
-			$${IDF_PATH}/components/lwip/port/freertos/sys_arch.c \
+			$${IDF_PATH}/components/lwip/port/esp32/freertos/sys_arch.c \
 			$${IDF_PATH}/components/lwip/lwip/test/unit/arch/sys_arch.c \
-			$${IDF_PATH}/components/lwip/port/freertos/sys_arch.c \
+			$${IDF_PATH}/components/lwip/port/esp32/freertos/sys_arch.c \
 			$${IDF_PATH}/components/lwip/lwip/test/unit/arch/sys_arch.c \
-			$${IDF_PATH}/components/lwip/port/freertos/sys_arch.c \
+			$${IDF_PATH}/components/lwip/port/esp32/freertos/sys_arch.c \
 			$${IDF_PATH}/components/lwip/lwip/test/unit/arch/sys_arch.c \
 			$${IDF_PATH}/components/newlib/syscall_table.c \
 			$${IDF_PATH}/components/newlib/syscall_table.c \
@@ -5932,12 +6918,15 @@
 			$${IDF_PATH}/components/esp32/system_api.c \
 			$${IDF_PATH}/components/asio/asio/asio/src/tests/unit/system_context.cpp \
 			$${IDF_PATH}/components/asio/asio/asio/src/tests/unit/system_context.cpp \
+			$${IDF_PATH}/components/asio/asio/asio/src/tests/unit/system_context.cpp \
+			$${IDF_PATH}/components/asio/asio/asio/src/tests/unit/system_executor.cpp \
 			$${IDF_PATH}/components/asio/asio/asio/src/tests/unit/system_executor.cpp \
 			$${IDF_PATH}/components/asio/asio/asio/src/tests/unit/system_executor.cpp \
 			$${IDF_PATH}/components/tinyusb/tinyusb/hw/mcu/st/system-init/system_stm32f3xx.c \
 			$${IDF_PATH}/components/tinyusb/tinyusb/hw/mcu/st/system-init/system_stm32f3xx.c \
 			$${IDF_PATH}/components/tinyusb/tinyusb/hw/mcu/st/system-init/system_stm32f4xx.c \
 			$${IDF_PATH}/components/tinyusb/tinyusb/hw/mcu/st/system-init/system_stm32f4xx.c \
+			$${IDF_PATH}/components/asio/asio/asio/src/tests/unit/system_timer.cpp \
 			$${IDF_PATH}/components/asio/asio/asio/src/tests/unit/system_timer.cpp \
 			$${IDF_PATH}/components/asio/asio/asio/src/tests/unit/system_timer.cpp \
 			$${IDF_PATH}/components/esp32/task_wdt.c \
@@ -5949,80 +6938,89 @@
 			$${IDF_PATH}/components/tinyusb/tinyusb/lib/FreeRTOS/Source/tasks.c \
 			$${IDF_PATH}/components/freertos/tasks.c \
 			$${IDF_PATH}/components/lwip/lwip/src/core/tcp.c \
-			$${IDF_PATH}/components/lwip/core/tcp.c \
 			$${IDF_PATH}/components/lwip/lwip/src/core/tcp.c \
-			$${IDF_PATH}/components/lwip/core/tcp.c \
 			$${IDF_PATH}/components/lwip/lwip/src/core/tcp.c \
-			$${IDF_PATH}/components/lwip/core/tcp.c \
+			$${IDF_PATH}/components/asio/asio/asio/src/tests/unit/ip/tcp.cpp \
 			$${IDF_PATH}/components/asio/asio/asio/src/tests/unit/ip/tcp.cpp \
 			$${IDF_PATH}/components/asio/asio/asio/src/tests/unit/ip/tcp.cpp \
 			$${IDF_PATH}/components/asio/asio/asio/src/tests/latency/tcp_client.cpp \
 			$${IDF_PATH}/components/asio/asio/asio/src/tests/latency/tcp_client.cpp \
+			$${IDF_PATH}/components/asio/asio/asio/src/tests/latency/tcp_client.cpp \
 			$${IDF_PATH}/components/lwip/lwip/test/unit/tcp/tcp_helper.c \
 			$${IDF_PATH}/components/lwip/lwip/test/unit/tcp/tcp_helper.c \
 			$${IDF_PATH}/components/lwip/lwip/test/unit/tcp/tcp_helper.c \
 			$${IDF_PATH}/components/lwip/lwip/src/core/tcp_in.c \
-			$${IDF_PATH}/components/lwip/core/tcp_in.c \
 			$${IDF_PATH}/components/lwip/lwip/src/core/tcp_in.c \
-			$${IDF_PATH}/components/lwip/core/tcp_in.c \
 			$${IDF_PATH}/components/lwip/lwip/src/core/tcp_in.c \
-			$${IDF_PATH}/components/lwip/core/tcp_in.c \
 			$${IDF_PATH}/components/lwip/lwip/src/core/tcp_out.c \
-			$${IDF_PATH}/components/lwip/core/tcp_out.c \
 			$${IDF_PATH}/components/lwip/lwip/src/core/tcp_out.c \
-			$${IDF_PATH}/components/lwip/core/tcp_out.c \
 			$${IDF_PATH}/components/lwip/lwip/src/core/tcp_out.c \
-			$${IDF_PATH}/components/lwip/core/tcp_out.c \
+			$${IDF_PATH}/components/asio/asio/asio/src/tests/latency/tcp_server.cpp \
 			$${IDF_PATH}/components/asio/asio/asio/src/tests/latency/tcp_server.cpp \
 			$${IDF_PATH}/components/asio/asio/asio/src/tests/latency/tcp_server.cpp \
 			$${IDF_PATH}/components/lwip/lwip/src/api/tcpip.c \
-			$${IDF_PATH}/components/lwip/api/tcpip.c \
 			$${IDF_PATH}/components/lwip/lwip/src/api/tcpip.c \
-			$${IDF_PATH}/components/lwip/api/tcpip.c \
 			$${IDF_PATH}/components/lwip/lwip/src/api/tcpip.c \
-			$${IDF_PATH}/components/lwip/api/tcpip.c \
 			$${IDF_PATH}/components/tcpip_adapter/tcpip_adapter_lwip.c \
 			$${IDF_PATH}/components/tcpip_adapter/tcpip_adapter_lwip.c \
 			$${IDF_PATH}/components/tcpip_adapter/tcpip_adapter_lwip.c \
+			$${IDF_PATH}/components/unity/unity/extras/fixture/test/template_fixture_tests.c \
 			$${IDF_PATH}/components/json/cJSON/tests/unity/extras/fixture/test/template_fixture_tests.c \
 			$${IDF_PATH}/components/unity/unity/extras/fixture/test/template_fixture_tests.c \
 			$${IDF_PATH}/components/json/cJSON/tests/unity/extras/fixture/test/template_fixture_tests.c \
 			$${IDF_PATH}/components/unity/unity/extras/fixture/test/template_fixture_tests.c \
 			$${IDF_PATH}/components/json/cJSON/tests/unity/extras/fixture/test/template_fixture_tests.c \
+			$${IDF_PATH}/components/newlib/termios.c \
+			$${IDF_PATH}/components/newlib/termios.c \
+			$${IDF_PATH}/components/newlib/termios.c \
 			$${IDF_PATH}/components/protobuf-c/protobuf-c/t/generated-code/test-generated-code.c \
 			$${IDF_PATH}/components/protobuf-c/protobuf-c/t/generated-code/test-generated-code.c \
+			$${IDF_PATH}/components/protobuf-c/protobuf-c/t/generated-code/test-generated-code.c \
+			$${IDF_PATH}/components/protobuf-c/protobuf-c/t/generated-code2/test-generated-code2.c \
 			$${IDF_PATH}/components/protobuf-c/protobuf-c/t/generated-code2/test-generated-code2.c \
 			$${IDF_PATH}/components/protobuf-c/protobuf-c/t/generated-code2/test-generated-code2.c \
 			$${IDF_PATH}/components/nghttp/nghttp2/third-party/neverbleed/test.c \
 			$${IDF_PATH}/components/nghttp/nghttp2/third-party/http-parser/test.c \
 			$${IDF_PATH}/components/mdns/test_afl_fuzz_host/test.c \
 			$${IDF_PATH}/components/json/cJSON/test.c \
+			$${IDF_PATH}/components/bt/esp_ble_mesh/mesh_core/test.c \
 			$${IDF_PATH}/components/nghttp/nghttp2/third-party/neverbleed/test.c \
 			$${IDF_PATH}/components/nghttp/nghttp2/third-party/http-parser/test.c \
 			$${IDF_PATH}/components/mdns/test_afl_fuzz_host/test.c \
 			$${IDF_PATH}/components/json/cJSON/test.c \
+			$${IDF_PATH}/components/bt/esp_ble_mesh/mesh_core/test.c \
 			$${IDF_PATH}/components/nghttp/nghttp2/third-party/neverbleed/test.c \
 			$${IDF_PATH}/components/nghttp/nghttp2/third-party/http-parser/test.c \
 			$${IDF_PATH}/components/mdns/test_afl_fuzz_host/test.c \
 			$${IDF_PATH}/components/json/cJSON/test.c \
-			$${IDF_PATH}/components/json/cJSON/tests/unity/test/testdata/testRunnerGenerator.c \
+			$${IDF_PATH}/components/bt/esp_ble_mesh/mesh_core/test.c \
 			$${IDF_PATH}/components/unity/unity/test/testdata/testRunnerGenerator.c \
 			$${IDF_PATH}/components/json/cJSON/tests/unity/test/testdata/testRunnerGenerator.c \
 			$${IDF_PATH}/components/unity/unity/test/testdata/testRunnerGenerator.c \
 			$${IDF_PATH}/components/json/cJSON/tests/unity/test/testdata/testRunnerGenerator.c \
-			$${IDF_PATH}/components/json/cJSON/tests/unity/test/testdata/testRunnerGeneratorSmall.c \
+			$${IDF_PATH}/components/unity/unity/test/testdata/testRunnerGenerator.c \
+			$${IDF_PATH}/components/json/cJSON/tests/unity/test/testdata/testRunnerGenerator.c \
 			$${IDF_PATH}/components/unity/unity/test/testdata/testRunnerGeneratorSmall.c \
 			$${IDF_PATH}/components/json/cJSON/tests/unity/test/testdata/testRunnerGeneratorSmall.c \
 			$${IDF_PATH}/components/unity/unity/test/testdata/testRunnerGeneratorSmall.c \
 			$${IDF_PATH}/components/json/cJSON/tests/unity/test/testdata/testRunnerGeneratorSmall.c \
-			$${IDF_PATH}/components/json/cJSON/tests/unity/test/testdata/testRunnerGeneratorWithMocks.c \
+			$${IDF_PATH}/components/unity/unity/test/testdata/testRunnerGeneratorSmall.c \
+			$${IDF_PATH}/components/json/cJSON/tests/unity/test/testdata/testRunnerGeneratorSmall.c \
 			$${IDF_PATH}/components/unity/unity/test/testdata/testRunnerGeneratorWithMocks.c \
 			$${IDF_PATH}/components/json/cJSON/tests/unity/test/testdata/testRunnerGeneratorWithMocks.c \
 			$${IDF_PATH}/components/unity/unity/test/testdata/testRunnerGeneratorWithMocks.c \
 			$${IDF_PATH}/components/json/cJSON/tests/unity/test/testdata/testRunnerGeneratorWithMocks.c \
+			$${IDF_PATH}/components/unity/unity/test/testdata/testRunnerGeneratorWithMocks.c \
+			$${IDF_PATH}/components/json/cJSON/tests/unity/test/testdata/testRunnerGeneratorWithMocks.c \
+			$${IDF_PATH}/components/esp32/test/test_4mpsram.c \
+			$${IDF_PATH}/components/esp32/test/test_4mpsram.c \
+			$${IDF_PATH}/components/esp32/test/test_4mpsram.c \
 			$${IDF_PATH}/components/driver/test/test_adc2.c \
 			$${IDF_PATH}/components/driver/test/test_adc2.c \
 			$${IDF_PATH}/components/driver/test/test_adc2.c \
+			$${IDF_PATH}/components/mbedtls/test/test_aes_perf.c \
+			$${IDF_PATH}/components/mbedtls/test/test_aes_perf.c \
+			$${IDF_PATH}/components/mbedtls/test/test_aes_perf.c \
 			$${IDF_PATH}/components/esp32/test/test_aes_sha_rsa.c \
 			$${IDF_PATH}/components/esp32/test/test_aes_sha_rsa.c \
 			$${IDF_PATH}/components/esp32/test/test_aes_sha_rsa.c \
@@ -6032,6 +7030,12 @@
 			$${IDF_PATH}/components/mbedtls/test/test_apb_dport_access.c \
 			$${IDF_PATH}/components/mbedtls/test/test_apb_dport_access.c \
 			$${IDF_PATH}/components/mbedtls/test/test_apb_dport_access.c \
+			$${IDF_PATH}/components/app_update/test/test_app_desc.c \
+			$${IDF_PATH}/components/app_update/test/test_app_desc.c \
+			$${IDF_PATH}/components/app_update/test/test_app_desc.c \
+			$${IDF_PATH}/components/esp32/test/test_attr.c \
+			$${IDF_PATH}/components/esp32/test/test_attr.c \
+			$${IDF_PATH}/components/esp32/test/test_attr.c \
 			$${IDF_PATH}/components/esp32/test/test_backtrace.c \
 			$${IDF_PATH}/components/esp32/test/test_backtrace.c \
 			$${IDF_PATH}/components/esp32/test/test_backtrace.c \
@@ -6047,7 +7051,9 @@
 			$${IDF_PATH}/components/spiffs/spiffs/src/test/test_check.c \
 			$${IDF_PATH}/components/spiffs/spiffs/src/test/test_check.c \
 			$${IDF_PATH}/components/spiffs/spiffs/src/test/test_check.c \
-			$${IDF_PATH}/components/micro-ecc/micro-ecc/test/test_compress.c \
+			$${IDF_PATH}/components/driver/test/test_common_spi.c \
+			$${IDF_PATH}/components/driver/test/test_common_spi.c \
+			$${IDF_PATH}/components/driver/test/test_common_spi.c \
 			$${IDF_PATH}/components/bootloader/subproject/components/micro-ecc/micro-ecc/test/test_compress.c \
 			$${IDF_PATH}/components/micro-ecc/micro-ecc/test/test_compress.c \
 			$${IDF_PATH}/components/bootloader/subproject/components/micro-ecc/micro-ecc/test/test_compress.c \
@@ -6056,7 +7062,6 @@
 			$${IDF_PATH}/components/nvs_flash/test_nvs_host/test_compressed_enum_table.cpp \
 			$${IDF_PATH}/components/nvs_flash/test_nvs_host/test_compressed_enum_table.cpp \
 			$${IDF_PATH}/components/nvs_flash/test_nvs_host/test_compressed_enum_table.cpp \
-			$${IDF_PATH}/components/micro-ecc/micro-ecc/test/test_compute.c \
 			$${IDF_PATH}/components/bootloader/subproject/components/micro-ecc/micro-ecc/test/test_compute.c \
 			$${IDF_PATH}/components/micro-ecc/micro-ecc/test/test_compute.c \
 			$${IDF_PATH}/components/bootloader/subproject/components/micro-ecc/micro-ecc/test/test_compute.c \
@@ -6064,6 +7069,10 @@
 			$${IDF_PATH}/components/bootloader/subproject/components/micro-ecc/micro-ecc/test/test_compute.c \
 			$${IDF_PATH}/components/espcoredump/test/test_core_dump.c \
 			$${IDF_PATH}/components/espcoredump/test/test_core_dump.c \
+			$${IDF_PATH}/components/espcoredump/test/test_core_dump.c \
+			$${IDF_PATH}/components/wpa_supplicant/test/test_crypto.c \
+			$${IDF_PATH}/components/wpa_supplicant/test/test_crypto.c \
+			$${IDF_PATH}/components/wpa_supplicant/test/test_crypto.c \
 			$${IDF_PATH}/components/cxx/test/test_cxx.cpp \
 			$${IDF_PATH}/components/cxx/test/test_cxx.cpp \
 			$${IDF_PATH}/components/cxx/test/test_cxx.cpp \
@@ -6097,24 +7106,34 @@
 			$${IDF_PATH}/components/esp32/test/test_dport.c \
 			$${IDF_PATH}/components/esp32/test/test_dport.c \
 			$${IDF_PATH}/components/esp32/test/test_dport.c \
-			$${IDF_PATH}/components/micro-ecc/micro-ecc/test/test_ecdh.c \
 			$${IDF_PATH}/components/bootloader/subproject/components/micro-ecc/micro-ecc/test/test_ecdh.c \
 			$${IDF_PATH}/components/micro-ecc/micro-ecc/test/test_ecdh.c \
 			$${IDF_PATH}/components/bootloader/subproject/components/micro-ecc/micro-ecc/test/test_ecdh.c \
 			$${IDF_PATH}/components/micro-ecc/micro-ecc/test/test_ecdh.c \
 			$${IDF_PATH}/components/bootloader/subproject/components/micro-ecc/micro-ecc/test/test_ecdh.c \
-			$${IDF_PATH}/components/micro-ecc/micro-ecc/test/test_ecdsa.c \
 			$${IDF_PATH}/components/bootloader/subproject/components/micro-ecc/micro-ecc/test/test_ecdsa.c \
 			$${IDF_PATH}/components/micro-ecc/micro-ecc/test/test_ecdsa.c \
 			$${IDF_PATH}/components/bootloader/subproject/components/micro-ecc/micro-ecc/test/test_ecdsa.c \
 			$${IDF_PATH}/components/micro-ecc/micro-ecc/test/test_ecdsa.c \
 			$${IDF_PATH}/components/bootloader/subproject/components/micro-ecc/micro-ecc/test/test_ecdsa.c \
-			$${IDF_PATH}/components/bootloader_support/test/test_efuse_coding_scheme.c \
-			$${IDF_PATH}/components/bootloader_support/test/test_efuse_coding_scheme.c \
-			$${IDF_PATH}/components/bootloader_support/test/test_efuse_coding_scheme.c \
+			$${IDF_PATH}/components/mbedtls/test/test_ecp.c \
+			$${IDF_PATH}/components/mbedtls/test/test_ecp.c \
+			$${IDF_PATH}/components/mbedtls/test/test_ecp.c \
+			$${IDF_PATH}/components/efuse/test/test_efuse.c \
+			$${IDF_PATH}/components/efuse/test/test_efuse.c \
+			$${IDF_PATH}/components/efuse/test/test_efuse.c \
+			$${IDF_PATH}/components/efuse/test/test_efuse_coding_scheme.c \
+			$${IDF_PATH}/components/efuse/test/test_efuse_coding_scheme.c \
+			$${IDF_PATH}/components/efuse/test/test_efuse_coding_scheme.c \
+			$${IDF_PATH}/components/esp_eth/test/test_emac.c \
+			$${IDF_PATH}/components/esp_eth/test/test_emac.c \
+			$${IDF_PATH}/components/esp_eth/test/test_emac.c \
 			$${IDF_PATH}/components/coap/libcoap/tests/test_error_response.c \
 			$${IDF_PATH}/components/coap/libcoap/tests/test_error_response.c \
 			$${IDF_PATH}/components/coap/libcoap/tests/test_error_response.c \
+			$${IDF_PATH}/components/spi_flash/test/test_esp_flash.c \
+			$${IDF_PATH}/components/spi_flash/test/test_esp_flash.c \
+			$${IDF_PATH}/components/spi_flash/test/test_esp_flash.c \
 			$${IDF_PATH}/components/esp32/test/test_esp_timer.c \
 			$${IDF_PATH}/components/esp32/test/test_esp_timer.c \
 			$${IDF_PATH}/components/esp32/test/test_esp_timer.c \
@@ -6124,11 +7143,14 @@
 			$${IDF_PATH}/components/esp32/test/test_ets_timer.c \
 			$${IDF_PATH}/components/esp32/test/test_ets_timer.c \
 			$${IDF_PATH}/components/esp32/test/test_ets_timer.c \
+			$${IDF_PATH}/components/esp_event/test/test_event.c \
+			$${IDF_PATH}/components/esp_event/test/test_event.c \
+			$${IDF_PATH}/components/esp_event/test/test_event.c \
 			$${IDF_PATH}/components/tinyusb/tinyusb/test/vendor/ceedling/plugins/fake_function_framework/examples/fff_example/test/test_event_processor.c \
 			$${IDF_PATH}/components/tinyusb/tinyusb/test/vendor/ceedling/plugins/fake_function_framework/examples/fff_example/test/test_event_processor.c \
-			$${IDF_PATH}/components/esp32/test/test_exception.c \
-			$${IDF_PATH}/components/esp32/test/test_exception.c \
-			$${IDF_PATH}/components/esp32/test/test_exception.c \
+			$${IDF_PATH}/components/expat/test/test_expat.c \
+			$${IDF_PATH}/components/expat/test/test_expat.c \
+			$${IDF_PATH}/components/expat/test/test_expat.c \
 			$${IDF_PATH}/components/esp32/test/test_fastbus.c \
 			$${IDF_PATH}/components/esp32/test/test_fastbus.c \
 			$${IDF_PATH}/components/esp32/test/test_fastbus.c \
@@ -6175,6 +7197,9 @@
 			$${IDF_PATH}/components/freertos/test/test_freertos_isinisrcontext.c \
 			$${IDF_PATH}/components/freertos/test/test_freertos_isinisrcontext.c \
 			$${IDF_PATH}/components/freertos/test/test_freertos_isinisrcontext.c \
+			$${IDF_PATH}/components/freertos/test/test_freertos_mutex.c \
+			$${IDF_PATH}/components/freertos/test/test_freertos_mutex.c \
+			$${IDF_PATH}/components/freertos/test/test_freertos_mutex.c \
 			$${IDF_PATH}/components/freertos/test/test_freertos_task_delay_until.c \
 			$${IDF_PATH}/components/freertos/test/test_freertos_task_delay_until.c \
 			$${IDF_PATH}/components/freertos/test/test_freertos_task_delay_until.c \
@@ -6190,21 +7215,36 @@
 			$${IDF_PATH}/components/driver/test/test_gpio.c \
 			$${IDF_PATH}/components/driver/test/test_gpio.c \
 			$${IDF_PATH}/components/driver/test/test_gpio.c \
-			$${IDF_PATH}/components/esp32/test/test_header_files_md5.c \
-			$${IDF_PATH}/components/esp32/test/test_header_files_md5.c \
-			$${IDF_PATH}/components/esp32/test/test_header_files_md5.c \
+			$${IDF_PATH}/components/wpa_supplicant/test/test_header_files_md5.c \
+			$${IDF_PATH}/components/esp_wifi/test/test_header_files_md5.c \
+			$${IDF_PATH}/components/wpa_supplicant/test/test_header_files_md5.c \
+			$${IDF_PATH}/components/esp_wifi/test/test_header_files_md5.c \
+			$${IDF_PATH}/components/wpa_supplicant/test/test_header_files_md5.c \
+			$${IDF_PATH}/components/esp_wifi/test/test_header_files_md5.c \
 			$${IDF_PATH}/components/heap/test/test_heap_trace.c \
 			$${IDF_PATH}/components/heap/test/test_heap_trace.c \
 			$${IDF_PATH}/components/heap/test/test_heap_trace.c \
 			$${IDF_PATH}/components/coap/libcoap/ext/tinydtls/ecc/test_helper.c \
 			$${IDF_PATH}/components/coap/libcoap/ext/tinydtls/ecc/test_helper.c \
 			$${IDF_PATH}/components/coap/libcoap/ext/tinydtls/ecc/test_helper.c \
+			$${IDF_PATH}/components/esp32/test/test_himem.c \
+			$${IDF_PATH}/components/esp32/test/test_himem.c \
+			$${IDF_PATH}/components/esp32/test/test_himem.c \
+			$${IDF_PATH}/components/esp_http_client/test/test_http_client.c \
+			$${IDF_PATH}/components/esp_http_client/test/test_http_client.c \
+			$${IDF_PATH}/components/esp_http_client/test/test_http_client.c \
+			$${IDF_PATH}/components/esp_http_server/test/test_http_server.c \
+			$${IDF_PATH}/components/esp_http_server/test/test_http_server.c \
+			$${IDF_PATH}/components/esp_http_server/test/test_http_server.c \
 			$${IDF_PATH}/components/spiffs/spiffs/src/test/test_hydrogen.c \
 			$${IDF_PATH}/components/spiffs/spiffs/src/test/test_hydrogen.c \
 			$${IDF_PATH}/components/spiffs/spiffs/src/test/test_hydrogen.c \
-			$${IDF_PATH}/components/esp32/test/test_int_wdt.c \
-			$${IDF_PATH}/components/esp32/test/test_int_wdt.c \
-			$${IDF_PATH}/components/esp32/test/test_int_wdt.c \
+			$${IDF_PATH}/components/driver/test/test_i2c.c \
+			$${IDF_PATH}/components/driver/test/test_i2c.c \
+			$${IDF_PATH}/components/driver/test/test_i2c.c \
+			$${IDF_PATH}/components/driver/test/test_i2s.c \
+			$${IDF_PATH}/components/driver/test/test_i2s.c \
+			$${IDF_PATH}/components/driver/test/test_i2s.c \
 			$${IDF_PATH}/components/esp32/test/test_intr_alloc.c \
 			$${IDF_PATH}/components/esp32/test/test_intr_alloc.c \
 			$${IDF_PATH}/components/esp32/test/test_intr_alloc.c \
@@ -6220,9 +7260,15 @@
 			$${IDF_PATH}/components/lwip/lwip/test/unit/ip6/test_ip6.c \
 			$${IDF_PATH}/components/lwip/lwip/test/unit/ip6/test_ip6.c \
 			$${IDF_PATH}/components/lwip/lwip/test/unit/ip6/test_ip6.c \
+			$${IDF_PATH}/components/esp32/test/test_ipc.c \
+			$${IDF_PATH}/components/esp32/test/test_ipc.c \
+			$${IDF_PATH}/components/esp32/test/test_ipc.c \
 			$${IDF_PATH}/components/spi_flash/test/test_large_flash_writes.c \
 			$${IDF_PATH}/components/spi_flash/test/test_large_flash_writes.c \
 			$${IDF_PATH}/components/spi_flash/test/test_large_flash_writes.c \
+			$${IDF_PATH}/components/heap/test/test_leak.c \
+			$${IDF_PATH}/components/heap/test/test_leak.c \
+			$${IDF_PATH}/components/heap/test/test_leak.c \
 			$${IDF_PATH}/components/driver/test/test_ledc.c \
 			$${IDF_PATH}/components/driver/test/test_ledc.c \
 			$${IDF_PATH}/components/driver/test/test_ledc.c \
@@ -6244,8 +7290,11 @@
 			$${IDF_PATH}/components/mbedtls/test/test_mbedtls_sha.c \
 			$${IDF_PATH}/components/mbedtls/test/test_mbedtls_sha.c \
 			$${IDF_PATH}/components/mbedtls/test/test_mbedtls_sha.c \
+			$${IDF_PATH}/components/mdns/test/test_mdns.c \
 			$${IDF_PATH}/components/lwip/lwip/test/unit/mdns/test_mdns.c \
+			$${IDF_PATH}/components/mdns/test/test_mdns.c \
 			$${IDF_PATH}/components/lwip/lwip/test/unit/mdns/test_mdns.c \
+			$${IDF_PATH}/components/mdns/test/test_mdns.c \
 			$${IDF_PATH}/components/lwip/lwip/test/unit/mdns/test_mdns.c \
 			$${IDF_PATH}/components/lwip/lwip/test/unit/core/test_mem.c \
 			$${IDF_PATH}/components/lwip/lwip/test/unit/core/test_mem.c \
@@ -6271,9 +7320,6 @@
 			$${IDF_PATH}/components/freertos/test/test_newlib_reent.c \
 			$${IDF_PATH}/components/freertos/test/test_newlib_reent.c \
 			$${IDF_PATH}/components/freertos/test/test_newlib_reent.c \
-			$${IDF_PATH}/components/esp32/test/test_noinit.c \
-			$${IDF_PATH}/components/esp32/test/test_noinit.c \
-			$${IDF_PATH}/components/esp32/test/test_noinit.c \
 			$${IDF_PATH}/components/bt/host/nimble/nimble/porting/npl/linux/test/test_npl_callout.c \
 			$${IDF_PATH}/components/bt/host/nimble/nimble/porting/npl/linux/test/test_npl_callout.c \
 			$${IDF_PATH}/components/bt/host/nimble/nimble/porting/npl/linux/test/test_npl_callout.c \
@@ -6295,6 +7341,9 @@
 			$${IDF_PATH}/components/nvs_flash/test_nvs_host/test_nvs.cpp \
 			$${IDF_PATH}/components/nvs_flash/test_nvs_host/test_nvs.cpp \
 			$${IDF_PATH}/components/nvs_flash/test_nvs_host/test_nvs.cpp \
+			$${IDF_PATH}/components/nvs_flash/test_nvs_host/test_nvs_storage.cpp \
+			$${IDF_PATH}/components/nvs_flash/test_nvs_host/test_nvs_storage.cpp \
+			$${IDF_PATH}/components/nvs_flash/test_nvs_host/test_nvs_storage.cpp \
 			$${IDF_PATH}/components/coap/libcoap/tests/test_options.c \
 			$${IDF_PATH}/components/coap/libcoap/tests/test_options.c \
 			$${IDF_PATH}/components/coap/libcoap/tests/test_options.c \
@@ -6310,45 +7359,63 @@
 			$${IDF_PATH}/components/partition_table/test/test_partition.c \
 			$${IDF_PATH}/components/partition_table/test/test_partition.c \
 			$${IDF_PATH}/components/partition_table/test/test_partition.c \
+			$${IDF_PATH}/components/spi_flash/test/test_partition_ext.c \
+			$${IDF_PATH}/components/spi_flash/test/test_partition_ext.c \
+			$${IDF_PATH}/components/spi_flash/test/test_partition_ext.c \
 			$${IDF_PATH}/components/spi_flash/test/test_partitions.c \
 			$${IDF_PATH}/components/spi_flash/test/test_partitions.c \
 			$${IDF_PATH}/components/spi_flash/test/test_partitions.c \
 			$${IDF_PATH}/components/lwip/lwip/test/unit/core/test_pbuf.c \
 			$${IDF_PATH}/components/lwip/lwip/test/unit/core/test_pbuf.c \
 			$${IDF_PATH}/components/lwip/lwip/test/unit/core/test_pbuf.c \
+			$${IDF_PATH}/components/driver/test/test_pcnt.c \
+			$${IDF_PATH}/components/driver/test/test_pcnt.c \
+			$${IDF_PATH}/components/driver/test/test_pcnt.c \
 			$${IDF_PATH}/components/coap/libcoap/tests/test_pdu.c \
 			$${IDF_PATH}/components/coap/libcoap/tests/test_pdu.c \
 			$${IDF_PATH}/components/coap/libcoap/tests/test_pdu.c \
-			$${IDF_PATH}/components/esp32/test/test_phy_rtc.c \
-			$${IDF_PATH}/components/esp32/test/test_phy_rtc.c \
-			$${IDF_PATH}/components/esp32/test/test_phy_rtc.c \
+			$${IDF_PATH}/components/esp_wifi/test/test_phy_rtc.c \
+			$${IDF_PATH}/components/esp_wifi/test/test_phy_rtc.c \
+			$${IDF_PATH}/components/esp_wifi/test/test_phy_rtc.c \
 			$${IDF_PATH}/components/esp32/test/test_pm.c \
 			$${IDF_PATH}/components/esp32/test/test_pm.c \
 			$${IDF_PATH}/components/esp32/test/test_pm.c \
 			$${IDF_PATH}/components/freertos/test/test_preemption.c \
 			$${IDF_PATH}/components/freertos/test/test_preemption.c \
 			$${IDF_PATH}/components/freertos/test/test_preemption.c \
+			$${IDF_PATH}/components/protocomm/test/test_protocomm.c \
+			$${IDF_PATH}/components/protocomm/test/test_protocomm.c \
+			$${IDF_PATH}/components/protocomm/test/test_protocomm.c \
+			$${IDF_PATH}/components/pthread/test/test_pthread.c \
+			$${IDF_PATH}/components/pthread/test/test_pthread.c \
+			$${IDF_PATH}/components/pthread/test/test_pthread.c \
 			$${IDF_PATH}/components/pthread/test/test_pthread_cxx.cpp \
 			$${IDF_PATH}/components/pthread/test/test_pthread_cxx.cpp \
 			$${IDF_PATH}/components/pthread/test/test_pthread_cxx.cpp \
 			$${IDF_PATH}/components/pthread/test/test_pthread_local_storage.c \
 			$${IDF_PATH}/components/pthread/test/test_pthread_local_storage.c \
 			$${IDF_PATH}/components/pthread/test/test_pthread_local_storage.c \
+			$${IDF_PATH}/components/driver/test/test_pwm.c \
+			$${IDF_PATH}/components/driver/test/test_pwm.c \
+			$${IDF_PATH}/components/driver/test/test_pwm.c \
 			$${IDF_PATH}/components/freertos/test/test_queuesets.c \
 			$${IDF_PATH}/components/freertos/test/test_queuesets.c \
 			$${IDF_PATH}/components/freertos/test/test_queuesets.c \
+			$${IDF_PATH}/components/esp32/test/test_random.c \
+			$${IDF_PATH}/components/esp32/test/test_random.c \
+			$${IDF_PATH}/components/esp32/test/test_random.c \
 			$${IDF_PATH}/components/spi_flash/test/test_read_write.c \
 			$${IDF_PATH}/components/spi_flash/test/test_read_write.c \
 			$${IDF_PATH}/components/spi_flash/test/test_read_write.c \
 			$${IDF_PATH}/components/heap/test/test_realloc.c \
 			$${IDF_PATH}/components/heap/test/test_realloc.c \
 			$${IDF_PATH}/components/heap/test/test_realloc.c \
-			$${IDF_PATH}/components/esp32/test/test_restart.c \
-			$${IDF_PATH}/components/esp32/test/test_restart.c \
-			$${IDF_PATH}/components/esp32/test/test_restart.c \
-			$${IDF_PATH}/components/freertos/test/test_ringbuf.c \
-			$${IDF_PATH}/components/freertos/test/test_ringbuf.c \
-			$${IDF_PATH}/components/freertos/test/test_ringbuf.c \
+			$${IDF_PATH}/components/esp32/test/test_reset_reason.c \
+			$${IDF_PATH}/components/esp32/test/test_reset_reason.c \
+			$${IDF_PATH}/components/esp32/test/test_reset_reason.c \
+			$${IDF_PATH}/components/esp_ringbuf/test/test_ringbuf.c \
+			$${IDF_PATH}/components/esp_ringbuf/test/test_ringbuf.c \
+			$${IDF_PATH}/components/esp_ringbuf/test/test_ringbuf.c \
 			$${IDF_PATH}/components/driver/test/test_rmt.c \
 			$${IDF_PATH}/components/driver/test/test_rmt.c \
 			$${IDF_PATH}/components/driver/test/test_rmt.c \
@@ -6361,6 +7428,9 @@
 			$${IDF_PATH}/components/heap/test/test_runtime_heap_reg.c \
 			$${IDF_PATH}/components/heap/test/test_runtime_heap_reg.c \
 			$${IDF_PATH}/components/heap/test/test_runtime_heap_reg.c \
+			$${IDF_PATH}/components/wpa_supplicant/test/test_sae.c \
+			$${IDF_PATH}/components/wpa_supplicant/test/test_sae.c \
+			$${IDF_PATH}/components/wpa_supplicant/test/test_sae.c \
 			$${IDF_PATH}/components/sdmmc/test/test_sd.c \
 			$${IDF_PATH}/components/sdmmc/test/test_sd.c \
 			$${IDF_PATH}/components/sdmmc/test/test_sd.c \
@@ -6373,6 +7443,15 @@
 			$${IDF_PATH}/components/coap/libcoap/tests/test_sendqueue.c \
 			$${IDF_PATH}/components/coap/libcoap/tests/test_sendqueue.c \
 			$${IDF_PATH}/components/coap/libcoap/tests/test_sendqueue.c \
+			$${IDF_PATH}/components/coap/libcoap/tests/test_session.c \
+			$${IDF_PATH}/components/coap/libcoap/tests/test_session.c \
+			$${IDF_PATH}/components/coap/libcoap/tests/test_session.c \
+			$${IDF_PATH}/components/esp32/test/test_sha.c \
+			$${IDF_PATH}/components/esp32/test/test_sha.c \
+			$${IDF_PATH}/components/esp32/test/test_sha.c \
+			$${IDF_PATH}/components/mbedtls/test/test_sha_perf.c \
+			$${IDF_PATH}/components/mbedtls/test/test_sha_perf.c \
+			$${IDF_PATH}/components/mbedtls/test/test_sha_perf.c \
 			$${IDF_PATH}/components/driver/test/test_sigmadelta.c \
 			$${IDF_PATH}/components/driver/test/test_sigmadelta.c \
 			$${IDF_PATH}/components/driver/test/test_sigmadelta.c \
@@ -6397,6 +7476,12 @@
 			$${IDF_PATH}/components/driver/test/test_spi_master.c \
 			$${IDF_PATH}/components/driver/test/test_spi_master.c \
 			$${IDF_PATH}/components/driver/test/test_spi_master.c \
+			$${IDF_PATH}/components/driver/test/test_spi_param.c \
+			$${IDF_PATH}/components/driver/test/test_spi_param.c \
+			$${IDF_PATH}/components/driver/test/test_spi_param.c \
+			$${IDF_PATH}/components/driver/test/test_spi_sio.c \
+			$${IDF_PATH}/components/driver/test/test_spi_sio.c \
+			$${IDF_PATH}/components/driver/test/test_spi_sio.c \
 			$${IDF_PATH}/components/driver/test/test_spi_slave.c \
 			$${IDF_PATH}/components/driver/test/test_spi_slave.c \
 			$${IDF_PATH}/components/driver/test/test_spi_slave.c \
@@ -6424,6 +7509,9 @@
 			$${IDF_PATH}/components/freertos/test/test_suspend_scheduler.c \
 			$${IDF_PATH}/components/freertos/test/test_suspend_scheduler.c \
 			$${IDF_PATH}/components/freertos/test/test_suspend_scheduler.c \
+			$${IDF_PATH}/components/app_update/test/test_switch_ota.c \
+			$${IDF_PATH}/components/app_update/test/test_switch_ota.c \
+			$${IDF_PATH}/components/app_update/test/test_switch_ota.c \
 			$${IDF_PATH}/components/freertos/test/test_task_priorities.c \
 			$${IDF_PATH}/components/freertos/test/test_task_priorities.c \
 			$${IDF_PATH}/components/freertos/test/test_task_priorities.c \
@@ -6457,9 +7545,15 @@
 			$${IDF_PATH}/components/esp32/test/test_tjpgd.c \
 			$${IDF_PATH}/components/esp32/test/test_tjpgd.c \
 			$${IDF_PATH}/components/esp32/test/test_tjpgd.c \
+			$${IDF_PATH}/components/coap/libcoap/tests/test_tls.c \
+			$${IDF_PATH}/components/coap/libcoap/tests/test_tls.c \
+			$${IDF_PATH}/components/coap/libcoap/tests/test_tls.c \
 			$${IDF_PATH}/components/app_trace/test/test_trace.c \
 			$${IDF_PATH}/components/app_trace/test/test_trace.c \
 			$${IDF_PATH}/components/app_trace/test/test_trace.c \
+			$${IDF_PATH}/components/tcp_transport/test/test_transport.c \
+			$${IDF_PATH}/components/tcp_transport/test/test_transport.c \
+			$${IDF_PATH}/components/tcp_transport/test/test_transport.c \
 			$${IDF_PATH}/components/esp32/test/test_tsens.c \
 			$${IDF_PATH}/components/esp32/test/test_tsens.c \
 			$${IDF_PATH}/components/esp32/test/test_tsens.c \
@@ -6514,9 +7608,9 @@
 			$${IDF_PATH}/components/coap/libcoap/tests/test_wellknown.c \
 			$${IDF_PATH}/components/coap/libcoap/tests/test_wellknown.c \
 			$${IDF_PATH}/components/coap/libcoap/tests/test_wellknown.c \
-			$${IDF_PATH}/components/esp32/test/test_wifi.c \
-			$${IDF_PATH}/components/esp32/test/test_wifi.c \
-			$${IDF_PATH}/components/esp32/test/test_wifi.c \
+			$${IDF_PATH}/components/esp_wifi/test/test_wifi.c \
+			$${IDF_PATH}/components/esp_wifi/test/test_wifi.c \
+			$${IDF_PATH}/components/esp_wifi/test/test_wifi.c \
 			$${IDF_PATH}/components/wear_levelling/test/test_wl.c \
 			$${IDF_PATH}/components/wear_levelling/test/test_wl.c \
 			$${IDF_PATH}/components/wear_levelling/test/test_wl.c \
@@ -6535,107 +7629,127 @@
 			$${IDF_PATH}/components/bt/host/nimble/nimble/nimble/host/mesh/src/testing.c \
 			$${IDF_PATH}/components/bt/host/nimble/nimble/nimble/host/mesh/src/testing.c \
 			$${IDF_PATH}/components/bt/host/nimble/nimble/nimble/host/mesh/src/testing.c \
-			$${IDF_PATH}/components/json/cJSON/tests/unity/test/tests/testparameterized.c \
 			$${IDF_PATH}/components/unity/unity/test/tests/testparameterized.c \
 			$${IDF_PATH}/components/json/cJSON/tests/unity/test/tests/testparameterized.c \
 			$${IDF_PATH}/components/unity/unity/test/tests/testparameterized.c \
 			$${IDF_PATH}/components/json/cJSON/tests/unity/test/tests/testparameterized.c \
+			$${IDF_PATH}/components/unity/unity/test/tests/testparameterized.c \
+			$${IDF_PATH}/components/json/cJSON/tests/unity/test/tests/testparameterized.c \
 			$${IDF_PATH}/components/spiffs/spiffs/src/test/testrunner.c \
 			$${IDF_PATH}/components/spiffs/spiffs/src/test/testrunner.c \
 			$${IDF_PATH}/components/spiffs/spiffs/src/test/testrunner.c \
-			$${IDF_PATH}/components/json/cJSON/tests/unity/test/expectdata/testsample_cmd.c \
 			$${IDF_PATH}/components/unity/unity/test/expectdata/testsample_cmd.c \
 			$${IDF_PATH}/components/json/cJSON/tests/unity/test/expectdata/testsample_cmd.c \
 			$${IDF_PATH}/components/unity/unity/test/expectdata/testsample_cmd.c \
 			$${IDF_PATH}/components/json/cJSON/tests/unity/test/expectdata/testsample_cmd.c \
-			$${IDF_PATH}/components/json/cJSON/tests/unity/test/expectdata/testsample_def.c \
+			$${IDF_PATH}/components/unity/unity/test/expectdata/testsample_cmd.c \
+			$${IDF_PATH}/components/json/cJSON/tests/unity/test/expectdata/testsample_cmd.c \
 			$${IDF_PATH}/components/unity/unity/test/expectdata/testsample_def.c \
 			$${IDF_PATH}/components/json/cJSON/tests/unity/test/expectdata/testsample_def.c \
 			$${IDF_PATH}/components/unity/unity/test/expectdata/testsample_def.c \
 			$${IDF_PATH}/components/json/cJSON/tests/unity/test/expectdata/testsample_def.c \
-			$${IDF_PATH}/components/json/cJSON/tests/unity/test/expectdata/testsample_head1.c \
+			$${IDF_PATH}/components/unity/unity/test/expectdata/testsample_def.c \
+			$${IDF_PATH}/components/json/cJSON/tests/unity/test/expectdata/testsample_def.c \
 			$${IDF_PATH}/components/unity/unity/test/expectdata/testsample_head1.c \
 			$${IDF_PATH}/components/json/cJSON/tests/unity/test/expectdata/testsample_head1.c \
 			$${IDF_PATH}/components/unity/unity/test/expectdata/testsample_head1.c \
 			$${IDF_PATH}/components/json/cJSON/tests/unity/test/expectdata/testsample_head1.c \
-			$${IDF_PATH}/components/json/cJSON/tests/unity/test/expectdata/testsample_mock_cmd.c \
+			$${IDF_PATH}/components/unity/unity/test/expectdata/testsample_head1.c \
+			$${IDF_PATH}/components/json/cJSON/tests/unity/test/expectdata/testsample_head1.c \
 			$${IDF_PATH}/components/unity/unity/test/expectdata/testsample_mock_cmd.c \
 			$${IDF_PATH}/components/json/cJSON/tests/unity/test/expectdata/testsample_mock_cmd.c \
 			$${IDF_PATH}/components/unity/unity/test/expectdata/testsample_mock_cmd.c \
 			$${IDF_PATH}/components/json/cJSON/tests/unity/test/expectdata/testsample_mock_cmd.c \
-			$${IDF_PATH}/components/json/cJSON/tests/unity/test/expectdata/testsample_mock_def.c \
+			$${IDF_PATH}/components/unity/unity/test/expectdata/testsample_mock_cmd.c \
+			$${IDF_PATH}/components/json/cJSON/tests/unity/test/expectdata/testsample_mock_cmd.c \
 			$${IDF_PATH}/components/unity/unity/test/expectdata/testsample_mock_def.c \
 			$${IDF_PATH}/components/json/cJSON/tests/unity/test/expectdata/testsample_mock_def.c \
 			$${IDF_PATH}/components/unity/unity/test/expectdata/testsample_mock_def.c \
 			$${IDF_PATH}/components/json/cJSON/tests/unity/test/expectdata/testsample_mock_def.c \
-			$${IDF_PATH}/components/json/cJSON/tests/unity/test/expectdata/testsample_mock_head1.c \
+			$${IDF_PATH}/components/unity/unity/test/expectdata/testsample_mock_def.c \
+			$${IDF_PATH}/components/json/cJSON/tests/unity/test/expectdata/testsample_mock_def.c \
 			$${IDF_PATH}/components/unity/unity/test/expectdata/testsample_mock_head1.c \
 			$${IDF_PATH}/components/json/cJSON/tests/unity/test/expectdata/testsample_mock_head1.c \
 			$${IDF_PATH}/components/unity/unity/test/expectdata/testsample_mock_head1.c \
 			$${IDF_PATH}/components/json/cJSON/tests/unity/test/expectdata/testsample_mock_head1.c \
-			$${IDF_PATH}/components/json/cJSON/tests/unity/test/expectdata/testsample_mock_new1.c \
+			$${IDF_PATH}/components/unity/unity/test/expectdata/testsample_mock_head1.c \
+			$${IDF_PATH}/components/json/cJSON/tests/unity/test/expectdata/testsample_mock_head1.c \
 			$${IDF_PATH}/components/unity/unity/test/expectdata/testsample_mock_new1.c \
 			$${IDF_PATH}/components/json/cJSON/tests/unity/test/expectdata/testsample_mock_new1.c \
 			$${IDF_PATH}/components/unity/unity/test/expectdata/testsample_mock_new1.c \
 			$${IDF_PATH}/components/json/cJSON/tests/unity/test/expectdata/testsample_mock_new1.c \
-			$${IDF_PATH}/components/json/cJSON/tests/unity/test/expectdata/testsample_mock_new2.c \
+			$${IDF_PATH}/components/unity/unity/test/expectdata/testsample_mock_new1.c \
+			$${IDF_PATH}/components/json/cJSON/tests/unity/test/expectdata/testsample_mock_new1.c \
 			$${IDF_PATH}/components/unity/unity/test/expectdata/testsample_mock_new2.c \
 			$${IDF_PATH}/components/json/cJSON/tests/unity/test/expectdata/testsample_mock_new2.c \
 			$${IDF_PATH}/components/unity/unity/test/expectdata/testsample_mock_new2.c \
 			$${IDF_PATH}/components/json/cJSON/tests/unity/test/expectdata/testsample_mock_new2.c \
-			$${IDF_PATH}/components/json/cJSON/tests/unity/test/expectdata/testsample_mock_param.c \
+			$${IDF_PATH}/components/unity/unity/test/expectdata/testsample_mock_new2.c \
+			$${IDF_PATH}/components/json/cJSON/tests/unity/test/expectdata/testsample_mock_new2.c \
 			$${IDF_PATH}/components/unity/unity/test/expectdata/testsample_mock_param.c \
 			$${IDF_PATH}/components/json/cJSON/tests/unity/test/expectdata/testsample_mock_param.c \
 			$${IDF_PATH}/components/unity/unity/test/expectdata/testsample_mock_param.c \
 			$${IDF_PATH}/components/json/cJSON/tests/unity/test/expectdata/testsample_mock_param.c \
-			$${IDF_PATH}/components/json/cJSON/tests/unity/test/expectdata/testsample_mock_run1.c \
+			$${IDF_PATH}/components/unity/unity/test/expectdata/testsample_mock_param.c \
+			$${IDF_PATH}/components/json/cJSON/tests/unity/test/expectdata/testsample_mock_param.c \
 			$${IDF_PATH}/components/unity/unity/test/expectdata/testsample_mock_run1.c \
 			$${IDF_PATH}/components/json/cJSON/tests/unity/test/expectdata/testsample_mock_run1.c \
 			$${IDF_PATH}/components/unity/unity/test/expectdata/testsample_mock_run1.c \
 			$${IDF_PATH}/components/json/cJSON/tests/unity/test/expectdata/testsample_mock_run1.c \
-			$${IDF_PATH}/components/json/cJSON/tests/unity/test/expectdata/testsample_mock_run2.c \
+			$${IDF_PATH}/components/unity/unity/test/expectdata/testsample_mock_run1.c \
+			$${IDF_PATH}/components/json/cJSON/tests/unity/test/expectdata/testsample_mock_run1.c \
 			$${IDF_PATH}/components/unity/unity/test/expectdata/testsample_mock_run2.c \
 			$${IDF_PATH}/components/json/cJSON/tests/unity/test/expectdata/testsample_mock_run2.c \
 			$${IDF_PATH}/components/unity/unity/test/expectdata/testsample_mock_run2.c \
 			$${IDF_PATH}/components/json/cJSON/tests/unity/test/expectdata/testsample_mock_run2.c \
-			$${IDF_PATH}/components/json/cJSON/tests/unity/test/expectdata/testsample_mock_yaml.c \
+			$${IDF_PATH}/components/unity/unity/test/expectdata/testsample_mock_run2.c \
+			$${IDF_PATH}/components/json/cJSON/tests/unity/test/expectdata/testsample_mock_run2.c \
 			$${IDF_PATH}/components/unity/unity/test/expectdata/testsample_mock_yaml.c \
 			$${IDF_PATH}/components/json/cJSON/tests/unity/test/expectdata/testsample_mock_yaml.c \
 			$${IDF_PATH}/components/unity/unity/test/expectdata/testsample_mock_yaml.c \
 			$${IDF_PATH}/components/json/cJSON/tests/unity/test/expectdata/testsample_mock_yaml.c \
-			$${IDF_PATH}/components/json/cJSON/tests/unity/test/expectdata/testsample_new1.c \
+			$${IDF_PATH}/components/unity/unity/test/expectdata/testsample_mock_yaml.c \
+			$${IDF_PATH}/components/json/cJSON/tests/unity/test/expectdata/testsample_mock_yaml.c \
 			$${IDF_PATH}/components/unity/unity/test/expectdata/testsample_new1.c \
 			$${IDF_PATH}/components/json/cJSON/tests/unity/test/expectdata/testsample_new1.c \
 			$${IDF_PATH}/components/unity/unity/test/expectdata/testsample_new1.c \
 			$${IDF_PATH}/components/json/cJSON/tests/unity/test/expectdata/testsample_new1.c \
-			$${IDF_PATH}/components/json/cJSON/tests/unity/test/expectdata/testsample_new2.c \
+			$${IDF_PATH}/components/unity/unity/test/expectdata/testsample_new1.c \
+			$${IDF_PATH}/components/json/cJSON/tests/unity/test/expectdata/testsample_new1.c \
 			$${IDF_PATH}/components/unity/unity/test/expectdata/testsample_new2.c \
 			$${IDF_PATH}/components/json/cJSON/tests/unity/test/expectdata/testsample_new2.c \
 			$${IDF_PATH}/components/unity/unity/test/expectdata/testsample_new2.c \
 			$${IDF_PATH}/components/json/cJSON/tests/unity/test/expectdata/testsample_new2.c \
-			$${IDF_PATH}/components/json/cJSON/tests/unity/test/expectdata/testsample_param.c \
+			$${IDF_PATH}/components/unity/unity/test/expectdata/testsample_new2.c \
+			$${IDF_PATH}/components/json/cJSON/tests/unity/test/expectdata/testsample_new2.c \
 			$${IDF_PATH}/components/unity/unity/test/expectdata/testsample_param.c \
 			$${IDF_PATH}/components/json/cJSON/tests/unity/test/expectdata/testsample_param.c \
 			$${IDF_PATH}/components/unity/unity/test/expectdata/testsample_param.c \
 			$${IDF_PATH}/components/json/cJSON/tests/unity/test/expectdata/testsample_param.c \
-			$${IDF_PATH}/components/json/cJSON/tests/unity/test/expectdata/testsample_run1.c \
+			$${IDF_PATH}/components/unity/unity/test/expectdata/testsample_param.c \
+			$${IDF_PATH}/components/json/cJSON/tests/unity/test/expectdata/testsample_param.c \
 			$${IDF_PATH}/components/unity/unity/test/expectdata/testsample_run1.c \
 			$${IDF_PATH}/components/json/cJSON/tests/unity/test/expectdata/testsample_run1.c \
 			$${IDF_PATH}/components/unity/unity/test/expectdata/testsample_run1.c \
 			$${IDF_PATH}/components/json/cJSON/tests/unity/test/expectdata/testsample_run1.c \
-			$${IDF_PATH}/components/json/cJSON/tests/unity/test/expectdata/testsample_run2.c \
+			$${IDF_PATH}/components/unity/unity/test/expectdata/testsample_run1.c \
+			$${IDF_PATH}/components/json/cJSON/tests/unity/test/expectdata/testsample_run1.c \
 			$${IDF_PATH}/components/unity/unity/test/expectdata/testsample_run2.c \
 			$${IDF_PATH}/components/json/cJSON/tests/unity/test/expectdata/testsample_run2.c \
 			$${IDF_PATH}/components/unity/unity/test/expectdata/testsample_run2.c \
 			$${IDF_PATH}/components/json/cJSON/tests/unity/test/expectdata/testsample_run2.c \
-			$${IDF_PATH}/components/json/cJSON/tests/unity/test/expectdata/testsample_yaml.c \
+			$${IDF_PATH}/components/unity/unity/test/expectdata/testsample_run2.c \
+			$${IDF_PATH}/components/json/cJSON/tests/unity/test/expectdata/testsample_run2.c \
 			$${IDF_PATH}/components/unity/unity/test/expectdata/testsample_yaml.c \
 			$${IDF_PATH}/components/json/cJSON/tests/unity/test/expectdata/testsample_yaml.c \
 			$${IDF_PATH}/components/unity/unity/test/expectdata/testsample_yaml.c \
 			$${IDF_PATH}/components/json/cJSON/tests/unity/test/expectdata/testsample_yaml.c \
+			$${IDF_PATH}/components/unity/unity/test/expectdata/testsample_yaml.c \
+			$${IDF_PATH}/components/json/cJSON/tests/unity/test/expectdata/testsample_yaml.c \
 			$${IDF_PATH}/components/spiffs/spiffs/src/test/testsuites.c \
 			$${IDF_PATH}/components/spiffs/spiffs/src/test/testsuites.c \
 			$${IDF_PATH}/components/spiffs/spiffs/src/test/testsuites.c \
+			$${IDF_PATH}/components/unity/unity/test/tests/testunity.c \
 			$${IDF_PATH}/components/json/cJSON/tests/unity/test/tests/testunity.c \
 			$${IDF_PATH}/components/unity/unity/test/tests/testunity.c \
 			$${IDF_PATH}/components/json/cJSON/tests/unity/test/tests/testunity.c \
@@ -6648,15 +7762,17 @@
 			$${IDF_PATH}/components/asio/asio/asio/src/examples/cpp03/nonblocking/third_party_lib.cpp \
 			$${IDF_PATH}/components/asio/asio/asio/src/examples/cpp11/nonblocking/third_party_lib.cpp \
 			$${IDF_PATH}/components/asio/asio/asio/src/examples/cpp03/nonblocking/third_party_lib.cpp \
+			$${IDF_PATH}/components/asio/asio/asio/src/examples/cpp11/nonblocking/third_party_lib.cpp \
+			$${IDF_PATH}/components/asio/asio/asio/src/examples/cpp03/nonblocking/third_party_lib.cpp \
+			$${IDF_PATH}/components/bt/common/osi/thread.c \
+			$${IDF_PATH}/components/bt/common/osi/thread.c \
+			$${IDF_PATH}/components/bt/common/osi/thread.c \
 			$${IDF_PATH}/components/asio/asio/asio/src/tests/unit/thread.cpp \
 			$${IDF_PATH}/components/asio/asio/asio/src/tests/unit/thread.cpp \
+			$${IDF_PATH}/components/asio/asio/asio/src/tests/unit/thread.cpp \
 			$${IDF_PATH}/components/mbedtls/mbedtls/library/threading.c \
 			$${IDF_PATH}/components/mbedtls/mbedtls/library/threading.c \
 			$${IDF_PATH}/components/mbedtls/mbedtls/library/threading.c \
-			$${IDF_PATH}/components/aws_iot/port/threads_freertos.c \
-			$${IDF_PATH}/components/aws_iot/port/threads_freertos.c \
-			$${IDF_PATH}/components/aws_iot/port/threads_freertos.c \
-			$${IDF_PATH}/components/aws_iot/aws-iot-device-sdk-embedded-C/platform/linux/pthread/threads_pthread_wrapper.c \
 			$${IDF_PATH}/components/aws_iot/aws-iot-device-sdk-embedded-C/platform/linux/pthread/threads_pthread_wrapper.c \
 			$${IDF_PATH}/components/aws_iot/aws-iot-device-sdk-embedded-C/platform/linux/pthread/threads_pthread_wrapper.c \
 			$${IDF_PATH}/components/nghttp/nghttp2/third-party/mruby/mrbgems/mruby-time/src/time.c \
@@ -6665,10 +7781,18 @@
 			$${IDF_PATH}/components/newlib/time.c \
 			$${IDF_PATH}/components/nghttp/nghttp2/third-party/mruby/mrbgems/mruby-time/src/time.c \
 			$${IDF_PATH}/components/newlib/time.c \
+			$${IDF_PATH}/components/bt/esp_ble_mesh/mesh_models/client/time_scene_client.c \
+			$${IDF_PATH}/components/bt/esp_ble_mesh/mesh_models/client/time_scene_client.c \
+			$${IDF_PATH}/components/bt/esp_ble_mesh/mesh_models/client/time_scene_client.c \
+			$${IDF_PATH}/components/bt/esp_ble_mesh/mesh_models/server/time_scene_server.c \
+			$${IDF_PATH}/components/bt/esp_ble_mesh/mesh_models/server/time_scene_server.c \
+			$${IDF_PATH}/components/bt/esp_ble_mesh/mesh_models/server/time_scene_server.c \
+			$${IDF_PATH}/components/asio/asio/asio/src/examples/cpp03/timers/time_t_timer.cpp \
 			$${IDF_PATH}/components/asio/asio/asio/src/examples/cpp03/timers/time_t_timer.cpp \
 			$${IDF_PATH}/components/asio/asio/asio/src/examples/cpp03/timers/time_t_timer.cpp \
 			$${IDF_PATH}/components/asio/asio/asio/src/tests/unit/time_traits.cpp \
 			$${IDF_PATH}/components/asio/asio/asio/src/tests/unit/time_traits.cpp \
+			$${IDF_PATH}/components/asio/asio/asio/src/tests/unit/time_traits.cpp \
 			$${IDF_PATH}/components/nghttp/nghttp2/src/timegm.c \
 			$${IDF_PATH}/components/nghttp/nghttp2/src/timegm.c \
 			$${IDF_PATH}/components/nghttp/nghttp2/src/timegm.c \
@@ -6676,13 +7800,9 @@
 			$${IDF_PATH}/components/lwip/lwip/src/core/timeouts.c \
 			$${IDF_PATH}/components/lwip/lwip/src/core/timeouts.c \
 			$${IDF_PATH}/components/driver/timer.c \
-			$${IDF_PATH}/components/aws_iot/port/timer.c \
+			$${IDF_PATH}/components/driver/timer.c \
 			$${IDF_PATH}/components/aws_iot/aws-iot-device-sdk-embedded-C/platform/linux/common/timer.c \
 			$${IDF_PATH}/components/driver/timer.c \
-			$${IDF_PATH}/components/aws_iot/port/timer.c \
-			$${IDF_PATH}/components/aws_iot/aws-iot-device-sdk-embedded-C/platform/linux/common/timer.c \
-			$${IDF_PATH}/components/driver/timer.c \
-			$${IDF_PATH}/components/aws_iot/port/timer.c \
 			$${IDF_PATH}/components/aws_iot/aws-iot-device-sdk-embedded-C/platform/linux/common/timer.c \
 			$${IDF_PATH}/components/asio/asio/asio/src/tests/unit/ts/timer.cpp \
 			$${IDF_PATH}/components/asio/asio/asio/src/examples/cpp03/tutorial/timer5/timer.cpp \
@@ -6696,13 +7816,16 @@
 			$${IDF_PATH}/components/asio/asio/asio/src/examples/cpp03/tutorial/timer3/timer.cpp \
 			$${IDF_PATH}/components/asio/asio/asio/src/examples/cpp03/tutorial/timer2/timer.cpp \
 			$${IDF_PATH}/components/asio/asio/asio/src/examples/cpp03/tutorial/timer1/timer.cpp \
-			$${IDF_PATH}/components/lwip/core/timers.c \
+			$${IDF_PATH}/components/asio/asio/asio/src/tests/unit/ts/timer.cpp \
+			$${IDF_PATH}/components/asio/asio/asio/src/examples/cpp03/tutorial/timer5/timer.cpp \
+			$${IDF_PATH}/components/asio/asio/asio/src/examples/cpp03/tutorial/timer4/timer.cpp \
+			$${IDF_PATH}/components/asio/asio/asio/src/examples/cpp03/tutorial/timer3/timer.cpp \
+			$${IDF_PATH}/components/asio/asio/asio/src/examples/cpp03/tutorial/timer2/timer.cpp \
+			$${IDF_PATH}/components/asio/asio/asio/src/examples/cpp03/tutorial/timer1/timer.cpp \
 			$${IDF_PATH}/components/freertos/timers.c \
 			$${IDF_PATH}/components/tinyusb/tinyusb/lib/FreeRTOS/Source/timers.c \
-			$${IDF_PATH}/components/lwip/core/timers.c \
 			$${IDF_PATH}/components/freertos/timers.c \
 			$${IDF_PATH}/components/tinyusb/tinyusb/lib/FreeRTOS/Source/timers.c \
-			$${IDF_PATH}/components/lwip/core/timers.c \
 			$${IDF_PATH}/components/freertos/timers.c \
 			$${IDF_PATH}/components/mbedtls/mbedtls/library/timing.c \
 			$${IDF_PATH}/components/mbedtls/mbedtls/library/timing.c \
@@ -6710,56 +7833,69 @@
 			$${IDF_PATH}/components/coap/libcoap/examples/tiny.c \
 			$${IDF_PATH}/components/coap/libcoap/examples/tiny.c \
 			$${IDF_PATH}/components/coap/libcoap/examples/tiny.c \
-			$${IDF_PATH}/components/wpa_supplicant/src/wpa2/tls/tls_internal.c \
-			$${IDF_PATH}/components/wpa_supplicant/src/wpa2/tls/tls_internal.c \
-			$${IDF_PATH}/components/wpa_supplicant/src/wpa2/tls/tls_internal.c \
-			$${IDF_PATH}/components/wpa_supplicant/src/wpa2/tls/tlsv1_client.c \
-			$${IDF_PATH}/components/wpa_supplicant/src/wpa2/tls/tlsv1_client.c \
-			$${IDF_PATH}/components/wpa_supplicant/src/wpa2/tls/tlsv1_client.c \
-			$${IDF_PATH}/components/wpa_supplicant/src/wpa2/tls/tlsv1_client_read.c \
-			$${IDF_PATH}/components/wpa_supplicant/src/wpa2/tls/tlsv1_client_read.c \
-			$${IDF_PATH}/components/wpa_supplicant/src/wpa2/tls/tlsv1_client_read.c \
-			$${IDF_PATH}/components/wpa_supplicant/src/wpa2/tls/tlsv1_client_write.c \
-			$${IDF_PATH}/components/wpa_supplicant/src/wpa2/tls/tlsv1_client_write.c \
-			$${IDF_PATH}/components/wpa_supplicant/src/wpa2/tls/tlsv1_client_write.c \
-			$${IDF_PATH}/components/wpa_supplicant/src/wpa2/tls/tlsv1_common.c \
-			$${IDF_PATH}/components/wpa_supplicant/src/wpa2/tls/tlsv1_common.c \
-			$${IDF_PATH}/components/wpa_supplicant/src/wpa2/tls/tlsv1_common.c \
-			$${IDF_PATH}/components/wpa_supplicant/src/wpa2/tls/tlsv1_cred.c \
-			$${IDF_PATH}/components/wpa_supplicant/src/wpa2/tls/tlsv1_cred.c \
-			$${IDF_PATH}/components/wpa_supplicant/src/wpa2/tls/tlsv1_cred.c \
-			$${IDF_PATH}/components/wpa_supplicant/src/wpa2/tls/tlsv1_record.c \
-			$${IDF_PATH}/components/wpa_supplicant/src/wpa2/tls/tlsv1_record.c \
-			$${IDF_PATH}/components/wpa_supplicant/src/wpa2/tls/tlsv1_record.c \
-			$${IDF_PATH}/components/wpa_supplicant/src/wpa2/tls/tlsv1_server.c \
-			$${IDF_PATH}/components/wpa_supplicant/src/wpa2/tls/tlsv1_server.c \
-			$${IDF_PATH}/components/wpa_supplicant/src/wpa2/tls/tlsv1_server.c \
-			$${IDF_PATH}/components/wpa_supplicant/src/wpa2/tls/tlsv1_server_read.c \
-			$${IDF_PATH}/components/wpa_supplicant/src/wpa2/tls/tlsv1_server_read.c \
-			$${IDF_PATH}/components/wpa_supplicant/src/wpa2/tls/tlsv1_server_read.c \
-			$${IDF_PATH}/components/wpa_supplicant/src/wpa2/tls/tlsv1_server_write.c \
-			$${IDF_PATH}/components/wpa_supplicant/src/wpa2/tls/tlsv1_server_write.c \
-			$${IDF_PATH}/components/wpa_supplicant/src/wpa2/tls/tlsv1_server_write.c \
+			$${IDF_PATH}/components/wpa_supplicant/src/tls/tls_internal.c \
+			$${IDF_PATH}/components/wpa_supplicant/src/tls/tls_internal.c \
+			$${IDF_PATH}/components/wpa_supplicant/src/tls/tls_internal.c \
+			$${IDF_PATH}/components/wpa_supplicant/src/tls/tlsv1_client.c \
+			$${IDF_PATH}/components/wpa_supplicant/src/tls/tlsv1_client.c \
+			$${IDF_PATH}/components/wpa_supplicant/src/tls/tlsv1_client.c \
+			$${IDF_PATH}/components/wpa_supplicant/src/tls/tlsv1_client_read.c \
+			$${IDF_PATH}/components/wpa_supplicant/src/tls/tlsv1_client_read.c \
+			$${IDF_PATH}/components/wpa_supplicant/src/tls/tlsv1_client_read.c \
+			$${IDF_PATH}/components/wpa_supplicant/src/tls/tlsv1_client_write.c \
+			$${IDF_PATH}/components/wpa_supplicant/src/tls/tlsv1_client_write.c \
+			$${IDF_PATH}/components/wpa_supplicant/src/tls/tlsv1_client_write.c \
+			$${IDF_PATH}/components/wpa_supplicant/src/tls/tlsv1_common.c \
+			$${IDF_PATH}/components/wpa_supplicant/src/tls/tlsv1_common.c \
+			$${IDF_PATH}/components/wpa_supplicant/src/tls/tlsv1_common.c \
+			$${IDF_PATH}/components/wpa_supplicant/src/tls/tlsv1_cred.c \
+			$${IDF_PATH}/components/wpa_supplicant/src/tls/tlsv1_cred.c \
+			$${IDF_PATH}/components/wpa_supplicant/src/tls/tlsv1_cred.c \
+			$${IDF_PATH}/components/wpa_supplicant/src/tls/tlsv1_record.c \
+			$${IDF_PATH}/components/wpa_supplicant/src/tls/tlsv1_record.c \
+			$${IDF_PATH}/components/wpa_supplicant/src/tls/tlsv1_record.c \
+			$${IDF_PATH}/components/wpa_supplicant/src/tls/tlsv1_server.c \
+			$${IDF_PATH}/components/wpa_supplicant/src/tls/tlsv1_server.c \
+			$${IDF_PATH}/components/wpa_supplicant/src/tls/tlsv1_server.c \
+			$${IDF_PATH}/components/wpa_supplicant/src/tls/tlsv1_server_read.c \
+			$${IDF_PATH}/components/wpa_supplicant/src/tls/tlsv1_server_read.c \
+			$${IDF_PATH}/components/wpa_supplicant/src/tls/tlsv1_server_read.c \
+			$${IDF_PATH}/components/wpa_supplicant/src/tls/tlsv1_server_write.c \
+			$${IDF_PATH}/components/wpa_supplicant/src/tls/tlsv1_server_write.c \
+			$${IDF_PATH}/components/wpa_supplicant/src/tls/tlsv1_server_write.c \
 			$${IDF_PATH}/components/bt/host/nimble/nimble/apps/blemesh_models_example_2/src/transition.c \
 			$${IDF_PATH}/components/bt/host/nimble/nimble/apps/blemesh_models_example_2/src/transition.c \
 			$${IDF_PATH}/components/bt/host/nimble/nimble/apps/blemesh_models_example_2/src/transition.c \
 			$${IDF_PATH}/components/asio/asio/asio/src/examples/cpp03/windows/transmit_file.cpp \
 			$${IDF_PATH}/components/asio/asio/asio/src/examples/cpp03/windows/transmit_file.cpp \
-			$${IDF_PATH}/components/esp_http_client/lib/transport.c \
+			$${IDF_PATH}/components/asio/asio/asio/src/examples/cpp03/windows/transmit_file.cpp \
+			$${IDF_PATH}/components/tcp_transport/transport.c \
 			$${IDF_PATH}/components/bt/host/nimble/nimble/nimble/host/mesh/src/transport.c \
-			$${IDF_PATH}/components/esp_http_client/lib/transport.c \
+			$${IDF_PATH}/components/bt/esp_ble_mesh/mesh_core/transport.c \
+			$${IDF_PATH}/components/tcp_transport/transport.c \
 			$${IDF_PATH}/components/bt/host/nimble/nimble/nimble/host/mesh/src/transport.c \
-			$${IDF_PATH}/components/esp_http_client/lib/transport.c \
+			$${IDF_PATH}/components/bt/esp_ble_mesh/mesh_core/transport.c \
+			$${IDF_PATH}/components/tcp_transport/transport.c \
 			$${IDF_PATH}/components/bt/host/nimble/nimble/nimble/host/mesh/src/transport.c \
-			$${IDF_PATH}/components/esp_http_client/lib/transport_ssl.c \
-			$${IDF_PATH}/components/esp_http_client/lib/transport_ssl.c \
-			$${IDF_PATH}/components/esp_http_client/lib/transport_ssl.c \
-			$${IDF_PATH}/components/esp_http_client/lib/transport_tcp.c \
-			$${IDF_PATH}/components/esp_http_client/lib/transport_tcp.c \
-			$${IDF_PATH}/components/esp_http_client/lib/transport_tcp.c \
-			$${IDF_PATH}/components/xtensa-debug-module/trax.c \
-			$${IDF_PATH}/components/xtensa-debug-module/trax.c \
-			$${IDF_PATH}/components/xtensa-debug-module/trax.c \
+			$${IDF_PATH}/components/bt/esp_ble_mesh/mesh_core/transport.c \
+			$${IDF_PATH}/components/tcp_transport/transport_ssl.c \
+			$${IDF_PATH}/components/tcp_transport/transport_ssl.c \
+			$${IDF_PATH}/components/tcp_transport/transport_ssl.c \
+			$${IDF_PATH}/components/tcp_transport/transport_strcasestr.c \
+			$${IDF_PATH}/components/tcp_transport/transport_strcasestr.c \
+			$${IDF_PATH}/components/tcp_transport/transport_strcasestr.c \
+			$${IDF_PATH}/components/tcp_transport/transport_tcp.c \
+			$${IDF_PATH}/components/tcp_transport/transport_tcp.c \
+			$${IDF_PATH}/components/tcp_transport/transport_tcp.c \
+			$${IDF_PATH}/components/tcp_transport/transport_utils.c \
+			$${IDF_PATH}/components/tcp_transport/transport_utils.c \
+			$${IDF_PATH}/components/tcp_transport/transport_utils.c \
+			$${IDF_PATH}/components/tcp_transport/transport_ws.c \
+			$${IDF_PATH}/components/tcp_transport/transport_ws.c \
+			$${IDF_PATH}/components/tcp_transport/transport_ws.c \
+			$${IDF_PATH}/components/xtensa/trax.c \
+			$${IDF_PATH}/components/xtensa/trax.c \
+			$${IDF_PATH}/components/xtensa/trax.c \
 			$${IDF_PATH}/components/cbor/tinycbor/tests/c90/tst_c90.c \
 			$${IDF_PATH}/components/cbor/tinycbor/tests/c90/tst_c90.c \
 			$${IDF_PATH}/components/cbor/tinycbor/tests/cpp/tst_cpp.cpp \
@@ -6774,7 +7910,6 @@
 			$${IDF_PATH}/components/tinyusb/tinyusb/src/tusb.c \
 			$${IDF_PATH}/components/tinyusb/tinyusb/src/common/tusb_fifo.c \
 			$${IDF_PATH}/components/tinyusb/tinyusb/src/common/tusb_fifo.c \
-			$${IDF_PATH}/components/micro-ecc/micro-ecc/uECC.c \
 			$${IDF_PATH}/components/bootloader/subproject/components/micro-ecc/micro-ecc/uECC.c \
 			$${IDF_PATH}/components/micro-ecc/micro-ecc/uECC.c \
 			$${IDF_PATH}/components/bootloader/subproject/components/micro-ecc/micro-ecc/uECC.c \
@@ -6787,18 +7922,18 @@
 			$${IDF_PATH}/components/bt/host/nimble/nimble/apps/bttester/src/uart_pipe.c \
 			$${IDF_PATH}/components/bt/host/nimble/nimble/apps/bttester/src/uart_pipe.c \
 			$${IDF_PATH}/components/lwip/lwip/src/core/udp.c \
-			$${IDF_PATH}/components/lwip/core/udp.c \
 			$${IDF_PATH}/components/lwip/lwip/src/core/udp.c \
-			$${IDF_PATH}/components/lwip/core/udp.c \
 			$${IDF_PATH}/components/lwip/lwip/src/core/udp.c \
-			$${IDF_PATH}/components/lwip/core/udp.c \
 			$${IDF_PATH}/components/asio/asio/asio/src/tests/unit/ip/udp.cpp \
 			$${IDF_PATH}/components/asio/asio/asio/src/tests/unit/ip/udp.cpp \
+			$${IDF_PATH}/components/asio/asio/asio/src/tests/unit/ip/udp.cpp \
+			$${IDF_PATH}/components/asio/asio/asio/src/tests/latency/udp_client.cpp \
 			$${IDF_PATH}/components/asio/asio/asio/src/tests/latency/udp_client.cpp \
 			$${IDF_PATH}/components/asio/asio/asio/src/tests/latency/udp_client.cpp \
 			$${IDF_PATH}/components/mbedtls/mbedtls/programs/test/udp_proxy.c \
 			$${IDF_PATH}/components/mbedtls/mbedtls/programs/test/udp_proxy.c \
 			$${IDF_PATH}/components/mbedtls/mbedtls/programs/test/udp_proxy.c \
+			$${IDF_PATH}/components/asio/asio/asio/src/tests/latency/udp_server.cpp \
 			$${IDF_PATH}/components/asio/asio/asio/src/tests/latency/udp_server.cpp \
 			$${IDF_PATH}/components/asio/asio/asio/src/tests/latency/udp_server.cpp \
 			$${IDF_PATH}/components/ulp/ulp.c \
@@ -6809,6 +7944,8 @@
 			$${IDF_PATH}/components/ulp/ulp_macro.c \
 			$${IDF_PATH}/components/asio/asio/asio/src/tests/unit/ip/unicast.cpp \
 			$${IDF_PATH}/components/asio/asio/asio/src/tests/unit/ip/unicast.cpp \
+			$${IDF_PATH}/components/asio/asio/asio/src/tests/unit/ip/unicast.cpp \
+			$${IDF_PATH}/components/unity/unity/src/unity.c \
 			$${IDF_PATH}/components/json/cJSON/tests/unity/src/unity.c \
 			$${IDF_PATH}/components/unity/unity/src/unity.c \
 			$${IDF_PATH}/components/tinyusb/tinyusb/test/vendor/ceedling/vendor/unity/src/unity.c \
@@ -6816,37 +7953,44 @@
 			$${IDF_PATH}/components/unity/unity/src/unity.c \
 			$${IDF_PATH}/components/tinyusb/tinyusb/test/vendor/ceedling/vendor/unity/src/unity.c \
 			$${IDF_PATH}/components/json/cJSON/tests/unity/src/unity.c \
-			$${IDF_PATH}/components/json/cJSON/tests/unity/extras/fixture/src/unity_fixture.c \
 			$${IDF_PATH}/components/unity/unity/extras/fixture/src/unity_fixture.c \
 			$${IDF_PATH}/components/json/cJSON/tests/unity/extras/fixture/src/unity_fixture.c \
 			$${IDF_PATH}/components/unity/unity/extras/fixture/src/unity_fixture.c \
 			$${IDF_PATH}/components/json/cJSON/tests/unity/extras/fixture/src/unity_fixture.c \
-			$${IDF_PATH}/components/json/cJSON/tests/unity/extras/fixture/test/unity_fixture_Test.c \
+			$${IDF_PATH}/components/unity/unity/extras/fixture/src/unity_fixture.c \
+			$${IDF_PATH}/components/json/cJSON/tests/unity/extras/fixture/src/unity_fixture.c \
 			$${IDF_PATH}/components/unity/unity/extras/fixture/test/unity_fixture_Test.c \
 			$${IDF_PATH}/components/json/cJSON/tests/unity/extras/fixture/test/unity_fixture_Test.c \
 			$${IDF_PATH}/components/unity/unity/extras/fixture/test/unity_fixture_Test.c \
 			$${IDF_PATH}/components/json/cJSON/tests/unity/extras/fixture/test/unity_fixture_Test.c \
-			$${IDF_PATH}/components/json/cJSON/tests/unity/extras/fixture/test/unity_fixture_TestRunner.c \
+			$${IDF_PATH}/components/unity/unity/extras/fixture/test/unity_fixture_Test.c \
+			$${IDF_PATH}/components/json/cJSON/tests/unity/extras/fixture/test/unity_fixture_Test.c \
 			$${IDF_PATH}/components/unity/unity/extras/fixture/test/unity_fixture_TestRunner.c \
 			$${IDF_PATH}/components/json/cJSON/tests/unity/extras/fixture/test/unity_fixture_TestRunner.c \
 			$${IDF_PATH}/components/unity/unity/extras/fixture/test/unity_fixture_TestRunner.c \
 			$${IDF_PATH}/components/json/cJSON/tests/unity/extras/fixture/test/unity_fixture_TestRunner.c \
-			$${IDF_PATH}/components/json/cJSON/tests/unity/extras/fixture/test/unity_output_Spy.c \
+			$${IDF_PATH}/components/unity/unity/extras/fixture/test/unity_fixture_TestRunner.c \
+			$${IDF_PATH}/components/json/cJSON/tests/unity/extras/fixture/test/unity_fixture_TestRunner.c \
 			$${IDF_PATH}/components/unity/unity/extras/fixture/test/unity_output_Spy.c \
 			$${IDF_PATH}/components/json/cJSON/tests/unity/extras/fixture/test/unity_output_Spy.c \
 			$${IDF_PATH}/components/unity/unity/extras/fixture/test/unity_output_Spy.c \
 			$${IDF_PATH}/components/json/cJSON/tests/unity/extras/fixture/test/unity_output_Spy.c \
+			$${IDF_PATH}/components/unity/unity/extras/fixture/test/unity_output_Spy.c \
+			$${IDF_PATH}/components/json/cJSON/tests/unity/extras/fixture/test/unity_output_Spy.c \
+			$${IDF_PATH}/components/unity/unity_port_esp32.c \
+			$${IDF_PATH}/components/unity/unity_port_esp32.c \
+			$${IDF_PATH}/components/unity/unity_port_esp32.c \
+			$${IDF_PATH}/components/unity/unity_runner.c \
+			$${IDF_PATH}/components/unity/unity_runner.c \
+			$${IDF_PATH}/components/unity/unity_runner.c \
 			$${IDF_PATH}/components/json/cJSON/tests/unity_setup.c \
 			$${IDF_PATH}/components/json/cJSON/tests/unity_setup.c \
 			$${IDF_PATH}/components/json/cJSON/tests/unity_setup.c \
 			$${IDF_PATH}/components/expat/expat/expat/xmlwf/unixfilemap.c \
 			$${IDF_PATH}/components/expat/expat/expat/xmlwf/unixfilemap.c \
 			$${IDF_PATH}/components/expat/expat/expat/xmlwf/unixfilemap.c \
-			$${IDF_PATH}/components/lwip/netif/ppp/upap.c \
 			$${IDF_PATH}/components/lwip/lwip/src/netif/ppp/upap.c \
-			$${IDF_PATH}/components/lwip/netif/ppp/upap.c \
 			$${IDF_PATH}/components/lwip/lwip/src/netif/ppp/upap.c \
-			$${IDF_PATH}/components/lwip/netif/ppp/upap.c \
 			$${IDF_PATH}/components/lwip/lwip/src/netif/ppp/upap.c \
 			$${IDF_PATH}/components/coap/libcoap/src/uri.c \
 			$${IDF_PATH}/components/coap/libcoap/src/uri.c \
@@ -6872,28 +8016,34 @@
 			$${IDF_PATH}/components/tinyusb/tinyusb/src/host/usbh.c \
 			$${IDF_PATH}/components/asio/asio/asio/src/tests/unit/use_future.cpp \
 			$${IDF_PATH}/components/asio/asio/asio/src/tests/unit/use_future.cpp \
+			$${IDF_PATH}/components/asio/asio/asio/src/tests/unit/use_future.cpp \
 			$${IDF_PATH}/components/asio/asio/asio/src/tests/unit/uses_executor.cpp \
 			$${IDF_PATH}/components/asio/asio/asio/src/tests/unit/uses_executor.cpp \
-			$${IDF_PATH}/components/lwip/netif/ppp/utils.c \
+			$${IDF_PATH}/components/asio/asio/asio/src/tests/unit/uses_executor.cpp \
 			$${IDF_PATH}/components/lwip/lwip/src/netif/ppp/utils.c \
 			$${IDF_PATH}/components/libsodium/libsodium/src/libsodium/sodium/utils.c \
 			$${IDF_PATH}/components/bt/host/nimble/nimble/ext/tinycrypt/src/utils.c \
-			$${IDF_PATH}/components/lwip/netif/ppp/utils.c \
+			$${IDF_PATH}/components/bt/esp_ble_mesh/mesh_common/tinycrypt/src/utils.c \
 			$${IDF_PATH}/components/lwip/lwip/src/netif/ppp/utils.c \
 			$${IDF_PATH}/components/libsodium/libsodium/src/libsodium/sodium/utils.c \
 			$${IDF_PATH}/components/bt/host/nimble/nimble/ext/tinycrypt/src/utils.c \
-			$${IDF_PATH}/components/lwip/netif/ppp/utils.c \
+			$${IDF_PATH}/components/bt/esp_ble_mesh/mesh_common/tinycrypt/src/utils.c \
 			$${IDF_PATH}/components/lwip/lwip/src/netif/ppp/utils.c \
 			$${IDF_PATH}/components/libsodium/libsodium/src/libsodium/sodium/utils.c \
 			$${IDF_PATH}/components/bt/host/nimble/nimble/ext/tinycrypt/src/utils.c \
-			$${IDF_PATH}/components/bt/bluedroid/bta/sys/utl.c \
-			$${IDF_PATH}/components/bt/bluedroid/bta/sys/utl.c \
-			$${IDF_PATH}/components/bt/bluedroid/bta/sys/utl.c \
-			$${IDF_PATH}/components/wpa_supplicant/src/wps/uuid.c \
-			$${IDF_PATH}/components/wpa_supplicant/src/wps/uuid.c \
-			$${IDF_PATH}/components/wpa_supplicant/src/wps/uuid.c \
+			$${IDF_PATH}/components/bt/esp_ble_mesh/mesh_common/tinycrypt/src/utils.c \
+			$${IDF_PATH}/components/newlib/utime.c \
+			$${IDF_PATH}/components/newlib/utime.c \
+			$${IDF_PATH}/components/newlib/utime.c \
+			$${IDF_PATH}/components/bt/host/bluedroid/bta/sys/utl.c \
+			$${IDF_PATH}/components/bt/host/bluedroid/bta/sys/utl.c \
+			$${IDF_PATH}/components/bt/host/bluedroid/bta/sys/utl.c \
+			$${IDF_PATH}/components/wpa_supplicant/src/utils/uuid.c \
+			$${IDF_PATH}/components/wpa_supplicant/src/utils/uuid.c \
+			$${IDF_PATH}/components/wpa_supplicant/src/utils/uuid.c \
 			$${IDF_PATH}/components/asio/asio/asio/src/tests/unit/ip/v6_only.cpp \
 			$${IDF_PATH}/components/asio/asio/asio/src/tests/unit/ip/v6_only.cpp \
+			$${IDF_PATH}/components/asio/asio/asio/src/tests/unit/ip/v6_only.cpp \
 			$${IDF_PATH}/components/nghttp/nghttp2/third-party/mruby/src/variable.c \
 			$${IDF_PATH}/components/nghttp/nghttp2/third-party/mruby/src/variable.c \
 			$${IDF_PATH}/components/nghttp/nghttp2/third-party/mruby/src/variable.c \
@@ -6903,9 +8053,6 @@
 			$${IDF_PATH}/components/libsodium/libsodium/test/default/verify1.c \
 			$${IDF_PATH}/components/libsodium/libsodium/test/default/verify1.c \
 			$${IDF_PATH}/components/libsodium/libsodium/test/default/verify1.c \
-			$${IDF_PATH}/components/nghttp/nghttp2/third-party/mruby/src/version.c \
-			$${IDF_PATH}/components/mbedtls/mbedtls/library/version.c \
-			$${IDF_PATH}/components/libsodium/libsodium/src/libsodium/sodium/version.c \
 			$${IDF_PATH}/components/protobuf-c/protobuf-c/t/version/version.c \
 			$${IDF_PATH}/components/nghttp/nghttp2/third-party/mruby/src/version.c \
 			$${IDF_PATH}/components/mbedtls/mbedtls/library/version.c \
@@ -6914,58 +8061,97 @@
 			$${IDF_PATH}/components/nghttp/nghttp2/third-party/mruby/src/version.c \
 			$${IDF_PATH}/components/mbedtls/mbedtls/library/version.c \
 			$${IDF_PATH}/components/libsodium/libsodium/src/libsodium/sodium/version.c \
+			$${IDF_PATH}/components/protobuf-c/protobuf-c/t/version/version.c \
+			$${IDF_PATH}/components/nghttp/nghttp2/third-party/mruby/src/version.c \
+			$${IDF_PATH}/components/mbedtls/mbedtls/library/version.c \
+			$${IDF_PATH}/components/libsodium/libsodium/src/libsodium/sodium/version.c \
 			$${IDF_PATH}/components/mbedtls/mbedtls/library/version_features.c \
 			$${IDF_PATH}/components/mbedtls/mbedtls/library/version_features.c \
 			$${IDF_PATH}/components/mbedtls/mbedtls/library/version_features.c \
 			$${IDF_PATH}/components/vfs/vfs.c \
 			$${IDF_PATH}/components/vfs/vfs.c \
 			$${IDF_PATH}/components/vfs/vfs.c \
-			$${IDF_PATH}/components/fatfs/src/vfs_fat.c \
-			$${IDF_PATH}/components/fatfs/src/vfs_fat.c \
-			$${IDF_PATH}/components/fatfs/src/vfs_fat.c \
-			$${IDF_PATH}/components/fatfs/src/vfs_fat_sdmmc.c \
-			$${IDF_PATH}/components/fatfs/src/vfs_fat_sdmmc.c \
-			$${IDF_PATH}/components/fatfs/src/vfs_fat_sdmmc.c \
-			$${IDF_PATH}/components/fatfs/src/vfs_fat_spiflash.c \
-			$${IDF_PATH}/components/fatfs/src/vfs_fat_spiflash.c \
-			$${IDF_PATH}/components/fatfs/src/vfs_fat_spiflash.c \
-			$${IDF_PATH}/components/lwip/port/vfs_lwip.c \
-			$${IDF_PATH}/components/lwip/port/vfs_lwip.c \
-			$${IDF_PATH}/components/lwip/port/vfs_lwip.c \
+			$${IDF_PATH}/components/fatfs/vfs/vfs_fat.c \
+			$${IDF_PATH}/components/fatfs/vfs/vfs_fat.c \
+			$${IDF_PATH}/components/fatfs/vfs/vfs_fat.c \
+			$${IDF_PATH}/components/fatfs/vfs/vfs_fat_sdmmc.c \
+			$${IDF_PATH}/components/fatfs/vfs/vfs_fat_sdmmc.c \
+			$${IDF_PATH}/components/fatfs/vfs/vfs_fat_sdmmc.c \
+			$${IDF_PATH}/components/fatfs/vfs/vfs_fat_spiflash.c \
+			$${IDF_PATH}/components/fatfs/vfs/vfs_fat_spiflash.c \
+			$${IDF_PATH}/components/fatfs/vfs/vfs_fat_spiflash.c \
+			$${IDF_PATH}/components/lwip/port/esp32/vfs_lwip.c \
+			$${IDF_PATH}/components/lwip/port/esp32/vfs_lwip.c \
+			$${IDF_PATH}/components/lwip/port/esp32/vfs_lwip.c \
+			$${IDF_PATH}/components/vfs/vfs_semihost.c \
+			$${IDF_PATH}/components/vfs/vfs_semihost.c \
+			$${IDF_PATH}/components/vfs/vfs_semihost.c \
 			$${IDF_PATH}/components/vfs/vfs_uart.c \
 			$${IDF_PATH}/components/vfs/vfs_uart.c \
 			$${IDF_PATH}/components/vfs/vfs_uart.c \
-			$${IDF_PATH}/components/lwip/netif/ppp/vj.c \
 			$${IDF_PATH}/components/lwip/lwip/src/netif/ppp/vj.c \
-			$${IDF_PATH}/components/lwip/netif/ppp/vj.c \
 			$${IDF_PATH}/components/lwip/lwip/src/netif/ppp/vj.c \
-			$${IDF_PATH}/components/lwip/netif/ppp/vj.c \
 			$${IDF_PATH}/components/lwip/lwip/src/netif/ppp/vj.c \
 			$${IDF_PATH}/components/nghttp/nghttp2/third-party/mruby/src/vm.c \
 			$${IDF_PATH}/components/nghttp/nghttp2/third-party/mruby/src/vm.c \
 			$${IDF_PATH}/components/nghttp/nghttp2/third-party/mruby/src/vm.c \
 			$${IDF_PATH}/components/asio/asio/asio/src/tests/unit/wait_traits.cpp \
 			$${IDF_PATH}/components/asio/asio/asio/src/tests/unit/wait_traits.cpp \
+			$${IDF_PATH}/components/asio/asio/asio/src/tests/unit/wait_traits.cpp \
 			$${IDF_PATH}/components/asio/asio/asio/src/tests/unit/waitable_timer_service.cpp \
 			$${IDF_PATH}/components/asio/asio/asio/src/tests/unit/waitable_timer_service.cpp \
+			$${IDF_PATH}/components/asio/asio/asio/src/tests/unit/waitable_timer_service.cpp \
 			$${IDF_PATH}/components/wear_levelling/wear_levelling.cpp \
 			$${IDF_PATH}/components/wear_levelling/wear_levelling.cpp \
 			$${IDF_PATH}/components/wear_levelling/wear_levelling.cpp \
-			$${IDF_PATH}/components/esp32/wifi_init.c \
-			$${IDF_PATH}/components/esp32/wifi_init.c \
-			$${IDF_PATH}/components/esp32/wifi_init.c \
-			$${IDF_PATH}/components/esp32/wifi_os_adapter.c \
-			$${IDF_PATH}/components/esp32/wifi_os_adapter.c \
-			$${IDF_PATH}/components/esp32/wifi_os_adapter.c \
+			$${IDF_PATH}/components/wifi_provisioning/src/wifi_config.c \
+			$${IDF_PATH}/components/wifi_provisioning/src/wifi_config.c \
+			$${IDF_PATH}/components/wifi_provisioning/src/wifi_config.c \
+			$${IDF_PATH}/components/wifi_provisioning/proto-c/wifi_config.pb-c.c \
+			$${IDF_PATH}/components/wifi_provisioning/proto-c/wifi_config.pb-c.c \
+			$${IDF_PATH}/components/wifi_provisioning/proto-c/wifi_config.pb-c.c \
+			$${IDF_PATH}/components/wifi_provisioning/proto-c/wifi_constants.pb-c.c \
+			$${IDF_PATH}/components/wifi_provisioning/proto-c/wifi_constants.pb-c.c \
+			$${IDF_PATH}/components/wifi_provisioning/proto-c/wifi_constants.pb-c.c \
+			$${IDF_PATH}/components/esp_wifi/src/wifi_init.c \
+			$${IDF_PATH}/components/esp_wifi/src/wifi_init.c \
+			$${IDF_PATH}/components/esp_wifi/src/wifi_init.c \
+			$${IDF_PATH}/components/wifi_provisioning/src/wifi_scan.c \
+			$${IDF_PATH}/components/wifi_provisioning/src/wifi_scan.c \
+			$${IDF_PATH}/components/wifi_provisioning/src/wifi_scan.c \
+			$${IDF_PATH}/components/wifi_provisioning/proto-c/wifi_scan.pb-c.c \
+			$${IDF_PATH}/components/wifi_provisioning/proto-c/wifi_scan.pb-c.c \
+			$${IDF_PATH}/components/wifi_provisioning/proto-c/wifi_scan.pb-c.c \
 			$${IDF_PATH}/components/expat/expat/expat/xmlwf/win32filemap.c \
 			$${IDF_PATH}/components/expat/expat/expat/xmlwf/win32filemap.c \
 			$${IDF_PATH}/components/expat/expat/expat/xmlwf/win32filemap.c \
 			$${IDF_PATH}/components/mbedtls/mbedtls/programs/wince_main.c \
 			$${IDF_PATH}/components/mbedtls/mbedtls/programs/wince_main.c \
 			$${IDF_PATH}/components/mbedtls/mbedtls/programs/wince_main.c \
-			$${IDF_PATH}/components/lwip/port/netif/wlanif.c \
-			$${IDF_PATH}/components/lwip/port/netif/wlanif.c \
-			$${IDF_PATH}/components/lwip/port/netif/wlanif.c \
+			$${IDF_PATH}/components/lwip/port/esp32/netif/wlanif.c \
+			$${IDF_PATH}/components/lwip/port/esp32/netif/wlanif.c \
+			$${IDF_PATH}/components/lwip/port/esp32/netif/wlanif.c \
+			$${IDF_PATH}/components/wpa_supplicant/src/rsn_supp/wpa.c \
+			$${IDF_PATH}/components/wpa_supplicant/src/rsn_supp/wpa.c \
+			$${IDF_PATH}/components/wpa_supplicant/src/rsn_supp/wpa.c \
+			$${IDF_PATH}/components/wpa_supplicant/src/ap/wpa_auth.c \
+			$${IDF_PATH}/components/wpa_supplicant/src/ap/wpa_auth.c \
+			$${IDF_PATH}/components/wpa_supplicant/src/ap/wpa_auth.c \
+			$${IDF_PATH}/components/wpa_supplicant/src/ap/wpa_auth_ie.c \
+			$${IDF_PATH}/components/wpa_supplicant/src/ap/wpa_auth_ie.c \
+			$${IDF_PATH}/components/wpa_supplicant/src/ap/wpa_auth_ie.c \
+			$${IDF_PATH}/components/wpa_supplicant/src/common/wpa_common.c \
+			$${IDF_PATH}/components/wpa_supplicant/src/common/wpa_common.c \
+			$${IDF_PATH}/components/wpa_supplicant/src/common/wpa_common.c \
+			$${IDF_PATH}/components/wpa_supplicant/src/utils/wpa_debug.c \
+			$${IDF_PATH}/components/wpa_supplicant/src/utils/wpa_debug.c \
+			$${IDF_PATH}/components/wpa_supplicant/src/utils/wpa_debug.c \
+			$${IDF_PATH}/components/wpa_supplicant/src/rsn_supp/wpa_ie.c \
+			$${IDF_PATH}/components/wpa_supplicant/src/rsn_supp/wpa_ie.c \
+			$${IDF_PATH}/components/wpa_supplicant/src/rsn_supp/wpa_ie.c \
+			$${IDF_PATH}/components/wpa_supplicant/src/utils/wpabuf.c \
+			$${IDF_PATH}/components/wpa_supplicant/src/utils/wpabuf.c \
+			$${IDF_PATH}/components/wpa_supplicant/src/utils/wpabuf.c \
 			$${IDF_PATH}/components/wpa_supplicant/src/wps/wps.c \
 			$${IDF_PATH}/components/wpa_supplicant/src/wps/wps.c \
 			$${IDF_PATH}/components/wpa_supplicant/src/wps/wps.c \
@@ -6995,14 +8181,16 @@
 			$${IDF_PATH}/components/wpa_supplicant/src/wps/wps_validate.c \
 			$${IDF_PATH}/components/asio/asio/asio/src/tests/unit/write.cpp \
 			$${IDF_PATH}/components/asio/asio/asio/src/tests/unit/write.cpp \
+			$${IDF_PATH}/components/asio/asio/asio/src/tests/unit/write.cpp \
 			$${IDF_PATH}/components/asio/asio/asio/src/tests/unit/write_at.cpp \
 			$${IDF_PATH}/components/asio/asio/asio/src/tests/unit/write_at.cpp \
+			$${IDF_PATH}/components/asio/asio/asio/src/tests/unit/write_at.cpp \
 			$${IDF_PATH}/components/bt/host/nimble/nimble/apps/blemesh_light/src/ws2812.c \
 			$${IDF_PATH}/components/bt/host/nimble/nimble/apps/blemesh_light/src/ws2812.c \
 			$${IDF_PATH}/components/bt/host/nimble/nimble/apps/blemesh_light/src/ws2812.c \
-			$${IDF_PATH}/components/bt/bluedroid/btc/profile/esp/wechat_AirSync/wx_airsync_prf.c \
-			$${IDF_PATH}/components/bt/bluedroid/btc/profile/esp/wechat_AirSync/wx_airsync_prf.c \
-			$${IDF_PATH}/components/bt/bluedroid/btc/profile/esp/wechat_AirSync/wx_airsync_prf.c \
+			$${IDF_PATH}/components/bt/host/bluedroid/btc/profile/esp/wechat_AirSync/wx_airsync_prf.c \
+			$${IDF_PATH}/components/bt/host/bluedroid/btc/profile/esp/wechat_AirSync/wx_airsync_prf.c \
+			$${IDF_PATH}/components/bt/host/bluedroid/btc/profile/esp/wechat_AirSync/wx_airsync_prf.c \
 			$${IDF_PATH}/components/libsodium/libsodium/src/libsodium/crypto_scalarmult/curve25519/ref10/x25519_ref10.c \
 			$${IDF_PATH}/components/libsodium/libsodium/src/libsodium/crypto_scalarmult/curve25519/ref10/x25519_ref10.c \
 			$${IDF_PATH}/components/libsodium/libsodium/src/libsodium/crypto_scalarmult/curve25519/ref10/x25519_ref10.c \
@@ -7021,9 +8209,9 @@
 			$${IDF_PATH}/components/mbedtls/mbedtls/library/x509_csr.c \
 			$${IDF_PATH}/components/mbedtls/mbedtls/library/x509_csr.c \
 			$${IDF_PATH}/components/mbedtls/mbedtls/library/x509_csr.c \
-			$${IDF_PATH}/components/wpa_supplicant/src/wpa2/tls/x509v3.c \
-			$${IDF_PATH}/components/wpa_supplicant/src/wpa2/tls/x509v3.c \
-			$${IDF_PATH}/components/wpa_supplicant/src/wpa2/tls/x509v3.c \
+			$${IDF_PATH}/components/wpa_supplicant/src/tls/x509v3.c \
+			$${IDF_PATH}/components/wpa_supplicant/src/tls/x509v3.c \
+			$${IDF_PATH}/components/wpa_supplicant/src/tls/x509v3.c \
 			$${IDF_PATH}/components/mbedtls/mbedtls/library/x509write_crt.c \
 			$${IDF_PATH}/components/mbedtls/mbedtls/library/x509write_crt.c \
 			$${IDF_PATH}/components/mbedtls/mbedtls/library/x509write_crt.c \
@@ -7045,35 +8233,20 @@
 			$${IDF_PATH}/components/expat/expat/expat/xmlwf/xmlmime.c \
 			$${IDF_PATH}/components/expat/expat/expat/xmlwf/xmlmime.c \
 			$${IDF_PATH}/components/expat/expat/expat/xmlwf/xmlmime.c \
-			$${IDF_PATH}/components/expat/library/xmlparse.c \
 			$${IDF_PATH}/components/expat/expat/expat/lib/xmlparse.c \
-			$${IDF_PATH}/components/expat/library/xmlparse.c \
 			$${IDF_PATH}/components/expat/expat/expat/lib/xmlparse.c \
-			$${IDF_PATH}/components/expat/library/xmlparse.c \
 			$${IDF_PATH}/components/expat/expat/expat/lib/xmlparse.c \
-			$${IDF_PATH}/components/expat/library/xmlrole.c \
 			$${IDF_PATH}/components/expat/expat/expat/lib/xmlrole.c \
-			$${IDF_PATH}/components/expat/library/xmlrole.c \
 			$${IDF_PATH}/components/expat/expat/expat/lib/xmlrole.c \
-			$${IDF_PATH}/components/expat/library/xmlrole.c \
 			$${IDF_PATH}/components/expat/expat/expat/lib/xmlrole.c \
-			$${IDF_PATH}/components/expat/library/xmltok.c \
 			$${IDF_PATH}/components/expat/expat/expat/lib/xmltok.c \
-			$${IDF_PATH}/components/expat/library/xmltok.c \
 			$${IDF_PATH}/components/expat/expat/expat/lib/xmltok.c \
-			$${IDF_PATH}/components/expat/library/xmltok.c \
 			$${IDF_PATH}/components/expat/expat/expat/lib/xmltok.c \
-			$${IDF_PATH}/components/expat/library/xmltok_impl.c \
 			$${IDF_PATH}/components/expat/expat/expat/lib/xmltok_impl.c \
-			$${IDF_PATH}/components/expat/library/xmltok_impl.c \
 			$${IDF_PATH}/components/expat/expat/expat/lib/xmltok_impl.c \
-			$${IDF_PATH}/components/expat/library/xmltok_impl.c \
 			$${IDF_PATH}/components/expat/expat/expat/lib/xmltok_impl.c \
-			$${IDF_PATH}/components/expat/library/xmltok_ns.c \
 			$${IDF_PATH}/components/expat/expat/expat/lib/xmltok_ns.c \
-			$${IDF_PATH}/components/expat/library/xmltok_ns.c \
 			$${IDF_PATH}/components/expat/expat/expat/lib/xmltok_ns.c \
-			$${IDF_PATH}/components/expat/library/xmltok_ns.c \
 			$${IDF_PATH}/components/expat/expat/expat/lib/xmltok_ns.c \
 			$${IDF_PATH}/components/expat/expat/expat/xmlwf/xmlwf.c \
 			$${IDF_PATH}/components/expat/expat/expat/xmlwf/xmlwf.c \
@@ -7106,17 +8279,17 @@
 			$${IDF_PATH}/components/tinyusb/tinyusb/test/vendor/ceedling/plugins/fake_function_framework/examples/fff_example/src/subfolder/zzz.c 
 
 	HEADERS += \
-			$${IDF_PATH}/components/json/cJSON/tests/unity/test/testdata/CException.h \
-			$${IDF_PATH}/components/json/cJSON/tests/unity/test/testdata/Defs.h \
+			$${IDF_PATH}/components/unity/unity/test/testdata/CException.h \
+			$${IDF_PATH}/components/unity/unity/test/testdata/Defs.h \
 			$${IDF_PATH}/components/wear_levelling/private_include/Flash_Access.h \
-			$${IDF_PATH}/components/spiffs/test_spiffs_host/stubs/freertos/include/freertos/FreeRTOS.h \
+			$${IDF_PATH}/components/spi_flash/sim/stubs/freertos/include/freertos/FreeRTOS.h \
 			$${IDF_PATH}/components/freertos/include/freertos/FreeRTOSConfig.h \
 			$${IDF_PATH}/components/app_trace/sys_view/Config/Global.h \
 			$${IDF_PATH}/components/nghttp/nghttp2/src/HtmlParser.h \
 			$${IDF_PATH}/components/nghttp/nghttp2/src/HttpServer.h \
 			$${IDF_PATH}/components/wear_levelling/private_include/Partition.h \
-			$${IDF_PATH}/components/json/cJSON/tests/unity/examples/example_3/src/ProductionCode.h \
-			$${IDF_PATH}/components/json/cJSON/tests/unity/examples/example_3/src/ProductionCode2.h \
+			$${IDF_PATH}/components/unity/unity/examples/example_3/src/ProductionCode.h \
+			$${IDF_PATH}/components/unity/unity/examples/example_3/src/ProductionCode2.h \
 			$${IDF_PATH}/components/app_trace/sys_view/SEGGER/SEGGER.h \
 			$${IDF_PATH}/components/app_trace/sys_view/SEGGER/SEGGER_RTT.h \
 			$${IDF_PATH}/components/app_trace/sys_view/Config/SEGGER_RTT_Conf.h \
@@ -7128,7 +8301,7 @@
 			$${IDF_PATH}/components/wear_levelling/private_include/SPI_Flash.h \
 			$${IDF_PATH}/components/spi_flash/sim/SpiFlash.h \
 			$${IDF_PATH}/components/freertos/include/freertos/StackMacros.h \
-			$${IDF_PATH}/components/json/cJSON/tests/unity/examples/example_3/helper/UnityHelper.h \
+			$${IDF_PATH}/components/unity/unity/examples/example_3/helper/UnityHelper.h \
 			$${IDF_PATH}/components/wear_levelling/private_include/WL_Config.h \
 			$${IDF_PATH}/components/wear_levelling/private_include/WL_Ext_Cfg.h \
 			$${IDF_PATH}/components/wear_levelling/private_include/WL_Ext_Perf.h \
@@ -7141,15 +8314,16 @@
 			$${IDF_PATH}/components/newlib/include/sys/_intsup.h \
 			$${IDF_PATH}/components/newlib/include/_syslist.h \
 			$${IDF_PATH}/components/newlib/include/sys/_types.h \
-			$${IDF_PATH}/components/bt/bluedroid/stack/include/stack/a2d_api.h \
-			$${IDF_PATH}/components/bt/bluedroid/stack/a2dp/include/a2d_int.h \
-			$${IDF_PATH}/components/bt/bluedroid/stack/include/stack/a2d_sbc.h \
+			$${IDF_PATH}/components/bt/host/bluedroid/stack/include/stack/a2d_api.h \
+			$${IDF_PATH}/components/bt/host/bluedroid/stack/a2dp/include/a2d_int.h \
+			$${IDF_PATH}/components/bt/host/bluedroid/stack/include/stack/a2d_sbc.h \
 			$${IDF_PATH}/components/bt/host/nimble/nimble/nimble/host/mesh/src/access.h \
 			$${IDF_PATH}/components/driver/include/driver/adc.h \
 			$${IDF_PATH}/components/driver/adc1_i2s_private.h \
 			$${IDF_PATH}/components/driver/include/driver/adc2_wifi_internal.h \
 			$${IDF_PATH}/components/soc/esp32/include/soc/adc_channel.h \
-			$${IDF_PATH}/components/coap/libcoap/include/coap/address.h \
+			$${IDF_PATH}/components/soc/include/soc/adc_periph.h \
+			$${IDF_PATH}/components/coap/libcoap/include/coap2/address.h \
 			$${IDF_PATH}/components/asio/asio/asio/include/asio/ip/impl/address.hpp \
 			$${IDF_PATH}/components/asio/asio/asio/include/asio/ip/impl/address_v4.hpp \
 			$${IDF_PATH}/components/asio/asio/asio/include/asio/ip/address_v4_iterator.hpp \
@@ -7158,12 +8332,12 @@
 			$${IDF_PATH}/components/asio/asio/asio/include/asio/ip/address_v6_iterator.hpp \
 			$${IDF_PATH}/components/asio/asio/asio/include/asio/ip/address_v6_range.hpp \
 			$${IDF_PATH}/components/bt/host/nimble/nimble/nimble/host/mesh/src/adv.h \
-			$${IDF_PATH}/components/wpa_supplicant/include/crypto/aes.h \
+			$${IDF_PATH}/components/wpa_supplicant/src/crypto/aes.h \
 			$${IDF_PATH}/components/mbedtls/port/include/aes_alt.h \
-			$${IDF_PATH}/components/wpa_supplicant/include/crypto/aes_i.h \
-			$${IDF_PATH}/components/wpa_supplicant/include/crypto/aes_wrap.h \
+			$${IDF_PATH}/components/wpa_supplicant/src/crypto/aes_i.h \
+			$${IDF_PATH}/components/wpa_supplicant/src/crypto/aes_wrap.h \
 			$${IDF_PATH}/components/mbedtls/mbedtls/include/mbedtls/aesni.h \
-			$${IDF_PATH}/components/bt/bluedroid/osi/include/osi/alarm.h \
+			$${IDF_PATH}/components/bt/common/osi/include/osi/alarm.h \
 			$${IDF_PATH}/components/coap/libcoap/ext/tinydtls/alert.h \
 			$${IDF_PATH}/components/newlib/include/alloca.h \
 			$${IDF_PATH}/components/nghttp/nghttp2/src/allocator.h \
@@ -7178,7 +8352,7 @@
 			$${IDF_PATH}/components/lwip/lwip/src/apps/altcp_tls/altcp_tls_mbedtls_structs.h \
 			$${IDF_PATH}/components/newlib/include/machine/ansi.h \
 			$${IDF_PATH}/components/tinyusb/tinyusb/hw/bsp/ansi_escape.h \
-			$${IDF_PATH}/components/wpa_supplicant/include/wpa/ap_config.h \
+			$${IDF_PATH}/components/wpa_supplicant/src/ap/ap_config.h \
 			$${IDF_PATH}/components/soc/esp32/include/soc/apb_ctrl_reg.h \
 			$${IDF_PATH}/components/soc/esp32/include/soc/apb_ctrl_struct.h \
 			$${IDF_PATH}/components/lwip/lwip/src/include/lwip/api.h \
@@ -7204,8 +8378,8 @@
 			$${IDF_PATH}/components/nghttp/nghttp2/third-party/mruby/include/mruby/array.h \
 			$${IDF_PATH}/components/asio/asio/asio/include/asio/detail/array.hpp \
 			$${IDF_PATH}/components/asio/asio/asio/include/asio/detail/array_fwd.hpp \
-			$${IDF_PATH}/components/expat/include/expat/ascii.h \
-			$${IDF_PATH}/components/expat/include/expat/asciitab.h \
+			$${IDF_PATH}/components/expat/expat/expat/lib/ascii.h \
+			$${IDF_PATH}/components/expat/expat/expat/lib/asciitab.h \
 			$${IDF_PATH}/components/asio/asio/asio/include/asio.hpp \
 			$${IDF_PATH}/components/nghttp/nghttp2/src/asio_client_request_impl.h \
 			$${IDF_PATH}/components/nghttp/nghttp2/src/asio_client_response_impl.h \
@@ -7229,34 +8403,38 @@
 			$${IDF_PATH}/components/nghttp/nghttp2/src/asio_server_serve_mux.h \
 			$${IDF_PATH}/components/nghttp/nghttp2/src/asio_server_stream.h \
 			$${IDF_PATH}/components/nghttp/nghttp2/src/asio_server_tls_context.h \
-			$${IDF_PATH}/components/wpa_supplicant/include/wpa2/tls/asn1.h \
+			$${IDF_PATH}/components/wpa_supplicant/src/tls/asn1.h \
 			$${IDF_PATH}/components/mbedtls/mbedtls/include/mbedtls/asn1write.h \
 			$${IDF_PATH}/components/newlib/platform_include/assert.h \
 			$${IDF_PATH}/components/asio/asio/asio/include/asio/detail/assert.hpp \
 			$${IDF_PATH}/components/asio/asio/asio/include/asio/associated_allocator.hpp \
 			$${IDF_PATH}/components/asio/asio/asio/include/asio/associated_executor.hpp \
-			$${IDF_PATH}/components/coap/libcoap/include/coap/async.h \
+			$${IDF_PATH}/components/coap/libcoap/include/coap2/async.h \
 			$${IDF_PATH}/components/asio/asio/asio/src/tests/unit/archetypes/async_ops.hpp \
 			$${IDF_PATH}/components/asio/asio/asio/src/tests/unit/archetypes/async_result.hpp \
 			$${IDF_PATH}/components/bt/host/nimble/nimble/nimble/host/mesh/src/atomic.h \
 			$${IDF_PATH}/components/asio/asio/asio/include/asio/detail/atomic_count.hpp \
 			$${IDF_PATH}/components/tinyusb/tinyusb/src/class/audio/audio.h \
 			$${IDF_PATH}/components/lwip/lwip/src/include/lwip/prot/autoip.h \
-			$${IDF_PATH}/components/bt/bluedroid/stack/include/stack/avct_api.h \
-			$${IDF_PATH}/components/bt/bluedroid/stack/avct/include/avct_defs.h \
-			$${IDF_PATH}/components/bt/bluedroid/stack/avct/include/avct_int.h \
-			$${IDF_PATH}/components/bt/bluedroid/stack/include/stack/avdt_api.h \
-			$${IDF_PATH}/components/bt/bluedroid/stack/avdt/include/avdt_defs.h \
-			$${IDF_PATH}/components/bt/bluedroid/stack/avdt/include/avdt_int.h \
-			$${IDF_PATH}/components/bt/bluedroid/stack/include/stack/avdtc_api.h \
-			$${IDF_PATH}/components/bt/bluedroid/stack/include/stack/avrc_api.h \
-			$${IDF_PATH}/components/bt/bluedroid/stack/include/stack/avrc_defs.h \
-			$${IDF_PATH}/components/bt/bluedroid/stack/avrc/include/avrc_int.h \
-			$${IDF_PATH}/components/aws_iot/include/aws_iot_config.h \
+			$${IDF_PATH}/components/bt/host/bluedroid/stack/include/stack/avct_api.h \
+			$${IDF_PATH}/components/bt/host/bluedroid/stack/avct/include/avct_defs.h \
+			$${IDF_PATH}/components/bt/host/bluedroid/stack/avct/include/avct_int.h \
+			$${IDF_PATH}/components/bt/host/bluedroid/stack/include/stack/avdt_api.h \
+			$${IDF_PATH}/components/bt/host/bluedroid/stack/avdt/include/avdt_defs.h \
+			$${IDF_PATH}/components/bt/host/bluedroid/stack/avdt/include/avdt_int.h \
+			$${IDF_PATH}/components/bt/host/bluedroid/stack/include/stack/avdtc_api.h \
+			$${IDF_PATH}/components/bt/host/bluedroid/stack/include/stack/avrc_api.h \
+			$${IDF_PATH}/components/bt/host/bluedroid/stack/include/stack/avrc_defs.h \
+			$${IDF_PATH}/components/bt/host/bluedroid/stack/avrc/include/avrc_int.h \
+			$${IDF_PATH}/components/aws_iot/aws-iot-device-sdk-embedded-C/tests/unit/include/aws_iot_config.h \
 			$${IDF_PATH}/components/aws_iot/aws-iot-device-sdk-embedded-C/include/aws_iot_error.h \
 			$${IDF_PATH}/components/aws_iot/aws-iot-device-sdk-embedded-C/tests/integration/include/aws_iot_integ_tests_config.h \
+			$${IDF_PATH}/components/aws_iot/aws-iot-device-sdk-embedded-C/include/aws_iot_jobs_interface.h \
+			$${IDF_PATH}/components/aws_iot/aws-iot-device-sdk-embedded-C/include/aws_iot_jobs_json.h \
+			$${IDF_PATH}/components/aws_iot/aws-iot-device-sdk-embedded-C/include/aws_iot_jobs_topics.h \
+			$${IDF_PATH}/components/aws_iot/aws-iot-device-sdk-embedded-C/include/aws_iot_jobs_types.h \
 			$${IDF_PATH}/components/aws_iot/aws-iot-device-sdk-embedded-C/include/aws_iot_json_utils.h \
-			$${IDF_PATH}/components/aws_iot/include/aws_iot_log.h \
+			$${IDF_PATH}/components/aws_iot/aws-iot-device-sdk-embedded-C/include/aws_iot_log.h \
 			$${IDF_PATH}/components/aws_iot/aws-iot-device-sdk-embedded-C/include/aws_iot_mqtt_client.h \
 			$${IDF_PATH}/components/aws_iot/aws-iot-device-sdk-embedded-C/include/aws_iot_mqtt_client_common_internal.h \
 			$${IDF_PATH}/components/aws_iot/aws-iot-device-sdk-embedded-C/include/aws_iot_mqtt_client_interface.h \
@@ -7275,7 +8453,7 @@
 			$${IDF_PATH}/components/tinyusb/tinyusb/test/vendor/ceedling/plugins/fake_function_framework/examples/fff_example/src/bar.h \
 			$${IDF_PATH}/components/libsodium/libsodium/src/libsodium/crypto_core/curve25519/ref10/base.h \
 			$${IDF_PATH}/components/libsodium/libsodium/src/libsodium/crypto_core/curve25519/ref10/base2.h \
-			$${IDF_PATH}/components/wpa_supplicant/include/wpa2/utils/base64.h \
+			$${IDF_PATH}/components/wpa_supplicant/src/utils/base64.h \
 			$${IDF_PATH}/components/nghttp/nghttp2/src/base64_test.h \
 			$${IDF_PATH}/components/asio/asio/asio/include/asio/detail/base_from_completion_cond.hpp \
 			$${IDF_PATH}/components/asio/asio/asio/include/asio/basic_datagram_socket.hpp \
@@ -7307,13 +8485,13 @@
 			$${IDF_PATH}/components/asio/asio/asio/include/asio/basic_streambuf_fwd.hpp \
 			$${IDF_PATH}/components/asio/asio/asio/include/asio/basic_waitable_timer.hpp \
 			$${IDF_PATH}/components/soc/esp32/include/soc/bb_reg.h \
-			$${IDF_PATH}/components/bt/bluedroid/device/include/device/bdaddr.h \
+			$${IDF_PATH}/components/bt/host/bluedroid/device/include/device/bdaddr.h \
 			$${IDF_PATH}/components/bt/host/nimble/nimble/nimble/host/mesh/src/beacon.h \
-			$${IDF_PATH}/components/esp32/include/rom/bigint.h \
-			$${IDF_PATH}/components/wpa_supplicant/src/crypto/bignum.h \
+			$${IDF_PATH}/components/esp_rom/include/esp32/rom/bigint.h \
+			$${IDF_PATH}/components/wpa_supplicant/src/tls/bignum.h \
 			$${IDF_PATH}/components/asio/asio/asio/include/asio/bind_executor.hpp \
 			$${IDF_PATH}/components/asio/asio/asio/include/asio/detail/bind_handler.hpp \
-			$${IDF_PATH}/components/coap/libcoap/include/coap/bits.h \
+			$${IDF_PATH}/components/coap/libcoap/include/coap2/bits.h \
 			$${IDF_PATH}/components/libsodium/libsodium/src/libsodium/crypto_generichash/blake2b/ref/blake2.h \
 			$${IDF_PATH}/components/libsodium/libsodium/src/libsodium/crypto_generichash/blake2b/ref/blake2b-compress-avx2.h \
 			$${IDF_PATH}/components/libsodium/libsodium/src/libsodium/crypto_generichash/blake2b/ref/blake2b-compress-sse41.h \
@@ -7417,111 +8595,121 @@
 			$${IDF_PATH}/components/bt/host/nimble/nimble/apps/bleprph/src/bleprph.h \
 			$${IDF_PATH}/components/bt/host/nimble/nimble/apps/bletest/src/bletest_priv.h \
 			$${IDF_PATH}/components/bt/host/nimble/nimble/nimble/host/services/bleuart/include/bleuart/bleuart.h \
-			$${IDF_PATH}/components/coap/libcoap/include/coap/block.h \
+			$${IDF_PATH}/components/coap/libcoap/include/coap2/block.h \
 			$${IDF_PATH}/components/mbedtls/mbedtls/include/mbedtls/blowfish.h \
-			$${IDF_PATH}/components/bt/bluedroid/btc/profile/esp/blufi/include/blufi_int.h \
+			$${IDF_PATH}/components/bt/host/bluedroid/common/include/common/bluedroid_user_config.h \
+			$${IDF_PATH}/components/bt/host/bluedroid/btc/profile/esp/blufi/include/blufi_int.h \
 			$${IDF_PATH}/components/mbedtls/mbedtls/include/mbedtls/bn_mul.h \
 			$${IDF_PATH}/components/tinyusb/tinyusb/hw/bsp/board.h \
 			$${IDF_PATH}/components/soc/esp32/include/soc/boot_mode.h \
 			$${IDF_PATH}/components/bootloader_support/include/bootloader_clock.h \
-			$${IDF_PATH}/components/bootloader_support/include/bootloader_common.h \
-			$${IDF_PATH}/components/bootloader_support/include_priv/bootloader_config.h \
-			$${IDF_PATH}/components/bootloader_support/include_priv/bootloader_flash.h \
+			$${IDF_PATH}/components/spi_flash/sim/stubs/bootloader_support/include/bootloader_common.h \
+			$${IDF_PATH}/components/bootloader_support/include_bootloader/bootloader_config.h \
+			$${IDF_PATH}/components/bootloader_support/include_bootloader/bootloader_flash.h \
 			$${IDF_PATH}/components/bootloader_support/include/bootloader_flash_config.h \
-			$${IDF_PATH}/components/bootloader_support/include_priv/bootloader_init.h \
-			$${IDF_PATH}/components/bootloader_support/include_priv/bootloader_random.h \
-			$${IDF_PATH}/components/bootloader_support/include_priv/bootloader_sha.h \
+			$${IDF_PATH}/components/bootloader_support/include_bootloader/bootloader_init.h \
+			$${IDF_PATH}/components/bootloader_support/include/bootloader_random.h \
+			$${IDF_PATH}/components/bootloader_support/include_bootloader/bootloader_sha.h \
 			$${IDF_PATH}/components/bootloader_support/include/bootloader_util.h \
-			$${IDF_PATH}/components/bootloader_support/include_priv/bootloader_utility.h \
+			$${IDF_PATH}/components/bootloader_support/include_bootloader/bootloader_utility.h \
 			$${IDF_PATH}/components/nghttp/nghttp2/third-party/mruby/include/mruby/boxing_nan.h \
 			$${IDF_PATH}/components/nghttp/nghttp2/third-party/mruby/include/mruby/boxing_no.h \
 			$${IDF_PATH}/components/nghttp/nghttp2/third-party/mruby/include/mruby/boxing_word.h \
 			$${IDF_PATH}/components/lwip/lwip/src/include/netif/bridgeif.h \
 			$${IDF_PATH}/components/lwip/lwip/src/include/netif/bridgeif_opts.h \
-			$${IDF_PATH}/components/bt/include/bt.h \
-			$${IDF_PATH}/components/bt/bluedroid/common/include/common/bt_common_types.h \
-			$${IDF_PATH}/components/bt/bluedroid/common/include/common/bt_defs.h \
-			$${IDF_PATH}/components/bt/bluedroid/btc/profile/std/include/bt_sdp.h \
-			$${IDF_PATH}/components/bt/bluedroid/common/include/common/bt_target.h \
-			$${IDF_PATH}/components/bt/bluedroid/common/include/common/bt_trace.h \
-			$${IDF_PATH}/components/bt/bluedroid/stack/include/stack/bt_types.h \
-			$${IDF_PATH}/components/bt/bluedroid/hci/include/hci/bt_vendor_lib.h \
-			$${IDF_PATH}/components/bt/bluedroid/bta/include/bta/bta_api.h \
-			$${IDF_PATH}/components/bt/bluedroid/bta/include/bta/bta_ar_api.h \
-			$${IDF_PATH}/components/bt/bluedroid/bta/ar/include/bta_ar_int.h \
-			$${IDF_PATH}/components/bt/bluedroid/bta/include/bta/bta_av_api.h \
-			$${IDF_PATH}/components/bt/bluedroid/bta/include/bta/bta_av_ci.h \
-			$${IDF_PATH}/components/bt/bluedroid/bta/include/bta/bta_av_co.h \
-			$${IDF_PATH}/components/bt/bluedroid/bta/av/include/bta_av_int.h \
-			$${IDF_PATH}/components/bt/bluedroid/bta/include/bta/bta_av_sbc.h \
-			$${IDF_PATH}/components/bt/bluedroid/bta/include/bta/bta_dm_ci.h \
-			$${IDF_PATH}/components/bt/bluedroid/bta/include/bta/bta_dm_co.h \
-			$${IDF_PATH}/components/bt/bluedroid/bta/dm/include/bta_dm_int.h \
-			$${IDF_PATH}/components/bt/bluedroid/bta/include/bta/bta_gatt_api.h \
-			$${IDF_PATH}/components/bt/bluedroid/bta/include/bta/bta_gatt_common.h \
-			$${IDF_PATH}/components/bt/bluedroid/bta/include/bta/bta_gattc_ci.h \
-			$${IDF_PATH}/components/bt/bluedroid/bta/include/bta/bta_gattc_co.h \
-			$${IDF_PATH}/components/bt/bluedroid/bta/gatt/include/bta_gattc_int.h \
-			$${IDF_PATH}/components/bt/bluedroid/bta/include/bta/bta_gatts_co.h \
-			$${IDF_PATH}/components/bt/bluedroid/bta/gatt/include/bta_gatts_int.h \
-			$${IDF_PATH}/components/bt/bluedroid/bta/include/bta/bta_hf_client_api.h \
-			$${IDF_PATH}/components/bt/bluedroid/bta/hf_client/include/bta_hf_client_at.h \
-			$${IDF_PATH}/components/bt/bluedroid/bta/include/bta/bta_hf_client_co.h \
-			$${IDF_PATH}/components/bt/bluedroid/bta/hf_client/include/bta_hf_client_int.h \
-			$${IDF_PATH}/components/bt/bluedroid/bta/include/bta/bta_hfp_defs.h \
-			$${IDF_PATH}/components/bt/bluedroid/bta/include/bta/bta_hh_api.h \
-			$${IDF_PATH}/components/bt/bluedroid/bta/include/bta/bta_hh_co.h \
-			$${IDF_PATH}/components/bt/bluedroid/bta/hh/include/bta_hh_int.h \
-			$${IDF_PATH}/components/bt/bluedroid/bta/include/bta/bta_jv_api.h \
-			$${IDF_PATH}/components/bt/bluedroid/bta/include/bta/bta_jv_co.h \
-			$${IDF_PATH}/components/bt/bluedroid/bta/jv/include/bta_jv_int.h \
-			$${IDF_PATH}/components/bt/bluedroid/bta/include/bta/bta_sdp_api.h \
-			$${IDF_PATH}/components/bt/bluedroid/bta/sdp/include/bta_sdp_int.h \
-			$${IDF_PATH}/components/bt/bluedroid/bta/include/bta/bta_sys.h \
-			$${IDF_PATH}/components/bt/bluedroid/bta/sys/include/bta_sys_int.h \
-			$${IDF_PATH}/components/bt/bluedroid/btc/profile/std/include/btc_a2dp.h \
-			$${IDF_PATH}/components/bt/bluedroid/btc/profile/std/include/btc_a2dp_control.h \
-			$${IDF_PATH}/components/bt/bluedroid/btc/profile/std/include/btc_a2dp_sink.h \
-			$${IDF_PATH}/components/bt/bluedroid/btc/profile/std/include/btc_a2dp_source.h \
-			$${IDF_PATH}/components/bt/bluedroid/btc/include/btc/btc_alarm.h \
-			$${IDF_PATH}/components/bt/bluedroid/btc/profile/std/include/btc_av.h \
-			$${IDF_PATH}/components/bt/bluedroid/btc/profile/std/include/btc_av_api.h \
-			$${IDF_PATH}/components/bt/bluedroid/btc/profile/std/a2dp/include/btc_av_co.h \
-			$${IDF_PATH}/components/bt/bluedroid/btc/profile/std/include/btc_avrc.h \
-			$${IDF_PATH}/components/bt/bluedroid/btc/include/btc/btc_ble_storage.h \
-			$${IDF_PATH}/components/bt/bluedroid/btc/profile/esp/include/btc_blufi_prf.h \
-			$${IDF_PATH}/components/bt/bluedroid/btc/include/btc/btc_common.h \
-			$${IDF_PATH}/components/bt/bluedroid/btc/include/btc/btc_config.h \
-			$${IDF_PATH}/components/bt/bluedroid/btc/include/btc/btc_dev.h \
-			$${IDF_PATH}/components/bt/bluedroid/btc/include/btc/btc_dm.h \
-			$${IDF_PATH}/components/bt/bluedroid/btc/profile/std/include/btc_gap_ble.h \
-			$${IDF_PATH}/components/bt/bluedroid/btc/profile/std/include/btc_gap_bt.h \
-			$${IDF_PATH}/components/bt/bluedroid/btc/profile/std/include/btc_gatt_common.h \
-			$${IDF_PATH}/components/bt/bluedroid/btc/profile/std/include/btc_gatt_util.h \
-			$${IDF_PATH}/components/bt/bluedroid/btc/profile/std/include/btc_gattc.h \
-			$${IDF_PATH}/components/bt/bluedroid/btc/profile/std/include/btc_gatts.h \
-			$${IDF_PATH}/components/bt/bluedroid/btc/profile/std/include/btc_hf_client.h \
-			$${IDF_PATH}/components/bt/bluedroid/btc/include/btc/btc_main.h \
-			$${IDF_PATH}/components/bt/bluedroid/btc/include/btc/btc_manage.h \
-			$${IDF_PATH}/components/bt/bluedroid/btc/include/btc/btc_profile_queue.h \
-			$${IDF_PATH}/components/bt/bluedroid/btc/include/btc/btc_sm.h \
-			$${IDF_PATH}/components/bt/bluedroid/btc/profile/std/include/btc_spp.h \
-			$${IDF_PATH}/components/bt/bluedroid/btc/include/btc/btc_storage.h \
-			$${IDF_PATH}/components/bt/bluedroid/btc/include/btc/btc_task.h \
-			$${IDF_PATH}/components/bt/bluedroid/btc/include/btc/btc_util.h \
-			$${IDF_PATH}/components/bt/bluedroid/common/include/common/bte.h \
-			$${IDF_PATH}/components/bt/bluedroid/common/include/common/bte_appl.h \
-			$${IDF_PATH}/components/bt/bluedroid/stack/include/stack/btm_api.h \
-			$${IDF_PATH}/components/bt/bluedroid/stack/include/stack/btm_ble_api.h \
-			$${IDF_PATH}/components/bt/bluedroid/stack/btm/include/btm_ble_int.h \
-			$${IDF_PATH}/components/bt/bluedroid/stack/btm/include/btm_int.h \
+			$${IDF_PATH}/components/esp32/include/esp32/brownout.h \
+			$${IDF_PATH}/components/bt/common/include/bt_common.h \
+			$${IDF_PATH}/components/bt/host/bluedroid/common/include/common/bt_common_types.h \
+			$${IDF_PATH}/components/bt/host/bluedroid/common/include/common/bt_defs.h \
+			$${IDF_PATH}/components/bt/host/bluedroid/btc/profile/std/include/bt_sdp.h \
+			$${IDF_PATH}/components/bt/host/bluedroid/common/include/common/bt_target.h \
+			$${IDF_PATH}/components/bt/host/bluedroid/common/include/common/bt_trace.h \
+			$${IDF_PATH}/components/bt/host/bluedroid/stack/include/stack/bt_types.h \
+			$${IDF_PATH}/components/bt/common/include/bt_user_config.h \
+			$${IDF_PATH}/components/bt/host/bluedroid/hci/include/hci/bt_vendor_lib.h \
+			$${IDF_PATH}/components/bt/host/bluedroid/bta/include/bta/bta_api.h \
+			$${IDF_PATH}/components/bt/host/bluedroid/bta/include/bta/bta_ar_api.h \
+			$${IDF_PATH}/components/bt/host/bluedroid/bta/ar/include/bta_ar_int.h \
+			$${IDF_PATH}/components/bt/host/bluedroid/bta/include/bta/bta_av_api.h \
+			$${IDF_PATH}/components/bt/host/bluedroid/bta/include/bta/bta_av_ci.h \
+			$${IDF_PATH}/components/bt/host/bluedroid/bta/include/bta/bta_av_co.h \
+			$${IDF_PATH}/components/bt/host/bluedroid/bta/av/include/bta_av_int.h \
+			$${IDF_PATH}/components/bt/host/bluedroid/bta/include/bta/bta_av_sbc.h \
+			$${IDF_PATH}/components/bt/host/bluedroid/bta/include/bta/bta_dm_ci.h \
+			$${IDF_PATH}/components/bt/host/bluedroid/bta/include/bta/bta_dm_co.h \
+			$${IDF_PATH}/components/bt/host/bluedroid/bta/dm/include/bta_dm_int.h \
+			$${IDF_PATH}/components/bt/host/bluedroid/bta/include/bta/bta_gap_bt_co.h \
+			$${IDF_PATH}/components/bt/host/bluedroid/bta/include/bta/bta_gatt_api.h \
+			$${IDF_PATH}/components/bt/host/bluedroid/bta/include/bta/bta_gatt_common.h \
+			$${IDF_PATH}/components/bt/host/bluedroid/bta/include/bta/bta_gattc_ci.h \
+			$${IDF_PATH}/components/bt/host/bluedroid/bta/include/bta/bta_gattc_co.h \
+			$${IDF_PATH}/components/bt/host/bluedroid/bta/gatt/include/bta_gattc_int.h \
+			$${IDF_PATH}/components/bt/host/bluedroid/bta/include/bta/bta_gatts_co.h \
+			$${IDF_PATH}/components/bt/host/bluedroid/bta/gatt/include/bta_gatts_int.h \
+			$${IDF_PATH}/components/bt/host/bluedroid/bta/include/bta/bta_hf_client_api.h \
+			$${IDF_PATH}/components/bt/host/bluedroid/bta/hf_client/include/bta_hf_client_at.h \
+			$${IDF_PATH}/components/bt/host/bluedroid/bta/include/bta/bta_hf_client_co.h \
+			$${IDF_PATH}/components/bt/host/bluedroid/bta/hf_client/include/bta_hf_client_int.h \
+			$${IDF_PATH}/components/bt/host/bluedroid/bta/include/bta/bta_hfp_defs.h \
+			$${IDF_PATH}/components/bt/host/bluedroid/bta/include/bta/bta_hh_api.h \
+			$${IDF_PATH}/components/bt/host/bluedroid/bta/include/bta/bta_hh_co.h \
+			$${IDF_PATH}/components/bt/host/bluedroid/bta/hh/include/bta_hh_int.h \
+			$${IDF_PATH}/components/bt/host/bluedroid/bta/include/bta/bta_jv_api.h \
+			$${IDF_PATH}/components/bt/host/bluedroid/bta/include/bta/bta_jv_co.h \
+			$${IDF_PATH}/components/bt/host/bluedroid/bta/jv/include/bta_jv_int.h \
+			$${IDF_PATH}/components/bt/host/bluedroid/bta/include/bta/bta_sdp_api.h \
+			$${IDF_PATH}/components/bt/host/bluedroid/bta/sdp/include/bta_sdp_int.h \
+			$${IDF_PATH}/components/bt/host/bluedroid/bta/include/bta/bta_sys.h \
+			$${IDF_PATH}/components/bt/host/bluedroid/bta/sys/include/bta_sys_int.h \
+			$${IDF_PATH}/components/bt/host/bluedroid/btc/profile/std/include/btc_a2dp.h \
+			$${IDF_PATH}/components/bt/host/bluedroid/btc/profile/std/include/btc_a2dp_control.h \
+			$${IDF_PATH}/components/bt/host/bluedroid/btc/profile/std/include/btc_a2dp_sink.h \
+			$${IDF_PATH}/components/bt/host/bluedroid/btc/profile/std/include/btc_a2dp_source.h \
+			$${IDF_PATH}/components/bt/common/btc/include/btc/btc_alarm.h \
+			$${IDF_PATH}/components/bt/host/bluedroid/btc/profile/std/include/btc_av.h \
+			$${IDF_PATH}/components/bt/host/bluedroid/btc/profile/std/include/btc_av_api.h \
+			$${IDF_PATH}/components/bt/host/bluedroid/btc/profile/std/a2dp/include/btc_av_co.h \
+			$${IDF_PATH}/components/bt/host/bluedroid/btc/profile/std/include/btc_avrc.h \
+			$${IDF_PATH}/components/bt/esp_ble_mesh/btc/include/btc_ble_mesh_config_model.h \
+			$${IDF_PATH}/components/bt/esp_ble_mesh/btc/include/btc_ble_mesh_generic_model.h \
+			$${IDF_PATH}/components/bt/esp_ble_mesh/btc/include/btc_ble_mesh_health_model.h \
+			$${IDF_PATH}/components/bt/esp_ble_mesh/btc/include/btc_ble_mesh_lighting_model.h \
+			$${IDF_PATH}/components/bt/esp_ble_mesh/btc/include/btc_ble_mesh_prov.h \
+			$${IDF_PATH}/components/bt/esp_ble_mesh/btc/include/btc_ble_mesh_sensor_model.h \
+			$${IDF_PATH}/components/bt/esp_ble_mesh/btc/include/btc_ble_mesh_time_scene_model.h \
+			$${IDF_PATH}/components/bt/host/bluedroid/btc/include/btc/btc_ble_storage.h \
+			$${IDF_PATH}/components/bt/host/bluedroid/btc/profile/esp/include/btc_blufi_prf.h \
+			$${IDF_PATH}/components/bt/host/bluedroid/btc/include/btc/btc_common.h \
+			$${IDF_PATH}/components/bt/host/bluedroid/btc/include/btc/btc_config.h \
+			$${IDF_PATH}/components/bt/host/bluedroid/btc/include/btc/btc_dev.h \
+			$${IDF_PATH}/components/bt/host/bluedroid/btc/include/btc/btc_dm.h \
+			$${IDF_PATH}/components/bt/host/bluedroid/btc/profile/std/include/btc_gap_ble.h \
+			$${IDF_PATH}/components/bt/host/bluedroid/btc/profile/std/include/btc_gap_bt.h \
+			$${IDF_PATH}/components/bt/host/bluedroid/btc/profile/std/include/btc_gatt_common.h \
+			$${IDF_PATH}/components/bt/host/bluedroid/btc/profile/std/include/btc_gatt_util.h \
+			$${IDF_PATH}/components/bt/host/bluedroid/btc/profile/std/include/btc_gattc.h \
+			$${IDF_PATH}/components/bt/host/bluedroid/btc/profile/std/include/btc_gatts.h \
+			$${IDF_PATH}/components/bt/host/bluedroid/btc/profile/std/include/btc_hf_client.h \
+			$${IDF_PATH}/components/bt/host/bluedroid/btc/include/btc/btc_main.h \
+			$${IDF_PATH}/components/bt/common/btc/include/btc/btc_manage.h \
+			$${IDF_PATH}/components/bt/host/bluedroid/btc/include/btc/btc_profile_queue.h \
+			$${IDF_PATH}/components/bt/host/bluedroid/btc/include/btc/btc_sm.h \
+			$${IDF_PATH}/components/bt/host/bluedroid/btc/profile/std/include/btc_spp.h \
+			$${IDF_PATH}/components/bt/host/bluedroid/btc/include/btc/btc_storage.h \
+			$${IDF_PATH}/components/bt/common/btc/include/btc/btc_task.h \
+			$${IDF_PATH}/components/bt/host/bluedroid/btc/include/btc/btc_util.h \
+			$${IDF_PATH}/components/bt/host/bluedroid/common/include/common/bte.h \
+			$${IDF_PATH}/components/bt/host/bluedroid/common/include/common/bte_appl.h \
+			$${IDF_PATH}/components/bt/host/bluedroid/stack/include/stack/btm_api.h \
+			$${IDF_PATH}/components/bt/host/bluedroid/stack/include/stack/btm_ble_api.h \
+			$${IDF_PATH}/components/bt/host/bluedroid/stack/btm/include/btm_ble_int.h \
+			$${IDF_PATH}/components/bt/host/bluedroid/stack/btm/include/btm_int.h \
 			$${IDF_PATH}/components/bt/host/nimble/nimble/apps/btshell/src/btshell.h \
 			$${IDF_PATH}/components/bt/host/nimble/nimble/apps/bttester/src/bttester.h \
 			$${IDF_PATH}/components/bt/host/nimble/nimble/apps/bttester/src/bttester_pipe.h \
-			$${IDF_PATH}/components/bt/bluedroid/stack/include/stack/btu.h \
+			$${IDF_PATH}/components/bt/host/bluedroid/stack/include/stack/btu.h \
 			$${IDF_PATH}/components/nghttp/nghttp2/src/buffer.h \
 			$${IDF_PATH}/components/asio/asio/asio/include/asio/ts/buffer.hpp \
-			$${IDF_PATH}/components/bt/bluedroid/hci/include/hci/buffer_allocator.h \
 			$${IDF_PATH}/components/asio/asio/asio/include/asio/detail/buffer_resize_guard.hpp \
 			$${IDF_PATH}/components/asio/asio/asio/include/asio/detail/buffer_sequence_adapter.hpp \
 			$${IDF_PATH}/components/nghttp/nghttp2/src/buffer_test.h \
@@ -7534,7 +8722,7 @@
 			$${IDF_PATH}/components/asio/asio/asio/include/asio/impl/buffered_write_stream.hpp \
 			$${IDF_PATH}/components/asio/asio/asio/include/asio/buffered_write_stream_fwd.hpp \
 			$${IDF_PATH}/components/asio/asio/asio/include/asio/buffers_iterator.hpp \
-			$${IDF_PATH}/components/bt/bluedroid/btc/profile/esp/include/button_pro.h \
+			$${IDF_PATH}/components/bt/host/bluedroid/btc/profile/esp/include/button_pro.h \
 			$${IDF_PATH}/components/wpa_supplicant/port/include/byteswap.h \
 			$${IDF_PATH}/components/json/cJSON/cJSON.h \
 			$${IDF_PATH}/components/json/cJSON/cJSON_Utils.h \
@@ -7551,20 +8739,25 @@
 			$${IDF_PATH}/components/protobuf-c/protobuf-c/protoc-c/c_primitive_field.h \
 			$${IDF_PATH}/components/protobuf-c/protobuf-c/protoc-c/c_service.h \
 			$${IDF_PATH}/components/protobuf-c/protobuf-c/protoc-c/c_string_field.h \
-			$${IDF_PATH}/components/esp32/include/rom/cache.h \
+			$${IDF_PATH}/components/esp_rom/include/esp32/rom/cache.h \
+			$${IDF_PATH}/components/esp32/include/esp32/cache_err_int.h \
 			$${IDF_PATH}/components/spi_flash/cache_utils.h \
-			$${IDF_PATH}/components/esp32/include/xtensa/cacheasm.h \
-			$${IDF_PATH}/components/esp32/include/xtensa/cacheattrasm.h \
+			$${IDF_PATH}/components/xtensa/include/xtensa/cacheasm.h \
+			$${IDF_PATH}/components/xtensa/include/xtensa/cacheattrasm.h \
 			$${IDF_PATH}/components/asio/asio/asio/include/asio/detail/call_stack.hpp \
 			$${IDF_PATH}/components/mbedtls/mbedtls/include/mbedtls/camellia.h \
+			$${IDF_PATH}/components/driver/include/driver/can.h \
+			$${IDF_PATH}/components/soc/include/soc/can_periph.h \
+			$${IDF_PATH}/components/soc/esp32/include/soc/can_struct.h \
 			$${IDF_PATH}/components/bt/host/nimble/nimble/ext/tinycrypt/include/tinycrypt/cbc_mode.h \
 			$${IDF_PATH}/components/cbor/tinycbor/src/cbor.h \
 			$${IDF_PATH}/components/cbor/tinycbor/src/cborinternal_p.h \
 			$${IDF_PATH}/components/cbor/tinycbor/src/cborjson.h \
-			$${IDF_PATH}/components/lwip/include/lwip/port/arch/cc.h \
+			$${IDF_PATH}/components/lwip/port/esp32/include/arch/cc.h \
 			$${IDF_PATH}/components/lwip/lwip/test/unit/cc_esp_platform.h \
 			$${IDF_PATH}/components/mbedtls/mbedtls/include/mbedtls/ccm.h \
 			$${IDF_PATH}/components/bt/host/nimble/nimble/ext/tinycrypt/include/tinycrypt/ccm_mode.h \
+			$${IDF_PATH}/components/wpa_supplicant/src/crypto/ccmp.h \
 			$${IDF_PATH}/components/lwip/lwip/src/include/netif/ppp/ccp.h \
 			$${IDF_PATH}/components/tinyusb/tinyusb/src/class/cdc/cdc.h \
 			$${IDF_PATH}/components/tinyusb/tinyusb/src/class/cdc/cdc_device.h \
@@ -7584,7 +8777,7 @@
 			$${IDF_PATH}/components/lwip/lwip/src/include/netif/ppp/chap-md5.h \
 			$${IDF_PATH}/components/lwip/lwip/src/include/netif/ppp/chap-new.h \
 			$${IDF_PATH}/components/lwip/lwip/src/include/netif/ppp/chap_ms.h \
-			$${IDF_PATH}/components/expat/port/include/chardata.h \
+			$${IDF_PATH}/components/expat/expat/expat/tests/chardata.h \
 			$${IDF_PATH}/components/asio/asio/asio/src/examples/cpp11/chat/chat_message.hpp \
 			$${IDF_PATH}/components/mbedtls/mbedtls/include/mbedtls/check_config.h \
 			$${IDF_PATH}/components/asio/asio/asio/include/asio/detail/chrono.hpp \
@@ -7592,13 +8785,15 @@
 			$${IDF_PATH}/components/mbedtls/mbedtls/include/mbedtls/cipher.h \
 			$${IDF_PATH}/components/mbedtls/mbedtls/include/mbedtls/cipher_internal.h \
 			$${IDF_PATH}/components/nghttp/nghttp2/third-party/mruby/include/mruby/class.h \
+			$${IDF_PATH}/components/bt/esp_ble_mesh/mesh_models/client/include/client_common.h \
+			$${IDF_PATH}/components/esp32/include/esp32/clk.h \
 			$${IDF_PATH}/components/soc/esp32/include/soc/clkout_channel.h \
 			$${IDF_PATH}/components/mbedtls/mbedtls/include/mbedtls/cmac.h \
 			$${IDF_PATH}/components/bt/host/nimble/nimble/ext/tinycrypt/include/tinycrypt/cmac_mode.h \
 			$${IDF_PATH}/components/bt/host/nimble/nimble/apps/btshell/src/cmd.h \
 			$${IDF_PATH}/components/bt/host/nimble/nimble/apps/btshell/src/cmd_gatt.h \
 			$${IDF_PATH}/components/bt/host/nimble/nimble/apps/btshell/src/cmd_l2cap.h \
-			$${IDF_PATH}/components/json/cJSON/tests/unity/test/testdata/cmock.h \
+			$${IDF_PATH}/components/unity/unity/test/testdata/cmock.h \
 			$${IDF_PATH}/components/tinyusb/tinyusb/test/vendor/ceedling/vendor/cmock/src/cmock_internals.h \
 			$${IDF_PATH}/components/libsodium/libsodium/test/default/cmptest.h \
 			$${IDF_PATH}/components/tinyusb/tinyusb/hw/mcu/st/cmsis/cmsis_armcc.h \
@@ -7608,13 +8803,17 @@
 			$${IDF_PATH}/components/coap/port/include/coap/coap.h \
 			$${IDF_PATH}/components/coap/port/include/coap_config.h \
 			$${IDF_PATH}/components/coap/port/include/coap_config_posix.h \
-			$${IDF_PATH}/components/coap/libcoap/include/coap/coap_io.h \
+			$${IDF_PATH}/components/coap/libcoap/include/coap2/coap_debug.h \
+			$${IDF_PATH}/components/coap/libcoap/include/coap2/coap_dtls.h \
+			$${IDF_PATH}/components/coap/libcoap/include/coap2/coap_event.h \
+			$${IDF_PATH}/components/coap/libcoap/include/coap2/coap_hashkey.h \
+			$${IDF_PATH}/components/coap/libcoap/include/coap2/coap_io.h \
 			$${IDF_PATH}/components/coap/libcoap/examples/coap_list.h \
-			$${IDF_PATH}/components/coap/libcoap/include/coap/coap_time.h \
+			$${IDF_PATH}/components/coap/libcoap/include/coap2/coap_session.h \
+			$${IDF_PATH}/components/coap/libcoap/include/coap2/coap_time.h \
 			$${IDF_PATH}/components/expat/expat/expat/xmlwf/codepage.h \
-			$${IDF_PATH}/components/esp32/coexist_internal.h \
 			$${IDF_PATH}/components/protobuf-c/protobuf-c/t/generated-code2/common-test-arrays.h \
-			$${IDF_PATH}/components/wpa_supplicant/include/wpa/common.h \
+			$${IDF_PATH}/components/wpa_supplicant/src/utils/common.h \
 			$${IDF_PATH}/components/nghttp/nghttp2/src/comp_helper.h \
 			$${IDF_PATH}/components/mbedtls/mbedtls/include/mbedtls/compat-1.3.h \
 			$${IDF_PATH}/components/nghttp/nghttp2/third-party/mruby/include/mruby/compile.h \
@@ -7631,24 +8830,26 @@
 			$${IDF_PATH}/components/mbedtls/mbedtls/configs/config-no-entropy.h \
 			$${IDF_PATH}/components/mbedtls/mbedtls/configs/config-suite-b.h \
 			$${IDF_PATH}/components/mbedtls/mbedtls/configs/config-thread.h \
+			$${IDF_PATH}/components/mbedtls/mbedtls/tests/configs/config-wrapper-malloc-0-null.h \
 			$${IDF_PATH}/components/nghttp/port/include/config.h \
 			$${IDF_PATH}/components/asio/asio/asio/include/asio/detail/config.hpp \
 			$${IDF_PATH}/components/asio/asio/asio/include/asio/impl/connect.hpp \
 			$${IDF_PATH}/components/asio/asio/asio/include/asio/local/connect_pair.hpp \
 			$${IDF_PATH}/components/asio/asio/asio/src/examples/cpp11/http/server/connection.hpp \
 			$${IDF_PATH}/components/asio/asio/asio/src/examples/cpp11/http/server/connection_manager.hpp \
-			$${IDF_PATH}/components/bt/host/nimble/nimble/porting/npl/linux/include/console/console.h \
+			$${IDF_PATH}/components/bt/host/nimble/port/include/console/console.h \
 			$${IDF_PATH}/components/bt/host/nimble/nimble/ext/tinycrypt/include/tinycrypt/constants.h \
+			$${IDF_PATH}/components/protocomm/proto-c/constants.pb-c.h \
 			$${IDF_PATH}/components/libsodium/libsodium/src/libsodium/crypto_stream/aes128ctr/nacl/consts.h \
 			$${IDF_PATH}/components/libsodium/libsodium/src/libsodium/crypto_scalarmult/curve25519/sandy2x/consts_namespace.h \
 			$${IDF_PATH}/components/asio/asio/asio/include/asio/detail/consuming_buffers.hpp \
 			$${IDF_PATH}/components/asio/asio/asio/include/asio/ssl/impl/context.hpp \
 			$${IDF_PATH}/components/asio/asio/asio/include/asio/ssl/context_base.hpp \
-			$${IDF_PATH}/components/bt/bluedroid/device/include/device/controller.h \
-			$${IDF_PATH}/components/newlib/include/xtensa/config/core-isa.h \
-			$${IDF_PATH}/components/esp32/include/xtensa/core-macros.h \
-			$${IDF_PATH}/components/esp32/include/xtensa/config/core-matmap.h \
-			$${IDF_PATH}/components/libsodium/libsodium/src/libsodium/include/sodium/core.h \
+			$${IDF_PATH}/components/bt/host/bluedroid/device/include/device/controller.h \
+			$${IDF_PATH}/components/xtensa/esp32/include/xtensa/config/core-isa.h \
+			$${IDF_PATH}/components/xtensa/include/xtensa/core-macros.h \
+			$${IDF_PATH}/components/xtensa/esp32/include/xtensa/config/core-matmap.h \
+			$${IDF_PATH}/components/xtensa/esp32/include/xtensa/config/core.h \
 			$${IDF_PATH}/components/tinyusb/tinyusb/hw/mcu/st/cmsis/core_cm0.h \
 			$${IDF_PATH}/components/tinyusb/tinyusb/hw/mcu/st/cmsis/core_cm0plus.h \
 			$${IDF_PATH}/components/tinyusb/tinyusb/hw/mcu/st/cmsis/core_cm3.h \
@@ -7659,14 +8860,15 @@
 			$${IDF_PATH}/components/tinyusb/tinyusb/hw/mcu/st/cmsis/core_cmSimd.h \
 			$${IDF_PATH}/components/tinyusb/tinyusb/hw/mcu/st/cmsis/core_sc000.h \
 			$${IDF_PATH}/components/tinyusb/tinyusb/hw/mcu/st/cmsis/core_sc300.h \
-			$${IDF_PATH}/components/esp32/include/xtensa/coreasm.h \
-			$${IDF_PATH}/components/esp32/include/xtensa/corebits.h \
+			$${IDF_PATH}/components/xtensa/include/xtensa/coreasm.h \
+			$${IDF_PATH}/components/xtensa/include/xtensa/corebits.h \
 			$${IDF_PATH}/components/asio/asio/asio/include/asio/coroutine.hpp \
 			$${IDF_PATH}/components/soc/esp32/include/soc/cpu.h \
 			$${IDF_PATH}/components/nvs_flash/test_nvs_host/crc.h \
 			$${IDF_PATH}/components/wear_levelling/crc32.h \
+			$${IDF_PATH}/components/esp_common/include/esp_private/crosscore_int.h \
 			$${IDF_PATH}/components/freertos/include/freertos/croutine.h \
-			$${IDF_PATH}/components/wpa_supplicant/include/crypto/crypto.h \
+			$${IDF_PATH}/components/wpa_supplicant/src/crypto/crypto.h \
 			$${IDF_PATH}/components/libsodium/libsodium/src/libsodium/include/sodium/crypto_aead_aes256gcm.h \
 			$${IDF_PATH}/components/libsodium/libsodium/src/libsodium/include/sodium/crypto_aead_chacha20poly1305.h \
 			$${IDF_PATH}/components/libsodium/libsodium/src/libsodium/include/sodium/crypto_aead_xchacha20poly1305.h \
@@ -7722,6 +8924,7 @@
 			$${IDF_PATH}/components/mbedtls/mbedtls/include/mbedtls/ctr_drbg.h \
 			$${IDF_PATH}/components/bt/host/nimble/nimble/ext/tinycrypt/include/tinycrypt/ctr_mode.h \
 			$${IDF_PATH}/components/bt/host/nimble/nimble/ext/tinycrypt/include/tinycrypt/ctr_prng.h \
+			$${IDF_PATH}/components/esp_http_server/src/util/ctrl_sock.h \
 			$${IDF_PATH}/components/newlib/include/ctype.h \
 			$${IDF_PATH}/components/libsodium/libsodium/src/libsodium/crypto_scalarmult/curve25519/donna_c64/curve25519_donna_c64.h \
 			$${IDF_PATH}/components/libsodium/libsodium/src/libsodium/include/sodium/private/curve25519_ref10.h \
@@ -7733,10 +8936,12 @@
 			$${IDF_PATH}/components/tinyusb/tinyusb/test/vendor/ceedling/plugins/fake_function_framework/examples/fff_example/src/custom_types.h \
 			$${IDF_PATH}/components/driver/include/driver/dac.h \
 			$${IDF_PATH}/components/soc/esp32/include/soc/dac_channel.h \
+			$${IDF_PATH}/components/soc/include/soc/dac_periph.h \
 			$${IDF_PATH}/components/nghttp/nghttp2/third-party/mruby/include/mruby/data.h \
 			$${IDF_PATH}/components/asio/asio/asio/include/asio/local/datagram_protocol.hpp \
 			$${IDF_PATH}/components/asio/asio/asio/include/asio/datagram_socket_service.hpp \
 			$${IDF_PATH}/components/asio/asio/asio/include/asio/detail/date_time_fwd.hpp \
+			$${IDF_PATH}/components/esp_common/include/esp_private/dbg_stubs.h \
 			$${IDF_PATH}/components/tinyusb/tinyusb/src/device/dcd.h \
 			$${IDF_PATH}/components/tinyusb/tinyusb/src/portable/nxp/lpc17_40/dcd_lpc17_40.h \
 			$${IDF_PATH}/components/tinyusb/tinyusb/src/portable/nxp/lpc18_43/dcd_lpc18_43.h \
@@ -7745,12 +8950,13 @@
 			$${IDF_PATH}/components/nghttp/nghttp2/third-party/mruby/include/mruby/debug.h \
 			$${IDF_PATH}/components/lwip/lwip/src/include/lwip/def.h \
 			$${IDF_PATH}/components/asio/asio/asio/include/asio/impl/defer.hpp \
-			$${IDF_PATH}/components/wpa_supplicant/include/wpa/defs.h \
+			$${IDF_PATH}/components/xtensa/esp32/include/xtensa/config/defs.h \
 			$${IDF_PATH}/components/asio/asio/asio/include/asio/detail/dependent_type.hpp \
 			$${IDF_PATH}/components/asio/asio/asio/src/tests/unit/archetypes/deprecated_async_ops.hpp \
 			$${IDF_PATH}/components/asio/asio/asio/src/tests/unit/archetypes/deprecated_async_result.hpp \
 			$${IDF_PATH}/components/freertos/include/freertos/deprecated_definitions.h \
 			$${IDF_PATH}/components/mbedtls/mbedtls/include/mbedtls/des.h \
+			$${IDF_PATH}/components/wpa_supplicant/src/crypto/des_i.h \
 			$${IDF_PATH}/components/asio/asio/asio/include/asio/posix/descriptor.hpp \
 			$${IDF_PATH}/components/asio/asio/asio/include/asio/posix/descriptor_base.hpp \
 			$${IDF_PATH}/components/asio/asio/asio/include/asio/detail/descriptor_ops.hpp \
@@ -7759,24 +8965,29 @@
 			$${IDF_PATH}/components/asio/asio/asio/include/asio/experimental/impl/detached.hpp \
 			$${IDF_PATH}/components/asio/asio/asio/include/asio/detail/impl/dev_poll_reactor.hpp \
 			$${IDF_PATH}/components/bt/host/nimble/nimble/apps/blemesh_models_example_2/src/device_composition.h \
-			$${IDF_PATH}/components/bt/bluedroid/device/include/device/device_features.h \
-			$${IDF_PATH}/components/wpa_supplicant/include/crypto/dh_group5.h \
-			$${IDF_PATH}/components/wpa_supplicant/include/crypto/dh_groups.h \
+			$${IDF_PATH}/components/bt/host/bluedroid/device/include/device/device_features.h \
+			$${IDF_PATH}/components/bt/esp_ble_mesh/mesh_models/server/include/device_property.h \
+			$${IDF_PATH}/components/wpa_supplicant/src/crypto/dh_group5.h \
+			$${IDF_PATH}/components/wpa_supplicant/src/crypto/dh_groups.h \
 			$${IDF_PATH}/components/lwip/lwip/src/include/lwip/prot/dhcp.h \
 			$${IDF_PATH}/components/lwip/lwip/src/include/lwip/prot/dhcp6.h \
 			$${IDF_PATH}/components/lwip/test_afl_host/dhcp_di.h \
-			$${IDF_PATH}/components/lwip/include/lwip/apps/dhcpserver.h \
+			$${IDF_PATH}/components/lwip/port/esp32/include/netif/dhcp_state.h \
+			$${IDF_PATH}/components/lwip/include/apps/dhcpserver/dhcpserver.h \
 			$${IDF_PATH}/components/lwip/test_afl_host/dhcpserver_di.h \
-			$${IDF_PATH}/components/lwip/include/lwip/apps/dhcpserver_options.h \
+			$${IDF_PATH}/components/lwip/include/apps/dhcpserver/dhcpserver_options.h \
 			$${IDF_PATH}/components/mbedtls/mbedtls/include/mbedtls/dhm.h \
 			$${IDF_PATH}/components/newlib/include/sys/dir.h \
 			$${IDF_PATH}/components/vfs/include/sys/dirent.h \
-			$${IDF_PATH}/components/bt/bluedroid/btc/profile/std/include/dis_api.h \
+			$${IDF_PATH}/components/bt/host/bluedroid/btc/profile/std/include/dis_api.h \
 			$${IDF_PATH}/components/fatfs/src/diskio.h \
-			$${IDF_PATH}/components/fatfs/src/diskio_rawflash.h \
-			$${IDF_PATH}/components/fatfs/src/diskio_wl.h \
+			$${IDF_PATH}/components/fatfs/diskio/diskio_impl.h \
+			$${IDF_PATH}/components/fatfs/diskio/diskio_rawflash.h \
+			$${IDF_PATH}/components/fatfs/diskio/diskio_sdmmc.h \
+			$${IDF_PATH}/components/fatfs/diskio/diskio_wl.h \
 			$${IDF_PATH}/components/asio/asio/asio/include/asio/impl/dispatch.hpp \
 			$${IDF_PATH}/components/tinyusb/tinyusb/test/vendor/ceedling/plugins/fake_function_framework/examples/fff_example/src/display.h \
+			$${IDF_PATH}/components/esp_eth/src/dm9051.h \
 			$${IDF_PATH}/components/lwip/lwip/src/include/lwip/prot/dns.h \
 			$${IDF_PATH}/components/lwip/test_afl_host/dns_di.h \
 			$${IDF_PATH}/components/mbedtls/mbedtls/doxygen/input/doc_encdec.h \
@@ -7792,19 +9003,19 @@
 			$${IDF_PATH}/components/coap/libcoap/ext/tinydtls/dtls_debug.h \
 			$${IDF_PATH}/components/coap/libcoap/ext/tinydtls/dtls_time.h \
 			$${IDF_PATH}/components/nghttp/nghttp2/third-party/mruby/include/mruby/dump.h \
-			$${IDF_PATH}/components/bt/bluedroid/stack/include/stack/dyn_mem.h \
-			$${IDF_PATH}/components/wpa_supplicant/include/wpa2/eap_peer/eap.h \
-			$${IDF_PATH}/components/wpa_supplicant/include/wpa2/eap_peer/eap_common.h \
-			$${IDF_PATH}/components/wpa_supplicant/include/wpa2/eap_peer/eap_config.h \
-			$${IDF_PATH}/components/wpa_supplicant/include/wpa2/eap_peer/eap_defs.h \
-			$${IDF_PATH}/components/wpa_supplicant/include/wpa2/eap_peer/eap_i.h \
-			$${IDF_PATH}/components/wpa_supplicant/include/wpa2/eap_peer/eap_methods.h \
-			$${IDF_PATH}/components/wpa_supplicant/include/wpa2/eap_peer/eap_peap_common.h \
-			$${IDF_PATH}/components/wpa_supplicant/include/wpa2/eap_peer/eap_tls.h \
-			$${IDF_PATH}/components/wpa_supplicant/include/wpa2/eap_peer/eap_tls_common.h \
-			$${IDF_PATH}/components/wpa_supplicant/include/wpa2/eap_peer/eap_tlv_common.h \
-			$${IDF_PATH}/components/wpa_supplicant/include/wpa2/eap_peer/eap_ttls.h \
-			$${IDF_PATH}/components/wpa_supplicant/include/wpa/eapol_common.h \
+			$${IDF_PATH}/components/bt/host/bluedroid/stack/include/stack/dyn_mem.h \
+			$${IDF_PATH}/components/wpa_supplicant/src/eap_peer/eap.h \
+			$${IDF_PATH}/components/wpa_supplicant/src/eap_peer/eap_common.h \
+			$${IDF_PATH}/components/wpa_supplicant/src/eap_peer/eap_config.h \
+			$${IDF_PATH}/components/wpa_supplicant/src/eap_peer/eap_defs.h \
+			$${IDF_PATH}/components/wpa_supplicant/src/eap_peer/eap_i.h \
+			$${IDF_PATH}/components/wpa_supplicant/src/eap_peer/eap_methods.h \
+			$${IDF_PATH}/components/wpa_supplicant/src/eap_peer/eap_peap_common.h \
+			$${IDF_PATH}/components/wpa_supplicant/src/eap_peer/eap_tls.h \
+			$${IDF_PATH}/components/wpa_supplicant/src/eap_peer/eap_tls_common.h \
+			$${IDF_PATH}/components/wpa_supplicant/src/eap_peer/eap_tlv_common.h \
+			$${IDF_PATH}/components/wpa_supplicant/src/eap_peer/eap_ttls.h \
+			$${IDF_PATH}/components/wpa_supplicant/src/common/eapol_common.h \
 			$${IDF_PATH}/components/coap/libcoap/ext/tinydtls/ecc/ecc.h \
 			$${IDF_PATH}/components/bt/host/nimble/nimble/ext/tinycrypt/include/tinycrypt/ecc_dh.h \
 			$${IDF_PATH}/components/bt/host/nimble/nimble/ext/tinycrypt/include/tinycrypt/ecc_dsa.h \
@@ -7815,15 +9026,16 @@
 			$${IDF_PATH}/components/mbedtls/mbedtls/include/mbedtls/ecp.h \
 			$${IDF_PATH}/components/mbedtls/mbedtls/include/mbedtls/ecp_internal.h \
 			$${IDF_PATH}/components/libsodium/libsodium/src/libsodium/crypto_sign/ed25519/ref10/ed25519_ref10.h \
-			$${IDF_PATH}/components/esp32/include/rom/efuse.h \
+			$${IDF_PATH}/components/esp_rom/include/esp32/rom/efuse.h \
+			$${IDF_PATH}/components/soc/include/soc/efuse_periph.h \
 			$${IDF_PATH}/components/soc/esp32/include/soc/efuse_reg.h \
 			$${IDF_PATH}/components/tinyusb/tinyusb/src/host/ehci/ehci.h \
-			$${IDF_PATH}/components/ethernet/emac_common.h \
-			$${IDF_PATH}/components/ethernet/emac_desc.h \
-			$${IDF_PATH}/components/ethernet/emac_dev.h \
-			$${IDF_PATH}/components/soc/esp32/include/soc/emac_ex_reg.h \
-			$${IDF_PATH}/components/soc/esp32/include/soc/emac_reg_v2.h \
-			$${IDF_PATH}/components/coap/libcoap/include/coap/encode.h \
+			$${IDF_PATH}/components/soc/esp32/include/hal/emac.h \
+			$${IDF_PATH}/components/soc/esp32/include/soc/emac_dma_struct.h \
+			$${IDF_PATH}/components/soc/esp32/include/soc/emac_ext_struct.h \
+			$${IDF_PATH}/components/soc/esp32/include/soc/emac_mac_struct.h \
+			$${IDF_PATH}/components/soc/include/soc/emac_periph.h \
+			$${IDF_PATH}/components/coap/libcoap/include/coap2/encode.h \
 			$${IDF_PATH}/components/wpa_supplicant/port/include/endian.h \
 			$${IDF_PATH}/components/asio/asio/asio/include/asio/local/detail/endpoint.hpp \
 			$${IDF_PATH}/components/asio/asio/asio/include/asio/ssl/detail/engine.hpp \
@@ -7832,135 +9044,198 @@
 			$${IDF_PATH}/components/newlib/include/envlock.h \
 			$${IDF_PATH}/components/newlib/include/envz.h \
 			$${IDF_PATH}/components/asio/asio/asio/include/asio/detail/impl/epoll_reactor.hpp \
-			$${IDF_PATH}/components/xtensa-debug-module/include/eri.h \
+			$${IDF_PATH}/components/xtensa/include/eri.h \
 			$${IDF_PATH}/components/lwip/lwip/src/include/lwip/err.h \
-			$${IDF_PATH}/components/newlib/include/sys/errno.h \
+			$${IDF_PATH}/components/newlib/platform_include/errno.h \
 			$${IDF_PATH}/components/nghttp/nghttp2/third-party/mruby/src/error.h \
 			$${IDF_PATH}/components/asio/asio/asio/include/asio/ssl/error.hpp \
 			$${IDF_PATH}/components/asio/asio/asio/include/asio/error_code.hpp \
 			$${IDF_PATH}/components/mdns/test_afl_fuzz_host/esp32_compat.h \
 			$${IDF_PATH}/components/mdns/test_afl_fuzz_host/esp32_mock.h \
-			$${IDF_PATH}/components/bt/bluedroid/api/include/api/esp_a2dp_api.h \
+			$${IDF_PATH}/components/bt/host/bluedroid/api/include/api/esp_a2dp_api.h \
 			$${IDF_PATH}/components/esp_adc_cal/include/esp_adc_cal.h \
+			$${IDF_PATH}/components/bootloader_support/include/esp_app_format.h \
 			$${IDF_PATH}/components/app_trace/include/esp_app_trace.h \
 			$${IDF_PATH}/components/app_trace/include/esp_app_trace_util.h \
-			$${IDF_PATH}/components/esp32/include/esp_assert.h \
+			$${IDF_PATH}/components/asio/port/include/esp_asio_config.h \
+			$${IDF_PATH}/components/esp_common/include/esp_assert.h \
 			$${IDF_PATH}/components/esp32/include/esp_attr.h \
-			$${IDF_PATH}/components/bt/bluedroid/api/include/api/esp_avrc_api.h \
-			$${IDF_PATH}/components/bt/bluedroid/api/include/api/esp_blufi_api.h \
-			$${IDF_PATH}/components/esp32/include/esp_brownout.h \
+			$${IDF_PATH}/components/bt/host/bluedroid/api/include/api/esp_avrc_api.h \
+			$${IDF_PATH}/components/esp_common/include/esp_bit_defs.h \
+			$${IDF_PATH}/components/bt/esp_ble_mesh/api/core/include/esp_ble_mesh_ble_api.h \
+			$${IDF_PATH}/components/bt/esp_ble_mesh/api/core/include/esp_ble_mesh_common_api.h \
+			$${IDF_PATH}/components/bt/esp_ble_mesh/api/models/include/esp_ble_mesh_config_model_api.h \
+			$${IDF_PATH}/components/bt/esp_ble_mesh/api/esp_ble_mesh_defs.h \
+			$${IDF_PATH}/components/bt/esp_ble_mesh/api/models/include/esp_ble_mesh_generic_model_api.h \
+			$${IDF_PATH}/components/bt/esp_ble_mesh/api/models/include/esp_ble_mesh_health_model_api.h \
+			$${IDF_PATH}/components/bt/esp_ble_mesh/api/models/include/esp_ble_mesh_lighting_model_api.h \
+			$${IDF_PATH}/components/bt/esp_ble_mesh/api/core/include/esp_ble_mesh_local_data_operation_api.h \
+			$${IDF_PATH}/components/bt/esp_ble_mesh/api/core/include/esp_ble_mesh_low_power_api.h \
+			$${IDF_PATH}/components/bt/esp_ble_mesh/api/core/include/esp_ble_mesh_networking_api.h \
+			$${IDF_PATH}/components/bt/esp_ble_mesh/api/core/include/esp_ble_mesh_provisioning_api.h \
+			$${IDF_PATH}/components/bt/esp_ble_mesh/api/core/include/esp_ble_mesh_proxy_api.h \
+			$${IDF_PATH}/components/bt/esp_ble_mesh/api/models/include/esp_ble_mesh_sensor_model_api.h \
+			$${IDF_PATH}/components/bt/esp_ble_mesh/api/models/include/esp_ble_mesh_time_scene_model_api.h \
+			$${IDF_PATH}/components/bt/host/bluedroid/api/include/api/esp_blufi_api.h \
 			$${IDF_PATH}/components/bt/include/esp_bt.h \
-			$${IDF_PATH}/components/bt/bluedroid/api/include/api/esp_bt_defs.h \
-			$${IDF_PATH}/components/bt/bluedroid/api/include/api/esp_bt_device.h \
-			$${IDF_PATH}/components/bt/bluedroid/api/include/api/esp_bt_main.h \
-			$${IDF_PATH}/components/esp32/include/esp_cache_err_int.h \
+			$${IDF_PATH}/components/bt/host/bluedroid/api/include/api/esp_bt_defs.h \
+			$${IDF_PATH}/components/bt/host/bluedroid/api/include/api/esp_bt_device.h \
+			$${IDF_PATH}/components/bt/host/bluedroid/api/include/api/esp_bt_main.h \
 			$${IDF_PATH}/components/esp32/include/esp_clk.h \
 			$${IDF_PATH}/components/esp32/esp_clk_internal.h \
-			$${IDF_PATH}/components/esp32/include/esp_coexist.h \
+			$${IDF_PATH}/components/esp_wifi/include/esp_coexist.h \
+			$${IDF_PATH}/components/esp_wifi/include/esp_coexist_adapter.h \
+			$${IDF_PATH}/components/esp_wifi/include/esp_coexist_internal.h \
 			$${IDF_PATH}/components/mbedtls/port/include/mbedtls/esp_config.h \
 			$${IDF_PATH}/components/console/esp_console.h \
-			$${IDF_PATH}/components/esp32/include/esp_core_dump.h \
-			$${IDF_PATH}/components/esp32/include/esp_crosscore_int.h \
-			$${IDF_PATH}/components/esp32/include/esp_dbg_stubs.h \
+			$${IDF_PATH}/components/espcoredump/include/esp_core_dump.h \
+			$${IDF_PATH}/components/espcoredump/include_core_dump/esp_core_dump_priv.h \
 			$${IDF_PATH}/components/mbedtls/port/include/mbedtls/esp_debug.h \
-			$${IDF_PATH}/components/esp32/include/esp_deep_sleep.h \
-			$${IDF_PATH}/components/esp32/include/esp_deepsleep.h \
-			$${IDF_PATH}/components/esp32/include/esp_dport_access.h \
-			$${IDF_PATH}/components/bootloader_support/include/esp_efuse.h \
-			$${IDF_PATH}/components/esp32/include/esp_err.h \
-			$${IDF_PATH}/components/ethernet/include/esp_eth.h \
-			$${IDF_PATH}/components/esp32/include/esp_event.h \
-			$${IDF_PATH}/components/esp32/include/esp_event_loop.h \
-			$${IDF_PATH}/components/esp32/include/esp_flash_data_types.h \
+			$${IDF_PATH}/components/xtensa/include/esp_debug_helpers.h \
+			$${IDF_PATH}/components/efuse/include/esp_efuse.h \
+			$${IDF_PATH}/components/efuse/esp32/include/esp_efuse_table.h \
+			$${IDF_PATH}/components/efuse/test/include/esp_efuse_test_table.h \
+			$${IDF_PATH}/components/efuse/src/esp_efuse_utility.h \
+			$${IDF_PATH}/components/esp_common/include/esp_err.h \
+			$${IDF_PATH}/components/esp_eth/include/esp_eth.h \
+			$${IDF_PATH}/components/esp_eth/include/esp_eth_com.h \
+			$${IDF_PATH}/components/esp_eth/include/esp_eth_mac.h \
+			$${IDF_PATH}/components/esp_eth/include/esp_eth_phy.h \
+			$${IDF_PATH}/components/esp_event/include/esp_event.h \
+			$${IDF_PATH}/components/esp_event/include/esp_event_base.h \
+			$${IDF_PATH}/components/esp_event/private_include/esp_event_internal.h \
+			$${IDF_PATH}/components/esp_event/include/esp_event_legacy.h \
+			$${IDF_PATH}/components/esp_event/include/esp_event_loop.h \
+			$${IDF_PATH}/components/esp_event/private_include/esp_event_private.h \
+			$${IDF_PATH}/components/asio/port/include/esp_exception.h \
+			$${IDF_PATH}/components/spi_flash/include/esp_flash.h \
+			$${IDF_PATH}/components/bootloader_support/include/esp_flash_data_types.h \
 			$${IDF_PATH}/components/bootloader_support/include/esp_flash_encrypt.h \
+			$${IDF_PATH}/components/soc/include/hal/esp_flash_err.h \
+			$${IDF_PATH}/components/spi_flash/include/esp_flash_internal.h \
 			$${IDF_PATH}/components/bootloader_support/include/esp_flash_partitions.h \
-			$${IDF_PATH}/components/esp32/include/esp_freertos_hooks.h \
-			$${IDF_PATH}/components/bt/bluedroid/api/include/api/esp_gap_ble_api.h \
-			$${IDF_PATH}/components/bt/bluedroid/api/include/api/esp_gap_bt_api.h \
-			$${IDF_PATH}/components/bt/bluedroid/api/include/api/esp_gatt_common_api.h \
-			$${IDF_PATH}/components/bt/bluedroid/api/include/api/esp_gatt_defs.h \
-			$${IDF_PATH}/components/bt/bluedroid/api/include/api/esp_gattc_api.h \
-			$${IDF_PATH}/components/bt/bluedroid/api/include/api/esp_gatts_api.h \
-			$${IDF_PATH}/components/esp32/include/esp_gdbstub.h \
-			$${IDF_PATH}/components/heap/include/esp_heap_alloc_caps.h \
+			$${IDF_PATH}/components/spi_flash/include/esp_flash_spi_init.h \
+			$${IDF_PATH}/components/esp_common/include/esp_freertos_hooks.h \
+			$${IDF_PATH}/components/bt/host/bluedroid/api/include/api/esp_gap_ble_api.h \
+			$${IDF_PATH}/components/bt/host/bluedroid/api/include/api/esp_gap_bt_api.h \
+			$${IDF_PATH}/components/bt/host/bluedroid/api/include/api/esp_gatt_common_api.h \
+			$${IDF_PATH}/components/bt/host/bluedroid/api/include/api/esp_gatt_defs.h \
+			$${IDF_PATH}/components/bt/host/bluedroid/api/include/api/esp_gattc_api.h \
+			$${IDF_PATH}/components/bt/host/bluedroid/api/include/api/esp_gatts_api.h \
+			$${IDF_PATH}/components/esp_gdbstub/include/esp_gdbstub.h \
+			$${IDF_PATH}/components/esp_gdbstub/xtensa/esp_gdbstub_arch.h \
+			$${IDF_PATH}/components/esp_gdbstub/private_include/esp_gdbstub_common.h \
 			$${IDF_PATH}/components/heap/include/esp_heap_caps.h \
 			$${IDF_PATH}/components/heap/include/esp_heap_caps_init.h \
 			$${IDF_PATH}/components/heap/include/esp_heap_task_info.h \
 			$${IDF_PATH}/components/heap/include/esp_heap_trace.h \
-			$${IDF_PATH}/components/bt/bluedroid/api/include/api/esp_hf_client_api.h \
-			$${IDF_PATH}/components/bt/bluedroid/api/include/api/esp_hf_defs.h \
+			$${IDF_PATH}/components/bt/host/bluedroid/api/include/api/esp_hf_client_api.h \
+			$${IDF_PATH}/components/bt/host/bluedroid/api/include/api/esp_hf_defs.h \
+			$${IDF_PATH}/components/esp32/include/esp_himem.h \
+			$${IDF_PATH}/components/wpa_supplicant/src/esp_supplicant/esp_hostap.h \
 			$${IDF_PATH}/components/esp_http_client/include/esp_http_client.h \
+			$${IDF_PATH}/components/esp_http_server/include/esp_http_server.h \
+			$${IDF_PATH}/components/esp_http_server/src/esp_httpd_priv.h \
 			$${IDF_PATH}/components/esp_https_ota/include/esp_https_ota.h \
+			$${IDF_PATH}/components/esp_https_server/include/esp_https_server.h \
+			$${IDF_PATH}/components/esp_common/include/esp_idf_version.h \
 			$${IDF_PATH}/components/bootloader_support/include/esp_image_format.h \
-			$${IDF_PATH}/components/esp32/include/esp_int_wdt.h \
-			$${IDF_PATH}/components/esp32/include/esp_interface.h \
+			$${IDF_PATH}/components/esp_common/include/esp_int_wdt.h \
+			$${IDF_PATH}/components/esp_common/include/esp_interface.h \
 			$${IDF_PATH}/components/esp32/include/esp_intr.h \
 			$${IDF_PATH}/components/esp32/include/esp_intr_alloc.h \
-			$${IDF_PATH}/components/esp32/include/esp_ipc.h \
-			$${IDF_PATH}/components/wear_levelling/test_wl_host/stubs/log/include/esp_log.h \
+			$${IDF_PATH}/components/esp_common/include/esp_ipc.h \
+			$${IDF_PATH}/components/esp_local_ctrl/include/esp_local_ctrl.h \
+			$${IDF_PATH}/components/esp_local_ctrl/proto-c/esp_local_ctrl.pb-c.h \
+			$${IDF_PATH}/components/esp_local_ctrl/src/esp_local_ctrl_priv.h \
+			$${IDF_PATH}/components/spi_flash/sim/stubs/log/include/esp_log.h \
 			$${IDF_PATH}/components/log/include/esp_log_internal.h \
-			$${IDF_PATH}/components/esp32/include/esp_mesh.h \
-			$${IDF_PATH}/components/esp32/include/esp_mesh_internal.h \
+			$${IDF_PATH}/components/mbedtls/port/include/esp_mem.h \
+			$${IDF_PATH}/components/esp_wifi/include/esp_mesh.h \
+			$${IDF_PATH}/components/esp_wifi/include/esp_mesh_internal.h \
+			$${IDF_PATH}/components/freemodbus/common/esp_modbus_callbacks.h \
+			$${IDF_PATH}/components/freemodbus/common/include/esp_modbus_common.h \
+			$${IDF_PATH}/components/freemodbus/common/include/esp_modbus_master.h \
+			$${IDF_PATH}/components/freemodbus/common/include/esp_modbus_slave.h \
 			$${IDF_PATH}/components/newlib/platform_include/esp_newlib.h \
-			$${IDF_PATH}/components/esp32/include/esp_now.h \
+			$${IDF_PATH}/components/bt/host/nimble/port/include/esp_nimble_cfg.h \
+			$${IDF_PATH}/components/bt/host/nimble/esp-hci/include/esp_nimble_hci.h \
+			$${IDF_PATH}/components/bt/host/nimble/port/include/esp_nimble_mem.h \
+			$${IDF_PATH}/components/esp_wifi/include/esp_now.h \
 			$${IDF_PATH}/components/app_update/include/esp_ota_ops.h \
-			$${IDF_PATH}/components/esp32/include/esp_panic.h \
+			$${IDF_PATH}/components/xtensa/include/esp_panic.h \
 			$${IDF_PATH}/components/spi_flash/include/esp_partition.h \
-			$${IDF_PATH}/components/esp32/include/esp_phy_init.h \
-			$${IDF_PATH}/components/lwip/apps/ping/esp_ping.h \
-			$${IDF_PATH}/components/esp32/include/esp_pm.h \
+			$${IDF_PATH}/components/esp_wifi/include/esp_phy_init.h \
+			$${IDF_PATH}/components/lwip/include/apps/esp_ping.h \
+			$${IDF_PATH}/components/esp_common/include/esp_pm.h \
 			$${IDF_PATH}/components/pthread/include/esp_pthread.h \
-			$${IDF_PATH}/components/bt/bluedroid/btc/profile/std/smp/include/esp_sec_api.h \
+			$${IDF_PATH}/components/bt/host/bluedroid/btc/profile/std/smp/include/esp_sec_api.h \
 			$${IDF_PATH}/components/bootloader_support/include/esp_secure_boot.h \
 			$${IDF_PATH}/components/esp32/include/esp_sleep.h \
-			$${IDF_PATH}/components/esp32/include/esp_smartconfig.h \
+			$${IDF_PATH}/components/esp_wifi/include/esp_smartconfig.h \
+			$${IDF_PATH}/components/lwip/include/apps/esp_sntp.h \
 			$${IDF_PATH}/components/spi_flash/include/esp_spi_flash.h \
 			$${IDF_PATH}/components/spiffs/include/esp_spiffs.h \
 			$${IDF_PATH}/components/esp32/include/esp_spiram.h \
-			$${IDF_PATH}/components/bt/bluedroid/api/include/api/esp_spp_api.h \
+			$${IDF_PATH}/components/bt/host/bluedroid/api/include/api/esp_spp_api.h \
 			$${IDF_PATH}/components/esp32/include/esp_ssc.h \
-			$${IDF_PATH}/components/esp32/include/esp_system.h \
-			$${IDF_PATH}/components/esp32/include/esp_task.h \
-			$${IDF_PATH}/components/esp32/include/esp_task_wdt.h \
-			$${IDF_PATH}/components/esp32/include/esp_timer.h \
-			$${IDF_PATH}/components/esp32/esp_timer_impl.h \
+			$${IDF_PATH}/components/spi_flash/sim/stubs/esp32/include/esp_system.h \
+			$${IDF_PATH}/components/app_trace/include/esp_sysview_trace.h \
+			$${IDF_PATH}/components/esp_common/include/esp_task.h \
+			$${IDF_PATH}/components/esp_common/include/esp_task_wdt.h \
+			$${IDF_PATH}/components/spi_flash/sim/stubs/esp_timer/include/esp_timer.h \
+			$${IDF_PATH}/components/esp_common/include/esp_private/esp_timer_impl.h \
 			$${IDF_PATH}/components/esp-tls/esp_tls.h \
-			$${IDF_PATH}/components/esp32/include/esp_types.h \
+			$${IDF_PATH}/components/esp-tls/private_include/esp_tls_error_capture_internal.h \
+			$${IDF_PATH}/components/tcp_transport/include/esp_transport.h \
+			$${IDF_PATH}/components/tcp_transport/include/esp_transport_ssl.h \
+			$${IDF_PATH}/components/tcp_transport/private_include/esp_transport_ssl_internal.h \
+			$${IDF_PATH}/components/tcp_transport/include/esp_transport_tcp.h \
+			$${IDF_PATH}/components/tcp_transport/private_include/esp_transport_utils.h \
+			$${IDF_PATH}/components/tcp_transport/include/esp_transport_ws.h \
+			$${IDF_PATH}/components/esp_common/include/esp_types.h \
 			$${IDF_PATH}/components/vfs/include/esp_vfs.h \
 			$${IDF_PATH}/components/vfs/include/esp_vfs_dev.h \
-			$${IDF_PATH}/components/fatfs/src/esp_vfs_fat.h \
-			$${IDF_PATH}/components/esp32/include/esp_wifi.h \
-			$${IDF_PATH}/components/esp32/include/esp_wifi_crypto_types.h \
-			$${IDF_PATH}/components/esp32/include/esp_wifi_internal.h \
-			$${IDF_PATH}/components/esp32/include/esp_wifi_os_adapter.h \
-			$${IDF_PATH}/components/esp32/include/esp_private/esp_wifi_private.h \
-			$${IDF_PATH}/components/esp32/include/esp_wifi_types.h \
-			$${IDF_PATH}/components/esp32/include/esp_private/esp_wifi_types_private.h \
-			$${IDF_PATH}/components/esp32/include/esp_wpa2.h \
-			$${IDF_PATH}/components/esp32/include/esp_wps.h \
+			$${IDF_PATH}/components/fatfs/vfs/esp_vfs_fat.h \
+			$${IDF_PATH}/components/vfs/include/esp_vfs_semihost.h \
+			$${IDF_PATH}/components/esp_websocket_client/include/esp_websocket_client.h \
+			$${IDF_PATH}/components/esp_wifi/include/esp_wifi.h \
+			$${IDF_PATH}/components/esp_wifi/include/esp_wifi_crypto_types.h \
+			$${IDF_PATH}/components/wpa_supplicant/src/esp_supplicant/esp_wifi_driver.h \
+			$${IDF_PATH}/components/esp_wifi/include/esp_private/esp_wifi_private.h \
+			$${IDF_PATH}/components/esp_wifi/include/esp_wifi_types.h \
+			$${IDF_PATH}/components/esp_wifi/include/esp_private/esp_wifi_types_private.h \
+			$${IDF_PATH}/components/wpa_supplicant/include/esp_supplicant/esp_wpa.h \
+			$${IDF_PATH}/components/wpa_supplicant/include/esp_supplicant/esp_wpa2.h \
+			$${IDF_PATH}/components/wpa_supplicant/src/esp_supplicant/esp_wpa3_i.h \
+			$${IDF_PATH}/components/wpa_supplicant/src/esp_supplicant/esp_wpa_err.h \
+			$${IDF_PATH}/components/wpa_supplicant/src/esp_supplicant/esp_wpas_glue.h \
+			$${IDF_PATH}/components/wpa_supplicant/include/esp_supplicant/esp_wps.h \
+			$${IDF_PATH}/components/esp_eth/include/eth_phy_regs_struct.h \
 			$${IDF_PATH}/components/lwip/lwip/src/include/netif/etharp.h \
 			$${IDF_PATH}/components/lwip/lwip/src/include/netif/ethernet.h \
-			$${IDF_PATH}/components/lwip/include/lwip/port/netif/ethernetif.h \
+			$${IDF_PATH}/components/lwip/port/esp32/include/netif/ethernetif.h \
 			$${IDF_PATH}/components/lwip/lwip/src/include/lwip/ethip6.h \
-			$${IDF_PATH}/components/esp32/include/rom/ets_sys.h \
+			$${IDF_PATH}/components/esp_rom/include/esp32/rom/ets_sys.h \
 			$${IDF_PATH}/components/lwip/lwip/src/include/netif/ppp/eui64.h \
 			$${IDF_PATH}/components/asio/asio/asio/include/asio/detail/event.hpp \
 			$${IDF_PATH}/components/freertos/include/freertos/event_groups.h \
-			$${IDF_PATH}/components/bt/bluedroid/device/include/device/event_mask.h \
+			$${IDF_PATH}/components/bt/host/bluedroid/device/include/device/event_mask.h \
 			$${IDF_PATH}/components/tinyusb/tinyusb/test/vendor/ceedling/plugins/fake_function_framework/examples/fff_example/src/event_processor.h \
 			$${IDF_PATH}/components/asio/asio/asio/include/asio/detail/eventfd_select_interrupter.hpp \
 			$${IDF_PATH}/components/asio/asio/asio/include/asio/impl/execution_context.hpp \
 			$${IDF_PATH}/components/asio/asio/asio/include/asio/ts/executor.hpp \
 			$${IDF_PATH}/components/asio/asio/asio/include/asio/detail/executor_op.hpp \
 			$${IDF_PATH}/components/asio/asio/asio/include/asio/executor_work_guard.hpp \
-			$${IDF_PATH}/components/expat/include/expat/expat.h \
-			$${IDF_PATH}/components/expat/include/expat/expat_config.h \
-			$${IDF_PATH}/components/expat/include/expat/expat_external.h \
+			$${IDF_PATH}/components/expat/expat/expat/lib/expat.h \
+			$${IDF_PATH}/components/expat/port/include/expat_config.h \
+			$${IDF_PATH}/components/expat/expat/expat/lib/expat_external.h \
 			$${IDF_PATH}/components/asio/asio/asio/include/asio/experimental.hpp \
 			$${IDF_PATH}/components/libsodium/libsodium/src/libsodium/include/sodium/export.h \
-			$${IDF_PATH}/components/wpa_supplicant/include/wpa2/utils/ext_password.h \
-			$${IDF_PATH}/components/wpa_supplicant/include/wpa2/utils/ext_password_i.h \
+			$${IDF_PATH}/components/wpa_supplicant/src/utils/ext_password.h \
+			$${IDF_PATH}/components/wpa_supplicant/src/utils/ext_password_i.h \
 			$${IDF_PATH}/components/nghttp/nghttp2/tests/failmalloc_test.h \
+			$${IDF_PATH}/components/bt/esp_ble_mesh/mesh_core/fast_prov.h \
 			$${IDF_PATH}/components/newlib/include/machine/fastmath.h \
 			$${IDF_PATH}/components/newlib/include/sys/fcntl.h \
 			$${IDF_PATH}/components/asio/asio/asio/include/asio/detail/fd_set_adapter.hpp \
@@ -7977,8 +9252,8 @@
 			$${IDF_PATH}/components/newlib/include/sys/file.h \
 			$${IDF_PATH}/components/asio/asio/asio/src/examples/cpp03/http/server4/file_handler.hpp \
 			$${IDF_PATH}/components/expat/expat/expat/xmlwf/filemap.h \
-			$${IDF_PATH}/components/bt/bluedroid/osi/include/osi/fixed_queue.h \
-			$${IDF_PATH}/components/bootloader_support/include_priv/flash_qio_mode.h \
+			$${IDF_PATH}/components/bt/common/osi/include/osi/fixed_queue.h \
+			$${IDF_PATH}/components/bootloader_support/include_bootloader/flash_qio_mode.h \
 			$${IDF_PATH}/components/newlib/include/fnmatch.h \
 			$${IDF_PATH}/components/tinyusb/tinyusb/test/vendor/ceedling/plugins/fake_function_framework/examples/fff_example/src/foo.h \
 			$${IDF_PATH}/components/bt/host/nimble/nimble/nimble/host/mesh/src/foundation.h \
@@ -7988,25 +9263,29 @@
 			$${IDF_PATH}/components/lwip/lwip/src/apps/http/fsdata.h \
 			$${IDF_PATH}/components/lwip/lwip/src/include/netif/ppp/fsm.h \
 			$${IDF_PATH}/components/asio/asio/asio/include/asio/detail/functional.hpp \
-			$${IDF_PATH}/components/bt/bluedroid/osi/include/osi/future.h \
-			$${IDF_PATH}/components/bt/bluedroid/stack/include/stack/gap_api.h \
-			$${IDF_PATH}/components/bt/bluedroid/stack/gap/include/gap_int.h \
-			$${IDF_PATH}/components/bt/bluedroid/stack/include/stack/gatt_api.h \
-			$${IDF_PATH}/components/bt/bluedroid/stack/gatt/include/gatt_int.h \
-			$${IDF_PATH}/components/bt/bluedroid/stack/include/stack/gattdefs.h \
+			$${IDF_PATH}/components/bt/common/osi/include/osi/future.h \
+			$${IDF_PATH}/components/bt/host/bluedroid/stack/include/stack/gap_api.h \
+			$${IDF_PATH}/components/bt/host/bluedroid/stack/gap/include/gap_int.h \
+			$${IDF_PATH}/components/bt/host/bluedroid/stack/include/stack/gatt_api.h \
+			$${IDF_PATH}/components/bt/host/bluedroid/stack/gatt/include/gatt_int.h \
+			$${IDF_PATH}/components/bt/host/bluedroid/stack/include/stack/gattdefs.h \
 			$${IDF_PATH}/components/nghttp/nghttp2/third-party/mruby/include/mruby/gc.h \
 			$${IDF_PATH}/components/asio/asio/asio/include/asio/detail/gcc_arm_fenced_block.hpp \
 			$${IDF_PATH}/components/asio/asio/asio/include/asio/detail/gcc_hppa_fenced_block.hpp \
 			$${IDF_PATH}/components/asio/asio/asio/include/asio/detail/gcc_sync_fenced_block.hpp \
 			$${IDF_PATH}/components/asio/asio/asio/include/asio/detail/gcc_x86_fenced_block.hpp \
 			$${IDF_PATH}/components/mbedtls/mbedtls/include/mbedtls/gcm.h \
+			$${IDF_PATH}/components/esp_common/include/esp_private/gdbstub.h \
+			$${IDF_PATH}/components/esp_gdbstub/esp32/gdbstub_target_config.h \
+			$${IDF_PATH}/components/bt/esp_ble_mesh/mesh_models/client/include/generic_client.h \
+			$${IDF_PATH}/components/bt/esp_ble_mesh/mesh_models/server/include/generic_server.h \
 			$${IDF_PATH}/components/newlib/include/getopt.h \
 			$${IDF_PATH}/components/asio/asio/asio/src/tests/unit/archetypes/gettable_socket_option.hpp \
 			$${IDF_PATH}/components/newlib/include/glob.h \
 			$${IDF_PATH}/components/coap/libcoap/ext/tinydtls/global.h \
 			$${IDF_PATH}/components/asio/asio/asio/include/asio/detail/global.hpp \
 			$${IDF_PATH}/components/bt/host/nimble/nimble/nimble/host/mesh/include/mesh/glue.h \
-			$${IDF_PATH}/components/esp32/include/rom/gpio.h \
+			$${IDF_PATH}/components/esp_rom/include/esp32/rom/gpio.h \
 			$${IDF_PATH}/components/soc/include/soc/gpio_periph.h \
 			$${IDF_PATH}/components/soc/esp32/include/soc/gpio_pins.h \
 			$${IDF_PATH}/components/soc/esp32/include/soc/gpio_reg.h \
@@ -8020,7 +9299,8 @@
 			$${IDF_PATH}/components/nghttp/nghttp2/src/h2load_http2_session.h \
 			$${IDF_PATH}/components/nghttp/nghttp2/src/h2load_session.h \
 			$${IDF_PATH}/components/nghttp/nghttp2/src/h2load_spdy_session.h \
-			$${IDF_PATH}/components/esp32/include/xtensa/hal.h \
+			$${IDF_PATH}/components/xtensa/include/xtensa/hal.h \
+			$${IDF_PATH}/components/soc/include/hal/hal_defs.h \
 			$${IDF_PATH}/components/bt/host/nimble/nimble/porting/nimble/include/hal/hal_timer.h \
 			$${IDF_PATH}/components/asio/asio/asio/include/asio/detail/handler_alloc_helpers.hpp \
 			$${IDF_PATH}/components/asio/asio/asio/include/asio/handler_alloc_hook.hpp \
@@ -8035,35 +9315,34 @@
 			$${IDF_PATH}/components/asio/asio/asio/include/asio/detail/handler_work.hpp \
 			$${IDF_PATH}/components/asio/asio/asio/include/asio/ssl/detail/handshake_op.hpp \
 			$${IDF_PATH}/components/nghttp/nghttp2/third-party/mruby/include/mruby/hash.h \
-			$${IDF_PATH}/components/bt/bluedroid/osi/include/osi/hash_functions.h \
-			$${IDF_PATH}/components/bt/bluedroid/osi/include/osi/hash_map.h \
+			$${IDF_PATH}/components/bt/common/osi/include/osi/hash_functions.h \
+			$${IDF_PATH}/components/bt/common/osi/include/osi/hash_map.h \
 			$${IDF_PATH}/components/asio/asio/asio/include/asio/detail/hash_map.hpp \
-			$${IDF_PATH}/components/coap/libcoap/include/coap/hashkey.h \
 			$${IDF_PATH}/components/mbedtls/mbedtls/include/mbedtls/havege.h \
 			$${IDF_PATH}/components/tinyusb/tinyusb/src/host/hcd.h \
-			$${IDF_PATH}/components/bt/bluedroid/hci/include/hci/hci_audio.h \
+			$${IDF_PATH}/components/bt/host/bluedroid/hci/include/hci/hci_audio.h \
 			$${IDF_PATH}/components/bt/host/nimble/nimble/nimble/include/nimble/hci_common.h \
-			$${IDF_PATH}/components/bt/bluedroid/hci/include/hci/hci_hal.h \
-			$${IDF_PATH}/components/bt/bluedroid/hci/include/hci/hci_internals.h \
-			$${IDF_PATH}/components/bt/bluedroid/hci/include/hci/hci_layer.h \
-			$${IDF_PATH}/components/bt/bluedroid/hci/include/hci/hci_packet_factory.h \
-			$${IDF_PATH}/components/bt/bluedroid/hci/include/hci/hci_packet_parser.h \
-			$${IDF_PATH}/components/bt/bluedroid/stack/include/stack/hcidefs.h \
-			$${IDF_PATH}/components/bt/bluedroid/stack/include/stack/hcimsgs.h \
+			$${IDF_PATH}/components/bt/host/bluedroid/hci/include/hci/hci_hal.h \
+			$${IDF_PATH}/components/bt/host/bluedroid/hci/include/hci/hci_internals.h \
+			$${IDF_PATH}/components/bt/host/bluedroid/hci/include/hci/hci_layer.h \
+			$${IDF_PATH}/components/bt/host/bluedroid/hci/include/hci/hci_packet_factory.h \
+			$${IDF_PATH}/components/bt/host/bluedroid/hci/include/hci/hci_packet_parser.h \
+			$${IDF_PATH}/components/bt/host/bluedroid/stack/include/stack/hcidefs.h \
+			$${IDF_PATH}/components/bt/host/bluedroid/stack/include/stack/hcimsgs.h \
 			$${IDF_PATH}/components/asio/asio/asio/src/examples/cpp11/http/server/header.hpp \
 			$${IDF_PATH}/components/bt/host/nimble/nimble/nimble/host/mesh/include/mesh/health_cli.h \
 			$${IDF_PATH}/components/bt/host/nimble/nimble/nimble/host/mesh/include/mesh/health_srv.h \
 			$${IDF_PATH}/components/heap/heap_private.h \
 			$${IDF_PATH}/components/tinyusb/tinyusb/src/class/hid/hid.h \
-			$${IDF_PATH}/components/bt/bluedroid/btc/profile/std/hid/include/hid_conn.h \
+			$${IDF_PATH}/components/bt/host/bluedroid/btc/profile/std/hid/include/hid_conn.h \
 			$${IDF_PATH}/components/tinyusb/tinyusb/src/class/hid/hid_device.h \
 			$${IDF_PATH}/components/tinyusb/tinyusb/src/class/hid/hid_host.h \
-			$${IDF_PATH}/components/bt/bluedroid/btc/profile/std/include/hid_le_prf.h \
-			$${IDF_PATH}/components/bt/bluedroid/stack/include/stack/hiddefs.h \
-			$${IDF_PATH}/components/bt/bluedroid/stack/include/stack/hidh_api.h \
-			$${IDF_PATH}/components/bt/bluedroid/btc/profile/std/hid/include/hidh_int.h \
+			$${IDF_PATH}/components/bt/host/bluedroid/stack/include/stack/hiddefs.h \
+			$${IDF_PATH}/components/bt/host/bluedroid/stack/include/stack/hidh_api.h \
+			$${IDF_PATH}/components/bt/host/bluedroid/btc/profile/std/hid/include/hidh_int.h \
 			$${IDF_PATH}/components/asio/asio/asio/src/tests/latency/high_res_clock.hpp \
 			$${IDF_PATH}/components/asio/asio/asio/include/asio/high_resolution_timer.hpp \
+			$${IDF_PATH}/components/esp32/include/esp32/himem.h \
 			$${IDF_PATH}/components/soc/esp32/include/soc/hinf_reg.h \
 			$${IDF_PATH}/components/soc/esp32/include/soc/hinf_struct.h \
 			$${IDF_PATH}/components/mbedtls/mbedtls/include/mbedtls/hkdf.h \
@@ -8073,30 +9352,34 @@
 			$${IDF_PATH}/components/asio/asio/asio/include/asio/ip/host_name.hpp \
 			$${IDF_PATH}/components/soc/esp32/include/soc/host_reg.h \
 			$${IDF_PATH}/components/soc/esp32/include/soc/host_struct.h \
-			$${IDF_PATH}/components/wpa_supplicant/include/wpa/hostapd.h \
+			$${IDF_PATH}/components/wpa_supplicant/src/ap/hostapd.h \
 			$${IDF_PATH}/components/nghttp/nghttp2/src/http2.h \
 			$${IDF_PATH}/components/nghttp/nghttp2/src/http2_test.h \
 			$${IDF_PATH}/components/esp_http_client/lib/include/http_auth.h \
 			$${IDF_PATH}/components/lwip/lwip/src/include/lwip/apps/http_client.h \
 			$${IDF_PATH}/components/esp_http_client/lib/include/http_header.h \
 			$${IDF_PATH}/components/nghttp/port/include/http_parser.h \
+			$${IDF_PATH}/components/esp_http_server/include/http_server.h \
 			$${IDF_PATH}/components/esp_http_client/lib/include/http_utils.h \
 			$${IDF_PATH}/components/lwip/lwip/src/include/lwip/apps/httpd.h \
 			$${IDF_PATH}/components/lwip/lwip/src/include/lwip/apps/httpd_opts.h \
 			$${IDF_PATH}/components/lwip/lwip/src/apps/http/httpd_structs.h \
 			$${IDF_PATH}/components/tinyusb/tinyusb/src/host/hub.h \
+			$${IDF_PATH}/components/soc/include/soc/hwcrypto_periph.h \
 			$${IDF_PATH}/components/soc/esp32/include/soc/hwcrypto_reg.h \
 			$${IDF_PATH}/components/driver/include/driver/i2c.h \
 			$${IDF_PATH}/components/soc/esp32/i2c_apll.h \
 			$${IDF_PATH}/components/soc/esp32/i2c_bbpll.h \
+			$${IDF_PATH}/components/soc/include/soc/i2c_periph.h \
 			$${IDF_PATH}/components/soc/esp32/include/soc/i2c_reg.h \
 			$${IDF_PATH}/components/soc/esp32/i2c_rtc_clk.h \
 			$${IDF_PATH}/components/soc/esp32/include/soc/i2c_struct.h \
 			$${IDF_PATH}/components/driver/include/driver/i2s.h \
+			$${IDF_PATH}/components/soc/include/soc/i2s_periph.h \
 			$${IDF_PATH}/components/soc/esp32/include/soc/i2s_reg.h \
 			$${IDF_PATH}/components/soc/esp32/include/soc/i2s_struct.h \
 			$${IDF_PATH}/components/lwip/lwip/src/include/lwip/prot/iana.h \
-			$${IDF_PATH}/components/expat/include/expat/iasciitab.h \
+			$${IDF_PATH}/components/expat/expat/expat/lib/iasciitab.h \
 			$${IDF_PATH}/components/lwip/lwip/src/include/lwip/prot/icmp.h \
 			$${IDF_PATH}/components/asio/asio/asio/include/asio/ip/icmp.hpp \
 			$${IDF_PATH}/components/lwip/lwip/src/include/lwip/prot/icmp6.h \
@@ -8105,25 +9388,24 @@
 			$${IDF_PATH}/components/newlib/include/sys/iconvnls.h \
 			$${IDF_PATH}/components/idf_test/include/idf_performance.h \
 			$${IDF_PATH}/components/lwip/lwip/src/include/lwip/prot/ieee.h \
-			$${IDF_PATH}/components/wpa_supplicant/include/wpa/ieee80211_crypto.h \
 			$${IDF_PATH}/components/lwip/lwip/src/include/netif/ieee802154.h \
-			$${IDF_PATH}/components/wpa_supplicant/include/wpa/ieee802_11_defs.h \
-			$${IDF_PATH}/components/wpa_supplicant/include/wpa/ieee802_1x.h \
+			$${IDF_PATH}/components/wpa_supplicant/src/common/ieee802_11_defs.h \
+			$${IDF_PATH}/components/wpa_supplicant/src/ap/ieee802_1x.h \
 			$${IDF_PATH}/components/newlib/include/machine/ieeefp.h \
-			$${IDF_PATH}/components/lwip/lwip/src/include/compat/posix/net/if.h \
+			$${IDF_PATH}/components/newlib/platform_include/net/if.h \
 			$${IDF_PATH}/components/lwip/lwip/src/include/lwip/if_api.h \
 			$${IDF_PATH}/components/lwip/lwip/src/include/lwip/prot/igmp.h \
-			$${IDF_PATH}/components/lwip/include/lwip/port/netinet/in.h \
-			$${IDF_PATH}/components/wpa_supplicant/include/wpa/includes.h \
-			$${IDF_PATH}/components/lwip/lwip/src/include/lwip/inet.h \
+			$${IDF_PATH}/components/lwip/port/esp32/include/netinet/in.h \
+			$${IDF_PATH}/components/wpa_supplicant/src/utils/includes.h \
+			$${IDF_PATH}/components/lwip/port/esp32/include/arpa/inet.h \
 			$${IDF_PATH}/components/lwip/lwip/src/include/lwip/inet_chksum.h \
 			$${IDF_PATH}/components/lwip/lwip/src/include/lwip/init.h \
 			$${IDF_PATH}/components/libsodium/libsodium/src/libsodium/crypto_stream/aes128ctr/nacl/int128.h \
-			$${IDF_PATH}/components/fatfs/src/integer.h \
-			$${IDF_PATH}/components/expat/include/expat/internal.h \
+			$${IDF_PATH}/components/tinyusb/tinyusb/lib/fatfs/integer.h \
+			$${IDF_PATH}/components/expat/expat/expat/lib/internal.h \
 			$${IDF_PATH}/components/asio/asio/asio/include/asio/ts/internet.hpp \
-			$${IDF_PATH}/components/bt/bluedroid/device/include/device/interop.h \
-			$${IDF_PATH}/components/bt/bluedroid/device/include/device/interop_database.h \
+			$${IDF_PATH}/components/bt/host/bluedroid/device/include/device/interop.h \
+			$${IDF_PATH}/components/bt/host/bluedroid/device/include/device/interop_database.h \
 			$${IDF_PATH}/components/nvs_flash/src/intrusive_list.h \
 			$${IDF_PATH}/components/newlib/include/inttypes.h \
 			$${IDF_PATH}/components/asio/asio/asio/include/asio/ssl/detail/io.hpp \
@@ -8146,7 +9428,6 @@
 			$${IDF_PATH}/components/lwip/lwip/src/include/lwip/ip6_frag.h \
 			$${IDF_PATH}/components/lwip/lwip/src/include/lwip/ip6_zone.h \
 			$${IDF_PATH}/components/lwip/lwip/src/include/lwip/ip_addr.h \
-			$${IDF_PATH}/components/lwip/include/lwip/lwip/ip_frag.h \
 			$${IDF_PATH}/components/lwip/lwip/src/include/netif/ppp/ipcp.h \
 			$${IDF_PATH}/components/asio/asio/asio/src/examples/cpp03/icmp/ipv4_header.hpp \
 			$${IDF_PATH}/components/lwip/lwip/src/include/netif/ppp/ipv6cp.h \
@@ -8160,34 +9441,38 @@
 			$${IDF_PATH}/components/asio/asio/asio/include/asio/detail/keyword_tss_ptr.hpp \
 			$${IDF_PATH}/components/nghttp/nghttp2/third-party/mruby/include/mruby/khash.h \
 			$${IDF_PATH}/components/asio/asio/asio/include/asio/detail/kqueue_reactor.hpp \
-			$${IDF_PATH}/components/bt/bluedroid/stack/include/stack/l2c_api.h \
-			$${IDF_PATH}/components/bt/bluedroid/stack/l2cap/include/l2c_int.h \
-			$${IDF_PATH}/components/bt/bluedroid/stack/include/stack/l2cap_client.h \
-			$${IDF_PATH}/components/bt/bluedroid/stack/include/stack/l2cdefs.h \
+			$${IDF_PATH}/components/bt/host/bluedroid/stack/include/stack/l2c_api.h \
+			$${IDF_PATH}/components/bt/host/bluedroid/stack/l2cap/include/l2c_int.h \
+			$${IDF_PATH}/components/bt/host/bluedroid/stack/include/stack/l2cap_client.h \
+			$${IDF_PATH}/components/bt/host/bluedroid/stack/include/stack/l2cdefs.h \
 			$${IDF_PATH}/components/libsodium/libsodium/src/libsodium/crypto_scalarmult/curve25519/sandy2x/ladder.h \
 			$${IDF_PATH}/components/libsodium/libsodium/src/libsodium/crypto_scalarmult/curve25519/sandy2x/ladder_base.h \
 			$${IDF_PATH}/components/libsodium/libsodium/src/libsodium/crypto_scalarmult/curve25519/sandy2x/ladder_base_namespace.h \
 			$${IDF_PATH}/components/libsodium/libsodium/src/libsodium/crypto_scalarmult/curve25519/sandy2x/ladder_namespace.h \
 			$${IDF_PATH}/components/newlib/include/langinfo.h \
-			$${IDF_PATH}/components/expat/include/expat/latin1tab.h \
+			$${IDF_PATH}/components/expat/expat/expat/lib/latin1tab.h \
 			$${IDF_PATH}/components/lwip/lwip/src/include/netif/ppp/lcp.h \
 			$${IDF_PATH}/components/driver/include/driver/ledc.h \
+			$${IDF_PATH}/components/soc/include/soc/ledc_periph.h \
 			$${IDF_PATH}/components/soc/esp32/include/soc/ledc_reg.h \
 			$${IDF_PATH}/components/soc/esp32/include/soc/ledc_struct.h \
-			$${IDF_PATH}/components/esp32/include/rom/libc_stubs.h \
-			$${IDF_PATH}/components/coap/libcoap/include/coap/libcoap.h \
+			$${IDF_PATH}/components/esp_rom/include/esp32/rom/libc_stubs.h \
+			$${IDF_PATH}/components/coap/libcoap/include/coap2/libcoap.h \
 			$${IDF_PATH}/components/nghttp/nghttp2/src/libevent_util.h \
 			$${IDF_PATH}/components/newlib/include/libgen.h \
-			$${IDF_PATH}/components/wpa_supplicant/src/crypto/libtommath.h \
+			$${IDF_PATH}/components/wpa_supplicant/src/tls/libtommath.h \
 			$${IDF_PATH}/components/bt/host/nimble/nimble/nimble/host/mesh/src/light_model.h \
+			$${IDF_PATH}/components/bt/esp_ble_mesh/mesh_models/client/include/lighting_client.h \
+			$${IDF_PATH}/components/bt/esp_ble_mesh/mesh_models/server/include/lighting_server.h \
 			$${IDF_PATH}/components/newlib/include/limits.h \
 			$${IDF_PATH}/components/asio/asio/asio/include/asio/detail/limits.hpp \
 			$${IDF_PATH}/components/console/linenoise/linenoise.h \
-			$${IDF_PATH}/components/wpa_supplicant/include/wpa/list.h \
-			$${IDF_PATH}/components/esp32/include/rom/lldesc.h \
+			$${IDF_PATH}/components/wpa_supplicant/src/utils/list.h \
+			$${IDF_PATH}/components/soc/include/soc/lldesc.h \
 			$${IDF_PATH}/components/asio/asio/asio/include/asio/detail/local_free_on_block_exit.hpp \
+			$${IDF_PATH}/components/bt/esp_ble_mesh/mesh_core/local_operation.h \
 			$${IDF_PATH}/components/newlib/include/locale.h \
-			$${IDF_PATH}/components/wear_levelling/test_wl_host/stubs/newlib/include/sys/lock.h \
+			$${IDF_PATH}/components/spi_flash/sim/stubs/newlib/include/sys/lock.h \
 			$${IDF_PATH}/components/bt/host/nimble/nimble/porting/nimble/include/log/log.h \
 			$${IDF_PATH}/components/asio/asio/asio/src/examples/cpp03/services/logger.hpp \
 			$${IDF_PATH}/components/asio/asio/asio/src/examples/cpp03/services/logger_service.hpp \
@@ -8197,27 +9482,46 @@
 			$${IDF_PATH}/components/lwip/lwip/src/include/netif/lowpan6_opts.h \
 			$${IDF_PATH}/components/bt/host/nimble/nimble/nimble/host/mesh/src/lpn.h \
 			$${IDF_PATH}/components/lwip/lwip/test/unit/lwip_check.h \
-			$${IDF_PATH}/components/lwip/include/lwip/lwip/lwip_debug.h \
+			$${IDF_PATH}/components/lwip/port/esp32/include/debug/lwip_debug.h \
 			$${IDF_PATH}/components/lwip/lwip/src/include/lwip/lwip_napt.h \
 			$${IDF_PATH}/components/lwip/lwip/src/include/lwip/apps/lwiperf.h \
-			$${IDF_PATH}/components/lwip/lwip/test/unit/lwipopts.h \
-			$${IDF_PATH}/components/coap/libcoap/include/coap/lwippools.h \
+			$${IDF_PATH}/components/lwip/port/esp32/include/lwipopts.h \
+			$${IDF_PATH}/components/coap/libcoap/include/coap2/lwippools.h \
 			$${IDF_PATH}/components/asio/asio/asio/include/asio/detail/macos_fenced_block.hpp \
 			$${IDF_PATH}/components/lwip/lwip/src/include/netif/ppp/magic.h \
 			$${IDF_PATH}/components/bt/host/nimble/nimble/nimble/host/mesh/include/mesh/main.h \
 			$${IDF_PATH}/components/lwip/lwip/doc/doxygen/main_page.h \
 			$${IDF_PATH}/components/newlib/include/malloc.h \
 			$${IDF_PATH}/components/nghttp/nghttp2/tests/malloc_wrapper.h \
+			$${IDF_PATH}/components/wifi_provisioning/include/wifi_provisioning/manager.h \
 			$${IDF_PATH}/components/newlib/include/math.h \
+			$${IDF_PATH}/components/freemodbus/modbus/include/mb.h \
+			$${IDF_PATH}/components/freemodbus/modbus/include/mb_m.h \
+			$${IDF_PATH}/components/freemodbus/modbus/ascii/mbascii.h \
+			$${IDF_PATH}/components/freemodbus/common/mbc_master.h \
+			$${IDF_PATH}/components/freemodbus/serial_master/modbus_controller/mbc_serial_master.h \
+			$${IDF_PATH}/components/freemodbus/serial_slave/modbus_controller/mbc_serial_slave.h \
+			$${IDF_PATH}/components/freemodbus/common/mbc_slave.h \
+			$${IDF_PATH}/components/freemodbus/modbus/include/mbconfig.h \
+			$${IDF_PATH}/components/freemodbus/common/include/mbcontroller.h \
+			$${IDF_PATH}/components/freemodbus/modbus/rtu/mbcrc.h \
+			$${IDF_PATH}/components/freemodbus/modbus/include/mbframe.h \
+			$${IDF_PATH}/components/freemodbus/modbus/include/mbfunc.h \
+			$${IDF_PATH}/components/freemodbus/modbus/include/mbport.h \
+			$${IDF_PATH}/components/freemodbus/modbus/include/mbproto.h \
+			$${IDF_PATH}/components/freemodbus/modbus/rtu/mbrtu.h \
+			$${IDF_PATH}/components/freemodbus/modbus/tcp/mbtcp.h \
+			$${IDF_PATH}/components/freemodbus/modbus/include/mbutils.h \
 			$${IDF_PATH}/components/driver/include/driver/mcpwm.h \
+			$${IDF_PATH}/components/soc/include/soc/mcpwm_periph.h \
 			$${IDF_PATH}/components/soc/esp32/include/soc/mcpwm_reg.h \
 			$${IDF_PATH}/components/soc/esp32/include/soc/mcpwm_struct.h \
 			$${IDF_PATH}/components/mbedtls/mbedtls/include/mbedtls/md.h \
 			$${IDF_PATH}/components/mbedtls/mbedtls/include/mbedtls/md2.h \
 			$${IDF_PATH}/components/mbedtls/mbedtls/include/mbedtls/md4.h \
-			$${IDF_PATH}/components/wpa_supplicant/include/crypto/md5.h \
-			$${IDF_PATH}/components/esp32/include/rom/md5_hash.h \
-			$${IDF_PATH}/components/wpa_supplicant/include/crypto/md5_i.h \
+			$${IDF_PATH}/components/wpa_supplicant/src/crypto/md5.h \
+			$${IDF_PATH}/components/esp_rom/include/esp32/rom/md5_hash.h \
+			$${IDF_PATH}/components/wpa_supplicant/src/crypto/md5_i.h \
 			$${IDF_PATH}/components/mbedtls/mbedtls/include/mbedtls/md_internal.h \
 			$${IDF_PATH}/components/mdns/include/mdns.h \
 			$${IDF_PATH}/components/mdns/include/mdns_console.h \
@@ -8236,17 +9540,39 @@
 			$${IDF_PATH}/components/lwip/lwip/src/include/lwip/memp.h \
 			$${IDF_PATH}/components/lwip/lwip/src/include/lwip/priv/memp_priv.h \
 			$${IDF_PATH}/components/lwip/lwip/src/include/lwip/priv/memp_std.h \
+			$${IDF_PATH}/components/spi_flash/include/memspi_host_driver.h \
 			$${IDF_PATH}/components/bt/host/nimble/nimble/nimble/host/mesh/include/mesh/mesh.h \
+			$${IDF_PATH}/components/bt/esp_ble_mesh/mesh_core/include/mesh_access.h \
+			$${IDF_PATH}/components/bt/esp_ble_mesh/mesh_common/include/mesh_atomic.h \
+			$${IDF_PATH}/components/bt/esp_ble_mesh/mesh_core/include/mesh_bearer_adapt.h \
+			$${IDF_PATH}/components/bt/esp_ble_mesh/mesh_common/include/mesh_buf.h \
+			$${IDF_PATH}/components/bt/esp_ble_mesh/mesh_common/include/mesh_byteorder.h \
+			$${IDF_PATH}/components/bt/esp_ble_mesh/mesh_common/include/mesh_common.h \
+			$${IDF_PATH}/components/bt/esp_ble_mesh/mesh_common/include/mesh_compiler.h \
+			$${IDF_PATH}/components/bt/esp_ble_mesh/mesh_common/include/mesh_dlist.h \
+			$${IDF_PATH}/components/bt/esp_ble_mesh/mesh_common/include/mesh_ffs.h \
+			$${IDF_PATH}/components/bt/esp_ble_mesh/mesh_core/include/mesh_hci.h \
+			$${IDF_PATH}/components/bt/esp_ble_mesh/mesh_common/include/mesh_kernel.h \
+			$${IDF_PATH}/components/bt/esp_ble_mesh/mesh_core/include/mesh_main.h \
+			$${IDF_PATH}/components/bt/esp_ble_mesh/mesh_common/include/mesh_mutex.h \
 			$${IDF_PATH}/components/bt/host/nimble/nimble/nimble/host/mesh/src/mesh_priv.h \
+			$${IDF_PATH}/components/bt/esp_ble_mesh/mesh_core/include/mesh_proxy.h \
+			$${IDF_PATH}/components/bt/esp_ble_mesh/mesh_common/include/mesh_slist.h \
+			$${IDF_PATH}/components/bt/esp_ble_mesh/mesh_common/include/mesh_timer.h \
+			$${IDF_PATH}/components/bt/esp_ble_mesh/mesh_common/include/mesh_trace.h \
+			$${IDF_PATH}/components/bt/esp_ble_mesh/mesh_common/include/mesh_types.h \
+			$${IDF_PATH}/components/bt/esp_ble_mesh/mesh_common/include/mesh_util.h \
+			$${IDF_PATH}/components/bt/esp_ble_mesh/mesh_core/include/mesh_uuid.h \
 			$${IDF_PATH}/components/tinyusb/tinyusb/lib/FreeRTOS/Source/include/message_buffer.h \
 			$${IDF_PATH}/components/tinyusb/tinyusb/src/class/midi/midi.h \
 			$${IDF_PATH}/components/tinyusb/tinyusb/src/class/midi/midi_device.h \
 			$${IDF_PATH}/components/asio/asio/asio/src/examples/cpp11/http/server/mime_types.hpp \
-			$${IDF_PATH}/components/expat/port/include/minicheck.h \
+			$${IDF_PATH}/components/expat/expat/expat/tests/minicheck.h \
 			$${IDF_PATH}/components/esptool_py/esptool/flasher_stub/include/miniz.h \
 			$${IDF_PATH}/components/lwip/lwip/src/include/lwip/prot/mld6.h \
-			$${IDF_PATH}/components/json/cJSON/tests/unity/test/testdata/mockMock.h \
+			$${IDF_PATH}/components/unity/unity/test/testdata/mockMock.h \
 			$${IDF_PATH}/components/bt/host/nimble/nimble/nimble/host/mesh/include/mesh/model_cli.h \
+			$${IDF_PATH}/components/bt/esp_ble_mesh/mesh_models/common/include/model_opcode.h \
 			$${IDF_PATH}/components/bt/host/nimble/nimble/nimble/host/mesh/include/mesh/model_srv.h \
 			$${IDF_PATH}/components/bt/host/nimble/nimble/porting/nimble/include/modlog/modlog.h \
 			$${IDF_PATH}/components/tinyusb/tinyusb/examples/obsolete/host/src/mouse_host_app.h \
@@ -8266,13 +9592,13 @@
 			$${IDF_PATH}/components/nghttp/nghttp2/third-party/mruby/mrbgems/mruby-bin-debugger/tools/mrdb/mrdbconf.h \
 			$${IDF_PATH}/components/nghttp/nghttp2/third-party/mruby/mrbgems/mruby-bin-debugger/tools/mrdb/mrdberror.h \
 			$${IDF_PATH}/components/nghttp/nghttp2/third-party/mruby/include/mruby.h \
-			$${IDF_PATH}/components/wpa_supplicant/include/crypto/ms_funcs.h \
+			$${IDF_PATH}/components/wpa_supplicant/src/crypto/ms_funcs.h \
 			$${IDF_PATH}/components/tinyusb/tinyusb/src/class/msc/msc.h \
 			$${IDF_PATH}/components/tinyusb/tinyusb/examples/obsolete/host/src/msc_cli.h \
 			$${IDF_PATH}/components/tinyusb/tinyusb/src/class/msc/msc_device.h \
 			$${IDF_PATH}/components/tinyusb/tinyusb/src/class/msc/msc_host.h \
 			$${IDF_PATH}/components/tinyusb/tinyusb/examples/obsolete/host/src/msc_host_app.h \
-			$${IDF_PATH}/components/wpa_supplicant/include/wpa2/eap_peer/mschapv2.h \
+			$${IDF_PATH}/components/wpa_supplicant/src/eap_peer/mschapv2.h \
 			$${IDF_PATH}/components/nghttp/nghttp2/third-party/mruby/mrbgems/mruby-random/src/mt19937ar.h \
 			$${IDF_PATH}/components/heap/include/multi_heap.h \
 			$${IDF_PATH}/components/heap/multi_heap_config.h \
@@ -8281,7 +9607,7 @@
 			$${IDF_PATH}/components/asio/asio/asio/include/asio/ip/multicast.hpp \
 			$${IDF_PATH}/components/libsodium/libsodium/src/libsodium/include/sodium/private/mutex.h \
 			$${IDF_PATH}/components/asio/asio/asio/include/asio/detail/mutex.hpp \
-			$${IDF_PATH}/components/expat/include/expat/nametab.h \
+			$${IDF_PATH}/components/expat/expat/expat/lib/nametab.h \
 			$${IDF_PATH}/components/lwip/lwip/src/include/lwip/prot/nd6.h \
 			$${IDF_PATH}/components/lwip/lwip/src/include/lwip/priv/nd6_priv.h \
 			$${IDF_PATH}/components/mbedtls/mbedtls/include/mbedtls/net.h \
@@ -8290,14 +9616,15 @@
 			$${IDF_PATH}/components/lwip/lwip/src/include/lwip/apps/netbiosns.h \
 			$${IDF_PATH}/components/lwip/lwip/src/include/lwip/apps/netbiosns_opts.h \
 			$${IDF_PATH}/components/lwip/lwip/src/include/lwip/netbuf.h \
-			$${IDF_PATH}/components/lwip/lwip/src/include/lwip/netdb.h \
+			$${IDF_PATH}/components/lwip/port/esp32/include/netdb.h \
 			$${IDF_PATH}/components/asio/asio/asio/include/asio/ts/netfwd.hpp \
 			$${IDF_PATH}/components/lwip/lwip/src/include/lwip/netif.h \
 			$${IDF_PATH}/components/lwip/lwip/src/include/lwip/netifapi.h \
 			$${IDF_PATH}/components/coap/libcoap/ext/tinydtls/netq.h \
+			$${IDF_PATH}/components/lwip/port/esp32/include/netif/nettestif.h \
 			$${IDF_PATH}/components/nghttp/nghttp2/src/network.h \
 			$${IDF_PATH}/components/aws_iot/aws-iot-device-sdk-embedded-C/include/network_interface.h \
-			$${IDF_PATH}/components/aws_iot/include/network_platform.h \
+			$${IDF_PATH}/components/aws_iot/aws-iot-device-sdk-embedded-C/tests/unit/tls_mock/network_platform.h \
 			$${IDF_PATH}/components/asio/asio/asio/include/asio/ip/network_v4.hpp \
 			$${IDF_PATH}/components/asio/asio/asio/include/asio/ip/network_v6.hpp \
 			$${IDF_PATH}/components/nghttp/nghttp2/third-party/neverbleed/neverbleed.h \
@@ -8392,20 +9719,20 @@
 			$${IDF_PATH}/components/asio/asio/asio/include/asio/windows/object_handle_service.hpp \
 			$${IDF_PATH}/components/asio/asio/asio/include/asio/detail/object_pool.hpp \
 			$${IDF_PATH}/components/tinyusb/tinyusb/src/host/ohci/ohci.h \
-			$${IDF_PATH}/components/bt/bluedroid/external/sbc/decoder/include/oi_assert.h \
-			$${IDF_PATH}/components/bt/bluedroid/external/sbc/decoder/include/oi_bitstream.h \
-			$${IDF_PATH}/components/bt/bluedroid/external/sbc/decoder/include/oi_bt_spec.h \
-			$${IDF_PATH}/components/bt/bluedroid/external/sbc/decoder/include/oi_codec_sbc.h \
-			$${IDF_PATH}/components/bt/bluedroid/external/sbc/decoder/include/oi_codec_sbc_private.h \
-			$${IDF_PATH}/components/bt/bluedroid/external/sbc/decoder/include/oi_common.h \
-			$${IDF_PATH}/components/bt/bluedroid/external/sbc/decoder/include/oi_cpu_dep.h \
-			$${IDF_PATH}/components/bt/bluedroid/external/sbc/decoder/include/oi_modules.h \
-			$${IDF_PATH}/components/bt/bluedroid/external/sbc/decoder/include/oi_osinterface.h \
-			$${IDF_PATH}/components/bt/bluedroid/external/sbc/decoder/include/oi_status.h \
-			$${IDF_PATH}/components/bt/bluedroid/external/sbc/decoder/include/oi_stddefs.h \
-			$${IDF_PATH}/components/bt/bluedroid/external/sbc/decoder/include/oi_string.h \
-			$${IDF_PATH}/components/bt/bluedroid/external/sbc/decoder/include/oi_time.h \
-			$${IDF_PATH}/components/bt/bluedroid/external/sbc/decoder/include/oi_utils.h \
+			$${IDF_PATH}/components/bt/host/bluedroid/external/sbc/decoder/include/oi_assert.h \
+			$${IDF_PATH}/components/bt/host/bluedroid/external/sbc/decoder/include/oi_bitstream.h \
+			$${IDF_PATH}/components/bt/host/bluedroid/external/sbc/decoder/include/oi_bt_spec.h \
+			$${IDF_PATH}/components/bt/host/bluedroid/external/sbc/decoder/include/oi_codec_sbc.h \
+			$${IDF_PATH}/components/bt/host/bluedroid/external/sbc/decoder/include/oi_codec_sbc_private.h \
+			$${IDF_PATH}/components/bt/host/bluedroid/external/sbc/decoder/include/oi_common.h \
+			$${IDF_PATH}/components/bt/host/bluedroid/external/sbc/decoder/include/oi_cpu_dep.h \
+			$${IDF_PATH}/components/bt/host/bluedroid/external/sbc/decoder/include/oi_modules.h \
+			$${IDF_PATH}/components/bt/host/bluedroid/external/sbc/decoder/include/oi_osinterface.h \
+			$${IDF_PATH}/components/bt/host/bluedroid/external/sbc/decoder/include/oi_status.h \
+			$${IDF_PATH}/components/bt/host/bluedroid/external/sbc/decoder/include/oi_stddefs.h \
+			$${IDF_PATH}/components/bt/host/bluedroid/external/sbc/decoder/include/oi_string.h \
+			$${IDF_PATH}/components/bt/host/bluedroid/external/sbc/decoder/include/oi_time.h \
+			$${IDF_PATH}/components/bt/host/bluedroid/external/sbc/decoder/include/oi_utils.h \
 			$${IDF_PATH}/components/mbedtls/mbedtls/include/mbedtls/oid.h \
 			$${IDF_PATH}/components/asio/asio/asio/include/asio/detail/old_win_sdk_compat.hpp \
 			$${IDF_PATH}/components/libsodium/libsodium/src/libsodium/crypto_onetimeauth/poly1305/onetimeauth_poly1305.h \
@@ -8415,7 +9742,7 @@
 			$${IDF_PATH}/components/asio/asio/asio/include/asio/ssl/detail/openssl_types.hpp \
 			$${IDF_PATH}/components/asio/asio/asio/include/asio/detail/operation.hpp \
 			$${IDF_PATH}/components/lwip/lwip/src/include/lwip/opt.h \
-			$${IDF_PATH}/components/coap/libcoap/include/coap/option.h \
+			$${IDF_PATH}/components/coap/libcoap/include/coap2/option.h \
 			$${IDF_PATH}/components/wpa_supplicant/port/include/os.h \
 			$${IDF_PATH}/components/bt/host/nimble/nimble/porting/nimble/include/os/os_cputime.h \
 			$${IDF_PATH}/components/bt/host/nimble/nimble/porting/nimble/include/os/os_error.h \
@@ -8423,19 +9750,21 @@
 			$${IDF_PATH}/components/bt/host/nimble/nimble/porting/nimble/include/os/os_mempool.h \
 			$${IDF_PATH}/components/bt/host/nimble/nimble/porting/nimble/include/os/os_trace_api.h \
 			$${IDF_PATH}/components/bt/host/nimble/nimble/porting/npl/linux/include/nimble/os_types.h \
-			$${IDF_PATH}/components/tinyusb/tinyusb/src/osal/osal.h \
+			$${IDF_PATH}/components/esp_http_server/src/port/esp32/osal.h \
 			$${IDF_PATH}/components/tinyusb/tinyusb/src/osal/osal_freertos.h \
 			$${IDF_PATH}/components/tinyusb/tinyusb/src/osal/osal_mynewt.h \
 			$${IDF_PATH}/components/tinyusb/tinyusb/src/osal/osal_none.h \
-			$${IDF_PATH}/components/bt/bluedroid/osi/include/osi/osi.h \
+			$${IDF_PATH}/components/bt/common/osi/include/osi/osi.h \
 			$${IDF_PATH}/components/asio/asio/asio/include/asio/windows/overlapped_handle.hpp \
 			$${IDF_PATH}/components/asio/asio/asio/include/asio/windows/overlapped_ptr.hpp \
-			$${IDF_PATH}/components/bt/bluedroid/stack/smp/include/p_256_ecc_pp.h \
-			$${IDF_PATH}/components/bt/bluedroid/stack/smp/include/p_256_multprecision.h \
+			$${IDF_PATH}/components/bt/host/bluedroid/stack/smp/include/p_256_ecc_pp.h \
+			$${IDF_PATH}/components/bt/host/bluedroid/stack/smp/include/p_256_multprecision.h \
 			$${IDF_PATH}/components/asio/asio/asio/include/asio/packaged_task.hpp \
-			$${IDF_PATH}/components/bt/bluedroid/hci/include/hci/packet_fragmenter.h \
+			$${IDF_PATH}/components/bt/host/bluedroid/hci/include/hci/packet_fragmenter.h \
 			$${IDF_PATH}/components/mbedtls/mbedtls/include/mbedtls/padlock.h \
+			$${IDF_PATH}/components/xtensa/include/esp_private/panic_reason.h \
 			$${IDF_PATH}/components/newlib/include/sys/param.h \
+			$${IDF_PATH}/components/driver/test/param_test/include/param_test.h \
 			$${IDF_PATH}/components/spiffs/spiffs/src/test/params_test.h \
 			$${IDF_PATH}/components/asio/asio/asio/include/asio/ssl/detail/password_callback.hpp \
 			$${IDF_PATH}/components/newlib/include/paths.h \
@@ -8444,50 +9773,54 @@
 			$${IDF_PATH}/components/lwip/lwip/src/include/lwip/pbuf.h \
 			$${IDF_PATH}/components/tinyusb/tinyusb/hw/bsp/ea4357/pca9532.h \
 			$${IDF_PATH}/components/driver/include/driver/pcnt.h \
+			$${IDF_PATH}/components/soc/include/soc/pcnt_periph.h \
 			$${IDF_PATH}/components/soc/esp32/include/soc/pcnt_reg.h \
 			$${IDF_PATH}/components/soc/esp32/include/soc/pcnt_struct.h \
-			$${IDF_PATH}/components/coap/libcoap/include/coap/pdu.h \
+			$${IDF_PATH}/components/coap/libcoap/include/coap2/pdu.h \
 			$${IDF_PATH}/components/coap/libcoap/ext/tinydtls/peer.h \
 			$${IDF_PATH}/components/mbedtls/mbedtls/include/mbedtls/pem.h \
-			$${IDF_PATH}/components/lwip/include/lwip/port/arch/perf.h \
+			$${IDF_PATH}/components/lwip/port/esp32/include/arch/perf.h \
 			$${IDF_PATH}/components/driver/include/driver/periph_ctrl.h \
 			$${IDF_PATH}/components/soc/esp32/include/soc/periph_defs.h \
-			$${IDF_PATH}/components/ethernet/include/eth_phy/phy.h \
-			$${IDF_PATH}/components/esp32/phy_init_data.h \
-			$${IDF_PATH}/components/ethernet/include/eth_phy/phy_lan8720.h \
-			$${IDF_PATH}/components/ethernet/include/eth_phy/phy_reg.h \
-			$${IDF_PATH}/components/ethernet/include/eth_phy/phy_tlk110.h \
+			$${IDF_PATH}/components/esp_wifi/include/phy.h \
+			$${IDF_PATH}/components/esp_wifi/esp32/include/phy_init_data.h \
 			$${IDF_PATH}/components/soc/esp32/include/soc/pid.h \
-			$${IDF_PATH}/components/lwip/apps/ping/ping.h \
+			$${IDF_PATH}/components/lwip/include/apps/ping/ping.h \
 			$${IDF_PATH}/components/asio/asio/asio/include/asio/detail/pipe_select_interrupter.hpp \
 			$${IDF_PATH}/components/mbedtls/mbedtls/include/mbedtls/pk.h \
 			$${IDF_PATH}/components/mbedtls/mbedtls/include/mbedtls/pk_internal.h \
-			$${IDF_PATH}/components/wpa_supplicant/include/wpa2/tls/pkcs1.h \
+			$${IDF_PATH}/components/wpa_supplicant/src/tls/pkcs1.h \
 			$${IDF_PATH}/components/mbedtls/mbedtls/include/mbedtls/pkcs11.h \
 			$${IDF_PATH}/components/mbedtls/mbedtls/include/mbedtls/pkcs12.h \
-			$${IDF_PATH}/components/wpa_supplicant/include/wpa2/tls/pkcs5.h \
-			$${IDF_PATH}/components/wpa_supplicant/include/wpa2/tls/pkcs8.h \
+			$${IDF_PATH}/components/wpa_supplicant/src/tls/pkcs5.h \
+			$${IDF_PATH}/components/wpa_supplicant/src/tls/pkcs8.h \
 			$${IDF_PATH}/components/asio/asio/asio/include/asio/placeholders.hpp \
-			$${IDF_PATH}/components/mbedtls/mbedtls/include/mbedtls/platform.h \
+			$${IDF_PATH}/components/mqtt/esp-mqtt/lib/include/platform.h \
 			$${IDF_PATH}/components/mqtt/esp-mqtt/lib/include/platform_esp32_idf.h \
 			$${IDF_PATH}/components/mbedtls/mbedtls/include/mbedtls/platform_time.h \
 			$${IDF_PATH}/components/mbedtls/mbedtls/include/mbedtls/platform_util.h \
 			$${IDF_PATH}/components/esp32/include/esp32/pm.h \
-			$${IDF_PATH}/components/esp32/pm_impl.h \
-			$${IDF_PATH}/components/esp32/pm_trace.h \
+			$${IDF_PATH}/components/esp_common/include/esp_private/pm_impl.h \
+			$${IDF_PATH}/components/esp_common/include/esp_private/pm_trace.h \
+			$${IDF_PATH}/components/wpa_supplicant/src/rsn_supp/pmksa_cache.h \
+			$${IDF_PATH}/components/newlib/platform_include/sys/poll.h \
 			$${IDF_PATH}/components/mbedtls/mbedtls/include/mbedtls/poly1305.h \
 			$${IDF_PATH}/components/libsodium/libsodium/src/libsodium/crypto_onetimeauth/poly1305/donna/poly1305_donna.h \
 			$${IDF_PATH}/components/libsodium/libsodium/src/libsodium/crypto_onetimeauth/poly1305/donna/poly1305_donna32.h \
 			$${IDF_PATH}/components/libsodium/libsodium/src/libsodium/crypto_onetimeauth/poly1305/donna/poly1305_donna64.h \
 			$${IDF_PATH}/components/libsodium/libsodium/src/libsodium/crypto_onetimeauth/poly1305/sse2/poly1305_sse2.h \
 			$${IDF_PATH}/components/asio/asio/asio/include/asio/detail/pop_options.hpp \
-			$${IDF_PATH}/components/bt/bluedroid/stack/include/stack/port_api.h \
-			$${IDF_PATH}/components/bt/bluedroid/stack/include/stack/port_ext.h \
-			$${IDF_PATH}/components/bt/bluedroid/stack/rfcomm/include/port_int.h \
+			$${IDF_PATH}/components/freemodbus/port/port.h \
+			$${IDF_PATH}/components/bt/host/bluedroid/stack/include/stack/port_api.h \
+			$${IDF_PATH}/components/bt/host/bluedroid/stack/include/stack/port_ext.h \
+			$${IDF_PATH}/components/bt/host/bluedroid/stack/rfcomm/include/port_int.h \
+			$${IDF_PATH}/components/freemodbus/serial_master/port/port_serial_master.h \
+			$${IDF_PATH}/components/freemodbus/serial_slave/port/port_serial_slave.h \
 			$${IDF_PATH}/components/freertos/include/freertos/portable.h \
 			$${IDF_PATH}/components/freertos/include/freertos/portbenchmark.h \
 			$${IDF_PATH}/components/bt/host/nimble/nimble/nimble/host/mesh/include/mesh/porting.h \
 			$${IDF_PATH}/components/freertos/include/freertos/portmacro.h \
+			$${IDF_PATH}/components/freertos/portmacro_priv.h \
 			$${IDF_PATH}/components/freertos/portmux_impl.h \
 			$${IDF_PATH}/components/freertos/portmux_impl.inc.h \
 			$${IDF_PATH}/components/freertos/include/freertos/porttrace.h \
@@ -8509,22 +9842,34 @@
 			$${IDF_PATH}/components/lwip/lwip/src/include/netif/ppp/pppoe.h \
 			$${IDF_PATH}/components/lwip/lwip/src/include/netif/ppp/pppol2tp.h \
 			$${IDF_PATH}/components/lwip/lwip/src/include/netif/ppp/pppos.h \
-			$${IDF_PATH}/components/coap/libcoap/include/coap/prng.h \
+			$${IDF_PATH}/components/coap/libcoap/include/coap2/prng.h \
 			$${IDF_PATH}/components/nghttp/nghttp2/third-party/mruby/include/mruby/proc.h \
-			$${IDF_PATH}/components/bt/bluedroid/stack/include/stack/profiles_api.h \
-			$${IDF_PATH}/components/spiffs/test_spiffs_host/stubs/freertos/include/freertos/projdefs.h \
+			$${IDF_PATH}/components/bt/host/bluedroid/stack/include/stack/profiles_api.h \
+			$${IDF_PATH}/components/spi_flash/sim/stubs/freertos/include/freertos/projdefs.h \
 			$${IDF_PATH}/components/protobuf-c/protobuf-c/protobuf-c/protobuf-c.h \
 			$${IDF_PATH}/components/asio/asio/asio/src/examples/cpp03/porthopper/protocol.hpp \
+			$${IDF_PATH}/components/protocomm/include/common/protocomm.h \
+			$${IDF_PATH}/components/protocomm/include/transports/protocomm_ble.h \
+			$${IDF_PATH}/components/protocomm/include/transports/protocomm_console.h \
+			$${IDF_PATH}/components/protocomm/include/transports/protocomm_httpd.h \
+			$${IDF_PATH}/components/protocomm/src/common/protocomm_priv.h \
+			$${IDF_PATH}/components/protocomm/include/security/protocomm_security.h \
+			$${IDF_PATH}/components/protocomm/include/security/protocomm_security0.h \
+			$${IDF_PATH}/components/protocomm/include/security/protocomm_security1.h \
 			$${IDF_PATH}/components/bt/host/nimble/nimble/nimble/host/mesh/src/prov.h \
+			$${IDF_PATH}/components/bt/esp_ble_mesh/mesh_core/provisioner_main.h \
+			$${IDF_PATH}/components/bt/esp_ble_mesh/mesh_core/provisioner_prov.h \
 			$${IDF_PATH}/components/bt/host/nimble/nimble/nimble/host/mesh/src/proxy.h \
-			$${IDF_PATH}/components/newlib/include/pthread.h \
+			$${IDF_PATH}/components/bt/esp_ble_mesh/mesh_core/proxy_client.h \
+			$${IDF_PATH}/components/bt/esp_ble_mesh/mesh_core/proxy_server.h \
+			$${IDF_PATH}/components/newlib/platform_include/pthread.h \
 			$${IDF_PATH}/components/pthread/pthread_internal.h \
 			$${IDF_PATH}/components/bt/host/nimble/nimble/apps/blemesh_models_example_2/src/publisher.h \
 			$${IDF_PATH}/components/asio/asio/asio/include/asio/detail/push_options.hpp \
 			$${IDF_PATH}/components/newlib/include/pwd.h \
 			$${IDF_PATH}/components/newlib/include/sys/queue.h \
 			$${IDF_PATH}/components/libsodium/libsodium/test/quirks/quirks.h \
-			$${IDF_PATH}/components/wpa_supplicant/include/crypto/random.h \
+			$${IDF_PATH}/components/wpa_supplicant/src/crypto/random.h \
 			$${IDF_PATH}/components/asio/asio/asio/include/asio/windows/random_access_handle.hpp \
 			$${IDF_PATH}/components/asio/asio/asio/include/asio/windows/random_access_handle_service.hpp \
 			$${IDF_PATH}/components/libsodium/libsodium/src/libsodium/include/sodium/randombytes.h \
@@ -8578,20 +9923,22 @@
 			$${IDF_PATH}/components/asio/asio/asio/include/asio/detail/resolver_service_base.hpp \
 			$${IDF_PATH}/components/newlib/include/sys/resource.h \
 			$${IDF_PATH}/components/asio/asio/asio/include/asio/ssl/rfc2818_verification.hpp \
-			$${IDF_PATH}/components/bt/bluedroid/stack/rfcomm/include/rfc_int.h \
-			$${IDF_PATH}/components/bt/bluedroid/stack/include/stack/rfcdefs.h \
+			$${IDF_PATH}/components/bt/host/bluedroid/stack/rfcomm/include/rfc_int.h \
+			$${IDF_PATH}/components/bt/host/bluedroid/stack/include/stack/rfcdefs.h \
 			$${IDF_PATH}/components/coap/libcoap/ext/tinydtls/aes/rijndael.h \
-			$${IDF_PATH}/components/freertos/include/freertos/ringbuf.h \
+			$${IDF_PATH}/components/esp_ringbuf/include/freertos/ringbuf.h \
 			$${IDF_PATH}/components/coap/libcoap/ext/tinydtls/platform-specific/riot_boards.h \
 			$${IDF_PATH}/components/mbedtls/mbedtls/include/mbedtls/ripemd160.h \
 			$${IDF_PATH}/components/driver/include/driver/rmt.h \
+			$${IDF_PATH}/components/soc/include/soc/rmt_periph.h \
 			$${IDF_PATH}/components/soc/esp32/include/soc/rmt_reg.h \
 			$${IDF_PATH}/components/soc/esp32/include/soc/rmt_struct.h \
 			$${IDF_PATH}/components/tinyusb/tinyusb/examples/obsolete/host/src/rndis_host_app.h \
 			$${IDF_PATH}/components/esptool_py/esptool/flasher_stub/include/rom_functions.h \
-			$${IDF_PATH}/components/wpa_supplicant/include/wpa2/tls/rsa.h \
+			$${IDF_PATH}/components/wpa_supplicant/src/tls/rsa.h \
 			$${IDF_PATH}/components/mbedtls/mbedtls/include/mbedtls/rsa_internal.h \
 			$${IDF_PATH}/components/soc/esp32/include/soc/rtc.h \
+			$${IDF_PATH}/components/soc/esp32/rtc_clk_common.h \
 			$${IDF_PATH}/components/driver/include/driver/rtc_cntl.h \
 			$${IDF_PATH}/components/soc/esp32/include/soc/rtc_cntl_reg.h \
 			$${IDF_PATH}/components/soc/esp32/include/soc/rtc_cntl_struct.h \
@@ -8601,47 +9948,63 @@
 			$${IDF_PATH}/components/soc/esp32/include/soc/rtc_io_reg.h \
 			$${IDF_PATH}/components/soc/esp32/include/soc/rtc_io_struct.h \
 			$${IDF_PATH}/components/soc/include/soc/rtc_periph.h \
+			$${IDF_PATH}/components/soc/include/soc/rtc_wdt.h \
 			$${IDF_PATH}/components/libsodium/libsodium/src/libsodium/include/sodium/runtime.h \
+			$${IDF_PATH}/components/wpa_supplicant/src/common/sae.h \
 			$${IDF_PATH}/components/libsodium/libsodium/src/libsodium/crypto_stream/salsa20/ref/salsa20_ref.h \
 			$${IDF_PATH}/components/libsodium/libsodium/src/libsodium/crypto_stream/salsa20/xmm6/salsa20_xmm6.h \
 			$${IDF_PATH}/components/libsodium/libsodium/src/libsodium/crypto_stream/salsa20/xmm6int/salsa20_xmm6int-avx2.h \
 			$${IDF_PATH}/components/libsodium/libsodium/src/libsodium/crypto_stream/salsa20/xmm6int/salsa20_xmm6int-sse2.h \
-			$${IDF_PATH}/components/bt/bluedroid/external/sbc/encoder/include/sbc_dct.h \
-			$${IDF_PATH}/components/bt/bluedroid/external/sbc/encoder/include/sbc_enc_func_declare.h \
-			$${IDF_PATH}/components/bt/bluedroid/external/sbc/encoder/include/sbc_encoder.h \
-			$${IDF_PATH}/components/bt/bluedroid/external/sbc/encoder/include/sbc_if.h \
-			$${IDF_PATH}/components/bt/bluedroid/external/sbc/encoder/include/sbc_types.h \
+			$${IDF_PATH}/components/bt/host/bluedroid/external/sbc/encoder/include/sbc_dct.h \
+			$${IDF_PATH}/components/bt/host/bluedroid/external/sbc/encoder/include/sbc_enc_func_declare.h \
+			$${IDF_PATH}/components/bt/host/bluedroid/external/sbc/encoder/include/sbc_encoder.h \
+			$${IDF_PATH}/components/bt/host/bluedroid/external/sbc/encoder/include/sbc_if.h \
+			$${IDF_PATH}/components/bt/host/bluedroid/external/sbc/plc/include/sbc_plc.h \
+			$${IDF_PATH}/components/bt/host/bluedroid/external/sbc/encoder/include/sbc_types.h \
 			$${IDF_PATH}/components/libsodium/libsodium/src/libsodium/crypto_scalarmult/curve25519/scalarmult_curve25519.h \
 			$${IDF_PATH}/components/newlib/include/sys/sched.h \
 			$${IDF_PATH}/components/asio/asio/asio/include/asio/detail/scheduler.hpp \
 			$${IDF_PATH}/components/asio/asio/asio/include/asio/detail/scheduler_operation.hpp \
 			$${IDF_PATH}/components/asio/asio/asio/include/asio/detail/scheduler_thread_info.hpp \
+			$${IDF_PATH}/components/wifi_provisioning/include/wifi_provisioning/scheme_ble.h \
+			$${IDF_PATH}/components/wifi_provisioning/include/wifi_provisioning/scheme_console.h \
+			$${IDF_PATH}/components/wifi_provisioning/include/wifi_provisioning/scheme_softap.h \
 			$${IDF_PATH}/components/asio/asio/asio/include/asio/detail/scoped_lock.hpp \
 			$${IDF_PATH}/components/asio/asio/asio/include/asio/detail/scoped_ptr.hpp \
 			$${IDF_PATH}/components/driver/include/driver/sdio_slave.h \
-			$${IDF_PATH}/components/wear_levelling/test_wl_host/sdkconfig.h \
-			$${IDF_PATH}/components/sdmmc/include/sdmmc_cmd.h \
+			$${IDF_PATH}/components/soc/include/soc/sdio_slave_periph.h \
+			$${IDF_PATH}/components/soc/esp32/include/soc/sdio_slave_pins.h \
+			$${IDF_PATH}/components/wear_levelling/test_wl_host/sdkconfig/sdkconfig.h \
+			$${IDF_PATH}/components/spi_flash/sim/stubs/sdmmc/include/sdmmc_cmd.h \
+			$${IDF_PATH}/components/sdmmc/sdmmc_common.h \
 			$${IDF_PATH}/components/driver/include/driver/sdmmc_defs.h \
-			$${IDF_PATH}/components/fatfs/test_fatfs_host/stubs/driver/include/driver/sdmmc_host.h \
+			$${IDF_PATH}/components/spi_flash/sim/stubs/driver/include/driver/sdmmc_host.h \
+			$${IDF_PATH}/components/soc/include/soc/sdmmc_periph.h \
+			$${IDF_PATH}/components/soc/esp32/include/soc/sdmmc_pins.h \
 			$${IDF_PATH}/components/driver/sdmmc_private.h \
 			$${IDF_PATH}/components/soc/esp32/include/soc/sdmmc_reg.h \
 			$${IDF_PATH}/components/soc/esp32/include/soc/sdmmc_struct.h \
-			$${IDF_PATH}/components/fatfs/test_fatfs_host/stubs/driver/include/driver/sdmmc_types.h \
-			$${IDF_PATH}/components/bt/bluedroid/stack/include/stack/sdp_api.h \
-			$${IDF_PATH}/components/bt/bluedroid/stack/include/stack/sdpdefs.h \
-			$${IDF_PATH}/components/bt/bluedroid/stack/sdp/include/sdpint.h \
+			$${IDF_PATH}/components/spi_flash/sim/stubs/driver/include/driver/sdmmc_types.h \
+			$${IDF_PATH}/components/bt/host/bluedroid/stack/include/stack/sdp_api.h \
+			$${IDF_PATH}/components/bt/host/bluedroid/stack/include/stack/sdpdefs.h \
+			$${IDF_PATH}/components/bt/host/bluedroid/stack/sdp/include/sdpint.h \
 			$${IDF_PATH}/components/driver/sdspi_crc.h \
 			$${IDF_PATH}/components/driver/include/driver/sdspi_host.h \
 			$${IDF_PATH}/components/driver/sdspi_private.h \
 			$${IDF_PATH}/components/newlib/include/search.h \
-			$${IDF_PATH}/components/esp32/include/rom/secure_boot.h \
+			$${IDF_PATH}/components/protocomm/proto-c/sec0.pb-c.h \
+			$${IDF_PATH}/components/protocomm/proto-c/sec1.pb-c.h \
+			$${IDF_PATH}/components/esp_rom/include/esp32/rom/secure_boot.h \
 			$${IDF_PATH}/components/newlib/platform_include/sys/select.h \
 			$${IDF_PATH}/components/asio/asio/asio/include/asio/detail/select_interrupter.hpp \
 			$${IDF_PATH}/components/asio/asio/asio/include/asio/detail/select_reactor.hpp \
-			$${IDF_PATH}/components/bt/bluedroid/osi/include/osi/semaphore.h \
-			$${IDF_PATH}/components/spiffs/test_spiffs_host/stubs/freertos/include/freertos/semphr.h \
+			$${IDF_PATH}/components/bt/common/osi/include/osi/semaphore.h \
+			$${IDF_PATH}/components/spi_flash/sim/stubs/freertos/include/freertos/semphr.h \
+			$${IDF_PATH}/components/soc/include/soc/sens_periph.h \
 			$${IDF_PATH}/components/soc/esp32/include/soc/sens_reg.h \
 			$${IDF_PATH}/components/soc/esp32/include/soc/sens_struct.h \
+			$${IDF_PATH}/components/bt/esp_ble_mesh/mesh_models/client/include/sensor_client.h \
+			$${IDF_PATH}/components/bt/esp_ble_mesh/mesh_models/server/include/sensor_server.h \
 			$${IDF_PATH}/components/asio/asio/asio/include/asio/generic/seq_packet_protocol.hpp \
 			$${IDF_PATH}/components/asio/asio/asio/include/asio/seq_packet_socket_service.hpp \
 			$${IDF_PATH}/components/asio/asio/asio/include/asio/serial_port.hpp \
@@ -8649,19 +10012,23 @@
 			$${IDF_PATH}/components/asio/asio/asio/include/asio/serial_port_service.hpp \
 			$${IDF_PATH}/components/coap/libcoap/examples/lwip/server-coap.h \
 			$${IDF_PATH}/components/asio/asio/asio/src/examples/cpp11/http/server/server.hpp \
+			$${IDF_PATH}/components/bt/esp_ble_mesh/mesh_models/server/include/server_common.h \
 			$${IDF_PATH}/components/asio/asio/asio/include/asio/detail/service_registry.hpp \
 			$${IDF_PATH}/components/coap/libcoap/ext/tinydtls/session.h \
+			$${IDF_PATH}/components/protocomm/proto-c/session.pb-c.h \
 			$${IDF_PATH}/components/newlib/include/machine/setjmp-dj.h \
-			$${IDF_PATH}/components/newlib/include/setjmp.h \
+			$${IDF_PATH}/components/unity/include/priv/setjmp.h \
 			$${IDF_PATH}/components/asio/asio/asio/src/tests/unit/archetypes/settable_socket_option.hpp \
 			$${IDF_PATH}/components/bt/host/nimble/nimble/nimble/host/mesh/src/settings.h \
-			$${IDF_PATH}/components/esp32/include/rom/sha.h \
-			$${IDF_PATH}/components/wpa_supplicant/include/crypto/sha1.h \
+			$${IDF_PATH}/components/bt/esp_ble_mesh/mesh_core/storage/settings_nvs.h \
+			$${IDF_PATH}/components/mbedtls/port/include/esp32/sha.h \
+			$${IDF_PATH}/components/wpa_supplicant/src/crypto/sha1.h \
 			$${IDF_PATH}/components/mbedtls/port/include/sha1_alt.h \
-			$${IDF_PATH}/components/wpa_supplicant/include/crypto/sha1_i.h \
+			$${IDF_PATH}/components/wpa_supplicant/src/crypto/sha1_i.h \
 			$${IDF_PATH}/components/coap/libcoap/ext/tinydtls/sha2/sha2.h \
-			$${IDF_PATH}/components/wpa_supplicant/include/crypto/sha256.h \
+			$${IDF_PATH}/components/wpa_supplicant/src/crypto/sha256.h \
 			$${IDF_PATH}/components/mbedtls/port/include/sha256_alt.h \
+			$${IDF_PATH}/components/wpa_supplicant/src/crypto/sha256_i.h \
 			$${IDF_PATH}/components/mbedtls/mbedtls/include/mbedtls/sha512.h \
 			$${IDF_PATH}/components/mbedtls/port/include/sha512_alt.h \
 			$${IDF_PATH}/components/bt/host/nimble/nimble/nimble/host/mesh/src/shell.h \
@@ -8720,6 +10087,7 @@
 			$${IDF_PATH}/components/nghttp/nghttp2/src/shrpx_worker_test.h \
 			$${IDF_PATH}/components/asio/asio/asio/include/asio/ssl/detail/shutdown_op.hpp \
 			$${IDF_PATH}/components/driver/include/driver/sigmadelta.h \
+			$${IDF_PATH}/components/soc/include/soc/sigmadelta_periph.h \
 			$${IDF_PATH}/components/newlib/include/sys/signal.h \
 			$${IDF_PATH}/components/asio/asio/asio/include/asio/detail/signal_blocker.hpp \
 			$${IDF_PATH}/components/asio/asio/asio/include/asio/detail/signal_handler.hpp \
@@ -8727,6 +10095,7 @@
 			$${IDF_PATH}/components/asio/asio/asio/include/asio/detail/signal_op.hpp \
 			$${IDF_PATH}/components/asio/asio/asio/include/asio/signal_set.hpp \
 			$${IDF_PATH}/components/asio/asio/asio/include/asio/signal_set_service.hpp \
+			$${IDF_PATH}/components/protocomm/src/simple_ble/simple_ble.h \
 			$${IDF_PATH}/components/lwip/lwip/src/include/lwip/sio.h \
 			$${IDF_PATH}/components/expat/expat/expat/lib/siphash.h \
 			$${IDF_PATH}/components/soc/esp32/include/soc/slc_reg.h \
@@ -8734,9 +10103,9 @@
 			$${IDF_PATH}/components/esptool_py/esptool/flasher_stub/include/slip.h \
 			$${IDF_PATH}/components/lwip/lwip/src/include/netif/slipif.h \
 			$${IDF_PATH}/components/bt/host/nimble/nimble/nimble/host/mesh/include/mesh/slist.h \
-			$${IDF_PATH}/components/smartconfig_ack/include/smartconfig_ack.h \
-			$${IDF_PATH}/components/bt/bluedroid/stack/include/stack/smp_api.h \
-			$${IDF_PATH}/components/bt/bluedroid/stack/smp/include/smp_int.h \
+			$${IDF_PATH}/components/esp_wifi/include/smartconfig_ack.h \
+			$${IDF_PATH}/components/bt/host/bluedroid/stack/include/stack/smp_api.h \
+			$${IDF_PATH}/components/bt/host/bluedroid/stack/smp/include/smp_int.h \
 			$${IDF_PATH}/components/lwip/lwip/src/include/lwip/apps/smtp.h \
 			$${IDF_PATH}/components/lwip/lwip/src/include/lwip/apps/smtp_opts.h \
 			$${IDF_PATH}/components/lwip/lwip/src/include/lwip/snmp.h \
@@ -8761,7 +10130,7 @@
 			$${IDF_PATH}/components/soc/include/soc/soc_memory_layout.h \
 			$${IDF_PATH}/components/esptool_py/esptool/flasher_stub/include/soc_support.h \
 			$${IDF_PATH}/components/soc/esp32/include/soc/soc_ulp.h \
-			$${IDF_PATH}/components/lwip/lwip/src/include/compat/posix/sys/socket.h \
+			$${IDF_PATH}/components/lwip/port/esp32/include/sys/socket.h \
 			$${IDF_PATH}/components/asio/asio/asio/include/asio/ts/socket.hpp \
 			$${IDF_PATH}/components/asio/asio/asio/include/asio/socket_acceptor_service.hpp \
 			$${IDF_PATH}/components/asio/asio/asio/include/asio/socket_base.hpp \
@@ -8778,25 +10147,39 @@
 			$${IDF_PATH}/components/asio/asio/asio/include/asio/detail/solaris_fenced_block.hpp \
 			$${IDF_PATH}/components/newlib/include/spawn.h \
 			$${IDF_PATH}/components/asio/asio/asio/include/asio/spawn.hpp \
-			$${IDF_PATH}/components/esp32/include/xtensa/specreg.h \
+			$${IDF_PATH}/components/xtensa/include/xtensa/specreg.h \
+			$${IDF_PATH}/components/soc/esp32/include/soc/spi_caps.h \
 			$${IDF_PATH}/components/driver/include/driver/spi_common.h \
-			$${IDF_PATH}/components/esp32/include/rom/spi_flash.h \
+			$${IDF_PATH}/components/driver/include/driver/spi_common_internal.h \
+			$${IDF_PATH}/components/esp_rom/include/esp32/rom/spi_flash.h \
+			$${IDF_PATH}/components/spi_flash/include/spi_flash_chip_driver.h \
+			$${IDF_PATH}/components/spi_flash/include/spi_flash_chip_gd.h \
+			$${IDF_PATH}/components/spi_flash/include/spi_flash_chip_generic.h \
+			$${IDF_PATH}/components/spi_flash/include/spi_flash_chip_issi.h \
+			$${IDF_PATH}/components/spi_flash/private_include/spi_flash_defs.h \
 			$${IDF_PATH}/components/nvs_flash/test_nvs_host/spi_flash_emulation.h \
+			$${IDF_PATH}/components/soc/include/hal/spi_flash_hal.h \
+			$${IDF_PATH}/components/soc/esp32/include/hal/spi_flash_ll.h \
+			$${IDF_PATH}/components/soc/include/hal/spi_flash_types.h \
+			$${IDF_PATH}/components/soc/include/hal/spi_hal.h \
+			$${IDF_PATH}/components/soc/include/hal/spi_ll.h \
 			$${IDF_PATH}/components/driver/include/driver/spi_master.h \
 			$${IDF_PATH}/components/soc/include/soc/spi_periph.h \
-			$${IDF_PATH}/components/soc/esp32/include/soc/spi_pins.h \
 			$${IDF_PATH}/components/soc/esp32/include/soc/spi_reg.h \
 			$${IDF_PATH}/components/driver/include/driver/spi_slave.h \
+			$${IDF_PATH}/components/soc/include/hal/spi_slave_hal.h \
 			$${IDF_PATH}/components/soc/esp32/include/soc/spi_struct.h \
+			$${IDF_PATH}/components/soc/include/hal/spi_types.h \
 			$${IDF_PATH}/components/spiffs/spiffs/src/spiffs.h \
 			$${IDF_PATH}/components/spiffs/spiffs_api.h \
 			$${IDF_PATH}/components/spiffs/spiffs/src/default/spiffs_config.h \
 			$${IDF_PATH}/components/spiffs/spiffs/src/spiffs_nucleus.h \
+			$${IDF_PATH}/components/esp32/include/esp32/spiram.h \
 			$${IDF_PATH}/components/esp32/spiram_psram.h \
 			$${IDF_PATH}/components/asio/asio/asio/include/asio/ssl/impl/src.hpp \
-			$${IDF_PATH}/components/bt/bluedroid/btc/profile/std/include/srvc_api.h \
-			$${IDF_PATH}/components/bt/bluedroid/btc/profile/std/battery/include/srvc_battery_int.h \
-			$${IDF_PATH}/components/bt/bluedroid/btc/profile/std/dis/include/srvc_dis_int.h \
+			$${IDF_PATH}/components/bt/host/bluedroid/btc/profile/std/include/srvc_api.h \
+			$${IDF_PATH}/components/bt/host/bluedroid/btc/profile/std/battery/include/srvc_battery_int.h \
+			$${IDF_PATH}/components/bt/host/bluedroid/btc/profile/std/dis/include/srvc_dis_int.h \
 			$${IDF_PATH}/components/libsodium/libsodium/src/libsodium/include/sodium/private/sse2_64_32.h \
 			$${IDF_PATH}/components/openssl/include/openssl/ssl.h \
 			$${IDF_PATH}/components/asio/asio/asio/include/asio/ssl.hpp \
@@ -8819,12 +10202,13 @@
 			$${IDF_PATH}/components/mbedtls/mbedtls/include/mbedtls/ssl_ticket.h \
 			$${IDF_PATH}/components/openssl/include/internal/ssl_types.h \
 			$${IDF_PATH}/components/openssl/include/internal/ssl_x509.h \
-			$${IDF_PATH}/components/wpa_supplicant/include/wpa/sta_info.h \
+			$${IDF_PATH}/components/wpa_supplicant/src/ap/sta_info.h \
 			$${IDF_PATH}/components/tinyusb/tinyusb/lib/FreeRTOS/Source/include/stack_macros.h \
 			$${IDF_PATH}/components/newlib/include/sys/stat.h \
 			$${IDF_PATH}/components/coap/libcoap/ext/tinydtls/state.h \
 			$${IDF_PATH}/components/bt/host/nimble/nimble/apps/blemesh_models_example_2/src/state_binding.h \
-			$${IDF_PATH}/components/wpa_supplicant/include/wpa/state_machine.h \
+			$${IDF_PATH}/components/wpa_supplicant/src/utils/state_machine.h \
+			$${IDF_PATH}/components/bt/esp_ble_mesh/mesh_models/server/include/state_transition.h \
 			$${IDF_PATH}/components/asio/asio/asio/include/asio/detail/static_mutex.hpp \
 			$${IDF_PATH}/components/lwip/lwip/src/include/lwip/stats.h \
 			$${IDF_PATH}/components/asio/asio/asio/include/asio/detail/std_event.hpp \
@@ -8842,7 +10226,7 @@
 			$${IDF_PATH}/components/tinyusb/tinyusb/hw/bsp/stm32f303disc/stm32f3xx_hal_conf.h \
 			$${IDF_PATH}/components/asio/asio/asio/src/examples/cpp03/serialization/stock.hpp \
 			$${IDF_PATH}/components/bt/host/nimble/nimble/apps/blemesh_models_example_2/src/storage.h \
-			$${IDF_PATH}/components/coap/libcoap/include/coap/str.h \
+			$${IDF_PATH}/components/coap/libcoap/include/coap2/str.h \
 			$${IDF_PATH}/components/asio/asio/asio/include/asio/strand.hpp \
 			$${IDF_PATH}/components/asio/asio/asio/include/asio/detail/strand_executor_service.hpp \
 			$${IDF_PATH}/components/asio/asio/asio/include/asio/detail/strand_service.hpp \
@@ -8866,24 +10250,26 @@
 			$${IDF_PATH}/components/esptool_py/esptool/flasher_stub/include/stub_commands.h \
 			$${IDF_PATH}/components/esptool_py/esptool/flasher_stub/include/stub_flasher.h \
 			$${IDF_PATH}/components/esptool_py/esptool/flasher_stub/include/stub_write_flash.h \
-			$${IDF_PATH}/components/coap/libcoap/include/coap/subscribe.h \
+			$${IDF_PATH}/components/coap/libcoap/include/coap2/subscribe.h \
+			$${IDF_PATH}/components/wpa_supplicant/port/include/supplicant_opt.h \
 			$${IDF_PATH}/components/lwip/lwip/src/include/lwip/sys.h \
-			$${IDF_PATH}/components/lwip/lwip/test/unit/arch/sys_arch.h \
+			$${IDF_PATH}/components/lwip/port/esp32/include/arch/sys_arch.h \
 			$${IDF_PATH}/components/tinyusb/tinyusb/src/common/sys_queue.h \
 			$${IDF_PATH}/components/bt/host/nimble/nimble/porting/npl/riot/include/syscfg/syscfg.h \
+			$${IDF_PATH}/components/soc/include/soc/syscon_periph.h \
 			$${IDF_PATH}/components/soc/esp32/include/soc/syscon_reg.h \
 			$${IDF_PATH}/components/soc/esp32/include/soc/syscon_struct.h \
 			$${IDF_PATH}/components/bt/host/nimble/nimble/porting/nimble/include/sysinit/sysinit.h \
 			$${IDF_PATH}/components/newlib/include/sys/syslimits.h \
-			$${IDF_PATH}/components/esp32/include/xtensa/config/system.h \
+			$${IDF_PATH}/components/xtensa/esp32/include/xtensa/config/system.h \
 			$${IDF_PATH}/components/asio/asio/asio/include/asio/system_context.hpp \
 			$${IDF_PATH}/components/asio/asio/asio/include/asio/system_error.hpp \
 			$${IDF_PATH}/components/asio/asio/asio/include/asio/system_executor.hpp \
+			$${IDF_PATH}/components/esp_common/include/esp_private/system_internal.h \
 			$${IDF_PATH}/components/asio/asio/asio/include/asio/system_timer.hpp \
 			$${IDF_PATH}/components/newlib/include/tar.h \
-			$${IDF_PATH}/components/mbedtls/mbedtls/yotta/data/target_config.h \
-			$${IDF_PATH}/components/spiffs/test_spiffs_host/stubs/freertos/include/freertos/task.h \
-			$${IDF_PATH}/components/esp32/include/rom/tbconsole.h \
+			$${IDF_PATH}/components/spi_flash/sim/stubs/freertos/include/freertos/task.h \
+			$${IDF_PATH}/components/esp_rom/include/esp32/rom/tbconsole.h \
 			$${IDF_PATH}/components/lwip/lwip/src/include/lwip/tcp.h \
 			$${IDF_PATH}/components/asio/asio/asio/include/asio/ip/tcp.hpp \
 			$${IDF_PATH}/components/lwip/lwip/test/unit/tcp/tcp_helper.h \
@@ -8891,11 +10277,14 @@
 			$${IDF_PATH}/components/lwip/lwip/src/include/lwip/tcpbase.h \
 			$${IDF_PATH}/components/lwip/lwip/src/include/lwip/tcpip.h \
 			$${IDF_PATH}/components/tcpip_adapter/include/tcpip_adapter.h \
+			$${IDF_PATH}/components/tcpip_adapter/include/tcpip_adapter_internal.h \
 			$${IDF_PATH}/components/lwip/lwip/src/include/lwip/priv/tcpip_priv.h \
 			$${IDF_PATH}/components/nghttp/nghttp2/src/template.h \
 			$${IDF_PATH}/components/nghttp/nghttp2/src/template_test.h \
-			$${IDF_PATH}/components/newlib/include/termios.h \
+			$${IDF_PATH}/components/newlib/platform_include/sys/termios.h \
+			$${IDF_PATH}/components/bt/esp_ble_mesh/mesh_core/test.h \
 			$${IDF_PATH}/components/mbedtls/test/test_apb_dport_access.h \
+			$${IDF_PATH}/components/driver/test/include/test/test_common_spi.h \
 			$${IDF_PATH}/components/lwip/lwip/test/unit/core/test_def.h \
 			$${IDF_PATH}/components/lwip/lwip/test/unit/dhcp/test_dhcp.h \
 			$${IDF_PATH}/components/coap/libcoap/tests/test_error_response.h \
@@ -8913,23 +10302,25 @@
 			$${IDF_PATH}/components/lwip/lwip/test/unit/core/test_pbuf.h \
 			$${IDF_PATH}/components/coap/libcoap/tests/test_pdu.h \
 			$${IDF_PATH}/components/coap/libcoap/tests/test_sendqueue.h \
+			$${IDF_PATH}/components/coap/libcoap/tests/test_session.h \
 			$${IDF_PATH}/components/lwip/lwip/test/unit/api/test_sockets.h \
 			$${IDF_PATH}/components/spiffs/spiffs/src/test/test_spiffs.h \
 			$${IDF_PATH}/components/lwip/lwip/test/unit/tcp/test_tcp.h \
 			$${IDF_PATH}/components/lwip/lwip/test/unit/tcp/test_tcp_oos.h \
 			$${IDF_PATH}/components/lwip/lwip/test/unit/core/test_timers.h \
+			$${IDF_PATH}/components/coap/libcoap/tests/test_tls.h \
 			$${IDF_PATH}/components/lwip/lwip/test/unit/udp/test_udp.h \
 			$${IDF_PATH}/components/coap/libcoap/tests/test_uri.h \
 			$${IDF_PATH}/components/bt/host/nimble/nimble/porting/npl/linux/test/test_util.h \
 			$${IDF_PATH}/components/coap/libcoap/tests/test_wellknown.h \
 			$${IDF_PATH}/components/bt/host/nimble/nimble/nimble/host/mesh/src/testing.h \
 			$${IDF_PATH}/components/spiffs/spiffs/src/test/testrunner.h \
-			$${IDF_PATH}/components/json/cJSON/tests/unity/test/expectdata/testsample_head1.h \
-			$${IDF_PATH}/components/json/cJSON/tests/unity/test/expectdata/testsample_mock_head1.h \
+			$${IDF_PATH}/components/unity/unity/test/expectdata/testsample_head1.h \
+			$${IDF_PATH}/components/unity/unity/test/expectdata/testsample_mock_head1.h \
 			$${IDF_PATH}/components/lwip/lwip/src/include/lwip/apps/tftp_opts.h \
 			$${IDF_PATH}/components/lwip/lwip/src/include/lwip/apps/tftp_server.h \
 			$${IDF_PATH}/components/newlib/include/tgmath.h \
-			$${IDF_PATH}/components/bt/bluedroid/osi/include/osi/thread.h \
+			$${IDF_PATH}/components/bt/common/osi/include/osi/thread.h \
 			$${IDF_PATH}/components/asio/asio/asio/include/asio/thread.hpp \
 			$${IDF_PATH}/components/asio/asio/asio/include/asio/detail/thread_context.hpp \
 			$${IDF_PATH}/components/asio/asio/asio/include/asio/detail/thread_group.hpp \
@@ -8937,13 +10328,15 @@
 			$${IDF_PATH}/components/asio/asio/asio/include/asio/thread_pool.hpp \
 			$${IDF_PATH}/components/mbedtls/mbedtls/include/mbedtls/threading.h \
 			$${IDF_PATH}/components/aws_iot/aws-iot-device-sdk-embedded-C/include/threads_interface.h \
-			$${IDF_PATH}/components/aws_iot/include/threads_platform.h \
+			$${IDF_PATH}/components/aws_iot/aws-iot-device-sdk-embedded-C/platform/linux/pthread/threads_platform.h \
 			$${IDF_PATH}/components/nghttp/nghttp2/third-party/mruby/include/mruby/throw.h \
 			$${IDF_PATH}/components/asio/asio/asio/include/asio/detail/throw_error.hpp \
 			$${IDF_PATH}/components/asio/asio/asio/include/asio/detail/throw_exception.hpp \
-			$${IDF_PATH}/components/esp32/include/xtensa/config/tie-asm.h \
-			$${IDF_PATH}/components/esp32/include/xtensa/config/tie.h \
-			$${IDF_PATH}/components/newlib/include/time.h \
+			$${IDF_PATH}/components/xtensa/esp32/include/xtensa/config/tie-asm.h \
+			$${IDF_PATH}/components/xtensa/esp32/include/xtensa/config/tie.h \
+			$${IDF_PATH}/components/newlib/platform_include/time.h \
+			$${IDF_PATH}/components/bt/esp_ble_mesh/mesh_models/client/include/time_scene_client.h \
+			$${IDF_PATH}/components/bt/esp_ble_mesh/mesh_models/server/include/time_scene_server.h \
 			$${IDF_PATH}/components/asio/asio/asio/include/asio/time_traits.hpp \
 			$${IDF_PATH}/components/newlib/include/sys/timeb.h \
 			$${IDF_PATH}/components/nghttp/nghttp2/src/timegm.h \
@@ -8953,37 +10346,38 @@
 			$${IDF_PATH}/components/soc/esp32/include/soc/timer_group_reg.h \
 			$${IDF_PATH}/components/soc/esp32/include/soc/timer_group_struct.h \
 			$${IDF_PATH}/components/aws_iot/aws-iot-device-sdk-embedded-C/include/timer_interface.h \
-			$${IDF_PATH}/components/aws_iot/include/timer_platform.h \
+			$${IDF_PATH}/components/soc/include/soc/timer_periph.h \
+			$${IDF_PATH}/components/aws_iot/aws-iot-device-sdk-embedded-C/platform/linux/common/timer_platform.h \
 			$${IDF_PATH}/components/asio/asio/asio/include/asio/detail/timer_queue.hpp \
 			$${IDF_PATH}/components/asio/asio/asio/include/asio/detail/timer_queue_base.hpp \
 			$${IDF_PATH}/components/asio/asio/asio/include/asio/detail/timer_queue_ptime.hpp \
 			$${IDF_PATH}/components/asio/asio/asio/include/asio/detail/timer_queue_set.hpp \
 			$${IDF_PATH}/components/asio/asio/asio/include/asio/detail/timer_scheduler.hpp \
 			$${IDF_PATH}/components/asio/asio/asio/include/asio/detail/timer_scheduler_fwd.hpp \
-			$${IDF_PATH}/components/lwip/include/lwip/lwip/timers.h \
+			$${IDF_PATH}/components/freertos/include/freertos/timers.h \
 			$${IDF_PATH}/components/newlib/include/sys/times.h \
 			$${IDF_PATH}/components/mbedtls/mbedtls/include/mbedtls/timing.h \
 			$${IDF_PATH}/components/cbor/tinycbor/src/tinycbor-version.h \
 			$${IDF_PATH}/components/lwip/lwip/src/apps/http/makefsdata/tinydir.h \
 			$${IDF_PATH}/components/coap/libcoap/ext/tinydtls/tinydtls.h \
-			$${IDF_PATH}/components/esp32/include/rom/tjpgd.h \
-			$${IDF_PATH}/components/wpa_supplicant/include/wpa2/tls/tls.h \
+			$${IDF_PATH}/components/esp_rom/include/esp32/rom/tjpgd.h \
+			$${IDF_PATH}/components/wpa_supplicant/src/tls/tls.h \
 			$${IDF_PATH}/components/openssl/include/internal/tls1.h \
-			$${IDF_PATH}/components/wpa_supplicant/include/wpa2/tls/tlsv1_client.h \
-			$${IDF_PATH}/components/wpa_supplicant/include/wpa2/tls/tlsv1_client_i.h \
-			$${IDF_PATH}/components/wpa_supplicant/include/wpa2/tls/tlsv1_common.h \
-			$${IDF_PATH}/components/wpa_supplicant/include/wpa2/tls/tlsv1_cred.h \
-			$${IDF_PATH}/components/wpa_supplicant/include/wpa2/tls/tlsv1_record.h \
-			$${IDF_PATH}/components/wpa_supplicant/include/wpa2/tls/tlsv1_server.h \
-			$${IDF_PATH}/components/wpa_supplicant/include/wpa2/tls/tlsv1_server_i.h \
+			$${IDF_PATH}/components/wpa_supplicant/src/tls/tlsv1_client.h \
+			$${IDF_PATH}/components/wpa_supplicant/src/tls/tlsv1_client_i.h \
+			$${IDF_PATH}/components/wpa_supplicant/src/tls/tlsv1_common.h \
+			$${IDF_PATH}/components/wpa_supplicant/src/tls/tlsv1_cred.h \
+			$${IDF_PATH}/components/wpa_supplicant/src/tls/tlsv1_record.h \
+			$${IDF_PATH}/components/wpa_supplicant/src/tls/tlsv1_server.h \
+			$${IDF_PATH}/components/wpa_supplicant/src/tls/tlsv1_server_i.h \
 			$${IDF_PATH}/components/soc/esp32/include/soc/touch_channel.h \
 			$${IDF_PATH}/components/driver/include/driver/touch_pad.h \
+			$${IDF_PATH}/components/soc/include/soc/touch_periph.h \
 			$${IDF_PATH}/components/bt/host/nimble/nimble/apps/blemesh_models_example_2/src/transition.h \
-			$${IDF_PATH}/components/esp_http_client/lib/include/transport.h \
-			$${IDF_PATH}/components/esp_http_client/lib/include/transport_ssl.h \
-			$${IDF_PATH}/components/esp_http_client/lib/include/transport_tcp.h \
-			$${IDF_PATH}/components/xtensa-debug-module/include/trax.h \
-			$${IDF_PATH}/components/esp32/include/xtensa/traxreg.h \
+			$${IDF_PATH}/components/bt/host/nimble/nimble/nimble/host/mesh/src/transport.h \
+			$${IDF_PATH}/components/tcp_transport/transport_strcasestr.h \
+			$${IDF_PATH}/components/xtensa/include/trax.h \
+			$${IDF_PATH}/components/xtensa/include/xtensa/traxreg.h \
 			$${IDF_PATH}/components/asio/asio/asio/include/asio/detail/tss_ptr.hpp \
 			$${IDF_PATH}/components/tinyusb/tinyusb/src/tusb.h \
 			$${IDF_PATH}/components/tinyusb/tinyusb/src/common/tusb_common.h \
@@ -9001,10 +10395,12 @@
 			$${IDF_PATH}/components/libsodium/libsodium/src/libsodium/crypto_stream/salsa20/xmm6int/u1.h \
 			$${IDF_PATH}/components/libsodium/libsodium/src/libsodium/crypto_stream/salsa20/xmm6int/u4.h \
 			$${IDF_PATH}/components/libsodium/libsodium/src/libsodium/crypto_stream/salsa20/xmm6int/u8.h \
-			$${IDF_PATH}/components/micro-ecc/micro-ecc/uECC.h \
-			$${IDF_PATH}/components/micro-ecc/micro-ecc/uECC_vli.h \
-			$${IDF_PATH}/components/esp32/include/rom/uart.h \
+			$${IDF_PATH}/components/bootloader/subproject/components/micro-ecc/micro-ecc/uECC.h \
+			$${IDF_PATH}/components/bootloader/subproject/components/micro-ecc/micro-ecc/uECC_vli.h \
+			$${IDF_PATH}/components/esp_rom/include/esp32/rom/uart.h \
+			$${IDF_PATH}/components/soc/esp32/include/soc/uart_caps.h \
 			$${IDF_PATH}/components/soc/esp32/include/soc/uart_channel.h \
+			$${IDF_PATH}/components/soc/include/soc/uart_periph.h \
 			$${IDF_PATH}/components/soc/esp32/include/soc/uart_reg.h \
 			$${IDF_PATH}/components/driver/include/driver/uart_select.h \
 			$${IDF_PATH}/components/soc/esp32/include/soc/uart_struct.h \
@@ -9012,21 +10408,24 @@
 			$${IDF_PATH}/components/asio/asio/asio/include/asio/ip/udp.hpp \
 			$${IDF_PATH}/components/soc/esp32/include/soc/uhci_reg.h \
 			$${IDF_PATH}/components/soc/esp32/include/soc/uhci_struct.h \
+			$${IDF_PATH}/components/newlib/platform_include/sys/uio.h \
 			$${IDF_PATH}/components/ulp/include/esp32/ulp.h \
+			$${IDF_PATH}/components/newlib/platform_include/sys/un.h \
 			$${IDF_PATH}/components/newlib/include/unctrl.h \
 			$${IDF_PATH}/components/asio/asio/asio/include/asio/ip/unicast.hpp \
 			$${IDF_PATH}/components/newlib/platform_include/sys/unistd.h \
 			$${IDF_PATH}/components/asio/asio/asio/src/tests/unit/unit_test.hpp \
-			$${IDF_PATH}/components/json/cJSON/tests/unity/src/unity.h \
-			$${IDF_PATH}/components/json/cJSON/tests/unity/examples/unity_config.h \
-			$${IDF_PATH}/components/json/cJSON/tests/unity/extras/fixture/src/unity_fixture.h \
-			$${IDF_PATH}/components/json/cJSON/tests/unity/extras/fixture/src/unity_fixture_internals.h \
-			$${IDF_PATH}/components/json/cJSON/tests/unity/extras/fixture/src/unity_fixture_malloc_overrides.h \
-			$${IDF_PATH}/components/json/cJSON/tests/unity/src/unity_internals.h \
-			$${IDF_PATH}/components/json/cJSON/tests/unity/extras/fixture/test/unity_output_Spy.h \
+			$${IDF_PATH}/components/unity/unity/src/unity.h \
+			$${IDF_PATH}/components/unity/unity/examples/unity_config.h \
+			$${IDF_PATH}/components/unity/unity/extras/fixture/src/unity_fixture.h \
+			$${IDF_PATH}/components/unity/unity/extras/fixture/src/unity_fixture_internals.h \
+			$${IDF_PATH}/components/unity/unity/extras/fixture/src/unity_fixture_malloc_overrides.h \
+			$${IDF_PATH}/components/unity/unity/src/unity_internals.h \
+			$${IDF_PATH}/components/unity/unity/extras/fixture/test/unity_output_Spy.h \
+			$${IDF_PATH}/components/unity/include/unity_test_runner.h \
 			$${IDF_PATH}/components/asio/asio/asio/include/asio/unyield.hpp \
 			$${IDF_PATH}/components/lwip/lwip/src/include/netif/ppp/upap.h \
-			$${IDF_PATH}/components/coap/libcoap/include/coap/uri.h \
+			$${IDF_PATH}/components/coap/libcoap/include/coap2/uri.h \
 			$${IDF_PATH}/components/tinyusb/tinyusb/src/device/usbd.h \
 			$${IDF_PATH}/components/tinyusb/tinyusb/src/device/usbd_pvt.h \
 			$${IDF_PATH}/components/tinyusb/tinyusb/src/host/usbh.h \
@@ -9034,16 +10433,16 @@
 			$${IDF_PATH}/components/asio/asio/asio/include/asio/use_future.hpp \
 			$${IDF_PATH}/components/asio/asio/asio/include/asio/uses_executor.hpp \
 			$${IDF_PATH}/components/cbor/tinycbor/src/utf8_p.h \
-			$${IDF_PATH}/components/expat/include/expat/utf8tab.h \
-			$${IDF_PATH}/components/coap/libcoap/include/coap/uthash.h \
+			$${IDF_PATH}/components/expat/expat/expat/lib/utf8tab.h \
+			$${IDF_PATH}/components/coap/libcoap/include/coap2/uthash.h \
 			$${IDF_PATH}/components/nghttp/nghttp2/src/util.h \
 			$${IDF_PATH}/components/nghttp/nghttp2/src/util_test.h \
 			$${IDF_PATH}/components/libsodium/libsodium/src/libsodium/include/sodium/utils.h \
-			$${IDF_PATH}/components/newlib/include/utime.h \
-			$${IDF_PATH}/components/bt/bluedroid/bta/include/bta/utl.h \
-			$${IDF_PATH}/components/coap/libcoap/include/coap/utlist.h \
+			$${IDF_PATH}/components/newlib/platform_include/sys/utime.h \
+			$${IDF_PATH}/components/bt/host/bluedroid/bta/include/bta/utl.h \
+			$${IDF_PATH}/components/coap/libcoap/include/coap2/utlist.h \
 			$${IDF_PATH}/components/newlib/include/utmp.h \
-			$${IDF_PATH}/components/wpa_supplicant/include/wps/utils/uuid.h \
+			$${IDF_PATH}/components/wpa_supplicant/src/utils/uuid.h \
 			$${IDF_PATH}/components/asio/asio/asio/include/asio/ip/v6_only.hpp \
 			$${IDF_PATH}/components/nghttp/nghttp2/third-party/mruby/include/mruby/value.h \
 			$${IDF_PATH}/components/nghttp/nghttp2/third-party/mruby/src/value_array.h \
@@ -9054,8 +10453,8 @@
 			$${IDF_PATH}/components/asio/asio/asio/include/asio/ssl/verify_mode.hpp \
 			$${IDF_PATH}/components/nghttp/nghttp2/third-party/mruby/include/mruby/version.h \
 			$${IDF_PATH}/components/asio/asio/asio/include/asio/version.hpp \
-			$${IDF_PATH}/components/fatfs/src/vfs_fat_internal.h \
-			$${IDF_PATH}/components/lwip/include/lwip/port/arch/vfs_lwip.h \
+			$${IDF_PATH}/components/fatfs/vfs/vfs_fat_internal.h \
+			$${IDF_PATH}/components/lwip/port/esp32/include/arch/vfs_lwip.h \
 			$${IDF_PATH}/components/lwip/lwip/src/include/netif/ppp/vj.h \
 			$${IDF_PATH}/components/newlib/include/sys/wait.h \
 			$${IDF_PATH}/components/asio/asio/asio/include/asio/detail/wait_handler.hpp \
@@ -9066,6 +10465,15 @@
 			$${IDF_PATH}/components/newlib/include/wctype.h \
 			$${IDF_PATH}/components/soc/esp32/include/soc/wdev_reg.h \
 			$${IDF_PATH}/components/wear_levelling/include/wear_levelling.h \
+			$${IDF_PATH}/components/esp_wifi/include/esp_private/wifi.h \
+			$${IDF_PATH}/components/wifi_provisioning/include/wifi_provisioning/wifi_config.h \
+			$${IDF_PATH}/components/wifi_provisioning/proto-c/wifi_config.pb-c.h \
+			$${IDF_PATH}/components/wifi_provisioning/proto-c/wifi_constants.pb-c.h \
+			$${IDF_PATH}/components/esp_wifi/include/esp_private/wifi_os_adapter.h \
+			$${IDF_PATH}/components/wifi_provisioning/src/wifi_provisioning_priv.h \
+			$${IDF_PATH}/components/wifi_provisioning/include/wifi_provisioning/wifi_scan.h \
+			$${IDF_PATH}/components/wifi_provisioning/proto-c/wifi_scan.pb-c.h \
+			$${IDF_PATH}/components/esp_wifi/include/esp_private/wifi_types.h \
 			$${IDF_PATH}/components/asio/asio/asio/include/asio/detail/win_event.hpp \
 			$${IDF_PATH}/components/asio/asio/asio/include/asio/detail/win_fd_set_adapter.hpp \
 			$${IDF_PATH}/components/asio/asio/asio/include/asio/detail/win_fenced_block.hpp \
@@ -9109,62 +10517,61 @@
 			$${IDF_PATH}/components/asio/asio/asio/include/asio/detail/winrt_timer_scheduler.hpp \
 			$${IDF_PATH}/components/asio/asio/asio/include/asio/detail/winrt_utils.hpp \
 			$${IDF_PATH}/components/asio/asio/asio/include/asio/detail/winsock_init.hpp \
-			$${IDF_PATH}/components/lwip/include/lwip/port/netif/wlanif.h \
+			$${IDF_PATH}/components/lwip/port/esp32/include/netif/wlanif.h \
 			$${IDF_PATH}/components/newlib/include/wordexp.h \
 			$${IDF_PATH}/components/asio/asio/asio/include/asio/detail/work_dispatcher.hpp \
-			$${IDF_PATH}/components/wpa_supplicant/include/wpa/wpa.h \
-			$${IDF_PATH}/components/wpa_supplicant/include/wpa/wpa_auth.h \
-			$${IDF_PATH}/components/wpa_supplicant/include/wpa/wpa_auth_i.h \
-			$${IDF_PATH}/components/wpa_supplicant/include/wpa/wpa_auth_ie.h \
-			$${IDF_PATH}/components/wpa_supplicant/include/wpa/wpa_common.h \
-			$${IDF_PATH}/components/wpa_supplicant/include/wpa/wpa_debug.h \
-			$${IDF_PATH}/components/wpa_supplicant/include/wpa/wpa_i.h \
-			$${IDF_PATH}/components/wpa_supplicant/include/wpa/wpa_ie.h \
-			$${IDF_PATH}/components/wpa_supplicant/include/wpa/wpabuf.h \
-			$${IDF_PATH}/components/wpa_supplicant/include/wpa/wpas_glue.h \
-			$${IDF_PATH}/components/wpa_supplicant/include/wps/wps.h \
-			$${IDF_PATH}/components/wpa_supplicant/include/wps/wps_attr_parse.h \
-			$${IDF_PATH}/components/wpa_supplicant/include/wps/wps_defs.h \
-			$${IDF_PATH}/components/wpa_supplicant/include/wps/wps_dev_attr.h \
-			$${IDF_PATH}/components/wpa_supplicant/include/wps/wps_i.h \
+			$${IDF_PATH}/components/wpa_supplicant/src/rsn_supp/wpa.h \
+			$${IDF_PATH}/components/wpa_supplicant/src/ap/wpa_auth.h \
+			$${IDF_PATH}/components/wpa_supplicant/src/ap/wpa_auth_i.h \
+			$${IDF_PATH}/components/wpa_supplicant/src/ap/wpa_auth_ie.h \
+			$${IDF_PATH}/components/wpa_supplicant/src/common/wpa_common.h \
+			$${IDF_PATH}/components/wpa_supplicant/src/common/wpa_ctrl.h \
+			$${IDF_PATH}/components/wpa_supplicant/include/utils/wpa_debug.h \
+			$${IDF_PATH}/components/wpa_supplicant/src/rsn_supp/wpa_i.h \
+			$${IDF_PATH}/components/wpa_supplicant/src/rsn_supp/wpa_ie.h \
+			$${IDF_PATH}/components/wpa_supplicant/include/utils/wpabuf.h \
+			$${IDF_PATH}/components/wpa_supplicant/src/wps/wps.h \
+			$${IDF_PATH}/components/wpa_supplicant/src/wps/wps_attr_parse.h \
+			$${IDF_PATH}/components/wpa_supplicant/src/wps/wps_defs.h \
+			$${IDF_PATH}/components/wpa_supplicant/src/wps/wps_dev_attr.h \
+			$${IDF_PATH}/components/wpa_supplicant/src/wps/wps_i.h \
 			$${IDF_PATH}/components/bt/host/nimble/nimble/porting/npl/linux/src/wqueue.h \
 			$${IDF_PATH}/components/asio/asio/asio/include/asio/detail/wrapped_handler.hpp \
 			$${IDF_PATH}/components/asio/asio/asio/include/asio/write.hpp \
 			$${IDF_PATH}/components/asio/asio/asio/include/asio/write_at.hpp \
 			$${IDF_PATH}/components/asio/asio/asio/include/asio/ssl/detail/write_op.hpp \
 			$${IDF_PATH}/components/bt/host/nimble/nimble/apps/blemesh_light/src/ws2812.h \
-			$${IDF_PATH}/components/bt/bluedroid/btc/profile/esp/include/wx_airsync_prf.h \
+			$${IDF_PATH}/components/bt/host/bluedroid/btc/profile/esp/include/wx_airsync_prf.h \
 			$${IDF_PATH}/components/libsodium/libsodium/src/libsodium/crypto_scalarmult/curve25519/ref10/x25519_ref10.h \
 			$${IDF_PATH}/components/mbedtls/mbedtls/include/mbedtls/x509.h \
 			$${IDF_PATH}/components/mbedtls/mbedtls/include/mbedtls/x509_crl.h \
 			$${IDF_PATH}/components/mbedtls/mbedtls/include/mbedtls/x509_crt.h \
 			$${IDF_PATH}/components/mbedtls/mbedtls/include/mbedtls/x509_csr.h \
 			$${IDF_PATH}/components/openssl/include/internal/x509_vfy.h \
-			$${IDF_PATH}/components/wpa_supplicant/include/wpa2/tls/x509v3.h \
+			$${IDF_PATH}/components/wpa_supplicant/src/tls/x509v3.h \
 			$${IDF_PATH}/components/bt/host/nimble/nimble/nimble/drivers/nrf52/include/ble/xcvr.h \
-			$${IDF_PATH}/components/esp32/include/xtensa/xdm-regs.h \
+			$${IDF_PATH}/components/xtensa/include/xtensa/xdm-regs.h \
 			$${IDF_PATH}/components/expat/expat/expat/xmlwf/xmlfile.h \
 			$${IDF_PATH}/components/expat/expat/expat/xmlwf/xmlmime.h \
-			$${IDF_PATH}/components/expat/include/expat/xmlrole.h \
+			$${IDF_PATH}/components/expat/expat/expat/lib/xmlrole.h \
 			$${IDF_PATH}/components/expat/expat/expat/xmlwf/xmltchar.h \
-			$${IDF_PATH}/components/expat/include/expat/xmltok.h \
-			$${IDF_PATH}/components/expat/include/expat/xmltok_impl.h \
+			$${IDF_PATH}/components/expat/expat/expat/lib/xmltok.h \
+			$${IDF_PATH}/components/expat/expat/expat/lib/xmltok_impl.h \
 			$${IDF_PATH}/components/nghttp/nghttp2/src/xsi_strerror.h \
-			$${IDF_PATH}/components/esp32/include/xtensa/xt_perf_consts.h \
+			$${IDF_PATH}/components/xtensa/include/xtensa/xt_perf_consts.h \
 			$${IDF_PATH}/components/mbedtls/mbedtls/include/mbedtls/xtea.h \
-			$${IDF_PATH}/components/xtensa-debug-module/include/xtensa-debug-module.h \
-			$${IDF_PATH}/components/esp32/include/xtensa/xtensa-libdb-macros.h \
-			$${IDF_PATH}/components/esp32/include/xtensa/xtensa-versions.h \
-			$${IDF_PATH}/components/esp32/include/xtensa/xtensa-xer.h \
+			$${IDF_PATH}/components/xtensa/include/xtensa-debug-module.h \
+			$${IDF_PATH}/components/xtensa/include/xtensa/xtensa-libdb-macros.h \
+			$${IDF_PATH}/components/xtensa/include/xtensa/xtensa-versions.h \
+			$${IDF_PATH}/components/xtensa/include/xtensa/xtensa-xer.h \
 			$${IDF_PATH}/components/freertos/include/freertos/xtensa_api.h \
 			$${IDF_PATH}/components/freertos/include/freertos/xtensa_config.h \
 			$${IDF_PATH}/components/freertos/include/freertos/xtensa_context.h \
 			$${IDF_PATH}/components/freertos/include/freertos/xtensa_rtos.h \
 			$${IDF_PATH}/components/freertos/include/freertos/xtensa_timer.h \
-			$${IDF_PATH}/components/esp32/include/xtensa/xtruntime-core-state.h \
-			$${IDF_PATH}/components/esp32/include/xtensa/xtruntime-frames.h \
-			$${IDF_PATH}/components/esp32/include/xtensa/xtruntime.h \
+			$${IDF_PATH}/components/xtensa/include/xtensa/xtruntime-core-state.h \
+			$${IDF_PATH}/components/xtensa/include/xtensa/xtruntime-frames.h \
+			$${IDF_PATH}/components/xtensa/include/xtensa/xtruntime.h \
 			$${IDF_PATH}/components/asio/asio/asio/include/asio/yield.hpp \
 			$${IDF_PATH}/components/lwip/lwip/src/include/netif/zepif.h \
-                        $${IDF_PATH}/components/tinyusb/tinyusb/test/vendor/ceedling/plugins/fake_function_framework/examples/fff_example/src/subfolder/zzz.h \
-                        $${IDF_PATH}/components/esp_common/include
+			$${IDF_PATH}/components/tinyusb/tinyusb/test/vendor/ceedling/plugins/fake_function_framework/examples/fff_example/src/subfolder/zzz.h 

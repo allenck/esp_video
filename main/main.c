@@ -136,7 +136,7 @@ static void gpio_task_example(void* arg)
                 else if(memcmp((char*)list[curList] + strlen((char*)list[curList])-3, "MJP",3)==0)
                     xTaskCreatePinnedToCore(mjpg_video_task, "Video", 8192, cPath, 1, &video_task_handle, 0);
                 else
-                    xTaskCreatePinnedToCore(photo_task, "Photo", 8192, cPath, 2, &video_task_handle, 1);
+                    xTaskCreatePinnedToCore(photo_task, "Photo", 8192, cPath, 2, &video_task_handle, 0);
                 if(display_list_handle)
                 {
                     vTaskDelete(display_list_handle);
@@ -418,7 +418,7 @@ void photo_task(char *params)
         xEventGroupSetBits(event, FRAME_LOADED);
 
         vTaskDelay(1000 / portTICK_RATE_MS);
-        break;
+        //break;
 #if 0
         ESP_LOGI(TAG, "Loading: %s", "/sdcard/002.jpg");
         hagl_load_image(0, 30, "/sdcard/002.jpg");
@@ -435,8 +435,8 @@ void photo_task(char *params)
         vTaskDelay(1000 / portTICK_RATE_MS);
 #endif
     }
-//    video_task_handle = NULL;
-//    vTaskDelete(NULL);
+    video_task_handle = NULL;
+    vTaskDelete(NULL);
 }
 
 void display_list()
