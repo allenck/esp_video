@@ -73,10 +73,12 @@ DIR *pDir;
 struct stat _stat;
 char cPath[1024];
 
+#define MAX_FILES 30    // maximum number of files to list
 // maintain list of up to 10 files
 
-static void *list[10];
-int nList = 0;
+static void *list[MAX_FILES];
+int nList = 0;      // 0 -> MAX_FILES
+int nFirst = 0;     // first list item displayed
 int curList = 0; // currently selected list item
 
 // hard coded for now
@@ -93,7 +95,15 @@ static xQueueHandle gpio_evt_queue = NULL;
 
 TaskHandle_t video_task_handle = NULL;
 TaskHandle_t display_list_handle = NULL;
-bool bIsMJpg = false;
+enum IMGTYPE
+{
+    NONE,
+    MJPG,
+    RAW,
+    JPG
+};
+int img_type = NONE;
+
 bool bTerminate = false;
 
 static void display_list();
@@ -107,7 +117,7 @@ static void IRAM_ATTR gpio_isr_handler(void* arg)
     xQueueSendFromISR(gpio_evt_queue, &gpio_num, NULL);
 }
 
-static void gpio_task_example(void* arg)
+static void gpio_task(void* arg)
 {
     uint32_t io_num;
 
@@ -131,6 +141,7 @@ static void gpio_task_example(void* arg)
                 sprintf(cPath,"/sdcard/%s",(char*)list[curList]);
 
                 bTerminate = false;
+                hagl_clear_screen();
                 if(memcmp((char*)list[curList] + strlen((char*)list[curList])-3, "RAW",3)==0)
                     xTaskCreatePinnedToCore(raw_video_task, "Video", 8192, cPath, 1, &video_task_handle, 0);
                 else if(memcmp((char*)list[curList] + strlen((char*)list[curList])-3, "MJP",3)==0)
@@ -145,17 +156,39 @@ static void gpio_task_example(void* arg)
             }
             if(io_num == MIPI_DISPLAY_PIN_BUTTON_B && display_list_handle)
             {
-                if(curList < nList)
+                // up
+                ESP_LOGI(TAG, "nList=%d, nFirst=%d, curList=%d", nList, nFirst, curList);
+
+                if(curList < (nList-1))
+                {
+                    if((curList - nFirst) >= 9)
+                        nFirst++;
                     curList++;
+                }
                 else
-                    curList = 0;
+                {
+                    curList = 0; // wrap around to beginning
+                    nFirst = 0;
+                }
             }
             if(io_num == MIPI_DISPLAY_PIN_BUTTON_C && display_list_handle)
             {
+                ESP_LOGI(TAG, "nList=%d, nFirst=%d, curList=%d", nList, nFirst, curList);
+
+                // down
                 if(curList > 0)
+                {
+                    if((curList - nFirst) == 0)
+                    {
+                        nFirst--;
+                    }
                     curList--;
+                }
                 else
+                {
                     curList = nList - 1;
+                    nFirst = (nList - 10)<0?0:nList-10;
+                }
             }
         }
     }
@@ -180,7 +213,7 @@ static void setup_Gpio()
     //create a queue to handle gpio event from isr
     gpio_evt_queue = xQueueCreate(10, sizeof(uint32_t));
     //start gpio task
-    xTaskCreate(gpio_task_example, "gpio_task_example", 2048, NULL, 10, NULL);
+    xTaskCreate(gpio_task, "gpio_task_example", 2048, NULL, 10, NULL);
 
     //install gpio isr service
     gpio_install_isr_service(ESP_INTR_FLAG_DEFAULT);
@@ -224,7 +257,7 @@ void raw_video_task(char *params)
 {
     FILE *fp;
     ssize_t bytes_read = 0;
-    bIsMJpg = false;
+    img_type = RAW;
     ESP_LOGI(TAG, "Loading: %s", params);
 
     //fp = fopen("/sdcard/bbb12.raw", "rb");
@@ -343,7 +376,7 @@ void mjpg_video_task(char *params)
     uint8_t work[3100];
     JDEC decoder;
     JRESULT result;
-    bIsMJpg = true;
+    img_type = MJPG;
     ESP_LOGI(TAG, "Loading: %s", params);
 
     //fp = fopen("/sdcard/bbb08.mjp", "rb");
@@ -393,16 +426,26 @@ void infobar_task(void *params)
         swprintf(message, sizeof(message), u"SD %.*f kBPS  ",  1, sd_bps / 1000);
         hagl_put_text(message, 8, 8, color, font6x9);
 
-        if(bIsMJpg)
+        switch(img_type)
         {
+        case MJPG:
             swprintf(message, sizeof(message), u"MJPG %.*f FPS  ", 1, sd_fps);
             hagl_put_text(message, DISPLAY_WIDTH - 90, 8, color, font6x9);
-        }
-        else
-        {
+            break;
+        case RAW:
             swprintf(message, sizeof(message), u"RAW RGB565 %.*f FPS  ", 1, sd_fps);
             hagl_put_text(message, DISPLAY_WIDTH - 124, 8, color, font6x9);
+            break;
+        case JPG:
+            swprintf(message, sizeof(message), u"JPG %.*f FPS  ", 1, sd_fps);
+            hagl_put_text(message, DISPLAY_WIDTH - 124, 8, color, font6x9);
+            break;
+        default:
+            swprintf(message, sizeof(message), u"None %.*f FPS  ", 1, sd_fps);
+            hagl_put_text(message, DISPLAY_WIDTH - 124, 8, color, font6x9);
+            break;
         }
+
         vTaskDelay(1000 / portTICK_RATE_MS);
     }
 #endif
@@ -411,10 +454,12 @@ void infobar_task(void *params)
 
 void photo_task(char *params)
 {
+    img_type = JPG;
     while (!bTerminate) {
         ESP_LOGI(TAG, "Loading: %s", params);
         uint32_t status = hagl_load_image(0, 30, params);
-        ESP_LOGE(TAG, "error %d reading %s", status, params);
+        if(status)
+            ESP_LOGE(TAG, "error %d reading %s", status, params);
         xEventGroupSetBits(event, FRAME_LOADED);
 
         vTaskDelay(1000 / portTICK_RATE_MS);
@@ -442,11 +487,19 @@ void photo_task(char *params)
 void display_list()
 {
     char16_t message[64];
-    hagl_fill_rectangle(0, 9, DISPLAY_WIDTH-1, DISPLAY_HEIGHT-1, 0);
+    hagl_clear_screen();
+    bool bFirst=true;
+
     while(1)
     {
         int y = 20;
-        for(int i=0; i < nList; i++)
+        int max = (nList - nFirst)< 10?nList-nList:(nFirst+10); //displaying only 10 lines
+        if(bFirst)
+        {
+            ESP_LOGI(TAG, "nList=%d, nFirst=%d, max=%d", nList, nFirst, max);
+            bFirst = false;
+        }
+        for(int i=nFirst; i < max; i++)
         {
             swprintf(message, sizeof(message), u"%s", (char*)list[i]);
             if(curList == i)
@@ -459,7 +512,6 @@ void display_list()
         xEventGroupSetBits(event, FRAME_LOADED);
 
         vTaskDelay(1000 / portTICK_RATE_MS);
-
     }
     vTaskDelete(NULL);
 }
@@ -497,7 +549,7 @@ void app_main()
             if(strncmp(pDirent->d_name+len-3, "MJP",3) ==0 || strncmp(pDirent->d_name+len-3, "RAW",3) ==0
                     || strncmp(pDirent->d_name+len-3, "JPG",3) ==0)
             {
-                if(nList < 10)
+                if(nList < MAX_FILES)
                 {
                     list[nList] = (char*)malloc(len +1);
                     strcpy(list[nList], pDirent->d_name);
