@@ -67,3 +67,14 @@ Clicking on the middle button displays a list of files. The currently selected f
 Copyright (C) 2008 Blender Foundation | peach.blender.org<br>
 Some Rights Reserved. Creative Commons Attribution 3.0 license.<br>
 http://www.bigbuckbunny.org/
+
+### Display JPG Images
+The program can also display 
+JPG images. However, there are no provisions to resize the image to fit the screen. Also, the jpg decoding logic cannot handle files that utilize an interlace scheme. The solution to this is to use the [ImageMagick](https://imagemagick.org/index.php) utility to convert them:
+
+```
+convert image.jpg -interlace none -resize 320x240 new_image.jpg
+```
+
+In this case, the image will be resized to fit within a 320x240 rectangle with no interlace. 
+
