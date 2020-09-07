@@ -117,6 +117,18 @@ static void IRAM_ATTR gpio_isr_handler(void* arg)
     xQueueSendFromISR(gpio_evt_queue, &gpio_num, NULL);
 }
 
+static void startDisplay()
+{
+    hagl_clear_screen();
+    sprintf(cPath,"/sdcard/%s",(char*)list[curList]);
+    if(memcmp((char*)list[curList] + strlen((char*)list[curList])-3, "RAW",3)==0)
+        xTaskCreatePinnedToCore(raw_video_task, "Video", 8192, cPath, 1, &video_task_handle, 0);
+    else if(memcmp((char*)list[curList] + strlen((char*)list[curList])-3, "MJP",3)==0)
+        xTaskCreatePinnedToCore(mjpg_video_task, "Video", 8192, cPath, 1, &video_task_handle, 0);
+    else
+        xTaskCreatePinnedToCore(photo_task, "Photo", 8192, cPath, 2, &video_task_handle, 0);
+}
+
 static void gpio_task(void* arg)
 {
     uint32_t io_num;
@@ -136,18 +148,9 @@ static void gpio_task(void* arg)
 
                 ESP_LOGI(TAG, "select #%d. %s", curList, (char *)list[curList]);
 
-//                char* p = (char*)list[curList];
-//                for ( ; *p; ++p) *p = tolower(*p);
-                sprintf(cPath,"/sdcard/%s",(char*)list[curList]);
 
                 bTerminate = false;
-                hagl_clear_screen();
-                if(memcmp((char*)list[curList] + strlen((char*)list[curList])-3, "RAW",3)==0)
-                    xTaskCreatePinnedToCore(raw_video_task, "Video", 8192, cPath, 1, &video_task_handle, 0);
-                else if(memcmp((char*)list[curList] + strlen((char*)list[curList])-3, "MJP",3)==0)
-                    xTaskCreatePinnedToCore(mjpg_video_task, "Video", 8192, cPath, 1, &video_task_handle, 0);
-                else
-                    xTaskCreatePinnedToCore(photo_task, "Photo", 8192, cPath, 2, &video_task_handle, 0);
+                startDisplay();
                 if(display_list_handle)
                 {
                     vTaskDelete(display_list_handle);
@@ -229,6 +232,7 @@ static void setup_Gpio()
  */
 void flush_task(void *params)
 {
+    ESP_LOGI(TAG, "flush task started");
     while (1) {
         EventBits_t bits = xEventGroupWaitBits(
             event,
@@ -248,7 +252,7 @@ void flush_task(void *params)
 }
 
 /*
- * Read video data from sdcard. This should be capped to video
+ * Read video data from . This should be capped to video
  * framerate. However currently the sd card is the bottleneck and
  * data can be read at only about 15 fps. Adding vsync causes
  * fps to drop to 14.
@@ -570,14 +574,7 @@ void app_main()
 
 #ifdef HAGL_HAL_USE_BUFFERING
     xTaskCreatePinnedToCore(flush_task, "Flush", 8192, NULL, 1, NULL, 0);
-#ifdef CONFIG_ESP_VIDEO_MJPG
-    xTaskCreatePinnedToCore(mjpg_video_task, "Video", 8192, NULL, 1, &video_task_handle, 0);
-#else
-    //char* fn = "/sdcard/bbb12.raw";
-    sprintf(cPath, "/sdcard/%s", (char*)list[curList]);
-    xTaskCreatePinnedToCore(raw_video_task, "Video", 8192, cPath, 1, &video_task_handle, 0);
-#endif /* CONFIG_ESP_VIDEO_MJPG */
-    //xTaskCreatePinnedToCore(photo_task, "Photo", 8192, NULL, 2, NULL, 1);
+    startDisplay();
 #endif /* HAGL_HAL_USE_BUFFERING */
     xTaskCreatePinnedToCore(infobar_task, "info", 8192, NULL, 2, NULL, 1);
 }
