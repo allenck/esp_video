@@ -38,7 +38,7 @@ The original video is 24 fps. With SPI interface the SD card reading speed seems
 ```
 $ ffmpeg -i BigBuckBunny_320x180.mp4 -f rawvideo -pix_fmt rgb565be -vcodec  rawvideo -r 12 bbb12.raw
 ```
-The above example assumes that the source video's size is the same as your devices' dimensions,e.g. 320x240. If it isn't, add the parameters '-vf scale=320:-1' which will resize the output video width to 320 and maintain the aspect ratio.
+The above example assumes that the source video's size is such that it wiil fit within your devices' dimensions,e.g. 320x240. If it isn't, add the parameters '-vf scale=320:-1' which will resize the output video width to 320 and maintain the aspect ratio.
 
 With motion jpeg video ESP32 itself is the bottleneck. With my testing I
 was able to decode at approximately 8 fps. You can create a 8 fps MJPG video with the following.
@@ -69,12 +69,11 @@ Some Rights Reserved. Creative Commons Attribution 3.0 license.<br>
 http://www.bigbuckbunny.org/
 
 ### Display JPG Images
-The program can also display 
-JPG images. However, there are no provisions to resize the image to fit the screen. Also, the jpg decoding logic cannot handle files that utilize an interlace scheme. The solution to this is to use the [ImageMagick](https://imagemagick.org/index.php) utility to convert them:
+The program can also display JPG images. However, there are no provisions to resize the image to fit the screen so only a portion will be displayed. Also, the jpg decoding logic cannot handle files that utilize an interlace scheme. The solution to this is to use the [ImageMagick](https://imagemagick.org/index.php) utility to convert them:
 
 ```
 convert image.jpg -interlace none -resize 320x240 new_image.jpg
 ```
 
-In this case, the image will be resized to fit within a 320x240 rectangle with no interlace. 
+In this case, the image will be resized to fit within a 320x240 rectangle with no interlace. Note that some clipping may occur if the resulting image's height is greater than 210 (240 less the height of the info bar).So, t prevent clipping, resize the image to 320x210.
 
