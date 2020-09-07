@@ -67,6 +67,8 @@ static bitmap_t *bb;
 static EventGroupHandle_t event;
 
 static const uint8_t FRAME_LOADED = (1 << 0);
+static const uint8_t DEV_EOF = (1 << 1);
+
 
 struct dirent *pDirent;
 DIR *pDir;
@@ -93,8 +95,8 @@ int curList = 0; // currently selected list item
 
 static xQueueHandle gpio_evt_queue = NULL;
 
-TaskHandle_t video_task_handle = NULL;
-TaskHandle_t display_list_handle = NULL;
+static TaskHandle_t video_task_handle = NULL;
+static TaskHandle_t display_list_handle = NULL;
 enum IMGTYPE
 {
     NONE,
@@ -138,7 +140,12 @@ static void gpio_task(void* arg)
             printf("GPIO[%d] intr, val: %d\n", io_num, gpio_get_level(io_num));
             if(io_num == MIPI_DISPLAY_PIN_BUTTON_A && video_task_handle > 0)
             {
-                bTerminate = true;
+                while(video_task_handle)
+                {
+                    bTerminate = true;
+                    vTaskDelay(100/ portTICK_RATE_MS);
+                }
+
                 vTaskDelay(100 / portTICK_RATE_MS);
                 xTaskCreatePinnedToCore(display_list, "List", 2048, NULL, 1, &display_list_handle, 0);
             }
@@ -236,7 +243,7 @@ void flush_task(void *params)
     while (1) {
         EventBits_t bits = xEventGroupWaitBits(
             event,
-            FRAME_LOADED,
+            FRAME_LOADED | DEV_EOF,
             pdTRUE,
             pdFALSE,
             40 / portTICK_PERIOD_MS
@@ -245,6 +252,17 @@ void flush_task(void *params)
         /* Flush only when FRAME_LOADED is set. */
         if ((bits & FRAME_LOADED) != 0 ) {
             hagl_flush();
+        }
+
+        if(bits & DEV_EOF)
+        {
+            while(video_task_handle)
+            {
+                bTerminate = true;
+                vTaskDelay(100/ portTICK_RATE_MS);
+            }
+            vTaskDelay(100 / portTICK_RATE_MS);
+            xTaskCreatePinnedToCore(display_list, "List", 2048, NULL, 1, &display_list_handle, 0);
         }
     }
 
@@ -282,6 +300,12 @@ void raw_video_task(char *params)
             bb->buffer + bb->pitch * 30,
             320 * 180 * 2
         );
+        if(!bytes_read)
+        {
+            /* Notify flush task that no more data is present. */
+            xEventGroupSetBits(event, DEV_EOF);
+            break;
+        }
 
         /* Update counters. */
         sd_bps = bps(bytes_read);
@@ -396,10 +420,16 @@ void mjpg_video_task(char *params)
         if (result == JDR_OK) {
             result = jd_decomp(&decoder, tjpgd_data_writer, 0);
             if (JDR_OK != result) {
-                ESP_LOGE(TAG, "TJPGD decompress failed.");
+                ESP_LOGE(TAG, "TJPGD decompress failed. err %d", result);
             }
         } else {
-            ESP_LOGE(TAG, "TJPGD prepare failed.");
+            if(result == JDR_INP)
+            {
+                /* Notify flush task that no more data is present. */
+                xEventGroupSetBits(event, DEV_EOF);
+                break;
+            }
+            ESP_LOGE(TAG, "TJPGD prepare failed. err %d", result);
         }
 
         /* Update counters. */
@@ -493,6 +523,8 @@ void display_list()
     char16_t message[64];
     hagl_clear_screen();
     bool bFirst=true;
+
+    ESP_LOGI(TAG, "Begin display_list");
 
     while(1)
     {
