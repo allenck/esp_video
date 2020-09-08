@@ -98,7 +98,7 @@ esp_err_t sdcard_init()
 
     if (status != ESP_OK) {
 //        ESP_ERROR_CHECK_WITHOUT_ABORT(status);
-        ESP_ERROR_CHECK(status);
+        //ESP_ERROR_CHECK(status);
         return status;
     }
 

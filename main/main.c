@@ -131,6 +131,18 @@ static void startDisplay()
         xTaskCreatePinnedToCore(photo_task, "Photo", 8192, cPath, 2, &video_task_handle, 0);
 }
 
+static void err_display(char * msg)
+{
+    char16_t message[120];
+    hagl_set_clip_window(0, 0, DISPLAY_WIDTH - 1, DISPLAY_HEIGHT -1);
+    hagl_fill_rectangle(0, 0, DISPLAY_WIDTH - 1, DISPLAY_HEIGHT -1, hagl_color(250,0,0));
+    swprintf(message, sizeof(message), u"%s", msg);
+    hagl_put_text(message, (strlen(msg)/2)*9, 120, hagl_color(255,255,255), fnt9x18B);
+    /* Notify flush task that frame has been loaded. */
+    xEventGroupSetBits(event, FRAME_LOADED);
+    vTaskDelete(NULL);
+}
+
 static void gpio_task(void* arg)
 {
     uint32_t io_num;
@@ -567,7 +579,13 @@ void app_main()
         ESP_LOGI(TAG, "Back buffer: %dx%dx%d", bb->width, bb->height, bb->depth);
     }
 
-    sdcard_init();
+    esp_err_t status = sdcard_init();
+    if(status != ESP_OK)
+    {
+        xTaskCreatePinnedToCore(flush_task, "Flush", 8192, NULL, 1, NULL, 0);
+        xTaskCreatePinnedToCore(err_display, "error", 8192, "Error opening SD card", 1, NULL, 0);
+        return;
+    }
 
     pDir = opendir("/sdcard");
     if (pDir == NULL) {
