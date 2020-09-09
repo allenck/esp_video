@@ -3,4 +3,4 @@
         url = https://github.com/allenck/hagl.git
 [submodule "components/hagl_hal"]
 	path = components/hagl_hal
-        url = https://github.com:allenck/hagl_esp_mipi.git
+        url = https://github.com/allenck/hagl_esp_mipi.git
