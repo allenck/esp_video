@@ -469,6 +469,7 @@ void infobar_task(void *params)
 
 #ifdef HAGL_HAL_USE_BUFFERING
     while (1) {
+        hagl_fill_rectangle(0, 0, DISPLAY_WIDTH - 1, 8, hagl_color(0,0,0));
         swprintf(message, sizeof(message), u"SD %.*f kBPS  ",  1, sd_bps / 1000);
         hagl_put_text(message, 8, 8, color, font6x9);
 
