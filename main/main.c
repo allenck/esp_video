@@ -502,11 +502,14 @@ void infobar_task(void *params)
 void photo_task(char *params)
 {
     img_type = JPG;
+    char16_t message[64];
     while (!bTerminate) {
         ESP_LOGI(TAG, "Loading: %s", params);
         uint32_t status = hagl_load_image(0, 30, params);
         if(status)
             ESP_LOGE(TAG, "error %d reading %s", status, params);
+        swprintf(message, sizeof(message), u"testing text over img");
+        hagl_put_text(message, 10, 120, hagl_color(0, 0, 255), fnt9x18B);
         xEventGroupSetBits(event, FRAME_LOADED);
 
         vTaskDelay(1000 / portTICK_RATE_MS);
